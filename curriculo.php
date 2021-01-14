@@ -1,3 +1,6 @@
+<?php
+require 'includes/templates/header.php'
+?>
 <div class="curriculum">
 
         <div class="txt1">
@@ -61,6 +64,12 @@
                     ">https://www.congresomexicanodelaguacate2020.com
                 </a> con el uso de HTML/CSS3, PHP/JAVASCRIPT (esté dominio expiro 20-09-2020 debido a la contingencia Covid 19 y por la naturaleza del proyecto)
             </p>
+            <p>&nbsp;<i class="fas fa-circle"></i>&nbsp;Construyo y realizó mantenimiento completo a
+                la página
+                <a href="https://www.sociedadintelectualdelaguacatemexicano.com
+                    ">https://www.sociedadintelectualdelaguacatemexicano.com
+                </a>
+            </p>
         </div>
         <div class="txt7">
             <p><i class="fas fa-circle"></i>&nbsp;Trabajo en equipo.</p>
@@ -75,7 +84,7 @@
         <div class="txt9">
             <h4><i class="fas fa-chevron-right"></i>&nbsp;Contacto</h4>
             <p><i class="fas fa-phone-alt"></i>&nbsp;Cel: 452 144 1689</p>
-            <p><i class="fas fa-envelope"></i>&nbsp;angel._ruiz@hotmail.com &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;angel._ruiz@ingeangel.com</p>
+            <p><i class="fas fa-envelope"></i>&nbsp;angel._ruiz@hotmail.com</p>
             <p><i class="fas fa-globe"></i><a href=" http://www.ingeangel.com">&nbsp;http://www.ingeangel.com</a> </p>
             <p><i class="fas fa-map-marker-alt"></i>&nbsp;San José de la Mina #42 Col. San &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;José de la Mina. CP:60125</p>
         </div>
@@ -95,18 +104,8 @@
         </div>
         <div class="txt11">
             <h4><i class="fas fa-chevron-right"></i>&nbsp;MISIÓN Y VISIÓN</h4>
-            <p><i id="icono" class="fas fa-circle"></i>&nbsp;<span>Misión:</span> Ayudar a mi equipo de trabajo a conseguir
-                los objetivos marcados, fomentando la
-                comunicación,
-                concretando mis responsabilidades y dando
-                resultados óptimos para la empresa
-                que me empleé en sus proyectos.</p>
-            <p><i id="icono" class="fas fa-circle"></i>&nbsp;<span>Visión:</span> Convertirme en un experto en el área de
-                trabajo que necesita mi empresa, para
-                impactar positivamente a los proyectos
-                a mi cargo, ser un líder capaz de orientar
-                a mi equipo, así además, dar soluciones
-                con un rendimiento cada vez mejor.</p>
+            <p><i id="icono" class="fas fa-circle"></i>&nbsp;<span>Misión:</span> Resolver problemáticas del sector de programación industrial, desarrollo web y aplicaciones; brindando mis conocimientos y creatividad para lograr el objetivo y necesidades de todos nuestros clientes.</p>
+            <p><i id="icono" class="fas fa-circle"></i>&nbsp;<span>Visión:</span> Invertir el máximo de mis capacidades para actualizarme, adaptándome a las nuevas tecnologías, de ser posible encontrar nuevas maneras para brindar lo máximo en seguridad y capacidad a cada plataforma que este bajo mi responsabilidad.  </p>
         </div>
         <div class="linea1">
         </div>
@@ -138,7 +137,7 @@
             <p>2018</p>
         </div>
         <div class="point2">
-            <p>2020</p>
+            <p>2021</p>
         </div>
         <!-- <?php for ($i = 1; $i <= (12 * 12) - 7 - 12 - 20; $i++) {
                 ?><p id="pintado"><?php echo  $i; ?></p><?php
@@ -201,7 +200,7 @@
 
             <h4><i id="ingles" class="fas fa-chevron-right"></i>&nbsp;Contacto</h4>
             <p><i id="ingles" class="fas fa-phone-alt"></i>&nbsp;Cel: 452 144 1689</p>
-            <p><i id="ingles" class="fas fa-envelope"></i>&nbsp;angel._ruiz@hotmail.com angel._ruiz@ingeangel.com</p>
+            <p><i id="ingles" class="fas fa-envelope"></i>&nbsp;angel._ruiz@hotmail.com</p>
             <p><i id="ingles" class="fas fa-globe"></i><a href=" http://www.ingeangel.com">&nbsp;http://www.ingeangel.com</a> </p>
             <p><i id="ingles" class="fas fa-map-marker-alt"></i>&nbsp;San José de la Mina #42 Col. San José de la Mina. CP:60125</p>
 
@@ -219,7 +218,7 @@
                 Diseño mecánico en AutoCad.</p>
 
             <h4><i class="fas fa-chevron-right"></i>&nbsp;Misión Y Visión</h4>
-            <p><i id="icono" class="fas fa-circle"></i>&nbsp;<span>Misión:</span> Ayudar a mi equipo de trabajo a conseguir
+            <p><i id="icono" class="fas fa-circle"></i>&nbsp;<span>Misión:</span> Ayudar a mi esquipo de trabajo a conseguir
                 los objetivos marcados, fomentando la
                 comunicación,
                 concretando mis responsabilidades y dando
@@ -231,5 +230,13 @@
                 a mi cargo, ser un líder capaz de orientar
                 a mi equipo, así además, dar soluciones
                 con un rendimiento cada vez mejor.</p>
+                
         </div>
+        
     </div>
+    <div class="btnsobres"><a class="button" href="sobreangel.php#sobremi">Sobre José Angel</a></div>
+    
+    
+    <?php
+require 'includes/templates/footer.php'
+?>

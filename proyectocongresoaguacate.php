@@ -1,11 +1,13 @@
 <?php
 require 'includes/templates/header.php'
 ?>
-<div class="contenedor_ca">
-    <video width="1200" height="682" autoplay>
-        <source src="video/video.mp4" type="video/mp4">
-    </video>
+<div class="contenedor">
+    <h1>hola</h1>
 </div>
-<?php
-require 'includes/templates/footer.php'
-?>
+<div class="contenedor">
+<video controls>
+  <source src="video/video.mp4" type="video/ogg">
+  <source src="video/video.mp4" type="video/mp4">
+  Tu navegador no implementa el elemento <code>video</code>.
+</video>
+</div>

@@ -8,10 +8,10 @@
                 </h3>
                 <p>
                    <br> <br>
-                   Ayudar a mi equipo de trabajo a conseguir los objetivos marcados, fomentando la comunicación total para el mismo fin, además concretar mis tareas y responsabilidades de los proyectos que se me asignen, dando además resultados óptimos para la empresa que me empleé.
+                   Ayudar a nuestros clientes a cumplir con un objetivo importante como tener identidad en internet, dando soluciones en tiempo y forma, a cada reto impuesto por los mismos.
                 </p>   
                    
-                <a href="index.php"><div class="imglogo"></div></a>
+                <a href="index.php#"><div class="imglogo"></div></a>
             </div>
         </div>
         <div class="elem4__fondo">
@@ -21,7 +21,7 @@
                 </h3>
                 <p>
                 <br> <br>    
-                Convertirme en un experto en el área de trabajo que necesita mi empresa, para impactar positivamente a los proyectos a mi cargo, y ser un líder capaz de orientar a mi equipo, así además, dar soluciones con un rendimiento cada vez mejor.</p>
+                Convertirnos en los desarrolladores web preferidos de nuestros clientes incorporando conocimiento cada vez más avanzado y ponerlo al servicio de los mismos.</p>
             </div>
             <!-- <div class="feeds__elem4">
                       GRID LISTO 10-12
@@ -77,7 +77,7 @@
                 </h3>
             </div><!--text1__elem3-->
             <div class="ico__elem3">
-                <a href="sobreangel.php" class = "efecto"><i class="fas fa-angle-right"><p></p>  </i>Sobre Mí</a>
+                <a href="curriculo.php" class = "efecto"><i class="fas fa-angle-right"><p></p> </i>Nuestro equipo</a>
                 <a href="#"class = "efecto"><i class="fas fa-angle-right"> <p></p>
                     </i>Preguntas frecuentes</a>
                 <a href="#"class = "efecto"><i class="fas fa-angle-right"><p></p>  </i>Términos y Condiciones</a>

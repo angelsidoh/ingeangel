@@ -1,3 +1,71 @@
+// slider
+$(document).ready(function(){
+
+  var imgItems = $('.slider li').length;
+  var imgPos = 1;
+
+  for( i=1; i<=imgItems; i++){
+      $('.paginacion').append('<li><span><i class="fa fa-circle"></i></span></li>');
+  }
+  
+
+  $('.slider li').hide();
+  $('.slider li:first').show();
+  $('.paginacion li:first').css({'text-shadow': '0 0 5px #FFF, 0 0 10px #FFF, 0 0 15px #FFF, 0 0 20px #fe4918, 0 0 30px #fe4918, 0 0 40px #fe4918, 0 0 55px #fe4918, 0 0 75px #fe4918'});
+
+  $('.paginacion li').click(paginacion);
+  $('.right span').click(nextSlider);
+  $('.left span').click(prevSlider);
+
+  // setInterval(function(){
+  //     nextSlider();
+  // }, 10000);
+
+  function paginacion(){
+      var  paginacionPos = $(this).index();
+      paginacionPos = paginacionPos + 1;
+      console.log(paginacionPos);
+
+      $('.slider li').hide();
+      $('.slider li:nth-child('+ paginacionPos +')').fadeIn();
+
+      $('.paginacion li').css({'text-shadow': '0 0 0px #ffffff'});
+      $(this).css({'text-shadow': '0 0 5px #FFF, 0 0 10px #FFF, 0 0 15px #FFF, 0 0 20px #fe4918, 0 0 30px #fe4918, 0 0 40px #fe4918, 0 0 55px #fe4918, 0 0 75px #fe4918'});
+
+      imgPos = paginacionPos;
+  }
+  function nextSlider(){
+      if(imgPos>=imgItems){
+          imgPos = 1;
+      }else{
+          imgPos++;
+      }
+      
+      console.log(imgPos);
+      $('.slider li').hide();
+      $('.slider li:nth-child('+ imgPos +')').fadeIn();
+
+      $('.paginacion li').css({'text-shadow': '0 0 0px #ffffff'});
+      $('.paginacion li:nth-child('+ imgPos +')').css({'text-shadow': '0 0 5px #FFF, 0 0 10px #FFF, 0 0 15px #FFF, 0 0 20px #fe4918, 0 0 30px #fe4918, 0 0 40px #fe4918, 0 0 55px #fe4918, 0 0 75px #fe4918'});
+      
+  }
+  function prevSlider(){
+      if(imgPos<=1){
+          imgPos = imgItems;
+      }else{
+          imgPos--;
+      }
+      console.log(imgPos);
+      $('.slider li').hide();
+      $('.slider li:nth-child('+ imgPos +')').fadeIn();
+
+      $('.paginacion li').css({'text-shadow': '0 0 0px #ffffff'});
+      $('.paginacion li:nth-child('+ imgPos +')').css({'text-shadow': '0 0 5px #FFF, 0 0 10px #FFF, 0 0 15px #FFF, 0 0 20px #fe4918, 0 0 30px #fe4918, 0 0 40px #fe4918, 0 0 55px #fe4918, 0 0 75px #fe4918'});
+      
+  }
+});
+//end slider
+
 $(".caracteristica img").addClass('show_hide');
 $(".text_carac").addClass('show_hide');
 
@@ -32,27 +100,68 @@ $('.proyectos').hover(function () {
 });
 
 $("h1").lettering();
-
-// hack to get animations to run again
-
-$("h3").lettering();
-
-// hack to get animations to run again
-
-
+$("h1").click(function() { 
+  var el = $(this),  
+     newone = el.clone();
+  el.before(newone);
+  el.remove();
+});
 
 var text = $("#sparklemaster"),
-  numLetters = text.find("span").length;
+numLetters = text.find("span").length;
 console.log(numLetters);
 
 function randomBlurize() {
-
-
-  // Call itself recurssively
-  setTimeout(randomBlurize, 100);
+text.find("span:nth-child(" + (Math.floor(Math.random()*numLetters)+1) + ")")
+  .animate({
+    'textShadowBlur': Math.floor(Math.random()*25)+4,
+    'textShadowColor': 'rgba(0,100,0,' + (Math.floor(Math.random()*200)+55) + ')'
+  });
+// Call itself recurssively
+setTimeout(randomBlurize, 100);
 } // Call once
 randomBlurize();
 
+// hack to get animations to run again
+
+// $("h3").lettering();
+
+// // hack to get animations to run again
+
+
+// var text = $("#sparklemaster"),
+// numLetters = text.find("span").length;
+// console.log(numLetters);
+
+// function randomBlurize() {
+// text.find("span:nth-child(" + (Math.floor(Math.random()*numLetters)+1) + ")")
+//   .animate({
+//     'textShadowBlur': Math.floor(Math.random()*25)+4,
+//     'textShadowColor': 'rgba(0,100,0,' + (Math.floor(Math.random()*200)+55) + ')'
+//   });
+// // Call itself recurssively
+// setTimeout(randomBlurize, 100);
+// } // Call once
+// randomBlurize();
+// var text = $("#sparklemaster"),
+//   numLetters = text.find("span").length;
+//   console.log(numLetters);
+
+// function randomBlurize() {
+
+
+//   // Call itself recurssively
+//   setTimeout(randomBlurize, 100);
+// } // Call once
+// randomBlurize();
+
+
+$("#textBienvenida > div").length; 
+var x = 'abc';
+var empty = '';
+
+console.log('abc is ' + x.length + ' code units long');
+/* "Mozilla is 7 code units long" */
 var scrollup = 0;
 var scrolldown = 0;
 var auxop = 0;
@@ -96,7 +205,7 @@ $(window).scroll(function () {
 
 
 
-  console.log(auxop, margin_menu, scroll, margin);
+  //console.log(auxop, margin_menu, scroll, margin);
 
   if (scroll > 966) {
     $('.menu-barra').addClass('fix-menubarra');

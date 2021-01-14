@@ -21,6 +21,7 @@
   <link rel="stylesheet" href="css/normalize.css">
 
   <link rel="stylesheet" href="css/main.css?v=<?php echo time(); ?>">
+  <link rel="stylesheet" href="css/styles.css?v=<?php echo time(); ?>">
  
   
 
@@ -46,13 +47,21 @@
        
   <div class = "seccion-completa">
     <div class = "menu-barra">
-      <a href = "#"><div class = "imglogo"></div></a>
+      <div class="logs"> <a href = "index.php#">
+        <div class = "imglogo"></div>
+      </a></div>
+     
       <div class = "menu-hambur">
         <input type = "checkbox" id = "check" name = "menu">
           <label for = "check">
             <i class = "fas fa-bars" id = "btn"></i>
             <i class = "fas fa-window-close" id = "clc" style = "display:none"></i>
           </label>
+      </div>
+      <div class="botonsesiones">
+        <div class="botones_barra">
+          <a href="#">Iniciar Sesión</a>
+        </div> 
       </div>
       <div class="hotcall">
         <input type = "checkbox" id = "check-hotcall" name = "menu1">
@@ -76,10 +85,24 @@
         </div>
 
     </div>
-    <div class="textBienvenida">
+    <div id="textBienvenida"class="textBienvenida">
         <!-- <h1>Desarrollo <br> web</h1> -->
-       
-            <a href=""><h1 class="sparklemaster">Mecatrónica</h1></a>
+            <ul class="slider">
+                <li>
+                  <a href=""><h1 id="sparklemaster" class="sparklemaster">Desarrollo Web</h1></a>
+                </li> 
+            </ul>
+            
+        <!-- <ol class="paginacion">
+            
+        </ol> -->
+        <div class="right">
+            <span><i class="fas fa-angle-right"></i></span>
+        </div>
+        <div class="left">
+            <span><i class="fas fa-angle-left"></i></span>
+        </div>
+            
         
         <!--  -->
     </div>

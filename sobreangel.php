@@ -9,7 +9,7 @@ require 'includes/templates/header.php'
     <div class="cuadradoleft">
         <div class="imgcuadrado_aboutme">
 
-            <h1 class="sparklemaster">Sobre Mí</h1>
+            <h1 class="sparklemaster">Sobre José Angel</h1>
             <p>Uno de mis gustos, los automóviles, fue la principal motivación de que mi carrera se encaminara al punto que hoy es. Observar como funciona un motor antiguo y uno nuevo es verdaderamente un cambio de panorama radical, pues ver que en base a sensores un motor es capaz de enviarte alertas al panel/tablero de piloto, o que ayude un sensor a conducir en una situación de peligro, es para mí apasionante, y despertó en mi la curiosidad verdadera de automatizar procesos.
 
             </p>
