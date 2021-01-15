@@ -5,9 +5,9 @@ button {
           box-sizing: border-box;
   margin: 0 0;
   padding: 0 0;
-  -webkit-box-shadow: inset 0 0 0 8px #f45e61;
-          box-shadow: inset 0 0 0 8px #f45e61;
-  color: #f45e61;
+  -webkit-box-shadow: inset 0 0 0 8px #93A9CC;
+          box-shadow: inset 0 0 0 8px #93A9CC;
+  color: #93A9CC;
   font-size: inherit;
   font-weight: 700;
   position: relative;
@@ -47,7 +47,7 @@ button::before, button::after {
 }
 
 .draw:hover {
-  color: rgb(255, 196, 0);
+  color: #f45e61;
 }
 
 .draw:hover::before, .draw:hover::after {
@@ -56,21 +56,21 @@ button::before, button::after {
 }
 
 .draw:hover::before {
-  border-top-color: rgb(255, 196, 0);
-  border-right-color: rgb(255, 196, 0);
+  border-top-color: #f45e61;
+  border-right-color: #f45e61;
   -webkit-transition: width 0.25s ease-out, height 0.25s ease-out 0.25s;
   transition: width 0.25s ease-out, height 0.25s ease-out 0.25s;
 }
 
 .draw:hover::after {
-  border-bottom-color: rgb(255, 196, 0);
-  border-left-color: rgb(255, 196, 0);
+  border-bottom-color: #f45e61;
+  border-left-color: #f45e61;
   -webkit-transition: border-color 0s ease-out 0.5s, width 0.25s ease-out 0.5s, height 0.25s ease-out 0.75s;
   transition: border-color 0s ease-out 0.5s, width 0.25s ease-out 0.5s, height 0.25s ease-out 0.75s;
 }
 
 .meet:hover {
-  color: #fbca67;
+  color: #f45e61;
 }
 
 .meet::after {
@@ -79,13 +79,13 @@ button::before, button::after {
 }
 
 .meet:hover::before {
-  border-top-color: #fbca67;
-  border-right-color: #fbca67;
+  border-top-color: #f45e61;
+  border-right-color: #f45e61;
 }
 
 .meet:hover::after {
-  border-bottom-color: #fbca67;
-  border-left-color: #fbca67;
+  border-bottom-color: #f45e61;
+  border-left-color: #f45e61;
   -webkit-transition: height 0.25s ease-out,
  width 0.25s ease-out 0.25s;
   transition: height 0.25s ease-out,
@@ -93,7 +93,7 @@ button::before, button::after {
 }
 
 .center:hover {
-  color: rgb(255, 196, 0);
+  color: #f45e61;
 }
 
 .center::before, .center::after {
@@ -106,15 +106,15 @@ button::before, button::after {
 }
 
 .center::before {
-  border-top: 9px solid rgb(255, 196, 0);
-  border-bottom: 9px solid rgb(255, 196, 0);
+  border-top: 9px solid #f45e61;
+  border-bottom: 9px solid #f45e61;
   -webkit-transform: scale3d(0, 1, 1);
           transform: scale3d(0, 1, 1);
 }
 
 .center::after {
-  border-left: 9px solid rgb(255, 196, 0);
-  border-right: 9px solid rgb(255, 196, 0);
+  border-left: 9px solid #f45e61;
+  border-right: 9px solid #f45e61;
   -webkit-transform: scale3d(1, 0, 1);
           transform: scale3d(1, 0, 1);
 }
@@ -135,7 +135,7 @@ button::before, button::after {
 }
 
 .spin:hover {
-  color: rgb(255, 196, 0);
+  color: #f45e61;
 }
 
 .spin::before, .spin::after {
@@ -148,9 +148,9 @@ button::before, button::after {
 }
 
 .spin:hover::before {
-  border-top-color: rgb(255, 196, 0);
-  border-right-color: rgb(255, 196, 0);
-  border-bottom-color: rgb(255, 196, 0);
+  border-top-color: #f45e61;
+  border-right-color: #f45e61;
+  border-bottom-color: #f45e61;
   -webkit-transition: border-top-color 0.15s linear, border-right-color 0.15s linear 0.1s, border-bottom-color 0.15s linear 0.2s;
   transition: border-top-color 0.15s linear, border-right-color 0.15s linear 0.1s, border-bottom-color 0.15s linear 0.2s;
 }
@@ -160,7 +160,7 @@ button::before, button::after {
 }
 
 .spin:hover::after {
-  border-top: 8px solid rgb(255, 196, 0);
+  border-top: 8px solid #f45e61;
   border-left-width: 8px;
   border-right-width: 8px;
   -webkit-transform: rotate(360deg);
