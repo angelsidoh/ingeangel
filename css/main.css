@@ -284,10 +284,44 @@ html {
   --FontSec: 'Alfa Slab One', cursive;
 
 }
+.partes-de-seccion{
+  width: 85%;
+  margin: 50px auto;
+  text-align: justify;
+
+}
+/* cookeis */
+#cajacookies {
+  
+  background-color: rgba(255, 255, 255, 0.747);
+  color: black;
+  
+  padding: 0;
+  margin-left: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
+  height: 90px;
+  text-align: center;
+}
+
+#cajacookies button {
+  color: black;
+  
+}
+.pull-right{
+  border: 1px solid red;
+  width: 15%;
+  height: auto;
+  margin: 0 auto;
+  text-align: center;
+}
 /* boton */
 .btn {
   display: block;
-  width: 180px;
+  width: 320px;
   margin: 0 auto;
   height: 40px;
   box-sizing: border-box;
@@ -300,20 +334,45 @@ html {
   -ms-flex-item-align: center;
   align-self: center;
   font-size: 1rem;
-  font-weight: 700;
+  font-weight: 600;
   line-height: 1;
-  padding: 10px 0;
+  padding: 10px 10px;
   text-decoration: none;
   text-align: center;
   text-transform: uppercase;
   font-family: 'Montserrat', sans-serif;
-  
+  z-index: 99;
 }
-.btn p{
-  padding: 0 0;
-  margin: 0 auto;
-}
+
 .btn:hover, .btn:focus {
+  color: #000;
+  outline: 0;
+}
+.btncookie{
+  display: block;
+  width: 700px;
+  margin: 0 auto;
+  height: 40px;
+  box-sizing: border-box;
+  background-color: transparent;
+  border: 2px solid #e74c3c;
+  border-radius: 0.6em;
+  color: #e74c3c;
+  cursor: pointer;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1;
+  padding: 10px 10px;
+  text-decoration: none;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: 'Montserrat', sans-serif;
+  z-index: 99;
+}
+.btncookie:hover, .btncookie:focus {
   color: #000;
   outline: 0;
 }
@@ -413,6 +472,7 @@ body{
   box-shadow: 0px 0px 17px 1px rgba(0,0,0,0.75);
   
 }
+
 .text-paquete1{
   width: 95.5%;
   height: 91%;
@@ -424,7 +484,7 @@ body{
 }
 
 .title{
-  grid-row: 1 / 3;
+  grid-row: 1 / 2;
   grid-column: 1 / 1;
   width: 100%;
   height: 100%;
@@ -434,7 +494,7 @@ body{
   color: black;
 }
 .subtitle{
-  grid-row: 3 / 5;
+  grid-row: 2 / 3;
   grid-column: 1 / 1;
   width: 100%;
   height: 100%;
@@ -444,7 +504,7 @@ body{
   color: var(--ColorFontDescrip);
 }
 .ventaja{
-  grid-row: 5 / 12;
+  grid-row: 3 / 12;
   grid-column: 1 / 1;
   
 }
@@ -568,12 +628,12 @@ background: -moz-linear-gradient(top, rgba(95, 95, 95, 0.75) 0%, rgba(77, 58, 56
   grid-column: 1 / 5; 
   width: 100%;
   height: 120px;
-  animation: blink-btnmenubarra 3s infinite;
+  animation: blink-btnmenubarra 3s 3;
   text-decoration: none;
 }
 .menu-barra a:hover,.menu-hambur i:hover{
   color:  var(--ColorFontEspecial);
-  animation: blink-btnmenubarraend 3s infinite;
+  animation: blink-btnmenubarraend 3s 10;
 }
 @keyframes blink-btnmenubarraend{
   
@@ -626,11 +686,11 @@ background: -moz-linear-gradient(top, rgba(95, 95, 95, 0.75) 0%, rgba(77, 58, 56
   left: 0; 
 }
 .menu-hambur i{
-  animation: blink-btnhamburi 3s infinite;
+  animation: blink-btnhamburi 3s 3;
 }
 /* .menu-hambur i:hover{
   color:  var(--ColorFontEspecial);
-  animation: blink-btnhamburiend 3s infinite;
+  animation: blink-btnhamburiend 3s 10;
 } */
 @keyframes blink-btnhamburiend{
 }
@@ -700,7 +760,7 @@ background: -moz-linear-gradient(top, rgba(95, 95, 95, 0.75) 0%, rgba(77, 58, 56
   text-align: center;
   margin-top: 15px;
   margin-left: -10%;
-  animation: blink-btnproyecto 3s infinite;
+  animation: blink-btnproyecto 3s 3;
   
 }
 @media only screen and (min-width:510px){
@@ -749,10 +809,20 @@ background: -moz-linear-gradient(top, rgba(95, 95, 95, 0.75) 0%, rgba(77, 58, 56
     color: var(--ColorFontPal);
     margin-top: 35px;
     font-size: 18px;
+    animation: blink-btnflechaup 3s 3;
   }
+  
   
   #flechaup:hover, #flechadown:hover{
     color: var(--ColorFontEspecial);
+    animation: blink-btnflechaupend 3s infinite;
+  }
+  @keyframes blink-btnflechaupend{
+  }
+  @keyframes blink-btnflechaup {
+    0% {color: #000000}
+
+    50%{color: rgb(255, 196, 0);}
   }
 }
 #btn{
@@ -2516,11 +2586,20 @@ ul{
   text-decoration: none;
   color: var(--ColorBackgroundPal);
   font-family: var(--FontPal); 
-  
+  animation: blink-btnicoelem3 3s 3;
 }
 .ico__elem3 a:hover{
   color: #ff4800;
+  animation: blink-btnicoelem3end 3s infinite;
 }
+@keyframes blink-btnicoelem3end{
+}
+@keyframes blink-btnicoelem3{
+  0% {color: #ffffff}
+
+  50%{color: rgb(255, 196, 0);}
+}
+
 
 .text1__elem3{
   display: flex;

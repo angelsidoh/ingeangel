@@ -34,7 +34,7 @@ require 'includes/templates/header.php'
                             
                         </div>
                     </div>
-                    <a href="#" class="btn third">Ver</a>
+                    <a href="#" class="btn third">Información</a>
                 </div>
             </button>
 
@@ -72,7 +72,7 @@ require 'includes/templates/header.php'
                             
                         </div>
                     </div>
-                    <a href="#" class="btn third">Ver</a>
+                    <a href="#" class="btn third">Información</a>
                 </div>
             </button>
             
@@ -109,7 +109,7 @@ require 'includes/templates/header.php'
                             
                         </div>
                     </div>
-                    <a href="#" class="btn third">Ver</a>
+                    <a href="#" class="btn third">Información</a>
                 </div>
             </button>
         </div>

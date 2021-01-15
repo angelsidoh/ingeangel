@@ -50,9 +50,10 @@
                     </div>
                     <div class="icono2__a">
                         <i class="fas fa-phone-square-alt"></i>
+                        <i class="fab fa-whatsapp-square"></i>
                     </div>
                     <div class="text2__a">
-                        <p>+52 452 144 16 89</p>
+                        <p>452 144 16 89</p>
                     </div>
                     <div class="icono3__a">
                         <i class="fas fa-envelope"></i>
@@ -80,13 +81,14 @@
                 <a href="curriculo.php" class = "efecto"><i class="fas fa-angle-right"><p></p> </i>Nuestro equipo</a>
                 <a href="#"class = "efecto"><i class="fas fa-angle-right"> <p></p>
                     </i>Preguntas frecuentes</a>
-                <a href="#"class = "efecto"><i class="fas fa-angle-right"><p></p>  </i>Términos y Condiciones</a>
-                <a href="#"class = "efecto"><i class="fas fa-angle-right"><p></p>  </i>Políticas de privacidad</a>
+                <a href="condiciones.php"class = "efecto"><i class="fas fa-angle-right"><p></p>  </i>Términos y Condiciones</a>
+                <a href="politicas.php"class = "efecto"><i class="fas fa-angle-right"><p></p>  </i>Políticas de privacidad</a>
+                <a href="#"class = "efecto"><i class="fas fa-angle-right"><p></p>  </i>Reembolsos</a>
                 <a href="#"class = "efecto"><i class="fas fa-angle-right"><p></p>  </i>Artículos</a>
             </div>
             <div class="item1__fondo">
-                <p>¿Quieres ayuda para desarrollar
-                    <br> software para tu empresa?</p>
+                <p>¿Necesitas ayuda para
+                    <br> crear una pagina web de tu negocio?</p>
                 <a href="" class = "button">Servicio Personalizado</a>
             </div>        
             
@@ -125,6 +127,27 @@
 	<!-- custom scrollbar plugin -->
     <script src="js/plugins/malihu-custom-scrollbar-plugin-master/malihu-custom-scrollbar-plugin-master/jquery.mCustomScrollbar.concat.min.js"></script>
     <script src="js/main.js?v=<?php echo time(); ?>"></script>
+    <script>
+    /* ésto comprueba la localStorage si ya tiene la variable guardada */
+    function compruebaAceptaCookies() {
+    if(localStorage.aceptaCookies == 'true'){
+        cajacookies.style.display = 'none';
+    }
+    }
+
+    /* aquí guardamos la variable de que se ha
+    aceptado el uso de cookies así no mostraremos
+    el mensaje de nuevo */
+    function aceptarCookies() {
+    localStorage.aceptaCookies = 'true';
+    cajacookies.style.display = 'none';
+    }
+
+    /* ésto se ejecuta cuando la web está cargada */
+    $(document).ready(function () {
+    compruebaAceptaCookies();
+    });
+    </script>
     
     
     
@@ -141,7 +164,12 @@
   gtag('config', 'G-NMVHLC0SJF');
 </script>
     <script src="https://www.google-analytics.com/analytics.js" async></script>
-    
+    <div id="cajacookies">
+<p><div onclick="aceptarCookies()" class="pull-right btncookie third"><i class="fa fa-times"></i> Aceptar y cerrar éste mensaje</div>
+Éste sitio web usa cookies, si permanece aquí acepta su uso.
+Puede leer más sobre el uso de cookies en nuestra <a href="politicas.php">política de privacidad</a>.
+</p>
+</div>
 </body>
 
 </html>
