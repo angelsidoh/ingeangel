@@ -1,6 +1,16 @@
 <?php
 require 'includes/templates/header.php'
 ?>
+<title>Currículo</title>
+<meta name="description" content="ingeangel.com cuenta con un equipo especializado en programación web en tecnología html5, css3, php y javascript, además de programación de bases de datos enlazadas para cada proyecto. ">
+<meta name="title" content = "Desarrollo Web">
+<meta name="keywords" content="Programador Web, Desarrollo Web, ¿Dónde puedo hacer mi pagina web?, ¿Dónde puedo hacer mi sitio web?, Quiero a alguien que haga mi página web, Quiero a alguien que haga mi sitio web , Costos de hacer una página web, Costos de hacer una sitio web,Profesionales que trabajan en ingeangel.com,
+Quienes trabajan en ingeangel.com,
+Habilidades de profesionales de ingeangel.com
+"/>
+<meta name="author" content="José Angel Ruiz Chávez" />
+<meta name="copyright" content="José Angel Ruiz Chávez" />
+
 <div class="curriculum">
 
         <div class="txt1">

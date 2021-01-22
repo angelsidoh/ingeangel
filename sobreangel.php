@@ -1,6 +1,15 @@
 <?php
 require 'includes/templates/header.php'
 ?>
+
+<title>Sobre José Angel</title>
+<meta name="description" content="Trayectoria Ingeniero José Angel">
+<meta name="title" content = "Desarrollo Web">
+<meta name="keywords" content="ingeangel.com, Ingeniero José Angel, Ingeniero José Angel Ruiz, Ingeniero Angel Ruiz, Ingeniero en Mecatrónica José Angel, Ingeniero en Mecatrónica 
+"/>
+<meta name="author" content="José Angel Ruiz Chávez" />
+<meta name="copyright" content="José Angel Ruiz Chávez" />
+
 <div class="secciones-index">
     
 </div>

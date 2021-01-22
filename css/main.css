@@ -269,10 +269,12 @@ html {
 *, *:before, *:after {
   box-sizing: inherit;
 }
+
 :root{
   --ColorFontPal: #000000;
   --ColorFontSec: #ffffff;
   --ColorFontDescrip: #93A9CC;
+  --ColorFontDescrip2:rgb(13, 70, 161);
   --ColorFontEspecial: #ff7b00;
   --ColorOpacEspecialHover: #ff4800;
 
@@ -290,6 +292,51 @@ html {
   text-align: justify;
 
 }
+@font-face {
+  font-family: "AngleciaProDisplay-Regular";
+  src: url("../letras/anglecia-pro-display/AngleciaProDisplay-Regular.otf");
+}
+/* login */
+.contenedortitulosdepag h1{
+  font-family: var(--FontPal);
+}
+.contenedor-login{
+  width: 95%;
+  height: 800px;
+  margin: 50px auto;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  
+  box-shadow: 0px 0px 0px 0px rgba(0,0,0,0.75),
+  inset 0px 0px 5px 0px rgba(0,0,0,0.75);
+  transition: box-shadow .1s ease-in-out;
+  
+}
+.contenedor-login:hover{
+ 
+box-shadow: 0px 0px 10px 1px rgba(0,0,0,0.75),
+inset 0px 0px 0px 0px rgba(0,0,0,0.75);;
+}
+@media only screen and (min-width:720px){
+  .contenedor-login{
+    width: 60%;
+  }
+}
+@media only screen and (min-width:940px){
+  .contenedor-login{
+    width: 50%;
+  }
+}
+@media only screen and (min-width:1500px){
+  .contenedor-login{
+    width: 40%;
+  }
+}
+@media only screen and (min-width:1500px){
+  .contenedor-login{
+    width: 35%;
+  }
+}
+/* end login */
 /* cookeis */
 #cajacookies {
   
@@ -321,7 +368,7 @@ html {
 /* boton */
 .btn {
   display: block;
-  width: 320px;
+  width: 40%;
   margin: 0 auto;
   height: 40px;
   box-sizing: border-box;
@@ -350,7 +397,7 @@ html {
 }
 .btncookie{
   display: block;
-  width: 700px;
+  width: 100%;
   margin: 0 auto;
   height: 40px;
   box-sizing: border-box;
@@ -371,6 +418,20 @@ html {
   text-transform: uppercase;
   font-family: 'Montserrat', sans-serif;
   z-index: 99;
+}
+@media only screen and (min-width:470px){
+  .btncookie{
+    
+    width: 90%;
+   
+  }
+}
+@media only screen and (min-width:1040px){
+  .btncookie{
+    
+    width: 40%;
+   
+  }
 }
 .btncookie:hover, .btncookie:focus {
   color: #000;
@@ -413,9 +474,197 @@ body{
   height: auto;
   padding: 0 0;
   margin: 0 0;
-  margin-top: 10px;
+ 
   
 }
+/* contenedor efecto */
+.contenedor-efecto{
+  width: 100%;
+  height: auto;
+  padding: 0 0;
+  margin: 0 0;
+  overflow: hidden;
+  
+}
+/* end contenedor efecto */
+
+/* ventana left */
+
+.ventana-left{
+  width: 80%;
+  height: auto;
+  
+  position: relative;
+  
+  padding: 20px;
+  font-family: var(--FontPal);
+  font-size: 18px;
+  font-weight: 100;
+  margin-left: 0%;
+}
+
+
+.ventana-right{
+  width: 80%;
+  height: auto;
+ 
+  position: relative;
+  
+  padding: 20px;
+  font-family: var(--FontPal);
+  font-size: 18px;
+  font-weight: 100;
+  margin-left: 20%;
+ 
+  
+}
+
+.ventanaleft-efecto{
+  animation: efecto-ventanaleft 2800ms 1 ease-in-out;
+  
+}
+@keyframes efecto-ventanaleft{
+ 0%{
+  margin-left: 80%;
+  padding: 0 0;
+ }
+ 33%{
+  margin-left: -8%;
+  
+ }
+ 50%{
+   margin-left: 0%;
+   
+   
+ }
+}
+.ventanaright-efecto{
+  animation: efecto-ventanaright 2800ms 1 ease-in-out;
+}
+@keyframes efecto-ventanaright{
+ 0%{
+  margin-left: -80%;
+  
+ }
+ 33%{
+   margin-left: 8%;
+ }
+ 50%{
+   margin-left: 0%;
+ }
+
+ 
+}
+.descripcion{
+  width: 50%;
+  height: auto;
+  margin: 0 auto;
+  padding: 20px;
+  
+  box-shadow: 0 0 1rem 0 rgba(0, 0, 0, .2); 
+  border-radius: 5px;
+  position: relative;
+  z-index: 1;
+  background: inherit;
+  overflow: hidden;
+}
+.container {
+  width: 30rem;
+  height: 20rem;
+  box-shadow: 0 0 1rem 0 rgba(0, 0, 0, .2); 
+  border-radius: 5px;
+  position: relative;
+  z-index: 1;
+  background: inherit;
+  overflow: hidden;
+}
+
+.descripcion:before {
+  content: "";
+  position: absolute;
+  background: inherit;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  box-shadow: inset 0 0 2000px rgba(255, 255, 255, .5);
+  filter: blur(10px);
+  margin: -20px;
+}
+
+/* end ventana left */
+
+
+/* contendor tecnologias */
+
+.titulo-seccion{
+  grid-row: 1 / 1;
+  grid-column: 1 / 5;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+ 
+  
+}
+
+.titulo-seccion h1{
+  font-family: var(--FontPal);
+  font-weight: 900;
+  font-size:60px;
+  
+  
+  color: var(--ColorFontDescrip);
+  padding: 0 0;
+}
+.titulo-tecnologia h1{
+  font-size: 22px;
+  
+}
+.descripcion-tecnologia h3{
+  font-size: 20px;
+}
+.descripcion-tecnologia p, .descripcion-tecnologia ul li{
+  color: var(--ColorFontDescrip2);
+}
+.descripcion-tecnologia ul{
+  width: 77%;
+  margin: 0 auto;
+}
+.descripcion-tecnologia ul li{
+  padding: 8px 0;
+}
+
+.tecnologia1, .tecnologia2, .tecnologia3, .tecnologia4{
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-template-rows: repeat(1, 10% 5% 75% 10%);
+  text-align: center;
+}
+
+
+
+
+.tecnologia1 i, .tecnologia2 i, .tecnologia3 i, .tecnologia4 i{
+  font-size: 60px;
+  color: var(--ColorFontEspecial);
+  padding: 50px;
+}
+
+.tecnologia2 .fa-css3-alt{
+  color: #00aee2;
+}
+.tecnologia3 .fa-php{
+  color: #b3d4fc;
+}
+.tecnologia4 .fa-js-square{
+  color: gold;
+}
+
+
+/* end contenedor tecnologias */
 .contenedor-paquetes{
   width: 90%;
   margin: 0 auto;
@@ -934,6 +1183,27 @@ background: -moz-linear-gradient(top, rgba(95, 95, 95, 0.75) 0%, rgba(77, 58, 56
 .smokemonster span:nth-of-type(19)  { animation: blackblur 2s 0.95s  1 alternate; }
 .smokemonster span:nth-of-type(20)  { animation: blackblur 2s 1.0s 1 alternate; }
 .smokemonster span:nth-of-type(21)  { animation: blackblur 2s 1.5s  1 alternate; }
+.smokemonster span:nth-of-type(22)  { animation: blackblur 2s 2s  1 alternate; }
+.smokemonster span:nth-of-type(23)  { animation: blackblur 2s 0.1s  1 alternate; }
+.smokemonster span:nth-of-type(24)  { animation: blackblur 2s 0.15s 1 alternate; }
+
+.smokemonster span:nth-of-type(25)  { animation: blackblur 2s 0.25s 1 alternate; }
+.smokemonster span:nth-of-type(26)  { animation: blackblur 2s 0.3s  1 alternate; }
+.smokemonster span:nth-of-type(27)  { animation: blackblur 2s 0.35s 1 alternate; }
+.smokemonster span:nth-of-type(28)  { animation: blackblur 2s 0.4s  1 alternate; }
+.smokemonster span:nth-of-type(29)  { animation: blackblur 2s 0.45s 1 alternate; }
+.smokemonster span:nth-of-type(30) { animation: blackblur 2s 0.5s  1 alternate; }
+.smokemonster span:nth-of-type(31) { animation: blackblur 2s 0.55s 1 alternate; }
+.smokemonster span:nth-of-type(32) { animation: blackblur 2s 0.6s  1 alternate; }
+.smokemonster span:nth-of-type(33) { animation: blackblur 2s 0.65s  1 alternate; }
+.smokemonster span:nth-of-type(34)  { animation: blackblur 2s 0.7s  1 alternate; }
+.smokemonster span:nth-of-type(35)  { animation: blackblur 2s 0.75s  1 alternate; }
+.smokemonster span:nth-of-type(36)  { animation: blackblur 2s 0.8s 1 alternate; }
+.smokemonster span:nth-of-type(37)  { animation: blackblur 2s 0.85s  1 alternate; }
+.smokemonster span:nth-of-type(38)  { animation: blackblur 2s 0.9s 1 alternate; }
+.smokemonster span:nth-of-type(39)  { animation: blackblur 2s 0.95s  1 alternate; }
+.smokemonster span:nth-of-type(40)  { animation: blackblur 2s 1.0s 1 alternate; }
+.smokemonster span:nth-of-type(41)  { animation: blackblur 2s 1.5s  1 alternate; }
 
 
 @keyframes fun-1 {
@@ -982,6 +1252,27 @@ background: -moz-linear-gradient(top, rgba(95, 95, 95, 0.75) 0%, rgba(77, 58, 56
 .sparklemaster span:nth-of-type(19)  { animation: fun-5 2s 1.25s 1 alternate; }
 .sparklemaster span:nth-of-type(20)  { animation: fun-5 2s 1.25s 1 alternate; }
 .sparklemaster span:nth-of-type(21)  { animation: fun-6 2s 2.3s  1 alternate; }
+.sparklemaster span:nth-of-type(22)  { animation: fun-1 2s 0.2s  1 alternate; }
+.sparklemaster span:nth-of-type(23)  { animation: fun-2 2s 3.9s  1 alternate; }
+.sparklemaster span:nth-of-type(24)  { animation: fun-3 2s 2.65s 1 alternate; }
+.sparklemaster span:nth-of-type(25)  { animation: fun-4 2s 2.2s  1 alternate; }
+.sparklemaster span:nth-of-type(26)  { animation: fun-5 2s 1.25s 1 alternate; }
+.sparklemaster span:nth-of-type(27)  { animation: fun-2 2s 3.9s  1 alternate; }
+.sparklemaster span:nth-of-type(28)  { animation: fun-1 2s 3.35s 1 alternate; }
+.sparklemaster span:nth-of-type(29)  { animation: fun-2 2s 2.4s  1 alternate; }
+
+.sparklemaster span:nth-of-type(30) { animation: fun-4 2s 3.5s  1 alternate; }
+.sparklemaster span:nth-of-type(31) { animation: fun-5 2s 1.55s 1 alternate; }
+.sparklemaster span:nth-of-type(32) { animation: fun-6 2s 2.6s  1 alternate; }
+.sparklemaster span:nth-of-type(33) { animation: fun-6 2s 0.2s  1 alternate; }
+.sparklemaster span:nth-of-type(34) { animation: fun-5 2s 1.55s 1 alternate; }
+.sparklemaster span:nth-of-type(35) { animation: fun-6 2s 2.6s  1 alternate; }
+.sparklemaster span:nth-of-type(36) { animation: fun-6 2s 0.2s  1 alternate; }
+.sparklemaster span:nth-of-type(37)  { animation: fun-3 2s 2.65s 1 alternate; }
+.sparklemaster span:nth-of-type(38)  { animation: fun-4 2s 2.2s  1 alternate; }
+.sparklemaster span:nth-of-type(39)  { animation: fun-5 2s 1.25s 1 alternate; }
+.sparklemaster span:nth-of-type(40)  { animation: fun-5 2s 1.25s 1 alternate; }
+.sparklemaster span:nth-of-type(41)  { animation: fun-6 2s 2.3s  1 alternate; }
 
 
 .textshadow .foreverblur {

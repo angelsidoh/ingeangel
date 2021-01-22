@@ -1,3 +1,8 @@
+if ($('#paquetes').is(':hidden')) {
+  console.log("Esta oculto");
+} else {
+  console.log('Visible');
+}
 // slider
 $(document).ready(function(){
 

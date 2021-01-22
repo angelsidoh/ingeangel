@@ -147,22 +147,16 @@
     $(document).ready(function () {
     compruebaAceptaCookies();
     });
-    </script>
-    
-    
-    
-
-
-    <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+    </script><!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
     <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-NMVHLC0SJF"></script>
+<!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-NMVHLC0SJF"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
   gtag('config', 'G-NMVHLC0SJF');
-</script>
+</script> -->
     <script src="https://www.google-analytics.com/analytics.js" async></script>
     <div id="cajacookies">
 <p><div onclick="aceptarCookies()" class="pull-right btncookie third"><i class="fa fa-times"></i> Aceptar y cerrar éste mensaje</div>
@@ -170,6 +164,55 @@
 Puede leer más sobre el uso de cookies en nuestra <a href="politicas.php">política de privacidad</a>.
 </p>
 </div>
+<script>
+    
+    function cambiaVisibilidad(visible, elemento){
+        console.log("¿Elemento %s está visible?: %s", elemento.id, visible);
+        if(visible == true){
+            $("#efecto-ventanaleft").addClass('ventanaleft-efecto');
+            $("#efecto-ventanaleft").addClass('ventanaleft-efecto');
+        }
+    }
+    
+    function cambiaVisibilidad1(visible, elemento){
+        console.log("¿Elemento %s está visible?: %s", elemento.id, visible);
+        if(visible == true){
+            $("#efecto-ventanaright").addClass('ventanaright-efecto');
+            $("#efecto-ventanaright").addClass('ventanaright-efecto');
+        }
+    }
+    function cambiaVisibilidad2(visible, elemento){
+        console.log("¿Elemento %s está visible?: %s", elemento.id, visible);
+        if(visible == true){
+            $("#efecto-ventanaleft1").addClass('ventanaleft-efecto');
+            $("#efecto-ventanaleft1").addClass('ventanaleft-efecto');
+        }
+    }
+    function cambiaVisibilidad3(visible, elemento){
+        console.log("¿Elemento %s está visible?: %s", elemento.id, visible);
+        if(visible == true){
+            $("#efecto-ventanaright1").addClass('ventanaright-efecto');
+            $("#efecto-ventanaright1").addClass('ventanaright-efecto');
+        }
+    }
+    
+    var paquetes = document.getElementById("efecto-ventanaleft");
+    var paquetes1 = document.getElementById("efecto-ventanaright");
+    var paquetes2 = document.getElementById("efecto-ventanaleft1");
+    var paquetes3 = document.getElementById("efecto-ventanaright1");
+    
+    inViewportPartially(paquetes, cambiaVisibilidad);
+    inViewportTotally(paquetes, cambiaVisibilidad);
+
+    inViewportPartially1(paquetes1, cambiaVisibilidad1);
+    inViewportTotally1(paquetes1, cambiaVisibilidad1);
+
+    inViewportPartially2(paquetes2, cambiaVisibilidad2);
+    inViewportTotally2(paquetes2, cambiaVisibilidad2);
+
+    inViewportPartially3(paquetes3, cambiaVisibilidad3);
+    inViewportTotally3(paquetes3, cambiaVisibilidad3);
+</script>
 </body>
 
 </html>

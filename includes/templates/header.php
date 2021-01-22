@@ -1,10 +1,10 @@
+
 <!doctype html>
 <html class="no-js" lang="">
 
 <head>
   <meta charset="utf-8">
-  <title></title>
-  <meta name="description" content="">
+  
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <link rel="manifest" href="site.webmanifest">
@@ -31,7 +31,7 @@
         content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0'
          
 />
-
+<script src="js/DetectarVisibilidad.js?v=<?php echo time(); ?>"></script>
   <!-- 08/09/2020 INICIO DEL PROYECTO-->
 </head>
 
@@ -60,7 +60,7 @@
       </div>
       <div class="botonsesiones">
         <div class="botones_barra">
-          <a href="#">Iniciar Sesión</a>
+          <a href="login.php">Iniciar Sesión</a>
         </div> 
       </div>
       <div class="hotcall">

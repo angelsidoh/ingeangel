@@ -1,6 +1,20 @@
 <?php
 require 'includes/templates/header.php'
 ?>
+
+
+<title>Términos y Condiciones</title>
+<meta name="description" content="El usuario, está condicionado a la aceptación de todos los términos, condiciones, políticas y notificaciones aquí establecidos.">
+<meta name="title" content = "Desarrollo Web">
+<meta name="keywords" content="Programador Web, Desarrollo Web, ¿Dónde puedo hacer mi pagina web?, ¿Dónde puedo hacer mi sitio web?, Quiero a alguien que haga mi página web, Quiero a alguien que haga mi sitio web , Costos de hacer una página web, Costos de hacer una sitio web,Profesionales que trabajan en ingeangel.com,
+Quienes trabajan en ingeangel.com,
+Habilidades de profesionales de ingeangel.com
+"/>
+<meta name="author" content="José Angel Ruiz Chávez" />
+<meta name="copyright" content="José Angel Ruiz Chávez" />
+
+
+
 <div class="partes-de-seccion">
 <p>TÉRMINOS DE SERVICIO
 
@@ -163,7 +177,7 @@ Cualquier ambigüedad en la interpretación de estas Condiciones del servicio no
 
 SECCIÓN 18 - LEY
 
-Estas Condiciones del servicio y cualquier acuerdos aparte en el que te proporcionemos servicios se regirán e interpretarán en conformidad con las leyes de San Jose de la Mina #42, Uruapan, MIC, 60125, Mexico.
+Estas Condiciones del servicio y cualquier acuerdos aparte en el que te proporcionemos servicios se regirán e interpretarán en conformidad con las leyes de Uruapan, MIC, 60125, Mexico.
 
 
 SECCIÓN 19 - CAMBIOS EN LOS TÉRMINOS DE SERVICIO
