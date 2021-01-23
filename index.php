@@ -312,23 +312,19 @@ require 'includes/templates/header.php';
             <div class="elemento-grid">
                 <div class="contenedor-efecto">
                     <div class="titulo-seccion">
-                    <h1 id="sparklemaster" class="sparklemaster" style="color:  #ffffff;">Seguridad</h1>
-                    <i style="font-size: 60px;" class="fas fa-user-shield"></i>
+                        <h1 id="sparklemaster" class="sparklemaster" style="color:  #000000;">Seguridad</h1>
+                        <i style="font-size: 60px; color:#000000;" class="fas fa-user-shield"></i>
                     </div>
                 </div>    
-            <p>La seguridad en la red es uno de los temas con más importancia, nosotros brindamos a nuestros clientes varias “barreras” de protección, contando así con expertos que dan seguimiento todos los días, a un nivel de servidor (el sistema en que se encuentra almacenada tu página web y bases de datos), y a un nivel de página/sitio web.</p>
-            <p>
+            <p style="color: #000000;">La seguridad en la red es uno de los temas con más importancia, nosotros brindamos a nuestros clientes varias “barreras” de protección, contando así con expertos que dan seguimiento todos los días, a un nivel de servidor (el sistema en que se encuentra almacenada tu página web y bases de datos), y a un nivel de página/sitio web.</p>
+            <p style="color: #000000;">
             Actualmente se brindan parches de seguridad que nos ayudan a detectar si tu web esta siendo atacada, y por ende podemos realizar acciones de forma automática en caso de ser necesario.
             </p>
-            <p>
-
+            <p style="color: #000000;">
             Los datos, de las bases de datos en MySQL, están programados con un nivel de encriptación, que brinda otro nivel más de seguridad. Pues estas son el blanco principal en caso de un ataque.
             </p>
-            <p>Además, todos los días realizamos copias de seguridad que irán a una carpeta de destino para su acceso remoto en caso de requerirlo.</p>
-           
-            
+            <p style="color: #000000;">Además, todos los días realizamos copias de seguridad que irán a una carpeta de destino para su acceso remoto en caso de requerirlo.</p>
         </div>
-           
         <div class="elemento-grid">
                 <div class="contenedor-efecto">
                     <div class="titulo-seccion">
@@ -341,8 +337,55 @@ require 'includes/templates/header.php';
             <p>
             Existen diferentes capacidades de servicio de hosting, nosotros ponemos a discusión de nuestros clientes 10 Gigabytes de espacio en disco SD (Estado Solido) por proyecto.
             </p>
-            <p>¿
+            <p>
             Recordemos que los archivos con código: HTML, CSS3, PHP y JAVASCRIPT, son muy pequeños por lo que tendremos espacio suficiente para almacenar bases de datos e imagen y videos necesarios para dar vida a tu proyecto.
+            </p>
+        </div>
+        <div class="elemento-grid">
+                <div class="contenedor-efecto">
+                    <div class="titulo-seccion">
+                    <h1 id="sparklemaster" class="sparklemaster" style="color:  #ffffff;">Página Web Adaptativo o Responsivo</h1>
+                    <!-- <i style="font-size: 60px;" class="fas fa-desktop"></i> -->
+                    <i style="font-size: 60px;" class="fas fa-laptop"></i>
+                    <!-- <i style="font-size: 60px;" class="fas fa-tablet-alt"></i> -->
+                    <i style="font-size: 60px;" class="fas fa-mobile-alt"></i>
+                   
+                    </div>
+                </div>    
+            <p>Es de gran importancia crear una página/sitio web que se adapte a cualquier dispositivo inteligente; computadora, Tablet y Smartphone de la actualidad.</p>
+            <p>
+            La forma que tenemos para desarrollar/programar esta función tiene que ver con variables que cambian dentro de la página/sitio web cuando es ejecutada en los diferentes dispositivos, reacomodando el contenido si estas variables llegan a su límite de visualización.
+            </p>
+            <p>
+            Nosotros codificamos varios limites cuando es necesario, alcanzando una amplia gama de resoluciones de dispositivos inteligentes, con un límite mínimo de visualización perfecta del contenido de tu página/sitio web de 300px de ancho por 300px de alto. 
+            </p>
+            <p>¿Qué sucede si un dispositivo tiene menos de 300pixeles de ancho y 300pixeles de alto? Cuando esto sucede los elementos comienzan a desacomodarse por su tamaño, impidiendo muchas veces hacer clic en botones debido a que hay otro elemento por encima. Esta resolución no es nada común en la actualidad, por lo que no debería preocuparte, pues el 99.99% de los dispositivos tienes resoluciones mucho más grandes.</p>
+        </div>
+        <div class="elemento-grid">
+                <div class="contenedor-efecto">
+                    <div class="titulo-seccion">
+                    <h1 id="sparklemaster" class="sparklemaster" style="color:  #ffffff;">Optimización de recurso multimedia.</h1>
+                    <i style="font-size: 60px;" class="fas fa-photo-video"></i>
+                    
+                    </div>
+                </div>    
+            <p>Para una página/sitio web tenga un excelente tiempo de respuesta con los usuarios de la misma, debemos hacer ajustes a los archivos de imágenes y videos que nuestros clientes proporcionan para su elaboración.</p>
+            <p>
+            Es por ello, que procesamos todos los archivos multimedia, tratando de mantener toda la calidad con la que se entregaron. Así a través de este procedimiento mejoramos significativamente la ejecución de cada una de las secciones de la web, independientemente si contiene una imagen o video. 
+            </p>
+            
+        </div>
+        <div class="elemento-grid">
+                <div class="contenedor-efecto">
+                    <div class="titulo-seccion">
+                    <h1 id="sparklemaster" class="sparklemaster" style="color:  #ffffff;">Google Analytics</h1>
+                    <i style="font-size: 60px;" class="fas fa-chart-line"></i>
+                    
+                    </div>
+                </div>    
+            <p>Es una herramienta de Google que nos permite hacer análisis del tráfico de nuestra página/sitio web (Usuarios), contando con un apartado en tiempo real para analizar de cerca la tendencia de una de nuestras publicaciones, puedes saber si los usuarios están viendo una sección específica, o que dispositivos usan para navegar por tu página/sitio web, si te encontraron en el buscador de Google, o si vienen de una plataforma como Facebook o YouTube donde hallas contratado publicidad para tus productos. Además, presenta un informe en días, semanas, meses y años.</p>
+            <p>
+            Nosotros habilitamos esta característica a tu sitio web y te damos el acceso total al su entorno además de una guía escrita en PDF sobre cómo usar esta herramienta.
             </p>
         </div>
         </div>
