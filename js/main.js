@@ -1,3 +1,4 @@
+
 if ($('#paquetes').is(':hidden')) {
   console.log("Esta oculto");
 } else {

@@ -45,7 +45,7 @@
     dispocitivo. -->
   
        
-  <div class = "seccion-completa">
+  <div id="inicio" class = "seccion-completa">
     <div class = "menu-barra">
       <div class="logs"> <a href = "index.php#">
         <div class = "imglogo"></div>

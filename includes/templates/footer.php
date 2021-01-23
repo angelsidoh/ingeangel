@@ -195,11 +195,19 @@ Puede leer más sobre el uso de cookies en nuestra <a href="politicas.php">polí
             $("#efecto-ventanaright1").addClass('ventanaright-efecto');
         }
     }
+    function cambiaVisibilidad4(visible, elemento){
+        console.log("¿Elemento %s está visible?: %s", elemento.id, visible);
+        if(visible == true){
+            $("#dinamico-efecto").addClass('dinamico-efectox');
+            $("#dinamico-efecto").addClass('dinamico-efectox');
+        }
+    }
     
     var paquetes = document.getElementById("efecto-ventanaleft");
     var paquetes1 = document.getElementById("efecto-ventanaright");
     var paquetes2 = document.getElementById("efecto-ventanaleft1");
     var paquetes3 = document.getElementById("efecto-ventanaright1");
+    var paquetes4 = document.getElementById("dinamico-efecto");
     
     inViewportPartially(paquetes, cambiaVisibilidad);
     inViewportTotally(paquetes, cambiaVisibilidad);
@@ -212,6 +220,23 @@ Puede leer más sobre el uso de cookies en nuestra <a href="politicas.php">polí
 
     inViewportPartially3(paquetes3, cambiaVisibilidad3);
     inViewportTotally3(paquetes3, cambiaVisibilidad3);
+
+    inViewportPartially4(paquetes4, cambiaVisibilidad4);
+    inViewportTotally4(paquetes4, cambiaVisibilidad4);
+</script>
+<script type="text/javascript">
+function moverseA(idDelElemento) {
+    location.hash = "#" + idDelElemento;
+}
+function capturarf5(e){
+	var code = (e.keyCode ? e.keyCode : e.which);
+	if(code == 116) {
+		moverseA("inicio"); // sin el #
+	 }
+}
+
+document.onkeydown=capturarf5;
+
 </script>
 </body>
 
