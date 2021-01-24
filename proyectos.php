@@ -27,13 +27,13 @@ require 'includes/templates/header.php';
             </div>
             <div id="lista-proyectos" class="lista-proyectos" style="display: none;">
                 <div class="links">
-                    <a href="https://ibauruapan.com.mx/"><p><i class="fas fa-caret-right"></i> https://ibauruapan.com.mx/</p></a>
+                    <a href="https://ibauruapan.com.mx/" target="_blank"><p><i class="fas fa-caret-right"></i> https://ibauruapan.com.mx/</p></a>
                 </div>
                 <div class="links">
-                    <a href="https://sociedadintelectualdelaguacatemexicano.com/"><p><i class="fas fa-caret-right"></i> https://sociedadintelectualdelaguacatemexicano.com/</p></a>
+                    <a href="https://sociedadintelectualdelaguacatemexicano.com/" target="_blank"><p><i class="fas fa-caret-right"></i> https://sociedadintelectualdelaguacatemexicano.com/</p></a>
                 </div>
                 <div class="links">
-                    <a href="https://ingeangel.com/"><p><i class="fas fa-caret-right"></i> https://ingeangel.com/</p></a>
+                    <a href="https://ingeangel.com/" target="_blank"><p><i class="fas fa-caret-right"></i> https://ingeangel.com/</p></a>
                 </div>
             </div>
        </div>
@@ -50,13 +50,42 @@ require 'includes/templates/header.php';
             </div>
             <div id="lista-practicas" class="lista-practicas" style="display: none;">
                 <div class="links">
-                    <a href="#"><p><i class="fas fa-caret-right"></i> MexMuebles</p></a>
+                    <a href="proyectos/MEXmubles/mexmbles.html" target="_blank"><p><i class="fas fa-caret-right"></i> MexMuebles</p></a>
                 </div>
                 <div class="links">
-                    <a href="#"><p><i class="fas fa-caret-right"></i> Sushi´s</p></a>
+                    <a href="proyectos/Sushis/sushis.html" target="_blank"><p><i class="fas fa-caret-right"></i> Sushi´s</p></a>
                 </div>
                 <div class="links">
-                    <a href="#"><p><i class="fas fa-caret-right"></i> FluidMouse</p></a>
+                    <a href="proyectos/Animaciondeplaneta/planet.php" target="_blank"><p><i class="fas fa-caret-right"></i> Animación de Planeta</p></a>
+                </div>
+                <div class="links">
+                    <a href="proyectos/fluidmouse/fluidmouse.php" target="_blank"><p><i class="fas fa-caret-right"></i> Animación de API FluidSimu</p></a>
+                </div>
+            </div>
+       </div>
+       <div class="submenu-proyectos">
+            <div class="titulo-proyecto">
+               <h1>API´s</h1>
+            </div>
+            <div class="mas-proyecto">
+                <input type = "checkbox" id = "check-apis" name = "menu">
+                    <label for = "check-apis">
+                    <i id="plus2" class="far fa-plus-square"></i>
+                    <i id="neg2" class="far fa-minus-square" style="display: none;"></i>
+                    </label>
+            </div>
+            <div id="lista-apis" class="lista-apis" style="display: none;">
+                <div class="links">
+                    <a href="#" target="_blank"><p><i class="fas fa-caret-right"></i> Conekta - API de pagos con tarjeta de Crédito/Debito</p> </a>
+                </div>
+                <div class="links">
+                    <a href="#" target="_blank"><p><i class="fas fa-caret-right"></i> Paypal - API de pagos por cuentas PayPal</p></a>
+                </div>
+                <div class="links">
+                    <a href="#" target="_blank"><p><i class="fas fa-caret-right"></i> Hybridauth - API Registro y inicios de sesión con redes soliales</p></a>
+                </div>
+                <div class="links">
+                    <a href="#" target="_blank"><p><i class="fas fa-caret-right"></i> Animación de API FluidSimu</p></a>
                 </div>
             </div>
        </div>

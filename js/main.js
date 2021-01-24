@@ -29,6 +29,22 @@ $("#checkpracticas").click(function () {
     $("#lista-practicas").hide();
   }
 });
+$('input:checkbox').removeAttr('checked');
+$('input[type=checkbox]').prop('checked', false);
+$("#check-apis").click(function () {
+  if ($(this).is(":checked")) {
+    $("#plus2").hide();
+    $("#neg2").show();
+    $("#lista-apis").show();
+    $(".links a p").addClass('color-font');
+    
+
+  } else {
+    $("#plus2").show();
+    $("#neg2").hide();
+    $("#lista-apis").hide();
+  }
+});
 
 // end menu proyectos
 

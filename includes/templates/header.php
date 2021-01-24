@@ -74,8 +74,7 @@
       <div class="proyectos">
         <div class="proy"><a href="proyectos.php#proyectos"><p>Proyectos</p> </a>
         </div>
-        <div class="pract"><a href="#practicas"><p>Prácticas</p></a>
-        </div>
+        
         <!-- 
          -->
       </div>

@@ -356,7 +356,7 @@ html {
   color: var(--ColorOpacEspecialHover);
   margin-right: -1px;
 }
-.lista-proyectos, .lista-practicas{
+.lista-proyectos, .lista-practicas, .lista-apis{
   grid-column: 1 / 3;
   grid-row: 2 / 3;
   width: 100%;
@@ -1299,18 +1299,10 @@ background: -moz-linear-gradient(top, rgba(95, 95, 95, 0.75) 0%, rgba(77, 58, 56
   margin-top: 15px;
   margin-left: -10%;
   animation: blink-btnproyecto 3s 3;
-  display: grid;
-  grid-template-columns: repeat(1, 50% 50%);
-  grid-column-gap: 10px;
+  
   
 }
-.pract{
-  width: 100%;
-  height: 100%;
-  border: 1px solid black;
-  overflow: hidden;
-  z-index: 99;
-}
+
 .proy{
   width: 100%;
   height: 100%;
@@ -1400,7 +1392,7 @@ background: -moz-linear-gradient(top, rgba(95, 95, 95, 0.75) 0%, rgba(77, 58, 56
 
 }
  
-#check, #check-hotcall, #checkproyectos, #checkpracticas{
+#check, #check-hotcall, #checkproyectos, #checkpracticas, #check-apis{
   display: none;
 }
 .fix-menubarra{
