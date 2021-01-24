@@ -1,0 +1,42 @@
+body{
+    overflow: hidden; 
+}
+.fondo{
+    background: black;
+    position: absolute;
+    /* width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0; */
+    width: 1920px;
+    height: 1080px;  
+    top: calc(52.3% - 540px);
+    left: calc(50% - 960px);
+    
+    background-image: url(img/Eclipcecc.png);
+  
+}
+.planet{
+    position: absolute;
+    width: 650px;
+    height: 650px;
+    background: rgb(3, 17, 27);
+    top: calc(50% - 325px);
+    left: calc(50% - 325px);
+    border-radius: 50%;
+    
+    background: url(img/Map.png);
+    background-size: cover;
+
+    -webkit-animation: planet 12s infinite linear;
+    
+}
+
+@-webkit-keyframes planet{
+    from{
+        background-position: left center;
+    }to{
+        background-position: -1075px center;
+    }
+}
+      
