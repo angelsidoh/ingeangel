@@ -9,7 +9,9 @@ require 'includes/templates/header.php';
 <meta name="keywords" content="Programador Web, Desarrollo Web, ¿Dónde puedo hacer mi pagina web?, ¿Dónde puedo hacer mi sitio web?, Quiero a alguien que haga mi página web, Quiero a alguien que haga mi sitio web , Costos de hacer una página web, Costos de hacer una sitio web " />
 <meta name="author" content="José Angel Ruiz Chávez" />
 <meta name="copyright" content="José Angel Ruiz Chávez" />
-
+<div class="f">
+    
+</div>
 <div class="contenedorx">
     <div id="paquetes" class="contenedor-paquetes">
         <div class="paquete1">
