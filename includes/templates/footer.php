@@ -167,7 +167,7 @@ Puede leer más sobre el uso de cookies en nuestra <a href="politicas.php">polí
 <script>
     
     function cambiaVisibilidad(visible, elemento){
-        console.log("¿Elemento %s está visible?: %s", elemento.id, visible);
+        
         if(visible == true){
             $("#efecto-ventanaleft").addClass('ventanaleft-efecto');
             $("#efecto-ventanaleft").addClass('ventanaleft-efecto');
@@ -175,28 +175,28 @@ Puede leer más sobre el uso de cookies en nuestra <a href="politicas.php">polí
     }
     
     function cambiaVisibilidad1(visible, elemento){
-        console.log("¿Elemento %s está visible?: %s", elemento.id, visible);
+        
         if(visible == true){
             $("#efecto-ventanaright").addClass('ventanaright-efecto');
             $("#efecto-ventanaright").addClass('ventanaright-efecto');
         }
     }
     function cambiaVisibilidad2(visible, elemento){
-        console.log("¿Elemento %s está visible?: %s", elemento.id, visible);
+        
         if(visible == true){
             $("#efecto-ventanaleft1").addClass('ventanaleft-efecto');
             $("#efecto-ventanaleft1").addClass('ventanaleft-efecto');
         }
     }
     function cambiaVisibilidad3(visible, elemento){
-        console.log("¿Elemento %s está visible?: %s", elemento.id, visible);
+        
         if(visible == true){
             $("#efecto-ventanaright1").addClass('ventanaright-efecto');
             $("#efecto-ventanaright1").addClass('ventanaright-efecto');
         }
     }
     function cambiaVisibilidad4(visible, elemento){
-        console.log("¿Elemento %s está visible?: %s", elemento.id, visible);
+        
         if(visible == true){
             $("#dinamico-efecto").addClass('dinamico-efectox');
             $("#dinamico-efecto").addClass('dinamico-efectox');

@@ -1,3 +1,50 @@
+// menu proyectos
+$('input:checkbox').removeAttr('checked');
+$('input[type=checkbox]').prop('checked', false);
+$("#checkproyectos").click(function () {
+  if ($(this).is(":checked")) {
+    $("#plus").hide();
+    $("#neg").show();
+    $("#lista-proyectos").show();
+
+  } else {
+    $("#plus").show();
+    $("#neg").hide();
+    $("#lista-proyectos").hide();
+  }
+});
+$('input:checkbox').removeAttr('checked');
+$('input[type=checkbox]').prop('checked', false);
+$("#checkpracticas").click(function () {
+  if ($(this).is(":checked")) {
+    $("#plus1").hide();
+    $("#neg1").show();
+    $("#lista-practicas").show();
+    $(".links a p").addClass('color-font');
+    
+
+  } else {
+    $("#plus1").show();
+    $("#neg1").hide();
+    $("#lista-practicas").hide();
+  }
+});
+
+// end menu proyectos
+
+var pathname = window.location.pathname;
+pathname = (pathname.replace('/01ingeangel.com', ''));
+pathname = (pathname.replace('01', ''));
+console.log(pathname);
+if (pathname === '/proyectos.php') {
+
+  $(document).ready(function(){
+   
+	    $("body").css("background-color", "#161616");
+    
+});
+
+}
 
 if ($('#paquetes').is(':hidden')) {
   console.log("Esta oculto");
@@ -127,40 +174,6 @@ text.find("span:nth-child(" + (Math.floor(Math.random()*numLetters)+1) + ")")
 setTimeout(randomBlurize, 100);
 } // Call once
 randomBlurize();
-
-// hack to get animations to run again
-
-// $("h3").lettering();
-
-// // hack to get animations to run again
-
-
-// var text = $("#sparklemaster"),
-// numLetters = text.find("span").length;
-// console.log(numLetters);
-
-// function randomBlurize() {
-// text.find("span:nth-child(" + (Math.floor(Math.random()*numLetters)+1) + ")")
-//   .animate({
-//     'textShadowBlur': Math.floor(Math.random()*25)+4,
-//     'textShadowColor': 'rgba(0,100,0,' + (Math.floor(Math.random()*200)+55) + ')'
-//   });
-// // Call itself recurssively
-// setTimeout(randomBlurize, 100);
-// } // Call once
-// randomBlurize();
-// var text = $("#sparklemaster"),
-//   numLetters = text.find("span").length;
-//   console.log(numLetters);
-
-// function randomBlurize() {
-
-
-//   // Call itself recurssively
-//   setTimeout(randomBlurize, 100);
-// } // Call once
-// randomBlurize();
-
 
 $("#textBienvenida > div").length; 
 var x = 'abc';
