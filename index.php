@@ -145,7 +145,7 @@ require 'includes/templates/header.php';
                             <p>Desarrollada por el físico Tim Berners-Lee, con la idea de poder compartir documentos por internet, y uniendo fuerzas con Robert Cailliau Ingeniero en Sistemas, Presentaron el proyecto ganador ante la World Wide Web.
                             </p>
                             <p>
-                                En ingeangel.com usamos este lenguaje de programación (lenguaje de etiquetas HTML) para etiquetar cada elemento que demande el proyecto, siendo capaces etiquetar todo tipo de contenido en una página/sitio web.</p>
+                                En ingeangel.com, este lenguaje de programación (lenguaje de etiquetas HTML) para etiquetar cada elemento que demande el proyecto, siendo capaces etiquetar todo tipo de contenido en una página/sitio web.</p>
                             <h3>Ventajas</h3>
                             <ul>
                                 <li>1. Maquetación de la página web estructurada de una manera personalizada.</li>
@@ -178,7 +178,7 @@ require 'includes/templates/header.php';
                             <p>Propuesto en la World Wide Web por Haron Wium Le y Bert Bos, llamada también “hoja de estilos” en un lenguaje de programación que permite dar forma gráfica a etiquetas de html.
                             </p>
                             <p>
-                                En ingeangel la “hoja de estilos” para dar seguimiento al diseño entregador por nuestros clientes, siendo capaces de ser minuciosos con los pequeños detalles gráficos.
+                                En ingeangel.com la “hoja de estilos” es para dar seguimiento al diseño entregado por el cliente, cada detalles gráficos quedara plasmado en el proyecto.
                             </p>
                             <h3>Ventajas</h3>
                             <ul>
@@ -211,7 +211,7 @@ require 'includes/templates/header.php';
                             <p>PHP es un lenguaje de programación de uso general que se adapta especialmente al desarrollo web. Fue creado inicialmente por el programador danés-canadiense Rasmus Lerdorf en 1994.
                             </p>
                             <p>
-                                En ingeangel.com estamos seguros que es el lenguaje de programación con mas importancia de todos. Pues de este depende que tan segura e inteligente puede ser tu página/sitio web.</p>
+                                En ingeangel.com este lenguaje de programación es por mucho el más importante de todos. Pues de este depende que tan segura e inteligente puede ser tu página/sitio web.</p>
                             <h3>Ventajas</h3>
                             <ul>
                                 <li>1. Brinda capacidades para la página/sitio web de conexión con bases de datos en MySQL.</li>
@@ -247,7 +247,7 @@ require 'includes/templates/header.php';
                             <p>JavaScript fue desarrollado originalmente por Brendan Eich de Netscape con el nombre de Mocha, el desarrollador se enfrento al problema de las capacidades de velocidad del internet, que hacían torpes a los formularios que interactuaban con los usuarios de una página, pues si por algún motivo se equivocaba tendría que esperar a recargar la pagina del error y volver al formulario para corregirlo. La función de JavaScript arreglo muy bien este problema, permitiendo interactuar con los usuarios previo al envió de los formularios advirtiéndoles de los errores y facilitando su uso.
                             </p>
                             <p>
-                                En ingeangel.com creemos que es el 2do lenguaje mas importante, ya que brinda inteligencia extra, que puede ser ejecutada desde la computadora del usuario. Esto nos sirve, por ejemplo, para el efecto de animación que estás viendo en este momento.
+                                En ingeangel.com este lenguaje brinda inteligencia extra, que puede ser ejecutada desde la computadora del usuario. Esto sirve, por ejemplo, para el efecto de animación que estás viendo en este momento.
                             </p>
                             <h3>Ventajas</h3>
                             <ul>
@@ -285,7 +285,7 @@ require 'includes/templates/header.php';
                         <p>Fue desarrollado inicialmente por MySQL AB (empresa fundada por David Axmark, Allan Larsson y Michael Widenius). es un tipo de base de datos muy popular para el desarrollo de proyectos web, en gran parte de su desarrollo esta escrita en ANSI y C++.
                         </p>
                         <p>
-                        En ingeangel.com, en estos últimos (código ANSI y C++), tenemos una amplia experiencia, con casi 10 años en el campo, brindado a nuestro cliente, mucha mas capacidad para su página/sitio web.
+                        En ingeangel.com, en estos últimos (código ANSI y C++), cuenta con amplia experiencia, con casi 10 años en el campo, brindado a nuestro cliente, mucha mas capacidad para las conexiones con las bases de datos de su página/sitio web.
                         </p>
                         <h3>Ventajas</h3>
                         <ul>
@@ -318,14 +318,14 @@ require 'includes/templates/header.php';
                         <i style="font-size: 60px; color:#000000;" class="fas fa-user-shield"></i>
                     </div>
                 </div>    
-            <p style="color: #000000;">La seguridad en la red es uno de los temas con más importancia, nosotros brindamos a nuestros clientes varias “barreras” de protección, contando así con expertos que dan seguimiento todos los días, a un nivel de servidor (el sistema en que se encuentra almacenada tu página web y bases de datos), y a un nivel de página/sitio web.</p>
+            <p style="color: #000000;">La seguridad en la red es uno de los temas con más importancia, cuento con varias “barreras” de protección, dando seguimiento todos los días, a un nivel de servidor (el sistema en que se encuentra almacenada tu página web y bases de datos), y a un nivel de página/sitio web.</p>
             <p style="color: #000000;">
-            Actualmente se brindan parches de seguridad que nos ayudan a detectar si tu web esta siendo atacada, y por ende podemos realizar acciones de forma automática en caso de ser necesario.
+            Actualmente cargo parches de seguridad que te ayudarán a detectar si tu web esta siendo atacada, y asi realizar acciones de forma automática en caso de ser necesario.
             </p>
             <p style="color: #000000;">
             Los datos, de las bases de datos en MySQL, están programados con un nivel de encriptación, que brinda otro nivel más de seguridad. Pues estas son el blanco principal en caso de un ataque.
             </p>
-            <p style="color: #000000;">Además, todos los días realizamos copias de seguridad que irán a una carpeta de destino para su acceso remoto en caso de requerirlo.</p>
+            <p style="color: #000000;">Además, todos los días realizo copias de seguridad que irán a una carpeta de destino para su acceso remoto en caso de requerirlo.</p>
         </div>
         <div class="elemento-grid">
                 <div class="contenedor-efecto">
@@ -335,12 +335,12 @@ require 'includes/templates/header.php';
                     
                     </div>
                 </div>    
-            <p>Es un servicio de alojamiento, para tu página/sitio web, lo podemos comparar fácilmente con una memoria USB para nuestras carpetas de documentos. Teniendo este ejemplo en mente, una página/sitio web es una estructura ordenada de documentos y archivos que en su conjunto permiten visualizar el diseño que hemos programado en un navegador web.</p>
+            <p>Es un servicio de alojamiento, para tu página/sitio web, lo puedo comparar fácilmente con una memoria USB para nuestras carpetas de documentos. Teniendo este ejemplo en mente, una página/sitio web es una estructura ordenada de documentos y archivos que en su conjunto permiten visualizar el diseño que hemos programado en un navegador web.</p>
             <p>
-            Existen diferentes capacidades de servicio de hosting, nosotros ponemos a discusión de nuestros clientes 10 Gigabytes de espacio en disco SD (Estado Solido) por proyecto.
+            Existen diferentes capacidades de servicio de hosting, pongo a tu discusión 10 Gigabytes de espacio en disco SD (Estado Solido) por proyecto. (Si necesita más el costo variará segun el servicio)
             </p>
             <p>
-            Recordemos que los archivos con código: HTML, CSS3, PHP y JAVASCRIPT, son muy pequeños por lo que tendremos espacio suficiente para almacenar bases de datos e imagen y videos necesarios para dar vida a tu proyecto.
+            Recordemos que los archivos con código: HTML, CSS3, PHP y JAVASCRIPT, son muy pequeños por lo que es espacio suficiente para almacenar bases de datos, tambien imagenes y videos necesarios para dar vida a tu proyecto.
             </p>
         </div>
         <div class="elemento-grid">
@@ -356,12 +356,12 @@ require 'includes/templates/header.php';
                 </div>    
             <p>Es de gran importancia crear una página/sitio web que se adapte a cualquier dispositivo inteligente; computadora, Tablet y Smartphone de la actualidad.</p>
             <p>
-            La forma que tenemos para desarrollar/programar esta función tiene que ver con variables que cambian dentro de la página/sitio web cuando es ejecutada en los diferentes dispositivos, reacomodando el contenido si estas variables llegan a su límite de visualización.
+            La forma para desarrollar/programar esta función tiene que ver con variables que cambian dentro de la página/sitio web cuando es ejecutada en los diferentes dispositivos, reacomodando el contenido si estas variables llegan a su límite de visualización.
             </p>
             <p>
-            Nosotros codificamos varios limites cuando es necesario, alcanzando una amplia gama de resoluciones de dispositivos inteligentes, con un límite mínimo de visualización perfecta del contenido de tu página/sitio web de 300px de ancho por 300px de alto. 
+            En ingeangel.com codifico limites para tu pagina/sitio web cuando es necesario, alcanzando una amplia gama de resoluciones de dispositivos inteligentes, con un límite mínimo de visualización perfecta del contenido de tu página/sitio web de 250px de ancho por 250px de alto. 
             </p>
-            <p>¿Qué sucede si un dispositivo tiene menos de 300pixeles de ancho y 300pixeles de alto? Cuando esto sucede los elementos comienzan a desacomodarse por su tamaño, impidiendo muchas veces hacer clic en botones debido a que hay otro elemento por encima. Esta resolución no es nada común en la actualidad, por lo que no debería preocuparte, pues el 99.99% de los dispositivos tienes resoluciones mucho más grandes.</p>
+            <p>¿Qué sucede si un dispositivo tiene menos de 250pixeles de ancho y 250pixeles de alto? Cuando esto sucede los elementos comienzan a desacomodarse por su tamaño, impidiendo muchas veces hacer clic en botones debido a que hay otro elemento por encima. Esta resolución no es nada común en la actualidad, por lo que no debería preocuparte, pues el 99.99% de los dispositivos actuales tienen resoluciones mucho más grandes.</p>
         </div>
         <div class="elemento-grid">
                 <div class="contenedor-efecto">
@@ -371,9 +371,9 @@ require 'includes/templates/header.php';
                     
                     </div>
                 </div>    
-            <p>Para una página/sitio web tenga un excelente tiempo de respuesta con los usuarios de la misma, debemos hacer ajustes a los archivos de imágenes y videos que nuestros clientes proporcionan para su elaboración.</p>
+            <p>Para una página/sitio web tenga un excelente tiempo de respuesta de carga, debemos hacer ajustes a los archivos de imágenes y videos que los clientes de ingeangel.com proporcionan para su elaboración.</p>
             <p>
-            Es por ello, que procesamos todos los archivos multimedia, tratando de mantener toda la calidad con la que se entregaron. Así a través de este procedimiento mejoramos significativamente la ejecución de cada una de las secciones de la web, independientemente si contiene una imagen o video. 
+            Es por ello, que existe un proceso para todos los archivos multimedia, tratando de mantener toda la calidad con la que se entregaron. Así a través de este procedimiento mejora significativamente la ejecución de cada una de las secciones de la web, independientemente si contiene una imagen o video. 
             </p>
             
         </div>
@@ -385,9 +385,9 @@ require 'includes/templates/header.php';
                     
                     </div>
                 </div>    
-            <p>Es una herramienta de Google que nos permite hacer análisis del tráfico de nuestra página/sitio web (Usuarios), contando con un apartado en tiempo real para analizar de cerca la tendencia de una de nuestras publicaciones, puedes saber si los usuarios están viendo una sección específica, o que dispositivos usan para navegar por tu página/sitio web, si te encontraron en el buscador de Google, o si vienen de una plataforma como Facebook o YouTube donde hallas contratado publicidad para tus productos. Además, presenta un informe en días, semanas, meses y años.</p>
+            <p>Es una herramienta de Google que nos permite hacer análisis del tráfico de nuestra página/sitio web (Usuarios), contando con un apartado en tiempo real para analizar de cerca la tendencia de una de nuestras publicaciones, puedes saber si los usuarios están viendo una sección específica, o que dispositivos usan para navegar por tu página/sitio web, si te encontraron en el buscador de Google, o si vienen de una plataforma como Facebook o YouTube donde hallas contratado publicidad para tus servicios o productos. Además, presenta un informe en días, semanas, meses y años.</p>
             <p>
-            Nosotros habilitamos esta característica a tu sitio web y te damos el acceso total al su entorno además de una guía escrita en PDF sobre cómo usar esta herramienta.
+            Esta característica estará dispnible en tu pagina/sitio web y tendrás el acceso total a su entorno además de una guía escrita en PDF sobre cómo usarla.
             </p>
         </div>
         </div>
