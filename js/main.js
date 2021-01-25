@@ -52,14 +52,20 @@ var pathname = window.location.pathname;
 pathname = (pathname.replace('/01ingeangel.com', ''));
 pathname = (pathname.replace('01', ''));
 console.log(pathname);
-if (pathname === '/proyectos.php') {
+if (pathname != '/index.php') {
 
   $(document).ready(function(){
    
-	    $("body").css("background-color", "#161616");
-    
+    $("body").css("background-color", "#161616");
+  
 });
 
+}else{
+  $(document).ready(function(){
+   
+    $("body").css("background-color", "#ffffff");
+  
+});
 }
 
 if ($('#paquetes').is(':hidden')) {
