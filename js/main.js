@@ -52,7 +52,7 @@ var pathname = window.location.pathname;
 pathname = (pathname.replace('/01ingeangel.com', ''));
 pathname = (pathname.replace('01', ''));
 console.log(pathname);
-if (pathname != '/index.php') {
+if (pathname != '/index.php' && pathname != '/') {
 
   $(document).ready(function(){
    

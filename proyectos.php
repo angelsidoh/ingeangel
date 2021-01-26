@@ -9,11 +9,16 @@ require 'includes/templates/header.php';
 <meta name="author" content="José Angel Ruiz Chávez" />
 <meta name="copyright" content="José Angel Ruiz Chávez" />
 <div class="imgangel-ruiz">
-    <img src="img/creadasporlaempresa/fotospb.png" alt="">
+    <div class="text-imgangel">
+        <h4>José Angel Ruiz Chávez <br> Ingeniero en Mecatrónica</h4>
+        
+        
+    </div>
+    <img src="img/creadasporlaempresa/fotospc-min.png" alt="">
 </div>
 <div id="proyectos" class="proyectos-gridconteiner">
     <div class="titulo-seccion">
-        <h1 id="sparklemaster" class="sparklemaster" style="color:  #93A9CC;">Proyectos</h1>
+        <h1 id="sparklemaster" class="sparklemaster" style="color:  #93A9CC;">Proyectos WEB</h1>
     </div>
     <div class="menu-proyectos">
        <div class="submenu-proyectos">

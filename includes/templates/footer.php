@@ -82,9 +82,9 @@
             </div>
             <!--text1__elem3-->
             <div class="ico__elem3">
-                <a href="curriculo.php" class="efecto"><i class="fas fa-angle-right">
+                <!-- <a href="curriculo.php" class="efecto"><i class="fas fa-angle-right">
                         <p></p>
-                    </i>Nuestro equipo</a>
+                    </i>Nuestro equipo</a> -->
                 <a href="#" class="efecto"><i class="fas fa-angle-right">
                         <p></p>
                     </i>Preguntas frecuentes</a>
