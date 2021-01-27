@@ -978,6 +978,7 @@ inset 0px 0px 0px 0px rgba(0,0,0,0.75);;
   grid-template-rows: repeat(3, 1320px);
   grid-column-gap: 0px;
   grid-row-gap: 50px;
+  
 }
 @media only screen and (min-width:560px){
   .contenedor-paquetes{
@@ -1014,9 +1015,113 @@ inset 0px 0px 0px 0px rgba(0,0,0,0.75);;
     
   }
 }
-.paquete1{
+/* El contenedor de la tarjeta */
+.fleep1, .fleep2,.fleep3 {
   grid-row: 1 / 1;
   grid-column: 1 / 1;
+  position: relative;
+  
+  /* Ancho y alto que tendra el contenedor de la tarjeta */
+  width: 100%;
+  height: 100%;
+  
+  
+  /* Determinamos la profundidad de los elementos */
+  -webkit-perspective: 800px;
+  -moz-perspective: 800px;
+  -o-perspective: 800px;
+  perspective: 800px;
+  }
+  .fleep2{
+    grid-row: 2 / 2;
+    grid-column: 1 / 1;
+  }
+  .fleep3{
+    grid-row: 3 / 3;
+    grid-column: 1 / 1;
+  }
+  @media only screen and (min-width:1280px){
+    .fleep2{
+      grid-row: 1 / 1;
+      grid-column: 2 / 2;
+      width: 100%;
+      height: 100%;
+    }
+  }
+  @media only screen and (min-width:1280px){
+    .fleep3{
+      grid-row: 1 / 1;
+      grid-column: 3 / 3;
+    }
+  }
+  
+  .card1,.card2,.card3 {
+  
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top:0px;
+  
+  cursor: pointer;
+  text-align: center;
+  /* Determinamos la trasicion de los efectos */
+  -webkit-transition: -webkit-transform 0.4s;
+  -moz-transition: -moz-transform 0.4s;
+  -o-transition: -o-transform 0.4s;
+  transition: transform 0.4s;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -o-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  z-index: 99;
+  
+  }
+  
+  /* Determinamos los grados de la rotación de la tarjeta */
+  .card1.flipped,.card2.flipped,.card3.flipped {
+  -webkit-transform: rotateY( 180deg );
+  -moz-transform: rotateY( 180deg );
+  -o-transform: rotateY( 180deg );
+  transform: rotateY( 180deg );
+  }
+  
+  /* */
+  .card1 .front,
+  .card1 .back,.card2 .front,
+  .card2 .back,.card3 .front,
+  .card3 .back  {
+ 
+  height: 100%;
+  width: 100%;
+  
+ 
+  position: absolute;
+  /*visibility hidden para esconder una cara mientras se muestra la otra */
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -o-backface-visibility: hidden;
+  backface-visibility: hidden;
+  box-shadow: 3px 5px 20px 2px rgba(0, 0, 0, 0.25);
+  }
+  
+  /*Determinamos los estilos deseados en la cara de atras de la tarjeta*/
+  .card1 .back, .card2 .back, .card3 .back{
+  width: 100%;
+  
+  /* Animacion para rotar la cara trasera */
+  -webkit-transform: rotateY( 180deg );
+  -moz-transform: rotateY( 180deg );
+  -o-transform: rotateY( 180deg );
+  transform: rotateY( 180deg );
+  }
+  
+  /*Determinamos los estilos deseados en la cara de delantera de la tarjeta*/ 
+ 
+  
+  
+
+.paquete1{
+  
   width: 100%;
   height: 100%;
   -webkit-box-shadow: 0px 0px 17px 1px rgba(0,0,0,0.75);
@@ -1025,6 +1130,7 @@ inset 0px 0px 0px 0px rgba(0,0,0,0.75);;
   
 }
 
+
 .text-paquete1{
   width: 95.5%;
   height: 91%;
@@ -1032,7 +1138,7 @@ inset 0px 0px 0px 0px rgba(0,0,0,0.75);;
 
   display: grid;
   grid-template-columns: repeat(1, 1fr);
-  grid-template-rows: repeat(11, 1fr);
+  grid-template-rows: repeat(10, 1fr);
 }
 
 .title{

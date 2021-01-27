@@ -1,3 +1,127 @@
+
+// $( "div.card" )
+// .mouseenter(function() {
+//  console.log('buenos dias angel');
+//  $(".card").addClass('card-flip');
+// })
+// .mouseleave(function() {
+//   console.log('adios');
+//   $(".card").removeClass('card-flip');
+// });
+var fleep = '0';
+$( ".fleep1" )
+.mouseenter(function() {
+ fleep = '1';
+ $('.card1').addClass('flipped');
+ $('.card2').removeClass('flipped');
+ $('.card3').removeClass('flipped');
+ $("#card1-front").hide();
+ $("#card2-front").show();
+ $("#card3-front").show();
+ console.log(fleep);
+})
+$( ".fleep1" )
+.mouseleave(function() {
+  fleep = '0';
+  console.log(fleep);
+});
+$( ".fleep2" )
+.mouseenter(function() {
+  $("#card1-front").show();
+  $("#card2-front").hide();
+  $("#card3-front").show();
+  $('.card1').removeClass('flipped');
+  $('.card2').addClass('flipped');
+  $('.card3').removeClass('flipped');
+ fleep = '2';
+ console.log(fleep);
+})
+$( ".fleep2" )
+.mouseleave(function() {
+  fleep = '0';
+  console.log(fleep);
+});
+$( ".fleep3" )
+.mouseenter(function() {
+
+  $("#card1-front").show();
+  $("#card2-front").show();
+  $("#card3-front").hide();
+  $('.card1').removeClass('flipped');
+  $('.card2').removeClass('flipped');
+  $('.card3').addClass('flipped');
+ fleep = '3';
+ console.log(fleep);
+})
+$( ".fleep3" )
+.mouseleave(function() {
+  fleep = '0';
+  console.log(fleep);
+});
+
+setInterval(function(){
+     console.log('fleepxx =' +fleep)
+      if(fleep === '0'){
+      $('.card1').removeClass('flipped');
+      $('.card2').removeClass('flipped');
+      $('.card3').removeClass('flipped');
+      $("#card1-front").show();
+  $("#card2-front").show();
+  $("#card3-front").show();}
+ 
+     
+    }, 3500);
+// var swikk = 0;
+// $('#mybutton1'+fleep).click(function() {
+//   swikk = swikk+ 1;
+//   console.log(swikk);
+  
+//   if (swikk === 1) {
+//     $('.card').addClass('flipped');
+//     $('.front').addClass('hide');
+//     $("#card-front").hide();
+//   }
+//   if(swikk === 2){
+//     $('.card').removeClass('flipped');
+//     swikk = 0;
+//   }
+//   });
+//   $('#mybutton2'+fleep).click(function() {
+//     swikk = swikk+ 1;
+//     console.log(swikk);
+    
+//     if (swikk === 1) {
+//       $('.card').addClass('flipped');
+//     }
+//     if(swikk === 2){
+//       $('.front').removeClass('hide');
+//       $('.card').removeClass('flipped');
+//       $("#card-front").show();
+//       swikk = 0;
+//     }
+//     });
+//   var condicion = 0;
+//  setInterval(function(){
+//    if(condicion === 0){
+//       cambn();
+//    }
+//   }, 500);
+//   var swikkx = 0;
+//   function cambn(){
+//     console.log(swikkx);
+//     swikkx = swikkx + 1;
+//     if (swikkx === 1) {
+//       $('.card').addClass('flipped');
+//     }
+//     if(swikkx === 2 ){
+//       $('.card').removeClass('flipped');
+      
+//     }
+//     if(swikkx === 3 ){
+//       $('.card').removeClass('flipped');
+//       condicion = 1;
+//     }
+//   }
 // menu proyectos
 $('input:checkbox').removeAttr('checked');
 $('input[type=checkbox]').prop('checked', false);

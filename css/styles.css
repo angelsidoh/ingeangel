@@ -91,7 +91,9 @@ button::before, button::after {
   transition: height 0.25s ease-out,
  width 0.25s ease-out 0.25s;
 }
-
+.center{
+  background-color: white;
+}
 .center:hover {
   color: #f45e61;
 }
