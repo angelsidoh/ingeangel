@@ -248,20 +248,7 @@
     inViewportPartially4(paquetes4, cambiaVisibilidad4);
     inViewportTotally4(paquetes4, cambiaVisibilidad4);
 </script>
-<script type="text/javascript">
-    function moverseA(idDelElemento) {
-        location.hash = "#" + idDelElemento;
-    }
 
-    function capturarf5(e) {
-        var code = (e.keyCode ? e.keyCode : e.which);
-        if (code == 116) {
-            moverseA("inicio"); // sin el #
-        }
-    }
-
-    document.onkeydown = capturarf5;
-</script>
 </body>
 
 </html>

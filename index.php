@@ -165,7 +165,7 @@ require 'includes/templates/header.php';
                             </div>
 
                         </div>
-                        <div class="back">
+                        <div id="card1-back" class="back">
                             <div class="text-paquete1">
                                 <div class="title">
                                     <div class="text">
@@ -255,7 +255,7 @@ require 'includes/templates/header.php';
                             </div>
 
                         </div>
-                        <div class="back">
+                        <div id="card1-back" class="back">
                             <div class="text-paquete1">
                                 <div class="title">
                                     <div class="text">
@@ -338,12 +338,12 @@ require 'includes/templates/header.php';
                                     </div>
                                 </div>
                                 <div class="botones-text">
-                                <i class="fas fa-exchange-alt"></i>
+                                <i id="mybutton1" class="fas fa-exchange-alt"></i>
                                 </div>
                             </div>
 
                         </div>
-                        <div class="back">
+                        <div id= "card3-back" class="back">
                             <div class="text-paquete1">
                                 <div class="title">
                                     <div class="text">

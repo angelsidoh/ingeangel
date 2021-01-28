@@ -1195,7 +1195,12 @@ inset 0px 0px 0px 0px rgba(0,0,0,0.75);;
   
   font-size: 32px;
   color: var(--ColorFontEspecial);
+  
 }
+.botones-text i:hover{
+  color: #00aee2;
+}
+
 .carc-costos{
   width: 100%;
   height: auto;
