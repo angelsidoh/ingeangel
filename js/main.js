@@ -24,6 +24,13 @@ $( ".fleep1" )
 .mouseleave(function() {
   fleep = '0';
   console.log(fleep);
+  if(fleep === '0'){
+    $('.card1').removeClass('flipped');
+    $('.card2').removeClass('flipped');
+    $('.card3').removeClass('flipped');
+    $("#card1-front").show();
+$("#card2-front").show();
+$("#card3-front").show();}
 });
 $( ".fleep2" )
 .mouseenter(function() {
@@ -40,6 +47,13 @@ $( ".fleep2" )
 .mouseleave(function() {
   fleep = '0';
   console.log(fleep);
+  if(fleep === '0'){
+    $('.card1').removeClass('flipped');
+    $('.card2').removeClass('flipped');
+    $('.card3').removeClass('flipped');
+    $("#card1-front").show();
+$("#card2-front").show();
+$("#card3-front").show();}
 });
 $( ".fleep3" )
 .mouseenter(function() {
@@ -57,20 +71,21 @@ $( ".fleep3" )
 .mouseleave(function() {
   fleep = '0';
   console.log(fleep);
+  if(fleep === '0'){
+    $('.card1').removeClass('flipped');
+    $('.card2').removeClass('flipped');
+    $('.card3').removeClass('flipped');
+    $("#card1-front").show();
+$("#card2-front").show();
+$("#card3-front").show();}
 });
 
-setInterval(function(){
-     console.log('fleepxx =' +fleep)
-      if(fleep === '0'){
-      $('.card1').removeClass('flipped');
-      $('.card2').removeClass('flipped');
-      $('.card3').removeClass('flipped');
-      $("#card1-front").show();
-  $("#card2-front").show();
-  $("#card3-front").show();}
+// setInterval(function(){
+//      console.log('fleepxx =' +fleep)
+      
  
      
-    }, 3500);
+//     }, 3500);
 // var swikk = 0;
 // $('#mybutton1'+fleep).click(function() {
 //   swikk = swikk+ 1;

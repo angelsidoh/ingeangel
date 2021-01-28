@@ -131,7 +131,7 @@ require 'includes/templates/header.php';
                             <div class="text-paquete1">
                                 <div class="title">
                                     <div class="text">
-                                        <h1>Paquete Basico</h1>
+                                        <h1>Paquete Básico</h1>
                                     </div>
                                     <div class="hr">
                                         <span><i class="far fa-bookmark"></i></span>
@@ -147,17 +147,20 @@ require 'includes/templates/header.php';
                                 </div>
                                 <div class="ventaja">
                                     <div class="text">
-                                        <p>1. Diseño básico de la página Web (En software de diseño gráfico)</p>
-                                        <p>2. Programación / Maquetación en html5, css3, php y JavaScript</p>
-                                        <p>3. Dominio gratis el primer año (Segundo año se paga una cuota)</p>
-                                        <p>4. Hosting (10GB de almacenamiento en SSD para una mejor velocidad)</p>
-                                        <p>5. Correos personalizados con tu dominio (Ejemplo: info@tudominio.com)</p>
-                                        <p>6. Certificado SSL de seguridad</p>
-                                        <p>7. Registro de una cuenta en Google Analytics para que revisé los resultados de tráfico en su sitio web.</p>
+                                        <h2>Características</h2>
+                                        <p>1.	Imagen en internet de tu profesión, marca o empresa.</p>
+                                        <p>2.	Publicaciones limitadas de sus servicios y productos (Para publicidad unicamente)</p>
+                                        <p>3.	Web única y personalizable.</p>
+                                        <p>4.	Soporte Técnico.</p>
+                                        <p>5.	Propiedad total de tu Sitio Web.</p>
+                                        <p>6.	Alcance ilimitado para atraer clientes nuevos.</p>
+                                        <p>7.	Tu página/sitio web siempre estará en línea a cualquier hora del día (24horas, 7 días por semana)</p>
+                                        <p>8.	Información de contacto de tus clientes.</p>
+                                        
                                     </div>
                                 </div>
-                                <div class="botones">
-                                    <a id="comprarbtn" href="#" class="button">Contratar</a>
+                                <div class="botones-text">
+                                <i class="fas fa-exchange-alt"></i>
                                 </div>
                             </div>
 
@@ -166,30 +169,35 @@ require 'includes/templates/header.php';
                             <div class="text-paquete1">
                                 <div class="title">
                                     <div class="text">
-                                        <h1>Paquete Basico compra</h1>
+                                        <h1>Costo Paquete Básico</h1>
                                     </div>
                                     <div class="hr">
-                                        <span><i class="far fa-bookmark"></i></span>
+                                        <span><i class="fas fa-wallet"></i></span>
                                     </div>
                                 </div>
                                 <div class="subtitle">
                                     <div class="text">
-                                        <h3>Ideal para empresas y negocios pequeños, además también para emprendedores.</h3>
+                                        <h3><i class="fas fa-dollar-sign"></i> 4,980.00 MXN Mensuales.</h3>
+                                        <a href="#"><p>¿Tienes dudas?</p></a>
+                                        <p>¡Pregunta antes de contratar!</p>
                                         <div class="hr">
-                                            <span> <i class="fas fa-angle-double-down"></i> </span>
+                                            <span> <i class="fas fa-handshake"></i> </span>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="ventaja">
                                     <div class="text">
-                                        <p>1. Diseño básico de la página Web (En software de diseño gráfico)</p>
-                                        <p>2. Programación / Maquetación en html5, css3, php y JavaScript</p>
-                                        <p>3. Dominio gratis el primer año (Segundo año se paga una cuota)</p>
-                                        <p>4. Hosting (10GB de almacenamiento en SSD para una mejor velocidad)</p>
-                                        <p>5. Correos personalizados con tu dominio (Ejemplo: info@tudominio.com)</p>
-                                        <p>6. Certificado SSL de seguridad</p>
-                                        <p>7. Registro de una cuenta en Google Analytics para que revisé los resultados de tráfico en su sitio web.</p>
-                                        <p>compra</p>
+                                        <h2>Contratarás los servicios:</h2>
+                                        <p>1. Programación/Maquetación en html5, css3, php y JavaScript</p>
+                                        <p>2. Dominio Gratis.</p>
+                                        <p>3. Capacidad de bases de datos 1 a 5 servicios o 1 a 10 productos distintos (Para publicidad unicamente).</p>
+                                        <p>3. Hosting (10GB de almacenamiento en SSD para una mejor velocidad)</p>
+                                        <p>4. Correos personalizados con tu dominio (Ejemplo: info@tudominio.com)</p>
+                                        <p>5. Certificado SSL de seguridad</p>
+                                        <p>6. Mantenimiento periódico de sistemas de seguridad</p>
+                                        <p>7. Modificación y Actualización de contenido</p>
+                                        <p>8. Registro de una cuenta en Google Analytics para que revisé los resultados de tráfico en su sitio web.</p>
+                                        
                                     </div>
                                 </div>
                                 <div class="botones">
@@ -228,18 +236,21 @@ require 'includes/templates/header.php';
                                 </div>
                                 <div class="ventaja">
                                     <div class="text">
-                                        <p>1. Diseño básico de la página Web (En software de diseño gráfico)</p>
-                                        <p>2. Programación / Maquetación en html5, css3, php y JavaScript además de bases de datos en MySql conectadas a la página.</p>
-                                        <p>3. Capacidad de bases de datos 1 a 20 servicios o 1 a 20 productos distintos, además de una base de datos para registrar e iniciar sesión para los usuarios de tu página web, y una sección para dar seguimientos a todos los pedidos de tus clientes de la página web. (Ejemplo enlace)</p>
-                                        <p>4. Dominio gratis el primer año (Segundo año se paga una cuota)</p>
-                                        <p>5. Hosting (10GB de almacenamiento en SSD para una mejor velocidad)</p>
-                                        <p>6. Correos personalizados con tu dominio (Ejemplo: info@tudominio.com)</p>
-                                        <p>7. Certificado SSL de seguridad</p>
-                                        <p>8. Registro de una cuenta en Google Analytics para que revisé los resultados de tráfico en su sitio web.</p>
+                                        <h2>Características</h2>
+                                        <p>1.	La imagen en internet de tu profesión, marca, o empresa.</p>
+                                        <p>2.	Publicaciones limitadas de sus servicios y productos (Para publicidad y ventas en linea)</p>
+                                        <p>3.	Programación de APIS para realizar ventas en línea.</p>
+                                        <p>4.	Sección de Pedidos y seguimiento de los mismos.</p>
+                                        <p>5.	Web única y personalizable.</p>
+                                        <p>6.	Soporte Técnico.</p>
+                                        <p>7.	Propiedad total de su Sitio Web.</p>
+                                        <p>8.	Alcance ilimitado para atraer clientes nuevos.</p>
+                                        <p>9.	Página/sitio web en linea 24horas, 7 días por semana (Para unicamente por Mantenimiento)</p>
+                                        <p>10.	Información de contacto de sus clientes.</p>
                                     </div>
                                 </div>
-                                <div class="botones">
-                                    <a id="comprarbtn" href="#" class="button">Contratar</a>
+                                <div class="botones-text">
+                                <i class="fas fa-exchange-alt"></i>
                                 </div>
                             </div>
 
@@ -248,30 +259,34 @@ require 'includes/templates/header.php';
                             <div class="text-paquete1">
                                 <div class="title">
                                     <div class="text">
-                                        <h1>Paquete Negocios COMPRAR</h1>
+                                        <h1>Costo Paquete Negocios</h1>
                                     </div>
                                     <div class="hr">
-                                        <span><i class="far fa-bookmark"></i></span>
+                                        <span><i class="fas fa-wallet"></i></span>
                                     </div>
                                 </div>
                                 <div class="subtitle">
                                     <div class="text">
-                                        <h3>Ideal para empresas o negocios Medianos, Profesionista Independiente, con capacidades de brindar diferentes productos y servicios.</h3>
+                                        <h3><i class="fas fa-dollar-sign"></i> 7,299.00 MXN Mensuales.</h3>
+                                        <a href="#"><p>¿Tienes dudas?</p></a>
+                                        <p>¡Pregunta antes de contratar!</p>
                                         <div class="hr">
-                                            <span> <i class="fas fa-angle-double-down"></i> </span>
+                                            <span> <i class="fas fa-handshake"></i> </span>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="ventaja">
                                     <div class="text">
-                                        <p>1. Diseño básico de la página Web (En software de diseño gráfico)</p>
-                                        <p>2. Programación / Maquetación en html5, css3, php y JavaScript además de bases de datos en MySql conectadas a la página.</p>
-                                        <p>3. Capacidad de bases de datos 1 a 20 servicios o 1 a 20 productos distintos, además de una base de datos para registrar e iniciar sesión para los usuarios de tu página web, y una sección para dar seguimientos a todos los pedidos de tus clientes de la página web. (Ejemplo enlace)</p>
-                                        <p>4. Dominio gratis el primer año (Segundo año se paga una cuota)</p>
-                                        <p>5. Hosting (10GB de almacenamiento en SSD para una mejor velocidad)</p>
-                                        <p>6. Correos personalizados con tu dominio (Ejemplo: info@tudominio.com)</p>
-                                        <p>7. Certificado SSL de seguridad</p>
-                                        <p>8. Registro de una cuenta en Google Analytics para que revisé los resultados de tráfico en su sitio web.</p>
+                                        <h2>Contratarás los servicios:</h2>
+                                        <p>1. Programación / Maquetación en html5, css3, php y JavaScript además de bases de datos en MySql conectadas a la página.</p>
+                                        <p>2. Capacidad de bases de datos 1 a 6 servicios o 1 a 20 productos distintos. (Para publicidad y ventas en linea)</p>
+                                        <p>3. Dominio Gratis.</p>
+                                        <p>4. Hosting (10GB de almacenamiento en SSD para una mejor velocidad)</p>
+                                        <p>5. Correos personalizados con tu dominio (Ejemplo: info@tudominio.com)</p>
+                                        <p>6. Certificado SSL de seguridad</p>
+                                        <p>7. Mantenimiento periódico de sistemas de seguridad</p>
+                                        <p>8. Modificación y Actualización de contenido</p>
+                                        <p>9. Registro de una cuenta en Google Analytics para que revisé los resultados de tráfico en su sitio web.</p>
                                     </div>
                                 </div>
                                 <div class="botones">
@@ -309,19 +324,21 @@ require 'includes/templates/header.php';
                                 </div>
                                 <div class="ventaja">
                                     <div class="text">
-                                        <p>1. Diseño básico de la página Web (En software de diseño gráfico)</p>
-                                        <p>2. Programación / Maquetación en html5, css3, php y JavaScript además de bases de datos en MySql conectadas a la página.</p>
-                                        <p>3. Capacidad de bases de datos para todos sus servicios y productos, además de una base de datos para registrar e iniciar sesión para los usuarios de tu página, y una sección para dar seguimientos a todos los pedidos de tus clientes de la página web. (Ejemplo enlace)</p>
-                                        <p>4. Dominio gratis el primer año (Segundo año se paga una cuota)</p>
-                                        <p>5. Hosting (10GB de almacenamiento en SSD para una mejor velocidad)</p>
-                                        <p>6. Correos personalizados con tu dominio (Ejemplo: info@tudominio.com)</p>
-                                        <p>7. Certificado SSL de seguridad</p>
-                                        <p>8. Registro de una cuenta en Google Analytics para que revisé los resultados de tráfico en su sitio web.</p>
-                                        <p>9. Cursos gratuitos en una sección para ti y tus empleados, sobre el uso de la plataforma.</p>
+                                    <h2>Características</h2>
+                                        <p>1.	La imagen en internet de tu profesión, marca, o empresa.</p>
+                                        <p>2.	Publicaciones ILIMITADAS de sus servicios y productos (Para publicidad y ventas en linea)</p>
+                                        <p>3.	Programación de APIS para realizar ventas en línea.</p>
+                                        <p>4.	Sección de Pedidos y seguimiento de los mismos.</p>
+                                        <p>5.	Web única y personalizable.</p>
+                                        <p>6.	Soporte Técnico.</p>
+                                        <p>7.	Propiedad total de su Sitio Web.</p>
+                                        <p>8.	Alcance ilimitado para atraer clientes nuevos.</p>
+                                        <p>9.	Página/sitio web en linea 24horas, 7 días por semana (Para unicamente por Mantenimiento)</p>
+                                        <p>10.	Información de contacto de sus clientes.</p>
                                     </div>
                                 </div>
-                                <div class="botones">
-                                    <a id="comprarbtn" href="#" class="button">Contratar</a>
+                                <div class="botones-text">
+                                <i class="fas fa-exchange-alt"></i>
                                 </div>
                             </div>
 
@@ -330,31 +347,35 @@ require 'includes/templates/header.php';
                             <div class="text-paquete1">
                                 <div class="title">
                                     <div class="text">
-                                        <h1>Paquete Profesional Comprar</h1>
+                                        <h1>Costo Paquete Profesional</h1>
                                     </div>
                                     <div class="hr">
-                                        <span><i class="far fa-bookmark"></i></span>
+                                        <span><i class="fas fa-wallet"></i> </span>
                                     </div>
                                 </div>
                                 <div class="subtitle">
                                     <div class="text">
-                                        <h3>Ideal para empresas o negocios Medianos/Grandes, Profesionista Independiente; con capacidades de prestar servicios y abastecer la demanda de todos sus productos.</h3>
+                                        <h3><i class="fas fa-dollar-sign"></i> 9,620.00 MXN Mensuales.</h3>
+                                        <a href="#"><p>¿Tienes dudas?</p></a>
+                                        <p>¡Pregunta antes de contratar!</p>
                                         <div class="hr">
-                                            <span> <i class="fas fa-angle-double-down"></i> </span>
+                                            <span>  <i class="fas fa-handshake"></i> </span>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="ventaja">
                                     <div class="text">
-                                        <p>1. Diseño básico de la página Web (En software de diseño gráfico)</p>
-                                        <p>2. Programación / Maquetación en html5, css3, php y JavaScript además de bases de datos en MySql conectadas a la página.</p>
-                                        <p>3. Capacidad de bases de datos para todos sus servicios y productos, además de una base de datos para registrar e iniciar sesión para los usuarios de tu página, y una sección para dar seguimientos a todos los pedidos de tus clientes de la página web. (Ejemplo enlace)</p>
-                                        <p>4. Dominio gratis el primer año (Segundo año se paga una cuota)</p>
-                                        <p>5. Hosting (10GB de almacenamiento en SSD para una mejor velocidad)</p>
-                                        <p>6. Correos personalizados con tu dominio (Ejemplo: info@tudominio.com)</p>
-                                        <p>7. Certificado SSL de seguridad</p>
-                                        <p>8. Registro de una cuenta en Google Analytics para que revisé los resultados de tráfico en su sitio web.</p>
-                                        <p>9. Cursos gratuitos en una sección para ti y tus empleados, sobre el uso de la plataforma.</p>
+                                        <h2>Contratarás los servicios:</h2>
+                                        <p>1. Programación / Maquetación en html5, css3, php y JavaScript además de bases de datos en MySql conectadas a la página.</p>
+                                        <p>2. Capacidad de bases de datos para todos sus servicios y productos, además de una base de datos para registrar a los usuarios de tu pagina web.</p>
+                                        <p>3. Dominio gratis.</p>
+                                        <p>4. Hosting (10GB de almacenamiento en SSD para una mejor velocidad).</p>
+                                        <p>5. Correos personalizados con tu dominio (Ejemplo: info@tudominio.com)</p>
+                                        <p>6. Certificado SSL de seguridad</p>
+                                        <p>7. Mantenimiento periódico de sistemas de seguridad</p>
+                                        <p>8. Modificación y Actualización de contenido</p>
+                                        <p>9. Registro de una cuenta en Google Analytics para que revisé los resultados de tráfico en su sitio web.</p>
+                                        
                                     </div>
                                 </div>
                                 <div class="botones">
