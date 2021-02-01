@@ -255,7 +255,7 @@ require 'includes/templates/header.php';
                             </div>
 
                         </div>
-                        <div id="card1-back" class="back">
+                        <div id="card2-back" class="back">
                             <div class="text-paquete1">
                                 <div class="title">
                                     <div class="text">

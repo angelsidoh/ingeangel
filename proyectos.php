@@ -26,10 +26,10 @@ require 'includes/templates/header.php';
                <h1>Proyectos</h1>
             </div>
             <div class="mas-proyecto">
-                <input type = "checkbox" id = "checkproyectos" name = "menu">
-                    <label for = "checkproyectos">
-                    <i id="plus" class="far fa-plus-square"></i>
-                    <i id="neg" class="far fa-minus-square" style="display: none;"></i>
+                <input type = "checkbox" id = "check-proyectos" name = "menu">
+                    <label for = "check-proyectos">
+                    <i id="plus0" class="far fa-plus-square"></i>
+                    <i id="neg0" class="far fa-minus-square" style="display: none;"></i>
                     </label>
             </div>
             <div id="lista-proyectos" class="lista-proyectos" style="display: none;">
@@ -49,8 +49,8 @@ require 'includes/templates/header.php';
                <h1>Prácticas proyectos</h1>
             </div>
             <div class="mas-proyecto">
-                <input type = "checkbox" id = "checkpracticas" name = "menu">
-                    <label for = "checkpracticas">
+                <input type = "checkbox" id = "check-practicas" name = "menu">
+                    <label for = "check-practicas">
                     <i id="plus1" class="far fa-plus-square"></i>
                     <i id="neg1" class="far fa-minus-square" style="display: none;"></i>
                     </label>
@@ -99,7 +99,121 @@ require 'includes/templates/header.php';
     </div>
 </div>
 
+<div id="proyectos" class="proyectos-gridconteiner">
+    <div class="titulo-seccion">
+        <h1 id="sparklemaster" class="sparklemaster" style="color:  #93A9CC;">Habilidades</h1>
+    </div>
+    <div class="menu-proyectos">
+       <div class="submenu-proyectos">
+            <div class="titulo-proyecto">
+               <h1>Programación</h1>
+            </div>
+            <div class="mas-proyecto">
+                <input type = "checkbox" id = "check-programacion" name = "menu">
+                    <label for = "check-programacion">
+                    <i id="plus3" class="far fa-plus-square"></i>
+                    <i id="neg3" class="far fa-minus-square" style="display: none;"></i>
+                    </label>
+            </div>
+            <div id="lista-programacion" class="lista-programacion" style="display: none;">
+                <div class="links">
+                    <a href="#" target="_blank"><p><i class="fas fa-caret-right"></i>Programación en C++</p></a>
+                </div>
+                <div class="links">
+                    <a href="#" target="_blank"><p><i class="fas fa-caret-right"></i>Programación en HTML</p></a>
+                </div>
+                <div class="links">
+                    <a href="#" target="_blank"><p><i class="fas fa-caret-right"></i>Programación en CSS3</p></a>
+                </div>
+                <div class="links">
+                    <a href="#" target="_blank"><p><i class="fas fa-caret-right"></i>Programación en PHP</p></a>
+                </div>
+                <div class="links">
+                    <a href="#" target="_blank"><p><i class="fas fa-caret-right"></i>Programación en JavaScript y jQuery</p></a>
+                </div>
+                <div class="links">
+                    <a href="#" target="_blank"><p><i class="fas fa-caret-right"></i>Programación de bases de datos en MySQL y PHP</p></a>
+                </div>
+                <div class="links">
+                    <a href="#" target="_blank"><p><i class="fas fa-caret-right"></i>Programación de PLC en rslogix500 (Automatización de procesos)</p></a>
+                </div>
+                <div class="links">
+                    <a href="#" target="_blank"><p><i class="fas fa-caret-right"></i>Programación en LabVIEW (Automatización de procesos)</p></a>
+                </div>
+                <div class="links">
+                    <a href="#" target="_blank"><p><i class="fas fa-caret-right"></i>Programación en LabVIEW (Automatización de procesos)</p></a>
+                </div>
+                <div class="links">
+                    <a href="#" target="_blank"><p><i class="fas fa-caret-right"></i>Programación en Robot Studio (Configuración de brazos robóticos)</p></a>
+                </div>
+                <div class="links">
+                    <a href="#" target="_blank"><p><i class="fas fa-caret-right"></i>Programación en C# Matlab</p></a>
+                </div>
+                <div class="links">
+                    <a href="#" target="_blank"><p><i class="fas fa-caret-right"></i>Programación de códigos G & M para impresora 3D</p></a>
+                </div>
+               
+            </div>
+       </div>
+       <div class="submenu-proyectos">
+            <div class="titulo-proyecto">
+               <h1>Diseño Mecánico</h1>
+            </div>
+            <div class="mas-proyecto">
+                <input type = "checkbox" id = "check-diseniomecanico" name = "menu">
+                    <label for = "check-diseniomecanico">
+                    <i id="plus4" class="far fa-plus-square"></i>
+                    <i id="neg4" class="far fa-minus-square" style="display: none;"></i>
+                    </label>
+            </div>
+            <div id="lista-diseniomecanico" class="lista-diseniomecanico" style="display: none;">
+                <div class="links">
+                    <a href="#" target="_blank"><p><i class="fas fa-caret-right"></i> Diseño mecánico en SolidWorks</p></a>
+                </div>
+                <div class="links">
+                    <a href="#" target="_blank"><p><i class="fas fa-caret-right"></i> Diseño mecánico en AutoCAD</p></a>
+                </div>
 
+            </div>
+       </div>
+       <div class="submenu-proyectos">
+            <div class="titulo-proyecto">
+               <h1>Robótica</h1>
+            </div>
+            <div class="mas-proyecto">
+                <input type = "checkbox" id = "check-robotica" name = "menu">
+                    <label for = "check-robotica">
+                    <i id="plus5" class="far fa-plus-square"></i>
+                    <i id="neg5" class="far fa-minus-square" style="display: none;"></i>
+                    </label>
+            </div>
+            <div id="lista-robotica" class="lista-robotica" style="display: none;">
+                <div class="links">
+                    <a href="#" target="_blank"><p><i class="fas fa-caret-right"></i>Proyecto Mapeo en 2D</p> </a>
+                </div>
+               
+            </div>
+       </div>
+       <div class="submenu-proyectos">
+            <div class="titulo-proyecto">
+               <h1>Redes</h1>
+            </div>
+            <div class="mas-proyecto">
+                <input type = "checkbox" id = "check-redes" name = "menu">
+                    <label for = "check-redes">
+                    <i id="plus6" class="far fa-plus-square"></i>
+                    <i id="neg6" class="far fa-minus-square" style="display: none;"></i>
+                    </label>
+            </div>
+            <div id="lista-redes" class="lista-redes" style="display: none;">
+                <div class="links">
+                    <a href="#" target="_blank"><p><i class="fas fa-caret-right"></i> Servidores con hardware dedicado y no dedicado y windows 2016</p> </a>
+                </div>
+                
+            </div>
+       </div>
+    </div>
+</div>
 <?php
 require 'includes/templates/footer.php'
 ?>

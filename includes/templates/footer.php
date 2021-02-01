@@ -231,7 +231,7 @@
     var paquetes1 = document.getElementById("efecto-ventanaright");
     var paquetes2 = document.getElementById("efecto-ventanaleft1");
     var paquetes3 = document.getElementById("efecto-ventanaright1");
-    var paquetes4 = document.getElementById("dinamico-efecto");
+    // var paquetes4 = document.getElementById("dinamico-efecto");
 
     inViewportPartially(paquetes, cambiaVisibilidad);
     inViewportTotally(paquetes, cambiaVisibilidad);
@@ -245,8 +245,8 @@
     inViewportPartially3(paquetes3, cambiaVisibilidad3);
     inViewportTotally3(paquetes3, cambiaVisibilidad3);
 
-    inViewportPartially4(paquetes4, cambiaVisibilidad4);
-    inViewportTotally4(paquetes4, cambiaVisibilidad4);
+    // inViewportPartially4(paquetes4, cambiaVisibilidad4);
+    // inViewportTotally4(paquetes4, cambiaVisibilidad4);
 </script>
 
 </body>

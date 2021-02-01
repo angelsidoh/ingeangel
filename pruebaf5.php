@@ -1,5 +1,57 @@
-<?php
-require 'includes/templates/header.php';
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Signature Pad demo</title>
+  <meta name="description" content="Signature Pad - HTML5 canvas based smooth signature drawing using variable width spline interpolation.">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  <link rel="stylesheet" href="css/signature-pad.css?v=<?php echo time(); ?>"">
+
+  <!--[if IE]>
+    <link rel="stylesheet" type="text/css" href="css/ie9.css">
+  <![endif]-->
+
+ 
+</head>
+<body onselectstart="return false">
+  <a id="github" style="position: absolute; top: 0; right: 0; border: 0" href="https://github.com/szimek/signature_pad">
+    <img src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png" alt="Fork me on GitHub">
+  </a>
+
+  <div id="signature-pad" class="signature-pad">
+    <div class="signature-pad--body">
+      <canvas></canvas>
+    </div>
+    <div class="signature-pad--footer">
+      <div class="description">Firma de cliente con nombre y dominio extraidos de la base de datos</div>
+
+      <div class="signature-pad--actions">
+        <div>
+          <button type="button" class="button clear" data-action="clear">Borrar</button>
+          <button type="button" class="button" data-action="change-color">Cambiar color de tinta</button>
+          <button type="button" class="button" data-action="undo">Ultimo detalle</button>
+
+        </div>
+        <div>
+          <button type="button" class="button save" data-action="save-png">Guadar firma</button>
+          <div type="button" class="button save" data-action="save-jpg"></div>
+          <div type="button" class="button save" data-action="save-svg"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/signature_pad.umd.js"></script>
+  <script src="js/app.js?v=<?php echo time(); ?>"></script>
+</body>
+</html>
+<!-- <?php
+// require 'includes/templates/header.php';
 // var_dump(getrusage()) ;
 ?>
 <div class="contenedorx">
@@ -252,5 +304,5 @@ require 'includes/templates/header.php';
 
 
 <?php
-require 'includes/templates/footer.php'
-?>
+// require 'includes/templates/footer.php'
+?> -->

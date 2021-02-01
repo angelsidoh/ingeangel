@@ -53,6 +53,7 @@ $(".fleep1")
       $("#card1-front").show();
       $("#card2-front").show();
       $("#card3-front").show();
+      
     }
   });
 $(".fleep2")
@@ -184,21 +185,21 @@ $(".fleep3")
 // menu proyectos
 $('input:checkbox').removeAttr('checked');
 $('input[type=checkbox]').prop('checked', false);
-$("#checkproyectos").click(function () {
+$("#check-proyectos").click(function () {
   if ($(this).is(":checked")) {
-    $("#plus").hide();
-    $("#neg").show();
+    $("#plus0").hide();
+    $("#neg0").show();
     $("#lista-proyectos").show();
 
   } else {
-    $("#plus").show();
-    $("#neg").hide();
+    $("#plus0").show();
+    $("#neg0").hide();
     $("#lista-proyectos").hide();
   }
 });
 $('input:checkbox').removeAttr('checked');
 $('input[type=checkbox]').prop('checked', false);
-$("#checkpracticas").click(function () {
+$("#check-practicas").click(function () {
   if ($(this).is(":checked")) {
     $("#plus1").hide();
     $("#neg1").show();
@@ -212,6 +213,7 @@ $("#checkpracticas").click(function () {
     $("#lista-practicas").hide();
   }
 });
+
 $('input:checkbox').removeAttr('checked');
 $('input[type=checkbox]').prop('checked', false);
 $("#check-apis").click(function () {
@@ -228,7 +230,70 @@ $("#check-apis").click(function () {
     $("#lista-apis").hide();
   }
 });
+$('input:checkbox').removeAttr('checked');
+$('input[type=checkbox]').prop('checked', false);
+$("#check-programacion").click(function () {
+  if ($(this).is(":checked")) {
+    $("#plus3").hide();
+    $("#neg3").show();
+    $("#lista-programacion").show();
+    $(".links a p").addClass('color-font');
 
+
+  } else {
+    $("#plus3").show();
+    $("#neg3").hide();
+    $("#lista-programacion").hide();
+  }
+});
+$('input:checkbox').removeAttr('checked');
+$('input[type=checkbox]').prop('checked', false);
+$("#check-diseniomecanico").click(function () {
+  if ($(this).is(":checked")) {
+    $("#plus4").hide();
+    $("#neg4").show();
+    $("#lista-diseniomecanico").show();
+    $(".links a p").addClass('color-font');
+
+
+  } else {
+    $("#plus4").show();
+    $("#neg4").hide();
+    $("#lista-diseniomecanico").hide();
+  }
+});
+$('input:checkbox').removeAttr('checked');
+$('input[type=checkbox]').prop('checked', false);
+$("#check-robotica").click(function () {
+  if ($(this).is(":checked")) {
+    $("#plus5").hide();
+    $("#neg5").show();
+    $("#lista-robotica").show();
+    $(".links a p").addClass('color-font');
+
+
+  } else {
+    $("#plus5").show();
+    $("#neg5").hide();
+    $("#lista-robotica").hide();
+  }
+});
+$('input:checkbox').removeAttr('checked');
+$('input[type=checkbox]').prop('checked', false);
+$("#check-redes").click(function () {
+  if ($(this).is(":checked")) {
+    $("#plus6").hide();
+    $("#neg6").show();
+    $("#lista-redes").show();
+    $(".links a p").addClass('color-font');
+
+
+  } else {
+    $("#plus6").show();
+    $("#neg6").hide();
+    $("#lista-redes").hide();
+  }
+});
 // end menu proyectos
 
 var pathname = window.location.pathname;
