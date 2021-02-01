@@ -20,15 +20,15 @@ Habilidades de profesionales de ingeangel.com
             <h1 id="sparklemaster" class="sparklemaster" style="color:  #93A9CC;">Términos y Condiciones </h1>
         </div>
         <p>Este sitio web es operado por un equipo de programadores capacitados en las diferentes áreas del desarrollo web.</p>
-        <p>Ingeangel.com ofrece toda la información, herramienta y servicios disponibles para ti en todo momento, el usuario, está condicionado a la aceptación de todos los términos, condiciones, políticas y notificaciones aquí establecidos. Al visitar ingeangel.com y contratar alguno de los servicios disponibles, aceptas los siguientes términos y condiciones, incluidos todos los términos y condiciones adicionales y las políticas a las que se hace referencia en este documento y los disponibles a través de enlaces a su ubicación dentro del sitio o fuera del mismo.</p>
+        <p>ingeangel.com ofrece toda la información, herramienta y servicios disponibles para ti en todo momento, el usuario, está condicionado a la aceptación de todos los términos, condiciones, políticas y notificaciones aquí establecidos. Al visitar ingeangel.com y contratar alguno de los servicios disponibles, aceptas los siguientes términos y condiciones, incluidos todos los términos y condiciones adicionales y las políticas a las que se hace referencia en este documento y los disponibles a través de enlaces a su ubicación dentro del sitio o fuera del mismo.</p>
         <p>Estas condiciones de servicio se aplican para todos los usuarios del sitio, incluyendo a proveedores, clientes, comerciantes y colocadores de contenido.</p>
         <p>Por favor lee estos términos y condiciones de servicios cuidadosamente antes de contratar un servicio, acceder o utilizar ingeangel.com</p>
         <p>Al contratar un servicio, acceder o utilizar ingeangel.com estas aceptando los términos y condiciones de servicio. Si no estás de acuerdo con los términos y condiciones de este acuerdo, entonces no deberías contratar un servicio, acceder o utilizar ingeangel.com</p>
         <p>Cualquier función nueva o herramienta que se añada a ingeangel.com también estarán sujetas a estos términos y condiciones de servicio.</p>
         <p>Puedes revisar la versión actualizada de los términos y condiciones de servicio, en cualquier momento en esta página del sitio.</p>
-        <p>Ingeangel.com se reserva el derecho de actualizar, cambiar o reemplazar cualquier parte de los términos y condiciones de servicio mediante la publicación de actualizaciones y cambios en el sitio.</p>
+        <p>ingeangel.com se reserva el derecho de actualizar, cambiar o reemplazar cualquier parte de los términos y condiciones de servicio mediante la publicación de actualizaciones y cambios en el sitio.</p>
         <p>Es tu responsabilidad checar esta página periódicamente para verificar cambios. Tu uso continuo o el acceso al sitio web después de la publicación de cualquier cambio constituye la aceptación de dichos cambios. </p>
-        <p>Ingeangel.com es una plataforma que distribuye el servicio de programación para la elaboración de sitios web, para empresas pequeñas, medianas y grandes. Además de profesionales independientes que buscan tener presencia en internet. Cualquier otro servicio es considerado externo a ingeangel.com y por tanto su entrega esta fuera de nuestras manos.</p>
+        <p>ingeangel.com es una plataforma que distribuye el servicio de programación para la elaboración de sitios web, para empresas pequeñas, medianas y grandes. Además de profesionales independientes que buscan tener presencia en internet. Cualquier otro servicio es considerado externo a ingeangel.com y por tanto su entrega esta fuera de nuestras manos.</p>
         <div class="titulo-seccion">
             <h1 id="sparklemaster" class="sparklemaster" style="color:  #93A9CC;">Sección 1: Responsabilidad del contenido de los proyectos.</h1>
         </div>
@@ -36,10 +36,10 @@ Habilidades de profesionales de ingeangel.com
         <div class="titulo-seccion">
             <h1 id="sparklemaster" class="sparklemaster" style="color:  #93A9CC;">Sección 1: Responsabilidad del contenido de los proyectos.</h1>
         </div>
-        <p>Ingeangel.com cuenta con una API de pagos llamada Conekta que brinda servicio de pagos con tarjeta de crédito y débito (términos y condiciones de Conekta <a href="https://conekta.com/legal/tos">https://conekta.com/legal/tos</a> )
-            Ingeangel.com cuenta también con una pasarela de pagos PayPal (otra API) que brinda servicios de pagos a través de su plataforma. (términos de servicio de paypal para México <a href="https://www.paypal.com/mx/webapps/mpp/ua/useragreement-full?locale.x=es_MX)">https://www.paypal.com/mx/webapps/mpp/ua/useragreement-full?locale.x=es_MX)</a>
+        <p>ingeangel.com cuenta con una API de pagos llamada Conekta que brinda servicio de pagos con tarjeta de crédito y débito (términos y condiciones de Conekta <a href="https://conekta.com/legal/tos">https://conekta.com/legal/tos</a> )
+            ingeangel.com cuenta también con una pasarela de pagos PayPal (otra API) que brinda servicios de pagos a través de su plataforma. (términos de servicio de paypal para México <a href="https://www.paypal.com/mx/webapps/mpp/ua/useragreement-full?locale.x=es_MX)">https://www.paypal.com/mx/webapps/mpp/ua/useragreement-full?locale.x=es_MX)</a>
             Por tanto ingeangel.com nunca almacenará o retendrá datos sensibles de este tipo. En caso de tener problemas con su tarjeta de débito o crédito ingeangel.com le proporcionara únicamente su historial de movimientos realizados a través de Conekta y PayPal.
-            Ingeangel.com tendrá en bases de datos, los datos necesarios para identificar al cliente y proyecto, y la elaboración de su historial de pagos con el uso de únicamente los datos proporcionados por las APIs antes mencionadas.
+            ingeangel.com tendrá en bases de datos, los datos necesarios para identificar al cliente y proyecto, y la elaboración de su historial de pagos con el uso de únicamente los datos proporcionados por las APIs antes mencionadas.
         </p>
         <div class="titulo-seccion">
             <h1 id="sparklemaster" class="sparklemaster" style="color:  #93A9CC;">Sección 3: Exactitud, exhaustividad y actualidad de la información</h1>
@@ -49,17 +49,17 @@ Habilidades de profesionales de ingeangel.com
         <div class="titulo-seccion">
             <h1 id="sparklemaster" class="sparklemaster" style="color:  #93A9CC;">Sección 4: Modificaciones a todos los servicios y precios sin excepción</h1>
         </div>
-        <p>Los precios están sujetos a cambios sin previo aviso. Nos reservamos el derecho a modificar o descontinuar el servicio (o cualquier parte del contenido) en cualquier momento sin aviso previo. Ingeangel.com no será responsable ante usted por parte de modificación, cambio de precio, suspensión o discontinuidad del servicio.</p>
+        <p>Los precios están sujetos a cambios sin previo aviso. Nos reservamos el derecho a modificar o descontinuar el servicio (o cualquier parte del contenido) en cualquier momento sin aviso previo. ingeangel.com no será responsable ante usted por parte de modificación, cambio de precio, suspensión o discontinuidad del servicio.</p>
         <div class="titulo-seccion">
             <h1 id="sparklemaster" class="sparklemaster" style="color:  #93A9CC;">Sección 5: Servicios</h1>
         </div>
-        <p>Los servicios de ingeangel.com pueden brindarse con limitación a cierta cantidad de clientes, y pueden reembolsarse con nuestra política de reembolso solamente. Ingeangel.com se reserva el derecho de limitar el número de clientes que a los que prestamos servicios que ofrecemos.</p>
+        <p>Los servicios de ingeangel.com pueden brindarse con limitación a cierta cantidad de clientes, y pueden reembolsarse con nuestra política de reembolso solamente. ingeangel.com se reserva el derecho de limitar el número de clientes que a los que prestamos servicios que ofrecemos.</p>
         <p>Todas las descripciones y características de los servicios en ingeangel.com están sujetos a cambios en cualquier momento sin previo aviso, a nuestra sola discreción. Nos reservamos el derecho de descontinuar cualquier servicio en cualquier momento. Cualquier oferta de prestación de servicios es nulo donde esté prohibido.</p>
         <p>No garantizamos que la visualización del sitio web en un navegador o dispositivo coincida con el diseño web final en software de edición imagen sea de un 100%. Pues cabe aclarar que son diferentes capacidades entre navegadores y dispositivos.</p>
         <div class="titulo-seccion">
             <h1 id="sparklemaster" class="sparklemaster" style="color:  #93A9CC;">Sección 6: Exactitud de facturación e información de cuenta</h1>
         </div>
-        <p>Ingeangel.com se reserva el derecho de rechazar cualquier pedido de servicios que realice, si su proyecto no cumple con los requerimientos iniciales.</p>
+        <p>ingeangel.com se reserva el derecho de rechazar cualquier pedido de servicios que realice, si su proyecto no cumple con los requerimientos iniciales.</p>
         <p>En caso de ingeangel.com haga un cambio o cancele una orden, podemos intentar notificarle poniéndonos en contacto vía correo electrónico y/o dirección de facturación y/o numero de teléfono proporcionado en el momento que se hizo pedido.</p>
         <p>Nos reservamos el derecho de limitar o prohibir las ordenes que a juicio de ingeangel.com parecen ser colocadas por terceros.</p>
         <p>Te comprometes a proporcionar información actual, completa y precisa para el contrato de servicios de ingeangel.com</p>
@@ -73,23 +73,23 @@ Habilidades de profesionales de ingeangel.com
         </div>
 
         <p>Cierto contenido, productos y servicios disponibles vía nuestro servicio puede incluir material de terceras partes. Enlaces de terceras partes pueden direccionarte a sitios web de terceros que no están afiliadas con ingeangel.com</p>
-        <p>Ingeangel.com no se responsabiliza de examinar o evaluar el contenido o la exactitud y no garantizamos ni tendremos ninguna responsabilidad por cualquier material, producto o servicio de sitios web de terceros.</p>
-        <p>Ingeangel.com no ser responsabiliza de cualquier daño o daños relacionados con la adquisición o utilización de bienes, servicios, recursos, contenidos, o cualquier otra transacción realizadas en conexión con sitios web de tercero.</p>
+        <p>ingeangel.com no se responsabiliza de examinar o evaluar el contenido o la exactitud y no garantizamos ni tendremos ninguna responsabilidad por cualquier material, producto o servicio de sitios web de terceros.</p>
+        <p>ingeangel.com no ser responsabiliza de cualquier daño o daños relacionados con la adquisición o utilización de bienes, servicios, recursos, contenidos, o cualquier otra transacción realizadas en conexión con sitios web de tercero.</p>
         <p>Por favor revise cuidadosamente las políticas y prácticas de terceros y asegúrese de entenderlas antes de tomar alguna acción. Quejas, reclamos, inquietudes o preguntas con respecto a productos y servicios de terceros deben ser dirigidas al sitio web de terceros.</p>
         <div class="titulo-seccion">
             <h1 id="sparklemaster" class="sparklemaster" style="color:  #93A9CC;">Sección 9: Comentarios, captación de mensajería de correo electrónico y otros envíos.</h1>
         </div>
         <p>Si, a pedido de ingeangel.com, envías ciertas prestaciones especificas (por ejemplo, la participación en concursos) o sin un pedido de parte de ingeangel.com envías ideas creativas, sugerencias, proposiciones, planes, u otros materiales, ya se en línea, por email, por correo postal o de otra manera (colectivamente comentarios), aceptas que ingeangel.com, en cualquier momento, sin restricción, editar, copiar, publicar, distribuir traducir o utilizar por cualquier medio comentarios que hayas enviado a ingeangel.com</p>
-        <p>Ingeangel.com no tiene y tendrá ninguna obligación:
+        <p>ingeangel.com no tiene y tendrá ninguna obligación:
         <ul>
             <li>1.	De mantener ningún comentario confidencialmente. </li>
             <li>2.	De pagar compensación por comentarios</li>
             <li>3.	De responder a comentarios.</li>
         </ul>
         </p>
-        <p>Ingeangel.com puede, pero no tendrá la obligación de monitorear, editar o remover contenido que consideremos sea ilegal ofensivo, amanzánate, calumnioso, difamatorio, pornográfico, obsceno u objetable o viole la propiedad intelectual de cualquiera de las partes o los términos y condiciones de servicio. Aceptas que tus comentarios no violaran los derechos de terceros, incluyendo derechos de autor, marca, privacidad, responsabilidad u otros derechos personales o de propiedad. Asimismo, aceptas que tus comentarios no contienen material difamatorio o ilegal, abusivo u obsceno, o contienen virus informáticos u otro malware que pudieran, de alguna manera, afectar el funcionamiento de los servicios o de cualquier sitio web relacionado.</p>
+        <p>ingeangel.com puede, pero no tendrá la obligación de monitorear, editar o remover contenido que consideremos sea ilegal ofensivo, amanzánate, calumnioso, difamatorio, pornográfico, obsceno u objetable o viole la propiedad intelectual de cualquiera de las partes o los términos y condiciones de servicio. Aceptas que tus comentarios no violaran los derechos de terceros, incluyendo derechos de autor, marca, privacidad, responsabilidad u otros derechos personales o de propiedad. Asimismo, aceptas que tus comentarios no contienen material difamatorio o ilegal, abusivo u obsceno, o contienen virus informáticos u otro malware que pudieran, de alguna manera, afectar el funcionamiento de los servicios o de cualquier sitio web relacionado.</p>
         <p>No puede usar una dirección de correo electrónico falsa, usar otra identidad que no sea legitima, o engañar a terceras partes o a ingeangel.com y a su equipo de programadores en cuenta al origen de tus comentarios. Tu eres el único responsable por los comentarios que hacer y su precisión.</p>
-        <p>Ingeangel.com no se hace responsable y no sumimos ninguna obligación con respecto a los comentarios publicados o enviados por ti o terceros.</p>
+        <p>ingeangel.com no se hace responsable y no sumimos ninguna obligación con respecto a los comentarios publicados o enviados por ti o terceros.</p>
         <div class="titulo-seccion">
             <h1 id="sparklemaster" class="sparklemaster" style="color:  #93A9CC;">Sección 10: Información personal</h1>
         </div>
