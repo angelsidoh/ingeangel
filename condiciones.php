@@ -36,8 +36,8 @@ Habilidades de profesionales de ingeangel.com
         <div class="titulo-seccion">
             <h1 id="sparklemaster" class="sparklemaster" style="color:  #93A9CC;">Sección 1: Responsabilidad del contenido de los proyectos.</h1>
         </div>
-        <p>ingeangel.com cuenta con una API de pagos llamada Conekta que brinda servicio de pagos con tarjeta de crédito y débito (términos y condiciones de Conekta <a href="https://conekta.com/legal/tos">https://conekta.com/legal/tos</a> )
-            ingeangel.com cuenta también con una pasarela de pagos PayPal (otra API) que brinda servicios de pagos a través de su plataforma. (términos de servicio de paypal para México <a href="https://www.paypal.com/mx/webapps/mpp/ua/useragreement-full?locale.x=es_MX)">https://www.paypal.com/mx/webapps/mpp/ua/useragreement-full?locale.x=es_MX)</a>
+        <p>ingeangel.com cuenta con una API de pagos llamada Conekta que brinda servicio de pagos con tarjeta de crédito y débito (términos y condiciones de Conekta <a href="https://conekta.com/legal/tos" target="_blank">ir</a> )
+            ingeangel.com cuenta también con una pasarela de pagos PayPal (otra API) que brinda servicios de pagos a través de su plataforma. (términos de servicio de paypal para México <a href="https://www.paypal.com/mx/webapps/mpp/ua/useragreement-full?locale.x=es_MX)" target="_blank">Ir</a>
             Por tanto ingeangel.com nunca almacenará o retendrá datos sensibles de este tipo. En caso de tener problemas con su tarjeta de débito o crédito ingeangel.com le proporcionara únicamente su historial de movimientos realizados a través de Conekta y PayPal.
             ingeangel.com tendrá en bases de datos, los datos necesarios para identificar al cliente y proyecto, y la elaboración de su historial de pagos con el uso de únicamente los datos proporcionados por las APIs antes mencionadas.
         </p>
