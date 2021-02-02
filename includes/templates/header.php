@@ -94,6 +94,18 @@
               <h1 id="sparklemaster" class="sparklemaster">Desarrollo Web</h1>
             </a>
           </li>
+          <li>
+            <a href="">
+              <h1 id="sparklemaster" class="sparklemaster">Programación Web</h1>
+            </a>
+            <p style="width: 60%; margin: 0 auto; background-color: rgb(66, 66, 66, 0.5);color: #ffffff; font-size: 56px;">Html, Css3, Php y JavaScript</p>
+          </li>
+          <li>
+            <a href="">
+              <h1 id="sparklemaster" class="sparklemaster">Oferta de diseño web</h1>
+            </a>
+            <p style="width: 60%; margin: 0 auto; background-color: rgb(66, 66, 66, 0.5);color: #ffffff; font-size: 56px;">oferta unica a los primeros 10 clientes</p>
+          </li>
         </ul>
 
         <!-- <ol class="paginacion">
@@ -110,7 +122,7 @@
         <!--  -->
       </div>
       <div id="angel-ruiz"></div>
-      <div class="nav">
+      <div id= "menu-screen" class="nav">
         <div class="nav__content">
           <ul class="nav__list">
             <li class="nav__list-item"><a href="login.php#angel-ruiz">Inicar Sesión/Cerrar Sesión</a> </li>

@@ -60,9 +60,9 @@
                     <div class="icono3__a">
                         <i class="fas fa-envelope"></i>
                     </div>
-                    <div class="text3__a">
+                    <a href="mailto:infoingeangel@gmail.com" class="text3__a">
 
-                    </div>
+                    </a>
                 </div>
                 <div class="iconos__elem2">
 

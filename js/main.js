@@ -1,4 +1,18 @@
+function mostrarPassword(){
+  var cambio = document.getElementById("pass");
+  if(cambio.type == "password"){
+    cambio.type = "text";
+    $('.icon').removeClass('fa fa-eye-slash').addClass('fa fa-eye');
+  }else{
+    cambio.type = "password";
+    $('.icon').removeClass('fa fa-eye').addClass('fa fa-eye-slash');
+  }
+} 
+
+
+
 // babel
+$("#menu-screen").css("z-index", "-1");
 const app = (() => {
   let body;
   let menu;
@@ -17,9 +31,16 @@ const app = (() => {
   };
 
   const toggleClass = (element, stringClass) => {
-    if (element.classList.contains(stringClass))
-    element.classList.remove(stringClass);else
-    element.classList.add(stringClass);
+    if (element.classList.contains(stringClass)){
+      console.log('hola');
+    element.classList.remove(stringClass);
+    $("#menu-screen").css("z-index", "-1");
+    }
+    else{
+      $("#menu-screen").css("z-index", "2");
+      console.log('adios');
+      element.classList.add(stringClass);
+    }
   };
 
   init();
@@ -96,7 +117,7 @@ $(".fleep2")
     fleep = '2';
     console.log(fleep);
     if (resolucion <= 1280) {
-      $heightDown = $('.imgfondoprincipal').height() + $('#card1-back').height() + $('#card2-back').height();
+      $heightDown = $('.imgfondoprincipal').height() + $('#card1-back').height();
       console.log($heightDown);
       $('html, body').animate({
         scrollTop: $heightDown
@@ -128,7 +149,7 @@ $(".fleep3")
     fleep = '3';
     console.log(fleep);
     if (resolucion <= 1280) {
-      $heightDown = $('.imgfondoprincipal').height() + $('#card1-back').height() + $('#card2-back').height() + $('#card3-back').height();
+      $heightDown = $('.imgfondoprincipal').height() + $('#card1-back').height() + $('#card2-back').height();
       console.log($heightDown);
       $('html, body').animate({
         scrollTop: $heightDown
@@ -329,18 +350,20 @@ var pathname = window.location.pathname;
 pathname = (pathname.replace('/01ingeangel.com', ''));
 pathname = (pathname.replace('01', ''));
 console.log(pathname);
-if (pathname != '/index.php' && pathname != '/') {
-
+if (pathname == '/index.php' || pathname == '/') {
+  $(document).ready(function () {
+    $("body").css("background-color", "#ffffff");
+  });
+}
+else if(pathname == '/login.php'){
+  $(document).ready(function () {
+    $("body").css("background-color", "#ffffff");
+  });
+}
+else {
   $(document).ready(function () {
 
     $("body").css("background-color", "#161616");
-
-  });
-
-} else {
-  $(document).ready(function () {
-
-    $("body").css("background-color", "#ffffff");
 
   });
 }
