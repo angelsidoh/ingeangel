@@ -1,13 +1,250 @@
-function mostrarPassword(){
+const formLoginUser = document.querySelector('#login');
+if ($("#login").length) {
+  eventListeners();
+
+  function eventListeners() {
+    formLoginUser.addEventListener('submit', leerLogin);
+  }
+}
+
+function leerLogin(e) {
+  e.preventDefault();
+  const mail = document.querySelector('#correo').value;
+  const pass = document.querySelector('#pass').value;
+  console.log(mail, pass)
+  validarString(mail);
+  if (caracteresCorreoValido(mail) === false) {
+    swal({
+      content: "",
+      text: 'El correo es inválido',
+      icon: "error",
+      button: {
+        text: "Continuar",
+        closeModal: true,
+      },
+    });
+  }
+  const accion = document.querySelector('#btnlogin').value;
+  const accionrep = quitarAcentos(accion);
+  let cadena = mail;
+  // esta es la palabra a buscar
+  let termino = ["@gmail.com", "@hotmail.com", "@outlook.com"];
+  let x1 = 0;
+  for (let x = 0; x <= 2; x++) {
+
+    let find = termino[x]
+    // para buscar la palabra hacemos
+    let posicion = cadena.indexOf(find);
+
+
+    if (posicion !== -1) {
+      console.log(x + "->La palabra está en la posición " + posicion);
+      $('#correo').css({
+        'background': '#ffffff'
+      });
+      x = 3;
+
+    } else {
+      console.log('-z' + x);
+      if (x == 2) {
+
+        swal({
+          content: "",
+          text: '¡Por favor! Usa una cuenta correo válida como @hotmail.com, @gmail.com, @outlook.com',
+          icon: "error",
+          button: {
+            text: "Continuar",
+            closeModal: true,
+          },
+        });
+      }
+
+    }
+
+
+  }
+
+  if (mail === '') {
+    $('#correo').css({
+      'background': 'red'
+    });
+    swal({
+      content: "",
+      text: 'Hay campos vacíos.',
+      icon: "error",
+      button: {
+        text: "Continuar",
+        closeModal: true,
+      },
+    });
+  }
+  if (pass === '') {
+    $('#pass').css({
+      'background': 'red'
+    });
+    swal({
+      content: "",
+      text: 'Hay campos vacíos.',
+      icon: "error",
+      button: {
+        text: "Continuar",
+        closeModal: true,
+      },
+    });
+  } else {
+    $('#pass').css({
+      'background': '#ffffff'
+    });
+  }
+
+  if (mail != '') {
+    const ifouser = new FormData();
+
+    ifouser.append('correo', mail);
+    ifouser.append('pass', pass);
+    ifouser.append('accion', accionrep);
+    if (accion === 'Iniciar Sesión') {
+      consultaBD(ifouser);
+    }
+  }
+
+
+}
+
+function consultaBD(dato) {
+  // llamado de ajax
+  // crear objeto
+
+  const xhr = new XMLHttpRequest();
+  // abrir conexion
+  xhr.open('POST', 'includes/modelos/jsonlogin.php', true);
+  // pasar datos
+  xhr.onload = function () {
+    if (this.status === 200) {
+      const respuesta = JSON.parse(xhr.responseText);
+      console.log(respuesta);
+      if (respuesta.Estado === 'Incorrecto') {
+        swal({
+          content: "",
+          text: 'Los datos son incorrectos.¡Por favor Verificalos!',
+          icon: "error",
+          button: {
+            text: "Continuar",
+            closeModal: true,
+          },
+        });
+      }
+      if (respuesta.Estado === 'Correcto') {
+        swal({
+            content: "",
+            text: '¡Bienvenido ' + respuesta.Usuario + '!',
+            icon: "success",
+            buttons: {
+              defeat: "¡Continuar!",
+            },
+          })
+          .then((value) => {
+            switch (value) {
+              default:
+                window.location.href = 'cuenta.php#angel-ruiz';
+            }
+          });
+        setTimeout(() => {
+          window.location.href = 'cuenta.php#angel-ruiz';
+        }, 3200);
+      }
+    }
+  }
+  // enviar datos
+  xhr.send(dato);
+}
+//Validar tipo Correo
+function caracteresCorreoValido(mail) {
+  var caract = new RegExp(/^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/);
+  if (caract.test(mail) === false) {
+    return false;
+  } else {
+    return true;
+  }
+}
+//Quitar acentos
+function quitarAcentos(cadena) {
+  const acentos = {
+    'Ñ': 'N',
+    'ñ': 'n',
+    'á': 'a',
+    'é': 'e',
+    'í': 'i',
+    'ó': 'o',
+    'ú': 'u',
+    'Á': 'A',
+    'É': 'E',
+    'Í': 'I',
+    'Ó': 'O',
+    'Ú': 'U'
+  };
+  return cadena.split('').map(letra => acentos[letra] || letra).join('').toString();
+}
+
+function validarString(dato) {
+  iaux = dato.length;
+  for (var i = 0; i < iaux; i++) {
+    var caracter = dato.charAt(i);
+
+    var acentos = "áéíóúÁÉÍÓÚ<>´";
+
+    for (var a = 0; a < acentos.length; a++) {
+
+      if (caracter == acentos.charAt(a)) {
+        // alert("Caracter no permitido:\n" + acentos.charAt(a) + 
+        // "\n Por favor corrija el correo o intente con uno diferente");
+
+        swal({
+
+          content: "",
+          text: 'Hay caracteres en tu correo, no válidos\n' + 'El siguiente caracter: " ' + acentos.charAt(a) + ' " No es válido\n Revisa que tu correo sea correcto \n o intenta con otro',
+          //icon: "success",
+          icon: "error",
+          button: {
+            text: "Continuar",
+            closeModal: true,
+          },
+        });
+
+
+
+        mostrarNotificacion('áéíóúÁÉÍÓÚ<>', 'Error');
+        mostrarNotificacion('Correo no permite estos símbolos:', 'Error');
+        $('#correo').css({
+          'color': 'red'
+        });
+        $('#correo1').css({
+          'color': 'red'
+        });
+        return;
+      } else {
+        $('#correo').css({
+          'color': 'var(--ColorDescrip)'
+        });
+        $('#correo1').css({
+          'color': 'var(--ColorDescrip)'
+        });
+      }
+    }
+  }
+}
+
+
+function mostrarPassword() {
   var cambio = document.getElementById("pass");
-  if(cambio.type == "password"){
+  if (cambio.type == "password") {
     cambio.type = "text";
     $('.icon').removeClass('fa fa-eye-slash').addClass('fa fa-eye');
-  }else{
+  } else {
     cambio.type = "password";
     $('.icon').removeClass('fa fa-eye').addClass('fa fa-eye-slash');
   }
-} 
+}
 
 
 
@@ -31,12 +268,11 @@ const app = (() => {
   };
 
   const toggleClass = (element, stringClass) => {
-    if (element.classList.contains(stringClass)){
+    if (element.classList.contains(stringClass)) {
       console.log('hola');
-    element.classList.remove(stringClass);
-    $("#menu-screen").css("z-index", "-1");
-    }
-    else{
+      element.classList.remove(stringClass);
+      $("#menu-screen").css("z-index", "-1");
+    } else {
       $("#menu-screen").css("z-index", "2");
       console.log('adios');
       element.classList.add(stringClass);
@@ -64,7 +300,7 @@ $(window).resize(function () {
 
   console.log(resolucion);
 });
-$(document).ready(function(){ 
+$(document).ready(function () {
 
   resolucion = screen.width;
 
@@ -83,7 +319,7 @@ $(".fleep1")
     $("#card3-front").show();
     console.log(fleep);
     if (resolucion <= 1280) {
-      
+
       $heightDown = $('.imgfondoprincipal').height();
       console.log($heightDown);
       $('html, body').animate({
@@ -103,7 +339,7 @@ $(".fleep1")
       $("#card1-front").show();
       $("#card2-front").show();
       $("#card3-front").show();
-      
+
     }
   });
 $(".fleep2")
@@ -354,13 +590,11 @@ if (pathname == '/index.php' || pathname == '/') {
   $(document).ready(function () {
     $("body").css("background-color", "#ffffff");
   });
-}
-else if(pathname == '/login.php'){
+} else if (pathname == '/login.php') {
   $(document).ready(function () {
     $("body").css("background-color", "#ffffff");
   });
-}
-else {
+} else {
   $(document).ready(function () {
 
     $("body").css("background-color", "#161616");

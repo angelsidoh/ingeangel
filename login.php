@@ -1,6 +1,10 @@
 <?php
 require 'includes/templates/header.php';
-
+if(isset($_SESSION['email'])){
+session_destroy();
+// header('Location: cuenta.php#angel-ruiz');
+?><META HTTP-EQUIV="REFRESH" CONTENT="1;URL=http://localhost/01ingeangel.com/logout.php"><?php
+}{
 ?>
 
 <div class="contenedor-formulario">
@@ -19,6 +23,7 @@ require 'includes/templates/header.php';
         <div class="icono-grid">
           <i class="fas fa-envelope"></i>
         </div>
+        
         <input type="text" id="correo" name="correo" placeholder="Ingresa tu Correo">
         
       </div>
@@ -64,6 +69,6 @@ require 'includes/templates/header.php';
   </div>
 </div>
 <?php
-
+}
 require 'includes/templates/footer.php';
 ?>
