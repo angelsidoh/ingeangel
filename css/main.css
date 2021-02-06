@@ -664,9 +664,9 @@ inset 0px 0px 0px 0px rgba(0,0,0,0.75);;
 }
 .contenedorf{
   width: 90%;
-  height: 910px;
+  
   margin: 0 auto;
-  background-color: red;
+  
 }
 
 /* efecto dinamico */
@@ -3341,7 +3341,7 @@ ul{
 
   }
   .recordatorio a::before{
-    content: "infoingeangel@gmail.com";
+    content: "Recuperar contraseña";
   }
   .text3__a a{  
     
@@ -3559,13 +3559,22 @@ ul{
   text-align: center;
   background-color: var(--ColorFontDescrip);
 }
-#correo{
+.input_grid1 input, .input_grid2 input{
+  width: 100%;
+  height: auto;
+  outline: none;
+  border: 0;
+  text-align: left;
+  background-color: var(--ColorFontDescrip);
+}
+
+.input_grid input#correo{
   width: 69%;
   height: 100%;
   margin-left: 10%;
   
 }
-#pass{
+.input_grid input #pass{
   width: 70%;
   height: 100%;
   margin-left: 10%;
@@ -3589,8 +3598,47 @@ ul{
   border-right: 1px solid black;
   
   background-color: var(--ColorFontDescrip);
+}
+.input_grid1{
+ 
+  width: 95%;
+  height: auto;
+  margin: 1px auto;
+  display: grid;
+  
+ 
+  border: 0;
+  border-radius: 5px;
+  border-bottom: 1px solid black;
+  border-top: 1px solid black;
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+  
+  background-color: var(--ColorFontDescrip);
   
   
+}
+.input_grid2{
+ 
+  width: 95%;
+  height: auto;
+  margin: 1px auto;
+  display: grid;
+  grid-template-columns: repeat(1, 80% 20%);
+ 
+  border: 0;
+  border-radius: 5px;
+  border-bottom: 1px solid black;
+  border-top: 1px solid black;
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+  
+  background-color: var(--ColorFontDescrip);
+}
+.input_grid2 #numiedirec, .input_grid2 #postal{
+  grid-row: 1 / 1;
+  grid-column: 2 / 2;
+  border-left: 1px solid black;
 }
 
 .mostrar-pass{

@@ -1,4 +1,133 @@
-<!doctype html>
+
+<html></html>
+<head>
+<title>Jquery Easy - Verificar si un dominio esta disponible con php y json</title>
+ 
+<link href="main.css" rel="stylesheet" />
+<script type="text/javascript" src="jquery-1.2.6.min.js"></script>
+ 
+<script language="javascript">
+$(document).ready(function() {
+ 
+    var loading;
+    var results;
+        var form;
+    form = document.getElementById('form');
+    loading = document.getElementById('loading');
+    results = document.getElementById('results');
+ 
+    $('#Submit').click( function() {
+ 
+        if($('#Search').val() == "")
+        {alert('Ingrese un dominio');return false;}
+ 
+        results.style.display = 'none';
+        $('#results').html('');
+        loading.style.display = 'inline';
+ 
+        $.post('process.php?domain=' + escape($('#Search').val()),{
+        }, function(response){
+ 
+            results.style.display = 'block';
+            $('#results').html(unescape(response));
+            loading.style.display = 'none';
+        });
+ 
+        return false;
+    });
+ 
+});
+</script>
+</head>
+<body>
+<div class="cabecera"><img src="images/logo.gif" /></div>
+ 
+<h3 >Verificar si un dominio esta disponible con php y json</h3>
+
+ 
+    <form method="post" action="./" id="form">
+         <h3 style="color:#FFF">Ingrese solo el nombre del dominio (*sin prefijo .com, .org, etc)</h3>
+        <input type="text" autocomplete="off" id="Search" name="domain">
+        <input type="submit" id="Submit" value="Submit">
+ 
+    </form>
+ 
+    <div id="loading">Enviando datos....</div>
+ 
+     <div id="results" style="width:420px; height:600px;" ></div>
+ 
+     
+ 
+
+ </body>
+ </html></pre>
+En este archivo estamos diseñando nuestro formulario de consulta y estamos creando un metodo con jquery para validar y enviar los datos de mi formulario por ajax hacia el archivo que va aprocesar los datos.
+<h5>process.php</h5>
+<pre class="brush:php"><?php
+set_time_limit(0);
+ob_start();
+ 
+########### Extensiones
+$extensions = array(
+    '.com'      => array('whois.crsnic.net','No match for'),
+    '.info'     => array('whois.afilias.net','NOT FOUND'),
+    '.net'      => array('whois.crsnic.net','No match for'),
+    '.co.uk'    => array('whois.nic.uk','No match'),
+    '.nl'       => array('whois.domain-registry.nl','not a registered domain'),
+    '.ca'       => array('whois.cira.ca', 'AVAIL'),
+    '.name'     => array('whois.nic.name','No match'),
+    '.ws'       => array('whois.website.ws','No Match'),
+    '.be'       => array('whois.ripe.net','No entries'),
+    '.org'      => array('whois.pir.org','NOT FOUND'),
+    '.biz'      => array('whois.biz','Not found'),
+    '.tv'       => array('whois.nic.tv', 'No match for'),
+);
+###########
+ 
+if(isset($_GET['domain']))
+{
+    $domain = str_replace(array('www.', 'http://','/'), NULL, $_GET['domain']);
+ 
+    if(strlen($domain) > 0)
+    {
+        foreach($extensions as $extension => $who)
+        {
+            $buffer = NULL;
+ 
+            $sock = fsockopen($who[0], 43) or die('Error Connecting To Server:' . $server);
+            fputs($sock, $domain.$extension . "\r\n");
+ 
+                while( !feof($sock) )
+                {
+                    $buffer .= fgets($sock,128);
+                }
+ 
+            fclose($sock);
+ 
+            if(eregi($who[1], $buffer))
+            {
+                echo '<h4 class="available"><span>Disponible</span>' . $domain. '<b>' . $extension .'</b> Esta Disponible</h4>';
+            }
+            else
+            {
+                echo '<h4 class="taken"><span>Tomado</span>' . $domain . '<b>' .$extension .'</b> Esta Tomado</h4>';
+            }
+            echo '<br />';    
+ 
+            ob_flush();
+            flush();
+            sleep(0.3);
+ 
+        }
+    }
+    else
+    {
+        echo 'Por favor ingrese nombre del dominio';
+    }
+}
+?></pre>
+
+<!-- <!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
@@ -12,9 +141,7 @@
 
   <link rel="stylesheet" href="css/signature-pad.css?v=<?php echo time(); ?>"">
 
-  <!--[if IE]>
-    <link rel="stylesheet" type="text/css" href="css/ie9.css">
-  <![endif]-->
+  
 
  
 </head>
@@ -49,7 +176,7 @@
   <script src="js/signature_pad.umd.js"></script>
   <script src="js/app.js?v=<?php echo time(); ?>"></script>
 </body>
-</html>
+</html> -->
 <!-- <?php
 // require 'includes/templates/header.php';
 // var_dump(getrusage()) ;

@@ -1,6 +1,9 @@
 <?php
 session_start();
 if ($_POST['accion'] == 'Iniciar Sesion') {
+   
+
+    $ip = getRealIP();
     $mail = filter_var($_POST['correo'], FILTER_SANITIZE_STRING);
     $pass = filter_var($_POST['pass'], FILTER_SANITIZE_STRING);
     // echo json_encode($mail."-".$pass);
@@ -22,7 +25,8 @@ if ($_POST['accion'] == 'Iniciar Sesion') {
 
             );
             $_SESSION['usuario'] = $resultado['nombre_usuario'];
-
+            $_SESSION['token'] = bin2hex(openssl_random_pseudo_bytes(16));
+            $_SESSION['ip'] = $ip;
             $_SESSION['email'] = $resultado['email_usuario'];
         } else {
             $respuesta = array(
@@ -34,3 +38,18 @@ if ($_POST['accion'] == 'Iniciar Sesion') {
         echo json_encode("Error: " . $e->getMessage());
     }
 }
+
+
+
+
+    function getRealIP() {
+
+        if (!empty($_SERVER['HTTP_CLIENT_IP']))
+            return $_SERVER['HTTP_CLIENT_IP'];
+           
+        if (!empty($_SERVER['HTTP_X_FORWARDED_FOR']))
+            return $_SERVER['HTTP_X_FORWARDED_FOR'];
+       
+        return $_SERVER['REMOTE_ADDR'];
+}
+

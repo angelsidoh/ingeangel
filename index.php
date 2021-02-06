@@ -201,7 +201,7 @@ require 'includes/templates/header.php';
                                     </div>
                                 </div>
                                 <div class="botones">
-                                    <a href="#" class="button">Contratar</a>
+                                    <a href="contratar.php?paquete=1#angel-ruiz" class="button">Contratar</a>
                                 </div>
 
                             </div>
@@ -290,7 +290,7 @@ require 'includes/templates/header.php';
                                     </div>
                                 </div>
                                 <div class="botones">
-                                    <a id="comprarbtn" href="#" class="button">Contratar</a>
+                                    <a id="comprarbtn" href="contratar.php?paquete=2#angel-ruiz" class="button">Contratar</a>
                                 </div>
                             </div>
 
@@ -379,7 +379,7 @@ require 'includes/templates/header.php';
                                     </div>
                                 </div>
                                 <div class="botones">
-                                    <a id="comprarbtn" href="#" class="button">Contratar</a>
+                                    <a id="comprarbtn" href="contratar.php?paquete=3#angel-ruiz" class="button">Contratar</a>
                                 </div>
                             </div>
 

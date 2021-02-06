@@ -47,17 +47,18 @@ session_destroy();
       <?php endif; ?>
 
       <div class="recordatorio">
-        <p>Te recordamos que la contraseña se envió al correo electrónico que ingresaste en tu registro</p>
-        <p>Si aún no has revido un correo con tus datos de registro. Por favor contáctese al correo: <a href="mailto:infoingeangel@gmail.com"></a>
+       
+        <p>¿Olvidaste tu contraseña? Ponte en contacto
+        <a href="mailto:passingeangel@gmail.com"></a>
 
         </p>
       </div>
     </div> <!-- rnormal__tarjeta -->
-    <div class="sub-boton">
+    <!-- <div class="sub-boton">
       <input id="btnlogin" type="submit" value="Iniciar Sesión" class="button">
       <p>¿Aún no tienes una cuenta en ingeangel?</p> <a class="button" href="registro.php#reg">Registrate</a>
     
-    </div>
+    </div> -->
     
 
       

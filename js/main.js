@@ -1,3 +1,12 @@
+// localStorage.setItem("Numero", 12);
+// // localStorage.setItem("token", "");
+// // localStorage.setItem("Nombre", "Checo Pérez");
+// // localStorage.setItem("Token", )
+var elNombre = localStorage.getItem("Nombre");
+var elNumero = parseInt(localStorage.getItem("Numero"));
+var eltoken = (localStorage.getItem("token"));
+console.log(elNombre+elNumero+'-'+eltoken);
+
 const formLoginUser = document.querySelector('#login');
 if ($("#login").length) {
   eventListeners();
@@ -239,10 +248,10 @@ function mostrarPassword() {
   var cambio = document.getElementById("pass");
   if (cambio.type == "password") {
     cambio.type = "text";
-    $('.icon').removeClass('fa fa-eye-slash').addClass('fa fa-eye');
+    $('.icon').removeClass('fa fa-eye').addClass('fa fa-eye-slash');
   } else {
     cambio.type = "password";
-    $('.icon').removeClass('fa fa-eye').addClass('fa fa-eye-slash');
+    $('.icon').removeClass('fa fa-eye-slash').addClass('fa fa-eye');
   }
 }
 
@@ -591,6 +600,11 @@ if (pathname == '/index.php' || pathname == '/') {
     $("body").css("background-color", "#ffffff");
   });
 } else if (pathname == '/login.php') {
+  $(document).ready(function () {
+    $("body").css("background-color", "#ffffff");
+  });
+} 
+else if (pathname == '/contratar.php') {
   $(document).ready(function () {
     $("body").css("background-color", "#ffffff");
   });
