@@ -147,6 +147,7 @@
 
 <!-- custom scrollbar plugin -->
 <script src="js/plugins/malihu-custom-scrollbar-plugin-master/malihu-custom-scrollbar-plugin-master/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="js/jquery.numeric.js" type="text/javascript"></script>
 <script src="js/main.js?v=<?php echo time(); ?>"></script>
 <script>
     /* ésto comprueba la localStorage si ya tiene la variable guardada */

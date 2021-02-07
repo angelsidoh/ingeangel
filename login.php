@@ -48,17 +48,16 @@ session_destroy();
 
       <div class="recordatorio">
        
-        <p>¿Olvidaste tu contraseña? Ponte en contacto
-        <a href="mailto:passingeangel@gmail.com"></a>
+        <p>¿Olvidaste tu contraseña? Ponte en contacto <a href="mailto:passingeangel@gmail.com"></a>
 
         </p>
       </div>
     </div> <!-- rnormal__tarjeta -->
-    <!-- <div class="sub-boton">
+   <div class="sub-boton">
       <input id="btnlogin" type="submit" value="Iniciar Sesión" class="button">
-      <p>¿Aún no tienes una cuenta en ingeangel?</p> <a class="button" href="registro.php#reg">Registrate</a>
+      <!-- <p>¿Aún no tienes una cuenta en ingeangel?</p> <a class="button" href="registro.php#reg">Registrate</a> -->
     
-    </div> -->
+    </div> 
     
 
       

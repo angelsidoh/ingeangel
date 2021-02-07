@@ -1,4 +1,3 @@
-
 // configuración
 
 
@@ -18,11 +17,14 @@ function isElementTotallyVisible(elto) {
     var anchoViewport = window.innerWidth || document.documentElement.clientWidth;
     var alturaViewport = window.innerHeight || document.documentElement.clientHeight;
     //Posición de la caja del elemento
-    var caja = elto.getBoundingClientRect();
-    return ( caja.top >= 0 && 
-             caja.bottom <= alturaViewport &&
-             caja.left >= 0 &&
-             caja.right <= anchoViewport );
+    if (elto != null) {
+        var caja = elto.getBoundingClientRect();
+        return (caja.top >= 0 &&
+            caja.bottom <= alturaViewport &&
+            caja.left >= 0 &&
+            caja.right <= anchoViewport);
+    }
+
 }
 
 /**
@@ -34,13 +36,18 @@ function isElementPartiallyVisible(elto) {
     var anchoViewport = window.innerWidth || document.documentElement.clientWidth;
     var alturaViewport = window.innerHeight || document.documentElement.clientHeight;
     //Posición de la caja del elemento
-    var caja = elto.getBoundingClientRect();
-    var cajaDentroH = (caja.left >= 0 && caja.left <= anchoViewport) ||
-                      (caja.right >= 0 && caja.right <= anchoViewport);
-    var cajaDentroV = (caja.top >= 0 && caja.top <= alturaViewport) ||  
-                      (caja.bottom>= 0 && caja.bottom <= alturaViewport); 
+    if (elto != null) {
+        
+        var caja = elto.getBoundingClientRect();
+        var cajaDentroH = (caja.left >= 0 && caja.left <= anchoViewport) ||
+            (caja.right >= 0 && caja.right <= anchoViewport);
+        var cajaDentroV = (caja.top >= 0 && caja.top <= alturaViewport) ||
+            (caja.bottom >= 0 && caja.bottom <= alturaViewport);
 
-    return (cajaDentroH && cajaDentroV);
+        return (cajaDentroH && cajaDentroV);
+    }
+
+
 }
 
 /**
@@ -50,7 +57,7 @@ function isElementPartiallyVisible(elto) {
  * @returns {boolean} Devuelve true si hay algo (por poco que sea) del elemento en el área visible de la página, y devuelve false si el elemento desaparece por completo del área visible.
  */
 function inViewportPartially(elto, handler) {
-    var anteriorVisibilidad = isElementPartiallyVisible(elto);    //crea una clausura para el manejador de este evento concreto
+    var anteriorVisibilidad = isElementPartiallyVisible(elto); //crea una clausura para el manejador de este evento concreto
     //Defino un manejador para determinar posibles cambios
     function detectarPosibleCambio() {
         var esVisible = isElementPartiallyVisible(elto);
@@ -73,7 +80,7 @@ function inViewportPartially(elto, handler) {
  * @returns {boolean} Devuelve true si el elemento completo está en el área visible de la página, y devuelve false si cualquier parte del mismo (por pequeña que sea)desaparece del área visible.
  */
 function inViewportTotally(elto, handler) {
-    var anteriorVisibilidad = isElementTotallyVisible(elto);    //crea una clausura para el manejador de este evento concreto
+    var anteriorVisibilidad = isElementTotallyVisible(elto); //crea una clausura para el manejador de este evento concreto
     //Defino un manejador para determinar posibles cambios
     function detectarPosibleCambio() {
         var esVisible = isElementTotallyVisible(elto);
@@ -88,15 +95,18 @@ function inViewportTotally(elto, handler) {
     window.addEventListener("resize", detectarPosibleCambio);
     window.addEventListener("scroll", detectarPosibleCambio);
 }
+
 function isElementTotallyVisible1(elto) {
     var anchoViewport = window.innerWidth || document.documentElement.clientWidth;
     var alturaViewport = window.innerHeight || document.documentElement.clientHeight;
     //Posición de la caja del elemento
+    if (elto != null) {
     var caja = elto.getBoundingClientRect();
-    return ( caja.top >= 0 && 
-             caja.bottom <= alturaViewport &&
-             caja.left >= 0 &&
-             caja.right <= anchoViewport );
+    return (caja.top >= 0 &&
+        caja.bottom <= alturaViewport &&
+        caja.left >= 0 &&
+        caja.right <= anchoViewport);
+    }
 }
 
 /**
@@ -108,13 +118,15 @@ function isElementPartiallyVisible1(elto) {
     var anchoViewport = window.innerWidth || document.documentElement.clientWidth;
     var alturaViewport = window.innerHeight || document.documentElement.clientHeight;
     //Posición de la caja del elemento
+    if (elto != null) {
     var caja = elto.getBoundingClientRect();
     var cajaDentroH = (caja.left >= 0 && caja.left <= anchoViewport) ||
-                      (caja.right >= 0 && caja.right <= anchoViewport);
-    var cajaDentroV = (caja.top >= 0 && caja.top <= alturaViewport) ||  
-                      (caja.bottom>= 0 && caja.bottom <= alturaViewport); 
+        (caja.right >= 0 && caja.right <= anchoViewport);
+    var cajaDentroV = (caja.top >= 0 && caja.top <= alturaViewport) ||
+        (caja.bottom >= 0 && caja.bottom <= alturaViewport);
 
     return (cajaDentroH && cajaDentroV);
+    }
 }
 
 /**
@@ -124,7 +136,7 @@ function isElementPartiallyVisible1(elto) {
  * @returns {boolean} Devuelve true si hay algo (por poco que sea) del elemento en el área visible de la página, y devuelve false si el elemento desaparece por completo del área visible.
  */
 function inViewportPartially1(elto1, handler) {
-    var anteriorVisibilidad1 = isElementPartiallyVisible(elto1);    //crea una clausura para el manejador de este evento concreto
+    var anteriorVisibilidad1 = isElementPartiallyVisible(elto1); //crea una clausura para el manejador de este evento concreto
     //Defino un manejador para determinar posibles cambios
     function detectarPosibleCambio1() {
         var esVisible1 = isElementPartiallyVisible1(elto1);
@@ -147,7 +159,7 @@ function inViewportPartially1(elto1, handler) {
  * @returns {boolean} Devuelve true si el elemento completo está en el área visible de la página, y devuelve false si cualquier parte del mismo (por pequeña que sea)desaparece del área visible.
  */
 function inViewportTotally1(elto1, handler) {
-    var anteriorVisibilidad1 = isElementTotallyVisible1(elto1);    //crea una clausura para el manejador de este evento concreto
+    var anteriorVisibilidad1 = isElementTotallyVisible1(elto1); //crea una clausura para el manejador de este evento concreto
     //Defino un manejador para determinar posibles cambios
     function detectarPosibleCambio1() {
         var esVisible1 = isElementTotallyVisible1(elto1);
@@ -167,11 +179,13 @@ function isElementTotallyVisible2(elto) {
     var anchoViewport = window.innerWidth || document.documentElement.clientWidth;
     var alturaViewport = window.innerHeight || document.documentElement.clientHeight;
     //Posición de la caja del elemento
+    if (elto != null) {
     var caja = elto.getBoundingClientRect();
-    return ( caja.top >= 0 && 
-             caja.bottom <= alturaViewport &&
-             caja.left >= 0 &&
-             caja.right <= anchoViewport );
+    return (caja.top >= 0 &&
+        caja.bottom <= alturaViewport &&
+        caja.left >= 0 &&
+        caja.right <= anchoViewport);
+    }
 }
 
 /**
@@ -183,13 +197,15 @@ function isElementPartiallyVisible2(elto) {
     var anchoViewport = window.innerWidth || document.documentElement.clientWidth;
     var alturaViewport = window.innerHeight || document.documentElement.clientHeight;
     //Posición de la caja del elemento
+    if (elto != null) {
     var caja = elto.getBoundingClientRect();
     var cajaDentroH = (caja.left >= 0 && caja.left <= anchoViewport) ||
-                      (caja.right >= 0 && caja.right <= anchoViewport);
-    var cajaDentroV = (caja.top >= 0 && caja.top <= alturaViewport) ||  
-                      (caja.bottom>= 0 && caja.bottom <= alturaViewport); 
+        (caja.right >= 0 && caja.right <= anchoViewport);
+    var cajaDentroV = (caja.top >= 0 && caja.top <= alturaViewport) ||
+        (caja.bottom >= 0 && caja.bottom <= alturaViewport);
 
     return (cajaDentroH && cajaDentroV);
+    }
 }
 
 /**
@@ -199,7 +215,7 @@ function isElementPartiallyVisible2(elto) {
  * @returns {boolean} Devuelve true si hay algo (por poco que sea) del elemento en el área visible de la página, y devuelve false si el elemento desaparece por completo del área visible.
  */
 function inViewportPartially2(elto2, handler) {
-    var anteriorVisibilidad2 = isElementPartiallyVisible(elto2);    //crea una clausura para el manejador de este evento concreto
+    var anteriorVisibilidad2 = isElementPartiallyVisible(elto2); //crea una clausura para el manejador de este evento concreto
     //Defino un manejador para determinar posibles cambios
     function detectarPosibleCambio2() {
         var esVisible2 = isElementPartiallyVisible2(elto2);
@@ -222,7 +238,7 @@ function inViewportPartially2(elto2, handler) {
  * @returns {boolean} Devuelve true si el elemento completo está en el área visible de la página, y devuelve false si cualquier parte del mismo (por pequeña que sea)desaparece del área visible.
  */
 function inViewportTotally2(elto2, handler) {
-    var anteriorVisibilidad2 = isElementTotallyVisible2(elto2);    //crea una clausura para el manejador de este evento concreto
+    var anteriorVisibilidad2 = isElementTotallyVisible2(elto2); //crea una clausura para el manejador de este evento concreto
     //Defino un manejador para determinar posibles cambios
     function detectarPosibleCambio2() {
         var esVisible2 = isElementTotallyVisible2(elto2);
@@ -243,11 +259,13 @@ function isElementTotallyVisible3(elto) {
     var anchoViewport = window.innerWidth || document.documentElement.clientWidth;
     var alturaViewport = window.innerHeight || document.documentElement.clientHeight;
     //Posición de la caja del elemento
+    if (elto != null) {
     var caja = elto.getBoundingClientRect();
-    return ( caja.top >= 0 && 
-             caja.bottom <= alturaViewport &&
-             caja.left >= 0 &&
-             caja.right <= anchoViewport );
+    return (caja.top >= 0 &&
+        caja.bottom <= alturaViewport &&
+        caja.left >= 0 &&
+        caja.right <= anchoViewport);
+    }
 }
 
 /**
@@ -259,13 +277,15 @@ function isElementPartiallyVisible3(elto) {
     var anchoViewport = window.innerWidth || document.documentElement.clientWidth;
     var alturaViewport = window.innerHeight || document.documentElement.clientHeight;
     //Posición de la caja del elemento
+    if (elto != null) {
     var caja = elto.getBoundingClientRect();
     var cajaDentroH = (caja.left >= 0 && caja.left <= anchoViewport) ||
-                      (caja.right >= 0 && caja.right <= anchoViewport);
-    var cajaDentroV = (caja.top >= 0 && caja.top <= alturaViewport) ||  
-                      (caja.bottom>= 0 && caja.bottom <= alturaViewport); 
+        (caja.right >= 0 && caja.right <= anchoViewport);
+    var cajaDentroV = (caja.top >= 0 && caja.top <= alturaViewport) ||
+        (caja.bottom >= 0 && caja.bottom <= alturaViewport);
 
     return (cajaDentroH && cajaDentroV);
+    }
 }
 
 /**
@@ -275,7 +295,7 @@ function isElementPartiallyVisible3(elto) {
  * @returns {boolean} Devuelve true si hay algo (por poco que sea) del elemento en el área visible de la página, y devuelve false si el elemento desaparece por completo del área visible.
  */
 function inViewportPartially3(elto3, handler) {
-    var anteriorVisibilidad3 = isElementPartiallyVisible(elto3);    //crea una clausura para el manejador de este evento concreto
+    var anteriorVisibilidad3 = isElementPartiallyVisible(elto3); //crea una clausura para el manejador de este evento concreto
     //Defino un manejador para determinar posibles cambios
     function detectarPosibleCambio3() {
         var esVisible3 = isElementPartiallyVisible3(elto3);
@@ -298,7 +318,7 @@ function inViewportPartially3(elto3, handler) {
  * @returns {boolean} Devuelve true si el elemento completo está en el área visible de la página, y devuelve false si cualquier parte del mismo (por pequeña que sea)desaparece del área visible.
  */
 function inViewportTotally3(elto3, handler) {
-    var anteriorVisibilidad3 = isElementTotallyVisible3(elto3);    //crea una clausura para el manejador de este evento concreto
+    var anteriorVisibilidad3 = isElementTotallyVisible3(elto3); //crea una clausura para el manejador de este evento concreto
     //Defino un manejador para determinar posibles cambios
     function detectarPosibleCambio3() {
         var esVisible3 = isElementTotallyVisible3(elto3);
@@ -320,10 +340,10 @@ function isElementTotallyVisible4(elto) {
     var alturaViewport = window.innerHeight || document.documentElement.clientHeight;
     //Posición de la caja del elemento
     var caja = elto.getBoundingClientRect();
-    return ( caja.top >= 0 && 
-             caja.bottom <= alturaViewport &&
-             caja.left >= 0 &&
-             caja.right <= anchoViewport );
+    return (caja.top >= 0 &&
+        caja.bottom <= alturaViewport &&
+        caja.left >= 0 &&
+        caja.right <= anchoViewport);
 }
 
 /**
@@ -337,9 +357,9 @@ function isElementPartiallyVisible4(elto) {
     //Posición de la caja del elemento
     var caja = elto.getBoundingClientRect();
     var cajaDentroH = (caja.left >= 0 && caja.left <= anchoViewport) ||
-                      (caja.right >= 0 && caja.right <= anchoViewport);
-    var cajaDentroV = (caja.top >= 0 && caja.top <= alturaViewport) ||  
-                      (caja.bottom>= 0 && caja.bottom <= alturaViewport); 
+        (caja.right >= 0 && caja.right <= anchoViewport);
+    var cajaDentroV = (caja.top >= 0 && caja.top <= alturaViewport) ||
+        (caja.bottom >= 0 && caja.bottom <= alturaViewport);
 
     return (cajaDentroH && cajaDentroV);
 }
@@ -351,7 +371,7 @@ function isElementPartiallyVisible4(elto) {
  * @returns {boolean} Devuelve true si hay algo (por poco que sea) del elemento en el área visible de la página, y devuelve false si el elemento desaparece por completo del área visible.
  */
 function inViewportPartially4(elto4, handler) {
-    var anteriorVisibilidad4 = isElementPartiallyVisible(elto4);    //crea una clausura para el manejador de este evento concreto
+    var anteriorVisibilidad4 = isElementPartiallyVisible(elto4); //crea una clausura para el manejador de este evento concreto
     //Defino un manejador para determinar posibles cambios
     function detectarPosibleCambio4() {
         var esVisible4 = isElementPartiallyVisible4(elto4);
@@ -374,7 +394,7 @@ function inViewportPartially4(elto4, handler) {
  * @returns {boolean} Devuelve true si el elemento completo está en el área visible de la página, y devuelve false si cualquier parte del mismo (por pequeña que sea)desaparece del área visible.
  */
 function inViewportTotally4(elto4, handler) {
-    var anteriorVisibilidad4 = isElementTotallyVisible4(elto4);    //crea una clausura para el manejador de este evento concreto
+    var anteriorVisibilidad4 = isElementTotallyVisible4(elto4); //crea una clausura para el manejador de este evento concreto
     //Defino un manejador para determinar posibles cambios
     function detectarPosibleCambio4() {
         var esVisible4 = isElementTotallyVisible4(elto4);
@@ -389,4 +409,3 @@ function inViewportTotally4(elto4, handler) {
     window.addEventListener("resize", detectarPosibleCambio4);
     window.addEventListener("scroll", detectarPosibleCambio4);
 }
-

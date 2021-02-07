@@ -3,7 +3,7 @@ session_start();
 if ($_POST['accion'] == 'Iniciar Sesion') {
    
 
-    $ip = getRealIP();
+    // $ip = getRealIP();
     $mail = filter_var($_POST['correo'], FILTER_SANITIZE_STRING);
     $pass = filter_var($_POST['pass'], FILTER_SANITIZE_STRING);
     // echo json_encode($mail."-".$pass);
@@ -26,7 +26,7 @@ if ($_POST['accion'] == 'Iniciar Sesion') {
             );
             $_SESSION['usuario'] = $resultado['nombre_usuario'];
             $_SESSION['token'] = bin2hex(openssl_random_pseudo_bytes(16));
-            $_SESSION['ip'] = $ip;
+            // $_SESSION['ip'] = $ip;
             $_SESSION['email'] = $resultado['email_usuario'];
         } else {
             $respuesta = array(

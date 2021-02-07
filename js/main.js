@@ -5,7 +5,7 @@
 var elNombre = localStorage.getItem("Nombre");
 var elNumero = parseInt(localStorage.getItem("Numero"));
 var eltoken = (localStorage.getItem("token"));
-console.log(elNombre+elNumero+'-'+eltoken);
+// console.log(elNombre + elNumero + '-' + eltoken);
 
 const formLoginUser = document.querySelector('#login');
 if ($("#login").length) {
@@ -167,6 +167,356 @@ function consultaBD(dato) {
   // enviar datos
   xhr.send(dato);
 }
+$('#telefono').numeric();
+$('#postal').numeric();
+$('#numiedirec').numeric();
+
+const formRegistroUser = document.querySelector('#registro');
+if ($("#registro").length) {
+  eventListeners();
+
+  function eventListeners() {
+    formRegistroUser.addEventListener('submit', leerRegistro);
+
+  }
+}
+
+function leerRegistro(e) {
+  e.preventDefault();
+  const nombre = document.querySelector('#nombre').value;
+  const apellido = document.querySelector('#apellido').value;
+  const telefono = document.querySelector('#telefono').value;
+  const correo = document.querySelector('#correo').value;
+  const calle = document.querySelector('#calle').value;
+  const numiedirec = document.querySelector('#numiedirec').value;
+  const col = document.querySelector('#col').value;
+  const postal = document.querySelector('#postal').value;
+  const paquete = document.querySelector('#paquete').value;
+  const fecha = document.querySelector('#fecha').value;
+  const accion = document.querySelector('#btnregcuenta1').value;
+  console.log(nombre, apellido, telefono, correo, calle, numiedirec, col, postal, paquete, fecha);
+  let condicionvalid = 0;
+  let condicionvalid1 = 0;
+  if (nombre === '') {
+    $('#nombre').css({
+      'background': 'red'
+    });
+    swal({
+      content: "",
+      text: 'Es obligatorio ingresar su Nombre',
+      icon: "info",
+      button: {
+        text: "Continuar",
+        closeModal: true,
+      },
+    });
+  } else {
+    $('#nombre').css({
+      'background': '#93A9CC'
+    });
+    if (apellido === '') {
+      $('#apellido').css({
+        'background': 'red'
+      });
+      swal({
+        content: "",
+        text: 'Es obligatorio ingresar sus Apellidos',
+        icon: "info",
+        button: {
+          text: "Continuar",
+          closeModal: true,
+        },
+      });
+    } else {
+      $('#apellido').css({
+        'background': '#93A9CC'
+      });
+      if (telefono === '') {
+        $('#telefono').css({
+          'background': 'red'
+        });
+        swal({
+          content: "",
+          text: 'Es obligatorio ingresar un Número telefónico o de WhatsApp',
+          icon: "info",
+          button: {
+            text: "Continuar",
+            closeModal: true,
+          },
+        });
+      } else {
+        $('#telefono').css({
+          'background': '#93A9CC'
+        });
+        if (correo === '') {
+          $('#correo').css({
+            'background': 'red'
+          });
+          swal({
+            content: "",
+            text: 'Es obligatorio ingresar un Correo Electrónico',
+            icon: "info",
+            button: {
+              text: "Continuar",
+              closeModal: true,
+            },
+          });
+        } else {
+          $('#correo').css({
+            'background': '#93A9CC'
+          });
+          if (calle === '') {
+            $('#calle').css({
+              'background': 'red'
+            });
+            swal({
+              content: "",
+              text: 'Es obligatorio ingresar la Calle de su domicilio',
+              icon: "info",
+              button: {
+                text: "Continuar",
+                closeModal: true,
+              },
+            });
+          } else {
+            $('#calle').css({
+              'background': '#93A9CC'
+            });
+            if (numiedirec === '') {
+              $('#numiedirec').css({
+                'background': 'red'
+              });
+              swal({
+                content: "",
+                text: 'Es obligatorio ingresar el Número de su domicilio',
+                icon: "info",
+                button: {
+                  text: "Continuar",
+                  closeModal: true,
+                },
+              });
+            } else {
+              $('#numiedirec').css({
+                'background': '#93A9CC'
+              });
+              if (col === '') {
+                $('#col').css({
+                  'background': 'red'
+                });
+                swal({
+                  content: "",
+                  text: 'Es obligatorio ingresar la Colonia de su domicilio',
+                  icon: "info",
+                  button: {
+                    text: "Continuar",
+                    closeModal: true,
+                  },
+                });
+              } else {
+                $('#col').css({
+                  'background': '#93A9CC'
+                });
+                if (postal === '') {
+                  $('#postal').css({
+                    'background': 'red'
+                  });
+                  swal({
+                    content: "",
+                    text: 'Es obligatorio ingresar el Código postal de su domicilio',
+                    icon: "info",
+                    button: {
+                      text: "Continuar",
+                      closeModal: true,
+                    },
+                  });
+                } else {
+                  $('#postal').css({
+                    'background': '#93A9CC'
+                  });
+                  if (paquete === '') {
+                    $('#paquete').css({
+                      'background': 'red'
+                    });
+                    swal({
+                      content: "",
+                      text: 'Es obligatorio ingresar el Paquete de servicio deseado',
+                      icon: "info",
+                      button: {
+                        text: "Continuar",
+                        closeModal: true,
+                      },
+                    });
+                  } else {
+                    $('#paquete').css({
+                      'background': '#93A9CC'
+                    });
+                    if (fecha === '') {
+                      $('#fecha').css({
+                        'background': 'red'
+                      });
+                      swal({
+                        content: "",
+                        text: 'La Fecha estará disponible automáticamente',
+                        icon: "info",
+                        button: {
+                          text: "Continuar",
+                          closeModal: true,
+                        },
+                      });
+                    } else {
+                      $('#fecha').css({
+                        'background': '#93A9CC'
+                      });
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  validarString(correo);
+  if (caracteresCorreoValido(correo) === false) {
+    $('#correo').css({
+      'background-color': 'red'
+    });
+    swal({
+      content: "",
+      text: 'El correo es inválido, debido a que tiene acentos. ¡Intenta con otro por favor!',
+      icon: "error",
+      button: {
+        text: "Continuar",
+        closeModal: true,
+      },
+    });
+
+  }else{
+    condicionvalid1 = 1;
+  }
+  let cadena = correo;
+  // esta es la palabra a buscar
+  let termino = ["@gmail.com", "@hotmail.com", "@outlook.com"];
+  let x1 = 0;
+  for (let x = 0; x <= 2; x++) {
+
+    let find = termino[x]
+    // para buscar la palabra hacemos
+    let posicion = cadena.indexOf(find);
+
+
+    if (posicion !== -1) {
+      // console.log(x + "->La palabra está en la posición " + posicion);
+      condicionvalid = 1;
+      x = 3;
+
+    } else {
+      // console.log('-z' + x);
+      if (x == 2) {
+        $('#correo').css({
+          'background-color': 'red'
+        });
+        swal({
+          content: "",
+          text: '¡Por favor! Usa una cuenta correo válida como @hotmail.com, @gmail.com, @outlook.com',
+          icon: "error",
+          button: {
+            text: "Continuar",
+            closeModal: true,
+          },
+        });
+      }
+
+    }
+  }
+  if (condicionvalid == 1 && condicionvalid1 == 1 && correo != '' && nombre != '' && apellido != '' && telefono != '' && calle != '' && numiedirec != '' && col != '' && postal != '' && paquete != '') {
+   
+    const ifouserreg = new FormData();
+
+    ifouserreg.append('nombre', nombre);
+    ifouserreg.append('apellido', apellido);
+    ifouserreg.append('telefono', telefono);
+    ifouserreg.append('correo', correo);
+    ifouserreg.append('calle', calle);
+    ifouserreg.append('numiedirec', numiedirec);
+    ifouserreg.append('col', col);
+    ifouserreg.append('postal', postal);
+    ifouserreg.append('paquete', paquete);
+    ifouserreg.append('fecha', fecha);
+    ifouserreg.append('accion', accion);
+   
+    if (accion === 'regcuenta1') {
+      registroDB(ifouserreg);
+    }
+  }
+
+}
+function registroDB(dato) {
+  // llamado de ajax
+  // crear objeto
+//  console.log(dato);
+  const xhr = new XMLHttpRequest();
+    // abrir conexion
+    xhr.open('POST', 'includes/modelos/jsonregistro.php', true);
+    // pasar datos
+    
+    xhr.onload = function () {
+    
+    if (this.status === 200) {
+      const respuesta = JSON.parse(xhr.responseText);
+      // console.log(respuesta.estado);
+      if(respuesta.estado === 'nuevacuentaregistrada'){
+        swal({
+          content: "",
+          text: 'Bienvenido '+respuesta.variables.nombre,
+          icon: "success",
+          button: {
+            text: "Continuar",
+            closeModal: true,
+          },
+        })
+        .then((value) => {
+          switch (value) {
+            default:
+              window.location.href = 'bienvenida.php#angel-ruiz';
+          }
+        });
+        setTimeout(() => {
+          window.location.href = 'bienvenida.php#angel-ruiz';
+        }, 3200);
+      }
+     
+      if(respuesta.estado === 'correoexiste'){
+        swal({
+          content: "",
+          text: 'Esta cuenta ya existe.',
+          icon: "error",
+          button: {
+            text: "Continuar",
+            closeModal: true,
+          },
+        });
+      }
+      if(respuesta.estado === 'errorINSERTARenBD'){
+        swal({
+          content: "",
+          text: 'Ha ocurrido una falla, por favor inténtelo más tarde.',
+          icon: "info",
+          button: {
+            text: "Continuar",
+            closeModal: true,
+          },
+        });
+      }
+    }
+    
+  
+    
+    
+  }
+  xhr.send(dato);
+}
 //Validar tipo Correo
 function caracteresCorreoValido(mail) {
   var caract = new RegExp(/^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/);
@@ -219,24 +569,11 @@ function validarString(dato) {
             closeModal: true,
           },
         });
-
-
-
-        mostrarNotificacion('áéíóúÁÉÍÓÚ<>', 'Error');
-        mostrarNotificacion('Correo no permite estos símbolos:', 'Error');
-        $('#correo').css({
-          'color': 'red'
+        $('.input_grid1 #correo').css({
+          'background-color': 'red'
         });
-        $('#correo1').css({
-          'color': 'red'
-        });
-        return;
-      } else {
-        $('#correo').css({
-          'color': 'var(--ColorDescrip)'
-        });
-        $('#correo1').css({
-          'color': 'var(--ColorDescrip)'
+        $('.input_grid1 #correo').css({
+          'color': 'black'
         });
       }
     }
@@ -278,12 +615,12 @@ const app = (() => {
 
   const toggleClass = (element, stringClass) => {
     if (element.classList.contains(stringClass)) {
-      console.log('hola');
+      // console.log('hola');
       element.classList.remove(stringClass);
       $("#menu-screen").css("z-index", "-1");
     } else {
       $("#menu-screen").css("z-index", "2");
-      console.log('adios');
+      // console.log('adios');
       element.classList.add(stringClass);
     }
   };
@@ -307,13 +644,13 @@ $(window).resize(function () {
 
   resolucion = screen.width;
 
-  console.log(resolucion);
+  // console.log(resolucion);
 });
 $(document).ready(function () {
 
   resolucion = screen.width;
 
-  console.log(resolucion);
+  // console.log(resolucion);
 });
 var fleep = '0';
 
@@ -326,7 +663,7 @@ $(".fleep1")
     $("#card1-front").hide();
     $("#card2-front").show();
     $("#card3-front").show();
-    console.log(fleep);
+    // console.log(fleep);
     if (resolucion <= 1280) {
 
       $heightDown = $('.imgfondoprincipal').height();
@@ -340,7 +677,7 @@ $(".fleep1")
 $(".fleep1")
   .mouseleave(function () {
     fleep = '0';
-    console.log(fleep);
+    // console.log(fleep);
     if (fleep === '0') {
       $('.card1').removeClass('flipped');
       $('.card2').removeClass('flipped');
@@ -360,10 +697,10 @@ $(".fleep2")
     $('.card2').addClass('flipped');
     $('.card3').removeClass('flipped');
     fleep = '2';
-    console.log(fleep);
+    // console.log(fleep);
     if (resolucion <= 1280) {
       $heightDown = $('.imgfondoprincipal').height() + $('#card1-back').height();
-      console.log($heightDown);
+      // console.log($heightDown);
       $('html, body').animate({
         scrollTop: $heightDown
       }, 100);
@@ -372,7 +709,7 @@ $(".fleep2")
 $(".fleep2")
   .mouseleave(function () {
     fleep = '0';
-    console.log(fleep);
+    // console.log(fleep);
     if (fleep === '0') {
       $('.card1').removeClass('flipped');
       $('.card2').removeClass('flipped');
@@ -392,7 +729,7 @@ $(".fleep3")
     $('.card2').removeClass('flipped');
     $('.card3').addClass('flipped');
     fleep = '3';
-    console.log(fleep);
+    // console.log(fleep);
     if (resolucion <= 1280) {
       $heightDown = $('.imgfondoprincipal').height() + $('#card1-back').height() + $('#card2-back').height();
       console.log($heightDown);
@@ -407,7 +744,7 @@ $(".fleep3")
   .mouseleave(function () {
 
     fleep = '0';
-    console.log(fleep);
+    // console.log(fleep);
 
     if (fleep === '0') {
       $('.card1').removeClass('flipped');
@@ -594,7 +931,7 @@ $("#check-redes").click(function () {
 var pathname = window.location.pathname;
 pathname = (pathname.replace('/01ingeangel.com', ''));
 pathname = (pathname.replace('01', ''));
-console.log(pathname);
+// console.log(pathname);
 if (pathname == '/index.php' || pathname == '/') {
   $(document).ready(function () {
     $("body").css("background-color", "#ffffff");
@@ -603,8 +940,7 @@ if (pathname == '/index.php' || pathname == '/') {
   $(document).ready(function () {
     $("body").css("background-color", "#ffffff");
   });
-} 
-else if (pathname == '/contratar.php') {
+} else if (pathname == '/contratar.php') {
   $(document).ready(function () {
     $("body").css("background-color", "#ffffff");
   });
@@ -617,9 +953,9 @@ else if (pathname == '/contratar.php') {
 }
 
 if ($('#paquetes').is(':hidden')) {
-  console.log("Esta oculto");
+  // console.log("Esta oculto");
 } else {
-  console.log('Visible');
+  // console.log('Visible');
 }
 // slider
 $(document).ready(function () {
@@ -748,7 +1084,7 @@ $("h1").click(function () {
 
 var text = $("#sparklemaster"),
   numLetters = text.find("span").length;
-console.log(numLetters);
+// console.log(numLetters);
 
 function randomBlurize() {
   text.find("span:nth-child(" + (Math.floor(Math.random() * numLetters) + 1) + ")")
@@ -765,7 +1101,7 @@ $("#textBienvenida > div").length;
 var x = 'abc';
 var empty = '';
 
-console.log('abc is ' + x.length + ' code units long');
+// console.log('abc is ' + x.length + ' code units long');
 /* "Mozilla is 7 code units long" */
 var scrollup = 0;
 var scrolldown = 0;
