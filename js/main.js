@@ -157,7 +157,8 @@ function consultaBD(dato) {
               default:
                 window.location.href = 'cuenta.php#angel-ruiz';
             }
-          });
+          })
+          ;
         setTimeout(() => {
           window.location.href = 'cuenta.php#angel-ruiz';
         }, 3200);
@@ -465,7 +466,7 @@ function registroDB(dato) {
     
     if (this.status === 200) {
       const respuesta = JSON.parse(xhr.responseText);
-      // console.log(respuesta.estado);
+       console.log(respuesta);
       if(respuesta.estado === 'nuevacuentaregistrada'){
         swal({
           content: "",
@@ -484,19 +485,27 @@ function registroDB(dato) {
         });
         setTimeout(() => {
           window.location.href = 'bienvenida.php#angel-ruiz';
-        }, 3200);
+        }, 3200)
+        ;
       }
      
       if(respuesta.estado === 'correoexiste'){
         swal({
           content: "",
-          text: 'Esta cuenta ya existe.',
+          text: 'Esta cuenta ya existe. Por favor inicia sesión',
           icon: "error",
           button: {
-            text: "Continuar",
+            text: "Iniciar de Sesión",
             closeModal: true,
           },
+        })
+        .then((value) => {
+          switch (value) {
+            default:
+              window.location.href = 'login.php#angel-ruiz';
+          }
         });
+       
       }
       if(respuesta.estado === 'errorINSERTARenBD'){
         swal({
@@ -1191,3 +1200,6 @@ $(document).mousemove(function (event) {
     });
   }
 })
+
+// contador pasos
+
