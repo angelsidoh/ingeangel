@@ -9,5 +9,13 @@ function consultaBd($dato){
         return false;
     }
 }
-
+function consultaUsuario($dato){
+    include 'bd/bdsqli.php';
+    try{
+        return $connf->query("SELECT nombre_usuario, foto_usuario FROM usuarios WHERE email_usuario = '$dato'");
+    }catch(Exception $e){
+        echo "Error!!" . $e->getMessage() . "<br>";
+        return false;
+    }
+}
 ?>

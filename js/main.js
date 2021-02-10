@@ -1,3 +1,95 @@
+// hover cuenta perfil
+
+
+// var file = up("foto1file").files[0];
+//                     console.log(file);
+$("#foto1file").change(function () {
+  var file = up("foto1file").files[0];
+  // console.log(file);
+  var formdata = new FormData();
+  formdata.append("foto1file", file);
+  var ajax = new XMLHttpRequest();
+  ajax.upload.addEventListener("progress", progressHandler, false);
+  ajax.open("POST", "includes/modelos/upload4.php");
+  ajax.onload = function () {
+    if (this.status === 200) {
+      // console.log(JSON.parse(ajax.responseText));
+      const respuesta = JSON.parse(ajax.responseText);
+      // console.log('->->' + respuesta.estado);
+      if (respuesta.estado === 'uploadsuccess'){
+        swal({
+          content: "",
+          text: 'Ha cambiado su foto de perfil',
+          icon: "success",
+          button: {
+            text: "Continuar",
+            closeModal: true,
+          },
+        }).then((value) => {
+          switch (value) {
+            default:
+              location.reload();
+          }
+        });
+        setTimeout(() => {
+          location.reload();
+        }, 2200);
+      }
+      if(respuesta.estado === 'fotoformatoerror'){
+        swal({
+          content: "",
+          text: 'El archivo seleccionado no es una foto. ¡Por favor selecciona otro archivo e intentalo de nuevo!',
+          icon: "info",
+          button: {
+            text: "Continuar",
+            closeModal: true,
+          },
+        })
+      }
+      
+
+    }
+  }
+  ajax.send(formdata);
+});
+$(".contenedor-perfil .imagen").hover(
+  function () {
+    $('.edit-fotox').addClass('edit-foto');
+    $(".foto .edit-foto i").click(function () {
+      $("input[type='file']").trigger('click');
+
+
+    });
+  },
+  function () {
+    $('.edit-fotox').removeClass('edit-foto');
+  }
+);
+
+function progressHandler(event) {
+  // up("loaded_n_total").innerHTML = "Subiendo Foto " + event.loaded + " bytes of " + event.total;
+  // var percent = (event.loaded / event.total) * 100;
+  // up("progressBar").value = Math.round(percent);
+
+}
+
+function completeHandler(event) {
+  // up("status").innerHTML = event.target.responseText;
+  // up("progressBar").value = 0;
+}
+
+function errorHandler(event) {
+  up("status").innerHTML = "Upload Failed";
+}
+
+function abortHandler(event) {
+  up("status").innerHTML = "Upload Aborted";
+}
+
+function up(el) {
+  return document.getElementById(el);
+}
+
 // localStorage.setItem("Numero", 12);
 // // localStorage.setItem("token", "");
 // // localStorage.setItem("Nombre", "Checo Pérez");
@@ -157,8 +249,7 @@ function consultaBD(dato) {
               default:
                 window.location.href = 'cuenta.php#angel-ruiz';
             }
-          })
-          ;
+          });
         setTimeout(() => {
           window.location.href = 'cuenta.php#angel-ruiz';
         }, 3200);
@@ -393,7 +484,7 @@ function leerRegistro(e) {
       },
     });
 
-  }else{
+  } else {
     condicionvalid1 = 1;
   }
   let cadena = correo;
@@ -432,7 +523,7 @@ function leerRegistro(e) {
     }
   }
   if (condicionvalid == 1 && condicionvalid1 == 1 && correo != '' && nombre != '' && apellido != '' && telefono != '' && calle != '' && numiedirec != '' && col != '' && postal != '' && paquete != '') {
-   
+
     const ifouserreg = new FormData();
 
     ifouserreg.append('nombre', nombre);
@@ -446,68 +537,68 @@ function leerRegistro(e) {
     ifouserreg.append('paquete', paquete);
     ifouserreg.append('fecha', fecha);
     ifouserreg.append('accion', accion);
-   
+
     if (accion === 'regcuenta1') {
       registroDB(ifouserreg);
     }
   }
 
 }
+
 function registroDB(dato) {
   // llamado de ajax
   // crear objeto
-//  console.log(dato);
+  //  console.log(dato);
   const xhr = new XMLHttpRequest();
-    // abrir conexion
-    xhr.open('POST', 'includes/modelos/jsonregistro.php', true);
-    // pasar datos
-    
-    xhr.onload = function () {
-    
+  // abrir conexion
+  xhr.open('POST', 'includes/modelos/jsonregistro.php', true);
+  // pasar datos
+
+  xhr.onload = function () {
+
     if (this.status === 200) {
       const respuesta = JSON.parse(xhr.responseText);
-       console.log(respuesta);
-      if(respuesta.estado === 'nuevacuentaregistrada'){
+      console.log(respuesta);
+      if (respuesta.estado === 'nuevacuentaregistrada') {
         swal({
-          content: "",
-          text: 'Bienvenido '+respuesta.variables.nombre,
-          icon: "success",
-          button: {
-            text: "Continuar",
-            closeModal: true,
-          },
-        })
-        .then((value) => {
-          switch (value) {
-            default:
-              window.location.href = 'bienvenida.php#angel-ruiz';
-          }
-        });
+            content: "",
+            text: 'Bienvenido ' + respuesta.variables.nombre,
+            icon: "success",
+            button: {
+              text: "Continuar",
+              closeModal: true,
+            },
+          })
+          .then((value) => {
+            switch (value) {
+              default:
+                window.location.href = 'bienvenida.php#angel-ruiz';
+            }
+          });
         setTimeout(() => {
           window.location.href = 'bienvenida.php#angel-ruiz';
-        }, 3200)
-        ;
+        }, 3200);
       }
-     
-      if(respuesta.estado === 'correoexiste'){
+
+      if (respuesta.estado === 'correoexiste') {
         swal({
-          content: "",
-          text: 'Esta cuenta ya existe. Por favor inicia sesión',
-          icon: "error",
-          button: {
-            text: "Iniciar de Sesión",
-            closeModal: true,
-          },
-        })
-        .then((value) => {
-          switch (value) {
-            default:
-              window.location.href = 'login.php#angel-ruiz';
-          }
-        });
-       
+            content: "",
+            text: 'Esta cuenta ya existe. Por favor inicia sesión',
+            icon: "error",
+            button: {
+              text: "Iniciar de Sesión",
+              closeModal: true,
+            },
+          })
+          .then((value) => {
+            switch (value) {
+              default:
+                window.location.href = 'login.php#angel-ruiz';
+            }
+          });
+
       }
-      if(respuesta.estado === 'errorINSERTARenBD'){
+      if (respuesta.estado === 'errorINSERTARenBD') {
         swal({
           content: "",
           text: 'Ha ocurrido una falla, por favor inténtelo más tarde.',
@@ -519,10 +610,10 @@ function registroDB(dato) {
         });
       }
     }
-    
-  
-    
-    
+
+
+
+
   }
   xhr.send(dato);
 }
@@ -1202,4 +1293,3 @@ $(document).mousemove(function (event) {
 })
 
 // contador pasos
-
