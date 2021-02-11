@@ -26,6 +26,30 @@ echo '</pre>';
   <h2>Tiempo estimado</h2>
   <p>Días Horas Minutos Segundo</p>
 </section>
+<section class="seccion9999">
+
+<div class="cuenta-regresiva9999 contenedor-cuenta">
+  <h4>x</h4>
+  <ul class="clearfix">
+
+    <li>
+      <p id="dias9999" class="numero"></p>
+    </li>
+    <li>
+      <p>: </p>
+      <p id="horas9999" class="numero"></p>
+    </li>
+    <li>
+      <p>: </p>
+      <p id="minutos9999" class="numero"></p>
+    </li>
+    <li>
+      <p>:</p>
+      <p id="segundos9999" class="numero"></p>
+    </li>
+  </ul>
+</div>
+</section>
 <?php
 for ($i = 0; $i < $cont; $i++) {
 
@@ -34,7 +58,7 @@ for ($i = 0; $i < $cont; $i++) {
 
   <section class="seccion">
 
-    <div class="cuenta-regresiva<?php echo $i; ?> contenedor-cuenta">
+    <div id="midiv" class="cuenta-regresiva<?php echo $i; ?> contenedor-cuenta">
       <h4><?php
           $iaux = $i + 1;
           echo $iaux . '.- Descripción: ' . $vectorDescrip[$i]; ?></h4>
@@ -62,34 +86,52 @@ for ($i = 0; $i < $cont; $i++) {
 
 
 
+
 <?php
 
 }
-require 'includes/templates/footer.php'
+require 'includes/templates/footer.php';
+date_default_timezone_set('America/Mexico_City');
+  $fechaini =  date('Y-m-d H:i:s');
+$vectorEspecialMenorFecha[0] = 0;
+$vectorEspecialMayorFecha = '0';
+$espacioMax = 0;
+$max = 0;
+for ($xx = 0; $xx < $cont; $xx++) {
+  
+  $dias1 = (strtotime($vectorFechafin[$xx]) - strtotime($fechaini)) / 86400;
+  $vectorEspecialMenorFecha[$xx] = $dias1;
+
+  // echo $vectorEspecialMenorFecha[$xx];
+    if ($vectorEspecialMenorFecha[$xx] > $vectorEspecialMayorFecha) {
+      $vectorEspecialMayorFecha = $vectorEspecialMenorFecha[$xx];
+      $max = $xx;
+      
+  }
+}
+
+echo $max;
+echo ($vectorEspecialMayorFecha);
+
+for ($y = 0; $y < $cont; $y++) {
+
 ?>
-
-
-
-<script type="text/javascript">
-  
-  
-  var fechafin = '<?php echo $vectorFechafin[0]; ?>'
-
-  $('.cuenta-regresiva0').countdown(fechafin, function(event) {
-    console.log('entro!!');
-    $('#dias0').html(event.strftime('%D'));
-    $('#horas0').html(event.strftime('%H'));
-    $('#minutos0').html(event.strftime('%M'));
-    $('#segundos0').html(event.strftime('%S'));
-    $('.cuenta-regresiva0').addClass('coloryellow');
-    $('.cuenta-regresiva0').removeClass('colorgreen');
-    if((event.strftime('%S') == 00) && (event.strftime('%D') == 00) && (event.strftime('%H') == 00) && (event.strftime('%M') == 00)){
-      $('.cuenta-regresiva0').removeClass('coloryellow');
-      $('.cuenta-regresiva0').addClass('colorgreen');
-    }
-  });
-</script>
-<script type="text/javascript">
+  <script type="text/javascript">
+  var cont = '<?php echo $cont;
+                    ?>' 
+  var max = '<?php echo $max;
+                    ?>'
+                     var fechaMayor = '<?php echo $vectorEspecialMayorFecha;
+                    ?>'
+    var fechasvec = '<?php echo $vectorFechafin[$y];
+                    ?>'
+    abc(fechasvec, max, cont);
+    
+  </script>
+<?php
+}
+?>
+<!-- <script type="text/javascript">
  
   var fechafin = '<?php echo $vectorFechafin[1]; ?>'
 
@@ -218,4 +260,4 @@ require 'includes/templates/footer.php'
     }
 
   });
-</script>
+</script> -->
