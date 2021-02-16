@@ -92,7 +92,7 @@ for ($i = 0; $i < $cont; $i++) {
 }
 require 'includes/templates/footer.php';
 date_default_timezone_set('America/Mexico_City');
-  $fechaini =  date('Y-m-d H:i:s');
+$fechaini =  date('Y-m-d H:i:s');
 $vectorEspecialMenorFecha[0] = 0;
 $vectorEspecialMayorFecha = '0';
 $espacioMax = 0;
@@ -112,7 +112,7 @@ for ($xx = 0; $xx < $cont; $xx++) {
 
 echo $max;
 echo ($vectorEspecialMayorFecha);
-
+echo '->>'.$cont.'->>';
 for ($y = 0; $y < $cont; $y++) {
 
 ?>

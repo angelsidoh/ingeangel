@@ -1,229 +1,494 @@
 let fechas = ['0'];
+let maximos1 = ['0'];
+let maximos2 = ['0'];
+let contadorPxP = ['0'];
 var fecha = '-';
 var contadorPjs = 0;
 var contadorSegundos = 0;
-var xfecha = '';
+let xfecha = 0;
 
-function abc(datos, max, cont) {
+var contadorProyectosJs = 0;
+let vecPasos = [0];
 
+function abc(datos, maxfecha, contadorProyectos, contPasosxProyecto, contPasos) {
+  contadorProyectosJs = contadorProyectos;
 
+  // console.log(datos, maxfecha, contPasosxProyecto);
   fechas[contadorPjs] = datos;
+  contadorPxP[contadorPjs] = contPasosxProyecto;
+  // console.log('->' + fechas, '->' + maxfecha, contadorPxP);
+  var auxDetPaso = contadorPxP[0];
+  vecPasos[0] = parseInt(auxDetPaso);
+  $('.cuenta-regresiva9999').countdown(maxfecha, function (event) {
+    $('#dias9999').html(event.strftime('%D'));
+    $('#horas9999').html(event.strftime('%H'));
+    $('#minutos9999').html(event.strftime('%M'));
+    $('#segundos9999').html(event.strftime('%S'));
+    $('.cuenta-regresiva9999').addClass('coloryellow');
+    $('.cuenta-regresiva9999').removeClass('colorgreen');
+    if ((event.strftime('%S') == 00) && (event.strftime('%D') == 00) && (event.strftime('%H') == 00) && (event.strftime('%M') == 00)) {
+      $('.cuenta-regresiva9999').removeClass('coloryellow');
+      $('.cuenta-regresiva9999').addClass('colorgreen');
+    }
+    // console.log(contadorSegundos+'-'+contPasos);
+    drenado(fechas, contadorPxP, contadorProyectos, contPasosxProyecto, contPasos, auxDetPaso, vecPasos, contadorSegundos);
+    contadorSegundos++;
+    //console.log(contadorSegundos);
+  });
 
-  fecha = fechas[max];
+  // var contador = 0;
+  // var auxcontador = contadorPxP[0];
 
-  if (contadorPjs == max) {
-    // console.log(fechas);
-    // console.log(fecha);
-    // console.log(datos);
-    $('.cuenta-regresiva9999').countdown(fecha, function (event) {
+  // // if (contadorPjs == (contPasos-1)) {
+  // //   console.log('hola->' + contadorProyectosJs);
+  // //   drenado(fechas, contadorPxP, contadorProyectos, contPasosxProyecto, contPasos);
+  // // }
 
+  // console.log(contadorPjs);
+  contadorPjs++;
 
-      $('#dias9999').html(event.strftime('%D'));
-      $('#horas9999').html(event.strftime('%H'));
-      $('#minutos9999').html(event.strftime('%M'));
-      $('#segundos9999').html(event.strftime('%S'));
-      $('.cuenta-regresiva9999').addClass('coloryellow');
-      $('.cuenta-regresiva9999').removeClass('colorgreen');
-      if ((event.strftime('%S') == 00) && (event.strftime('%D') == 00) && (event.strftime('%H') == 00) && (event.strftime('%M') == 00)) {
-        $('.cuenta-regresiva9999').removeClass('coloryellow');
-        $('.cuenta-regresiva9999').addClass('colorgreen');
-      }
-      // console.log(contadorSegundos);
-      contadorSegundos++;
-      if (contadorPjs >= cont) {
-        // console.log(cont);
-        pasosTime(cont, fechas);
-      }
-
-
-
-
-    });
-
-  }
-
-
-
-
-  contadorPjs++
 
 }
+
+function drenado(fechas, contadorPxP, contadorProyectos, contPasosxProyecto, contPasos, auxDetPaso, vecPasos, contadorSegundos) {
+  //  console.log(fechas, contadorPxP, contadorProyectos, contPasosxProyecto, contPasos, vecPasos);
+  var sumaPasos = auxDetPaso;
+  var yaux = 0;
+  var superVecFechas = [0]
+  var vectIntS = [0];
+  var cont = 0;
+  var contadoraux = 0;
+  for (let x = 0; x < contadorProyectos; x++) {
+    contadoraux = 0;
+    if (yaux == 0) {
+      // console.log((contadorPxP[x]));
+      yaux = 0;
+    }
+
+    if (yaux !== 0) {
+      // console.log((yaux - contadorPxP[vecPasos[x - 1]]) + 1);
+      // console.log(contadorPxP[vecPasos[x - 1]]);
+      yaux = (yaux - contadorPxP[vecPasos[x - 1]]) + 1;
+      // console.log(yaux);
+    }
+    vectIntS = [0];
+    for (let y = yaux; y < vecPasos[x]; y++) {
+      //console.log(contadoraux+'-');
+      vectIntS[contadoraux] = fechas[y];
+      // console.log(vectIntS);
+      // console.log(fechas[y] + y);
+      superVecFechas[x] = vectIntS;
+      // console.log(superVecFechas);
+      // console.log((vecPasos[x] - 1));
+      // console.log(fechas[y]);
+
+      if (y == (vecPasos[x] - 1)) {
+        auxDetPaso = contadorPxP[y + 1];
+        // console.log((vecPasos[x]-1));
+
+        var intauxDetPaso = parseInt(auxDetPaso, 10);
+        sumaPasos = (intauxDetPaso + vecPasos[x]);
+        yaux = sumaPasos - 1;
+        vecPasos[(x + 1)] = sumaPasos;
+
+      }
+      contadoraux++
+    }
+    if (x == (contadorProyectos - 1)) {
+      // console.log(superVecFechas);
+      pasosTime(superVecFechas, contadorSegundos);
+    }
+  }
+}
+
 let todosS = ['0'];
+
 let todosM = ['0'];
 let todosH = ['0'];
 let todosD = ['0'];
+let Seg = ['0'];
+let Min = ['0'];
+let Hor = ['0'];
+let Dia = ['0']
 var s = 0;
-var auxs= '';
+var auxs = '';
 
-function pasosTime(cont, fechas) {
+function pasosTime(superVecFechas) {
+  if (contadorSegundos >= 1) {
+    // console.log(superVecFechas);
+    // console.log(superVecFechas.length);
+    // console.log('hola');
+    let superVecFechasAux = superVecFechas;
+    for (let x = 0; x < superVecFechas.length; x++) {
+      todosS = ['00'];
+      for (let y = 0; y < superVecFechasAux[x].length; y++) {
 
-  for (let x = 0; x < cont+1; x++) {
-    // console.log(fechas);
+        //  console.log(x + '-' + y + '->' + superVecFechas[x][y]);
+        xfecha = '' + superVecFechas[x][y];
+        //  console.log(xfecha);
+        if (xfecha !== '') {
+          // console.log(y);
+        }
+        var cuentasreg = ('.cuenta-regresiva' + x + '-' + y);
+        var iddias = ('#dias' + x + '-' + y);
+        var idhoras = ('#horas' + x + '-' + y);
+        var idminutos = ('#minutos' + x + '-' + y);
+        var idsegundos = ('#segundos' + x + '-' + y);
+        //  console.log(cuentasreg,iddias,idhoras,idminutos,idsegundos);
 
-    xfecha = fechas[x];
-    // console.log(xfecha);
-    var cuentasreg = ('.cuenta-regresiva' + x);
-    var iddias = ('#dias' + x);
-    var idhoras = ('#horas' + x);
-    var idminutos = ('#minutos' + x);
-    var idsegundos = ('#segundos' + x);
+        $(cuentasreg).countdown(xfecha, function (event) {
 
-    $(cuentasreg).countdown(xfecha, function (event) {
-      // console.log(x+'-'+xfecha);
+          // console.log(x+y+'-'+xfecha);
 
-      
 
-      s = event.strftime('%S');
-      todosS[x] = s;
-      m = event.strftime('%M');
-      todosM[x] = m;
-      h = event.strftime('%H');
-      todosH[x] = h;
-      d = event.strftime('%D');
-      todosD[x] = d;
-      
 
-      
-      $(cuentasreg).addClass('coloryellow');
-      $(cuentasreg).removeClass('colorgreen');
-      if ((event.strftime('%S') == 00) && (event.strftime('%D') == 00) && (event.strftime('%H') == 00) && (event.strftime('%M') == 00)) {
-        $(cuentasreg).removeClass('coloryellow');
-        $(cuentasreg).addClass('colorgreen');
+          s = event.strftime('%S');
+          todosS[y] = s;
+
+          m = event.strftime('%M');
+          todosM[y] = m;
+          h = event.strftime('%H');
+          todosH[y] = h;
+          d = event.strftime('%D');
+          todosD[y] = d;
+          // console.log(todosS);
+
+
+          $(cuentasreg).addClass('coloryellow');
+          $(cuentasreg).removeClass('colorgreen');
+          if ((event.strftime('%S') == 00) && (event.strftime('%D') == 00) && (event.strftime('%H') == 00) && (event.strftime('%M') == 00)) {
+            $(cuentasreg).removeClass('coloryellow');
+            $(cuentasreg).addClass('colorgreen');
+          }
+        });
+
       }
-    });
+      Seg[x] = todosS;
+      Min[x] = todosM;
+      Hor[x] = todosH;
+      Dia[x] = todosD;
+      // console.log(Seg);
+    }
 
-
+    faxS(Seg);
+    faxM(Min);
+    faxH(Hor);
+    faxD(Dia);
   }
-  faxS(todosS, cont);
-  faxM(todosM, cont);
-  faxH(todosH, cont);
-  faxD(todosD, cont);
 }
 
-function faxS(todosS, cont) {
+function faxS(Seg) {
   var posvecSeg = 0;
   var auxSeg = 0;
-  
-  if (todosS.length == cont) {
-    
-    for (let s = 0; s < cont; s++) {
-      var cuentasreg = ('.cuenta-regresiva' + s);
-      if(auxSeg == todosS[s]){
-        auxSeg = todosS[s];
-       
+  // console.log(Seg);
+  for (let s = 0; s < Seg.length; s++) {
+    for (let s1 = 0; s1 < Seg[s].length; s1++) {
+      var cuentasreg = ('.cuenta-regresiva' + s + '-' + s1);
+      var idsegundosS = ('#segundos' + s + '-' + s1);
+      $(idsegundosS).text(Seg[s][s1]);
+      if (auxSeg == (Seg[s][s1])) {
+        auxSeg = (Seg[s][s1]);
         $(cuentasreg).removeClass('coloryellow');
         $(cuentasreg).addClass('colorgreen');
-        
-        posvecSeg = s+1;
-        condicionVerde1 = 1;
-       
-        
-        // console.log(posvecSeg)
-        // console.log('->'+auxSeg);
-      }else{
+      } else {
         $(cuentasreg).addClass('coloryellow');
         $(cuentasreg).removeClass('colorgreen');
-        
       }
-     
-      var idsegundosS = ('#segundos' + s);
-      $(idsegundosS).text(todosS[s]);
-      
     }
-    
-    //  console.log(todosS);
   }
 }
 
-function faxM(todosM, cont) {
-  var posvecMin = 0;
-  var auxMin = 0;
-  if (todosM.length == cont) {
-    
-    for (let m = 0; m < cont; m++) {
-      var cuentasreg = ('.cuenta-regresiva' + m);
-      if(auxMin == todosM[m]){
-        auxMin = todosM[m];
-       
+function faxM(Min) {
+  
+  var auxSeg = 0;
+  // console.log(Min);
+  for (let s = 0; s < Min.length; s++) {
+    for (let s1 = 0; s1 < Min[s].length; s1++) {
+      var cuentasreg = ('.cuenta-regresiva' + s + '-' + s1);
+      var idsegundosS = ('#minutos' + s + '-' + s1);
+      $(idsegundosS).text(Min[s][s1]);
+      if (auxSeg == (Min[s][s1])) {
+        auxSeg = (Min[s][s1]);
         // $(cuentasreg).removeClass('coloryellow');
         // $(cuentasreg).addClass('colorgreen');
-        
-        posvecMin = m+1;
-        // console.log(posvecMin)
-        // console.log('->'+auxMin);
-      }else{
+      } else {
         $(cuentasreg).addClass('coloryellow');
         $(cuentasreg).removeClass('colorgreen');
       }
+    }
+  }
+}
 
-      var idminutosM = ('#minutos' + m);
-      $(idminutosM).text(todosM[m]);
-      
-    }
-    // console.log(todosM);
-  }
-}
-function faxH(todosH, cont) {
-  var posvecHor = 0;
-  var auxHor = 0;
-  if (todosH.length == cont) {
-    
-    for (let h = 0; h < cont; h++) {
-      var cuentasreg = ('.cuenta-regresiva' + h);
-      if(auxHor == todosH[h]){
-        auxHor = todosH[h];
-       
+function faxH(Hor) {
+  var auxSeg = 0;
+  // console.log(Hor);
+  for (let s = 0; s < Hor.length; s++) {
+    for (let s1 = 0; s1 < Hor[s].length; s1++) {
+      var cuentasreg = ('.cuenta-regresiva' + s + '-' + s1);
+      var idsegundosS = ('#horas' + s + '-' + s1);
+      $(idsegundosS).text(Hor[s][s1]);
+      if (auxSeg == (Hor[s][s1])) {
+        auxSeg = (Hor[s][s1]);
         // $(cuentasreg).removeClass('coloryellow');
         // $(cuentasreg).addClass('colorgreen');
-        
-        posvecHor = h+1;
-        // console.log(posvecHor)
-        // console.log('->'+auxMin);
-      }else{
+      } else {
         $(cuentasreg).addClass('coloryellow');
         $(cuentasreg).removeClass('colorgreen');
       }
+    }
+  }
+}
 
-      var idminutosH = ('#horas' + h);
-      $(idminutosH).text(todosH[h]);
-      
-    }
-    // console.log(todosH);
-  }
-}
-function faxD(todosD, cont) {
-  var posvecDia = 0;
-  var auxDia = 0;
-  if (todosD.length == cont) {
-    
-    for (let d = 0; d < cont; d++) {
-      var cuentasreg = ('.cuenta-regresiva' + d);
-      if(auxDia == todosD[d]){
-        auxDia = todosD[d];
-       
+function faxD(Dia) {
+  var auxSeg = 0;
+  // console.log(Dia);
+  for (let s = 0; s < Dia.length; s++) {
+    for (let s1 = 0; s1 < Dia[s].length; s1++) {
+      var cuentasreg = ('.cuenta-regresiva' + s + '-' + s1);
+      var idsegundosS = ('#dias' + s + '-' + s1);
+      $(idsegundosS).text(Dia[s][s1]);
+      if (auxSeg == (Dia[s][s1])) {
+        auxSeg = (Dia[s][s1]);
         // $(cuentasreg).removeClass('coloryellow');
         // $(cuentasreg).addClass('colorgreen');
-        
-        posvecDia = d+1;
-        console.log(posvecDia);
-        // console.log('->'+auxMin);
-      }else{
+      } else {
         $(cuentasreg).addClass('coloryellow');
         $(cuentasreg).removeClass('colorgreen');
       }
-      var idminutosD = ('#dias' + d);
-      $(idminutosD).text(todosD[d]);
-      
     }
-    // console.log(todosD);
   }
 }
+
+// // respaldo
+// let fechas = ['0'];
+// var fecha = '-';
+// var contadorPjs = 0;
+// var contadorSegundos = 0;
+// var xfecha = '';
+
+// function abc(datos, max, cont) {
+
+
+//   fechas[contadorPjs] = datos;
+
+//   fecha = fechas[max];
+
+//   if (contadorPjs == max) {
+//     console.log(fechas);
+//     console.log(fecha);
+//     console.log(datos);
+//     $('.cuenta-regresiva9999').countdown(fecha, function (event) {
+
+
+//       $('#dias9999').html(event.strftime('%D'));
+//       $('#horas9999').html(event.strftime('%H'));
+//       $('#minutos9999').html(event.strftime('%M'));
+//       $('#segundos9999').html(event.strftime('%S'));
+//       $('.cuenta-regresiva9999').addClass('coloryellow');
+//       $('.cuenta-regresiva9999').removeClass('colorgreen');
+//       if ((event.strftime('%S') == 00) && (event.strftime('%D') == 00) && (event.strftime('%H') == 00) && (event.strftime('%M') == 00)) {
+//         $('.cuenta-regresiva9999').removeClass('coloryellow');
+//         $('.cuenta-regresiva9999').addClass('colorgreen');
+//       }
+//       // console.log(contadorSegundos);
+//       contadorSegundos++;
+//       if (contadorPjs >= cont) {
+//         // console.log(cont);
+//         pasosTime(cont, fechas);
+//       }
+
+
+
+
+//     });
+
+//   }
+
+
+
+
+//   contadorPjs++
+
+// }
+// let todosS = ['0'];
+// let todosM = ['0'];
+// let todosH = ['0'];
+// let todosD = ['0'];
+// var s = 0;
+// var auxs= '';
+
+// function pasosTime(cont, fechas) {
+
+//   for (let x = 0; x < cont+1; x++) {
+//     // console.log(fechas);
+
+//     xfecha = fechas[x];
+//     // console.log(xfecha);
+//     var cuentasreg = ('.cuenta-regresiva' + x);
+//     var iddias = ('#dias' + x);
+//     var idhoras = ('#horas' + x);
+//     var idminutos = ('#minutos' + x);
+//     var idsegundos = ('#segundos' + x);
+
+//     $(cuentasreg).countdown(xfecha, function (event) {
+//       // console.log(x+'-'+xfecha);
+
+
+
+//       s = event.strftime('%S');
+//       todosS[x] = s;
+//       m = event.strftime('%M');
+//       todosM[x] = m;
+//       h = event.strftime('%H');
+//       todosH[x] = h;
+//       d = event.strftime('%D');
+//       todosD[x] = d;
+
+
+
+//       $(cuentasreg).addClass('coloryellow');
+//       $(cuentasreg).removeClass('colorgreen');
+//       if ((event.strftime('%S') == 00) && (event.strftime('%D') == 00) && (event.strftime('%H') == 00) && (event.strftime('%M') == 00)) {
+//         $(cuentasreg).removeClass('coloryellow');
+//         $(cuentasreg).addClass('colorgreen');
+//       }
+//     });
+
+
+//   }
+//   faxS(todosS, cont);
+//   faxM(todosM, cont);
+//   faxH(todosH, cont);
+//   faxD(todosD, cont);
+// }
+
+// function faxS(todosS, cont) {
+//   var posvecSeg = 0;
+//   var auxSeg = 0;
+
+//   if (todosS.length == cont) {
+
+//     for (let s = 0; s < cont; s++) {
+//       var cuentasreg = ('.cuenta-regresiva' + s);
+//       if(auxSeg == todosS[s]){
+//         auxSeg = todosS[s];
+
+//         $(cuentasreg).removeClass('coloryellow');
+//         $(cuentasreg).addClass('colorgreen');
+
+//         posvecSeg = s+1;
+//         condicionVerde1 = 1;
+
+
+//         // console.log(posvecSeg)
+//         // console.log('->'+auxSeg);
+//       }else{
+//         $(cuentasreg).addClass('coloryellow');
+//         $(cuentasreg).removeClass('colorgreen');
+
+//       }
+
+//       var idsegundosS = ('#segundos' + s);
+//       $(idsegundosS).text(todosS[s]);
+
+//     }
+
+//     //  console.log(todosS);
+//   }
+// }
+
+// function faxM(todosM, cont) {
+//   var posvecMin = 0;
+//   var auxMin = 0;
+//   if (todosM.length == cont) {
+
+//     for (let m = 0; m < cont; m++) {
+//       var cuentasreg = ('.cuenta-regresiva' + m);
+//       if(auxMin == todosM[m]){
+//         auxMin = todosM[m];
+
+//         // $(cuentasreg).removeClass('coloryellow');
+//         // $(cuentasreg).addClass('colorgreen');
+
+//         posvecMin = m+1;
+//         // console.log(posvecMin)
+//         // console.log('->'+auxMin);
+//       }else{
+//         $(cuentasreg).addClass('coloryellow');
+//         $(cuentasreg).removeClass('colorgreen');
+//       }
+
+//       var idminutosM = ('#minutos' + m);
+//       $(idminutosM).text(todosM[m]);
+
+//     }
+//     // console.log(todosM);
+//   }
+// }
+// function faxH(todosH, cont) {
+//   var posvecHor = 0;
+//   var auxHor = 0;
+//   if (todosH.length == cont) {
+
+//     for (let h = 0; h < cont; h++) {
+//       var cuentasreg = ('.cuenta-regresiva' + h);
+//       if(auxHor == todosH[h]){
+//         auxHor = todosH[h];
+
+//         // $(cuentasreg).removeClass('coloryellow');
+//         // $(cuentasreg).addClass('colorgreen');
+
+//         posvecHor = h+1;
+//         // console.log(posvecHor)
+//         // console.log('->'+auxMin);
+//       }else{
+//         $(cuentasreg).addClass('coloryellow');
+//         $(cuentasreg).removeClass('colorgreen');
+//       }
+
+//       var idminutosH = ('#horas' + h);
+//       $(idminutosH).text(todosH[h]);
+
+//     }
+//     // console.log(todosH);
+//   }
+// }
+// function faxD(todosD, cont) {
+//   var posvecDia = 0;
+//   var auxDia = 0;
+//   if (todosD.length == cont) {
+
+//     for (let d = 0; d < cont; d++) {
+//       var cuentasreg = ('.cuenta-regresiva' + d);
+//       if(auxDia == todosD[d]){
+//         auxDia = todosD[d];
+
+//         // $(cuentasreg).removeClass('coloryellow');
+//         // $(cuentasreg).addClass('colorgreen');
+
+//         posvecDia = d+1;
+//         console.log(posvecDia);
+//         // console.log('->'+auxMin);
+//       }else{
+//         $(cuentasreg).addClass('coloryellow');
+//         $(cuentasreg).removeClass('colorgreen');
+//       }
+//       var idminutosD = ('#dias' + d);
+//       $(idminutosD).text(todosD[d]);
+
+//     }
+//     // console.log(todosD);
+//   }
+// }
 
 
 
 // checks
+function cheksxs(datos) {
+
+}
 var i = 0;
-$(".slider2 > li:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2)").hover(
+$("#plus0").hover(
   function () {
     i = 0;
     ches(i);
@@ -232,11 +497,25 @@ $(".slider2 > li:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-ch
   },
   function () {
     i = '';
+
   }
 );
-$(".slider2 > li:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2)").hover(
+$("#plus1").hover(
   function () {
     i = 1;
+    ches(i);
+
+
+
+  },
+  function () {
+    i = '';
+
+  }
+);
+$("#plus2").hover(
+  function () {
+    i = 2;
     ches(i);
 
 
@@ -245,9 +524,9 @@ $(".slider2 > li:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-ch
     i = '';
   }
 );
-$(".slider2 > li:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2)").hover(
+$("#plus3").hover(
   function () {
-    i = 2;
+    i = 3;
     ches(i);
 
 
