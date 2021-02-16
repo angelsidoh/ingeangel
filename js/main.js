@@ -121,6 +121,9 @@ function pasosTime(superVecFechas) {
     let superVecFechasAux = superVecFechas;
     for (let x = 0; x < superVecFechas.length; x++) {
       todosS = ['00'];
+      todosM = ['00'];
+      todosH = ['00'];
+      todosD = ['00'];
       for (let y = 0; y < superVecFechasAux[x].length; y++) {
 
         //  console.log(x + '-' + y + '->' + superVecFechas[x][y]);
@@ -180,7 +183,7 @@ function pasosTime(superVecFechas) {
 function faxS(Seg) {
   var posvecSeg = 0;
   var auxSeg = 0;
-  // console.log(Seg);
+  console.log(Seg);
   for (let s = 0; s < Seg.length; s++) {
     for (let s1 = 0; s1 < Seg[s].length; s1++) {
       var cuentasreg = ('.cuenta-regresiva' + s + '-' + s1);
@@ -241,7 +244,7 @@ function faxH(Hor) {
 
 function faxD(Dia) {
   var auxSeg = 0;
-  // console.log(Dia);
+  //console.log(Dia);
   for (let s = 0; s < Dia.length; s++) {
     for (let s1 = 0; s1 < Dia[s].length; s1++) {
       var cuentasreg = ('.cuenta-regresiva' + s + '-' + s1);

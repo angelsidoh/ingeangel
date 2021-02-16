@@ -7,7 +7,6 @@ $vector1[0] = 0;
 $vectorDescrip[0] = '';
 $vectorFechafin[0] = '';
 $cont = 0;
-
 if ($resultadoConsulta->num_rows) {
   foreach ($resultadoConsulta as $Consulta) {
 
@@ -52,10 +51,7 @@ echo '</pre>';
 </section>
 <?php
 for ($i = 0; $i < $cont; $i++) {
-
-
 ?>
-
   <section class="seccion">
 
     <div id="midiv" class="cuenta-regresiva<?php echo $i; ?> contenedor-cuenta">
@@ -82,13 +78,7 @@ for ($i = 0; $i < $cont; $i++) {
       </ul>
     </div>
   </section>
-
-
-
-
-
 <?php
-
 }
 require 'includes/templates/footer.php';
 date_default_timezone_set('America/Mexico_City');
@@ -109,12 +99,10 @@ for ($xx = 0; $xx < $cont; $xx++) {
       
   }
 }
-
 echo $max;
 echo ($vectorEspecialMayorFecha);
 echo '->>'.$cont.'->>';
 for ($y = 0; $y < $cont; $y++) {
-
 ?>
   <script type="text/javascript">
   var cont = '<?php echo $cont;

@@ -207,7 +207,7 @@ if ((!isset($_SESSION['usuario'])) && (!isset($_SESSION['email']))) {
         for ($x = 0; $x < $contadorProyectos; $x++) {
             for ($y = 0; $y < $contadorPasoxProyecto[$x]; $y++) {
     ?>
-                <section class="seccion">
+                
 
                     <div id="midiv" class="cuenta-regresiva<?php echo $x .'-'. $y; ?> contenedor-cuenta">
                         <h4><?php
@@ -232,7 +232,7 @@ if ((!isset($_SESSION['usuario'])) && (!isset($_SESSION['email']))) {
                             </li>
                         </ul>
                     </div>
-                </section>
+               
         <?php
             }
         }
