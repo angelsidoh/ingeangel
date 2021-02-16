@@ -431,8 +431,16 @@ html {
     height: auto;
   }
 }
+
 .links{
   grid-column: 3 / 13;
+  
+}
+.links .contenedorconteo{
+  
+  display: grid;
+  grid-template-columns: repeat(1, 80% 20%);
+  border-bottom: 1px solid rgb(54, 54, 54);
 }
 @media only screen and (min-width:1500px){
   .links{
@@ -1589,7 +1597,7 @@ background: -moz-linear-gradient(top, rgba(95, 95, 95, 0.75) 0%, rgba(77, 58, 56
 
 }
  
-#check, #check-hotcall, #check-proyectos, #check-practicas, #check-apis, #check-programacion, #check-diseniomecanico, #check-robotica, #check-redes{
+.checs,#check, #check-hotcall, #check-proyectos, #check-practicas, #check-apis, #check-programacion, #check-diseniomecanico, #check-robotica, #check-redes{
   display: none;
 }
 .fix-menubarra{
@@ -1946,7 +1954,7 @@ ul,ol{
   display: none;
 }
 .contenedor-cuenta .paginacion2{
-  width: 55%;
+  width: 10%;
   height: 100px;
   margin: 0 auto;
   display: grid;
@@ -3780,41 +3788,175 @@ ul{
 
 
 /* fin carta bienvenida */
+.coloryellow{
+  box-shadow:0px 0px 5px 1px rgba(255,123,0,1),
+  inset 0px 0px 5px 1px rgba(255,123,0,1);
+  animation: flame 1s infinite;
+}
+@keyframes flame{
+  0% {box-shadow:0px 0px 5px 1px rgba(255,123,0,1),
+    inset 0px 0px 5px 1px rgba(255,123,0,1);;
+    }
+
+  50%{box-shadow:0px 0px 5px 1px rgba(255,123,0,1),
+    inset 0px 0px 15px 1px rgba(255,123,0,1);
+    }
+}
+
+
 .colorgreen{
-background-color: green;
+border: 1px solid #fff;
+
+background-color: green!important;
+
 
 }
 .colorgreen li{
   color: red;
 }
-.coloryellow{
-background-color: yellow;
-}
+
 /* clearfix */
 .clearfix{
-  max-width: 85px;
+  
+  width: calc(100% - 10px);
+  height: auto;
+  margin: 0 auto;
+  padding: 10px 0;
+  
+  
+  /* display: flex;
+  align-items: center;
+  */
+
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  
+}
+.clearfix .lix:nth-child(1){
+  background-color: transparent;
+  grid-row: 1 / 1;
+  grid-column: 1 / 5;
   width: 100%;
   height: auto;
+  margin: 0 auto;
+ color: #ffffff;
+ 
+  /* border: 1px solid var(--ColorFontEspecial); */
   margin: 0 auto;
   padding: 0 0;
-  
-  
-  display: flex;
-  align-items: center;
-  overflow: hidden;
+  text-align: center;
 }
-.clearfix li{
+.clearfix .lix:nth-child(2){
+  grid-row: 2 / 2;
+  grid-column: 1 / 1;
   width: 100%;
   height: auto;
   margin: 0 auto;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
+color: #ffffff;
+ 
+ /* border: 1px solid var(--ColorFontEspecial); */
+ 
+ padding: 0 0;
+ text-align: center;
 }
-.clearfix li p{
+.clearfix .lix:nth-child(3){
+  grid-row: 2 / 2;
+  grid-column: 2 / 2;
   width: 100%;
   height: auto;
+  margin: 0 auto;
+color: #ffffff;
+
+ /* border: 1px solid var(--ColorFontEspecial); */
+ ;
+ padding: 0 0;
+ text-align: center;
+}
+.clearfix .lix:nth-child(4){
+  grid-row: 2 / 2;
+  grid-column: 3 / 3;
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+ color: #ffffff;
+
+  /* border: 1px solid var(--ColorFontEspecial); */
   
+  padding: 0 0;
+  text-align: center;
+}
+.clearfix .lix:nth-child(5){
+  grid-row: 2 / 2;
+  grid-column: 4 / 4;
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+color: #ffffff;
+ 
+
+ /* border: 1px solid var(--ColorFontEspecial); */
+ 
+ padding: 0 0;
+ text-align: center;
+}
+.clearfix .lix:nth-child(6){
+  grid-row: 3 / 3;
+  grid-column: 1 / 1;
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+color: #ffffff;
+
+ /* border: 1px solid var(--ColorFontEspecial); */
+ 
+ padding: 0 0;
+ text-align: center;
+}
+.clearfix .lix:nth-child(7){
+  grid-row: 3 / 3;
+  grid-column: 2 / 2;
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+color: #ffffff;
+
+ /* border: 1px solid var(--ColorFontEspecial); */
+ 
+ padding: 0 0;
+ text-align: center;
+}
+.clearfix .lix:nth-child(8){
+  grid-row: 3 / 3;
+  grid-column: 3 / 3;
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+color: #ffffff;
+
+ /* border: 1px solid var(--ColorFontEspecial); */
+ 
+ padding: 0 0;
+ text-align: center;
+}
+.clearfix .lix:nth-child(9){
+  grid-row: 3 / 3;
+  grid-column: 4 / 4;
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+color: #ffffff;
+ 
+ /* border: 1px solid var(--ColorFontEspecial); */
+
+ padding: 0 0;
+ text-align: center;
+}
+
+.clearfix .lix p{
+  width: 100%;
+  height: auto;
+  font-size: 14px;
   
 }
 /* end clearfix */

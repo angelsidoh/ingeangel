@@ -20,16 +20,16 @@ function abc(datos, maxfecha, contadorProyectos, contPasosxProyecto, contPasos) 
   var auxDetPaso = contadorPxP[0];
   vecPasos[0] = parseInt(auxDetPaso);
   $('.cuenta-regresiva9999').countdown(maxfecha, function (event) {
-    $('#dias9999').html(event.strftime('%D'));
-    $('#horas9999').html(event.strftime('%H'));
-    $('#minutos9999').html(event.strftime('%M'));
-    $('#segundos9999').html(event.strftime('%S'));
-    $('.cuenta-regresiva9999').addClass('coloryellow');
-    $('.cuenta-regresiva9999').removeClass('colorgreen');
-    if ((event.strftime('%S') == 00) && (event.strftime('%D') == 00) && (event.strftime('%H') == 00) && (event.strftime('%M') == 00)) {
-      $('.cuenta-regresiva9999').removeClass('coloryellow');
-      $('.cuenta-regresiva9999').addClass('colorgreen');
-    }
+    // $('#dias9999').html(event.strftime('%D'));
+    // $('#horas9999').html(event.strftime('%H'));
+    // $('#minutos9999').html(event.strftime('%M'));
+    // $('#segundos9999').html(event.strftime('%S'));
+    // // $('.cuenta-regresiva9999').addClass('coloryellow');
+    // // $('.cuenta-regresiva9999').removeClass('colorgreen');
+    // if ((event.strftime('%S') == 00) && (event.strftime('%D') == 00) && (event.strftime('%H') == 00) && (event.strftime('%M') == 00)) {
+    //   // $('.cuenta-regresiva9999').removeClass('coloryellow');
+    //   // $('.cuenta-regresiva9999').addClass('colorgreen');
+    // }
     // console.log(contadorSegundos+'-'+contPasos);
     drenado(fechas, contadorPxP, contadorProyectos, contPasosxProyecto, contPasos, auxDetPaso, vecPasos, contadorSegundos);
     contadorSegundos++;
@@ -119,11 +119,16 @@ function pasosTime(superVecFechas) {
     // console.log(superVecFechas.length);
     // console.log('hola');
     let superVecFechasAux = superVecFechas;
+    Seg = ['00'];
+    Min = ['00'];
+    Hor = ['00'];
+    Dia = ['00'];
     for (let x = 0; x < superVecFechas.length; x++) {
       todosS = ['00'];
       todosM = ['00'];
       todosH = ['00'];
       todosD = ['00'];
+      
       for (let y = 0; y < superVecFechasAux[x].length; y++) {
 
         //  console.log(x + '-' + y + '->' + superVecFechas[x][y]);
@@ -138,10 +143,10 @@ function pasosTime(superVecFechas) {
         var idminutos = ('#minutos' + x + '-' + y);
         var idsegundos = ('#segundos' + x + '-' + y);
         //  console.log(cuentasreg,iddias,idhoras,idminutos,idsegundos);
-
+// console.log('xxxx'+x+y+'-'+xfecha);
         $(cuentasreg).countdown(xfecha, function (event) {
 
-          // console.log(x+y+'-'+xfecha);
+          
 
 
 
@@ -157,12 +162,13 @@ function pasosTime(superVecFechas) {
           // console.log(todosS);
 
 
-          $(cuentasreg).addClass('coloryellow');
-          $(cuentasreg).removeClass('colorgreen');
-          if ((event.strftime('%S') == 00) && (event.strftime('%D') == 00) && (event.strftime('%H') == 00) && (event.strftime('%M') == 00)) {
-            $(cuentasreg).removeClass('coloryellow');
-            $(cuentasreg).addClass('colorgreen');
-          }
+          // $(cuentasreg).addClass('coloryellow');
+          // $(cuentasreg).removeClass('colorgreen');
+          
+          // if ((event.strftime('%S') == 00) && (event.strftime('%D') == 00) && (event.strftime('%H') == 00) && (event.strftime('%M') == 00)) {
+          //   $(cuentasreg).removeClass('coloryellow');
+          //   $(cuentasreg).addClass('colorgreen');
+          // }
         });
 
       }
@@ -183,18 +189,31 @@ function pasosTime(superVecFechas) {
 function faxS(Seg) {
   var posvecSeg = 0;
   var auxSeg = 0;
-  console.log(Seg);
+  // console.log(Seg);
   for (let s = 0; s < Seg.length; s++) {
     for (let s1 = 0; s1 < Seg[s].length; s1++) {
       var cuentasreg = ('.cuenta-regresiva' + s + '-' + s1);
+      var prueb = ('.cuenta-regresiva' + s + '-' + s1 + ' '+'.clearfix .lix:nth-child(-n+9)');
+      console.log(prueb);
       var idsegundosS = ('#segundos' + s + '-' + s1);
       $(idsegundosS).text(Seg[s][s1]);
+      // console.log(s +'-' + s1+ Seg[s][s1]);
+      if(Seg[s][s1] == undefined){
+        Seg[s][s1] = '00';
+      }
       if (auxSeg == (Seg[s][s1])) {
         auxSeg = (Seg[s][s1]);
-        $(cuentasreg).removeClass('coloryellow');
+       
+        
+        // console.log('si');
+        $(prueb).removeClass('coloryellow');
+       
         $(cuentasreg).addClass('colorgreen');
       } else {
-        $(cuentasreg).addClass('coloryellow');
+        
+        // console.log('no');
+        $(prueb).addClass('coloryellow');
+       
         $(cuentasreg).removeClass('colorgreen');
       }
     }
@@ -208,15 +227,21 @@ function faxM(Min) {
   for (let s = 0; s < Min.length; s++) {
     for (let s1 = 0; s1 < Min[s].length; s1++) {
       var cuentasreg = ('.cuenta-regresiva' + s + '-' + s1);
+      var prueb = ('.cuenta-regresiva' + s + '-' + s1 + ' '+'.clearfix .lix:nth-child(-n+9)');
       var idsegundosS = ('#minutos' + s + '-' + s1);
       $(idsegundosS).text(Min[s][s1]);
+      // console.log(auxSeg+'-'+Min[s][s1]);
+       if(Min[s][s1] == undefined){
+       Min[s][s1] = '00';
+      }
       if (auxSeg == (Min[s][s1])) {
         auxSeg = (Min[s][s1]);
-        // $(cuentasreg).removeClass('coloryellow');
-        // $(cuentasreg).addClass('colorgreen');
+        
       } else {
-        $(cuentasreg).addClass('coloryellow');
+        $(prueb).addClass('coloryellow');
+       
         $(cuentasreg).removeClass('colorgreen');
+        
       }
     }
   }
@@ -228,15 +253,20 @@ function faxH(Hor) {
   for (let s = 0; s < Hor.length; s++) {
     for (let s1 = 0; s1 < Hor[s].length; s1++) {
       var cuentasreg = ('.cuenta-regresiva' + s + '-' + s1);
+      var prueb = ('.cuenta-regresiva' + s + '-' + s1 + ' '+'.clearfix .lix:nth-child(-n+9)');
       var idsegundosS = ('#horas' + s + '-' + s1);
       $(idsegundosS).text(Hor[s][s1]);
+       if(Hor[s][s1] == undefined){
+        Hor[s][s1] = '00';
+      }
       if (auxSeg == (Hor[s][s1])) {
         auxSeg = (Hor[s][s1]);
-        // $(cuentasreg).removeClass('coloryellow');
-        // $(cuentasreg).addClass('colorgreen');
+        
       } else {
-        $(cuentasreg).addClass('coloryellow');
+        $(prueb).addClass('coloryellow');
+       
         $(cuentasreg).removeClass('colorgreen');
+        
       }
     }
   }
@@ -248,15 +278,20 @@ function faxD(Dia) {
   for (let s = 0; s < Dia.length; s++) {
     for (let s1 = 0; s1 < Dia[s].length; s1++) {
       var cuentasreg = ('.cuenta-regresiva' + s + '-' + s1);
+      var prueb = ('.cuenta-regresiva' + s + '-' + s1 + ' '+'.clearfix .lix:nth-child(-n+9)');
       var idsegundosS = ('#dias' + s + '-' + s1);
       $(idsegundosS).text(Dia[s][s1]);
+       if(Dia[s][s1] == undefined){
+        Dia[s][s1] = '00';
+      }
       if (auxSeg == (Dia[s][s1])) {
         auxSeg = (Dia[s][s1]);
-        // $(cuentasreg).removeClass('coloryellow');
-        // $(cuentasreg).addClass('colorgreen');
+       
       } else {
-        $(cuentasreg).addClass('coloryellow');
+        $(prueb).addClass('coloryellow');
+       
         $(cuentasreg).removeClass('colorgreen');
+        
       }
     }
   }
@@ -530,6 +565,17 @@ $("#plus2").hover(
 $("#plus3").hover(
   function () {
     i = 3;
+    ches(i);
+
+
+  },
+  function () {
+    i = '';
+  }
+);
+$("#plus4").hover(
+  function () {
+    i = 4;
     ches(i);
 
 
