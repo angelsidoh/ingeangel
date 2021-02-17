@@ -12,7 +12,7 @@ function consultaBd($dato){
 function consultaUsuario($dato){
     include 'bd/bdsqli.php';
     try{
-        return $connf->query("SELECT id_usuario, nombre_usuario, foto_usuario, idproyecto_usuario FROM usuarios WHERE email_usuario = '$dato'");
+        return $connf->query("SELECT id_usuario, nombre_usuario, foto_usuario, idproyecto_usuario, apellidos_usuario, email_usuario, telefono_usuario, calle_usuario,numiedireccion_usuario, colonia_usuario, cp_usuario, fecha_usuario  FROM usuarios WHERE email_usuario = '$dato'");
     }catch(Exception $e){
         echo "Error!!" . $e->getMessage() . "<br>";
         return false;

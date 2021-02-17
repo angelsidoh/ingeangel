@@ -3789,16 +3789,16 @@ ul{
 
 /* fin carta bienvenida */
 .coloryellow{
-  box-shadow:0px 0px 5px 1px rgba(255,123,0,1),
+  box-shadow:0px 0px 5px 2px rgba(255,123,0,1),
   inset 0px 0px 5px 1px rgba(255,123,0,1);
   animation: flame 1s infinite;
 }
 @keyframes flame{
-  0% {box-shadow:0px 0px 5px 1px rgba(255,123,0,1),
-    inset 0px 0px 5px 1px rgba(255,123,0,1);;
+  0% {box-shadow:0px 0px 5px 2px rgba(255,123,0,1),
+    inset 0px 0px 5px 1px rgba(255,123,0,1);
     }
 
-  50%{box-shadow:0px 0px 5px 1px rgba(255,123,0,1),
+  50%{box-shadow:0px 0px 5px 2px rgba(255,123,0,1),
     inset 0px 0px 15px 1px rgba(255,123,0,1);
     }
 }
@@ -4044,6 +4044,203 @@ color: #ffffff;
   width: 90%;
   margin: 0 auto;
 }
+
+.datos-usuario{
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+  text-align: center;
+  
+}
+.datos-usuario .contenido-cuenta{
+  width: 100%;
+  height: auto;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-template-rows: repeat(7, auto auto);
+  grid-row-gap: 10px;
+  margin-bottom: 20px;
+}
+@media only screen and (min-width:1430px){
+  .datos-usuario .contenido-cuenta{
+    grid-template-rows: repeat(7, 25px 40px);
+  }
+  
+}
+.contenido-cuenta .dato1{
+  grid-row: 2 / 2;
+  grid-column: 1 / 1;
+  width: 100%;
+  height: 100%;
+  
+  
+}
+.contenido-cuenta .dato1 input, .contenido-cuenta .dato2 input,.contenido-cuenta .dato3 input, .contenido-cuenta .dato4 input, .contenido-cuenta .dato6 input{
+  text-align: center;
+  background-color: #fff;
+  border: none;
+}
+.contenido-cuenta .dato1 input, .contenido-cuenta .dato2 input,.contenido-cuenta .dato3 input, .contenido-cuenta .dato4 input, .contenido-cuenta .dato6 input{
+max-width: 420px;
+ width: 100%;
+ height: 30px;
+ margin: 0 auto;
+ padding: 8px 0;
+ background-color: transparent;
+ border-bottom: 1px solid #fff;
+ border-right: 1px solid #fff;
+ border-left: 1px solid #fff;
+ 
+color: #fff;
+animation: inp 3s infinite;
+}
+@keyframes inp{
+  0% {
+    
+    }
+
+  50%{border-bottom: 1px solid #161616;
+    border-right: 1px solid #161616;
+    border-left: 1px solid #161616;
+    }
+}
+
+.contenido-cuenta .dato5 p{
+  color: #fff;
+}
+
+
+.contenido-cuenta .dato2 input{
+  max-width: 320px;
+  width: 100%;
+}
+
+.contenido-cuenta .text-dato1{
+  grid-row: 1 / 1;
+  grid-column: 1 / 1;
+  width: 100%;
+  height: 100%;
+  border-top: 1px solid #fff;
+  
+}
+.contenido-cuenta .text-dato1 p, .contenido-cuenta .text-dato2 p, .contenido-cuenta .text-dato3 p, .contenido-cuenta .text-dato4 p, .contenido-cuenta .text-dato5 p, .contenido-cuenta .text-dato6 p{
+  padding: 0 0;
+  margin:  0 0;
+  font-size: 22px;
+  color: #fff;
+  
+}
+.contenido-cuenta .dato2{
+  grid-row: 4 / 4;
+  grid-column: 1 / 1;
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(2 ,1fr);
+  grid-row-gap: 10px;
+  grid-column-gap: 10px;
+  grid-template-rows: repeat(2, 1fr);
+}
+@media only screen and (min-width:1430px){
+  .contenido-cuenta .dato2{
+    grid-row: 4 / 4;
+    grid-column: 1 / 1;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+  }
+}
+.contenido-cuenta .text-dato2{
+  grid-row: 3 / 3;
+  grid-column: 1 / 1;
+  width: 100%;
+  height: 100%;
+  font-size: 22px;
+  border-top: 1px solid #fff;
+  
+  
+}
+.contenido-cuenta .dato3{
+  grid-row: 6 / 6;
+  grid-column: 1 / 1;
+  width: 100%;
+  height: 100%;
+  
+  
+}
+.contenido-cuenta .text-dato3{
+  grid-row: 5 / 5;
+  grid-column: 1 / 1;
+  width: 100%;
+  height: 100%;
+  font-size: 22px;
+  border-top: 1px solid #fff;
+  
+}
+.contenido-cuenta .dato4{
+  grid-row: 8 / 8;
+  grid-column: 1 / 1;
+  width: 100%;
+  height: 100%;
+  
+  
+}
+.contenido-cuenta .text-dato4{
+  grid-row: 7 / 7;
+  grid-column: 1 / 1;
+  width: 100%;
+  height: 100%;
+  font-size: 22px;
+  border-top: 1px solid #fff;
+  
+}
+.contenido-cuenta .dato5{
+  grid-row: 10 / 10;
+  grid-column: 1 / 1;
+  width: 100%;
+  height: 100%;
+  
+  
+}
+.contenido-cuenta .text-dato5{
+  grid-row: 9 / 9;
+  grid-column: 1 / 1;
+  width: 100%;
+  height: 100%;
+  font-size: 22px;
+  border-top: 1px solid #fff;
+  
+}
+.contenido-cuenta .dato6{
+  grid-row: 12 / 12;
+  grid-column: 1 / 1;
+  width: 100%;
+  height: 100%;
+  
+  
+}
+.contenido-cuenta .text-dato6{
+  grid-row: 11 / 11;
+  grid-column: 1 / 1;
+  width: 100%;
+  height: 100%;
+  font-size: 22px;
+  border-top: 1px solid #fff;
+  
+}
+.contenido-cuenta .sub-boton{
+  grid-row: 13 / 14;
+  grid-column: 1 / 1;
+  width: 100%;
+  height: 100%;
+  border-top: 1px solid #fff;
+}
+
 
 
 

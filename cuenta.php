@@ -14,9 +14,17 @@ if ((!isset($_SESSION['usuario'])) && (!isset($_SESSION['email']))) {
     if ($resultadoConsulta->num_rows) {
         foreach ($resultadoConsulta as $Consulta) {
             $usuario = $Consulta['nombre_usuario'];
+            $apellidos =  $Consulta['apellidos_usuario'];
             $idproyecto = $Consulta['idproyecto_usuario'];
             $idusuario = $Consulta['id_usuario'];
             $foto = $Consulta['foto_usuario'];
+            $calle = $Consulta['calle_usuario'];
+            $numie = $Consulta['numiedireccion_usuario'];
+            $col = $Consulta['colonia_usuario'];
+            $cp = $Consulta['cp_usuario'];
+            $email = $Consulta['email_usuario'];
+            $tel = $Consulta['telefono_usuario'];
+            $fec = $Consulta['fecha_usuario'];
         }
     }
     $contadorProyectos = 0;
@@ -45,7 +53,7 @@ if ((!isset($_SESSION['usuario'])) && (!isset($_SESSION['email']))) {
         if ($resultadoPasos->num_rows) {
             foreach ($resultadoPasos as $paso) {
                 $descripcionPaso = $paso['descripcion_paso'];
-               
+
                 $vectorDescrip[$contadorPasos] = $paso['descripcion_paso'];
                 $vectorFechafin[$contadorPasos] = $paso['fechafin_paso'];
                 // echo ($contadorPasos+1);
@@ -155,11 +163,11 @@ if ((!isset($_SESSION['usuario'])) && (!isset($_SESSION['email']))) {
                                             <div class="links">
                                                 <div class="contenedorconteo">
                                                     <?php
-                                                     $textAsunto = "Hola. Me gustaría que resolvieran las siguientes dudas de mi proyecto " . $vectorNombresProyectos[$x] . " del paso " . ($y + 1) . ": >>" . $superVecDesp[$x][$y] . "<< " . "Proyecto id# " . $vectorIdProyectos[$x];
-                                                     $asunto = str_replace(' ', '%20', $textAsunto);
-                                                     $vectorNombresProyectos[$x] = str_replace('&', 'y', $vectorNombresProyectos[$x]);
-                                                     $cuerpo = "Lista de dudas: ";
-                                                     $cuerpo = str_replace(' ', '%20', $cuerpo);
+                                                    $textAsunto = "Hola. Me gustaría que resolvieran las siguientes dudas de mi proyecto " . $vectorNombresProyectos[$x] . " del paso " . ($y + 1) . ": >>" . $superVecDesp[$x][$y] . "<< " . "Proyecto id# " . $vectorIdProyectos[$x];
+                                                    $asunto = str_replace(' ', '%20', $textAsunto);
+                                                    $vectorNombresProyectos[$x] = str_replace('&', 'y', $vectorNombresProyectos[$x]);
+                                                    $cuerpo = "Lista de dudas: ";
+                                                    $cuerpo = str_replace(' ', '%20', $cuerpo);
                                                     ?>
                                                     <a href="mailto:infoingeangel@gmail.com?subject=<?php echo $asunto; ?>&body=<?php echo $cuerpo; ?>" target="_blank">
                                                         <p>Paso <?php echo $y + 1; ?>: <i class="fas fa-caret-right"></i> <?php echo  $superVecDesp[$x][$y]; ?></p>
@@ -167,31 +175,42 @@ if ((!isset($_SESSION['usuario'])) && (!isset($_SESSION['email']))) {
 
                                                     </a>
                                                     <div id="midiv" class="cuenta-regresiva<?php echo $x . '-' . $y; ?> contenedor-cuenta">
-                                                        
+
                                                         <ul class="clearfix">
-                                                        <div class="lix"><p>Fecha estimada: Paso <?php echo ($y+1). ' ('. $superVec[$x][$y].')'; ?></p></div>
-                                                            <div class="lix">Días</div>
-                                                            <div class="lix">Horas</div>
-                                                            <div class="lix">Minutos</div>
-                                                            <div class="lix">Segundos</div>
-                                                            
+                                                            <div class="lix">
+                                                                <p>Fecha estimada: Paso <?php echo ($y + 1) . ' (' . $superVec[$x][$y] . ')'; ?></p>
+                                                            </div>
+
+
                                                             <div class="lix">
                                                                 <p id="dias<?php echo $x . '-' . $y ?>" class="numero"></p>
-                                                                
+
                                                             </div>
-                                                            
+
                                                             <div class="lix">
                                                                 <p id="horas<?php echo $x . '-' . $y ?>" class="numero"></p>
-                                                                
+
                                                             </div>
                                                             <div class="lix">
-                                                                
+
                                                                 <p id="minutos<?php echo $x . '-' . $y ?>" class="numero"></p>
-                                                                
+
                                                             </div>
                                                             <div class="lix">
-                                                                
+
                                                                 <p id="segundos<?php echo $x . '-' . $y ?>" class="numero"></p>
+                                                            </div>
+                                                            <div class="lix">
+                                                                <p>Días</p>
+                                                            </div>
+                                                            <div class="lix">
+                                                                <p>Horas</p>
+                                                            </div>
+                                                            <div class="lix">
+                                                                <p>Minutos</p>
+                                                            </div>
+                                                            <div class="lix">
+                                                                <p>Segundos</p>
                                                             </div>
                                                         </ul>
                                                     </div>
@@ -213,7 +232,63 @@ if ((!isset($_SESSION['usuario'])) && (!isset($_SESSION['email']))) {
                         <div class="titulo-seccion">
                             <h1 id="sparklemaster" class="sparklemaster" style="color:  #93A9CC;">Cuenta</h1>
                         </div>
-                    </div>
+                        <div class="datos-usuario">
+                            <form id="cuenta" action="#">
+                                <div class="contenido-cuenta">
+                                    <div class="dato1">
+                                        <input style="border: 1px solid #161616;" type="text" id="Nombre" name="Nombre" placeholder="Ingresa tu Nombre" value="<?php echo $usuario .' '. $apellidos?>" disabled>
+                                    </div> <!-- rnormal__tarjeta -->
+                                    <div class="text-dato1">
+                                        <p>Cliente</p>
+                                    </div>
+                                    <div class="dato2">
+                                        <input type="text" id="calle" name="calle" placeholder="Calle" value="<?php echo $calle;?>">
+                                        <input type="text" id="numie" name="numie" placeholder="Ingresa tu Numero Int/Ext" value="<?php echo $numie;?>">
+                                        <input type="text" id="colonia" name="colonia" placeholder="Ingresa tu colonia" value="<?php echo $col;?>">
+                                        <input type="text" id="cpostal" name="cpostal" placeholder="Ingresa tu Codigo postal" value="<?php echo $cp;?>">
+                                    </div> <!-- rnormal__tarjeta -->
+                                    <div class="text-dato2">
+                                        <p>Domicilio</p>
+                                    </div>
+                                    <div class="dato3">
+                                        <input style="border: 1px solid #161616;" type="text" id="email" name="email" placeholder="Ingresa tu email" value="<?php echo $email;?>" disabled>
+                                    </div> <!-- rnormal__tarjeta -->
+                                    <div class="text-dato3">
+                                        <p>Correo Electrónico</p>
+                                    </div>
+                                   
+                                    <div class="dato4">
+                                        <input style="border: 1px solid #161616;" type="text" id="telefono" name="telefono" placeholder="Ingresa tu telefono" value="<?php echo $tel;?>" disabled>
+                                    </div> <!-- rnormal__tarjeta -->
+                                    <div class="text-dato4">
+                                        <p>Teléfono</p>
+                                    </div>
+                                    
+                                    <div class="dato5">
+                                        <p><?php echo $fec;?></p>
+                                    </div> <!-- rnormal__tarjeta -->
+                                    <div class="text-dato5">
+                                        <p>Cliente desde</p>
+                                    </div>
+                                    <div class="dato6">
+                                        <input type="text" id="domiciliof" name="domiciliof" placeholder="Domicilio fiscal" value="<?php echo '';?>">
+                                        <input type="text" id="cfdi" name="cfdi" placeholder="CDFI" value="<?php echo '';?>">
+                                        <input type="text" id="rfc" name="rfc" placeholder="RFC" value="<?php echo ''?>">
+                                        
+                                    </div> <!-- rnormal__tarjeta -->
+                                    <div class="text-dato6">
+                                        <p>Datos fiscales</p>
+                                    </div>
+                                    <div class="sub-boton">
+                                        <div class="text-btn">
+                                            <p style="color: #fff;">Si desea cambiar datos como la dirección de correo electrónico por favor póngase en contacto con el soporte técnico</p>
+                                        </div>
+                                        <input id="btnlogin" type="submit" value="Actualizar" class="button">
+
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
                 </li>
                 <li>
                     <div class="contenedor-especial">
@@ -241,7 +316,7 @@ if ((!isset($_SESSION['usuario'])) && (!isset($_SESSION['email']))) {
         </div>
 
         <?php
-       
+
     }
     require 'includes/templates/footer.php';
     // var_dump($contadorPasoxProyecto);
@@ -297,7 +372,7 @@ if ((!isset($_SESSION['usuario'])) && (!isset($_SESSION['email']))) {
     for ($x = 0; $x < $contadorProyectos; $x++) {
         for ($y = 0; $y < $contadorPasoxProyecto[$x]; $y++) {
             // echo '<br>->' . $x . '-'.$y. $superVec[$x][$y];
-            ?>
+        ?>
             <script type="text/javascript">
                 var fechasphp = '<?php echo $superVec[$x][$y];
                                     ?>'
