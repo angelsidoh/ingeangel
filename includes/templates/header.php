@@ -80,7 +80,8 @@ session_start();
 
       </div>
       <div class="proyectos">
-        <div class="proy"><a href="proyectos.php#angel-ruiz">
+        <div class="proy">
+          <a href="proyectos.php#angel-ruiz">
             <p>Proyectos</p>
           </a>
         </div>
