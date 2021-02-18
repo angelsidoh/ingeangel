@@ -1,5 +1,15 @@
 
+$(".menu-icon").hover(
+  function () {
+    $(".menu-icon span").addClass('colorfixhover');
 
+
+  },
+  function () {
+    $(".menu-icon span").removeClass('colorfixhover');
+
+  }
+);
 
 let fechas = ['0'];
 let maximos1 = ['0'];
@@ -398,13 +408,18 @@ function ches(i) {
 
 // var file = up("foto1file").files[0];
 //                     console.log(file);
+$('.progrss').addClass('hidden');
 $("#foto1file").change(function () {
   var file = up("foto1file").files[0];
-  // console.log(file);
+  console.log(file);
+  $('.progrss').removeClass('hidden');
   var formdata = new FormData();
   formdata.append("foto1file", file);
   var ajax = new XMLHttpRequest();
   ajax.upload.addEventListener("progress", progressHandler, false);
+  ajax.addEventListener("load", completeHandler, false);
+  ajax.addEventListener("error", errorHandler, false);
+  ajax.addEventListener("abort", abortHandler, false);
   ajax.open("POST", "includes/modelos/upload4.php");
   ajax.onload = function () {
     if (this.status === 200) {
@@ -412,6 +427,7 @@ $("#foto1file").change(function () {
       const respuesta = JSON.parse(ajax.responseText);
       // console.log('->->' + respuesta.estado);
       if (respuesta.estado === 'uploadsuccess') {
+        $('.progrss').addClass('hidden');
         swal({
           content: "",
           text: 'Ha cambiado su foto de perfil',
@@ -462,15 +478,21 @@ $(".contenedor-perfil .imagen").hover(
 );
 
 function progressHandler(event) {
-  // up("loaded_n_total").innerHTML = "Subiendo Foto " + event.loaded + " bytes of " + event.total;
-  // var percent = (event.loaded / event.total) * 100;
-  // up("progressBar").value = Math.round(percent);
+  up("loaded_n_total").innerHTML = "Subiendo Foto " + event.loaded + " bytes de " + event.total;
+  var percent = (event.loaded / event.total) * 100;
+  if(percent == 100){
+    up("progressBar").value = Math.round(percent);
+    up("status").innerHTML = "Espere unos segundos más!";
+  }else{
+  up("progressBar").value = Math.round(percent);
+  up("status").innerHTML = Math.round(percent)+"% Subiendo foto";
+  }
 
 }
 
 function completeHandler(event) {
-  // up("status").innerHTML = event.target.responseText;
-  // up("progressBar").value = 0;
+  up("status").innerHTML = event.target.responseText;
+  up("progressBar").value = 0;
 }
 
 function errorHandler(event) {

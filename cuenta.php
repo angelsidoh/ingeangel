@@ -5,11 +5,12 @@ if ((!isset($_SESSION['usuario'])) && (!isset($_SESSION['email']))) {
     session_destroy();
     // header('Location: cuenta.php#angel-ruiz');
 ?>
-    <META HTTP-EQUIV="REFRESH" CONTENT="1;URL=http://localhost/01ingeangel.com/logout.php">
+    <META HTTP-EQUIV="REFRESH" CONTENT="1;URL=https://ingeangel.com/logout.php">
 
     <?php
 } else {
     $dato = $_SESSION['email'];
+
     $resultadoConsulta = consultaUsuario($dato);
     if ($resultadoConsulta->num_rows) {
         foreach ($resultadoConsulta as $Consulta) {
@@ -33,7 +34,6 @@ if ((!isset($_SESSION['usuario'])) && (!isset($_SESSION['email']))) {
     $contadorProyectos = 0;
     $resultadoProyecto = consultaProyecto($idusuario);
 
-
     if ($resultadoProyecto->num_rows) {
         foreach ($resultadoProyecto as $proyecto) {
             $nombreproyecto = $proyecto['nombre_proyecto'];
@@ -43,13 +43,12 @@ if ((!isset($_SESSION['usuario'])) && (!isset($_SESSION['email']))) {
             $contadorProyectos++;
         }
     }
-    // var_dump($vectorIdProyectos);
+
     for ($i = 0; $i < $contadorProyectos; $i++) {
-        // consulta de pasos
+
         $contadorPasos = 0;
         $resultadoPasos = consultaPasos($vectorIdProyectos[$i]);
-        // echo $i;
-        // $vector1[0] = 0;
+
         $vectorDescrip[0] = '';
         $vectorFechafin[0] = '';
 
@@ -59,7 +58,7 @@ if ((!isset($_SESSION['usuario'])) && (!isset($_SESSION['email']))) {
 
                 $vectorDescrip[$contadorPasos] = $paso['descripcion_paso'];
                 $vectorFechafin[$contadorPasos] = $paso['fechafin_paso'];
-                // echo ($contadorPasos+1);
+
                 $contadorPasoxProyecto[$i] = ($contadorPasos + 1);
                 $contadorPasos++;
             }
@@ -80,6 +79,7 @@ if ((!isset($_SESSION['usuario'])) && (!isset($_SESSION['email']))) {
 
 
         <title>Tu Cuenta</title>
+
         <section>
             <div style="display: none;" class="cuenta-regresiva9999 contenedor-cuenta">
                 <h4>x</h4>
@@ -103,6 +103,7 @@ if ((!isset($_SESSION['usuario'])) && (!isset($_SESSION['email']))) {
                 </ul>
             </div>
         </section>
+
         <div class="contenedor-cuenta">
             <div class="contenedor-perfil">
                 <div class="imagen">
@@ -112,7 +113,7 @@ if ((!isset($_SESSION['usuario'])) && (!isset($_SESSION['email']))) {
                         <?php if ($foto == '') {
                         ?><img src="img/terceros/avatar.JPG" alt="avatar"><?php
                                                                         } else { ?>
-                            <img src="<?php echo $foto; ?>" alt="foto">
+                            <img src="<?php echo $foto; ?>" alt="Hay foto en BD">
                         <?php
                                                                         } ?>
                         <div class="edit-fotox">
@@ -121,8 +122,22 @@ if ((!isset($_SESSION['usuario'])) && (!isset($_SESSION['email']))) {
                                 <input type="file" id="foto1file" name="foto1file">
 
                             </div>
+                            
+
                             <!-- <a type="file" id="foto1file" name="foto1file" href="#"><i class="fas fa-user-edit"></i></a> -->
                         </div>
+                        <div class="progrss">
+                            <div class="progressbarr">
+                                <progress id="progressBar" value="0" max="100"></progress>
+                                
+                                <div class="text-progrss">
+                                    <p id="loaded_n_total"></p>
+                                    <h3 id="status"></h3>
+                                </div>
+                            </div>
+                                
+                                
+                            </div>
                     </div>
 
                 </div>
@@ -239,63 +254,63 @@ if ((!isset($_SESSION['usuario'])) && (!isset($_SESSION['email']))) {
                             <form id="cuenta" action="#">
                                 <div class="contenido-cuenta">
                                     <div class="dato1">
-                                        <input style="border: 1px solid #161616;" type="text" id="Nombre" name="Nombre" placeholder="Ingresa tu Nombre" value="<?php echo $usuario .' '. $apellidos?>" disabled>
+                                        <input style="border: 1px solid #161616;" type="text" id="Nombre" name="Nombre" placeholder="Ingresa tu Nombre" value="<?php echo $usuario . ' ' . $apellidos ?>" disabled>
                                     </div> <!-- rnormal__tarjeta -->
                                     <div class="text-dato1">
                                         <p>Cliente</p>
                                     </div>
                                     <div class="dato2">
-                                        <input type="text" id="calle" name="calle" placeholder="Calle" value="<?php echo $calle;?>">
-                                        <input type="text" id="numie" name="numie" placeholder="Ingresa tu Numero Int/Ext" value="<?php echo $numie;?>">
-                                        <input type="text" id="colonia" name="colonia" placeholder="Ingresa tu colonia" value="<?php echo $col;?>">
-                                        <input type="text" id="cpostal" name="cpostal" placeholder="Ingresa tu Codigo postal" value="<?php echo $cp;?>">
+                                        <input type="text" id="calle" name="calle" placeholder="Calle" value="<?php echo $calle; ?>">
+                                        <input type="text" id="numie" name="numie" placeholder="Ingresa tu Numero Int/Ext" value="<?php echo $numie; ?>">
+                                        <input type="text" id="colonia" name="colonia" placeholder="Ingresa tu colonia" value="<?php echo $col; ?>">
+                                        <input type="text" id="cpostal" name="cpostal" placeholder="Ingresa tu Codigo postal" value="<?php echo $cp; ?>">
                                     </div> <!-- rnormal__tarjeta -->
                                     <div class="text-dato2">
                                         <p>Domicilio</p>
                                     </div>
                                     <div class="dato3">
-                                        <input style="border: 1px solid #161616;" type="text" id="email" name="email" placeholder="Ingresa tu email" value="<?php echo $email;?>" disabled>
+                                        <input style="border: 1px solid #161616;" type="text" id="email" name="email" placeholder="Ingresa tu email" value="<?php echo $email; ?>" disabled>
                                     </div> <!-- rnormal__tarjeta -->
                                     <div class="text-dato3">
                                         <p>Correo Electrónico</p>
                                     </div>
-                                   
+
                                     <div class="dato4">
-                                        <input style="border: 1px solid #161616;" type="text" id="telefono" name="telefono" placeholder="Ingresa tu telefono" value="<?php echo $tel;?>" disabled>
+                                        <input style="border: 1px solid #161616;" type="text" id="telefono" name="telefono" placeholder="Ingresa tu telefono" value="<?php echo $tel; ?>" disabled>
                                     </div> <!-- rnormal__tarjeta -->
                                     <div class="text-dato4">
                                         <p>Teléfono</p>
                                     </div>
-                                    
+
                                     <div class="dato5">
-                                        <p><?php echo $fec;?></p>
+                                        <p><?php echo $fec; ?></p>
                                     </div> <!-- rnormal__tarjeta -->
                                     <div class="text-dato5">
                                         <p>Cliente desde</p>
                                     </div>
                                     <div class="dato6">
                                         <input type="text" id="domiciliof" name="domiciliof" placeholder="Domicilio fiscal" value="<?php
-                                        if($domiciliof != ''){
-                                            echo $domiciliof;
-                                        }else{
-                                            echo '';
-                                        }
-                                        ?>">
+                                                                                                                                    if ($domiciliof != '') {
+                                                                                                                                        echo $domiciliof;
+                                                                                                                                    } else {
+                                                                                                                                        echo '';
+                                                                                                                                    }
+                                                                                                                                    ?>">
                                         <input type="text" id="cfdi" name="cfdi" placeholder="CDFI" value="<?php
-                                        if($cfdi != ''){
-                                            echo $cfdi;
-                                        }else{
-                                            echo '';
-                                        }
-                                        ?>">
+                                                                                                            if ($cfdi != '') {
+                                                                                                                echo $cfdi;
+                                                                                                            } else {
+                                                                                                                echo '';
+                                                                                                            }
+                                                                                                            ?>">
                                         <input type="text" id="rfc" name="rfc" placeholder="RFC" value="<?php
-                                        if($rfc != ''){
-                                            echo $rfc;
-                                        }else{
-                                            echo '';
-                                        }
-                                        ?>">
-                                        
+                                                                                                        if ($rfc != '') {
+                                                                                                            echo $rfc;
+                                                                                                        } else {
+                                                                                                            echo '';
+                                                                                                        }
+                                                                                                        ?>">
+
                                     </div> <!-- rnormal__tarjeta -->
                                     <div class="text-dato6">
                                         <p>Datos fiscales</p>
