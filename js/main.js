@@ -1,3 +1,6 @@
+
+
+
 let fechas = ['0'];
 let maximos1 = ['0'];
 let maximos2 = ['0'];
@@ -194,7 +197,7 @@ function faxS(Seg) {
     for (let s1 = 0; s1 < Seg[s].length; s1++) {
       var cuentasreg = ('.cuenta-regresiva' + s + '-' + s1);
       var prueb = ('.cuenta-regresiva' + s + '-' + s1 + ' '+'.clearfix .lix:nth-child(-n+9)');
-      console.log(prueb);
+      // console.log(prueb);
       var idsegundosS = ('#segundos' + s + '-' + s1);
       $(idsegundosS).text(Seg[s][s1]);
       // console.log(s +'-' + s1+ Seg[s][s1]);
@@ -297,227 +300,6 @@ function faxD(Dia) {
   }
 }
 
-// // respaldo
-// let fechas = ['0'];
-// var fecha = '-';
-// var contadorPjs = 0;
-// var contadorSegundos = 0;
-// var xfecha = '';
-
-// function abc(datos, max, cont) {
-
-
-//   fechas[contadorPjs] = datos;
-
-//   fecha = fechas[max];
-
-//   if (contadorPjs == max) {
-//     console.log(fechas);
-//     console.log(fecha);
-//     console.log(datos);
-//     $('.cuenta-regresiva9999').countdown(fecha, function (event) {
-
-
-//       $('#dias9999').html(event.strftime('%D'));
-//       $('#horas9999').html(event.strftime('%H'));
-//       $('#minutos9999').html(event.strftime('%M'));
-//       $('#segundos9999').html(event.strftime('%S'));
-//       $('.cuenta-regresiva9999').addClass('coloryellow');
-//       $('.cuenta-regresiva9999').removeClass('colorgreen');
-//       if ((event.strftime('%S') == 00) && (event.strftime('%D') == 00) && (event.strftime('%H') == 00) && (event.strftime('%M') == 00)) {
-//         $('.cuenta-regresiva9999').removeClass('coloryellow');
-//         $('.cuenta-regresiva9999').addClass('colorgreen');
-//       }
-//       // console.log(contadorSegundos);
-//       contadorSegundos++;
-//       if (contadorPjs >= cont) {
-//         // console.log(cont);
-//         pasosTime(cont, fechas);
-//       }
-
-
-
-
-//     });
-
-//   }
-
-
-
-
-//   contadorPjs++
-
-// }
-// let todosS = ['0'];
-// let todosM = ['0'];
-// let todosH = ['0'];
-// let todosD = ['0'];
-// var s = 0;
-// var auxs= '';
-
-// function pasosTime(cont, fechas) {
-
-//   for (let x = 0; x < cont+1; x++) {
-//     // console.log(fechas);
-
-//     xfecha = fechas[x];
-//     // console.log(xfecha);
-//     var cuentasreg = ('.cuenta-regresiva' + x);
-//     var iddias = ('#dias' + x);
-//     var idhoras = ('#horas' + x);
-//     var idminutos = ('#minutos' + x);
-//     var idsegundos = ('#segundos' + x);
-
-//     $(cuentasreg).countdown(xfecha, function (event) {
-//       // console.log(x+'-'+xfecha);
-
-
-
-//       s = event.strftime('%S');
-//       todosS[x] = s;
-//       m = event.strftime('%M');
-//       todosM[x] = m;
-//       h = event.strftime('%H');
-//       todosH[x] = h;
-//       d = event.strftime('%D');
-//       todosD[x] = d;
-
-
-
-//       $(cuentasreg).addClass('coloryellow');
-//       $(cuentasreg).removeClass('colorgreen');
-//       if ((event.strftime('%S') == 00) && (event.strftime('%D') == 00) && (event.strftime('%H') == 00) && (event.strftime('%M') == 00)) {
-//         $(cuentasreg).removeClass('coloryellow');
-//         $(cuentasreg).addClass('colorgreen');
-//       }
-//     });
-
-
-//   }
-//   faxS(todosS, cont);
-//   faxM(todosM, cont);
-//   faxH(todosH, cont);
-//   faxD(todosD, cont);
-// }
-
-// function faxS(todosS, cont) {
-//   var posvecSeg = 0;
-//   var auxSeg = 0;
-
-//   if (todosS.length == cont) {
-
-//     for (let s = 0; s < cont; s++) {
-//       var cuentasreg = ('.cuenta-regresiva' + s);
-//       if(auxSeg == todosS[s]){
-//         auxSeg = todosS[s];
-
-//         $(cuentasreg).removeClass('coloryellow');
-//         $(cuentasreg).addClass('colorgreen');
-
-//         posvecSeg = s+1;
-//         condicionVerde1 = 1;
-
-
-//         // console.log(posvecSeg)
-//         // console.log('->'+auxSeg);
-//       }else{
-//         $(cuentasreg).addClass('coloryellow');
-//         $(cuentasreg).removeClass('colorgreen');
-
-//       }
-
-//       var idsegundosS = ('#segundos' + s);
-//       $(idsegundosS).text(todosS[s]);
-
-//     }
-
-//     //  console.log(todosS);
-//   }
-// }
-
-// function faxM(todosM, cont) {
-//   var posvecMin = 0;
-//   var auxMin = 0;
-//   if (todosM.length == cont) {
-
-//     for (let m = 0; m < cont; m++) {
-//       var cuentasreg = ('.cuenta-regresiva' + m);
-//       if(auxMin == todosM[m]){
-//         auxMin = todosM[m];
-
-//         // $(cuentasreg).removeClass('coloryellow');
-//         // $(cuentasreg).addClass('colorgreen');
-
-//         posvecMin = m+1;
-//         // console.log(posvecMin)
-//         // console.log('->'+auxMin);
-//       }else{
-//         $(cuentasreg).addClass('coloryellow');
-//         $(cuentasreg).removeClass('colorgreen');
-//       }
-
-//       var idminutosM = ('#minutos' + m);
-//       $(idminutosM).text(todosM[m]);
-
-//     }
-//     // console.log(todosM);
-//   }
-// }
-// function faxH(todosH, cont) {
-//   var posvecHor = 0;
-//   var auxHor = 0;
-//   if (todosH.length == cont) {
-
-//     for (let h = 0; h < cont; h++) {
-//       var cuentasreg = ('.cuenta-regresiva' + h);
-//       if(auxHor == todosH[h]){
-//         auxHor = todosH[h];
-
-//         // $(cuentasreg).removeClass('coloryellow');
-//         // $(cuentasreg).addClass('colorgreen');
-
-//         posvecHor = h+1;
-//         // console.log(posvecHor)
-//         // console.log('->'+auxMin);
-//       }else{
-//         $(cuentasreg).addClass('coloryellow');
-//         $(cuentasreg).removeClass('colorgreen');
-//       }
-
-//       var idminutosH = ('#horas' + h);
-//       $(idminutosH).text(todosH[h]);
-
-//     }
-//     // console.log(todosH);
-//   }
-// }
-// function faxD(todosD, cont) {
-//   var posvecDia = 0;
-//   var auxDia = 0;
-//   if (todosD.length == cont) {
-
-//     for (let d = 0; d < cont; d++) {
-//       var cuentasreg = ('.cuenta-regresiva' + d);
-//       if(auxDia == todosD[d]){
-//         auxDia = todosD[d];
-
-//         // $(cuentasreg).removeClass('coloryellow');
-//         // $(cuentasreg).addClass('colorgreen');
-
-//         posvecDia = d+1;
-//         console.log(posvecDia);
-//         // console.log('->'+auxMin);
-//       }else{
-//         $(cuentasreg).addClass('coloryellow');
-//         $(cuentasreg).removeClass('colorgreen');
-//       }
-//       var idminutosD = ('#dias' + d);
-//       $(idminutosD).text(todosD[d]);
-
-//     }
-//     // console.log(todosD);
-//   }
-// }
 
 
 
@@ -711,7 +493,97 @@ var elNombre = localStorage.getItem("Nombre");
 var elNumero = parseInt(localStorage.getItem("Numero"));
 var eltoken = (localStorage.getItem("token"));
 // console.log(elNombre + elNumero + '-' + eltoken);
+// cuenta FORM
+const formCuentaUser = document.querySelector('#cuenta');
+if ($("#cuenta").length) {
+  eventListeners();
 
+  function eventListeners() {
+    formCuentaUser.addEventListener('submit', actualizarCuenta);
+  }
+}
+function actualizarCuenta(e) {
+  e.preventDefault();
+  const calle = document.querySelector('#calle').value;
+  const numie = document.querySelector('#numie').value;
+  const colonia = document.querySelector('#colonia').value;
+  const cpostal = document.querySelector('#cpostal').value;
+  const domiciliof = document.querySelector('#domiciliof').value;
+  const cfdi = document.querySelector('#cfdi').value;
+  const rfc = document.querySelector('#rfc').value;
+  
+  const accion = document.querySelector('#btnactualizar').value;
+  console.log(calle+numie+colonia+cpostal+accion+domiciliof+cfdi+rfc);
+  
+  const infoactualuser = new FormData();
+
+  infoactualuser.append('calle', calle);
+  infoactualuser.append('numie', numie);
+  infoactualuser.append('colonia', colonia);
+  infoactualuser.append('cpostal', cpostal);
+  infoactualuser.append('domiciliof', domiciliof);
+  infoactualuser.append('cfdi', cfdi);
+  infoactualuser.append('rfc', rfc);
+  infoactualuser.append('accion', accion);
+
+  if (accion === 'Actualizar') {
+    console.log ('jjey');
+    actualizarUserUserDB(infoactualuser);
+  }
+}
+function actualizarUserUserDB(dato) {
+  // llamado de ajax
+  // crear objeto
+  //  console.log(dato);
+  const xhr = new XMLHttpRequest();
+  // abrir conexion
+  xhr.open('POST', 'includes/modelos/actualizaruseruser.php', true);
+  // pasar datos
+  xhr.onload = function () {
+    if (this.status === 200) {
+      const respuesta = JSON.parse(xhr.responseText);
+      console.log(respuesta);
+      if (respuesta.estado === 'hubo cambios') {
+        swal({
+            content: "",
+            text: 'Datos Actualizados',
+            icon: "success",
+            button: {
+              text: "Continuar",
+              closeModal: true,
+            },
+          })
+          .then((value) => {
+            switch (value) {
+              default:
+                window.location.href = 'cuenta.php#angel-ruiz';
+            }
+          });
+        
+      }
+      if (respuesta.estado === 'no cambios') {
+        swal({
+            content: "",
+            text: 'No has actualizado ningun dato',
+            icon: "info",
+            button: {
+              text: "Continuar",
+              closeModal: true,
+            },
+          })
+          .then((value) => {
+            switch (value) {
+              default:
+                window.location.href = 'cuenta.php#angel-ruiz';
+            }
+          });
+        
+      }
+    }
+  }
+  xhr.send(dato);
+}
+//end cuenta
 const formLoginUser = document.querySelector('#login');
 if ($("#login").length) {
   eventListeners();

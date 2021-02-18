@@ -25,6 +25,9 @@ if ((!isset($_SESSION['usuario'])) && (!isset($_SESSION['email']))) {
             $email = $Consulta['email_usuario'];
             $tel = $Consulta['telefono_usuario'];
             $fec = $Consulta['fecha_usuario'];
+            $domiciliof = $Consulta['domiciliofiscal_usuario'];
+            $cfdi = $Consulta['cfdi_usuario'];
+            $rfc = $Consulta['rfc_usuario'];
         }
     }
     $contadorProyectos = 0;
@@ -271,9 +274,27 @@ if ((!isset($_SESSION['usuario'])) && (!isset($_SESSION['email']))) {
                                         <p>Cliente desde</p>
                                     </div>
                                     <div class="dato6">
-                                        <input type="text" id="domiciliof" name="domiciliof" placeholder="Domicilio fiscal" value="<?php echo '';?>">
-                                        <input type="text" id="cfdi" name="cfdi" placeholder="CDFI" value="<?php echo '';?>">
-                                        <input type="text" id="rfc" name="rfc" placeholder="RFC" value="<?php echo ''?>">
+                                        <input type="text" id="domiciliof" name="domiciliof" placeholder="Domicilio fiscal" value="<?php
+                                        if($domiciliof != ''){
+                                            echo $domiciliof;
+                                        }else{
+                                            echo '';
+                                        }
+                                        ?>">
+                                        <input type="text" id="cfdi" name="cfdi" placeholder="CDFI" value="<?php
+                                        if($cfdi != ''){
+                                            echo $cfdi;
+                                        }else{
+                                            echo '';
+                                        }
+                                        ?>">
+                                        <input type="text" id="rfc" name="rfc" placeholder="RFC" value="<?php
+                                        if($rfc != ''){
+                                            echo $rfc;
+                                        }else{
+                                            echo '';
+                                        }
+                                        ?>">
                                         
                                     </div> <!-- rnormal__tarjeta -->
                                     <div class="text-dato6">
@@ -283,7 +304,7 @@ if ((!isset($_SESSION['usuario'])) && (!isset($_SESSION['email']))) {
                                         <div class="text-btn">
                                             <p style="color: #fff;">Si desea cambiar datos como la dirección de correo electrónico por favor póngase en contacto con el soporte técnico</p>
                                         </div>
-                                        <input id="btnlogin" type="submit" value="Actualizar" class="button">
+                                        <input id="btnactualizar" type="submit" value="Actualizar" class="button">
 
                                     </div>
                                 </div>
