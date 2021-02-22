@@ -365,6 +365,7 @@ html {
   border-bottom: 1px solid white;
   display: grid;
   grid-template-columns: repeat(1, 85% 15%);
+  
 }
 @media only screen and (min-width:768px){
   .menu-proyectos .submenu-proyectos{
@@ -374,6 +375,8 @@ html {
 .titulo-proyecto{
   text-align: left;
   margin-left: 20px;
+  
+  overflow: hidden;
 }
 @media only screen and (min-width:768px){
   .titulo-proyecto{
@@ -433,14 +436,29 @@ html {
 }
 
 .links{
-  grid-column: 3 / 13;
+  grid-column: 1 / 13;
   
 }
 .links .contenedorconteo{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   
-  display: grid;
-  grid-template-columns: repeat(1, 80% 20%);
-  border-bottom: 1px solid rgb(54, 54, 54);
+}
+@media only screen and (min-width:768px){
+  .links .contenedorconteo{
+    display: grid;
+    grid-template-columns: repeat(1, 50% 50%);
+    border-bottom: 1px solid rgb(54, 54, 54);
+  }
+}
+
+@media only screen and (min-width:1120px){
+  .links{
+    grid-column: 3 / 13;
+    
+  }
 }
 @media only screen and (min-width:1500px){
   .links{
@@ -760,6 +778,7 @@ inset 0px 0px 0px 0px rgba(0,0,0,0.75);;
   text-align: center;
   
   
+  
  }
  .contenedor-efecto .titulo-seccion h1{
    font-size: 28px;
@@ -930,6 +949,8 @@ inset 0px 0px 0px 0px rgba(0,0,0,0.75);;
   width: 100%;
   height: 100%;
   text-align: center;
+  
+  overflow: hidden;
 }
 .titulo-seccion h1{
   font-family: var(--FontPal);
@@ -1990,13 +2011,22 @@ ul,ol{
 .contenedor-cuenta .paginacion2{
   width: 10%;
   height: 100px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  margin: 100px auto;
   
-  grid-template-rows: repeat(2, 1fr);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
+@media only screen and (min-width:500px){
+  .contenedor-cuenta .paginacion2{
+    display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  }
+
+}
 @media only screen and (min-width:768px){
   .contenedor-cuenta .paginacion2{
     grid-template-columns: repeat(4, 1fr);
@@ -3352,7 +3382,7 @@ ul{
     text-align: justify;
   }
   .a__text1{
-    width: 50%;
+    width: 100%;
     margin: 0 auto;
     height: auto;
     
@@ -3361,9 +3391,13 @@ ul{
     grid-template-columns: repeat(1, 5% 85%);
     grid-gap: 0px 20px;
     grid-template-rows: repeat(3, 40%);
+    overflow: hidden;
   }
   @media only screen and (min-width:500px){
-    
+    .a__text1{
+      width: 50%;
+     
+    }
   }
   .icono1__a{
     width: 100%;
@@ -3820,27 +3854,26 @@ ul{
 
 /* fin carta bienvenida */
 .coloryellow{
-  box-shadow:0px 0px 5px 2px rgba(255,123,0,1),
-  inset 0px 0px 5px 1px rgba(255,123,0,1);
-  animation: flame 1s infinite;
+  border: 1px solid #fff;
+animation: flame 2s infinite;
+color: var(--ColorFontEspecial)!important;
 }
 @keyframes flame{
-  0% {box-shadow:0px 0px 5px 2px rgba(255,123,0,1),
-    inset 0px 0px 5px 1px rgba(255,123,0,1);
+  0% {border: 1px solid #fff;
+
     }
 
-  50%{box-shadow:0px 0px 5px 2px rgba(255,123,0,1),
-    inset 0px 0px 15px 1px rgba(255,123,0,1);
+  50%{
+    
+    border: 1px solid #161616;
+   
     }
 }
 
 
 .colorgreen{
-border: 1px solid #fff;
-
-background-color: green!important;
-
-
+  border: 1px solid rgb(255, 255, 255);
+  
 }
 
 .colorgreen li{

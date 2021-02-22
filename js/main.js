@@ -508,6 +508,72 @@ $("#plus1005").hover(
     i = '';
   }
 );
+$("#plus3000").hover(
+  function () {
+    i = 3000;
+    ches(i);
+
+
+  },
+  function () {
+    i = '';
+  }
+);
+$("#plus3001").hover(
+  function () {
+    i = 3001;
+    ches(i);
+
+
+  },
+  function () {
+    i = '';
+  }
+);
+$("#plus3002").hover(
+  function () {
+    i = 3002;
+    ches(i);
+
+
+  },
+  function () {
+    i = '';
+  }
+);
+$("#plus3003").hover(
+  function () {
+    i = 3003;
+    ches(i);
+
+
+  },
+  function () {
+    i = '';
+  }
+);
+$("#plus3004").hover(
+  function () {
+    i = 3004;
+    ches(i);
+
+
+  },
+  function () {
+    i = '';
+  }
+);
+$("#plus3005").hover(
+  function () {
+    i = 3005;
+    ches(i);
+
+
+  },
+  function () {
+    i = '';
+  }
+);
 
 function ches(i) {
 

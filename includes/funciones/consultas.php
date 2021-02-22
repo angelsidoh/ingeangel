@@ -39,7 +39,16 @@ function consultaPasos($dato){
 function consultaPagos($dato){
     include 'bd/bdsqli.php';
     try{
-        return $connf->query("SELECT fechainicio_pago, fechafin_pago, fechadepago_pago, tokenconekta_pago, fortarget_pago, idproyecto_pago,tokenpago_pago FROM pagos WHERE idproyecto_pago = '$dato'");
+        return $connf->query("SELECT fechainicio_pago, fechafin_pago, fechadepago_pago, tokenconekta_pago, fortarget_pago, idproyecto_pago,tokenpago_pago,idcontrato_pago, tokencontrato_pago FROM pagos WHERE idproyecto_pago = '$dato'");
+    }catch(Exception $e){
+        echo "Error!!" . $e->getMessage() . "<br>";
+        return false;
+    }
+}
+function consultaContratos($dato){
+    include 'bd/bdsqli.php';
+    try{
+        return $connf->query("SELECT id_contrato, link_contrato, token_contrato FROM contratos WHERE idproyecto_contrato = '$dato'");
     }catch(Exception $e){
         echo "Error!!" . $e->getMessage() . "<br>";
         return false;
