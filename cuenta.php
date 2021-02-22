@@ -66,13 +66,61 @@ if ((!isset($_SESSION['usuario'])) && (!isset($_SESSION['email']))) {
 
     ?>
 
-        <?php $superVec[$i] = $vectorFechafin;
+        <?php
+        $superVec[$i] = $vectorFechafin;
         $superVecDesp[$i] = $vectorDescrip;
         for ($ix = 0; $ix < $contadorPasos; $ix++) {
             $vectorFechafin[$ix] = '';
             $vectorDescrip[$ix] = '';
         } ?><?php
-        } ?>
+        }
+        $vecfechaIniciopago[0] = '';
+        $vecfechaFinpago[0] = '';
+        $vecfechapagoPago[0] = '';
+        $vectokenConekta[0] = '';
+        $vecforTarget[0] = '';
+        $vecIdProyectoPago[0] = '';
+        $vecfechaFinpago[0] = '';
+        $vecTokenpagopago[0] = '';
+        $superVecIdProyectoPago[0][0] = '';
+        // var_dump($vectorIdProyectos);
+        for ($i = 0; $i < $contadorProyectos; $i++) {
+            $resultadoPagos = consultaPagos($vectorIdProyectos[$i]);
+
+            $contadorPasos1 = 0;
+            if ($resultadoPagos->num_rows) {
+                foreach ($resultadoPagos as $pago) {
+                    $vecfechaIniciopago[$contadorPasos1] = $pago['fechainicio_pago'];
+                    $vecfechaFinpago[$contadorPasos1] = $pago['fechafin_pago'];
+                    $vecfechapagoPago[$contadorPasos1] = $pago['fechadepago_pago'];
+                    $vectokenConekta[$contadorPasos1] = $pago['tokenconekta_pago'];
+                    $vecforTarget[$contadorPasos1] = $pago['fortarget_pago'];
+                    $vecIdProyectoPago[$contadorPasos1] = $pago['idproyecto_pago'];
+                    $vecTokenpagopago[$contadorPasos1] = $pago['tokenpago_pago'];
+                    $contadorPasos1++;
+                }
+            }
+            $supervecfechaIniciopago[$i] = $vecfechaIniciopago;
+            $supervecfechaFinpago[$i] = $vecfechaFinpago;
+            $supervecfechapagoPago[$i] =  $vecfechapagoPago;
+            $supervectokenConekta[$i] = $vectokenConekta;
+            $supervecforTarget[$i] = $vecforTarget;
+            $superVecIdProyectoPago[$i] = $vecIdProyectoPago;
+            $superVecTokenpagoPago[$i] = $vecTokenpagopago;
+            for ($ix = 0; $ix < $contadorPasos1; $ix++) {
+
+                unset($vecfechaIniciopago[$ix]);
+                unset($vecfechaFinpago[$ix]);
+                unset($vecfechapagoPago[$ix]);
+                unset($vectokenConekta[$ix]);
+                unset($vecforTarget[$ix]);
+                unset($vecIdProyectoPago[$ix]);
+                unset($vecTokenpagopago[$ix]);
+            }
+        }
+       
+
+            ?>
 
 
 
@@ -122,22 +170,22 @@ if ((!isset($_SESSION['usuario'])) && (!isset($_SESSION['email']))) {
                                 <input type="file" id="foto1file" name="foto1file">
 
                             </div>
-                            
+
 
                             <!-- <a type="file" id="foto1file" name="foto1file" href="#"><i class="fas fa-user-edit"></i></a> -->
                         </div>
                         <div class="progrss">
                             <div class="progressbarr">
                                 <progress id="progressBar" value="0" max="100"></progress>
-                                
+
                                 <div class="text-progrss">
                                     <p id="loaded_n_total"></p>
                                     <h3 id="status"></h3>
                                 </div>
                             </div>
-                                
-                                
-                            </div>
+
+
+                        </div>
                     </div>
 
                 </div>
@@ -331,6 +379,197 @@ if ((!isset($_SESSION['usuario'])) && (!isset($_SESSION['email']))) {
                         <div class="titulo-seccion">
                             <h1 id="sparklemaster" class="sparklemaster" style="color:  #93A9CC;">Pagos</h1>
                         </div>
+                        <?php
+                        $contadorpagos2=1;
+                        for ($x = 0; $x < $contadorProyectos; $x++) {
+
+                        ?>
+                            <div class="menu-proyectos">
+                                <div class="submenu-proyectos">
+                                    <div class="titulo-proyecto">
+                                        <h1 class="<?php
+                                        for ($i = 0; $i < sizeof($superVecIdProyectoPago); $i++) {
+                                            $contadorpagos1 = 0;
+                                            for ($y = 0; $y < sizeof($superVecIdProyectoPago[$i]); $y++) {
+                                                if ($vectorIdProyectos[$x] == $superVecIdProyectoPago[$i][$y]) {
+                                                    if ($supervecforTarget[$i][$y] == 0 || $supervectokenConekta[$i][$y] == '') {
+                                                        $contadorpagos1++;
+                                                    }
+                                                    if ($y == (sizeof($superVecIdProyectoPago[$i]) - 1)) {
+                                                        if ($contadorpagos1 >= 1) {
+                                                            echo 'blinkama';
+                                                        } else {
+                                                            echo '';
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                        ?>">Proyecto <?php echo $x + 1; ?>:<span style="font-size: 16px;">
+                                                <?php
+                                                echo $vectorNombresProyectos[$x];
+
+                                                for ($i = 0; $i < sizeof($superVecIdProyectoPago); $i++) {
+                                                    $contadorpagos1 = 0;
+                                                    for ($f = 0; $f < sizeof($superVecIdProyectoPago[$i]); $f++) {
+                                                        if ($vectorIdProyectos[$x] == $superVecIdProyectoPago[$i][$f]) {
+                                                            if ($supervecforTarget[$i][$f] == 0 || $supervectokenConekta[$i][$f] == '') {
+                                                                $contadorpagos1++;
+                                                            }
+                                                            if ($f == (sizeof($superVecIdProyectoPago[$i]) - 1)) {
+                                                                if ($contadorpagos1 > 1) {
+                                                                    echo ' (' . $contadorpagos1 . ') Pagos Pendientes';
+                                                                } elseif($contadorpagos1 == 1) {
+                                                                    echo ' (' . $contadorpagos1 . ') Pago Pendiente';
+                                                                }else{
+                                                                    echo '';
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+
+
+                                                ?></span></h1>
+                                    </div>
+                                    <div class="mas-proyecto">
+                                        <input type="checkbox" class="checs" id="check<?php echo $x + 1000; ?>" name="menu">
+                                        <label for="check<?php echo $x + 1000; ?>">
+                                            <i id="plus<?php echo $x + 1000; ?>" class="far fa-plus-square"></i>
+                                            <i id="neg<?php echo $x + 1000; ?>" class="far fa-minus-square" style="display: none;"></i>
+                                        </label>
+                                    </div>
+                                    <div id="lista<?php echo $x + 1000; ?>" class="lista-proyectos" style="display: none;">
+                                        <?php
+                                        for ($y = 0; $y < 1; $y++) { ?>
+                                            <div class="links">
+                                                <div class="contenedorconteo1">
+                                                    <?php
+                                                    $textAsunto = "Hola. Me gustaría que resolvieran las siguientes dudas de mi proyecto " . $vectorNombresProyectos[$x] . " del paso " . ($y + 1) . ": >>" . $superVecDesp[$x][$y] . "<< " . "Proyecto id# " . $vectorIdProyectos[$x];
+                                                    $asunto = str_replace(' ', '%20', $textAsunto);
+                                                    $vectorNombresProyectos[$x] = str_replace('&', 'y', $vectorNombresProyectos[$x]);
+                                                    $cuerpo = "Lista de dudas: ";
+                                                    $cuerpo = str_replace(' ', '%20', $cuerpo);
+                                                    $xend = 0;
+                                                    $auxxend = 0;
+                                                    ?>
+                                                    
+                                                    <?php for ($f = 0; $f < sizeof($superVecIdProyectoPago[$x]); $f++) {
+                                                         if($supervectokenConekta[$x][$f] == '' || $supervecforTarget[$x][$f] == 0 || $supervecfechapagoPago == ''){   
+                                                        ?>
+                                                    <a href="#<?php echo $superVecTokenpagoPago[$x][$f];?>" target="_blank">
+                                                        <p>Periodo de contrato: <?php 
+                                                       
+                                                            echo $supervecfechaIniciopago[$x][$f].' a '.$supervecfechaFinpago[$x][$f];
+                                                       ?>: <i class="fas fa-caret-right"></i> <?php echo  'Ir a Pagar' ?></p><?php
+                                                       $auxxend++;
+                                                   
+                                                         }else{?> <p><?php
+                                                            $xend++;
+                                                            // echo $xend.'<-';
+                                                            // echo $auxxend;?><p><?php
+                                                            if($xend == 1 && $auxxend == 0){
+                                                             echo 'Sin pagos pendientes';
+                                                             
+                                                            }?></p><?php
+                                                           
+                                                         }?></p></a><?php
+                                                        }
+                                                     ?>
+                                                    
+                                                    <ul class="clearfix">
+                                                        <?php  
+                                                        ?>  
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        <?php
+                                        } ?>
+                                    </div>
+                                </div>
+                            </div>
+                        <?php
+                        }
+                        ?>
+                        <div class="titulo-seccion" id="#historial">
+                            <h1 id="sparklemaster" class="sparklemaster" style="color:  #93A9CC;">Historial de pagos</h1>
+                        </div>
+                        <?php
+                        
+                        for ($x = 0; $x < $contadorProyectos; $x++) {
+                        ?>
+                            <div class="menu-proyectos">
+                                <div class="submenu-proyectos">
+                                    <div class="titulo-proyecto">
+                                        <h1>Proyecto <?php echo $x + 1; ?>:<span style="font-size: 16px;">
+                                                <?php
+                                                echo $vectorNombresProyectos[$x];
+                                                ?></span></h1>
+                                    </div>
+                                    <div class="mas-proyecto">
+                                        <input type="checkbox" class="checs" id="check<?php echo $x + 2000; ?>" name="menu">
+                                        <label for="check<?php echo $x + 2000; ?>">
+                                            <i id="plus<?php echo $x + 2000; ?>" class="far fa-plus-square"></i>
+                                            <i id="neg<?php echo $x + 2000; ?>" class="far fa-minus-square" style="display: none;"></i>
+                                        </label>
+                                    </div>
+                                    <div id="lista<?php echo $x + 2000; ?>" class="lista-proyectos" style="display: none;">
+                                        <?php
+                                        for ($y = 0; $y < 1; $y++) { ?>
+                                           <div class="links">
+                                                <div class="contenedorconteo1">
+                                                    <?php
+                                                    $textAsunto = "Hola. Me gustaría que resolvieran las siguientes dudas de mi proyecto " . $vectorNombresProyectos[$x] . " del paso " . ($y + 1) . ": >>" . $superVecDesp[$x][$y] . "<< " . "Proyecto id# " . $vectorIdProyectos[$x];
+                                                    $asunto = str_replace(' ', '%20', $textAsunto);
+                                                    $vectorNombresProyectos[$x] = str_replace('&', 'y', $vectorNombresProyectos[$x]);
+                                                    $cuerpo = "Lista de dudas: ";
+                                                    $cuerpo = str_replace(' ', '%20', $cuerpo);
+                                                    $xend = 0;
+                                                    $auxxend = 0;
+
+                                                    ?>
+                                                   <?php for ($f = 0; $f < sizeof($superVecIdProyectoPago[$x]); $f++) {
+                                                         if($superVecTokenpagoPago[$x][$f] != '' && $supervectokenConekta[$x][$f] != '' && $supervecforTarget[$x][$f] != 0 && $supervecfechapagoPago != ''){   
+                                                        ?>
+                                                    <a href="#<?php echo $superVecTokenpagoPago[$x][$f];?>" target="_blank">
+                                                        <p>Periodo de contrato: <?php 
+                                                       
+                                                            echo $auxxend.$supervecfechaIniciopago[$x][$f].' a '.$supervecfechaFinpago[$x][$f];
+                                                       ?>: <i class="fas fa-caret-right"></i> <?php echo  'Pagado' ?></p><?php
+                                                       $auxxend++;
+                                                   
+                                                         }else{?> <p><?php
+                                                            $xend++;
+                                                            // echo $xend. ' <- '. $auxxend;
+                                                           if ($f == (sizeof($superVecIdProyectoPago[$x]))-1){
+                                                            if($auxxend == 0){
+                                                             echo 'Sin historial de pagos';
+                                                             
+                                                            }
+                                                        }
+                                                           
+                                                         }?></p></a><?php
+                                                        }
+                                                     ?>
+
+
+                                                    <ul class="clearfix">
+                                                        <?php
+                                                           
+                                                        ?>
+                                                        
+                                                    </ul>
+
+                                                </div>
+                                            </div>
+                                        <?php
+                                        } ?>
+                                    </div>
+                                </div>
+                            </div>
+                        <?php
+                        }
+                        ?>
                     </div>
                 </li>
                 <li>

@@ -376,6 +376,138 @@ $("#plus4").hover(
     i = '';
   }
 );
+$("#plus2000").hover(
+  function () {
+    i = 2000;
+    ches(i);
+
+
+  },
+  function () {
+    i = '';
+  }
+);
+$("#plus2001").hover(
+  function () {
+    i = 2001;
+    ches(i);
+
+
+  },
+  function () {
+    i = '';
+  }
+);
+$("#plus2002").hover(
+  function () {
+    i = 2002;
+    ches(i);
+
+
+  },
+  function () {
+    i = '';
+  }
+);
+$("#plus2003").hover(
+  function () {
+    i = 2003;
+    ches(i);
+
+
+  },
+  function () {
+    i = '';
+  }
+);
+$("#plus2004").hover(
+  function () {
+    i = 2004;
+    ches(i);
+
+
+  },
+  function () {
+    i = '';
+  }
+);
+$("#plus2005").hover(
+  function () {
+    i = 2005;
+    ches(i);
+
+
+  },
+  function () {
+    i = '';
+  }
+);
+$("#plus1000").hover(
+  function () {
+    i = 1000;
+    ches(i);
+
+
+  },
+  function () {
+    i = '';
+  }
+);
+$("#plus1001").hover(
+  function () {
+    i = 1001;
+    ches(i);
+
+
+  },
+  function () {
+    i = '';
+  }
+);
+$("#plus1002").hover(
+  function () {
+    i = 1002;
+    ches(i);
+
+
+  },
+  function () {
+    i = '';
+  }
+);
+$("#plus1003").hover(
+  function () {
+    i = 1003;
+    ches(i);
+
+
+  },
+  function () {
+    i = '';
+  }
+);
+$("#plus1004").hover(
+  function () {
+    i = 1004;
+    ches(i);
+
+
+  },
+  function () {
+    i = '';
+  }
+);
+$("#plus1005").hover(
+  function () {
+    i = 1005;
+    ches(i);
+
+
+  },
+  function () {
+    i = '';
+  }
+);
 
 function ches(i) {
 

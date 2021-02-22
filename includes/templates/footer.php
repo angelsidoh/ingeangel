@@ -105,7 +105,7 @@
                 <p>¿Necesitas ayuda para
                     <br> crear una pagina web de tu negocio?
                 </p>
-                <a href="" class="button">Servicio Personalizado</a>
+                <a href="#historial" class="button">Servicio Personalizado</a>
             </div>
 
         </div>
