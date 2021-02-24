@@ -356,7 +356,287 @@ html {
   flex-direction: column;
   margin-bottom: 50px;
 }
+.menu-proyectos1{
+  width: 90%;
+  height: auto;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 50px;
+  color: #ffffff;
+  text-align: center;
+}
+.menu-proyectos1 .submenu-proyectos1{
+  width: 100%;
+  height: 800px;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(8, 1fr);
+  text-align: center;
+  
 
+}
+
+.titulo-proyecto1{
+  grid-row: 1 / 1;
+  grid-column: 1 / 13;
+  border: 1px solid #ffffff;
+  
+  text-align: center;
+
+}
+
+.total-title{
+  grid-row: 8  / 8;
+  grid-column: 3 / 11;
+  position: relative;
+  
+}
+.total-title h2{
+  font-size: 32px;
+}
+.total-total{
+  grid-row: 8  / 8;
+  grid-column: 11 / 13;
+  
+
+  
+}
+
+
+/* pagos metodos */
+.pagos-metodos{
+  width: 90%;
+  height: auto;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-items: center;
+}
+.pago{
+  max-width: 320px;
+  width: 100%;
+  height: 160px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(4, 1fr) ;
+  margin-bottom: 50px;
+  border-top: 1px solid #ffffff;
+  border-bottom: 1px solid #ffffff;
+}
+@media only screen and (min-width:340px){
+  .pago{
+    
+    height: 120px;
+   
+  }
+}
+.text-pago{
+  grid-column: 1 / 4;
+  grid-row: 1 / 1;
+  width: 100%;
+  height: 100%;
+  
+  
+}
+.text-pago p{
+  color:#ffffff;
+  text-align: center;
+  font-size: 18px;
+  margin: 0 0;
+}
+.btnpago {
+  width: 100%;
+  height: 100%;
+  grid-column: 2 / 2;
+  grid-row: 4 / 4;
+  padding: 0 0;
+  margin: 0 auto;
+  margin-top: calc(50% - 40px);
+  margin-left: calc(50% - 38px);
+  margin-bottom: 10px;
+}
+.visa,.master,.american, .efectivo-oxxopay{
+  grid-row: 2 / 4;
+  width: 100%;
+  height: 100%;
+  color: #fff;
+  font-size: 52px;
+  margin-top: calc(0% - 0px);
+  margin-left: calc(50% - 30px);
+}
+.american{
+  color: #00aee2;
+}
+.master{
+  width: 55px;
+  height: 40px;
+  position: relative;
+  
+  margin-top:  5px;
+  background-image: url(../img/terceros/fondomaster.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position-x: -6px;
+  background-position-y: -2px;
+}
+.master i{
+  position: absolute;
+  top: -5px;
+  left: 0;
+  width: 50px;
+  height: 20px;
+  
+  
+}
+.efectivo-oxxopay,.trans-spei{
+  grid-row: 2 / 4;
+  grid-column: 1 / 4;
+  margin: 0 auto;
+  margin-top: -5px;
+  margin-left: calc(50% - 100px);
+}
+.trans-spei{
+  width: 100%;
+  height: 100%;
+  /* background-color: red; */
+  align-items: center;
+  margin-left: calc(50% - 50px);
+  margin-top: 15px;
+}
+.trans-spei img{
+  width: 100px;
+  height: auto;
+  margin: 0 auto;
+  
+}
+.efectivo-oxxopay img{
+  width: 200px;
+  height: auto;
+  margin: 0 0;
+}
+
+.no-active{
+  pointer-events: none; 
+  cursor: default;
+}
+.no-active .pago i{
+color: grey;
+
+}
+.no-active .pago .master{
+  background-image: none;
+}
+.no-active .pago img{
+filter: grayscale(100%)
+
+}
+.no-active .pago .btnpago a{
+background-color: gray;
+
+}
+.total-total h2{
+font-size:24px;
+}
+.imgpago{
+position: absolute;
+top: calc(50% - 30px);
+right:  4%;
+}
+.imgpago img{
+width: 160px;
+height: auto;
+}
+/* end pagos metodos */
+.servicio0,.servicio1,.servicio2,.servicio10,.servicio11,.servicio12,.servicio20,.servicio21,.servicio22,.servicio30,.servicio31,.servicio32,.servicio40,.servicio41,.servicio42,.servicio50,.servicio51,.servicio52, .total-total, .total-title{
+  border: 1px solid #ffffff;
+  overflow: hidden;
+  color: #ffffff;
+  font-weight: 100;
+  font-size: 14px;
+}
+.servicio0,.servicio1,.servicio2{
+  color: var(--ColorFontEspecial);
+  font-weight: 900;
+  font-size: 16px;
+}
+.servicio0 h2,.servicio1 h2,.servicio2 h2,.servicio10 h2,.servicio11 h2,.servicio12 h2,.servicio20 h2,.servicio21 h2,.servicio22 h2,.servicio30 h2,.servicio31 h2,.servicio32 h2,.servicio40 h2,.servicio41 h2,.servicio42 h2,.servici050 h2,.servici051 h2,.servici052 h2,.total-title h2, .total-total h2{
+  
+}
+.servicio0{
+  grid-row: 2 / 2;
+  grid-column: 1 / 3;
+}
+.servicio1{
+  grid-row: 2 / 2;
+  grid-column: 3 / 11;
+}
+.servicio2{
+  grid-row: 2 / 2;
+  grid-column: 11 / 13;
+}
+.servicio10{
+  grid-row: 3 / 3;
+  grid-column: 1 / 3;
+}
+.servicio11{
+  grid-row: 3 / 3;
+  grid-column: 3 / 11;
+}
+.servicio12{
+  grid-row: 3 / 3;
+  grid-column: 11 / 13;
+}
+.servicio20{
+  grid-row: 4 / 4;
+  grid-column: 1 / 3;
+}
+.servicio21{
+  grid-row: 4 / 4;
+  grid-column: 3 / 11;
+}
+.servicio22{
+  grid-row: 4 / 4;
+  grid-column: 11 / 13;
+}
+.servicio30{
+  grid-row: 5 / 5;
+  grid-column: 1 / 3;
+}
+.servicio31{
+  grid-row: 5 / 5;
+  grid-column: 3 / 11;
+}
+.servicio32{
+  grid-row: 5 / 5;
+  grid-column: 11 / 13;
+}
+.servicio40{
+  grid-row: 6 / 6;
+  grid-column: 1 / 3;
+}
+.servicio41{
+  grid-row: 6 / 6;
+  grid-column: 3 / 11;
+}
+.servicio42{
+  grid-row: 6 / 6;
+  grid-column: 11 / 13;
+}
+.servicio50{
+  grid-row: 7 / 7;
+  grid-column: 1 / 3;
+}
+.servicio51{
+  grid-row: 7 / 7;
+  grid-column: 3 / 11;
+}
+.servicio52{
+  grid-row: 7 / 7;
+  grid-column: 11 / 13;
+}
 .menu-proyectos .submenu-proyectos{
   width: 100%;
   height: auto;
@@ -367,6 +647,7 @@ html {
   grid-template-columns: repeat(1, 85% 15%);
   
 }
+
 @media only screen and (min-width:768px){
   .menu-proyectos .submenu-proyectos{
     grid-template-columns: repeat(1, 70% 30%);
@@ -4157,26 +4438,49 @@ color: #ffffff;
   grid-row-gap: 10px;
   margin-bottom: 20px;
 }
+.datos-usuario .contenido-pago{
+  width: 100%;
+  height: auto;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-template-rows: repeat(10, auto auto);
+  grid-row-gap: 10px;
+  margin-bottom: 20px;
+}
 @media only screen and (min-width:1430px){
   .datos-usuario .contenido-cuenta{
-    grid-template-rows: repeat(7, 25px 40px);
+    grid-template-rows: repeat(10, 25px 40px);
+  }
+  .datos-usuario .contenido-pago{
+    grid-template-rows: repeat(10, 25px 40px);
   }
   
 }
-.contenido-cuenta .dato1{
-  grid-row: 2 / 2;
-  grid-column: 1 / 1;
-  width: 100%;
-  height: 100%;
-  
-  
-}
-.contenido-cuenta .dato1 input, .contenido-cuenta .dato2 input,.contenido-cuenta .dato3 input, .contenido-cuenta .dato4 input, .contenido-cuenta .dato6 input{
+.contenido-pago .dato1 input, .contenido-pago .dato2 input,.contenido-pago .dato3 input, .contenido-pago .dato4 input, .contenido-pago .dato6 input, .contenido-pago .dato22 input, .contenido-pago .dato55 input, .contenido-pago .dato66 input, .contenido-pago .dato77 input{
   text-align: center;
   background-color: #fff;
   border: none;
 }
-.contenido-cuenta .dato1 input, .contenido-cuenta .dato2 input,.contenido-cuenta .dato3 input, .contenido-cuenta .dato4 input, .contenido-cuenta .dato6 input{
+.contenido-cuenta .dato1 input, .contenido-cuenta .dato2 input,.contenido-cuenta .dato3 input, .contenido-cuenta .dato4 input, .contenido-cuenta .dato6 input, .contenido-cuenta .dato22 input{
+  text-align: center;
+  background-color: #fff;
+  border: none;
+}
+.contenido-pago .dato1 input, .contenido-pago .dato2 input,.contenido-pago .dato3 input, .contenido-pago .dato4 input, .contenido-pago .dato6 input, .contenido-pago .dato22 input, .contenido-pago .dato55 input, .contenido-pago .dato66 input, .contenido-pago .dato77 input{
+  max-width: 580px;
+   width: 100%;
+   height: 30px;
+   margin: 0 auto;
+   padding: 8px 0;
+   background-color: transparent;
+   border-bottom: 1px solid #fff;
+   border-right: 1px solid #fff;
+   border-left: 1px solid #fff;
+   
+  color: #fff;
+  animation: inp 3s infinite;
+  }
+.contenido-cuenta .dato1 input, .contenido-cuenta .dato2 input,.contenido-cuenta .dato3 input, .contenido-cuenta .dato4 input, .contenido-cuenta .dato5 input, .contenido-cuenta .dato6 input, .contenido-cuenta .dato22 input{
 max-width: 420px;
  width: 100%;
  height: 30px;
@@ -4190,6 +4494,9 @@ max-width: 420px;
 color: #fff;
 animation: inp 3s infinite;
 }
+.contenido-cuenta .dato5 p{
+color: #fff;
+}
 @keyframes inp{
   0% {
     
@@ -4200,23 +4507,11 @@ animation: inp 3s infinite;
     border-left: 1px solid #161616;
     }
 }
-
-.contenido-cuenta .dato5 p{
+.contenido-pago .text-dato1 p, .contenido-pago .text-dato2 p, .contenido-pago .text-dato3 p, .contenido-pago .text-dato4 p, .contenido-pago .text-dato5 p, .contenido-pago .text-dato6 p, .contenido-pago .text-dato55 p, .contenido-pago .text-dato66 p, .contenido-pago .text-dato77 p{
+  padding: 0 0;
+  margin:  0 0;
+  font-size: 22px;
   color: #fff;
-}
-
-
-.contenido-cuenta .dato2 input{
-  max-width: 320px;
-  width: 100%;
-}
-
-.contenido-cuenta .text-dato1{
-  grid-row: 1 / 1;
-  grid-column: 1 / 1;
-  width: 100%;
-  height: 100%;
-  border-top: 1px solid #fff;
   
 }
 .contenido-cuenta .text-dato1 p, .contenido-cuenta .text-dato2 p, .contenido-cuenta .text-dato3 p, .contenido-cuenta .text-dato4 p, .contenido-cuenta .text-dato5 p, .contenido-cuenta .text-dato6 p{
@@ -4226,6 +4521,38 @@ animation: inp 3s infinite;
   color: #fff;
   
 }
+
+.contenido-cuenta .dato1, .contenido-pago .dato1{
+  grid-row: 2 / 2;
+  grid-column: 1 / 1;
+  width: 100%;
+  height: 100%;
+}
+.contenido-pago .dato22{
+  grid-row: 4 / 4;
+  grid-column: 1 / 1;
+  width: 100%;
+  height: 100%; 
+}
+
+
+
+
+.contenido-cuenta .dato2 input{
+  max-width: 320px;
+  width: 100%;
+}
+
+.contenido-cuenta .text-dato1, .contenido-pago .text-dato1{
+  grid-row: 1 / 1;
+  grid-column: 1 / 1;
+  width: 100%;
+  height: 100%;
+  border-top: 1px solid #fff;
+  
+}
+
+
 .contenido-cuenta .dato2{
   grid-row: 4 / 4;
   grid-column: 1 / 1;
@@ -4251,7 +4578,7 @@ animation: inp 3s infinite;
     align-items: center;
   }
 }
-.contenido-cuenta .text-dato2{
+.contenido-cuenta .text-dato2,.contenido-pago .text-dato2{
   grid-row: 3 / 3;
   grid-column: 1 / 1;
   width: 100%;
@@ -4261,7 +4588,7 @@ animation: inp 3s infinite;
   
   
 }
-.contenido-cuenta .dato3{
+.contenido-cuenta .dato3,.contenido-pago .dato3{
   grid-row: 6 / 6;
   grid-column: 1 / 1;
   width: 100%;
@@ -4269,7 +4596,7 @@ animation: inp 3s infinite;
   
   
 }
-.contenido-cuenta .text-dato3{
+.contenido-cuenta .text-dato3,.contenido-pago .text-dato3{
   grid-row: 5 / 5;
   grid-column: 1 / 1;
   width: 100%;
@@ -4278,7 +4605,7 @@ animation: inp 3s infinite;
   border-top: 1px solid #fff;
   
 }
-.contenido-cuenta .dato4{
+.contenido-cuenta .dato4,.contenido-pago .dato4{
   grid-row: 8 / 8;
   grid-column: 1 / 1;
   width: 100%;
@@ -4286,7 +4613,7 @@ animation: inp 3s infinite;
   
   
 }
-.contenido-cuenta .text-dato4{
+.contenido-cuenta .text-dato4, .contenido-pago .text-dato4{
   grid-row: 7 / 7;
   grid-column: 1 / 1;
   width: 100%;
@@ -4303,7 +4630,14 @@ animation: inp 3s infinite;
   
   
 }
-.contenido-cuenta .text-dato5{
+.contenido-pago .dato55{
+  grid-row: 10 / 10;
+  grid-column: 1 / 1;
+  width: 100%;
+  height: 100%; 
+  
+}
+.contenido-cuenta .text-dato5, .contenido-pago .text-dato55{
   grid-row: 9 / 9;
   grid-column: 1 / 1;
   width: 100%;
@@ -4312,7 +4646,8 @@ animation: inp 3s infinite;
   border-top: 1px solid #fff;
   
 }
-.contenido-cuenta .dato6{
+
+.contenido-cuenta .dato6,.contenido-pago .dato66{
   grid-row: 12 / 12;
   grid-column: 1 / 1;
   width: 100%;
@@ -4320,8 +4655,25 @@ animation: inp 3s infinite;
   
   
 }
-.contenido-cuenta .text-dato6{
+.contenido-cuenta .text-dato6,.contenido-pago .text-dato66{
   grid-row: 11 / 11;
+  grid-column: 1 / 1;
+  width: 100%;
+  height: 100%;
+  font-size: 22px;
+  border-top: 1px solid #fff;
+  
+}
+.contenido-pago .dato77{
+  grid-row: 14 / 14;
+  grid-column: 1 / 1;
+  width: 100%;
+  height: 100%;
+  
+  
+}
+.contenido-pago .text-dato77{
+  grid-row: 13 / 13;
   grid-column: 1 / 1;
   width: 100%;
   height: 100%;
@@ -4335,6 +4687,14 @@ animation: inp 3s infinite;
   width: 100%;
   height: 100%;
   border-top: 1px solid #fff;
+}
+ .contenido-pago .sub-boton{
+  grid-row: 15 / 16;
+  grid-column: 1 / 1;
+  width: 100%;
+  height: 100%;
+  border-top: 1px solid #fff;
+  
 }
 
 

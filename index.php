@@ -1,6 +1,32 @@
 <?php
 require 'includes/templates/header.php';
 // var_dump(getrusage()) ;
+require_once('includes/funciones/consultas.php');
+$resultadoProyecto = obtenerPrecios(1);
+
+if ($resultadoProyecto->num_rows) {
+    foreach ($resultadoProyecto as $proyecto) {
+
+    $precioBasico = $proyecto['basico_precio'];
+    $precioNegocio = $proyecto['negocio_precio'];
+    $precioProfesional = $proyecto['profesional_precio'];
+    $precioHosting = $proyecto['hosting_precio'];
+    $precioDominio = $proyecto['dominio_precio'];
+    $precioMantenimiento = $proyecto['mantenimiento_precio'];
+    $precioBD = $proyecto['basesdatos_precio'];
+       
+        
+        
+
+    }
+}
+// echo $precioBasico;
+
+// echo '<br> ------>'.$contadorPrecios1;
+// echo '<pre>';
+// var_dump($auxPosiciones);
+// echo '</pre>';
+
 ?>
 
 <title>Desarrollo Web</title>
@@ -148,19 +174,19 @@ require 'includes/templates/header.php';
                                 <div class="ventaja">
                                     <div class="text">
                                         <h2>Características</h2>
-                                        <p>1.	Imagen en internet de tu profesión, marca o empresa.</p>
-                                        <p>2.	Publicaciones limitadas de sus servicios y productos (Para publicidad unicamente)</p>
-                                        <p>3.	Web única y personalizable.</p>
-                                        <p>4.	Soporte Técnico.</p>
-                                        <p>5.	Propiedad total de tu Sitio Web.</p>
-                                        <p>6.	Alcance ilimitado para atraer clientes nuevos.</p>
-                                        <p>7.	Tu página/sitio web siempre estará en línea a cualquier hora del día (24horas, 7 días por semana)</p>
-                                        <p>8.	Información de contacto de tus clientes.</p>
-                                        
+                                        <p>1. Imagen en internet de tu profesión, marca o empresa.</p>
+                                        <p>2. Publicaciones limitadas de sus servicios y productos (Para publicidad unicamente)</p>
+                                        <p>3. Web única y personalizable.</p>
+                                        <p>4. Soporte Técnico.</p>
+                                        <p>5. Propiedad total de tu Sitio Web.</p>
+                                        <p>6. Alcance ilimitado para atraer clientes nuevos.</p>
+                                        <p>7. Tu página/sitio web siempre estará en línea a cualquier hora del día (24horas, 7 días por semana)</p>
+                                        <p>8. Información de contacto de tus clientes.</p>
+
                                     </div>
                                 </div>
                                 <div class="botones-text">
-                                <i class="fas fa-exchange-alt"></i>
+                                    <i class="fas fa-exchange-alt"></i>
                                 </div>
                             </div>
 
@@ -177,8 +203,15 @@ require 'includes/templates/header.php';
                                 </div>
                                 <div class="subtitle">
                                     <div class="text">
-                                        <h3><i class="fas fa-dollar-sign"></i> 4,980.00 MXN Mensuales.</h3>
-                                        <a href="#"><p>¿Tienes dudas?</p></a>
+                                        <h3><i class="fas fa-dollar-sign"></i> <?php 
+                                        
+                                        $total0 = $precioBasico+$precioHosting+$precioDominio+$precioMantenimiento+$precioBD;
+                                        
+                                        
+                                        echo number_format($total0).'.00 MXN Mensual.';?></h3>
+                                        <a href="#">
+                                            <p>¿Tienes dudas?</p>
+                                        </a>
                                         <p>¡Pregunta antes de contratar!</p>
                                         <div class="hr">
                                             <span> <i class="fas fa-handshake"></i> </span>
@@ -197,7 +230,7 @@ require 'includes/templates/header.php';
                                         <p>6. Mantenimiento periódico de sistemas de seguridad</p>
                                         <p>7. Modificación y Actualización de contenido</p>
                                         <p>8. Registro de una cuenta en Google Analytics para que revisé los resultados de tráfico en su sitio web.</p>
-                                        
+
                                     </div>
                                 </div>
                                 <div class="botones">
@@ -237,20 +270,20 @@ require 'includes/templates/header.php';
                                 <div class="ventaja">
                                     <div class="text">
                                         <h2>Características</h2>
-                                        <p>1.	La imagen en internet de tu profesión, marca, o empresa.</p>
-                                        <p>2.	Publicaciones limitadas de sus servicios y productos (Para publicidad y ventas en linea)</p>
-                                        <p>3.	Programación de APIS para realizar ventas en línea.</p>
-                                        <p>4.	Sección de Pedidos y seguimiento de los mismos.</p>
-                                        <p>5.	Web única y personalizable.</p>
-                                        <p>6.	Soporte Técnico.</p>
-                                        <p>7.	Propiedad total de su Sitio Web.</p>
-                                        <p>8.	Alcance ilimitado para atraer clientes nuevos.</p>
-                                        <p>9.	Página/sitio web en linea 24horas, 7 días por semana (Para unicamente por Mantenimiento)</p>
-                                        <p>10.	Información de contacto de sus clientes.</p>
+                                        <p>1. La imagen en internet de tu profesión, marca, o empresa.</p>
+                                        <p>2. Publicaciones limitadas de sus servicios y productos (Para publicidad y ventas en linea)</p>
+                                        <p>3. Programación de APIS para realizar ventas en línea.</p>
+                                        <p>4. Sección de Pedidos y seguimiento de los mismos.</p>
+                                        <p>5. Web única y personalizable.</p>
+                                        <p>6. Soporte Técnico.</p>
+                                        <p>7. Propiedad total de su Sitio Web.</p>
+                                        <p>8. Alcance ilimitado para atraer clientes nuevos.</p>
+                                        <p>9. Página/sitio web en linea 24horas, 7 días por semana (Para unicamente por Mantenimiento)</p>
+                                        <p>10. Información de contacto de sus clientes.</p>
                                     </div>
                                 </div>
                                 <div class="botones-text">
-                                <i class="fas fa-exchange-alt"></i>
+                                    <i class="fas fa-exchange-alt"></i>
                                 </div>
                             </div>
 
@@ -267,8 +300,17 @@ require 'includes/templates/header.php';
                                 </div>
                                 <div class="subtitle">
                                     <div class="text">
-                                        <h3><i class="fas fa-dollar-sign"></i> 7,299.00 MXN Mensuales.</h3>
-                                        <a href="#"><p>¿Tienes dudas?</p></a>
+                                        <h3><i class="fas fa-dollar-sign"></i> 
+                                        <?php 
+                                        
+                                        $total1 = $precioNegocio+$precioHosting+$precioDominio+$precioMantenimiento+$precioBD;
+                                        
+                                        
+                                        echo number_format($total1).'.00 MXN Mensual.';?>
+                                        </h3>
+                                        <a href="#">
+                                            <p>¿Tienes dudas?</p>
+                                        </a>
                                         <p>¡Pregunta antes de contratar!</p>
                                         <div class="hr">
                                             <span> <i class="fas fa-handshake"></i> </span>
@@ -324,26 +366,26 @@ require 'includes/templates/header.php';
                                 </div>
                                 <div class="ventaja">
                                     <div class="text">
-                                    <h2>Características</h2>
-                                        <p>1.	La imagen en internet de tu profesión, marca, o empresa.</p>
-                                        <p>2.	Publicaciones ILIMITADAS de sus servicios y productos (Para publicidad y ventas en linea)</p>
-                                        <p>3.	Programación de APIS para realizar ventas en línea.</p>
-                                        <p>4.	Sección de Pedidos y seguimiento de los mismos.</p>
-                                        <p>5.	Web única y personalizable.</p>
-                                        <p>6.	Soporte Técnico.</p>
-                                        <p>7.	Propiedad total de su Sitio Web.</p>
-                                        <p>8.	Alcance ilimitado para atraer clientes nuevos.</p>
-                                        <p>9.	Página/sitio web en linea 24horas, 7 días por semana (Para unicamente por Mantenimiento)</p>
-                                        <p>10.	Información de contacto de sus clientes.</p>
+                                        <h2>Características</h2>
+                                        <p>1. La imagen en internet de tu profesión, marca, o empresa.</p>
+                                        <p>2. Publicaciones ILIMITADAS de sus servicios y productos (Para publicidad y ventas en linea)</p>
+                                        <p>3. Programación de APIS para realizar ventas en línea.</p>
+                                        <p>4. Sección de Pedidos y seguimiento de los mismos.</p>
+                                        <p>5. Web única y personalizable.</p>
+                                        <p>6. Soporte Técnico.</p>
+                                        <p>7. Propiedad total de su Sitio Web.</p>
+                                        <p>8. Alcance ilimitado para atraer clientes nuevos.</p>
+                                        <p>9. Página/sitio web en linea 24horas, 7 días por semana (Para unicamente por Mantenimiento)</p>
+                                        <p>10. Información de contacto de sus clientes.</p>
                                     </div>
                                 </div>
                                 <div class="botones-text">
-                                <i id="mybutton1" class="fas fa-exchange-alt"></i>
+                                    <i id="mybutton1" class="fas fa-exchange-alt"></i>
                                 </div>
                             </div>
 
                         </div>
-                        <div id= "card3-back" class="back">
+                        <div id="card3-back" class="back">
                             <div class="text-paquete1">
                                 <div class="title">
                                     <div class="text">
@@ -355,11 +397,20 @@ require 'includes/templates/header.php';
                                 </div>
                                 <div class="subtitle">
                                     <div class="text">
-                                        <h3><i class="fas fa-dollar-sign"></i> 9,620.00 MXN Mensuales.</h3>
-                                        <a href="#"><p>¿Tienes dudas?</p></a>
+                                        <h3><i class="fas fa-dollar-sign"></i>
+                                        <?php 
+                                        
+                                        $total2 = $precioProfesional+$precioHosting+$precioDominio+$precioMantenimiento+$precioBD;
+                                        
+                                        
+                                        echo number_format($total2).'.00 MXN Mensual.';?>
+                                        </h3>
+                                        <a href="#">
+                                            <p>¿Tienes dudas?</p>
+                                        </a>
                                         <p>¡Pregunta antes de contratar!</p>
                                         <div class="hr">
-                                            <span>  <i class="fas fa-handshake"></i> </span>
+                                            <span> <i class="fas fa-handshake"></i> </span>
                                         </div>
                                     </div>
                                 </div>
@@ -375,7 +426,7 @@ require 'includes/templates/header.php';
                                         <p>7. Mantenimiento periódico de sistemas de seguridad</p>
                                         <p>8. Modificación y Actualización de contenido</p>
                                         <p>9. Registro de una cuenta en Google Analytics para que revisé los resultados de tráfico en su sitio web.</p>
-                                        
+
                                     </div>
                                 </div>
                                 <div class="botones">
@@ -540,37 +591,37 @@ require 'includes/templates/header.php';
             <div class="titulo-seccion">
                 <h1 id="sparklemaster" class="sparklemaster" style="color:  #93A9CC;">Bases de datos en MySQL</h1>
             </div>
-            <div id = "dinamico-efecto" class="contenedor-info">
-            <div class="descripcion">
-                <div class="tecnologia5">
-                    <i class="fas fa-database"></i>
-                    <div class="titulo-tecnologia">
-                        <h1 id="sparklemaster" class="sparklemaster" style="color:  #93A9CC;">MySQL</h1>
+            <div id="dinamico-efecto" class="contenedor-info">
+                <div class="descripcion">
+                    <div class="tecnologia5">
+                        <i class="fas fa-database"></i>
+                        <div class="titulo-tecnologia">
+                            <h1 id="sparklemaster" class="sparklemaster" style="color:  #93A9CC;">MySQL</h1>
+                        </div>
+                        <div class="descripcion-tecnologia">
+                            <h3>Historia</h3>
+                            <p>Fue desarrollado inicialmente por MySQL AB (empresa fundada por David Axmark, Allan Larsson y Michael Widenius). es un tipo de base de datos muy popular para el desarrollo de proyectos web, en gran parte de su desarrollo esta escrita en ANSI y C++.
+                            </p>
+                            <p>
+                                En ingeangel.com, en estos últimos (código ANSI y C++), cuenta con amplia experiencia, con casi 10 años en el campo, brindado a nuestro cliente, mucha mas capacidad para las conexiones con las bases de datos de su página/sitio web.
+                            </p>
+                            <h3>Ventajas</h3>
+                            <ul>
+                                <li>1. Disponibilidad en todas las plataformas o sistemas de servidores.</li>
+                                <li>2. Búsquedas e indexación de campos de texto.</li>
+                                <li>3. Soporte de 500 millones de registros.</li>
+                                <li>4. Soporta 64 índices por tabla (Quiere decir que podremos estructurar tablas muy complejas si es necesario).</li>
+                                <li>5. Ejecución de instrucciones muy rápida.</li>
+                                <li>6. Seguridad de la integridad para los datos de una tabla</li>
+                                <li>7. Posibilidad de descargar archivos para respaldo.</li>
+                                <li>8. Archivos de MySQL pequeños.</li>
+                                <li>9. Compatibilidad con PHP.</li>
+                            </ul>
+                        </div>
+                        <i class="fas fa-award"></i>
                     </div>
-                    <div class="descripcion-tecnologia">
-                        <h3>Historia</h3>
-                        <p>Fue desarrollado inicialmente por MySQL AB (empresa fundada por David Axmark, Allan Larsson y Michael Widenius). es un tipo de base de datos muy popular para el desarrollo de proyectos web, en gran parte de su desarrollo esta escrita en ANSI y C++.
-                        </p>
-                        <p>
-                        En ingeangel.com, en estos últimos (código ANSI y C++), cuenta con amplia experiencia, con casi 10 años en el campo, brindado a nuestro cliente, mucha mas capacidad para las conexiones con las bases de datos de su página/sitio web.
-                        </p>
-                        <h3>Ventajas</h3>
-                        <ul>
-                            <li>1.	Disponibilidad en todas las plataformas o sistemas de servidores.</li>
-                            <li>2.	Búsquedas e indexación de campos de texto.</li>
-                            <li>3.	Soporte de 500 millones de registros.</li>
-                            <li>4.	Soporta 64 índices por tabla (Quiere decir que podremos estructurar tablas muy complejas si es necesario).</li>
-                            <li>5.	Ejecución de instrucciones muy rápida.</li>
-                            <li>6.	Seguridad de la integridad para los datos de una tabla</li>
-                            <li>7.	Posibilidad de descargar archivos para respaldo.</li>
-                            <li>8.	Archivos de MySQL pequeños.</li>
-                            <li>9.	Compatibilidad con PHP.</li>
-                        </ul>
-                    </div>
-                    <i class="fas fa-award"></i>
                 </div>
-            </div>
-          
+
             </div>
         </div>
     </div>
@@ -584,79 +635,79 @@ require 'includes/templates/header.php';
                         <h1 id="sparklemaster" class="sparklemaster" style="color:  #000000;">Seguridad</h1>
                         <i style="font-size: 60px; color:#000000;" class="fas fa-user-shield"></i>
                     </div>
-                </div>    
-            <p style="color: #000000;">La seguridad en la red es uno de los temas con más importancia, cuento con varias “barreras” de protección, dando seguimiento todos los días, a un nivel de servidor (el sistema en que se encuentra almacenada tu página web y bases de datos), y a un nivel de página/sitio web.</p>
-            <p style="color: #000000;">
-            Actualmente cargo parches de seguridad que te ayudarán a detectar si tu web esta siendo atacada, y asi realizar acciones de forma automática en caso de ser necesario.
-            </p>
-            <p style="color: #000000;">
-            Los datos, de las bases de datos en MySQL, están programados con un nivel de encriptación, que brinda otro nivel más de seguridad. Pues estas son el blanco principal en caso de un ataque.
-            </p>
-            <p style="color: #000000;">Además, todos los días realizo copias de seguridad que irán a una carpeta de destino para su acceso remoto en caso de requerirlo.</p>
-        </div>
-        <div class="elemento-grid">
+                </div>
+                <p style="color: #000000;">La seguridad en la red es uno de los temas con más importancia, cuento con varias “barreras” de protección, dando seguimiento todos los días, a un nivel de servidor (el sistema en que se encuentra almacenada tu página web y bases de datos), y a un nivel de página/sitio web.</p>
+                <p style="color: #000000;">
+                    Actualmente cargo parches de seguridad que te ayudarán a detectar si tu web esta siendo atacada, y asi realizar acciones de forma automática en caso de ser necesario.
+                </p>
+                <p style="color: #000000;">
+                    Los datos, de las bases de datos en MySQL, están programados con un nivel de encriptación, que brinda otro nivel más de seguridad. Pues estas son el blanco principal en caso de un ataque.
+                </p>
+                <p style="color: #000000;">Además, todos los días realizo copias de seguridad que irán a una carpeta de destino para su acceso remoto en caso de requerirlo.</p>
+            </div>
+            <div class="elemento-grid">
                 <div class="contenedor-efecto">
                     <div class="titulo-seccion">
-                    <h1 id="sparklemaster" class="sparklemaster" style="color:  #ffffff;">Hosting</h1>
-                    <i style="font-size: 60px;" class="fas fa-hdd"></i>
-                    
+                        <h1 id="sparklemaster" class="sparklemaster" style="color:  #ffffff;">Hosting</h1>
+                        <i style="font-size: 60px;" class="fas fa-hdd"></i>
+
                     </div>
-                </div>    
-            <p>Es un servicio de alojamiento, para tu página/sitio web, lo puedo comparar fácilmente con una memoria USB para nuestras carpetas de documentos. Teniendo este ejemplo en mente, una página/sitio web es una estructura ordenada de documentos y archivos que en su conjunto permiten visualizar el diseño que hemos programado en un navegador web.</p>
-            <p>
-            Existen diferentes capacidades de servicio de hosting, pongo a tu discusión 10 Gigabytes de espacio en disco SD (Estado Solido) por proyecto. (Si necesita más el costo variará segun el servicio)
-            </p>
-            <p>
-            Recordemos que los archivos con código: HTML, CSS3, PHP y JAVASCRIPT, son muy pequeños por lo que es espacio suficiente para almacenar bases de datos, tambien imagenes y videos necesarios para dar vida a tu proyecto.
-            </p>
-        </div>
-        <div class="elemento-grid">
+                </div>
+                <p>Es un servicio de alojamiento, para tu página/sitio web, lo puedo comparar fácilmente con una memoria USB para nuestras carpetas de documentos. Teniendo este ejemplo en mente, una página/sitio web es una estructura ordenada de documentos y archivos que en su conjunto permiten visualizar el diseño que hemos programado en un navegador web.</p>
+                <p>
+                    Existen diferentes capacidades de servicio de hosting, pongo a tu discusión 10 Gigabytes de espacio en disco SD (Estado Solido) por proyecto. (Si necesita más el costo variará segun el servicio)
+                </p>
+                <p>
+                    Recordemos que los archivos con código: HTML, CSS3, PHP y JAVASCRIPT, son muy pequeños por lo que es espacio suficiente para almacenar bases de datos, tambien imagenes y videos necesarios para dar vida a tu proyecto.
+                </p>
+            </div>
+            <div class="elemento-grid">
                 <div class="contenedor-efecto">
                     <div class="titulo-seccion">
-                    <h1 id="sparklemaster" class="sparklemaster" style="color:  #ffffff;">Página Web Adaptativo o Responsivo</h1>
-                    <!-- <i style="font-size: 60px;" class="fas fa-desktop"></i> -->
-                    <i style="font-size: 60px;" class="fas fa-laptop"></i>
-                    <!-- <i style="font-size: 60px;" class="fas fa-tablet-alt"></i> -->
-                    <i style="font-size: 60px;" class="fas fa-mobile-alt"></i>
-                   
+                        <h1 id="sparklemaster" class="sparklemaster" style="color:  #ffffff;">Página Web Adaptativo o Responsivo</h1>
+                        <!-- <i style="font-size: 60px;" class="fas fa-desktop"></i> -->
+                        <i style="font-size: 60px;" class="fas fa-laptop"></i>
+                        <!-- <i style="font-size: 60px;" class="fas fa-tablet-alt"></i> -->
+                        <i style="font-size: 60px;" class="fas fa-mobile-alt"></i>
+
                     </div>
-                </div>    
-            <p>Es de gran importancia crear una página/sitio web que se adapte a cualquier dispositivo inteligente; computadora, Tablet y Smartphone de la actualidad.</p>
-            <p>
-            La forma para desarrollar/programar esta función tiene que ver con variables que cambian dentro de la página/sitio web cuando es ejecutada en los diferentes dispositivos, reacomodando el contenido si estas variables llegan a su límite de visualización.
-            </p>
-            <p>
-            En ingeangel.com codifico limites para tu pagina/sitio web cuando es necesario, alcanzando una amplia gama de resoluciones de dispositivos inteligentes, con un límite mínimo de visualización perfecta del contenido de tu página/sitio web de 250px de ancho por 250px de alto. 
-            </p>
-            <p>¿Qué sucede si un dispositivo tiene menos de 250pixeles de ancho y 250pixeles de alto? Cuando esto sucede los elementos comienzan a desacomodarse por su tamaño, impidiendo muchas veces hacer clic en botones debido a que hay otro elemento por encima. Esta resolución no es nada común en la actualidad, por lo que no debería preocuparte, pues el 99.99% de los dispositivos actuales tienen resoluciones mucho más grandes.</p>
-        </div>
-        <div class="elemento-grid">
+                </div>
+                <p>Es de gran importancia crear una página/sitio web que se adapte a cualquier dispositivo inteligente; computadora, Tablet y Smartphone de la actualidad.</p>
+                <p>
+                    La forma para desarrollar/programar esta función tiene que ver con variables que cambian dentro de la página/sitio web cuando es ejecutada en los diferentes dispositivos, reacomodando el contenido si estas variables llegan a su límite de visualización.
+                </p>
+                <p>
+                    En ingeangel.com codifico limites para tu pagina/sitio web cuando es necesario, alcanzando una amplia gama de resoluciones de dispositivos inteligentes, con un límite mínimo de visualización perfecta del contenido de tu página/sitio web de 250px de ancho por 250px de alto.
+                </p>
+                <p>¿Qué sucede si un dispositivo tiene menos de 250pixeles de ancho y 250pixeles de alto? Cuando esto sucede los elementos comienzan a desacomodarse por su tamaño, impidiendo muchas veces hacer clic en botones debido a que hay otro elemento por encima. Esta resolución no es nada común en la actualidad, por lo que no debería preocuparte, pues el 99.99% de los dispositivos actuales tienen resoluciones mucho más grandes.</p>
+            </div>
+            <div class="elemento-grid">
                 <div class="contenedor-efecto">
                     <div class="titulo-seccion">
-                    <h1 id="sparklemaster" class="sparklemaster" style="color:  #ffffff;">Optimización de recurso multimedia.</h1>
-                    <i style="font-size: 60px;" class="fas fa-photo-video"></i>
-                    
+                        <h1 id="sparklemaster" class="sparklemaster" style="color:  #ffffff;">Optimización de recurso multimedia.</h1>
+                        <i style="font-size: 60px;" class="fas fa-photo-video"></i>
+
                     </div>
-                </div>    
-            <p>Para una página/sitio web tenga un excelente tiempo de respuesta de carga, debemos hacer ajustes a los archivos de imágenes y videos que los clientes de ingeangel.com proporcionan para su elaboración.</p>
-            <p>
-            Es por ello, que existe un proceso para todos los archivos multimedia, tratando de mantener toda la calidad con la que se entregaron. Así a través de este procedimiento mejora significativamente la ejecución de cada una de las secciones de la web, independientemente si contiene una imagen o video. 
-            </p>
-            
-        </div>
-        <div class="elemento-grid">
+                </div>
+                <p>Para una página/sitio web tenga un excelente tiempo de respuesta de carga, debemos hacer ajustes a los archivos de imágenes y videos que los clientes de ingeangel.com proporcionan para su elaboración.</p>
+                <p>
+                    Es por ello, que existe un proceso para todos los archivos multimedia, tratando de mantener toda la calidad con la que se entregaron. Así a través de este procedimiento mejora significativamente la ejecución de cada una de las secciones de la web, independientemente si contiene una imagen o video.
+                </p>
+
+            </div>
+            <div class="elemento-grid">
                 <div class="contenedor-efecto">
                     <div class="titulo-seccion">
-                    <h1 id="sparklemaster" class="sparklemaster" style="color:  #ffffff;">Google Analytics</h1>
-                    <i style="font-size: 60px;" class="fas fa-chart-line"></i>
-                    
+                        <h1 id="sparklemaster" class="sparklemaster" style="color:  #ffffff;">Google Analytics</h1>
+                        <i style="font-size: 60px;" class="fas fa-chart-line"></i>
+
                     </div>
-                </div>    
-            <p>Es una herramienta de Google que nos permite hacer análisis del tráfico de nuestra página/sitio web (Usuarios), contando con un apartado en tiempo real para analizar de cerca la tendencia de una de nuestras publicaciones, puedes saber si los usuarios están viendo una sección específica, o que dispositivos usan para navegar por tu página/sitio web, si te encontraron en el buscador de Google, o si vienen de una plataforma como Facebook o YouTube donde hallas contratado publicidad para tus servicios o productos. Además, presenta un informe en días, semanas, meses y años.</p>
-            <p>
-            Esta característica estará dispnible en tu pagina/sitio web y tendrás el acceso total a su entorno además de una guía escrita en PDF sobre cómo usarla.
-            </p>
-        </div>
+                </div>
+                <p>Es una herramienta de Google que nos permite hacer análisis del tráfico de nuestra página/sitio web (Usuarios), contando con un apartado en tiempo real para analizar de cerca la tendencia de una de nuestras publicaciones, puedes saber si los usuarios están viendo una sección específica, o que dispositivos usan para navegar por tu página/sitio web, si te encontraron en el buscador de Google, o si vienen de una plataforma como Facebook o YouTube donde hallas contratado publicidad para tus servicios o productos. Además, presenta un informe en días, semanas, meses y años.</p>
+                <p>
+                    Esta característica estará dispnible en tu pagina/sitio web y tendrás el acceso total a su entorno además de una guía escrita en PDF sobre cómo usarla.
+                </p>
+            </div>
         </div>
     </div>
 </div>

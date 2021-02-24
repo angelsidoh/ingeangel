@@ -21,7 +21,7 @@ function consultaUsuario($dato){
 function consultaProyecto($dato){
     include 'bd/bdsqli.php';
     try{
-        return $connf->query("SELECT id_proyecto, nombre_proyecto, tipo_proyecto FROM proyectos WHERE idusuario_proyecto = '$dato'");
+        return $connf->query("SELECT id_proyecto, nombre_proyecto, tipo_proyecto, pago_proyecto FROM proyectos WHERE idusuario_proyecto = '$dato'");
     }catch(Exception $e){
         echo "Error!!" . $e->getMessage() . "<br>";
         return false;
@@ -39,7 +39,7 @@ function consultaPasos($dato){
 function consultaPagos($dato){
     include 'bd/bdsqli.php';
     try{
-        return $connf->query("SELECT fechainicio_pago, fechafin_pago, fechadepago_pago, tokenconekta_pago, fortarget_pago, idproyecto_pago,tokenpago_pago,idcontrato_pago, tokencontrato_pago FROM pagos WHERE idproyecto_pago = '$dato'");
+        return $connf->query("SELECT id_pago, fechainicio_pago, fechafin_pago, fechadepago_pago, tokenconekta_pago, fortarget_pago, idproyecto_pago,tokenpago_pago,idcontrato_pago, tokencontrato_pago FROM pagos WHERE idproyecto_pago = '$dato'");
     }catch(Exception $e){
         echo "Error!!" . $e->getMessage() . "<br>";
         return false;
@@ -49,6 +49,19 @@ function consultaContratos($dato){
     include 'bd/bdsqli.php';
     try{
         return $connf->query("SELECT id_contrato, link_contrato, token_contrato FROM contratos WHERE idproyecto_contrato = '$dato'");
+    }catch(Exception $e){
+        echo "Error!!" . $e->getMessage() . "<br>";
+        return false;
+    }
+}
+function obtenerPrecios($dato){
+    
+    try{
+        require('bd/bdsqli.php');
+           
+           
+            return $connf->query("SELECT basico_precio, negocio_precio, profesional_precio, hosting_precio, dominio_precio, mantenimiento_precio, basesdatos_precio FROM precios WHERE id_precio = '$dato'");
+            
     }catch(Exception $e){
         echo "Error!!" . $e->getMessage() . "<br>";
         return false;
