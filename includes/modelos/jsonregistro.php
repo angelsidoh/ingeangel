@@ -1,6 +1,7 @@
 <?php
 session_start();
 
+
 if ($_POST['accion'] == 'Nuevo Proyecto') {
     $name_proyecto = 'Prototipo X';
     $paso1 = '1. Nos contactaremos con Usted en las proximas 24 Horas';
@@ -18,11 +19,15 @@ if ($_POST['accion'] == 'Nuevo Proyecto') {
     $str = ("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890");
     $identicontrato = "";
     $url = 'https://ingeangel.com/contrato.php';
+    $respuestas =0;
+    $veccondicion = [0];
     for ($i = 0; $i < 18; $i++) {
         $identicontrato .= substr($str, rand(0, 62), 1);
     }
     try {
         require('../../bd/bd.php');
+        require('../../bd/bdsqli.php');
+        
         $stmt = $conn->prepare('SELECT * FROM usuarios WHERE email_usuario = :email_usuario LIMIT 1');
         $stmt->execute(array(':email_usuario' => $correo));
         $resultado = $stmt->fetch();
@@ -36,14 +41,17 @@ if ($_POST['accion'] == 'Nuevo Proyecto') {
                 ':pago_proyecto' => $precio
             ));
             $LAST_IDb = $conn->lastInsertId();
-            require_once('../../bd/bdsqli.php');
+            $veccondicion[0] = $LAST_IDb;
+            
             $stmtf = $connf->prepare("UPDATE usuarios SET idproyecto_usuario = ? WHERE email_usuario = ?");
             $stmtf->bind_param("is", $LAST_IDb, $correo);
             $stmtf->execute();
             $stmtf->close();
             $connf->close();
             
-            $stmt = $conn->prepare('INSERT INTO pasos (id_paso, descripcion_paso, idproyecto_paso, fechaini_paso, fechafin_paso, timing_paso) VALUES (null, :descripcion_paso, :idproyecto_paso, :fechaini_paso, :fechafin_paso, :timing_paso)');
+
+            
+            $stmt = $conn0->prepare('INSERT INTO pasos (id_paso, descripcion_paso, idproyecto_paso, fechaini_paso, fechafin_paso, timing_paso) VALUES (null, :descripcion_paso, :idproyecto_paso, :fechaini_paso, :fechafin_paso, :timing_paso)');
             $stmt->execute(array(
                 ':descripcion_paso' => $paso1,
                 ':idproyecto_paso' => $LAST_IDb,
@@ -52,7 +60,10 @@ if ($_POST['accion'] == 'Nuevo Proyecto') {
                 ':timing_paso' => $dias1
 
             ));
-            $stmt = $conn->prepare('INSERT INTO contratos (id_contrato, idproyecto_contrato, link_contrato, token_contrato) VALUES (null, :idproyecto_contrato, :link_contrato, :token_contrato)');
+            $LAST_IDa = $conn0->lastInsertId();
+            $veccondicion[3] = $LAST_IDa;
+
+            $stmt = $conn1->prepare('INSERT INTO contratos (id_contrato, idproyecto_contrato, link_contrato, token_contrato) VALUES (null, :idproyecto_contrato, :link_contrato, :token_contrato)');
             $stmt->execute(array(
                 ':idproyecto_contrato' => $LAST_IDb,
                 
@@ -60,8 +71,9 @@ if ($_POST['accion'] == 'Nuevo Proyecto') {
                 ':token_contrato' => $identicontrato
 
             ));
-            $LAST_IDc = $conn->lastInsertId();
-            $stmt = $conn->prepare('INSERT INTO pagos (id_pago, idproyecto_pago, fechainicio_pago, fechafin_pago, tokencontrato_pago, idcontrato_pago) VALUES (null, :idproyecto_pago, :fechainicio_pago, :fechafin_pago, :tokencontrato_pago,:idcontrato_pago)');
+            $LAST_IDc = $conn1->lastInsertId();
+            $veccondicion[1] = $LAST_IDc;
+            $stmt = $conn2->prepare('INSERT INTO pagos (id_pago, idproyecto_pago, fechainicio_pago, fechafin_pago, tokencontrato_pago, idcontrato_pago) VALUES (null, :idproyecto_pago, :fechainicio_pago, :fechafin_pago, :tokencontrato_pago,:idcontrato_pago)');
             $stmt->execute(array(
                 ':idproyecto_pago' => $LAST_IDb,
                 
@@ -71,11 +83,26 @@ if ($_POST['accion'] == 'Nuevo Proyecto') {
                 ':idcontrato_pago' => $LAST_IDc
 
             ));
-
-            $respuesta = array(
-                'estado' => 'correoexisteprueb'
-            );
             
+            $LAST_IDd = $conn2->lastInsertId();
+            
+            $veccondicion[2] = $LAST_IDd;
+            if($veccondicion[1] != 0 && $veccondicion[2] != 0 && $veccondicion[1]!= 0 && $veccondicion[3]!= 0){
+                $respuesta = array(
+                    'estado' => 'nuevo proyecto creado'
+                    );
+            }
+            if($veccondicion[1] == 0 || $veccondicion[2] == 0 || $veccondicion[1]== 0 || $veccondicion[3]== 0){
+                
+                $respuesta = array(
+                    'estado' => 'error en la creacion del nuevo proyecto',
+                    'id0' => $veccondicion[0],
+                    'id1' => $veccondicion[1],
+                    'id2' => $veccondicion[2],
+                    'id3' => $veccondicion[3]
+                    );
+
+            } 
         } else {
 
         }
@@ -84,6 +111,8 @@ if ($_POST['accion'] == 'Nuevo Proyecto') {
         echo json_encode("Error: " . $e->getMessage());
     }
 }
+
+
 if ($_POST['accion'] == 'regcuenta1') {
     $nombre = filter_var($_POST['nombre'], FILTER_SANITIZE_STRING);
     $apellido = filter_var($_POST['apellido'], FILTER_SANITIZE_STRING);

@@ -1609,6 +1609,43 @@ if( accion == 'Nuevo Proyecto'){
 }
 
 }
+function eliminarDatos(dato) {
+  const xhr = new XMLHttpRequest();
+  // abrir conexion
+  xhr.open('POST', 'includes/modelos/delatedatos.php', true);
+  // pasar datos
+
+  xhr.onload = function () {
+
+    if (this.status === 200) {
+      const respuesta = JSON.parse(xhr.responseText);
+      console.log(respuesta);
+      if(respuesta.estado === 'no se puedo crear un proyecto nuevo'){
+        swal({
+          content: "",
+          text: 'Error: bd-x-00000001',
+          icon: "error",
+          button: {
+            text: "Continuar",
+            closeModal: true,
+          },
+        })
+        .then((value) => {
+          switch (value) {
+            default:
+              window.location.href = 'cuenta.php#angel-ruiz';
+          }
+        });
+      }
+    }
+  }
+  xhr.send(dato);
+}
+var identi0 = 'respuesta.id0';
+var identi1 = 'respuesta.id1';
+var identi2 = 'respuesta.id2';
+var identi3 = 'respuesta.id3';
+var respuestaelim = '';
 
 function registroDB(dato) {
   // llamado de ajax
@@ -1624,6 +1661,45 @@ function registroDB(dato) {
     if (this.status === 200) {
       const respuesta = JSON.parse(xhr.responseText);
       console.log(respuesta);
+        identi0 = respuesta.id0;
+          identi1 = respuesta.id1;
+          identi2 = respuesta.id2;
+          identi3 = respuesta.id3;
+          respuestaelim = respuesta.estado;
+        
+      if(respuesta.estado === 'error en la creacion del nuevo proyecto'){
+        if(identi0 != 0 || identi1 !=0 || identi2 != 0|| identi3 != 0){
+          const idinfo = new FormData();
+          idinfo.append('id0', identi0);
+          idinfo.append('id1', identi1);
+          idinfo.append('id2', identi2);
+          idinfo.append('id3', identi3)
+          idinfo.append('accion', 'eliminar');
+          eliminarDatos(idinfo);
+        }
+      }
+      if(respuesta.estado === 'nuevo proyecto creado'){
+        swal({
+          content: "",
+          text: 'Nuevo proyecto creado',
+          icon: "success",
+          button: {
+            text: "Continuar",
+            closeModal: true,
+          },
+        })
+        .then((value) => {
+          switch (value) {
+            default:
+              window.location.href = 'cuenta.php#angel-ruiz';
+          }
+        });
+      setTimeout(() => {
+        window.location.href = 'cuenta.php#angel-ruiz';
+      }, 3200);
+    }
+      
+      
       if (respuesta.estado === 'nuevacuentaregistrada') {
         swal({
             content: "",
