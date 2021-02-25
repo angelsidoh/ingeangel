@@ -5,7 +5,7 @@ if ((!isset($_SESSION['usuario'])) && (!isset($_SESSION['email']))) {
     session_destroy();
     // header('Location: cuenta.php#angel-ruiz');
 ?>
-    <META HTTP-EQUIV="REFRESH" CONTENT="1;URL=http://localhost/01ingeangel.com/logout.php">
+    <META HTTP-EQUIV="REFRESH" CONTENT="1;URL=https://ingeangel.com/logout.php">
 
     <?php
 } else {

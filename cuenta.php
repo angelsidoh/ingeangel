@@ -70,8 +70,8 @@ if ((!isset($_SESSION['usuario'])) && (!isset($_SESSION['email']))) {
         $superVec[$i] = $vectorFechafin;
         $superVecDesp[$i] = $vectorDescrip;
         for ($ix = 0; $ix < $contadorPasos; $ix++) {
-            $vectorFechafin[$ix] = '';
-            $vectorDescrip[$ix] = '';
+            unset($vectorFechafin[$ix]);
+            unset($vectorDescrip[$ix]);
         } ?><?php
         }
        
@@ -143,9 +143,9 @@ if ((!isset($_SESSION['usuario'])) && (!isset($_SESSION['email']))) {
              
             }
         }
-//         echo '<pre>';
-// var_dump($superVecIdContratoPago);
-// echo '</pre>';
+        echo '<pre>';
+var_dump($superVecIdPago);
+echo '</pre>';
             ?>
 
 
@@ -541,7 +541,7 @@ if ((!isset($_SESSION['usuario'])) && (!isset($_SESSION['email']))) {
                                                     <?php for ($f = 0; $f < sizeof($superVecIdProyectoPago[$x]); $f++) {
                                                         if ($superVecTokenpagoPago[$x][$f] != '' && $supervectokenConekta[$x][$f] != '' && $supervecforTarget[$x][$f] != 0 && $supervecfechapagoPago != '') {
                                                     ?>
-                                                            <a href="pago.php?pago=<?php echo $superVecTokenContratoPago[$x][$f] . '-' . $superVecIdPago[$x][$f]; ?>" target="_blank">
+                                                            <a href="pago.php?pago=<?php echo $superVecTokenContratoPago[$x][$f] . '-' . $superVecIdPago[$x][$f]; ?>" >
                                                                 <p>
                                                                     Contrato (#<?php
                                                                     echo $superVecTokenContratoPago[$x][$f];
@@ -660,7 +660,7 @@ if ((!isset($_SESSION['usuario'])) && (!isset($_SESSION['email']))) {
                                                     for ($f = 0; $f < sizeof($superVecIdProyectoPago[$x]); $f++) {
                                                        if($superVecTokenContratoPago[$x][$f] != $auxSuper){
                                                     ?>
-                                                            <a href="http://ingeangel.com/contrato.php#<?php echo $superVecTokenContratoPago[$x][$f]; ?>" target="_blank">
+                                                            <a href="contrato.php#<?php echo $superVecTokenContratoPago[$x][$f]; ?>" target="_blank">
                                                                 <p>Contrato (#<?php
                                                                     echo $superVecTokenContratoPago[$x][$f];
                                                                     ?>) <br> Periodo de contrato:

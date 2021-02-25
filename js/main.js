@@ -383,6 +383,61 @@ $("#plus4").hover(
     i = '';
   }
 );
+$("#plus5").hover(
+  function () {
+    i = 5;
+    ches(i);
+
+
+  },
+  function () {
+    i = '';
+  }
+);
+$("#plus6").hover(
+  function () {
+    i = 6;
+    ches(i);
+
+
+  },
+  function () {
+    i = '';
+  }
+);
+$("#plus7").hover(
+  function () {
+    i = 7;
+    ches(i);
+
+
+  },
+  function () {
+    i = '';
+  }
+);
+$("#plus8").hover(
+  function () {
+    i = 8;
+    ches(i);
+
+
+  },
+  function () {
+    i = '';
+  }
+);
+$("#plus9").hover(
+  function () {
+    i = 9;
+    ches(i);
+
+
+  },
+  function () {
+    i = '';
+  }
+);
 $("#plus2000").hover(
   function () {
     i = 2000;
@@ -449,6 +504,51 @@ $("#plus2005").hover(
     i = '';
   }
 );
+$("#plus2006").hover(
+  function () {
+    i = 2006;
+    ches(i);
+
+
+  },
+  function () {
+    i = '';
+  }
+);
+$("#plus2007").hover(
+  function () {
+    i = 2007;
+    ches(i);
+
+
+  },
+  function () {
+    i = '';
+  }
+);
+$("#plus2008").hover(
+  function () {
+    i = 2008;
+    ches(i);
+
+
+  },
+  function () {
+    i = '';
+  }
+);
+$("#plus2009").hover(
+  function () {
+    i = 2009;
+    ches(i);
+
+
+  },
+  function () {
+    i = '';
+  }
+);
+
 $("#plus1000").hover(
   function () {
     i = 1000;
@@ -515,6 +615,50 @@ $("#plus1005").hover(
     i = '';
   }
 );
+$("#plus1006").hover(
+  function () {
+    i = 1006;
+    ches(i);
+
+
+  },
+  function () {
+    i = '';
+  }
+);
+$("#plus1007").hover(
+  function () {
+    i = 1007;
+    ches(i);
+
+
+  },
+  function () {
+    i = '';
+  }
+);
+$("#plus1008").hover(
+  function () {
+    i = 1008;
+    ches(i);
+
+
+  },
+  function () {
+    i = '';
+  }
+);
+$("#plus1009").hover(
+  function () {
+    i = 1009;
+    ches(i);
+
+
+  },
+  function () {
+    i = '';
+  }
+);
 $("#plus3000").hover(
   function () {
     i = 3000;
@@ -573,6 +717,50 @@ $("#plus3004").hover(
 $("#plus3005").hover(
   function () {
     i = 3005;
+    ches(i);
+
+
+  },
+  function () {
+    i = '';
+  }
+);
+$("#plus3006").hover(
+  function () {
+    i = 3006;
+    ches(i);
+
+
+  },
+  function () {
+    i = '';
+  }
+);
+$("#plus3007").hover(
+  function () {
+    i = 3007;
+    ches(i);
+
+
+  },
+  function () {
+    i = '';
+  }
+);
+$("#plus3008").hover(
+  function () {
+    i = 3008;
+    ches(i);
+
+
+  },
+  function () {
+    i = '';
+  }
+);
+$("#plus3009").hover(
+  function () {
+    i = 3009;
     ches(i);
 
 
@@ -987,6 +1175,9 @@ if ($("#registro").length) {
 
 function leerRegistro(e) {
   e.preventDefault();
+  const accion = document.querySelector('#btnregcuenta1').value;
+  if( accion == 'regcuenta1'){
+  
   const nombre = document.querySelector('#nombre').value;
   const apellido = document.querySelector('#apellido').value;
   const telefono = document.querySelector('#telefono').value;
@@ -997,7 +1188,7 @@ function leerRegistro(e) {
   const postal = document.querySelector('#postal').value;
   const paquete = document.querySelector('#paquete').value;
   const fecha = document.querySelector('#fecha').value;
-  const accion = document.querySelector('#btnregcuenta1').value;
+  
   console.log(nombre, apellido, telefono, correo, calle, numiedirec, col, postal, paquete, fecha);
   let condicionvalid = 0;
   let condicionvalid1 = 0;
@@ -1254,6 +1445,168 @@ function leerRegistro(e) {
       registroDB(ifouserreg);
     }
   }
+}
+if( accion == 'Nuevo Proyecto'){
+  
+  
+  const precio = document.querySelector('#precio').value;
+  const telefono = document.querySelector('#telefono').value;
+  const correo = document.querySelector('#correo').value;
+  const paquete = document.querySelector('#paquete').value;
+  const fecha = document.querySelector('#fecha').value;
+  
+  console.log(paquete, fecha);
+  let condicionvalid = 0;
+  let condicionvalid1 = 0;      
+            
+  if (correo === '') {
+    $('#correo').css({
+      'background': 'red'
+    });
+    swal({
+      content: "",
+      text: 'Es obligatorio ingresar un Correo Electrónico',
+      icon: "info",
+      button: {
+        text: "Continuar",
+        closeModal: true,
+      },
+    });
+  } else {
+    $('#correo').css({
+      'background': '#93A9CC'
+    });
+    if (telefono === '') {
+      $('#telefono').css({
+        'background': 'red'
+      });
+      swal({
+        content: "",
+        text: 'Es obligatorio ingresar un Número telefónico o de WhatsApp',
+        icon: "info",
+        button: {
+          text: "Continuar",
+          closeModal: true,
+        },
+      });
+    } else {
+      $('#telefono').css({
+        'background': '#93A9CC'
+      });
+      if (paquete === '') {
+        $('#paquete').css({
+          'background': 'red'
+        });
+        swal({
+          content: "",
+          text: 'Es obligatorio ingresar el Paquete de servicio deseado',
+          icon: "info",
+          button: {
+            text: "Continuar",
+            closeModal: true,
+          },
+        });
+      } else {
+        $('#paquete').css({
+          'background': '#93A9CC'
+        });
+        if (fecha === '') {
+          $('#fecha').css({
+            'background': 'red'
+          });
+          swal({
+            content: "",
+            text: 'La Fecha estará disponible automáticamente',
+            icon: "info",
+            button: {
+              text: "Continuar",
+              closeModal: true,
+            },
+          });
+        } else {
+          $('#fecha').css({
+            'background': '#93A9CC'
+          });
+        }
+      }
+    }
+  }
+            
+          
+        
+      
+    
+  
+  validarString(correo);
+  if (caracteresCorreoValido(correo) === false) {
+    $('#correo').css({
+      'background-color': 'red'
+    });
+    swal({
+      content: "",
+      text: 'El correo es inválido, debido a que tiene acentos. ¡Intenta con otro por favor!',
+      icon: "error",
+      button: {
+        text: "Continuar",
+        closeModal: true,
+      },
+    });
+
+  } else {
+    condicionvalid1 = 1;
+  }
+  let cadena = correo;
+  // esta es la palabra a buscar
+  let termino = ["@gmail.com", "@hotmail.com", "@outlook.com"];
+  let x1 = 0;
+  for (let x = 0; x <= 2; x++) {
+
+    let find = termino[x]
+    // para buscar la palabra hacemos
+    let posicion = cadena.indexOf(find);
+
+
+    if (posicion !== -1) {
+      // console.log(x + "->La palabra está en la posición " + posicion);
+      condicionvalid = 1;
+      x = 3;
+
+    } else {
+      // console.log('-z' + x);
+      if (x == 2) {
+        $('#correo').css({
+          'background-color': 'red'
+        });
+        swal({
+          content: "",
+          text: '¡Por favor! Usa una cuenta correo válida como @hotmail.com, @gmail.com, @outlook.com',
+          icon: "error",
+          button: {
+            text: "Continuar",
+            closeModal: true,
+          },
+        });
+      }
+
+    }
+  }
+  if (condicionvalid == 1 && condicionvalid1 == 1 && correo != '' && telefono != '' && paquete != '' && precio != '') {
+
+    const ifouserreg = new FormData();
+
+   
+    ifouserreg.append('telefono', telefono);
+    ifouserreg.append('correo', correo);
+    ifouserreg.append('precio', precio);
+    ifouserreg.append('paquete', paquete);
+    ifouserreg.append('fecha', fecha);
+    ifouserreg.append('accion', accion);
+
+    if (accion === 'Nuevo Proyecto') {
+      registroDB(ifouserreg);
+    }
+  }
+}
 
 }
 

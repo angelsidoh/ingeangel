@@ -5,7 +5,7 @@ if ((!isset($_SESSION['usuario'])) && (!isset($_SESSION['email']))) {
     session_destroy();
     // header('Location: cuenta.php#angel-ruiz');
 ?>
-    <META HTTP-EQUIV="REFRESH" CONTENT="1;URL=http://localhost/01ingeangel.com/logout.php">
+    <META HTTP-EQUIV="REFRESH" CONTENT="1;URL=https://ingeangel.com/logout.php">
 
     <?php
 } else {
@@ -176,7 +176,7 @@ if ((!isset($_SESSION['usuario'])) && (!isset($_SESSION['email']))) {
                 if (($superVecTokenContratoPago[$x][$y] . '-' . $superVecIdPago[$x][$y]) == $_GET['pago']) {
                     $direccionx = $x;
                     $direcciony = $y;
-                    echo $_GET['pago'] . '(' . $superVecTokenContratoPago[$x][$y] . '-' . $superVecIdPago[$x][$y] . ')';
+                    // echo $_GET['pago'] . '(' . $superVecTokenContratoPago[$x][$y] . '-' . $superVecIdPago[$x][$y] . ')';
                 }
             }
         }
@@ -189,9 +189,9 @@ if ((!isset($_SESSION['usuario'])) && (!isset($_SESSION['email']))) {
         }
         // echo $superVecIdProyectoPago[$direccionx][$direcciony];
 
-        echo '<pre>';
-        var_dump($vectorIdProyectos);
-        echo '</pre>';
+        // echo '<pre>';
+        // var_dump($vectorIdProyectos);
+        // echo '</pre>';
 
             ?>
         <title>Pago con Tarjeta</title>
