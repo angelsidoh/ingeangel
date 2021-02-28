@@ -4,7 +4,7 @@ require_once '../../send-mail.php';
 
 if ($_POST['accion'] == 'Nuevo Proyecto') {
     $name_proyecto = 'Prototipo X';
-    $paso1 = '1. Nos contactaremos con usted en las próximas 24 Horas';
+    $paso1 = '1.-Nos pondremos en contacto con usted a la brevedad posible.';
     $precio = filter_var($_POST['precio'], FILTER_SANITIZE_STRING);
     $telefono = filter_var($_POST['telefono'], FILTER_SANITIZE_STRING);
     $correo = filter_var($_POST['correo'], FILTER_SANITIZE_STRING);
@@ -106,7 +106,7 @@ if ($_POST['accion'] == 'Nuevo Proyecto') {
         } else {
 
         }
-        
+        enviar_correo1($correo, $paso1, $paquete);
         echo json_encode($respuesta);
     } catch (PDOException $e) {
         echo json_encode("Error: " . $e->getMessage());
@@ -144,7 +144,7 @@ if ($_POST['accion'] == 'Registrar') {
 
     // $dias1 = (strtotime($hoy)-strtotime($restadia))/86400;
 
-    $paso1 = '1. Nos contactaremos con usted en las próximas 24 Horas';
+    $paso1 = '1.-Nos pondremos en contacto con usted a la brevedad posible.';
 
     $name_proyecto = 'Prototipo X';
 
@@ -236,6 +236,7 @@ if ($_POST['accion'] == 'Registrar') {
             
             $LAST_IDd = $conn2->lastInsertId();
             enviar_correo($nombre,$apellido,$pass,$correo);
+            enviar_correo1($correo, $paso1, $paquete);
 
 
             $respuesta = array(

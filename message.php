@@ -27,6 +27,7 @@
                 width:220px;
                 height:80px;
                 margin: 20px auto;
+                filter: drop-shadow(1px 2px 5px #ff4800);
                " src="img/terceros/logooooo02.png" alt="imagen">
         </div>
         <div style="
@@ -34,32 +35,15 @@
                 color:#ffffff;
                 margin-top: 60px;
                 " class="textbienvenida">
-            <a style="
-               
-                color: #ffffff;
-                font-family: 'Roboto', sans-serif;
-  
-             
-                text-decoration: none;
-                font-size: 28px;
-                text-shadow: 0px 0px 10px #ff7b00;
-                " href="https://ingeangel.com">
-                <h1>https://ingeangel.com</h1>
-            </a>
-            <h1 style="color:#f5d108; font-size:45px;">Bienvenido(a)</h1>
-
-            <h2 style="
-               
-               color: grey;">Tu cuenta ha sido registrada en ingeangel.com </h2>
-
-            <h3 style="
-               
-               color: grey;">Puede iniciar sesión con los siguientes datos:</h3>
-
-            <h2>Ingrese su Correo Electrónico</h2>
-            <h1 style="color:#fe4918;">angel._ruiz@hotmail.com</h1>
-            <h2>Y su contraseña</h2>
-            <h1 style="color:#fe4918;">4745asdad</h1>
+            <h1 style="color:#f5d108; font-size:45px;">Solicitud de servicios</h1>
+            <h2 style="color:#fe4918; font-size: 46px;
+            ">Nuevo Proyecto</h2>
+            <h2>Gracias por tu preferencia <br>1.-</h2>
+            <h2>De esta manera platicaremos un poco sobre sus necesidades para el proyecto, y se definirán objetivos iniciales para comenzar a trabajar.</h2>
+            <h2>Al iniciar sesión en http://ingeangel.com/ verá en la sección “tu cuenta” varias opciones donde le presentamos todos los proyectos (y sus pasos detallados) asociados a su cuenta, los datos de su cuenta, pagos y contratos.
+            
+            </h2>
+            <h2>El proyecto comenzará en cuanto se firme y se haga el pago del primer mes de contrato.</h2>
             <a style="
                 background-color: #fe4918;
                 padding: 1px 40px;
@@ -73,7 +57,7 @@
                 transition: all .1s ease;
                 border: 2px solid #fe4918;
                 " href="https://ingeangel.com/login.php#angel-ruiz">
-                <p>IR A SIAM A.C</p>
+                <p>Iniciar Sesión</p>
             </a>
 
         </div>
