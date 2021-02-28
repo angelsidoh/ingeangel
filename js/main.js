@@ -1176,7 +1176,8 @@ if ($("#registro").length) {
 function leerRegistro(e) {
   e.preventDefault();
   const accion = document.querySelector('#btnregcuenta1').value;
-  if( accion == 'regcuenta1'){
+  
+  if( accion == 'Registrar'){
   
   const nombre = document.querySelector('#nombre').value;
   const apellido = document.querySelector('#apellido').value;
@@ -1188,6 +1189,8 @@ function leerRegistro(e) {
   const postal = document.querySelector('#postal').value;
   const paquete = document.querySelector('#paquete').value;
   const fecha = document.querySelector('#fecha').value;
+  const precio = document.querySelector('#precio').value;
+  console.log(precio);
   
   console.log(nombre, apellido, telefono, correo, calle, numiedirec, col, postal, paquete, fecha);
   let condicionvalid = 0;
@@ -1439,14 +1442,15 @@ function leerRegistro(e) {
     ifouserreg.append('postal', postal);
     ifouserreg.append('paquete', paquete);
     ifouserreg.append('fecha', fecha);
+    ifouserreg.append('precio', precio);
     ifouserreg.append('accion', accion);
 
-    if (accion === 'regcuenta1') {
+    if (accion === 'Registrar') {
       registroDB(ifouserreg);
     }
   }
 }
-if( accion == 'Nuevo Proyecto'){
+if(accion == 'Nuevo Proyecto'){
   
   
   const precio = document.querySelector('#precio').value;

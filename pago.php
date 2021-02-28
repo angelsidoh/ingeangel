@@ -160,7 +160,7 @@ if ((!isset($_SESSION['usuario'])) && (!isset($_SESSION['email']))) {
             }
         }
         // echo '<pre>';
-        // var_dump($supervecfechapagoPago);
+        // var_dump($vectorTipoProyectos);
         // echo '</pre>';
         // echo '<pre>';
         // var_dump($supervecforTarget);
@@ -197,10 +197,7 @@ if ((!isset($_SESSION['usuario'])) && (!isset($_SESSION['email']))) {
                             <?php
                             echo 'Pago (' . $superVecTokenContratoPago[$x][$y] . '-' . $superVecIdPago[$x][$y] . ')';
                             ?></h1>
-
-
                     </div>
-
                     <?php
 
 

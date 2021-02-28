@@ -143,9 +143,9 @@ if ((!isset($_SESSION['usuario'])) && (!isset($_SESSION['email']))) {
              
             }
         }
-        echo '<pre>';
-var_dump($superVecIdPago);
-echo '</pre>';
+//         echo '<pre>';
+// var_dump($superVecIdPago);
+// echo '</pre>';
             ?>
 
 
@@ -548,7 +548,7 @@ echo '</pre>';
                                                                     ?>) <br> 
                                                                     Periodo de contrato: <?php
 
-                                                                                        echo $auxxend . $supervecfechaIniciopago[$x][$f] . ' a ' . $supervecfechaFinpago[$x][$f];
+                                                                                        echo $supervecfechaIniciopago[$x][$f] . ' a ' . $supervecfechaFinpago[$x][$f];
                                                                                         ?>: <i class="fas fa-caret-right"></i> <?php echo  'Pagado' ?></Contrato><?php
                                                                                                                             $auxxend++;
                                                                                                                         } else { ?> <p><?php

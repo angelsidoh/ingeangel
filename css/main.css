@@ -288,8 +288,8 @@ html {
 }
 
 @font-face {
-  font-family: "AngleciaProDisplay-Regular";
-  src: url("../letras/anglecia-pro-display/AngleciaProDisplay-Regular.otf");
+  font-family: 'AngleciaProDisplay-Regular';
+  src: url('../letras/anglecia-pro-display/AngleciaProDisplay-Regular.otf');
 }
 /* contenedor vodeo */
 .contenedor-vodeo{

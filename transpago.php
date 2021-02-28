@@ -209,14 +209,14 @@ if ((!isset($_SESSION['usuario'])) && (!isset($_SESSION['email']))) {
 
                         <div class="dato1">
 
-                            <input value="José Angel Ruiz Chávez" data-conekta="card[name]" class="form-control" name="name" id="name" type="text">
+                            <input value="" data-conekta="card[name]" class="form-control" name="name" id="name" type="text">
                         </div>
                         <div class="text-dato1">
                             <p>Nombre de titular de la cuenta.</p>
                         </div>
                         <div class="dato22">
 
-                            <input value="378282246310005" name="card" id="card" data-conekta="card[number]" class="form-control" type=" text" maxlength="16">
+                            <input value="" name="card" id="card" data-conekta="card[number]" class="form-control" type=" text" maxlength="16">
 
                         </div>
                         <div class="text-dato2">
@@ -227,15 +227,15 @@ if ((!isset($_SESSION['usuario'])) && (!isset($_SESSION['email']))) {
 
                         <div class="dato3">
 
-                            <input style="width:60px; display:inline-block; " value="123" data-conekta="card[cvc]" class="form-control" type="text" maxlength="4">
+                            <input style="width:60px; display:inline-block; " value="" data-conekta="card[cvc]" class="form-control" type="text" maxlength="4">
                         </div>
                         <div class="text-dato3">
                             <p>CVC:</p>
                         </div>
                         <div class="dato4">
 
-                            <input style="width:50px; display:inline-block;" value="11" data-conekta="card[exp_month]" class="form-control" type=" text" maxlength="2">
-                            <input style="width:50px; display:inline-block;" value="22" data-conekta="card[exp_year]" class="form-control" type=" text" maxlength="2">
+                            <input style="width:50px; display:inline-block;" value="" data-conekta="card[exp_month]" class="form-control" type=" text" maxlength="2">
+                            <input style="width:50px; display:inline-block;" value="" data-conekta="card[exp_year]" class="form-control" type=" text" maxlength="2">
                         </div>
                         <div class="text-dato4">
                             <p> Fecha de expiración (MM/AA):</p>
@@ -261,30 +261,31 @@ if ((!isset($_SESSION['usuario'])) && (!isset($_SESSION['email']))) {
                         <div class="dato77">
 
                             <input class="form-control" type="text" value="<?php
-                                                                            if ($vectorTipoProyectos[$direccionProyecto] == 'Paquete Básico') {
-                                                                                echo  '$' . number_format($precioDominio + $precioHosting + $precioBD + $precioBasico + $precioMantenimiento) . '.00 MXN';
-                                                                            }
-                                                                            if ($vectorTipoProyectos[$direccionProyecto] == 'Paquete Negocio') {
-                                                                                echo  '$' . number_format($precioDominio + $precioHosting + $precioBD + $precioNegocio + $precioMantenimiento) . '.00 MXN';
-                                                                            }
-                                                                            if ($vectorTipoProyectos[$direccionProyecto] == 'Paquete Profesional') {
-                                                                                echo  '$' . number_format($precioDominio + $precioHosting + $precioBD + $precioProfesional + $precioMantenimiento) . '.00 MXN';
-                                                                            }
-                                                                            ?>">
+                            if ($vectorTipoProyectos[$direccionProyecto] == 'Paquete Básico') {
+                                echo  '$' . number_format($precioDominio + $precioHosting + $precioBD + $precioBasico + $precioMantenimiento) . '.00 MXN';
+                            }
+                            if ($vectorTipoProyectos[$direccionProyecto] == 'Paquete Negocio') {
+                                echo  '$' . number_format($precioDominio + $precioHosting + $precioBD + $precioNegocio + $precioMantenimiento) . '.00 MXN';
+                            }
+                            if ($vectorTipoProyectos[$direccionProyecto] == 'Paquete Profesional') {
+                                echo  '$' . number_format($precioDominio + $precioHosting + $precioBD + $precioProfesional + $precioMantenimiento) . '.00 MXN';
+                            }
+                            ?>">
                         </div>
                         <div class="dato777">
 
-                            <input style="display:none;" class="form-control" type="text" name="total" id="total" value="<?php
-                                                                                                                            if ($vectorTipoProyectos[$direccionProyecto] == 'Paquete Básico') {
-                                                                                                                                echo ($precioDominio + $precioHosting + $precioBD + $precioBasico + $precioMantenimiento);
-                                                                                                                            }
-                                                                                                                            if ($vectorTipoProyectos[$direccionProyecto] == 'Paquete Negocio') {
-                                                                                                                                echo ($precioDominio + $precioHosting + $precioBD + $precioNegocio + $precioMantenimiento);
-                                                                                                                            }
-                                                                                                                            if ($vectorTipoProyectos[$direccionProyecto] == 'Paquete Profesional') {
-                                                                                                                                echo ($precioDominio + $precioHosting + $precioBD + $precioProfesional + $precioMantenimiento);
-                                                                                                                            }
-                                                                                                                            ?>">
+                            <input style="display:none;" class="form-control" type="text" name="total" id="total" value="
+                            <?php
+                            if ($vectorTipoProyectos[$direccionProyecto] == 'Paquete Básico') {
+                                echo ($precioDominio + $precioHosting + $precioBD + $precioBasico + $precioMantenimiento);
+                            }
+                            if ($vectorTipoProyectos[$direccionProyecto] == 'Paquete Negocio') {
+                                echo ($precioDominio + $precioHosting + $precioBD + $precioNegocio + $precioMantenimiento);
+                            }
+                            if ($vectorTipoProyectos[$direccionProyecto] == 'Paquete Profesional') {
+                            echo ($precioDominio + $precioHosting + $precioBD + $precioProfesional + $precioMantenimiento);
+                            }
+                            ?>">
                         </div>
                         <div class="dato7777">
 
