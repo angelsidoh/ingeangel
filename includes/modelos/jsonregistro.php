@@ -14,8 +14,11 @@ if ($_POST['accion'] == 'Nuevo Proyecto') {
     $fechaini =  date('Y-m-d H:i:s');
     $fechafin = date("Y-m-d H:i:s", strtotime($fechaini . "+ 1 days"));
     $fechafinMes = date("Y-m-d H:i:s", strtotime($fechaini . "+ 1 month"));
+    $fechafinContrato = date("Y-m-d H:i:s", strtotime($fechaini . "+ 3 month"));
     $dias1 = (strtotime($fechafin) - strtotime($fechaini)) / 86400;
-
+    $mesestring = '3 Meses';
+    $meses = 3;
+    $contmeses = 1;
     $str = ("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890");
     $identicontrato = "";
     $url = 'https://ingeangel.com/contrato.php';
@@ -63,42 +66,46 @@ if ($_POST['accion'] == 'Nuevo Proyecto') {
             $LAST_IDa = $conn0->lastInsertId();
             $veccondicion[3] = $LAST_IDa;
 
-            $stmt = $conn1->prepare('INSERT INTO contratos (id_contrato, idproyecto_contrato, link_contrato, token_contrato) VALUES (null, :idproyecto_contrato, :link_contrato, :token_contrato)');
+            $stmt = $conn1->prepare('INSERT INTO contratos (id_contrato, idproyecto_contrato, link_contrato, token_contrato, tipo_contrato, tipoint_contrato, fechainicio_contrato, fechafin_contrato) VALUES (null, :idproyecto_contrato, :link_contrato, :token_contrato, :tipo_contrato, :tipoint_contrato, :fechainicio_contrato, :fechafin_contrato)');
             $stmt->execute(array(
                 ':idproyecto_contrato' => $LAST_IDb,
                 
                 ':link_contrato' => $url,
-                ':token_contrato' => $identicontrato
+                ':token_contrato' => $identicontrato,
+                ':tipo_contrato' => $mesestring,
+                ':tipoint_contrato' => $meses,
+                ':fechainicio_contrato' => $fechaini,
+                ':fechafin_contrato' => $fechafinContrato
 
             ));
             $LAST_IDc = $conn1->lastInsertId();
             $veccondicion[1] = $LAST_IDc;
-            $stmt = $conn2->prepare('INSERT INTO pagos (id_pago, idproyecto_pago, fechainicio_pago, fechafin_pago, tokencontrato_pago, idcontrato_pago) VALUES (null, :idproyecto_pago, :fechainicio_pago, :fechafin_pago, :tokencontrato_pago,:idcontrato_pago)');
+            $stmt = $conn2->prepare('INSERT INTO pagos (id_pago, idproyecto_pago, fechainicio_pago, fechafin_pago, tokencontrato_pago, idcontrato_pago, contmeses_pago) VALUES (null, :idproyecto_pago, :fechainicio_pago, :fechafin_pago, :tokencontrato_pago, :idcontrato_pago, :contmeses_pago)');
             $stmt->execute(array(
                 ':idproyecto_pago' => $LAST_IDb,
                 
                 ':fechainicio_pago' => $fechaini,
                 ':fechafin_pago' => $fechafinMes,
                 ':tokencontrato_pago' => $identicontrato,
-                ':idcontrato_pago' => $LAST_IDc
+                ':idcontrato_pago' => $LAST_IDc,
+                ':contmeses_pago'=> $contmeses
 
             ));
             
             $LAST_IDd = $conn2->lastInsertId();
             
             $veccondicion[2] = $LAST_IDd;
-            if($veccondicion[1] != 0 && $veccondicion[2] != 0 && $veccondicion[1]!= 0 && $veccondicion[3]!= 0){
+            if($veccondicion[0]!= 0 && $veccondicion[3]!= 0){
                 $respuesta = array(
                     'estado' => 'nuevo proyecto creado'
                     );
             }
-            if($veccondicion[1] == 0 || $veccondicion[2] == 0 || $veccondicion[1]== 0 || $veccondicion[3]== 0){
+            if($veccondicion[0]== 0 || $veccondicion[3]== 0){
                 
                 $respuesta = array(
                     'estado' => 'error en la creacion del nuevo proyecto',
                     'id0' => $veccondicion[0],
-                    'id1' => $veccondicion[1],
-                    'id2' => $veccondicion[2],
+                    
                     'id3' => $veccondicion[3]
                     );
 
@@ -135,12 +142,19 @@ if ($_POST['accion'] == 'Registrar') {
     for ($i = 0; $i < 18; $i++) {
         $identicontrato .= substr($str, rand(0, 62), 1);
     }
-
     date_default_timezone_set('America/Mexico_City');
     $fechaini =  date('Y-m-d H:i:s');
     $fechafin = date("Y-m-d H:i:s", strtotime($fechaini . "+ 1 days"));
     $fechafinMes = date("Y-m-d H:i:s", strtotime($fechaini . "+ 1 month"));
     $dias1 = (strtotime($fechafin) - strtotime($fechaini)) / 86400;
+ 
+    $fechafinContrato = date("Y-m-d H:i:s", strtotime($fechaini . "+ 3 month"));
+  
+    $mesestring = '3 Meses';
+    $meses = 3;
+    $contmeses = 1;
+
+    
 
     // $dias1 = (strtotime($hoy)-strtotime($restadia))/86400;
 
@@ -212,25 +226,30 @@ if ($_POST['accion'] == 'Registrar') {
 
             ));
             $LAST_IDa = $conn0->lastInsertId();
-            $veccondicion[3] = $LAST_IDa;
-            $stmt = $conn1->prepare('INSERT INTO contratos (id_contrato, idproyecto_contrato, link_contrato, token_contrato) VALUES (null, :idproyecto_contrato, :link_contrato, :token_contrato)');
+
+            $stmt = $conn1->prepare('INSERT INTO contratos (id_contrato, idproyecto_contrato, link_contrato, token_contrato, tipo_contrato, tipoint_contrato, fechainicio_contrato, fechafin_contrato) VALUES (null, :idproyecto_contrato, :link_contrato, :token_contrato, :tipo_contrato, :tipoint_contrato, :fechainicio_contrato, :fechafin_contrato)');
             $stmt->execute(array(
                 ':idproyecto_contrato' => $LAST_IDb,
                 
                 ':link_contrato' => $url,
-                ':token_contrato' => $identicontrato
+                ':token_contrato' => $identicontrato,
+                ':tipo_contrato' => $mesestring,
+                ':tipoint_contrato' => $meses,
+                ':fechainicio_contrato' => $fechaini,
+                ':fechafin_contrato' => $fechafinContrato
 
             ));
             $LAST_IDc = $conn1->lastInsertId();
             $veccondicion[1] = $LAST_IDc;
-            $stmt = $conn2->prepare('INSERT INTO pagos (id_pago, idproyecto_pago, fechainicio_pago, fechafin_pago, tokencontrato_pago, idcontrato_pago) VALUES (null, :idproyecto_pago, :fechainicio_pago, :fechafin_pago, :tokencontrato_pago,:idcontrato_pago)');
+         $stmt = $conn2->prepare('INSERT INTO pagos (id_pago, idproyecto_pago, fechainicio_pago, fechafin_pago, tokencontrato_pago, idcontrato_pago, contmeses_pago) VALUES (null, :idproyecto_pago, :fechainicio_pago, :fechafin_pago, :tokencontrato_pago, :idcontrato_pago, :contmeses_pago)');
             $stmt->execute(array(
                 ':idproyecto_pago' => $LAST_IDb,
                 
                 ':fechainicio_pago' => $fechaini,
                 ':fechafin_pago' => $fechafinMes,
                 ':tokencontrato_pago' => $identicontrato,
-                ':idcontrato_pago' => $LAST_IDc
+                ':idcontrato_pago' => $LAST_IDc,
+                ':contmeses_pago'=> $contmeses
 
             ));
             

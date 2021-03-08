@@ -23,13 +23,13 @@ if($_POST['accion'] == 'eliminar'){
             $stmtf->bind_param("i", $id0);
             $stmtf->execute();
 
-            $stmtf = $connf->prepare("DELETE FROM contratos WHERE idproyecto_contrato = ?");
-            $stmtf->bind_param("i", $id0);
-            $stmtf->execute();
+            // $stmtf = $connf->prepare("DELETE FROM contratos WHERE idproyecto_contrato = ?");
+            // $stmtf->bind_param("i", $id0);
+            // $stmtf->execute();
 
-            $stmtf = $connf->prepare("DELETE FROM pagos WHERE idproyecto_pago = ?");
-            $stmtf->bind_param("i", $id0);
-            $stmtf->execute();
+            // $stmtf = $connf->prepare("DELETE FROM pagos WHERE idproyecto_pago = ?");
+            // $stmtf->bind_param("i", $id0);
+            // $stmtf->execute();
 
             $stmtf = $connf->prepare("DELETE FROM pasos WHERE idproyecto_paso = ?");
             $stmtf->bind_param("i", $id0);

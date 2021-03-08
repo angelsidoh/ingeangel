@@ -1,0 +1,112 @@
+[25-Feb-2021 16:37:21 UTC] PHP Parse error:  syntax error, unexpected '$respuesta' (T_VARIABLE), expecting ')' in /home/customer/www/ingeangel.com/public_html/includes/modelos/jsonregistro.php on line 77
+[25-Feb-2021 16:37:50 UTC] PHP Parse error:  syntax error, unexpected '$respuesta' (T_VARIABLE), expecting ')' in /home/customer/www/ingeangel.com/public_html/includes/modelos/jsonregistro.php on line 77
+[25-Feb-2021 10:43:27 America/Mexico_City] PHP Fatal error:  Uncaught Error: Call to a member function prepare() on null in /home/customer/www/ingeangel.com/public_html/includes/modelos/jsonregistro.php:68
+Stack trace:
+#0 {main}
+  thrown in /home/customer/www/ingeangel.com/public_html/includes/modelos/jsonregistro.php on line 68
+[25-Feb-2021 10:44:38 America/Mexico_City] PHP Fatal error:  Uncaught Error: Call to a member function prepare() on null in /home/customer/www/ingeangel.com/public_html/includes/modelos/jsonregistro.php:68
+Stack trace:
+#0 {main}
+  thrown in /home/customer/www/ingeangel.com/public_html/includes/modelos/jsonregistro.php on line 68
+[25-Feb-2021 10:45:47 America/Mexico_City] PHP Fatal error:  Uncaught Error: Call to a member function prepare() on null in /home/customer/www/ingeangel.com/public_html/includes/modelos/jsonregistro.php:68
+Stack trace:
+#0 {main}
+  thrown in /home/customer/www/ingeangel.com/public_html/includes/modelos/jsonregistro.php on line 68
+[25-Feb-2021 10:46:55 America/Mexico_City] PHP Fatal error:  Uncaught Error: Call to a member function prepare() on null in /home/customer/www/ingeangel.com/public_html/includes/modelos/jsonregistro.php:68
+Stack trace:
+#0 {main}
+  thrown in /home/customer/www/ingeangel.com/public_html/includes/modelos/jsonregistro.php on line 68
+[25-Feb-2021 10:59:41 America/Mexico_City] PHP Fatal error:  Uncaught Error: Call to undefined method PDOStatement::bind_param() in /home/customer/www/ingeangel.com/public_html/includes/modelos/jsonregistro.php:89
+Stack trace:
+#0 {main}
+  thrown in /home/customer/www/ingeangel.com/public_html/includes/modelos/jsonregistro.php on line 89
+[25-Feb-2021 11:01:46 America/Mexico_City] PHP Fatal error:  Uncaught Error: Call to undefined method PDOStatement::bind_param() in /home/customer/www/ingeangel.com/public_html/includes/modelos/jsonregistro.php:89
+Stack trace:
+#0 {main}
+  thrown in /home/customer/www/ingeangel.com/public_html/includes/modelos/jsonregistro.php on line 89
+[25-Feb-2021 17:02:38 UTC] PHP Parse error:  syntax error, unexpected 'else' (T_ELSE) in /home/customer/www/ingeangel.com/public_html/includes/modelos/jsonregistro.php on line 117
+[25-Feb-2021 17:03:12 UTC] PHP Parse error:  syntax error, unexpected 'else' (T_ELSE) in /home/customer/www/ingeangel.com/public_html/includes/modelos/jsonregistro.php on line 118
+[25-Feb-2021 17:04:00 UTC] PHP Parse error:  syntax error, unexpected 'else' (T_ELSE) in /home/customer/www/ingeangel.com/public_html/includes/modelos/jsonregistro.php on line 118
+[25-Feb-2021 17:04:50 UTC] PHP Parse error:  syntax error, unexpected 'else' (T_ELSE) in /home/customer/www/ingeangel.com/public_html/includes/modelos/jsonregistro.php on line 118
+[25-Feb-2021 17:05:32 UTC] PHP Parse error:  syntax error, unexpected 'else' (T_ELSE) in /home/customer/www/ingeangel.com/public_html/includes/modelos/jsonregistro.php on line 118
+[25-Feb-2021 11:11:11 America/Mexico_City] PHP Fatal error:  Uncaught Error: Call to undefined method PDOStatement::bind_param() in /home/customer/www/ingeangel.com/public_html/includes/modelos/jsonregistro.php:89
+Stack trace:
+#0 {main}
+  thrown in /home/customer/www/ingeangel.com/public_html/includes/modelos/jsonregistro.php on line 89
+[25-Feb-2021 11:12:08 America/Mexico_City] PHP Fatal error:  Uncaught Error: Call to a member function bind_param() on bool in /home/customer/www/ingeangel.com/public_html/includes/modelos/jsonregistro.php:89
+Stack trace:
+#0 {main}
+  thrown in /home/customer/www/ingeangel.com/public_html/includes/modelos/jsonregistro.php on line 89
+[25-Feb-2021 11:12:42 America/Mexico_City] PHP Fatal error:  Uncaught Error: Call to a member function bind_param() on bool in /home/customer/www/ingeangel.com/public_html/includes/modelos/jsonregistro.php:89
+Stack trace:
+#0 {main}
+  thrown in /home/customer/www/ingeangel.com/public_html/includes/modelos/jsonregistro.php on line 89
+[25-Feb-2021 11:13:16 America/Mexico_City] PHP Fatal error:  Uncaught Error: Call to a member function bind_param() on bool in /home/customer/www/ingeangel.com/public_html/includes/modelos/jsonregistro.php:89
+Stack trace:
+#0 {main}
+  thrown in /home/customer/www/ingeangel.com/public_html/includes/modelos/jsonregistro.php on line 89
+[25-Feb-2021 11:13:58 America/Mexico_City] PHP Fatal error:  Uncaught Error: Call to a member function bind_param() on bool in /home/customer/www/ingeangel.com/public_html/includes/modelos/jsonregistro.php:90
+Stack trace:
+#0 {main}
+  thrown in /home/customer/www/ingeangel.com/public_html/includes/modelos/jsonregistro.php on line 90
+[25-Feb-2021 11:14:40 America/Mexico_City] PHP Fatal error:  Uncaught Error: Call to a member function bind_param() on bool in /home/customer/www/ingeangel.com/public_html/includes/modelos/jsonregistro.php:90
+Stack trace:
+#0 {main}
+  thrown in /home/customer/www/ingeangel.com/public_html/includes/modelos/jsonregistro.php on line 90
+[25-Feb-2021 11:16:59 America/Mexico_City] PHP Fatal error:  Uncaught Error: Call to a member function bind_param() on bool in /home/customer/www/ingeangel.com/public_html/includes/modelos/jsonregistro.php:90
+Stack trace:
+#0 {main}
+  thrown in /home/customer/www/ingeangel.com/public_html/includes/modelos/jsonregistro.php on line 90
+[25-Feb-2021 11:17:18 America/Mexico_City] PHP Fatal error:  Uncaught Error: Call to a member function bind_param() on bool in /home/customer/www/ingeangel.com/public_html/includes/modelos/jsonregistro.php:90
+Stack trace:
+#0 {main}
+  thrown in /home/customer/www/ingeangel.com/public_html/includes/modelos/jsonregistro.php on line 90
+[25-Feb-2021 11:19:22 America/Mexico_City] PHP Fatal error:  Uncaught Error: Call to a member function bind_param() on bool in /home/customer/www/ingeangel.com/public_html/includes/modelos/jsonregistro.php:90
+Stack trace:
+#0 {main}
+  thrown in /home/customer/www/ingeangel.com/public_html/includes/modelos/jsonregistro.php on line 90
+[25-Feb-2021 11:22:39 America/Mexico_City] PHP Fatal error:  Uncaught Error: Call to a member function bind_param() on bool in /home/customer/www/ingeangel.com/public_html/includes/modelos/jsonregistro.php:91
+Stack trace:
+#0 {main}
+  thrown in /home/customer/www/ingeangel.com/public_html/includes/modelos/jsonregistro.php on line 91
+[25-Feb-2021 11:25:00 America/Mexico_City] PHP Fatal error:  Uncaught Error: Call to a member function bind_param() on bool in /home/customer/www/ingeangel.com/public_html/includes/modelos/jsonregistro.php:91
+Stack trace:
+#0 {main}
+  thrown in /home/customer/www/ingeangel.com/public_html/includes/modelos/jsonregistro.php on line 91
+[25-Feb-2021 11:25:52 America/Mexico_City] PHP Fatal error:  Uncaught Error: Call to a member function bind_param() on bool in /home/customer/www/ingeangel.com/public_html/includes/modelos/jsonregistro.php:91
+Stack trace:
+#0 {main}
+  thrown in /home/customer/www/ingeangel.com/public_html/includes/modelos/jsonregistro.php on line 91
+[25-Feb-2021 11:26:30 America/Mexico_City] PHP Fatal error:  Uncaught Error: Call to a member function bind_param() on bool in /home/customer/www/ingeangel.com/public_html/includes/modelos/jsonregistro.php:91
+Stack trace:
+#0 {main}
+  thrown in /home/customer/www/ingeangel.com/public_html/includes/modelos/jsonregistro.php on line 91
+[25-Feb-2021 11:27:37 America/Mexico_City] PHP Fatal error:  Uncaught Error: Cannot pass parameter 2 by reference in /home/customer/www/ingeangel.com/public_html/includes/modelos/jsonregistro.php:91
+Stack trace:
+#0 {main}
+  thrown in /home/customer/www/ingeangel.com/public_html/includes/modelos/jsonregistro.php on line 91
+[25-Feb-2021 11:28:57 America/Mexico_City] PHP Fatal error:  Uncaught Error: Cannot pass parameter 2 by reference in /home/customer/www/ingeangel.com/public_html/includes/modelos/jsonregistro.php:51
+Stack trace:
+#0 {main}
+  thrown in /home/customer/www/ingeangel.com/public_html/includes/modelos/jsonregistro.php on line 51
+[25-Feb-2021 11:30:33 America/Mexico_City] PHP Fatal error:  Uncaught Error: Call to a member function bind_param() on bool in /home/customer/www/ingeangel.com/public_html/includes/modelos/jsonregistro.php:51
+Stack trace:
+#0 {main}
+  thrown in /home/customer/www/ingeangel.com/public_html/includes/modelos/jsonregistro.php on line 51
+[25-Feb-2021 11:31:16 America/Mexico_City] PHP Fatal error:  Uncaught Error: Cannot pass parameter 2 by reference in /home/customer/www/ingeangel.com/public_html/includes/modelos/jsonregistro.php:51
+Stack trace:
+#0 {main}
+  thrown in /home/customer/www/ingeangel.com/public_html/includes/modelos/jsonregistro.php on line 51
+[25-Feb-2021 17:33:51 UTC] PHP Parse error:  syntax error, unexpected ';', expecting ')' in /home/customer/www/ingeangel.com/public_html/includes/modelos/jsonregistro.php on line 101
+[25-Feb-2021 11:40:35 America/Mexico_City] PHP Fatal error:  Uncaught Error: Call to undefined function includes() in /home/customer/www/ingeangel.com/public_html/includes/modelos/jsonregistro.php:29
+Stack trace:
+#0 {main}
+  thrown in /home/customer/www/ingeangel.com/public_html/includes/modelos/jsonregistro.php on line 29
+[25-Feb-2021 11:41:40 America/Mexico_City] PHP Fatal error:  Uncaught Error: Call to undefined function includes() in /home/customer/www/ingeangel.com/public_html/includes/modelos/jsonregistro.php:29
+Stack trace:
+#0 {main}
+  thrown in /home/customer/www/ingeangel.com/public_html/includes/modelos/jsonregistro.php on line 29
+[25-Feb-2021 17:42:41 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function includes() in /home/customer/www/ingeangel.com/public_html/includes/modelos/jsonregistro.php:3
+Stack trace:
+#0 {main}
+  thrown in /home/customer/www/ingeangel.com/public_html/includes/modelos/jsonregistro.php on line 3

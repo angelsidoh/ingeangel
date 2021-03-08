@@ -756,6 +756,10 @@ height: auto;
   color: white;
   padding:  5px 0;
 }
+.barradiv{
+  width: 90%;
+  border-top: 1px solid gray;
+}
 .links a{
   text-decoration: none;
   color: #ffffff;
@@ -1821,13 +1825,25 @@ background: -moz-linear-gradient(top, rgba(95, 95, 95, 0.75) 0%, rgba(77, 58, 56
 .proyectos:hover{
   background-color: #ff4800;
 }
-
+.separador{
+  border-top: 1px solid gray;
+  border-bottom: 1px solid gray;
+}
 @keyframes blink-btnproyecto{
 }
 @keyframes blink-btnproyecto {
   0% {border: 1px solid black;}
 
   50%{border: 1px solid rgb(255, 196, 0);}
+}
+.blinkverde{
+  color: #ffffff;
+  animation: blink-vrd 3s 50;
+}
+@keyframes blink-vrd {
+  0% {color: #ffffff;}
+
+  50%{color: greenyellow;}
 }
 .blinkama{
   color: #ffffff;
@@ -2188,15 +2204,15 @@ ul,ol{
 .btnslcol{
   background-color: rgba(64, 64, 121, 0.411);
 }
-.slider li,.slider2 li, ul{
+.slider li,.slider2 li,.slider3 li, ul{
   width: 100%;
   
 }
-.slider2 li{
+.slider2 li, .slider3 li{
   margin-top: 0px;
 }
 
-.slider .descripcion, .slider2 .descripcion{
+.slider .descripcion, .slider2 .descripcion, .slider3 .descripcion{
   position: absolute;
   width: 100%;
   height: 100%;
@@ -2213,19 +2229,19 @@ ul,ol{
   
   
 }
-.slider .descripcion h1, .slider .descripcion p,.slider2 .descripcion h1, .slider2 .descripcion p{
+.slider .descripcion h1, .slider .descripcion p,.slider2 .descripcion h1, .slider2 .descripcion p, .slider3 .descripcion h1, .slider3 .descripcion p{
   background-color: rgba(0, 0, 0, 0.205);
   padding: 10px 100px;
   border-radius: 25px;
 }
-.slider .descripcion h1, .slider2 .descripcion h1{
+.slider .descripcion h1, .slider2 .descripcion h1, .slider3 .descripcion h1{
   font-size: 50px;
 }
-.slider .descripcion p, .slider2 .descripcion p{
+.slider .descripcion p, .slider2 .descripcion p, .slider3 .descripcion p{
   margin-top: 10px;
   font-size: 20px;
 }
-.paginacion, .paginacion2{
+.paginacion, .paginacion2, .paginacion3{
   position: absolute;
   top: 28%;
   width: 100%;
@@ -2236,10 +2252,10 @@ ul,ol{
   border-radius: 5px;
 
 }
-.paginacion2{
+.paginacion2, .paginacion3{
   position: relative;
 }
-.paginacion li, .paginacion2 li{
+.paginacion li, .paginacion2 li, .paginacion3 li{
   font-size: 11px;
   margin: 2px 2px;
   color: white;
@@ -2250,18 +2266,18 @@ ul,ol{
   text-align: center;
 }
 @media only screen and (min-width:768px){
-  .paginacion li, .paginacion2 li{
+  .paginacion li, .paginacion2 li, .paginacion3 li{
     border: none;
   border-radius: none;
   }
 }
-.paginacion2 li h3{
+.paginacion2 li h3, .paginacion3 li h3{
   font-size: 32px;
   padding: 0 0;
   margin: 0 0;
 }
 
-.left, .right, .left2, .right2{
+.left, .right, .left2, .right2 , .left3, .right3{
   position: absolute;
   top: -10%;
   height: 100%;
@@ -2273,23 +2289,23 @@ ul,ol{
   font-size:80px;
   
 }
-.left, .left2{
+.left, .left2, .left3{
   left: 28px;
 }
-.left:hover,.left2:hover{
+.left:hover,.left2:hover, .left3:hover{
   text-shadow: 0px 0px 20px var(--ColorFontEspecial);
 }
-.right, .right2{
+.right, .right2 , .right3{
   right: 28px;
   
 }
-.right:hover, .right2:hover{
+.right:hover, .right2:hover, .right3:hover{
   text-shadow: 0px 0px 20px var(--ColorFontEspecial);
 }
 .seccion9999{
   display: none;
 }
-.contenedor-cuenta .paginacion2{
+.contenedor-cuenta .paginacion2, .contenedor-cuenta .paginacion3{
   width: 10%;
   height: 100px;
   margin: 100px auto;
@@ -2301,7 +2317,7 @@ ul,ol{
 }
 
 @media only screen and (min-width:500px){
-  .contenedor-cuenta .paginacion2{
+  .contenedor-cuenta .paginacion2, .contenedor-cuenta .paginacion3{
     display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(2, 1fr);
@@ -2309,7 +2325,7 @@ ul,ol{
 
 }
 @media only screen and (min-width:768px){
-  .contenedor-cuenta .paginacion2{
+  .contenedor-cuenta .paginacion2, .contenedor-cuenta .paginacion3{
     grid-template-columns: repeat(4, 1fr);
     grid-column-gap: 50px;
     grid-template-rows: repeat(1, 1fr);
@@ -4419,16 +4435,61 @@ color: #ffffff;
 }
 .contenedor-especial{
   width: 90%;
-  margin: 0 auto;
+  height: auto;
+  margin: 50px auto;
+  padding: 50px;
+  
 }
 
-.datos-usuario{
+.datos-usuario, .datos-contrato{
   width: 100%;
   height: auto;
   margin: 0 auto;
   text-align: center;
   
 }
+.datos-contrato .contenido-cuenta .dato3{
+
+  margin-bottom: 20px;
+}
+
+.datos-contrato .contenido-cuenta .dato3 select{
+  max-width: 320px;
+  width: 100%;
+  height: 30px;
+  margin: 0 auto;
+  
+ 
+  border-top: 1px solid #161616;
+  border-bottom: 1px solid #fff;
+  border-right: 1px solid #fff;
+  border-left: 1px solid #fff;
+  
+ color: #fff;
+  text-align: center;
+  background-color: transparent;
+  
+
+  animation: inp2 3s infinite;
+}
+/* @media only screen and (min-width:768px){
+  .datos-contrato .contenido-cuenta .dato2 select{
+    max-width: 580px;
+  }
+} */
+@keyframes inp2{
+  0% {
+    
+    }
+
+  50%{
+    border-top: 1px solid #161616;
+  border-bottom: 1px solid #161616;
+  border-right: 1px solid #161616;
+  border-left: 1px solid #161616;
+    }
+}
+
 .datos-usuario .contenido-cuenta{
   width: 100%;
   height: auto;

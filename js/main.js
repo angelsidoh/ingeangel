@@ -33,13 +33,13 @@ let vecPasos = [0];
 function abc(datos, maxfecha, contadorProyectos, contPasosxProyecto, contPasos) {
   contadorProyectosJs = contadorProyectos;
 
-  // console.log(datos, maxfecha, contPasosxProyecto);
+  console.log(datos, maxfecha, contPasosxProyecto);
   fechas[contadorPjs] = datos;
   contadorPxP[contadorPjs] = contPasosxProyecto;
   // console.log('->' + fechas, '->' + maxfecha, contadorPxP);
   var auxDetPaso = contadorPxP[0];
   vecPasos[0] = parseInt(auxDetPaso);
-  $('.cuenta-regresiva9999').countdown(maxfecha, function (event) {
+  $('.cuenta-regresiva9999').countdown('2050-12-31 23:59:59', function (event) {
     // $('#dias9999').html(event.strftime('%D'));
     // $('#horas9999').html(event.strftime('%H'));
     // $('#minutos9999').html(event.strftime('%M'));
@@ -53,7 +53,222 @@ function abc(datos, maxfecha, contadorProyectos, contPasosxProyecto, contPasos) 
     // console.log(contadorSegundos+'-'+contPasos);
     drenado(fechas, contadorPxP, contadorProyectos, contPasosxProyecto, contPasos, auxDetPaso, vecPasos, contadorSegundos);
     contadorSegundos++;
-    //console.log(contadorSegundos);
+    console.log(contadorSegundos);
+    var d = new Date();
+
+
+    var meses = $('#seleccion').attr('value');
+    meses = parseInt(meses);
+    // console.log(meses);
+
+    var año = d.getFullYear();
+    var mes = d.getMonth() + 1;
+    mes = mes.toString();
+    mes = mes.padStart(2, 0)
+    var mes2 = d.getMonth() + meses;
+    mes2 = mes2.toString();
+    mes2 = mes2.padStart(2, 0)
+    var dia = d.getDate();
+    dia = dia.toString();
+    dia = dia.padStart(2, 0)
+    var hora = d.getHours();
+    hora = hora.toString();
+    hora = hora.padStart(2, 0)
+    var minuto = d.getMinutes();
+    minuto = minuto.toString();
+    minuto = minuto.padStart(2, 0)
+    var segundo = d.getSeconds();
+    segundo = segundo.toString();
+    segundo = segundo.padStart(2, 0)
+
+
+    var strDate = año + "-" + (mes + "-" + dia + " " + hora + ":" + minuto + ":" + segundo);
+    if (mes2 > 12 && mes2 <= 24) {
+      año1 = año + 1;
+      mes2 = mes2 - 12;
+      mes2 = mes2.toString();
+      mes2 = mes2.padStart(2, 0)
+    } else if (mes2 > 24 && mes2 <= 36) {
+      año1 = año + 2;
+      mes2 = mes2 - 24;
+      mes2 = mes2.toString();
+      mes2 = mes2.padStart(2, 0)
+    } else if (mes2 > 36 && mes2 <= 48) {
+      año1 = año + 3;
+      mes2 = mes2 - 36;
+      mes2 = mes2.toString();
+      mes2 = mes2.padStart(2, 0)
+    } else {
+      año1 = año;
+    }
+    var strDate2 = año1 + "-" + (mes2 + "-" + dia + " " + hora + ":" + minuto + ":" + segundo);
+
+    // console.log(strDate2);
+
+    var preciobasico = $('#preciobasico').attr('value');
+    var precionegocio = $('#precionegocio').attr('value');
+    var precioprofesional = $('#precioprofesional').attr('value');
+    var seleccion = $('#paquete').attr('value');
+    if (seleccion == 'Paquete Básico') {
+      document.getElementById("precio").value = preciobasico;
+      document.getElementById("precioshow").value = '$' + preciobasico;
+    }
+    if (seleccion == 'Paquete Negocio') {
+      document.getElementById("precio").value = precionegocio;
+      document.getElementById("precioshow").value = '$' + precionegocio;
+    }
+    if (seleccion == 'Paquete Profesional') {
+      document.getElementById("precio").value = precioprofesional;
+      document.getElementById("precioshow").value = '$' + precioprofesional;
+    }
+    var fechaBDExt = $('#fechainicio1').attr('value');
+    var mesespago = $('#seleccion1').attr('value');
+    mesespago = parseInt(mesespago);
+
+
+    var fechaBD = new Date(fechaBDExt);
+    var anioBD = fechaBD.getFullYear();
+    var mesBD = fechaBD.getMonth() + mesespago;
+    mesBD = mesBD.toString();
+    mesBD = mesBD.padStart(2, 0);
+    var diaBD = fechaBD.getDate();
+    diaBD = diaBD.toString();
+    diaBD = diaBD.padStart(2, 0)
+    var horaBD = fechaBD.getHours();
+    horaBD = horaBD.toString();
+    horaBD = horaBD.padStart(2, 0)
+    var minutoBD = fechaBD.getMinutes();
+    minutoBD = minutoBD.toString();
+    minutoBD = minutoBD.padStart(2, 0)
+    var segundoBD = fechaBD.getSeconds();
+    segundoBD = segundoBD.toString();
+    segundoBD = segundoBD.padStart(2, 0)
+
+
+    if (mesBD > 12 && mesBD <= 24) {
+      anioBD = anioBD + 1;
+      mesBD = mesBD - 12;
+      mesBD = mesBD.toString();
+      mesBD = mesBD.padStart(2, 0)
+    } else if (mesBD > 24 && mesBD <= 36) {
+      anioBD = anioBD + 2;
+      mesBD = mesBD - 24;
+      mesBD = mesBD.toString();
+      mesBD = mesBD.padStart(2, 0)
+    } else if (mesBD > 36 && mesBD <= 48) {
+      anioBD = anioBD + 3;
+      mesBD = mesBD - 36;
+      mesBD = mesBD.toString();
+      mesBD = mesBD.padStart(2, 0)
+    } else {
+      anioBD = anioBD;
+    }
+    var strDate3 = anioBD + "-" + (mesBD + "-" + diaBD + " " + horaBD + ":" + minutoBD + ":" + segundoBD);
+    if (pathname == '/administradorProy.php') {
+      if ($("fechainicio")) {
+        var esVisiblea = $("#fechainicio").is(":visible");
+        if (esVisiblea == true){
+        document.getElementById("fechainicio").value = strDate;
+        }
+
+      }
+      if ($("fechafin")) {
+        var esVisiblea = $("#fechafin").is(":visible");
+        if (esVisiblea == true){
+          document.getElementById("fechafin").value = strDate2;
+        }
+       
+
+      }
+      var esVisible = $("#fechafin1").is(":visible");
+      // console.log(esVisible);
+      
+      if (esVisible == true) {
+        document.getElementById("fechafin1").value = strDate3;
+
+      }
+    }
+
+    
+    var preciobasico1 = $('#preciobasico1').attr('value');
+    console.log(preciobasico1);
+    var precionegocio1 = $('#precionegocio1').attr('value');
+    var precioprofesional1 = $('#precioprofesional1').attr('value');
+    if(mesespago == 2){
+      preciobasico1 = preciobasico1*1;
+      precionegocio1 = precionegocio1*1;
+      precioprofesional1 = precioprofesional1*1;
+    }
+    if(mesespago == 3){
+      preciobasico1 = preciobasico1*2;
+      precionegocio1 = precionegocio1*2;
+      precioprofesional1 = precioprofesional1*2;
+    }
+    if(mesespago == 4){
+      preciobasico1 = preciobasico1*3;
+      precionegocio1 = precionegocio1*3;
+      precioprofesional1 = precioprofesional1*3;
+    }
+    if(mesespago == 5){
+      preciobasico1 = preciobasico1*4;
+      precionegocio1 = precionegocio1*4;
+      precioprofesional1 = precioprofesional1*4;
+    }
+    if(mesespago == 6){
+      preciobasico1 = preciobasico1*5;
+      precionegocio1 = precionegocio1*5;
+      precioprofesional1 = precioprofesional1*5;
+    }
+    if(mesespago == 7){
+      preciobasico1 = preciobasico1*6;
+      precionegocio1 = precionegocio1*6;
+      precioprofesional1 = precioprofesional1*6;
+    }
+    if(mesespago == 8){
+      preciobasico1 = preciobasico1*7;
+      precionegocio1 = precionegocio1*7;
+      precioprofesional1 = precioprofesional1*7;
+    }
+    if(mesespago == 9){
+      preciobasico1 = preciobasico1*8;
+      precionegocio1 = precionegocio1*8;
+      precioprofesional1 = precioprofesional1*8;
+    }
+    if(mesespago == 10){
+      preciobasico1 = preciobasico1*9;
+      precionegocio1 = precionegocio1*9;
+      precioprofesional1 = precioprofesional1*9;
+    }
+    if(mesespago == 11){
+      preciobasico1 = preciobasico1*10;
+      precionegocio1 = precionegocio1*10;
+      precioprofesional1 = precioprofesional1*10;
+    }
+    if(mesespago == 12){
+      preciobasico1 = preciobasico1*11;
+      precionegocio1 = precionegocio1*11;
+      precioprofesional1 = precioprofesional1*11;
+    }
+    if(mesespago == 13){
+      preciobasico1 = preciobasico1*12;
+      precionegocio1 = precionegocio1*12;
+      precioprofesional1 = precioprofesional1*12;
+    }
+    var seleccion1 = $('#paquete1').attr('value');
+    console.log(seleccion1);
+    if (seleccion1 == 'Paquete Básico') {
+      console.log(preciobasico1);
+      document.getElementById("precio1").value = preciobasico1;
+      document.getElementById("precioshow1").value = '$' + preciobasico1;
+    }
+    if (seleccion1 == 'Paquete Negocio') {
+      document.getElementById("precio1").value = precionegocio1;
+      document.getElementById("precioshow1").value = '$' + precionegocio1;
+    }
+    if (seleccion1 == 'Paquete Profesional') {
+      document.getElementById("precio1").value = precioprofesional1;
+      document.getElementById("precioshow1").value = '$' + precioprofesional1;
+    }
   });
 
   // var contador = 0;
@@ -148,7 +363,7 @@ function pasosTime(superVecFechas) {
       todosM = ['00'];
       todosH = ['00'];
       todosD = ['00'];
-      
+
       for (let y = 0; y < superVecFechasAux[x].length; y++) {
 
         //  console.log(x + '-' + y + '->' + superVecFechas[x][y]);
@@ -163,10 +378,10 @@ function pasosTime(superVecFechas) {
         var idminutos = ('#minutos' + x + '-' + y);
         var idsegundos = ('#segundos' + x + '-' + y);
         //  console.log(cuentasreg,iddias,idhoras,idminutos,idsegundos);
-// console.log('xxxx'+x+y+'-'+xfecha);
+        // console.log('xxxx'+x+y+'-'+xfecha);
         $(cuentasreg).countdown(xfecha, function (event) {
 
-          
+
 
 
 
@@ -184,7 +399,7 @@ function pasosTime(superVecFechas) {
 
           // $(cuentasreg).addClass('coloryellow');
           // $(cuentasreg).removeClass('colorgreen');
-          
+
           // if ((event.strftime('%S') == 00) && (event.strftime('%D') == 00) && (event.strftime('%H') == 00) && (event.strftime('%M') == 00)) {
           //   $(cuentasreg).removeClass('coloryellow');
           //   $(cuentasreg).addClass('colorgreen');
@@ -213,27 +428,27 @@ function faxS(Seg) {
   for (let s = 0; s < Seg.length; s++) {
     for (let s1 = 0; s1 < Seg[s].length; s1++) {
       var cuentasreg = ('.cuenta-regresiva' + s + '-' + s1);
-      var prueb = ('.cuenta-regresiva' + s + '-' + s1 + ' '+'.clearfix .lix:nth-child(-n+9)');
+      var prueb = ('.cuenta-regresiva' + s + '-' + s1 + ' ' + '.clearfix .lix:nth-child(-n+9)');
       // console.log(prueb);
       var idsegundosS = ('#segundos' + s + '-' + s1);
       $(idsegundosS).text(Seg[s][s1]);
       // console.log(s +'-' + s1+ Seg[s][s1]);
-      if(Seg[s][s1] == undefined){
+      if (Seg[s][s1] == undefined) {
         Seg[s][s1] = '00';
       }
       if (auxSeg == (Seg[s][s1])) {
         auxSeg = (Seg[s][s1]);
-       
-        
+
+
         // console.log('si');
         $(prueb).removeClass('coloryellow');
-       
+
         $(cuentasreg).addClass('colorgreen');
       } else {
-        
+
         // console.log('no');
         $(prueb).addClass('coloryellow');
-       
+
         $(cuentasreg).removeClass('colorgreen');
       }
     }
@@ -241,27 +456,27 @@ function faxS(Seg) {
 }
 
 function faxM(Min) {
-  
+
   var auxSeg = 0;
   // console.log(Min);
   for (let s = 0; s < Min.length; s++) {
     for (let s1 = 0; s1 < Min[s].length; s1++) {
       var cuentasreg = ('.cuenta-regresiva' + s + '-' + s1);
-      var prueb = ('.cuenta-regresiva' + s + '-' + s1 + ' '+'.clearfix .lix:nth-child(-n+9)');
+      var prueb = ('.cuenta-regresiva' + s + '-' + s1 + ' ' + '.clearfix .lix:nth-child(-n+9)');
       var idsegundosS = ('#minutos' + s + '-' + s1);
       $(idsegundosS).text(Min[s][s1]);
       // console.log(auxSeg+'-'+Min[s][s1]);
-       if(Min[s][s1] == undefined){
-       Min[s][s1] = '00';
+      if (Min[s][s1] == undefined) {
+        Min[s][s1] = '00';
       }
       if (auxSeg == (Min[s][s1])) {
         auxSeg = (Min[s][s1]);
-        
+
       } else {
         $(prueb).addClass('coloryellow');
-       
+
         $(cuentasreg).removeClass('colorgreen');
-        
+
       }
     }
   }
@@ -273,20 +488,20 @@ function faxH(Hor) {
   for (let s = 0; s < Hor.length; s++) {
     for (let s1 = 0; s1 < Hor[s].length; s1++) {
       var cuentasreg = ('.cuenta-regresiva' + s + '-' + s1);
-      var prueb = ('.cuenta-regresiva' + s + '-' + s1 + ' '+'.clearfix .lix:nth-child(-n+9)');
+      var prueb = ('.cuenta-regresiva' + s + '-' + s1 + ' ' + '.clearfix .lix:nth-child(-n+9)');
       var idsegundosS = ('#horas' + s + '-' + s1);
       $(idsegundosS).text(Hor[s][s1]);
-       if(Hor[s][s1] == undefined){
+      if (Hor[s][s1] == undefined) {
         Hor[s][s1] = '00';
       }
       if (auxSeg == (Hor[s][s1])) {
         auxSeg = (Hor[s][s1]);
-        
+
       } else {
         $(prueb).addClass('coloryellow');
-       
+
         $(cuentasreg).removeClass('colorgreen');
-        
+
       }
     }
   }
@@ -298,20 +513,20 @@ function faxD(Dia) {
   for (let s = 0; s < Dia.length; s++) {
     for (let s1 = 0; s1 < Dia[s].length; s1++) {
       var cuentasreg = ('.cuenta-regresiva' + s + '-' + s1);
-      var prueb = ('.cuenta-regresiva' + s + '-' + s1 + ' '+'.clearfix .lix:nth-child(-n+9)');
+      var prueb = ('.cuenta-regresiva' + s + '-' + s1 + ' ' + '.clearfix .lix:nth-child(-n+9)');
       var idsegundosS = ('#dias' + s + '-' + s1);
       $(idsegundosS).text(Dia[s][s1]);
-       if(Dia[s][s1] == undefined){
+      if (Dia[s][s1] == undefined) {
         Dia[s][s1] = '00';
       }
       if (auxSeg == (Dia[s][s1])) {
         auxSeg = (Dia[s][s1]);
-       
+
       } else {
         $(prueb).addClass('coloryellow');
-       
+
         $(cuentasreg).removeClass('colorgreen');
-        
+
       }
     }
   }
@@ -769,6 +984,58 @@ $("#plus3009").hover(
     i = '';
   }
 );
+var chesx4000 = new Array();
+var chesy4000 = new Array();
+
+
+
+
+
+//   var plus = "#plus"+(4000+chesx);
+//   console.log(plus)
+$(".contenedor-especial")
+  .mouseover(function () {
+    // console.log('hola');
+    var contchecks = 0;
+    for (let checkss = 0; checkss <= 100; checkss++) {
+      var inps = '#inps' + (4000 + checkss);
+      var serie = (4000 + checkss);
+      var inputchects = $(inps).attr('id');
+      if (inps === ('#' + inputchects)) {
+
+        console.log(inps + '-' + inputchects);
+        chesy4000[contchecks] = inps;
+        chesx4000[contchecks] = serie;
+        contchecks++;
+      }
+    }
+    // console.log(chesx4000);
+    for (let x = 0; x < chesx4000.length; x++) {
+      var plus = '#plus' + chesx4000[x];
+      //  console.log('aqui'+chesx4000[x]);
+      $(plus).hover(
+        function () {
+
+          // console.log(chesx4000[x]);
+          i = chesx4000[x];
+          ches(i);
+
+
+        },
+        function () {
+          i = '';
+        }
+      );
+
+    }
+  })
+  .mouseout(function () {
+    // console.log('adios');
+  });
+
+
+
+
 
 function ches(i) {
 
@@ -873,12 +1140,12 @@ $(".contenedor-perfil .imagen").hover(
 function progressHandler(event) {
   up("loaded_n_total").innerHTML = "Subiendo Foto " + event.loaded + " bytes de " + event.total;
   var percent = (event.loaded / event.total) * 100;
-  if(percent == 100){
+  if (percent == 100) {
     up("progressBar").value = Math.round(percent);
     up("status").innerHTML = "Espere unos segundos más!";
-  }else{
-  up("progressBar").value = Math.round(percent);
-  up("status").innerHTML = Math.round(percent)+"% Subiendo foto";
+  } else {
+    up("progressBar").value = Math.round(percent);
+    up("status").innerHTML = Math.round(percent) + "% Subiendo foto";
   }
 
 }
@@ -917,6 +1184,7 @@ if ($("#cuenta").length) {
     formCuentaUser.addEventListener('submit', actualizarCuenta);
   }
 }
+
 function actualizarCuenta(e) {
   e.preventDefault();
   const calle = document.querySelector('#calle').value;
@@ -926,10 +1194,10 @@ function actualizarCuenta(e) {
   const domiciliof = document.querySelector('#domiciliof').value;
   const cfdi = document.querySelector('#cfdi').value;
   const rfc = document.querySelector('#rfc').value;
-  
+
   const accion = document.querySelector('#btnactualizar').value;
-  console.log(calle+numie+colonia+cpostal+accion+domiciliof+cfdi+rfc);
-  
+  console.log(calle + numie + colonia + cpostal + accion + domiciliof + cfdi + rfc);
+
   const infoactualuser = new FormData();
 
   infoactualuser.append('calle', calle);
@@ -942,10 +1210,11 @@ function actualizarCuenta(e) {
   infoactualuser.append('accion', accion);
 
   if (accion === 'Actualizar') {
-    console.log ('jjey');
+    console.log('jjey');
     actualizarUserUserDB(infoactualuser);
   }
 }
+
 function actualizarUserUserDB(dato) {
   // llamado de ajax
   // crear objeto
@@ -974,7 +1243,7 @@ function actualizarUserUserDB(dato) {
                 window.location.href = 'cuenta.php#angel-ruiz';
             }
           });
-        
+
       }
       if (respuesta.estado === 'no cambios') {
         swal({
@@ -992,7 +1261,7 @@ function actualizarUserUserDB(dato) {
                 window.location.href = 'cuenta.php#angel-ruiz';
             }
           });
-        
+
       }
     }
   }
@@ -1163,6 +1432,134 @@ $('#telefono').numeric();
 $('#postal').numeric();
 $('#numiedirec').numeric();
 
+// Agregar Pago
+const formAgregarPago = document.querySelector('#agregar-pago');
+if ($("#agregar-pago").length) {
+  eventListeners();
+
+  function eventListeners() {
+    formAgregarPago.addEventListener('submit', leerAgregarPago);
+
+  }
+}
+
+function leerAgregarPago(e) {
+  e.preventDefault();
+  const accion = document.querySelector('#btnagregarpago').value;
+  if (accion == 'Agregar Pago') {
+
+    const select = document.querySelector('#seleccion1').value;
+
+    const fechainicio = document.querySelector('#fechainicio1').value;
+    const fechafin = document.querySelector('#fechafin1').value;
+    const paquete = document.querySelector('#paquete1').value;
+    const precio = document.querySelector('#precio1').value;
+    const contratoid = document.querySelector('#contratoid').value;
+    const tokencontrato = document.querySelector('#tokencontrato').value;
+ 
+    const idproyecto = document.querySelector('#idproyecto1').value;
+
+    const infoagregarPago = new FormData();
+    infoagregarPago.append('accion', accion);
+    infoagregarPago.append('select', select);
+    infoagregarPago.append('fechainicio', fechainicio);
+    infoagregarPago.append('fechafin', fechafin);
+    infoagregarPago.append('paquete', paquete);
+    infoagregarPago.append('precio', precio);
+    infoagregarPago.append('contratoid', contratoid);
+    infoagregarPago.append('tokencontrato', tokencontrato);
+    infoagregarPago.append('idproyecto', idproyecto);
+
+    console.log(tokencontrato);
+    agregarPago(infoagregarPago);
+  }
+}
+
+function agregarPago(dato) {
+  // llamado de ajax
+  // crear objeto
+  //  console.log(dato);
+  const xhr = new XMLHttpRequest();
+  // abrir conexion
+  xhr.open('POST', 'includes/modelos/jsonagregarpago.php', true);
+  // pasar datos
+
+  xhr.onload = function () {
+
+    if (this.status === 200) {
+      const respuesta = JSON.parse(xhr.responseText);
+      console.log(respuesta);
+    }
+  }
+  // enviar datos
+  xhr.send(dato);
+}
+
+// END Agregar Pago
+// agregar contrato
+const formAgregarContrato = document.querySelector('#agregar-contrato');
+if ($("#agregar-contrato").length) {
+  eventListeners();
+
+  function eventListeners() {
+    formAgregarContrato.addEventListener('submit', leerAgregarContrato);
+
+  }
+}
+
+function leerAgregarContrato(e) {
+  e.preventDefault();
+  const accion = document.querySelector('#btnagregarcontrato').value;
+  if (accion == 'Agregar Contrato') {
+    const select = document.querySelector('#seleccion').value;
+    const fechainicio = document.querySelector('#fechainicio').value;
+    const fechafin = document.querySelector('#fechafin').value;
+    const paquete = document.querySelector('#paquete').value;
+    const precio = document.querySelector('#precio').value;
+    const idproyecto = document.querySelector('#idproyecto').value;
+    // const paquetebasico = document.querySelector('#paquetebasico').value;
+    // const paquetenegocio = document.querySelector('#paquetenegocio').value;
+    // const paqueteprofesional = document.querySelector('#paqueteprofesional').value;
+
+    const infoagregarcontrato = new FormData();
+    infoagregarcontrato.append('accion', accion);
+    infoagregarcontrato.append('select', select);
+    infoagregarcontrato.append('fechainicio', fechainicio);
+    infoagregarcontrato.append('fechafin', fechafin);
+    infoagregarcontrato.append('paquete', paquete);
+    infoagregarcontrato.append('precio', precio);
+    infoagregarcontrato.append('idproyecto', idproyecto);
+    // infoagregarcontrato.append('paquetebasico', paquetebasico);
+    // infoagregarcontrato.append('paquetenegocio', paquetenegocio);
+    // infoagregarcontrato.append('paqueteprofesional', paqueteprofesional);
+
+
+    // console.log(accion, select + 'Meses', fechainicio, fechafin);
+    agregarContrato(infoagregarcontrato);
+  }
+}
+
+function agregarContrato(dato) {
+  // llamado de ajax
+  // crear objeto
+  //  console.log(dato);
+  const xhr = new XMLHttpRequest();
+  // abrir conexion
+  xhr.open('POST', 'includes/modelos/jsonagregarcontrato.php', true);
+  // pasar datos
+
+  xhr.onload = function () {
+
+    if (this.status === 200) {
+      const respuesta = JSON.parse(xhr.responseText);
+      console.log(respuesta);
+    }
+  }
+  // enviar datos
+  xhr.send(dato);
+}
+
+// END Agregar Contraros
 const formRegistroUser = document.querySelector('#registro');
 if ($("#registro").length) {
   eventListeners();
@@ -1176,49 +1573,32 @@ if ($("#registro").length) {
 function leerRegistro(e) {
   e.preventDefault();
   const accion = document.querySelector('#btnregcuenta1').value;
-  
-  if( accion == 'Registrar'){
-  
-  const nombre = document.querySelector('#nombre').value;
-  const apellido = document.querySelector('#apellido').value;
-  const telefono = document.querySelector('#telefono').value;
-  const correo = document.querySelector('#correo').value;
-  const calle = document.querySelector('#calle').value;
-  const numiedirec = document.querySelector('#numiedirec').value;
-  const col = document.querySelector('#col').value;
-  const postal = document.querySelector('#postal').value;
-  const paquete = document.querySelector('#paquete').value;
-  const fecha = document.querySelector('#fecha').value;
-  const precio = document.querySelector('#precio').value;
-  console.log(precio);
-  
-  console.log(nombre, apellido, telefono, correo, calle, numiedirec, col, postal, paquete, fecha);
-  let condicionvalid = 0;
-  let condicionvalid1 = 0;
-  if (nombre === '') {
-    $('#nombre').css({
-      'background': 'red'
-    });
-    swal({
-      content: "",
-      text: 'Es obligatorio ingresar su Nombre',
-      icon: "info",
-      button: {
-        text: "Continuar",
-        closeModal: true,
-      },
-    });
-  } else {
-    $('#nombre').css({
-      'background': '#93A9CC'
-    });
-    if (apellido === '') {
-      $('#apellido').css({
+
+  if (accion == 'Registrar') {
+
+    const nombre = document.querySelector('#nombre').value;
+    const apellido = document.querySelector('#apellido').value;
+    const telefono = document.querySelector('#telefono').value;
+    const correo = document.querySelector('#correo').value;
+    const calle = document.querySelector('#calle').value;
+    const numiedirec = document.querySelector('#numiedirec').value;
+    const col = document.querySelector('#col').value;
+    const postal = document.querySelector('#postal').value;
+    const paquete = document.querySelector('#paquete').value;
+    const fecha = document.querySelector('#fecha').value;
+    const precio = document.querySelector('#precio').value;
+    console.log(precio);
+
+    console.log(nombre, apellido, telefono, correo, calle, numiedirec, col, postal, paquete, fecha);
+    let condicionvalid = 0;
+    let condicionvalid1 = 0;
+    if (nombre === '') {
+      $('#nombre').css({
         'background': 'red'
       });
       swal({
         content: "",
-        text: 'Es obligatorio ingresar sus Apellidos',
+        text: 'Es obligatorio ingresar su Nombre',
         icon: "info",
         button: {
           text: "Continuar",
@@ -1226,7 +1606,275 @@ function leerRegistro(e) {
         },
       });
     } else {
-      $('#apellido').css({
+      $('#nombre').css({
+        'background': '#93A9CC'
+      });
+      if (apellido === '') {
+        $('#apellido').css({
+          'background': 'red'
+        });
+        swal({
+          content: "",
+          text: 'Es obligatorio ingresar sus Apellidos',
+          icon: "info",
+          button: {
+            text: "Continuar",
+            closeModal: true,
+          },
+        });
+      } else {
+        $('#apellido').css({
+          'background': '#93A9CC'
+        });
+        if (telefono === '') {
+          $('#telefono').css({
+            'background': 'red'
+          });
+          swal({
+            content: "",
+            text: 'Es obligatorio ingresar un Número telefónico o de WhatsApp',
+            icon: "info",
+            button: {
+              text: "Continuar",
+              closeModal: true,
+            },
+          });
+        } else {
+          $('#telefono').css({
+            'background': '#93A9CC'
+          });
+          if (correo === '') {
+            $('#correo').css({
+              'background': 'red'
+            });
+            swal({
+              content: "",
+              text: 'Es obligatorio ingresar un Correo Electrónico',
+              icon: "info",
+              button: {
+                text: "Continuar",
+                closeModal: true,
+              },
+            });
+          } else {
+            $('#correo').css({
+              'background': '#93A9CC'
+            });
+            if (calle === '') {
+              $('#calle').css({
+                'background': 'red'
+              });
+              swal({
+                content: "",
+                text: 'Es obligatorio ingresar la Calle de su domicilio',
+                icon: "info",
+                button: {
+                  text: "Continuar",
+                  closeModal: true,
+                },
+              });
+            } else {
+              $('#calle').css({
+                'background': '#93A9CC'
+              });
+              if (numiedirec === '') {
+                $('#numiedirec').css({
+                  'background': 'red'
+                });
+                swal({
+                  content: "",
+                  text: 'Es obligatorio ingresar el Número de su domicilio',
+                  icon: "info",
+                  button: {
+                    text: "Continuar",
+                    closeModal: true,
+                  },
+                });
+              } else {
+                $('#numiedirec').css({
+                  'background': '#93A9CC'
+                });
+                if (col === '') {
+                  $('#col').css({
+                    'background': 'red'
+                  });
+                  swal({
+                    content: "",
+                    text: 'Es obligatorio ingresar la Colonia de su domicilio',
+                    icon: "info",
+                    button: {
+                      text: "Continuar",
+                      closeModal: true,
+                    },
+                  });
+                } else {
+                  $('#col').css({
+                    'background': '#93A9CC'
+                  });
+                  if (postal === '') {
+                    $('#postal').css({
+                      'background': 'red'
+                    });
+                    swal({
+                      content: "",
+                      text: 'Es obligatorio ingresar el Código postal de su domicilio',
+                      icon: "info",
+                      button: {
+                        text: "Continuar",
+                        closeModal: true,
+                      },
+                    });
+                  } else {
+                    $('#postal').css({
+                      'background': '#93A9CC'
+                    });
+                    if (paquete === '') {
+                      $('#paquete').css({
+                        'background': 'red'
+                      });
+                      swal({
+                        content: "",
+                        text: 'Es obligatorio ingresar el Paquete de servicio deseado',
+                        icon: "info",
+                        button: {
+                          text: "Continuar",
+                          closeModal: true,
+                        },
+                      });
+                    } else {
+                      $('#paquete').css({
+                        'background': '#93A9CC'
+                      });
+                      if (fecha === '') {
+                        $('#fecha').css({
+                          'background': 'red'
+                        });
+                        swal({
+                          content: "",
+                          text: 'La Fecha estará disponible automáticamente',
+                          icon: "info",
+                          button: {
+                            text: "Continuar",
+                            closeModal: true,
+                          },
+                        });
+                      } else {
+                        $('#fecha').css({
+                          'background': '#93A9CC'
+                        });
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    validarString(correo);
+    if (caracteresCorreoValido(correo) === false) {
+      $('#correo').css({
+        'background-color': 'red'
+      });
+      swal({
+        content: "",
+        text: 'El correo es inválido, debido a que tiene acentos. ¡Intenta con otro por favor!',
+        icon: "error",
+        button: {
+          text: "Continuar",
+          closeModal: true,
+        },
+      });
+
+    } else {
+      condicionvalid1 = 1;
+    }
+    let cadena = correo;
+    // esta es la palabra a buscar
+    let termino = ["@gmail.com", "@hotmail.com", "@outlook.com"];
+    let x1 = 0;
+    for (let x = 0; x <= 2; x++) {
+
+      let find = termino[x]
+      // para buscar la palabra hacemos
+      let posicion = cadena.indexOf(find);
+
+
+      if (posicion !== -1) {
+        // console.log(x + "->La palabra está en la posición " + posicion);
+        condicionvalid = 1;
+        x = 3;
+
+      } else {
+        // console.log('-z' + x);
+        if (x == 2) {
+          $('#correo').css({
+            'background-color': 'red'
+          });
+          swal({
+            content: "",
+            text: '¡Por favor! Usa una cuenta correo válida como @hotmail.com, @gmail.com, @outlook.com',
+            icon: "error",
+            button: {
+              text: "Continuar",
+              closeModal: true,
+            },
+          });
+        }
+
+      }
+    }
+    if (condicionvalid == 1 && condicionvalid1 == 1 && correo != '' && nombre != '' && apellido != '' && telefono != '' && calle != '' && numiedirec != '' && col != '' && postal != '' && paquete != '') {
+
+      const ifouserreg = new FormData();
+
+      ifouserreg.append('nombre', nombre);
+      ifouserreg.append('apellido', apellido);
+      ifouserreg.append('telefono', telefono);
+      ifouserreg.append('correo', correo);
+      ifouserreg.append('calle', calle);
+      ifouserreg.append('numiedirec', numiedirec);
+      ifouserreg.append('col', col);
+      ifouserreg.append('postal', postal);
+      ifouserreg.append('paquete', paquete);
+      ifouserreg.append('fecha', fecha);
+      ifouserreg.append('precio', precio);
+      ifouserreg.append('accion', accion);
+
+      if (accion === 'Registrar') {
+        registroDB(ifouserreg);
+      }
+    }
+  }
+  if (accion == 'Nuevo Proyecto') {
+
+
+    const precio = document.querySelector('#precio').value;
+    const telefono = document.querySelector('#telefono').value;
+    const correo = document.querySelector('#correo').value;
+    const paquete = document.querySelector('#paquete').value;
+    const fecha = document.querySelector('#fecha').value;
+
+    console.log(paquete, fecha);
+    let condicionvalid = 0;
+    let condicionvalid1 = 0;
+
+    if (correo === '') {
+      $('#correo').css({
+        'background': 'red'
+      });
+      swal({
+        content: "",
+        text: 'Es obligatorio ingresar un Correo Electrónico',
+        icon: "info",
+        button: {
+          text: "Continuar",
+          closeModal: true,
+        },
+      });
+    } else {
+      $('#correo').css({
         'background': '#93A9CC'
       });
       if (telefono === '') {
@@ -1246,13 +1894,13 @@ function leerRegistro(e) {
         $('#telefono').css({
           'background': '#93A9CC'
         });
-        if (correo === '') {
-          $('#correo').css({
+        if (paquete === '') {
+          $('#paquete').css({
             'background': 'red'
           });
           swal({
             content: "",
-            text: 'Es obligatorio ingresar un Correo Electrónico',
+            text: 'Es obligatorio ingresar el Paquete de servicio deseado',
             icon: "info",
             button: {
               text: "Continuar",
@@ -1260,16 +1908,16 @@ function leerRegistro(e) {
             },
           });
         } else {
-          $('#correo').css({
+          $('#paquete').css({
             'background': '#93A9CC'
           });
-          if (calle === '') {
-            $('#calle').css({
+          if (fecha === '') {
+            $('#fecha').css({
               'background': 'red'
             });
             swal({
               content: "",
-              text: 'Es obligatorio ingresar la Calle de su domicilio',
+              text: 'La Fecha estará disponible automáticamente',
               icon: "info",
               button: {
                 text: "Continuar",
@@ -1277,342 +1925,92 @@ function leerRegistro(e) {
               },
             });
           } else {
-            $('#calle').css({
+            $('#fecha').css({
               'background': '#93A9CC'
             });
-            if (numiedirec === '') {
-              $('#numiedirec').css({
-                'background': 'red'
-              });
-              swal({
-                content: "",
-                text: 'Es obligatorio ingresar el Número de su domicilio',
-                icon: "info",
-                button: {
-                  text: "Continuar",
-                  closeModal: true,
-                },
-              });
-            } else {
-              $('#numiedirec').css({
-                'background': '#93A9CC'
-              });
-              if (col === '') {
-                $('#col').css({
-                  'background': 'red'
-                });
-                swal({
-                  content: "",
-                  text: 'Es obligatorio ingresar la Colonia de su domicilio',
-                  icon: "info",
-                  button: {
-                    text: "Continuar",
-                    closeModal: true,
-                  },
-                });
-              } else {
-                $('#col').css({
-                  'background': '#93A9CC'
-                });
-                if (postal === '') {
-                  $('#postal').css({
-                    'background': 'red'
-                  });
-                  swal({
-                    content: "",
-                    text: 'Es obligatorio ingresar el Código postal de su domicilio',
-                    icon: "info",
-                    button: {
-                      text: "Continuar",
-                      closeModal: true,
-                    },
-                  });
-                } else {
-                  $('#postal').css({
-                    'background': '#93A9CC'
-                  });
-                  if (paquete === '') {
-                    $('#paquete').css({
-                      'background': 'red'
-                    });
-                    swal({
-                      content: "",
-                      text: 'Es obligatorio ingresar el Paquete de servicio deseado',
-                      icon: "info",
-                      button: {
-                        text: "Continuar",
-                        closeModal: true,
-                      },
-                    });
-                  } else {
-                    $('#paquete').css({
-                      'background': '#93A9CC'
-                    });
-                    if (fecha === '') {
-                      $('#fecha').css({
-                        'background': 'red'
-                      });
-                      swal({
-                        content: "",
-                        text: 'La Fecha estará disponible automáticamente',
-                        icon: "info",
-                        button: {
-                          text: "Continuar",
-                          closeModal: true,
-                        },
-                      });
-                    } else {
-                      $('#fecha').css({
-                        'background': '#93A9CC'
-                      });
-                    }
-                  }
-                }
-              }
-            }
           }
         }
       }
     }
-  }
-  validarString(correo);
-  if (caracteresCorreoValido(correo) === false) {
-    $('#correo').css({
-      'background-color': 'red'
-    });
-    swal({
-      content: "",
-      text: 'El correo es inválido, debido a que tiene acentos. ¡Intenta con otro por favor!',
-      icon: "error",
-      button: {
-        text: "Continuar",
-        closeModal: true,
-      },
-    });
-
-  } else {
-    condicionvalid1 = 1;
-  }
-  let cadena = correo;
-  // esta es la palabra a buscar
-  let termino = ["@gmail.com", "@hotmail.com", "@outlook.com"];
-  let x1 = 0;
-  for (let x = 0; x <= 2; x++) {
-
-    let find = termino[x]
-    // para buscar la palabra hacemos
-    let posicion = cadena.indexOf(find);
 
 
-    if (posicion !== -1) {
-      // console.log(x + "->La palabra está en la posición " + posicion);
-      condicionvalid = 1;
-      x = 3;
 
-    } else {
-      // console.log('-z' + x);
-      if (x == 2) {
-        $('#correo').css({
-          'background-color': 'red'
-        });
-        swal({
-          content: "",
-          text: '¡Por favor! Usa una cuenta correo válida como @hotmail.com, @gmail.com, @outlook.com',
-          icon: "error",
-          button: {
-            text: "Continuar",
-            closeModal: true,
-          },
-        });
-      }
 
-    }
-  }
-  if (condicionvalid == 1 && condicionvalid1 == 1 && correo != '' && nombre != '' && apellido != '' && telefono != '' && calle != '' && numiedirec != '' && col != '' && postal != '' && paquete != '') {
 
-    const ifouserreg = new FormData();
 
-    ifouserreg.append('nombre', nombre);
-    ifouserreg.append('apellido', apellido);
-    ifouserreg.append('telefono', telefono);
-    ifouserreg.append('correo', correo);
-    ifouserreg.append('calle', calle);
-    ifouserreg.append('numiedirec', numiedirec);
-    ifouserreg.append('col', col);
-    ifouserreg.append('postal', postal);
-    ifouserreg.append('paquete', paquete);
-    ifouserreg.append('fecha', fecha);
-    ifouserreg.append('precio', precio);
-    ifouserreg.append('accion', accion);
-
-    if (accion === 'Registrar') {
-      registroDB(ifouserreg);
-    }
-  }
-}
-if(accion == 'Nuevo Proyecto'){
-  
-  
-  const precio = document.querySelector('#precio').value;
-  const telefono = document.querySelector('#telefono').value;
-  const correo = document.querySelector('#correo').value;
-  const paquete = document.querySelector('#paquete').value;
-  const fecha = document.querySelector('#fecha').value;
-  
-  console.log(paquete, fecha);
-  let condicionvalid = 0;
-  let condicionvalid1 = 0;      
-            
-  if (correo === '') {
-    $('#correo').css({
-      'background': 'red'
-    });
-    swal({
-      content: "",
-      text: 'Es obligatorio ingresar un Correo Electrónico',
-      icon: "info",
-      button: {
-        text: "Continuar",
-        closeModal: true,
-      },
-    });
-  } else {
-    $('#correo').css({
-      'background': '#93A9CC'
-    });
-    if (telefono === '') {
-      $('#telefono').css({
-        'background': 'red'
+    validarString(correo);
+    if (caracteresCorreoValido(correo) === false) {
+      $('#correo').css({
+        'background-color': 'red'
       });
       swal({
         content: "",
-        text: 'Es obligatorio ingresar un Número telefónico o de WhatsApp',
-        icon: "info",
+        text: 'El correo es inválido, debido a que tiene acentos. ¡Intenta con otro por favor!',
+        icon: "error",
         button: {
           text: "Continuar",
           closeModal: true,
         },
       });
+
     } else {
-      $('#telefono').css({
-        'background': '#93A9CC'
-      });
-      if (paquete === '') {
-        $('#paquete').css({
-          'background': 'red'
-        });
-        swal({
-          content: "",
-          text: 'Es obligatorio ingresar el Paquete de servicio deseado',
-          icon: "info",
-          button: {
-            text: "Continuar",
-            closeModal: true,
-          },
-        });
+      condicionvalid1 = 1;
+    }
+    let cadena = correo;
+    // esta es la palabra a buscar
+    let termino = ["@gmail.com", "@hotmail.com", "@outlook.com"];
+    let x1 = 0;
+    for (let x = 0; x <= 2; x++) {
+
+      let find = termino[x]
+      // para buscar la palabra hacemos
+      let posicion = cadena.indexOf(find);
+
+
+      if (posicion !== -1) {
+        // console.log(x + "->La palabra está en la posición " + posicion);
+        condicionvalid = 1;
+        x = 3;
+
       } else {
-        $('#paquete').css({
-          'background': '#93A9CC'
-        });
-        if (fecha === '') {
-          $('#fecha').css({
-            'background': 'red'
+        // console.log('-z' + x);
+        if (x == 2) {
+          $('#correo').css({
+            'background-color': 'red'
           });
           swal({
             content: "",
-            text: 'La Fecha estará disponible automáticamente',
-            icon: "info",
+            text: '¡Por favor! Usa una cuenta correo válida como @hotmail.com, @gmail.com, @outlook.com',
+            icon: "error",
             button: {
               text: "Continuar",
               closeModal: true,
             },
           });
-        } else {
-          $('#fecha').css({
-            'background': '#93A9CC'
-          });
         }
+
+      }
+    }
+    if (condicionvalid == 1 && condicionvalid1 == 1 && correo != '' && telefono != '' && paquete != '' && precio != '') {
+
+      const ifouserreg = new FormData();
+
+
+      ifouserreg.append('telefono', telefono);
+      ifouserreg.append('correo', correo);
+      ifouserreg.append('precio', precio);
+      ifouserreg.append('paquete', paquete);
+      ifouserreg.append('fecha', fecha);
+      ifouserreg.append('accion', accion);
+
+      if (accion === 'Nuevo Proyecto') {
+        registroDB(ifouserreg);
       }
     }
   }
-            
-          
-        
-      
-    
-  
-  validarString(correo);
-  if (caracteresCorreoValido(correo) === false) {
-    $('#correo').css({
-      'background-color': 'red'
-    });
-    swal({
-      content: "",
-      text: 'El correo es inválido, debido a que tiene acentos. ¡Intenta con otro por favor!',
-      icon: "error",
-      button: {
-        text: "Continuar",
-        closeModal: true,
-      },
-    });
-
-  } else {
-    condicionvalid1 = 1;
-  }
-  let cadena = correo;
-  // esta es la palabra a buscar
-  let termino = ["@gmail.com", "@hotmail.com", "@outlook.com"];
-  let x1 = 0;
-  for (let x = 0; x <= 2; x++) {
-
-    let find = termino[x]
-    // para buscar la palabra hacemos
-    let posicion = cadena.indexOf(find);
-
-
-    if (posicion !== -1) {
-      // console.log(x + "->La palabra está en la posición " + posicion);
-      condicionvalid = 1;
-      x = 3;
-
-    } else {
-      // console.log('-z' + x);
-      if (x == 2) {
-        $('#correo').css({
-          'background-color': 'red'
-        });
-        swal({
-          content: "",
-          text: '¡Por favor! Usa una cuenta correo válida como @hotmail.com, @gmail.com, @outlook.com',
-          icon: "error",
-          button: {
-            text: "Continuar",
-            closeModal: true,
-          },
-        });
-      }
-
-    }
-  }
-  if (condicionvalid == 1 && condicionvalid1 == 1 && correo != '' && telefono != '' && paquete != '' && precio != '') {
-
-    const ifouserreg = new FormData();
-
-   
-    ifouserreg.append('telefono', telefono);
-    ifouserreg.append('correo', correo);
-    ifouserreg.append('precio', precio);
-    ifouserreg.append('paquete', paquete);
-    ifouserreg.append('fecha', fecha);
-    ifouserreg.append('accion', accion);
-
-    if (accion === 'Nuevo Proyecto') {
-      registroDB(ifouserreg);
-    }
-  }
-}
 
 }
+
 function eliminarDatos(dato) {
   const xhr = new XMLHttpRequest();
   // abrir conexion
@@ -1624,22 +2022,22 @@ function eliminarDatos(dato) {
     if (this.status === 200) {
       const respuesta = JSON.parse(xhr.responseText);
       console.log(respuesta);
-      if(respuesta.estado === 'no se puedo crear un proyecto nuevo'){
+      if (respuesta.estado === 'no se puedo crear un proyecto nuevo') {
         swal({
-          content: "",
-          text: 'Error: bd-x-00000001',
-          icon: "error",
-          button: {
-            text: "Continuar",
-            closeModal: true,
-          },
-        })
-        .then((value) => {
-          switch (value) {
-            default:
-              window.location.href = 'cuenta.php#angel-ruiz';
-          }
-        });
+            content: "",
+            text: 'Error: bd-x-00000001',
+            icon: "error",
+            button: {
+              text: "Continuar",
+              closeModal: true,
+            },
+          })
+          .then((value) => {
+            switch (value) {
+              default:
+                window.location.href = 'cuenta.php#angel-ruiz';
+            }
+          });
       }
     }
   }
@@ -1665,45 +2063,43 @@ function registroDB(dato) {
     if (this.status === 200) {
       const respuesta = JSON.parse(xhr.responseText);
       console.log(respuesta);
-        identi0 = respuesta.id0;
-          identi1 = respuesta.id1;
-          identi2 = respuesta.id2;
-          identi3 = respuesta.id3;
-          respuestaelim = respuesta.estado;
-        
-      if(respuesta.estado === 'error en la creacion del nuevo proyecto'){
-        if(identi0 != 0 || identi1 !=0 || identi2 != 0|| identi3 != 0){
+      identi0 = respuesta.id0;
+
+      identi3 = respuesta.id3;
+      respuestaelim = respuesta.estado;
+
+      if (respuesta.estado === 'error en la creacion del nuevo proyecto') {
+        if (identi0 != 0 || identi3 != 0) {
           const idinfo = new FormData();
           idinfo.append('id0', identi0);
-          idinfo.append('id1', identi1);
-          idinfo.append('id2', identi2);
+
           idinfo.append('id3', identi3)
           idinfo.append('accion', 'eliminar');
           eliminarDatos(idinfo);
         }
       }
-      if(respuesta.estado === 'nuevo proyecto creado'){
+      if (respuesta.estado === 'nuevo proyecto creado') {
         swal({
-          content: "",
-          text: 'Nuevo proyecto creado',
-          icon: "success",
-          button: {
-            text: "Continuar",
-            closeModal: true,
-          },
-        })
-        .then((value) => {
-          switch (value) {
-            default:
-              window.location.href = 'cuenta.php#angel-ruiz';
-          }
-        });
-      setTimeout(() => {
-        window.location.href = 'cuenta.php#angel-ruiz';
-      }, 3200);
-    }
-      
-      
+            content: "",
+            text: 'Nuevo proyecto creado',
+            icon: "success",
+            button: {
+              text: "Continuar",
+              closeModal: true,
+            },
+          })
+          .then((value) => {
+            switch (value) {
+              default:
+                window.location.href = 'cuenta.php#angel-ruiz';
+            }
+          });
+        setTimeout(() => {
+          window.location.href = 'cuenta.php#angel-ruiz';
+        }, 3200);
+      }
+
+
       if (respuesta.estado === 'nuevacuentaregistrada') {
         swal({
             content: "",
@@ -2176,7 +2572,7 @@ $("#check-redes").click(function () {
 var pathname = window.location.pathname;
 pathname = (pathname.replace('/01ingeangel.com', ''));
 pathname = (pathname.replace('01', ''));
-// console.log(pathname);
+console.log(pathname);
 if (pathname == '/index.php' || pathname == '/') {
   $(document).ready(function () {
     $("body").css("background-color", "#ffffff");
@@ -2368,6 +2764,89 @@ $(document).ready(function () {
   }
 });
 //end slider2
+// slider3
+$(document).ready(function () {
+
+  var imgItems3 = $('.slider3 li').length;
+  var imgPos3 = 1;
+  var menu = ['', 'Proyecto', 'Pagos', 'Contrato'];
+  for (i = 1; i <= imgItems3; i++) {
+    $('.paginacion3').append('<li><h3>' + menu[i] + '</h3></li>');
+  }
+
+
+  $('.slider3 li').hide();
+  $('.slider3 li:first').show();
+  $('.paginacion2 li:first').css({
+    'text-shadow': ' 0px 0px 10px var(--ColorFontEspecial)'
+  });
+
+  $('.paginacion3 li').click(paginacion3);
+  $('.right3 h3').click(nextSlider3);
+  $('.left3 h3').click(prevSlider3);
+
+  // setInterval(function(){
+  //     nextSlider();
+  // }, 10000);
+
+  function paginacion3() {
+    var paginacionPos3 = $(this).index();
+    paginacionPos3 = paginacionPos3 + 1;
+    // console.log(paginacionPos3);
+
+    $('.slider3 li').hide();
+    $('.slider3 li:nth-child(' + paginacionPos3 + ')').fadeIn();
+
+    $('.paginacion3 li').css({
+      'text-shadow': '0 0 0px #000000'
+    });
+    $(this).css({
+      'text-shadow': ' 0px 0px 10px var(--ColorFontEspecial)'
+    });
+
+    imgPos3 = paginacionPos3;
+  }
+
+  function nextSlider3() {
+    if (imgPos3 >= imgItems3) {
+      imgPos3 = 1;
+    } else {
+      imgPos3++;
+    }
+
+    console.log(imgPos3);
+    $('.slider3 li').hide();
+    $('.slider3 li:nth-child(' + imgPos3 + ')').fadeIn();
+
+    $('.paginacion3 li').css({
+      'text-shadow': '0 0 0px #000000'
+    });
+    $('.paginacion3 li:nth-child(' + imgPos3 + ')').css({
+      'text-shadow': ' 0px 0px 10px var(--ColorFontEspecial)'
+    });
+
+  }
+
+  function prevSlider3() {
+    if (imgPos3 <= 1) {
+      imgPos3 = imgItems3;
+    } else {
+      imgPos3--;
+    }
+    console.log(imgPos3);
+    $('.slider3 li').hide();
+    $('.slider3 li:nth-child(' + imgPos3 + ')').fadeIn();
+
+    $('.paginacion3 li').css({
+      'text-shadow': '0 0 0px #000000'
+    });
+    $('.paginacion3 li:nth-child(' + imgPos3 + ')').css({
+      'text-shadow': ' 0px 0px 10px var(--ColorFontEspecial)'
+    });
+
+  }
+});
+//slider3 end
 
 $(".caracteristica img").addClass('show_hide');
 $(".text_carac").addClass('show_hide');

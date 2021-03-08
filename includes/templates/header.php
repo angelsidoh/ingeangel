@@ -61,14 +61,18 @@ session_start();
       </div>
       <div class="botonsesiones">
         <div class="botones_barra">
-          <a href="login.php#angel-ruiz"><?php
-            if ((!isset($_SESSION['usuario'])) && (!isset($_SESSION['email']))) {
-              echo 'Iniciar Sesión';
-            }else {
-              echo 'Cerrar Sesión';
-            }
-          ?>
-          </a>
+        <a href="<?php
+                        if ((!isset($_SESSION['usuario'])) && (!isset($_SESSION['email']))) {
+                          echo 'login.php#angel-ruiz';
+                        }else{
+                          echo 'logout.php';
+                        }?>"><?php
+                                        if ((!isset($_SESSION['usuario'])) && (!isset($_SESSION['email']))) {
+                                          echo 'Iniciar Sesión';
+                                        } else {
+                                          echo 'Cerrar Sesión';
+                                        } ?>
+              </a>
         </div>
       </div>
       <div class="hotcall">
@@ -135,20 +139,27 @@ session_start();
         <!--  -->
       </div>
       <div id="angel-ruiz"></div>
-      <div id= "menu-screen" class="nav">
+      <div id="menu-screen" class="nav">
         <div class="nav__content">
           <ul class="nav__list">
-            <li class="nav__list-item"><a href="login.php#angel-ruiz"><?php
-            if ((!isset($_SESSION['usuario'])) && (!isset($_SESSION['email']))) {
-              echo 'Iniciar Sesión';
-            }else {
-              echo 'Cerrar Sesión';
-            }?>
-            </a> </li>
+            <li class="nav__list-item">
+              <a href="<?php
+                        if ((!isset($_SESSION['usuario'])) && (!isset($_SESSION['email']))) {
+                          echo 'login.php#angel-ruiz';
+                        }else{
+                          echo 'logout.php';
+                        }?>"><?php
+                                        if ((!isset($_SESSION['usuario'])) && (!isset($_SESSION['email']))) {
+                                          echo 'Iniciar Sesión';
+                                        } else {
+                                          echo 'Cerrar Sesión';
+                                        } ?>
+              </a>
+            </li>
             <li class="nav__list-item"><a href="cuenta.php#angel-ruiz"> Tu cuenta</a></li>
             <li class="nav__list-item"><a href="proyectos.php#angel-ruiz">Proyectos</a></li>
             <li class="nav__list-item"><a href="#">Contacto</a></li>
-            
+
           </ul>
         </div>
       </div>

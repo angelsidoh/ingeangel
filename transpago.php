@@ -160,11 +160,11 @@ if ((!isset($_SESSION['usuario'])) && (!isset($_SESSION['email']))) {
             }
         }
         // echo '<pre>';
-        // var_dump($vectorPrecioProyectos);
+        // var_dump($superVecTokenContratoPago);
         // echo '</pre>';
-        // echo '<pre>';
-        // var_dump($supervecforTarget);
-        // echo '</pre>';
+        echo '<pre>';
+        var_dump(   $superVecIdPago);
+        echo '</pre>';
         // $lastnum = str_pad($supervecforTarget[1][4], 4, "0", STR_PAD_LEFT);
         // echo  $lastnum;
         $direccionx = 0;
@@ -172,26 +172,27 @@ if ((!isset($_SESSION['usuario'])) && (!isset($_SESSION['email']))) {
         $direccionProyecto = 0;
         for ($x = 0; $x < sizeof($superVecIdPago); $x++) {
             for ($y = 0; $y < sizeof($superVecIdPago[$x]); $y++) {
-
-                if (($superVecTokenContratoPago[$x][$y] . '-' . $superVecIdPago[$x][$y]) == $_GET['pago']) {
+                echo (($superVecTokenContratoPago[$x][$y] . '-' . $superVecIdPago[$x][$y] . '$' . $idProyecto) .'<->'.($_GET['pago']).'<br>');
+                if (($superVecTokenContratoPago[$x][$y] . '-' . $superVecIdPago[$x][$y] . '$' . $idProyecto) == ($_GET['pago'])) {
                     $direccionx = $x;
                     $direcciony = $y;
-                    // echo $_GET['pago'] . '(' . $superVecTokenContratoPago[$x][$y] . '-' . $superVecIdPago[$x][$y] . ')';
+                    echo 'hola';
+                   
                 }
             }
         }
         for ($x = 0; $x < sizeof($vectorIdProyectos); $x++) {
-            // echo '<br>'.$superVecIdProyectoPago[$direccionx][$direcciony].'.'.$vectorIdProyectos[$x];
+            echo '<br>'.$superVecIdProyectoPago[$direccionx][$direcciony].'.'.$vectorIdProyectos[$x];
             if (($superVecIdProyectoPago[$direccionx][$direcciony]) == $vectorIdProyectos[$x]) {
                 // echo 'hola';
                 $direccionProyecto = $x;
             }
         }
-        // echo $superVecIdProyectoPago[$direccionx][$direcciony];
-
-        // echo '<pre>';
-        // var_dump($vectorIdProyectos);
-        // echo '</pre>';
+        echo '<br> ->'.$superVecIdProyectoPago[$direccionx][$direcciony];
+        echo '<br> ->'.$superVecIdPago[$direccionx][$direcciony];
+        echo '<pre>';
+        var_dump( $supervecIdContrato);
+        echo '</pre>';
 
             ?>
         <title>Pago con Tarjeta</title>
