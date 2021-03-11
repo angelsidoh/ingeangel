@@ -2,7 +2,7 @@
 
 
 if ((isset($_SESSION['usuario'])) && (isset($_SESSION['email']))) {
-    if ($_SESSION['email'] == 'a@gmail.com') {
+    if ($_SESSION['tipo_usuario'] == 'admin') {
 
 ?>
         <div class="contenedor-especial">
@@ -13,7 +13,8 @@ if ((isset($_SESSION['usuario'])) && (isset($_SESSION['email']))) {
                     if ($resultadousers->num_rows) {
                         foreach ($resultadousers as $users) {
                             $idusuario = $users['id_usuario'];
-                            if ($idusuario != 1) {
+                            echo $tipouser = $users['tipo_usuario'];
+                            if ($tipouser != 'admin') {
                                 $resultadoProyecto = consultaProyecto($idusuario);
                                 $contadorProyectos = 0;
                                 if ($resultadoProyecto->num_rows) {
@@ -146,9 +147,9 @@ if ((isset($_SESSION['usuario'])) && (isset($_SESSION['email']))) {
                                 // echo '<pre>';
                                 // var_dump($supervecFechaFinContrato);
                                 // echo '</pre>';
-                                // echo '<pre>';
-                                // var_dump( $supervecIdContrato);
-                                // echo '</pre>';
+                                echo '<pre>';
+                                var_dump( $supervecIdContrato);
+                                echo '</pre>';
                                 
                                 
 
@@ -185,22 +186,24 @@ if ((isset($_SESSION['usuario'])) && (isset($_SESSION['email']))) {
                                                         date_default_timezone_set('America/Mexico_City');
                                                         $fechahoy =  date('Y-m-d H:i:s');
                                                         // $fechafinMes = date("Y-m-d H:i:s", strtotime($fechaini . "+ 1 month"));
-                                                        for ($i=0; $i < sizeof($supervecFechaInicioContrato[$x]); $i++) { 
+                                                        for ($i=0; $i < sizeof($supervecfechaIniciopago[$x]); $i++) { 
                                                             // echo '<br>'.$i.'(->>>'.  $supervecFechaInicioContrato[$x][$i].')('.$supervecFechaFinContrato[$x][$i].')';
                                                         
-                                                            $dias1 = (strtotime($supervecFechaFinContrato[$x][$i]) - strtotime($supervecFechaInicioContrato[$x][$i])) / 86400;
-                                                            $dias2 = (strtotime($supervecFechaFinContrato[$x][$i]) - strtotime($fechahoy)) / 86400;
+                                                            $dias1 = (strtotime($supervecfechaIniciopago[$x][$i]) - strtotime($fechahoy)) / 86400;
+                                                            $dias2 = (strtotime($supervecfechaFinpago[$x][$i]) - strtotime($fechahoy)) / 86400;
 
-                                                            // echo $dias2.'x)-(x'.$dias1.'<br>';
+                                                            // echo $dias1.'->('.$supervecfechaIniciopago[$x][$i].') '.
+                                                            //     $dias2.'->('.$supervecfechaFinpago[$x][$i].') '.
+                                                            // '<br>';
                                                             // // echo $x.'-'.$y;
                                                             // echo '<br>(->>>'.  $supervecfechaIniciopago[$x][$y].')('.$supervecfechaFinpago[$x][$y].') ('.$dias1.')';
                                                            
                                                        
-                                                        if (($dias1 > 0 && $dias2 > 0)) { 
-                                                            if($superVecIdContratoPago[$x][$y] != $auxiliar){
+                                                        if ((($dias2 > 0 && $dias1 < 0) && ($supervecfechaFinpago[$x][$i] == $supervecfechaFinpago[$x][$y]))) { 
+                                                          
                                                                 ?> <p class="separador"><?php
-                                                                echo 'ID de contrato: '.$superVecIdContratoPago[$x][$y];?></p><?php
-                                                            }
+                                                                echo 'Proyecto: '.$vectorNombresProyectos[$x].'<br>ID de contrato: '.$superVecIdContratoPago[$x][$y];?></p><?php
+                                                            
                                             ?>
                                                         <a href="administradorProy.php?id=<?php echo $vectorIdProyectos[$x]; ?>#angel-ruiz" target="_blank">
                                                             <p class="<?php  if ($supervectokenConekta[$x][$y] != '' && $supervecforTarget[$x][$y] != 0) {
@@ -222,7 +225,7 @@ if ((isset($_SESSION['usuario'])) && (isset($_SESSION['email']))) {
                                                                        
                                                         ?>
                                                         <?php
-                                                        $auxiliar = $superVecIdContratoPago[$x][$y];
+                                                       
                                                     }
                                                     } ?>
 

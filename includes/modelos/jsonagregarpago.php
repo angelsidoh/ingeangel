@@ -37,7 +37,10 @@ if ($_POST['accion'] == 'Agregar Pago') {
             ':contmeses_pago'=>  $contmeses
 
         ));
-        echo json_encode($_POST);
+        $respuesta = array(
+            'estado' => 'pago agregado'
+        );
+        echo json_encode($respuesta);
     } catch (PDOException $e) {
         echo json_encode("Error: " . $e->getMessage());
     }

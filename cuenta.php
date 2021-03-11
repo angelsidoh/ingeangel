@@ -29,6 +29,7 @@ if ((!isset($_SESSION['usuario'])) && (!isset($_SESSION['email']))) {
             $domiciliof = $Consulta['domiciliofiscal_usuario'];
             $cfdi = $Consulta['cfdi_usuario'];
             $rfc = $Consulta['rfc_usuario'];
+            $tipouser = $Consulta['tipo_usuario'];
         }
     }
     $contadorProyectos = 0;
@@ -158,6 +159,7 @@ if ((!isset($_SESSION['usuario'])) && (!isset($_SESSION['email']))) {
 //         echo '<pre>';
 // var_dump($supervecFechaInicioContrato);
 // echo '</pre>';
+$_SESSION['tipo_usuario'] = $tipouser;
             ?>
 
 
@@ -191,7 +193,7 @@ if ((!isset($_SESSION['usuario'])) && (!isset($_SESSION['email']))) {
         </section>
 
        <?php require('includes/funciones/perfil.php');
-       if($_SESSION['email'] == 'a@gmail.com'){
+       if($_SESSION['tipo_usuario'] == 'admin'){
         ?>
             <?php require('includes/funciones/admin.php');?>
         

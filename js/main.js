@@ -3,8 +3,145 @@
 
 // end conekta
 
+function contadorFechas() {
+  var tiempo = document.querySelector('#tiempo2').value;
+
+  var fechaBDExtss = $('#fechainicio2').attr('value');
+  var fech = new Date(fechaBDExtss);
+  var anios = fech.getFullYear();
+  var mess = fech.getMonth() + 1;
+  mess = mess.toString();
+  mess = mess.padStart(2, 0)
+  var diass = fech.getDate();
+  diass = diass.toString();
+  diass = diass.padStart(2, 0)
+  var tiempo = parseInt(tiempo, 10);
+  var horass = fech.getHours() + tiempo;
+  horass = horass.toString();
+  horass = horass.padStart(2, 0)
+  var minutoss = fech.getMinutes();
+  minutoss = minutoss.toString();
+  minutoss = minutoss.padStart(2, 0)
+  var segundoss = fech.getSeconds();
+  segundoss = segundoss.toString();
+  segundoss = segundoss.padStart(2, 0);
+  var tiempox = tiempo;
+  var tiempox1 = tiempox;
+  var contadorDias = 0;
+  while (tiempox >= 24) {
+    tiempox = tiempox - 24;
+    contadorDias++;
+    console.log(contadorDias);
+    for (let i = 0; i < contadorDias; i++) {
+      console.log(horass + ' -' + i);
+      if (horass >= 48) {
+        console.log('->' + i);
+        if (horass >= (24 * (i + 1)) && horass < (24 * (i + 2))) {
+          horass = parseInt(horass, 10);
+          horass = horass - (24 * i);
+          horass = horass.toString();
+          horass = horass.padStart(2, 0)
+          diass = parseInt(diass, 10);
+          diass = diass + i;
+          diass = diass.toString();
+          diass = diass.padStart(2, 0);
 
 
+        }
+      }
+      if (horass >= (24) && horass < (48)) {
+        horass = parseInt(horass, 10);
+        horass = horass - 24;
+        horass = horass.toString();
+        horass = horass.padStart(2, 0)
+        diass = parseInt(diass, 10);
+        diass = diass + 1;
+        diass = diass.toString();
+        diass = diass.padStart(2, 0);
+
+
+      }
+
+    }
+  }
+
+
+
+  // if(horass >= 24 && horass < 48){
+  //   horass = parseInt(horass, 10);
+  //   horass = horass - 24;
+  //   horass = horass.toString();
+  //   horass = horass.padStart(2, 0)
+  //   diass = parseInt(diass, 10);
+  //   diass = diass + 1;
+  //   diass = diass.toString();
+  //   diass = diass.padStart(2, 0)
+
+  // }
+  // if(horass >= 48 && horass < 72){
+  //   horass = parseInt(horass, 10);
+  //   horass = horass - 48;
+  //   horass = horass.toString();
+  //   horass = horass.padStart(2, 0)
+  //   diass = parseInt(diass, 10);
+  //   diass = diass + 2;
+  //   diass = diass.toString();
+  //   diass = diass.padStart(2, 0)
+  // }
+  // if(horass >= 72 && horass < 96){
+  //   horass = horass - 72;
+  //   horass = horass.padStart(2, 0)
+  //   diass = parseInt(diass, 10);
+  //   diass = diass + 3;
+  //   diass = diass.toString();
+  //   diass = diass.padStart(2, 0)
+  // }
+  // if(horass >= 96 && horass < 120){
+  //   horass = horass - 96;
+  //   diass = parseInt(diass, 10);
+  //   diass = diass + 4;
+  //   diass = diass.toString();
+  //   diass = diass.padStart(2, 0)
+  // }
+  if (mess > 12 && mess <= 24) {
+    anios = anios + 1;
+    mess = mess - 12;
+    mess = mess.toString();
+    mess = mess.padStart(2, 0)
+  } else if (mess > 24 && mess <= 36) {
+    anios = anios + 2;
+    mess = mess - 24;
+    mess = mess.toString();
+    mess = mess.padStart(2, 0)
+  } else if (mess > 36 && mess <= 48) {
+    anios = anios + 3;
+    mess = mess - 36;
+    mess = mess.toString();
+    mess = mess.padStart(2, 0)
+  } else {
+    anios = anios;
+  }
+  var strDatess = anios + "-" + (mess + "-" + diass + " " + horass + ":" + minutoss + ":" + segundoss);
+
+  var esVisible = $("#tiempo2").is(":visible");
+  // console.log(esVisible);
+
+  if (esVisible == true) {
+
+    document.getElementById("tiempo3").value = tiempo;
+    document.getElementById("fechafin2").value = strDatess;
+
+  }
+
+  console.log(strDatess);
+}
+
+$('#tiempo2').change(function () {
+  contadorFechas();
+});
+$('#fechainicio2').change(function () {
+  contadorFechas();
+});
 
 $(".menu-icon").hover(
   function () {
@@ -53,11 +190,17 @@ function abc(datos, maxfecha, contadorProyectos, contPasosxProyecto, contPasos) 
     // console.log(contadorSegundos+'-'+contPasos);
     drenado(fechas, contadorPxP, contadorProyectos, contPasosxProyecto, contPasos, auxDetPaso, vecPasos, contadorSegundos);
     contadorSegundos++;
-    console.log(contadorSegundos);
+    // console.log(contadorSegundos);
+
+
+
+
     var d = new Date();
 
 
     var meses = $('#seleccion').attr('value');
+
+
     meses = parseInt(meses);
     // console.log(meses);
 
@@ -167,95 +310,95 @@ function abc(datos, maxfecha, contadorProyectos, contPasosxProyecto, contPasos) 
     if (pathname == '/administradorProy.php') {
       if ($("fechainicio")) {
         var esVisiblea = $("#fechainicio").is(":visible");
-        if (esVisiblea == true){
-        document.getElementById("fechainicio").value = strDate;
+        if (esVisiblea == true) {
+          document.getElementById("fechainicio").value = strDate;
         }
 
       }
       if ($("fechafin")) {
         var esVisiblea = $("#fechafin").is(":visible");
-        if (esVisiblea == true){
+        if (esVisiblea == true) {
           document.getElementById("fechafin").value = strDate2;
         }
-       
+
 
       }
       var esVisible = $("#fechafin1").is(":visible");
       // console.log(esVisible);
-      
+
       if (esVisible == true) {
         document.getElementById("fechafin1").value = strDate3;
 
       }
     }
 
-    
+
     var preciobasico1 = $('#preciobasico1').attr('value');
-    console.log(preciobasico1);
+    // console.log(preciobasico1);
     var precionegocio1 = $('#precionegocio1').attr('value');
     var precioprofesional1 = $('#precioprofesional1').attr('value');
-    if(mesespago == 2){
-      preciobasico1 = preciobasico1*1;
-      precionegocio1 = precionegocio1*1;
-      precioprofesional1 = precioprofesional1*1;
+    if (mesespago == 2) {
+      preciobasico1 = preciobasico1 * 1;
+      precionegocio1 = precionegocio1 * 1;
+      precioprofesional1 = precioprofesional1 * 1;
     }
-    if(mesespago == 3){
-      preciobasico1 = preciobasico1*2;
-      precionegocio1 = precionegocio1*2;
-      precioprofesional1 = precioprofesional1*2;
+    if (mesespago == 3) {
+      preciobasico1 = preciobasico1 * 2;
+      precionegocio1 = precionegocio1 * 2;
+      precioprofesional1 = precioprofesional1 * 2;
     }
-    if(mesespago == 4){
-      preciobasico1 = preciobasico1*3;
-      precionegocio1 = precionegocio1*3;
-      precioprofesional1 = precioprofesional1*3;
+    if (mesespago == 4) {
+      preciobasico1 = preciobasico1 * 3;
+      precionegocio1 = precionegocio1 * 3;
+      precioprofesional1 = precioprofesional1 * 3;
     }
-    if(mesespago == 5){
-      preciobasico1 = preciobasico1*4;
-      precionegocio1 = precionegocio1*4;
-      precioprofesional1 = precioprofesional1*4;
+    if (mesespago == 5) {
+      preciobasico1 = preciobasico1 * 4;
+      precionegocio1 = precionegocio1 * 4;
+      precioprofesional1 = precioprofesional1 * 4;
     }
-    if(mesespago == 6){
-      preciobasico1 = preciobasico1*5;
-      precionegocio1 = precionegocio1*5;
-      precioprofesional1 = precioprofesional1*5;
+    if (mesespago == 6) {
+      preciobasico1 = preciobasico1 * 5;
+      precionegocio1 = precionegocio1 * 5;
+      precioprofesional1 = precioprofesional1 * 5;
     }
-    if(mesespago == 7){
-      preciobasico1 = preciobasico1*6;
-      precionegocio1 = precionegocio1*6;
-      precioprofesional1 = precioprofesional1*6;
+    if (mesespago == 7) {
+      preciobasico1 = preciobasico1 * 6;
+      precionegocio1 = precionegocio1 * 6;
+      precioprofesional1 = precioprofesional1 * 6;
     }
-    if(mesespago == 8){
-      preciobasico1 = preciobasico1*7;
-      precionegocio1 = precionegocio1*7;
-      precioprofesional1 = precioprofesional1*7;
+    if (mesespago == 8) {
+      preciobasico1 = preciobasico1 * 7;
+      precionegocio1 = precionegocio1 * 7;
+      precioprofesional1 = precioprofesional1 * 7;
     }
-    if(mesespago == 9){
-      preciobasico1 = preciobasico1*8;
-      precionegocio1 = precionegocio1*8;
-      precioprofesional1 = precioprofesional1*8;
+    if (mesespago == 9) {
+      preciobasico1 = preciobasico1 * 8;
+      precionegocio1 = precionegocio1 * 8;
+      precioprofesional1 = precioprofesional1 * 8;
     }
-    if(mesespago == 10){
-      preciobasico1 = preciobasico1*9;
-      precionegocio1 = precionegocio1*9;
-      precioprofesional1 = precioprofesional1*9;
+    if (mesespago == 10) {
+      preciobasico1 = preciobasico1 * 9;
+      precionegocio1 = precionegocio1 * 9;
+      precioprofesional1 = precioprofesional1 * 9;
     }
-    if(mesespago == 11){
-      preciobasico1 = preciobasico1*10;
-      precionegocio1 = precionegocio1*10;
-      precioprofesional1 = precioprofesional1*10;
+    if (mesespago == 11) {
+      preciobasico1 = preciobasico1 * 10;
+      precionegocio1 = precionegocio1 * 10;
+      precioprofesional1 = precioprofesional1 * 10;
     }
-    if(mesespago == 12){
-      preciobasico1 = preciobasico1*11;
-      precionegocio1 = precionegocio1*11;
-      precioprofesional1 = precioprofesional1*11;
+    if (mesespago == 12) {
+      preciobasico1 = preciobasico1 * 11;
+      precionegocio1 = precionegocio1 * 11;
+      precioprofesional1 = precioprofesional1 * 11;
     }
-    if(mesespago == 13){
-      preciobasico1 = preciobasico1*12;
-      precionegocio1 = precionegocio1*12;
-      precioprofesional1 = precioprofesional1*12;
+    if (mesespago == 13) {
+      preciobasico1 = preciobasico1 * 12;
+      precionegocio1 = precionegocio1 * 12;
+      precioprofesional1 = precioprofesional1 * 12;
     }
     var seleccion1 = $('#paquete1').attr('value');
-    console.log(seleccion1);
+    // console.log(seleccion1);
     if (seleccion1 == 'Paquete Básico') {
       console.log(preciobasico1);
       document.getElementById("precio1").value = preciobasico1;
@@ -1175,6 +1318,257 @@ var elNombre = localStorage.getItem("Nombre");
 var elNumero = parseInt(localStorage.getItem("Numero"));
 var eltoken = (localStorage.getItem("token"));
 // console.log(elNombre + elNumero + '-' + eltoken);
+
+
+// agregar paso
+const formAgregarPaso = document.querySelector('#agregar-paso');
+if ($("#agregar-paso").length) {
+  eventListeners();
+
+  function eventListeners() {
+    formAgregarPaso.addEventListener('submit', agregarPaso);
+  }
+}
+
+function agregarPaso(e) {
+  e.preventDefault();
+
+  const accion = document.querySelector('#btnagregarpaso').value;
+  if (accion == 'Agregar Paso') {
+    const numpaso = document.querySelector('#num_paso').value;
+    const descripcion = document.querySelector('#descripcion').value;
+    const fecha = document.querySelector('#fecha').value;
+    const horainicio = document.querySelector('#horainicio').value;
+    const fechaxfin = document.querySelector('#fechaxfin').value;
+    const horainicioxfin = document.querySelector('#horainicioxfin').value;
+    const idproyecto = document.querySelector('#idproy').value;
+
+
+  
+
+
+
+    const infoeliminarpaso = new FormData();
+
+    infoeliminarpaso.append('numpaso', numpaso);
+    infoeliminarpaso.append('descripcion', descripcion);
+    infoeliminarpaso.append('fecha', fecha);
+    infoeliminarpaso.append('horainicio', horainicio);
+    infoeliminarpaso.append('fechaxfin', fechaxfin);
+    infoeliminarpaso.append('horainicioxfin', horainicioxfin);
+    infoeliminarpaso.append('idproyecto', idproyecto);
+    infoeliminarpaso.append('accion', accion);
+    if (accion === 'Agregar Paso') {
+
+      agregarxPaso(infoeliminarpaso);
+    }
+
+  }
+
+}
+
+function agregarxPaso(dato) {
+  // llamado de ajax
+  // crear objeto
+  //  console.log(dato);
+  const xhr = new XMLHttpRequest();
+  // abrir conexion
+  xhr.open('POST', 'includes/modelos/agregarpasos.php', true);
+  // pasar datos
+  xhr.onload = function () {
+    if (this.status === 200) {
+      const respuesta = JSON.parse(xhr.responseText);
+      console.log(respuesta);
+      if (respuesta.estado === 'paso agregado') {
+        swal({
+            content: "",
+            text: 'Paso agregado correctamente',
+            icon: "success",
+            button: {
+              text: "Continuar",
+              closeModal: true,
+            },
+          })
+          .then((value) => {
+            switch (value) {
+              default:
+                window.location.href = 'cuenta.php#angel-ruiz';
+            }
+          });
+
+      }
+    }
+  }
+  xhr.send(dato);
+}
+
+// end agregar paso
+// eliminar paso
+const formEliminarPaso = document.querySelector('#eliminar-paso');
+if ($("#eliminar-paso").length) {
+  eventListeners();
+
+  function eventListeners() {
+    formEliminarPaso.addEventListener('submit', eliminarPaso);
+  }
+}
+
+function eliminarPaso(e) {
+  e.preventDefault();
+
+  const accion = document.querySelector('#btneliminarpaso').value;
+  if (accion == 'Eliminar Paso') {
+    swal({
+        title: "Estas seguro de eliminar este paso?",
+        text: "Si eliminas este paso no podras recuperarlo",
+        icon: "warning",
+        buttons: true,
+        dangerMode: true,
+      })
+      .then((willDelete) => {
+        if (willDelete) {
+          swal("El paso será eliminado!", {
+            icon: "success",
+          });
+          const idpaso = document.querySelector('#idpago2').value;
+
+          console.log(accion, idpaso);
+
+          const infoeliminarpaso = new FormData();
+
+          infoeliminarpaso.append('idpaso', idpaso);
+
+          infoeliminarpaso.append('accion', accion);
+          if (accion === 'Eliminar Paso') {
+
+            eliminarxPaso(infoeliminarpaso);
+          }
+        } else {
+          swal("Decidiste no eliminar este paso");
+        }
+
+      });
+
+
+  }
+
+}
+
+function eliminarxPaso(dato) {
+  // llamado de ajax
+  // crear objeto
+  //  console.log(dato);
+  const xhr = new XMLHttpRequest();
+  // abrir conexion
+  xhr.open('POST', 'includes/modelos/eliminarpasos.php', true);
+  // pasar datos
+  xhr.onload = function () {
+    if (this.status === 200) {
+      const respuesta = JSON.parse(xhr.responseText);
+      console.log(respuesta);
+      if (respuesta.estado === 'se elimino el paso') {
+        swal({
+            content: "",
+            text: 'El paso se elimino',
+            icon: "success",
+            button: {
+              text: "Continuar",
+              closeModal: true,
+            },
+          })
+          .then((value) => {
+            switch (value) {
+              default:
+                window.location.href = 'cuenta.php#angel-ruiz';
+            }
+          });
+
+      }
+    }
+  }
+  xhr.send(dato);
+}
+
+// end eliminar paso
+// modifiar/eliminar pago
+const formEliminarModificarPaso = document.querySelector('#modificar-paso');
+if ($("#modificar-paso").length) {
+  eventListeners();
+
+  function eventListeners() {
+    formEliminarModificarPaso.addEventListener('submit', eliminarmodificarPaso);
+  }
+}
+
+function eliminarmodificarPaso(e) {
+  e.preventDefault();
+
+  const accion = document.querySelector('#btnmodificarpaso').value;
+  if (accion == 'Modificar Paso') {
+    const idpaso = document.querySelector('#contrato_pago2').value;
+    const n_paso = document.querySelector('#nopaso').value;
+    const descripcion = document.querySelector('#descripcion').value;
+    const fechainicio = document.querySelector('#fecha').value;
+    const horainicio = document.querySelector('#horainicio').value;
+    const fechafin = document.querySelector('#fechafin').value;
+    const horafin = document.querySelector('#horafin').value;
+    console.log(fechainicio, accion);
+
+    const infomodificarpaso = new FormData();
+
+    infomodificarpaso.append('idpaso', idpaso);
+    infomodificarpaso.append('n_paso', n_paso);
+    infomodificarpaso.append('descripcion', descripcion);
+    infomodificarpaso.append('fechainicio', fechainicio);
+    infomodificarpaso.append('horainicio', horainicio);
+    infomodificarpaso.append('fechafin', fechafin);
+    infomodificarpaso.append('horafin', horafin);
+    infomodificarpaso.append('accion', accion);
+    if (accion === 'Modificar Paso') {
+
+      modificarPaso(infomodificarpaso);
+    }
+
+  }
+
+}
+
+function modificarPaso(dato) {
+  // llamado de ajax
+  // crear objeto
+  //  console.log(dato);
+  const xhr = new XMLHttpRequest();
+  // abrir conexion
+  xhr.open('POST', 'includes/modelos/modificar.php', true);
+  // pasar datos
+  xhr.onload = function () {
+    if (this.status === 200) {
+      const respuesta = JSON.parse(xhr.responseText);
+      console.log(respuesta);
+      if (respuesta.estado === 'paso modificado') {
+        swal({
+            content: "",
+            text: 'El paso a sido modificado',
+            icon: "success",
+            button: {
+              text: "Continuar",
+              closeModal: true,
+            },
+          })
+          .then((value) => {
+            switch (value) {
+              default:
+                window.location.href = 'cuenta.php#angel-ruiz';
+            }
+          });
+
+      }
+    }
+  }
+  xhr.send(dato);
+}
+// END modificar/eliminar pago
+
 // cuenta FORM
 const formCuentaUser = document.querySelector('#cuenta');
 if ($("#cuenta").length) {
@@ -1196,7 +1590,7 @@ function actualizarCuenta(e) {
   const rfc = document.querySelector('#rfc').value;
 
   const accion = document.querySelector('#btnactualizar').value;
-  console.log(calle + numie + colonia + cpostal + accion + domiciliof + cfdi + rfc);
+  // console.log(calle + numie + colonia + cpostal + accion + domiciliof + cfdi + rfc);
 
   const infoactualuser = new FormData();
 
@@ -1210,7 +1604,7 @@ function actualizarCuenta(e) {
   infoactualuser.append('accion', accion);
 
   if (accion === 'Actualizar') {
-    console.log('jjey');
+    // console.log('jjey');
     actualizarUserUserDB(infoactualuser);
   }
 }
@@ -1456,7 +1850,7 @@ function leerAgregarPago(e) {
     const precio = document.querySelector('#precio1').value;
     const contratoid = document.querySelector('#contratoid').value;
     const tokencontrato = document.querySelector('#tokencontrato').value;
- 
+
     const idproyecto = document.querySelector('#idproyecto1').value;
 
     const infoagregarPago = new FormData();
@@ -1489,6 +1883,23 @@ function agregarPago(dato) {
     if (this.status === 200) {
       const respuesta = JSON.parse(xhr.responseText);
       console.log(respuesta);
+      if(respuesta.estado == 'pago agregado'){
+        swal({
+          content: "",
+          text: 'Nuevo pago Agregado',
+          icon: "success",
+          button: {
+            text: "Continuar",
+            closeModal: true,
+          },
+        })
+        .then((value) => {
+          switch (value) {
+            default:
+              window.location.href = 'cuenta.php#angel-ruiz';
+          }
+        });
+      }
     }
   }
   // enviar datos
@@ -1552,7 +1963,24 @@ function agregarContrato(dato) {
 
     if (this.status === 200) {
       const respuesta = JSON.parse(xhr.responseText);
-      console.log(respuesta);
+      // console.log(respuesta);
+      if(respuesta.estado == 'contrato nuevo agregado'){
+        swal({
+          content: "",
+          text: 'Nuevo contrato agragado',
+          icon: "success",
+          button: {
+            text: "Continuar",
+            closeModal: true,
+          },
+        })
+        .then((value) => {
+          switch (value) {
+            default:
+              window.location.href = 'cuenta.php#angel-ruiz';
+          }
+        });
+      }
     }
   }
   // enviar datos

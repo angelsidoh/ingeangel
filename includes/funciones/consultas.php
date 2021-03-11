@@ -4,7 +4,7 @@ function obtenerContactos()
 {
     include 'bd/bdsqli.php';
     try {
-        return $connf->query("SELECT id_usuario, nombre_usuario, apellidos_usuario, email_usuario, telefono_usuario, fecha_usuario,  foto_usuario  FROM usuarios");
+        return $connf->query("SELECT id_usuario, nombre_usuario, apellidos_usuario, email_usuario, telefono_usuario, fecha_usuario,  foto_usuario, tipo_usuario  FROM usuarios");
     } catch (Exception $e) {
         echo "Error!!" . $e->getMessage() . "<br>";
         return false;
@@ -24,7 +24,7 @@ function consultaUsuario($dato)
 {
     include 'bd/bdsqli.php';
     try {
-        return $connf->query("SELECT id_usuario, nombre_usuario, foto_usuario, idproyecto_usuario, apellidos_usuario, email_usuario, telefono_usuario, calle_usuario,numiedireccion_usuario, colonia_usuario, cp_usuario, fecha_usuario, domiciliofiscal_usuario, cfdi_usuario, rfc_usuario  FROM usuarios WHERE email_usuario = '$dato'");
+        return $connf->query("SELECT id_usuario, nombre_usuario, foto_usuario, idproyecto_usuario, apellidos_usuario, email_usuario, telefono_usuario, calle_usuario,numiedireccion_usuario, colonia_usuario, cp_usuario, fecha_usuario, domiciliofiscal_usuario, cfdi_usuario, rfc_usuario, tipo_usuario  FROM usuarios WHERE email_usuario = '$dato'");
     } catch (Exception $e) {
         echo "Error!!" . $e->getMessage() . "<br>";
         return false;
@@ -55,7 +55,17 @@ function consultaPasos($dato)
 {
     include 'bd/bdsqli.php';
     try {
-        return $connf->query("SELECT id_paso, descripcion_paso, fechafin_paso, fechaini_paso, timing_paso FROM pasos WHERE idproyecto_paso = '$dato'");
+        return $connf->query("SELECT id_paso, descripcion_paso, fechafin_paso, fechaini_paso, timing_paso, num_paso FROM pasos WHERE idproyecto_paso = '$dato'");
+    } catch (Exception $e) {
+        echo "Error!!" . $e->getMessage() . "<br>";
+        return false;
+    }
+}
+function consultaIdPasos($dato)
+{
+    include 'bd/bdsqli.php';
+    try {
+        return $connf->query("SELECT id_paso, descripcion_paso, fechafin_paso, fechaini_paso, timing_paso, num_paso, idproyecto_paso FROM pasos WHERE id_paso = '$dato'");
     } catch (Exception $e) {
         echo "Error!!" . $e->getMessage() . "<br>";
         return false;

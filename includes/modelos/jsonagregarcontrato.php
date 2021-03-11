@@ -50,11 +50,14 @@ if ($_POST['accion'] == 'Agregar Contrato') {
             ':contmeses_pago'=>  $contmeses
 
         ));
+        $respuesta = array(
+            'estado' => 'contrato nuevo agregado'
+        );
     } catch (PDOException $e) {
         echo json_encode("Error: " . $e->getMessage());
     }
 
-    echo json_encode($_POST);
+    echo json_encode($respuesta);
 }
 
 ?>

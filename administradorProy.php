@@ -50,9 +50,10 @@ if ((!isset($_SESSION['usuario'])) && (!isset($_SESSION['email']))) {
         if ($resultadoPasos->num_rows) {
             foreach ($resultadoPasos as $paso) {
                 $descripcionPaso = $paso['descripcion_paso'];
-
+                $vectoridpaso[$contadorPasos] = $paso['id_paso'];
                 $vectorDescrip[$contadorPasos] = $paso['descripcion_paso'];
                 $vectorFechafin[$contadorPasos] = $paso['fechafin_paso'];
+                $vector_n[$contadorPasos] = $paso['num_paso'];
 
                 $contadorPasoxProyecto[$i] = ($contadorPasos + 1);
                 $contadorPasos++;
@@ -62,11 +63,15 @@ if ((!isset($_SESSION['usuario'])) && (!isset($_SESSION['email']))) {
     ?>
 
         <?php
+        $superVecIdPaso[$i] = $vectoridpaso;
         $superVec[$i] = $vectorFechafin;
         $superVecDesp[$i] = $vectorDescrip;
+        $superVec_n[$i] = $vector_n;
         for ($ix = 0; $ix < $contadorPasos; $ix++) {
             unset($vectorFechafin[$ix]);
             unset($vectorDescrip[$ix]);
+            unset($vectoridpaso[$ix]);
+            unset($vector_n[$ix]);
         } ?><?php
         }
 
@@ -142,7 +147,7 @@ if ((!isset($_SESSION['usuario'])) && (!isset($_SESSION['email']))) {
             $supervecTipoIntContrato[$i] =  $vecTipoIntContrato;
             $supervecFechaInicioContrato[$i] =  $vecFechaInicioContrato;
             $supervecFechaFinContrato[$i] =  $vecFechaFinContrato;
-            
+
 
             for ($ix = 0; $ix < $contadorPasos1; $ix++) {
 
@@ -155,6 +160,12 @@ if ((!isset($_SESSION['usuario'])) && (!isset($_SESSION['email']))) {
                 unset($vecFechaFinContrato[$ix]);
             }
         }
+        date_default_timezone_set('America/Mexico_City');
+        $fechahoy =  date('Y-m-d H:i:s');
+        $fechaactual = date('Y-m-d');
+        $horaactual = date('H:i:s');
+        $mañana  = date("Y-m-d", strtotime($fechaactual . "+ 1 days"));
+        // echo '->' . $mañana;
         // echo $precioBasico+$precioBD+$precioDominio+$precioHosting+$precioMantenimiento;
         // echo '<pre>';
         // var_dump($vectorTipoProyectos);
@@ -169,12 +180,13 @@ if ((!isset($_SESSION['usuario'])) && (!isset($_SESSION['email']))) {
         // var_dump($supervecTokenContrato);
         // echo '</pre>';
         // echo '<pre>';
-        // var_dump($supervecFechaInicioContrato);
+        // var_dump($superVec_n);
         // echo '</pre>';
-        echo '<pre>';
-    var_dump($precioBasico);
-        echo '</pre>';
-        // echo $idProyecto ;
+        // echo '<pre>';
+        // var_dump($superVecIdPaso);
+        // echo '</pre>';
+        // // echo $idProyecto ;
+        // echo $_SESSION['tipo_usuario'];
 
         for ($x = 0; $x < sizeof($supervecTipoIntContrato); $x++) {
 
@@ -242,14 +254,23 @@ if ((!isset($_SESSION['usuario'])) && (!isset($_SESSION['email']))) {
                                         <div class="links">
                                             <div class="contenedorconteo">
                                                 <?php
-                                                $textAsunto = "Hola. Me gustaría que resolvieran las siguientes dudas de mi proyecto " . $vectorNombresProyectos[0] . " del paso " . ($y + 1) . ": >>" . $superVecDesp[0][$y] . "<< " . "Proyecto id# " . $vectorIdProyectos[0];
+                                                $textAsunto = "Hola. Me gustaría que resolvieran las siguientes dudas de mi proyecto " . $vectorNombresProyectos[0] . " del paso " . $superVec_n[0][$y] . ": >>" . $superVecDesp[0][$y] . "<< " . "Proyecto id# " . $vectorIdProyectos[0];
                                                 $asunto = str_replace(' ', '%20', $textAsunto);
                                                 $vectorNombresProyectos[0] = str_replace('&', 'y', $vectorNombresProyectos[0]);
                                                 $cuerpo = "Lista de dudas: ";
                                                 $cuerpo = str_replace(' ', '%20', $cuerpo);
                                                 ?>
-                                                <a href="mailto:infoingeangel@gmail.com?subject=<?php echo $asunto; ?>&body=<?php echo $cuerpo; ?>" target="_blank">
-                                                    <p>Paso <?php echo $y + 1; ?>: <i class="fas fa-caret-right"></i> <?php echo  $superVecDesp[0][$y]; ?></p>
+                                                <a href="
+                                                <?php
+                                                if ($_SESSION['tipo_usuario'] == 'admin') {
+                                                    echo 'modificarpaso.php?idpaso=' . $superVecIdPaso[0][$y] . '#angel-ruiz';
+                                                } else { ?>
+                                                    mailto:infoingeangel@gmail.com?subject=<?php echo $asunto; ?>&body=<?php echo $cuerpo;
+                                                                                                                    }
+                                                                                                                        ?>
+                                                
+                                                " target="_blank">
+                                                    <p>Paso <?php echo $superVec_n[0][$y]; ?>: <i class="fas fa-caret-right"></i> <?php echo  $superVecDesp[0][$y]; ?></p>
 
 
                                                 </a>
@@ -257,7 +278,7 @@ if ((!isset($_SESSION['usuario'])) && (!isset($_SESSION['email']))) {
 
                                                     <ul class="clearfix">
                                                         <div class="lix">
-                                                            <p>Fecha estimada: Paso <?php echo ($y + 1) . ' (' . $superVec[0][$y] . ')'; ?></p>
+                                                            <p>Fecha estimada: Paso <?php echo $superVec_n[0][$y] . ' (' . $superVec[0][$y] . ')'; ?></p>
                                                         </div>
 
 
@@ -303,7 +324,59 @@ if ((!isset($_SESSION['usuario'])) && (!isset($_SESSION['email']))) {
                     </div>
                     <div class="contenedor-especial">
                         <div class="titulo-seccion">
-                            <h1 id="sparklemaster" class="sparklemaster" style="color:  #93A9CC;">
+                            <h1 id="sparklemaster" class="sparklemaster" style="color:  #93A9CC;">Agregar paso</h1>
+                        </div>
+                        <div class="datos-contrato">
+                            <form id="agregar-paso" action="#">
+                                <div class="contenido-cuenta">
+                                    <div class="text-dato3">
+                                        <p>Paso Número:</p>
+                                    </div>
+                                    <div class="dato3">
+                                        <input type="text" id="num_paso" name="num_paso" placeholder="id de paso" value="<?php for ($i = 0; $i < sizeof($superVecIdPaso[0]); $i++) {
+                                            if($i == (sizeof($superVecIdPaso[0]))-1){
+                                             echo (($superVec_n[0][$i]) + 1);
+                                            }
+                                        }?>" disabled>
+                                    </div> <!-- rnormal__tarjeta -->
+                                    <div class="text-dato3">
+                                        <p>Descripción</p>
+                                    </div>
+                                    <div class="dato3">
+                                        <input type="text" id="descripcion" name="descripcion" placeholder="Ingrese la descripción" value="<?php ?>">
+                                    </div> <!-- rnormal__tarjeta -->
+                                    <div class="text-dato3">
+                                        <p>Fecha Inicio</p>
+                                    </div>
+                                    <div class="dato3">
+                                        <input type="date" id="fecha" name="fecha" value="<?php echo $fechaactual; ?>">
+                                        <input type="time" id="horainicio" name="limitetiempo" list="listalimitestiempo" step="1" value="<?php echo  $horaactual ?>">
+
+                                    </div> <!-- rnormal__tarjeta -->
+                                    <div class="text-dato3">
+                                        <p>Fecha Fin</p>
+                                    </div>
+                                    <div class="dato3">
+                                        <input type="date" id="fechaxfin" name="fechax" value="<?php echo $mañana; ?>">
+                                        <input type="time" id="horainicioxfin" name="limitetiempox" list="listalimitestiempo" step="1" value="<?php echo  $horaactual ?>">
+
+                                    </div> <!-- rnormal__tarjeta -->
+                                    <div style="display: none;" class="text-dato3">
+                                        <p>id_proyecto</p>
+                                    </div>
+                                    <div style="display: none;" class="dato3">
+                                        <input type="text" id="idproy" name="idproy" value="<?php echo  $idProyecto; ?>">
+                                    </div> <!-- rnormal__tarjeta -->
+
+                                   
+
+                                </div>
+                                <div class="sub-boton">
+
+                                    <input id="btnagregarpaso" type="submit" value="Agregar Paso" class="button">
+
+                                </div>
+                            </form>
                         </div>
 
                     </div>
@@ -311,8 +384,7 @@ if ((!isset($_SESSION['usuario'])) && (!isset($_SESSION['email']))) {
                 </li>
                 <?php include('includes/funciones/historial-pagos.php');
                 ?><?php
-                    date_default_timezone_set('America/Mexico_City');
-                    $fechahoy =  date('Y-m-d H:i:s');
+
 
                     for ($i = 0; $i < sizeof($supervecTokenContrato); $i++) {
 
@@ -344,13 +416,13 @@ if ((!isset($_SESSION['usuario'])) && (!isset($_SESSION['email']))) {
                                 // echo '<br>->' . $contadorPagos;
                                 if ($contadorPagos < $supervecTipoIntContrato[$i][$u]) {
                                     // echo 'Opcion de agregar pago habilitada '. $i.')x('.$u.'<br>';
-                              
+
 
                                     for ($j = ($contadorPagos - 1); $j < ($supervecTipoIntContrato[$i][$u]); $j++) {
                                         $aux = ($j) * (-1);
                                         $opercionFecha = ($supervecTipoIntContrato[$i][$u] - ($contadorPagos)) * (-1);
                                         $fechadiv = date("Y-m-d H:i:s", strtotime($supervecFechaFinContrato[$i][$u] . $aux . " month"));
-                                        
+
                                         $fechain = date("Y-m-d H:i:s", strtotime($supervecFechaFinContrato[$i][$u] . $opercionFecha . " month"));
                                         // echo '<br>->>>' .$supervecFechaFinContrato[$i][$u] . $fechain;
                                     }
@@ -470,7 +542,7 @@ if ((!isset($_SESSION['usuario'])) && (!isset($_SESSION['email']))) {
                         </form>
                     </div>
                 </div><?php
-                                }else {
+                                } else {
                                     echo 'Modificar fechas de un pago?';
                                 }
                             }
@@ -487,7 +559,7 @@ if ((!isset($_SESSION['usuario'])) && (!isset($_SESSION['email']))) {
             $diasFin = (strtotime($supervecFechaFinContrato[$i][$u]) - strtotime($fechahoy)) / 86400;
             // echo $diasInicio . ')(' . $diasFin;
             if ($diasInicio < 0 && $diasFin > 0) {
-            
+
                 $u = sizeof($supervecTokenContrato[$i]) - 1;
                 $i = sizeof($supervecTokenContrato) - 1;
             } else {

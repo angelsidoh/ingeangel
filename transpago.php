@@ -5,7 +5,7 @@ if ((!isset($_SESSION['usuario'])) && (!isset($_SESSION['email']))) {
     session_destroy();
     // header('Location: cuenta.php#angel-ruiz');
 ?>
-    <META HTTP-EQUIV="REFRESH" CONTENT="1;URL=https://ingeangel.com/logout.php">
+    <META HTTP-EQUIV="REFRESH" CONTENT="1;URL=logout.php">
 
     <?php
 } else {
@@ -109,6 +109,7 @@ if ((!isset($_SESSION['usuario'])) && (!isset($_SESSION['email']))) {
                     $vecTokenpagopago[$contadorPasos1] = $pago['tokenpago_pago'];
                     $vecIdContratoPago[$contadorPasos1] = $pago['idcontrato_pago'];
                     $vecTokenContratoPago[$contadorPasos1] = $pago['tokencontrato_pago'];
+                    $vecContMesesPago[$contadorPasos1] = $pago['contmeses_pago'];
                     $contadorPasos1++;
                 }
             }
@@ -122,6 +123,7 @@ if ((!isset($_SESSION['usuario'])) && (!isset($_SESSION['email']))) {
             $superVecTokenpagoPago[$i] = $vecTokenpagopago;
             $superVecIdContratoPago[$i] = $vecIdContratoPago;
             $superVecTokenContratoPago[$i] = $vecTokenContratoPago;
+            $superVecContMesesPago[$i] = $vecContMesesPago;
             for ($ix = 0; $ix < $contadorPasos1; $ix++) {
                 unset($vecIdPago[$ix]);
                 unset($vecfechaIniciopago[$ix]);
@@ -133,6 +135,7 @@ if ((!isset($_SESSION['usuario'])) && (!isset($_SESSION['email']))) {
                 unset($vecTokenpagopago[$ix]);
                 unset($vecIdContratoPago[$ix]);
                 unset($vecTokenContratoPago[$ix]);
+                unset($vecContMesesPago[$ix]);
             }
         }
         for ($i = 0; $i < $contadorProyectos; $i++) {
@@ -160,11 +163,11 @@ if ((!isset($_SESSION['usuario'])) && (!isset($_SESSION['email']))) {
             }
         }
         // echo '<pre>';
-        // var_dump($superVecTokenContratoPago);
+        // var_dump($superVecIdProyectoPago);
         // echo '</pre>';
-        echo '<pre>';
-        var_dump(   $superVecIdPago);
-        echo '</pre>';
+        // echo '<pre>';
+        // var_dump(   $superVecIdPago);
+        // echo '</pre>';
         // $lastnum = str_pad($supervecforTarget[1][4], 4, "0", STR_PAD_LEFT);
         // echo  $lastnum;
         $direccionx = 0;
@@ -172,27 +175,28 @@ if ((!isset($_SESSION['usuario'])) && (!isset($_SESSION['email']))) {
         $direccionProyecto = 0;
         for ($x = 0; $x < sizeof($superVecIdPago); $x++) {
             for ($y = 0; $y < sizeof($superVecIdPago[$x]); $y++) {
-                echo (($superVecTokenContratoPago[$x][$y] . '-' . $superVecIdPago[$x][$y] . '$' . $idProyecto) .'<->'.($_GET['pago']).'<br>');
-                if (($superVecTokenContratoPago[$x][$y] . '-' . $superVecIdPago[$x][$y] . '$' . $idProyecto) == ($_GET['pago'])) {
-                    $direccionx = $x;
-                    $direcciony = $y;
-                    echo 'hola';
+                echo (($superVecTokenContratoPago[$x][$y] . '-' . $superVecIdPago[$x][$y] . '$' . $superVecIdProyectoPago[$x][$y]) .'<->'.($_GET['pago']).'<br>');
+                if (($superVecTokenContratoPago[$x][$y] . '-' . $superVecIdPago[$x][$y] . '$' . $superVecIdProyectoPago[$x][$y]) == ($_GET['pago'])) {
+                    echo '<br>'.$direccionx = $x;
+                    echo $direcciony = $y;
+                    echo 'hola'. $superVecContMesesPago[$direccionx][$direcciony].'<br>';
                    
                 }
             }
         }
         for ($x = 0; $x < sizeof($vectorIdProyectos); $x++) {
-            echo '<br>'.$superVecIdProyectoPago[$direccionx][$direcciony].'.'.$vectorIdProyectos[$x];
+            // echo '<br>'.$superVecIdProyectoPago[$direccionx][$direcciony].'<.>'.$vectorIdProyectos[$x];
             if (($superVecIdProyectoPago[$direccionx][$direcciony]) == $vectorIdProyectos[$x]) {
                 // echo 'hola';
+                // echo $superVecIdProyectoPago[$direccionx][$direcciony];
                 $direccionProyecto = $x;
             }
         }
-        echo '<br> ->'.$superVecIdProyectoPago[$direccionx][$direcciony];
-        echo '<br> ->'.$superVecIdPago[$direccionx][$direcciony];
-        echo '<pre>';
-        var_dump( $supervecIdContrato);
-        echo '</pre>';
+        // echo '<br> ->'.$superVecIdProyectoPago[$direccionx][$direcciony];
+        // echo '<br> ->'.$superVecIdPago[$direccionx][$direcciony];
+        // echo '<pre>';
+        // var_dump( $superVecContMesesPago);
+        // echo '</pre>';
 
             ?>
         <title>Pago con Tarjeta</title>
@@ -263,13 +267,13 @@ if ((!isset($_SESSION['usuario'])) && (!isset($_SESSION['email']))) {
 
                             <input class="form-control" type="text" value="<?php
                             if ($vectorTipoProyectos[$direccionProyecto] == 'Paquete Básico') {
-                                echo  '$' . number_format($precioDominio + $precioHosting + $precioBD + $precioBasico + $precioMantenimiento) . '.00 MXN';
+                                echo  '$' . number_format(($precioDominio + $precioHosting + $precioBD + $precioBasico + $precioMantenimiento)* $superVecContMesesPago[$direccionx][$direcciony]) . '.00 MXN';
                             }
                             if ($vectorTipoProyectos[$direccionProyecto] == 'Paquete Negocio') {
-                                echo  '$' . number_format($precioDominio + $precioHosting + $precioBD + $precioNegocio + $precioMantenimiento) . '.00 MXN';
+                                echo  '$' . number_format(($precioDominio + $precioHosting + $precioBD + $precioNegocio + $precioMantenimiento)* $superVecContMesesPago[$direccionx][$direcciony]) . '.00 MXN';
                             }
                             if ($vectorTipoProyectos[$direccionProyecto] == 'Paquete Profesional') {
-                                echo  '$' . number_format($precioDominio + $precioHosting + $precioBD + $precioProfesional + $precioMantenimiento) . '.00 MXN';
+                                echo  '$' . number_format(($precioDominio + $precioHosting + $precioBD + $precioProfesional + $precioMantenimiento)* $superVecContMesesPago[$direccionx][$direcciony]) . '.00 MXN';
                             }
                             ?>">
                         </div>
@@ -278,13 +282,13 @@ if ((!isset($_SESSION['usuario'])) && (!isset($_SESSION['email']))) {
                             <input style="display:none;" class="form-control" type="text" name="total" id="total" value="
                             <?php
                             if ($vectorTipoProyectos[$direccionProyecto] == 'Paquete Básico') {
-                                echo ($precioDominio + $precioHosting + $precioBD + $precioBasico + $precioMantenimiento);
+                                echo (($precioDominio + $precioHosting + $precioBD + $precioBasico + $precioMantenimiento)* $superVecContMesesPago[$direccionx][$direcciony]);
                             }
                             if ($vectorTipoProyectos[$direccionProyecto] == 'Paquete Negocio') {
-                                echo ($precioDominio + $precioHosting + $precioBD + $precioNegocio + $precioMantenimiento);
+                                echo (($precioDominio + $precioHosting + $precioBD + $precioNegocio + $precioMantenimiento)* $superVecContMesesPago[$direccionx][$direcciony]);
                             }
                             if ($vectorTipoProyectos[$direccionProyecto] == 'Paquete Profesional') {
-                            echo ($precioDominio + $precioHosting + $precioBD + $precioProfesional + $precioMantenimiento);
+                            echo (($precioDominio + $precioHosting + $precioBD + $precioProfesional + $precioMantenimiento)* $superVecContMesesPago[$direccionx][$direcciony]) ;
                             }
                             ?>">
                         </div>
@@ -359,7 +363,7 @@ require 'includes/templates/footer.php';
                 if (data == 1) {
                     swal({
                         content: "",
-                        text: "¡Gracias por su preferencia! Su pago fue realizado, y se veré reflejado en el historial de pagos.",
+                        text: "¡Gracias por su preferencia! Su pago fue realizado, y se verá reflejado en el historial de pagos.",
                         icon: "success",
                         button: {
                             text: "Continuar",

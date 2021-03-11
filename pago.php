@@ -141,9 +141,9 @@ if ((!isset($_SESSION['usuario'])) && (!isset($_SESSION['email']))) {
         }
 
         // echo '->>>>>>>>>>>>>'.$contadorPasos1;
-        echo '<pre>';
-        var_dump($superVecContMesesPago);
-        echo '</pre>';
+        // echo '<pre>';
+        // var_dump($superVecContMesesPago);
+        // echo '</pre>';
         // echo '<pre>';
         // var_dump($superVecTokenContratoPago);
         // echo '</pre>';
@@ -157,11 +157,11 @@ if ((!isset($_SESSION['usuario'])) && (!isset($_SESSION['email']))) {
             for ($y = 0; $y < sizeof($superVecTokenContratoPago[$x]); $y++) {
 
                 if (isset($_GET['pago'])) {
-                    echo 'hey (' . $superVecTokenContratoPago[$x][$y] . '-' . $superVecIdPago[$x][$y] . '$' . $idproyget[$x] . '  ->>>  ' . $_GET['pago'];
+                    // echo '<br>hey (' . $superVecTokenContratoPago[$x][$y] . '-' . $superVecIdPago[$x][$y] . '$' . $idproyget[$x] . '=' . $_GET['pago'];
                     if (($superVecTokenContratoPago[$x][$y] . '-' . $superVecIdPago[$x][$y] . '$' . $idproyget[$x]) == ($_GET['pago'])) {
-                        echo $_GET['pago'];
+                        
                         // echo $superVecIdPago[$x][$y];
-                        echo '->>>>' . $superVecTokenContratoPago[$x][$y] . '-' . $supervectokenConekta[$x][$y];
+                        // echo '->>>>' . $superVecTokenContratoPago[$x][$y] . '-' . $supervectokenConekta[$x][$y];
                         // echo $_GET['pago'];
 
     ?>
@@ -188,7 +188,7 @@ if ((!isset($_SESSION['usuario'])) && (!isset($_SESSION['email']))) {
                                         <div class="servicio<?php echo $i; ?>">
                                             <h2><?php
                                                 if ($i == 0) {
-                                                    echo 'Cantidad';
+                                                    echo 'Meses de servicio';
                                                 } elseif ($i == 1) {
                                                     echo 'Descripción de servicio';
                                                 } else {
@@ -204,11 +204,11 @@ if ((!isset($_SESSION['usuario'])) && (!isset($_SESSION['email']))) {
                                         <div class="servicio1<?php echo $i; ?>">
                                             <h2><?php
                                                 if ($i == 0) {
-                                                    echo '1';
+                                                    echo $superVecContMesesPago[$x][$y];
                                                 } elseif ($i == 1) {
                                                     echo 'Servicio de Hosting';
                                                 } else {
-                                                    echo '$' . number_format($precioHosting) . '.00 MXN';
+                                                    echo '$' . number_format(($precioHosting) * $superVecContMesesPago[$x][$y]) . '.00 MXN';
                                                 }
                                                 ?></h2>
                                         </div>
@@ -220,11 +220,11 @@ if ((!isset($_SESSION['usuario'])) && (!isset($_SESSION['email']))) {
                                         <div class="servicio2<?php echo $i; ?>">
                                             <h2><?php
                                                 if ($i == 0) {
-                                                    echo '1';
+                                                    echo $superVecContMesesPago[$x][$y];
                                                 } elseif ($i == 1) {
                                                     echo 'Servicio de Dominio';
                                                 } else {
-                                                    echo '$' . number_format($precioDominio) . '.00 MXN';
+                                                    echo '$' . number_format(($precioDominio) * $superVecContMesesPago[$x][$y]) . '.00 MXN';
                                                 }
                                                 ?></h2>
                                         </div>
@@ -236,18 +236,18 @@ if ((!isset($_SESSION['usuario'])) && (!isset($_SESSION['email']))) {
                                         <div class="servicio3<?php echo $i; ?>">
                                             <h2><?php
                                                 if ($i == 0) {
-                                                    echo '1';
+                                                    echo $superVecContMesesPago[$x][$y];
                                                 } elseif ($i == 1) {
                                                     echo 'Servicio de Programación';
                                                 } else {
                                                     if ($vectorTipoProyectos[$x] == 'Paquete Básico') {
-                                                        echo '$' . number_format($precioBasico) . '.00 MXN';
+                                                        echo '$' . number_format(($precioBasico) * $superVecContMesesPago[$x][$y]) . '.00 MXN';
                                                     }
                                                     if ($vectorTipoProyectos[$x] == 'Paquete Negocio') {
-                                                        echo '$' . number_format($precioNegocio) . '.00 MXN';
+                                                        echo '$' . number_format(($precioNegocio) * $superVecContMesesPago[$x][$y]) . '.00 MXN';
                                                     }
                                                     if ($vectorTipoProyectos[$x] == 'Paquete Profesional') {
-                                                        echo '$' . number_format($precioProfesional) . '.00 MXN';
+                                                        echo '$' . number_format(($precioProfesional) * $superVecContMesesPago[$x][$y]) . '.00 MXN';
                                                     }
                                                 }
                                                 ?></h2>
@@ -260,12 +260,12 @@ if ((!isset($_SESSION['usuario'])) && (!isset($_SESSION['email']))) {
                                         <div class="servicio4<?php echo $i; ?>">
                                             <h2><?php
                                                 if ($i == 0) {
-                                                    echo '1';
+                                                    echo $superVecContMesesPago[$x][$y];
                                                 } elseif ($i == 1) {
                                                     echo 'Servicio de Mantenimiento General para el proyecto.<br>Actualización y verificación de Programación (Código de programación)';
                                                 } else {
 
-                                                    echo '$' . number_format($precioMantenimiento) . '.00 MXN';
+                                                    echo '$' . number_format(($precioMantenimiento) * $superVecContMesesPago[$x][$y]) . '.00 MXN';
                                                 }
                                                 ?></h2>
                                         </div>
@@ -277,12 +277,12 @@ if ((!isset($_SESSION['usuario'])) && (!isset($_SESSION['email']))) {
                                         <div class="servicio5<?php echo $i; ?>">
                                             <h2><?php
                                                 if ($i == 0) {
-                                                    echo '1';
+                                                    echo $superVecContMesesPago[$x][$y];
                                                 } elseif ($i == 1) {
                                                     echo 'Servicio de programación y mantenimiento de bases de datos en PHP y MySql';
                                                 } else {
 
-                                                    echo '$' . number_format($precioBD) . '.00 MXN';
+                                                    echo '$' . number_format(($precioBD) * $superVecContMesesPago[$x][$y]) . '.00 MXN';
                                                 }
                                                 ?></h2>
                                         </div>
@@ -335,7 +335,7 @@ if ((!isset($_SESSION['usuario'])) && (!isset($_SESSION['email']))) {
                             </div>
                             <div class="pagos-metodos 
                 <?php
-                        if (($supervectokenConekta[$x][$y] == '' || $supervecforTarget[$x][$y] == 0) && ($idusuario != 1 && $email != 'a@gmail.com' && $_SESSION['email'] != 'a@gmail.com')) {
+                        if (($supervectokenConekta[$x][$y] == '' || $supervecforTarget[$x][$y] == 0) && ($_SESSION['tipo_usuario']) != 'admin') {
                             echo '';
                         } else {
                             echo 'no-active';
@@ -508,9 +508,10 @@ if ((!isset($_SESSION['usuario'])) && (!isset($_SESSION['email']))) {
                     unset($vecTokenContrato[$ix]);
                 }
             }
-            // echo '<pre>';
-            // var_dump(  $superVecIdPago);
-            // echo '</pre>';
+            echo '<pre>';
+            var_dump( $superVecIdProyectoPago);
+            echo '</pre>';
+
             // echo '<pre>';
             // var_dump($supervecforTarget);
             // echo '</pre>';
@@ -527,9 +528,9 @@ if ((!isset($_SESSION['usuario'])) && (!isset($_SESSION['email']))) {
                 // echo '..hola';
                 for ($y = 0; $y < sizeof($superVecTokenContratoPago[$x]); $y++) {
                     if (isset($_GET['pago'])) {
-                        // echo 'hey (' . $superVecTokenContratoPago[$x][$y] . '-' . $superVecIdPago[$x][$y] . '$' . $idProyecto . '  ->>>  ' . $_GET['pago'];
+                        // echo '<br>' . $superVecTokenContratoPago[$x][$y] . '-' . $superVecIdPago[$x][$y] . '$' .  $superVecIdProyectoPago[$x][$y] . ' =' . $_GET['pago'];
                        
-                        if (($superVecTokenContratoPago[$x][$y] . '-' . $superVecIdPago[$x][$y] . '$' . $idProyecto) == ($_GET['pago'])) {
+                        if (($superVecTokenContratoPago[$x][$y] . '-' . $superVecIdPago[$x][$y] . '$' . $superVecIdProyectoPago[$x][$y]) == ($_GET['pago'])) {
                             // echo '->>>>>>>>>>>>>>>>>hola';
                             // echo $_GET['pago'];
                             // echo $superVecIdPago[$x][$y];
@@ -552,6 +553,7 @@ if ((!isset($_SESSION['usuario'])) && (!isset($_SESSION['email']))) {
                             <h1>
                                 <?php
                                 echo 'Pago (' . $superVecTokenContratoPago[$x][$y] . '-' . $superVecIdPago[$x][$y] . ')' . $x . $y;
+                                echo $superVecIdProyectoPago[$x][$y];
                                 ?></h1>
                         </div>
                         <?php
@@ -562,7 +564,7 @@ if ((!isset($_SESSION['usuario'])) && (!isset($_SESSION['email']))) {
                             <div class="servicio<?php echo $i; ?>">
                                 <h2><?php
                                     if ($i == 0) {
-                                        echo 'Cantidad';
+                                        echo 'Meses de servicio';
                                     } elseif ($i == 1) {
                                         echo 'Descripción de servicio';
                                     } else {
@@ -578,11 +580,11 @@ if ((!isset($_SESSION['usuario'])) && (!isset($_SESSION['email']))) {
                             <div class="servicio1<?php echo $i; ?>">
                                 <h2><?php
                                     if ($i == 0) {
-                                        echo '1';
+                                        echo $superVecContMesesPago[$x][$y];
                                     } elseif ($i == 1) {
                                         echo 'Servicio de Hosting';
                                     } else {
-                                        echo '$' . number_format($precioHosting) . '.00 MXN';
+                                        echo '$' . number_format(($precioHosting)  * $superVecContMesesPago[$x][$y]). '.00 MXN';
                                     }
                                     ?></h2>
                             </div>
@@ -594,11 +596,11 @@ if ((!isset($_SESSION['usuario'])) && (!isset($_SESSION['email']))) {
                             <div class="servicio2<?php echo $i; ?>">
                                 <h2><?php
                                     if ($i == 0) {
-                                        echo '1';
+                                        echo $superVecContMesesPago[$x][$y];
                                     } elseif ($i == 1) {
                                         echo 'Servicio de Dominio';
                                     } else {
-                                        echo '$' . number_format($precioDominio) . '.00 MXN';
+                                        echo '$' . number_format(($precioDominio) * $superVecContMesesPago[$x][$y]) . '.00 MXN';
                                     }
                                     ?></h2>
                             </div>
@@ -610,18 +612,18 @@ if ((!isset($_SESSION['usuario'])) && (!isset($_SESSION['email']))) {
                             <div class="servicio3<?php echo $i; ?>">
                                 <h2><?php
                                     if ($i == 0) {
-                                        echo '1';
+                                        echo $superVecContMesesPago[$x][$y];
                                     } elseif ($i == 1) {
                                         echo 'Servicio de Programación';
                                     } else {
                                         if ($vectorTipoProyectos[$x] == 'Paquete Básico') {
-                                            echo '$' . number_format($precioBasico) . '.00 MXN';
+                                            echo '$' . number_format(($precioBasico) * $superVecContMesesPago[$x][$y]) . '.00 MXN';
                                         }
                                         if ($vectorTipoProyectos[$x] == 'Paquete Negocio') {
-                                            echo '$' . number_format($precioNegocio) . '.00 MXN';
+                                            echo '$' . number_format(($precioNegocio)  * $superVecContMesesPago[$x][$y]). '.00 MXN';
                                         }
                                         if ($vectorTipoProyectos[$x] == 'Paquete Profesional') {
-                                            echo '$' . number_format($precioProfesional) . '.00 MXN';
+                                            echo '$' . number_format(($precioProfesional) * $superVecContMesesPago[$x][$y]) . '.00 MXN';
                                         }
                                     }
                                     ?></h2>
@@ -634,12 +636,12 @@ if ((!isset($_SESSION['usuario'])) && (!isset($_SESSION['email']))) {
                             <div class="servicio4<?php echo $i; ?>">
                                 <h2><?php
                                     if ($i == 0) {
-                                        echo '1';
+                                        echo $superVecContMesesPago[$x][$y];
                                     } elseif ($i == 1) {
                                         echo 'Servicio de Mantenimiento General para el proyecto.<br>Actualización y verificación de Programación (Código de programación)';
                                     } else {
 
-                                        echo '$' . number_format($precioMantenimiento) . '.00 MXN';
+                                        echo '$' . number_format(($precioMantenimiento) * $superVecContMesesPago[$x][$y]) . '.00 MXN';
                                     }
                                     ?></h2>
                             </div>
@@ -651,12 +653,12 @@ if ((!isset($_SESSION['usuario'])) && (!isset($_SESSION['email']))) {
                             <div class="servicio5<?php echo $i; ?>">
                                 <h2><?php
                                     if ($i == 0) {
-                                        echo '1';
+                                        echo $superVecContMesesPago[$x][$y];
                                     } elseif ($i == 1) {
                                         echo 'Servicio de programación y mantenimiento de bases de datos en PHP y MySql';
                                     } else {
 
-                                        echo '$' . number_format($precioBD) . '.00 MXN';
+                                        echo '$' . number_format(($precioBD) * $superVecContMesesPago[$x][$y]) . '.00 MXN';
                                     }
                                     ?></h2>
                             </div>
