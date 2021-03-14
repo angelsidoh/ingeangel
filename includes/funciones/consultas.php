@@ -1,5 +1,38 @@
 
 <?php
+// function obtenerContactos2()
+// {
+//     include '../../bd/bdsqli.php';
+//     try {
+//         return $connf->query("SELECT id_usuario, nombre_usuario, apellidos_usuario, email_usuario, telefono_usuario, fecha_usuario,  foto_usuario, tipo_usuario  FROM usuarios");
+//     } catch (Exception $e) {
+//         echo "Error!!" . $e->getMessage() . "<br>";
+//         return false;
+//     }
+// }
+// function consultaProyectos2()
+// {
+//     include '../../bd/bdsqli.php';
+//     try {
+//         return $connf->query("SELECT id_proyecto, nombre_proyecto, tipo_proyecto, pago_proyecto FROM proyectos");
+//     } catch (Exception $e) {
+//         echo "Error!!" . $e->getMessage() . "<br>";
+//         return false;
+//     }
+// }
+function consultaPagos2($dato)
+{
+    include 'bd/bdsqli.php';
+    try {
+        return $connf->query("SELECT id_pago, fechainicio_pago, fechafin_pago, fechadepago_pago, tokenconekta_pago, fortarget_pago, idproyecto_pago,tokenpago_pago,idcontrato_pago, tokencontrato_pago, contmeses_pago, money_pago FROM pagos WHERE id_pago = '$dato'");
+    } catch (Exception $e) {
+        echo "Error!!" . $e->getMessage() . "<br>";
+        return false;
+    }
+}
+
+
+// END consultas extras
 function obtenerContactos()
 {
     include 'bd/bdsqli.php';

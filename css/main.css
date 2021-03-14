@@ -645,6 +645,7 @@ height: auto;
   border-bottom: 1px solid white;
   display: grid;
   grid-template-columns: repeat(1, 85% 15%);
+  margin: 10px auto;
   
 }
 

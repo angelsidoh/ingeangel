@@ -162,9 +162,9 @@ if ((!isset($_SESSION['usuario'])) && (!isset($_SESSION['email']))) {
                 unset($vecTokenContrato[$ix]);
             }
         }
-        // echo '<pre>';
-        // var_dump($superVecIdProyectoPago);
-        // echo '</pre>';
+        echo '<pre>';
+        var_dump($superVecIdProyectoPago);
+        echo '</pre>';
         // echo '<pre>';
         // var_dump(   $superVecIdPago);
         // echo '</pre>';
@@ -214,7 +214,7 @@ if ((!isset($_SESSION['usuario'])) && (!isset($_SESSION['email']))) {
 
                         <div class="dato1">
 
-                            <input value="" data-conekta="card[name]" class="form-control" name="name" id="name" type="text">
+                            <input  data-conekta="card[name]" class="form-control" name="name" id="name" type="text" value="JOSÉ ANGEL RUIZ CHÁVEZ">
                         </div>
                         <div class="text-dato1">
                             <p>Nombre de titular de la cuenta.</p>
@@ -249,7 +249,7 @@ if ((!isset($_SESSION['usuario'])) && (!isset($_SESSION['email']))) {
 
                         <div class="dato55">
 
-                            <input class="form-control" type="text" name="email" id="email" maxlength="200" value="a@gmail.com">
+                            <input class="form-control" type="text" name="email" id="email" maxlength="200" value="<?php echo $_SESSION['email'];?>">
                         </div>
                         <div class="text-dato55">
                             <p>Email</p>

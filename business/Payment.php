@@ -1,5 +1,9 @@
 <?php
 require_once("bin/conekta-php-master/lib/Conekta.php");
+require('includes/funciones/qr.php');
+
+
+
 
 class Payment{
     private $ApiKey = "key_eYvWV7gSDkNYXsmr";
@@ -45,42 +49,24 @@ class Payment{
         $lastnum = substr($this->card,strlen($this->card)-4,16);
         $pago = $this->total;
         $titular = $this->name;
+        $email = $this->email;
         $tokenconcepto =$this->description;
-
-        // $pdo = new PDO("mysql:host=".$this->ServerDB.";dbname=".$this->DataBaseDB, $this->UserDB, $this->PassDB);
-  
-        // // $statement = $link->prepare("INSERT INTO pagos(total,date_created,description,name,number_card,email,order_id)
-        // //     VALUES (:total, now(), :description,:name,:number_card,:email,:order_id)");
-        // // $statement = $link->prepare("UPDATE pagos SET tokenconeckta=:order_id");
-  
-  
-        // // $statement->execute([
-        // //     // 'total' => $this->total,
-        // //     // 'description' => $this->description,
-        // //     // 'name' => $this->name,
-        // //     // 'number_card'=> substr($this->card,strlen($this->card)-6,16),
-        // //     // 'email'=>$this->email,
-        // //     'order_id'=>$this->order->id
-        // // ]);
-        // $data = [
-            
-            
-        //     'id' => 11,
-        //     'tokenconekta_pago' => 'heyyyyyyyy'
-        // ];
-        // $sql = "UPDATE pagos SET tokenconekta_pago=:tokenconekta_pago, WHERE id_pago=:id";
-        // $stmt= $pdo->prepare($sql);
-        // $stmt->execute($data);
+        date_default_timezone_set('America/Mexico_City');
+        $fecha =  date('Y-m-d H:i:s');
         
-        // $this->order_number = $pdo->lastInsertId();
+        
+        $datos = generarQr($email,$titular, $id, $pago, $tokenconeckta);
+        $qr = $datos['qr'];
+        $nombresend = $datos['nombresend'];
+      
+       
         try {
-            date_default_timezone_set('America/Mexico_City');
-            $fecha =  date('Y-m-d H:i:s'); 
+            
            
-        require_once('bd/bdsqli.php');
-        $stmt = $connf->prepare("UPDATE pagos SET fechadepago_pago = ?, tokenconekta_pago = ?, fortarget_pago = ?, tokenpago_pago = ?, money_pago = ?, titular_pago = ? WHERE id_pago = ?");
+        require('bd/bdsqli.php');
+        $stmt = $connf->prepare("UPDATE pagos SET fechadepago_pago = ?, tokenconekta_pago = ?, fortarget_pago = ?, tokenpago_pago = ?, money_pago = ?, titular_pago = ?, qr_pago = ? WHERE id_pago = ?");
 
-        $stmt->bind_param("ssssssi", $fecha, $tokenconeckta, $lastnum, $tokenconcepto, $pago, $titular, $id);
+        $stmt->bind_param("sssssssi", $fecha, $tokenconeckta, $lastnum, $tokenconcepto, $pago, $titular, $qr ,$id);
 
         $stmt->execute();
 

@@ -2,6 +2,10 @@
 
 
 // end conekta
+var contadornotificaciones = 0;
+var auxicontadorseg = 0;
+var contadorinnotifi = 0;
+
 
 function contadorFechas() {
   var tiempo = document.querySelector('#tiempo2').value;
@@ -170,7 +174,7 @@ let vecPasos = [0];
 function abc(datos, maxfecha, contadorProyectos, contPasosxProyecto, contPasos) {
   contadorProyectosJs = contadorProyectos;
 
-  console.log(datos, maxfecha, contPasosxProyecto);
+  //console.log(datos, maxfecha, contPasosxProyecto);
   fechas[contadorPjs] = datos;
   contadorPxP[contadorPjs] = contPasosxProyecto;
   // console.log('->' + fechas, '->' + maxfecha, contadorPxP);
@@ -190,7 +194,19 @@ function abc(datos, maxfecha, contadorProyectos, contPasosxProyecto, contPasos) 
     // console.log(contadorSegundos+'-'+contPasos);
     drenado(fechas, contadorPxP, contadorProyectos, contPasosxProyecto, contPasos, auxDetPaso, vecPasos, contadorSegundos);
     contadorSegundos++;
+    auxicontadorseg++;
+    contadornotificaciones = auxicontadorseg / 1;
+
+    // console.log(contadornotificaciones);
+    if (contadornotificaciones >= 1) {
+      
+      auxicontadorseg = 0;
+
+    }
+    // consultaNotificaciones();
+//  console.log(contadorinnotifi);
     // console.log(contadorSegundos);
+
 
 
 
@@ -414,6 +430,16 @@ function abc(datos, maxfecha, contadorProyectos, contPasosxProyecto, contPasos) 
     }
   });
 
+
+
+  // consulta de bases de datos para notificaciones
+
+
+  // end consulta de BD PARA Notificaciones
+
+
+
+
   // var contador = 0;
   // var auxcontador = contadorPxP[0];
 
@@ -426,6 +452,140 @@ function abc(datos, maxfecha, contadorProyectos, contPasosxProyecto, contPasos) 
   contadorPjs++;
 
 
+}
+
+
+var subnotificacion = [''];
+var notificacion = [subnotificacion];
+
+var subrespuestanotificacion = [''];
+var respuestanotificacion = [subrespuestanotificacion];
+
+function consultaNotificaciones() {
+
+  // llamado de ajax
+  // crear objeto
+  //  console.log(dato);
+  const xhr = new XMLHttpRequest();
+  // abrir conexion
+  xhr.open('POST', 'includes/modelos/consultanotificaciones.php', true);
+  // pasar datos
+
+  xhr.onload = function () {
+
+    if (this.status === 200) {
+      const respuesta = JSON.parse(xhr.responseText);
+// console.log(respuesta[0][0].estado);
+      for (let x = 0; x < respuesta.length; x++) {
+        for (let u = 0; u < respuesta[x].length; u++) {
+
+          subrespuestanotificacion[u] = respuesta[x][u].estado;
+          respuestanotificacion[x] = subrespuestanotificacion;
+         
+          
+          
+          // console.log(respuestanotificacion[x][u], notificacion[x][u]);
+          
+          subnotificacion[u] =  respuesta[x][u].estado;
+          notificacion[x] = subnotificacion;
+          
+
+          // if(notificacion[u] == respuestanotificacion[u]){
+          //   console.log('yes');
+          // }else{
+          //   console.log('********no*******');
+          // }
+          
+          
+            
+          
+          
+         
+        }
+      }
+
+      //     respuestanotificacion[u] = '' + respuesta[u];
+
+      //     console.log(respuestanotificacion[u] + ' /' + notificacion[u]);
+      //   //  console.log(respuesta[u]);
+          // if (contadorinnotifi >= 3) {
+          //   if (notificacion[u] == respuestanotificacion[u]) {
+          //     console.log('si');
+          //   } else {
+          //     swal({
+          //       content: "",
+          //       text: 'El usuario: x'+' A pagado su factura',
+          //       icon: "success",
+          //       button: {
+          //         text: "Continuar",
+          //         closeModal: true,
+          //       },
+          //     });
+              
+          //   }
+          // }
+          // notificacion[u] = respuestanotificacion[u];
+
+          // if (respuestanotificacion[u] == notificacion[u]) {
+          //  console.log('si');
+          // } else {
+          //   console.log('no');
+          // }
+
+
+          // if(notificacion[u] == respuestanotificacion[u]){
+          //   console.log ('==');
+          // }else{
+          //   console.log('dif');
+          // }
+          // if(u >= 1){
+          //   notificacion[u] = respuestanotificacion[u];
+          // }else{
+          //   notificacion[0][0] = x;
+          // }
+          // console.log ('-notificacion: '+notificacion[u] , ' -respuestanotificacion: '+respuestanotificacion[u]);
+
+
+
+
+
+
+      //   }
+      // }
+
+      // respuestanotificacion = respuesta.estado;
+      // console.log(respuestanotificacion+ '/' + notificacion);
+      // console.log(respuesta.length);
+      // if(notificacion != respuestanotificacion){
+      //   console.log('siii');
+      // }else{
+      //   console.log('noo');
+      // }
+      // notificacion = respuestanotificacion;
+
+      // console.log('->'+respuesta);
+      if (respuesta.estado == 'pago agregado') {
+        swal({
+            content: "",
+            text: 'Nuevo pago Agregado',
+            icon: "success",
+            button: {
+              text: "Continuar",
+              closeModal: true,
+            },
+          })
+          .then((value) => {
+            switch (value) {
+              default:
+                window.location.href = 'cuenta.php#angel-ruiz';
+            }
+          });
+      }
+    }
+  }
+  // enviar datos
+  xhr.send();
+  contadorinnotifi++;
 }
 
 function drenado(fechas, contadorPxP, contadorProyectos, contPasosxProyecto, contPasos, auxDetPaso, vecPasos, contadorSegundos) {
@@ -1344,7 +1504,7 @@ function agregarPaso(e) {
     const idproyecto = document.querySelector('#idproy').value;
 
 
-  
+
 
 
 
@@ -1864,7 +2024,7 @@ function leerAgregarPago(e) {
     infoagregarPago.append('tokencontrato', tokencontrato);
     infoagregarPago.append('idproyecto', idproyecto);
 
-    console.log(tokencontrato);
+    // console.log(tokencontrato);
     agregarPago(infoagregarPago);
   }
 }
@@ -1883,22 +2043,22 @@ function agregarPago(dato) {
     if (this.status === 200) {
       const respuesta = JSON.parse(xhr.responseText);
       console.log(respuesta);
-      if(respuesta.estado == 'pago agregado'){
+      if (respuesta.estado == 'pago agregado') {
         swal({
-          content: "",
-          text: 'Nuevo pago Agregado',
-          icon: "success",
-          button: {
-            text: "Continuar",
-            closeModal: true,
-          },
-        })
-        .then((value) => {
-          switch (value) {
-            default:
-              window.location.href = 'cuenta.php#angel-ruiz';
-          }
-        });
+            content: "",
+            text: 'Nuevo pago Agregado',
+            icon: "success",
+            button: {
+              text: "Continuar",
+              closeModal: true,
+            },
+          })
+          .then((value) => {
+            switch (value) {
+              default:
+                window.location.href = 'cuenta.php#angel-ruiz';
+            }
+          });
       }
     }
   }
@@ -1964,22 +2124,22 @@ function agregarContrato(dato) {
     if (this.status === 200) {
       const respuesta = JSON.parse(xhr.responseText);
       // console.log(respuesta);
-      if(respuesta.estado == 'contrato nuevo agregado'){
+      if (respuesta.estado == 'contrato nuevo agregado') {
         swal({
-          content: "",
-          text: 'Nuevo contrato agragado',
-          icon: "success",
-          button: {
-            text: "Continuar",
-            closeModal: true,
-          },
-        })
-        .then((value) => {
-          switch (value) {
-            default:
-              window.location.href = 'cuenta.php#angel-ruiz';
-          }
-        });
+            content: "",
+            text: 'Nuevo contrato agragado',
+            icon: "success",
+            button: {
+              text: "Continuar",
+              closeModal: true,
+            },
+          })
+          .then((value) => {
+            switch (value) {
+              default:
+                window.location.href = 'cuenta.php#angel-ruiz';
+            }
+          });
       }
     }
   }
@@ -3000,7 +3160,7 @@ $("#check-redes").click(function () {
 var pathname = window.location.pathname;
 pathname = (pathname.replace('/01ingeangel.com', ''));
 pathname = (pathname.replace('01', ''));
-console.log(pathname);
+//console.log(pathname);
 if (pathname == '/index.php' || pathname == '/') {
   $(document).ready(function () {
     $("body").css("background-color", "#ffffff");

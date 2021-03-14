@@ -12,8 +12,9 @@ if ((isset($_SESSION['usuario'])) && (isset($_SESSION['email']))) {
                     $resultadousers = obtenerContactos();
                     if ($resultadousers->num_rows) {
                         foreach ($resultadousers as $users) {
+                            unset($vectorNombresProyectos);
                             $idusuario = $users['id_usuario'];
-                            echo $tipouser = $users['tipo_usuario'];
+                           $tipouser = $users['tipo_usuario'];
                             if ($tipouser != 'admin') {
                                 $resultadoProyecto = consultaProyecto($idusuario);
                                 $contadorProyectos = 0;
@@ -46,9 +47,9 @@ if ((isset($_SESSION['usuario'])) && (isset($_SESSION['email']))) {
                                         }
                                     }
 
-                    ?>
+                                    ?>
 
-                            <?php
+                                    <?php
                                     $superVec[$i] = $vectorFechafin;
                                     $superVecDesp[$i] = $vectorDescrip;
                                     for ($ix = 0; $ix < $contadorPasos; $ix++) {
@@ -147,9 +148,9 @@ if ((isset($_SESSION['usuario'])) && (isset($_SESSION['email']))) {
                                 // echo '<pre>';
                                 // var_dump($supervecFechaFinContrato);
                                 // echo '</pre>';
-                                echo '<pre>';
-                                var_dump( $supervecIdContrato);
-                                echo '</pre>';
+                                // echo '<pre>';
+                                // var_dump( $supervecIdContrato);
+                                // echo '</pre>';
                                 
                                 
 
@@ -157,16 +158,12 @@ if ((isset($_SESSION['usuario'])) && (isset($_SESSION['email']))) {
                             <div class="menu-proyectos">
                                 <div class="submenu-proyectos">
                                     <div class="titulo-proyecto">
-                                        <h1>No-ID Usuario: <?php echo $users['id_usuario']; ?>:<span style="font-size: 16px;">
-                                                <?php
-                                                echo $users['nombre_usuario'];
-                                                ?></span></h1>
+                                        <h1>No-ID Usuario: <?php echo $users['id_usuario']; ?> </br> Nombre: <span style="font-size: 16px;"><?php echo $users['nombre_usuario'];?></span></h1>
                                     </div>
                                     <div class="mas-proyecto">
                                         <div class="inps" id="inps<?php echo (4000 + $users['id_usuario']); ?>">
                                             <input name="angel" type="checkbox" class="checs" id="check<?php echo (4000 + $users['id_usuario']); ?>" name="menu<?php echo (4000 + $users['id_usuario']); ?>">
                                         </div>
-
                                         <label for="check<?php echo (4000 + $users['id_usuario']); ?>">
                                             <i id="plus<?php echo (4000 + $users['id_usuario']); ?>" class="far fa-plus-square"></i>
                                             <i id="neg<?php echo (4000 + $users['id_usuario']); ?>" class="far fa-minus-square" style="display: none;"></i>
@@ -178,68 +175,49 @@ if ((isset($_SESSION['usuario'])) && (isset($_SESSION['email']))) {
                                                 <?php
                                                 $auxiliar = ''; 
                                                 for ($x = 0; $x <  sizeof($vectorNombresProyectos); $x++) {
-                                                    ?><div class="barradiv"><?php  
+                                                    ?>
+                                                    <div class="barradiv"><?php  
                                                     for ($y=0; $y < sizeof($supervecfechaIniciopago[$x]); $y++) {
-                                                   
-                                                        // echo $supervecfechaIniciopago[$x][$y].$superVecIdContratoPago[$x][$y].'<br>';
-
                                                         date_default_timezone_set('America/Mexico_City');
                                                         $fechahoy =  date('Y-m-d H:i:s');
-                                                        // $fechafinMes = date("Y-m-d H:i:s", strtotime($fechaini . "+ 1 month"));
                                                         for ($i=0; $i < sizeof($supervecfechaIniciopago[$x]); $i++) { 
-                                                            // echo '<br>'.$i.'(->>>'.  $supervecFechaInicioContrato[$x][$i].')('.$supervecFechaFinContrato[$x][$i].')';
-                                                        
                                                             $dias1 = (strtotime($supervecfechaIniciopago[$x][$i]) - strtotime($fechahoy)) / 86400;
                                                             $dias2 = (strtotime($supervecfechaFinpago[$x][$i]) - strtotime($fechahoy)) / 86400;
-
-                                                            // echo $dias1.'->('.$supervecfechaIniciopago[$x][$i].') '.
-                                                            //     $dias2.'->('.$supervecfechaFinpago[$x][$i].') '.
-                                                            // '<br>';
-                                                            // // echo $x.'-'.$y;
-                                                            // echo '<br>(->>>'.  $supervecfechaIniciopago[$x][$y].')('.$supervecfechaFinpago[$x][$y].') ('.$dias1.')';
-                                                           
-                                                       
-                                                        if ((($dias2 > 0 && $dias1 < 0) && ($supervecfechaFinpago[$x][$i] == $supervecfechaFinpago[$x][$y]))) { 
-                                                          
-                                                                ?> <p class="separador"><?php
-                                                                echo 'Proyecto: '.$vectorNombresProyectos[$x].'<br>ID de contrato: '.$superVecIdContratoPago[$x][$y];?></p><?php
-                                                            
-                                            ?>
-                                                        <a href="administradorProy.php?id=<?php echo $vectorIdProyectos[$x]; ?>#angel-ruiz" target="_blank">
-                                                            <p class="<?php  if ($supervectokenConekta[$x][$y] != '' && $supervecforTarget[$x][$y] != 0) {
-                                                                            echo 'blinkverde ';
-                                                                        } else {
-                                                                            echo 'blinkama ';
-                                                                        } ?>">Id de Pago:<?php echo ' ' .  $superVecIdPago[$x][$y].  ' ' . $vectorNombresProyectos[$x] . '(' . $supervecfechaIniciopago[$x][$y] . ' a ' . $supervecfechaFinpago[$x][$y] . ')';
-                                                                        if ($supervectokenConekta[$x][$y] != '' && $supervecforTarget[$x][$y] != 0) {
-                                                                            echo '<br>Contrato: Vigente';
-                                                                        } else {
-                                                                            echo '<br>Contrato: ***No Vigente***';
-                                                                        }
-
-                                                                        ?></p>
-                                                        </a><?php }
-                                                        }
-                                                        
-                                                        
-                                                                       
+                                                            if ((($dias2 > 0 && $dias1 < 0) && ($supervecfechaFinpago[$x][$i] == $supervecfechaFinpago[$x][$y]))) { ?> 
+                                                                <p class="separador"><?php echo 'Proyecto: '.$vectorNombresProyectos[$x].'<br>ID de contrato: '.$superVecIdContratoPago[$x][$y];?></p><?php?>
+                                                                <a href="administradorProy.php?id=<?php echo $vectorIdProyectos[$x]; ?>#angel-ruiz" target="_blank">
+                                                                <p class="<?php  if ($supervectokenConekta[$x][$y] != '' && $supervecforTarget[$x][$y] != 0) {
+                                                                                     echo 'blinkverde ';
+                                                                                    } else {
+                                                                                        echo 'blinkama ';
+                                                                                    } ?>">Id de Pago:<?php echo ' ' .  $superVecIdPago[$x][$y].  ' ' . $vectorNombresProyectos[$x] . '(' . $supervecfechaIniciopago[$x][$y] . ' a ' . $supervecfechaFinpago[$x][$y] . ')';
+                                                                                    if ($supervectokenConekta[$x][$y] != '' && $supervecforTarget[$x][$y] != 0) {
+                                                                                        echo '<br>Contrato: Vigente';
+                                                                                    } else {
+                                                                                        echo '<br>Contrato: ***No Vigente***';
+                                                                                    }?>
+                                                                </p>
+                                                                </a><?php 
+                                                            }
+                                                        }                
                                                         ?>
                                                         <?php
-                                                       
-                                                    }
-                                                    } ?>
-
+                                                    }?>
+                                                    </div>
+                                                    <?php
+                                                } ?>
+                                                    
                                             </div>
                                         </div>
+                                        </div>
                                     </div>
-                                </div>
                             </div>
                             <?php
                             }
                         }
                     }
                 ?>
-        </div>
+        
         </div>
         </div>
         </div>
