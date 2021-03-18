@@ -507,6 +507,7 @@
                 (" width=\"" + maxX + "\"") +
                 (" height=\"" + maxY + "\"") +
                 '>';
+                console.log('hola');
             var body = svg.innerHTML;
             if (body === undefined) {
                 var dummy = document.createElement('dummy');

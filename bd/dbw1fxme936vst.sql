@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.5
+-- version 5.0.1
 -- https://www.phpmyadmin.net/
 --
--- Servidor: localhost
--- Tiempo de generación: 14-03-2021 a las 11:33:58
--- Versión del servidor: 5.7.32-35-log
--- Versión de PHP: 7.3.27
+-- Servidor: 127.0.0.1
+-- Tiempo de generación: 17-03-2021 a las 15:35:28
+-- Versión del servidor: 10.4.11-MariaDB
+-- Versión de PHP: 7.4.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -36,19 +36,22 @@ CREATE TABLE `contratos` (
   `tipo_contrato` varchar(30) NOT NULL,
   `tipoint_contrato` int(2) NOT NULL,
   `fechainicio_contrato` datetime NOT NULL,
-  `fechafin_contrato` datetime NOT NULL
+  `fechafin_contrato` datetime NOT NULL,
+  `idusuario_contrato` int(11) NOT NULL,
+  `firmacliente_contrato` varchar(101) NOT NULL,
+  `firmainge_contrato` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `contratos`
 --
 
-INSERT INTO `contratos` (`id_contrato`, `idproyecto_contrato`, `link_contrato`, `token_contrato`, `tipo_contrato`, `tipoint_contrato`, `fechainicio_contrato`, `fechafin_contrato`) VALUES
-(1, 1, 'https://ingeangel.com/contrato.php', '9ZW2r8h74dDwPIeVa', '3 Meses', 3, '2020-12-07 08:36:14', '2021-01-12 11:55:28'),
-(3, 2, 'https://ingeangel.com/contrato.php', 'TNwCzNTM12knc7AI6', '3 Meses', 3, '2021-03-09 05:56:24', '2021-06-09 05:56:24'),
-(4, 1, 'https://ingeangel.com/contrato.php', 'IA47X1gTBIYODSxJNl', '12 Meses', 12, '2021-03-10 11:58:24', '2022-03-10 11:58:24'),
-(5, 3, 'https://ingeangel.com/contrato.php', 'ZHhXBfZVHqGnM1YEu9', '3 Meses', 3, '2021-03-13 06:53:33', '2021-06-13 06:53:33'),
-(6, 4, 'https://ingeangel.com/contrato.php', 'ufgMOCRkW4i8LtHATQ', '3 Meses', 3, '2021-03-13 06:53:46', '2021-06-13 06:53:46');
+INSERT INTO `contratos` (`id_contrato`, `idproyecto_contrato`, `link_contrato`, `token_contrato`, `tipo_contrato`, `tipoint_contrato`, `fechainicio_contrato`, `fechafin_contrato`, `idusuario_contrato`, `firmacliente_contrato`, `firmainge_contrato`) VALUES
+(1, 1, 'https://ingeangel.com/contrato.php', '9ZW2r8h74dDwPIeVa', '3 Meses', 3, '2020-12-07 08:36:14', '2021-01-12 11:55:28', 24, 'includes/funciones/doc_sings/d4d1ea0cf57351b6e89b949afd5cb858.png', ''),
+(3, 2, 'https://ingeangel.com/contrato.php', 'TNwCzNTM12knc7AI6', '3 Meses', 3, '2021-03-09 05:56:24', '2021-06-09 05:56:24', 24, 'includes/funciones/doc_sings/44f21f805816f566bf3bc806d8ba8ea9.png', ''),
+(4, 1, 'https://ingeangel.com/contrato.php', 'IA47X1gTBIYODSxJNl', '12 Meses', 12, '2021-03-10 11:58:24', '2022-03-10 11:58:24', 24, 'includes/funciones/doc_sings/0e3efc0b635aef32915bc94248a2fd72.png', ''),
+(5, 3, 'https://ingeangel.com/contrato.php', 'ZHhXBfZVHqGnM1YEu9', '3 Meses', 3, '2021-03-13 06:53:33', '2021-06-13 06:53:33', 26, 'includes/funciones/doc_sings/551a86c65d94cdbcfd01ae1363d2db2f.png', ''),
+(6, 4, 'https://ingeangel.com/contrato.php', 'ufgMOCRkW4i8LtHATQ', '3 Meses', 3, '2021-03-13 06:53:46', '2021-06-13 06:53:46', 27, 'includes/funciones/doc_sings/0cd0b7c4ef399ac79fc6f05df2da7671.png', '');
 
 -- --------------------------------------------------------
 
@@ -119,8 +122,9 @@ INSERT INTO `pasos` (`id_paso`, `descripcion_paso`, `timing_paso`, `fechaini_pas
 (12, 'casi esta lista', 0, '2021-03-10 18:19:58', '2021-03-13 20:00:00', 2, '4'),
 (13, 'Se me olvido la descripción', 0, '2021-03-13 06:48:59', '2021-03-14 06:48:59', 1, '4'),
 (14, '1.-Nos pondremos en contacto con usted a la brevedad posible.', 1, '2021-03-13 06:53:33', '2021-03-14 06:53:33', 3, '1'),
-(15, '1.-Nos pondremos en contacto con usted a la brevedad posible.', 1, '2021-03-13 06:53:46', '2021-03-14 06:53:46', 4, ''),
-(16, 'Hey', 0, '2021-03-13 06:59:20', '2021-03-15 06:59:20', 3, '2');
+(15, '1.-Nos pondremos en contacto con usted a la brevedad posible.', 1, '2021-03-13 06:53:46', '2021-03-14 06:53:46', 4, '1'),
+(16, 'Hey', 0, '2021-03-13 06:59:20', '2021-03-15 06:59:20', 3, '2'),
+(17, 'hey', 0, '2021-03-14 08:13:34', '2021-03-15 08:13:34', 1, '5');
 
 -- --------------------------------------------------------
 
@@ -144,7 +148,7 @@ CREATE TABLE `precios` (
 --
 
 INSERT INTO `precios` (`id_precio`, `basico_precio`, `negocio_precio`, `profesional_precio`, `hosting_precio`, `dominio_precio`, `mantenimiento_precio`, `basesdatos_precio`) VALUES
-(1, 3800, 6800, 10000, 300, 0, 100, 800),
+(1, 3800, 6800, 10011, 300, 0, 100, 800),
 (2, 3800, 6800, 10800, 300, 0, 100, 800);
 
 -- --------------------------------------------------------
@@ -170,8 +174,8 @@ CREATE TABLE `proyectos` (
 INSERT INTO `proyectos` (`id_proyecto`, `nombre_proyecto`, `idusuario_proyecto`, `tipo_proyecto`, `contrato_proyecto`, `pago_proyecto`, `timing_proyecto`) VALUES
 (1, 'pcplus.com', 24, 'Paquete Negocio', 'link', '8000', ''),
 (2, 'www.pruebas.com', 24, 'Paquete Negocio', 'link', '8000', ''),
-(3, 'Prototipo X', 26, 'Paquete Profesional', 'link', '12000', ''),
-(4, 'Prototipo X', 27, 'Paquete Profesional', 'link', '12000', '');
+(3, 'losbiches.com', 26, 'Paquete Profesional', 'link', '12000', ''),
+(4, 'amor.com', 27, 'Paquete Profesional', 'link', '12000', '');
 
 -- --------------------------------------------------------
 
@@ -197,19 +201,20 @@ CREATE TABLE `usuarios` (
   `domiciliofiscal_usuario` varchar(250) NOT NULL,
   `cfdi_usuario` varchar(20) NOT NULL,
   `rfc_usuario` varchar(20) NOT NULL,
-  `tipo_usuario` varchar(10) NOT NULL
+  `tipo_usuario` varchar(10) NOT NULL,
+  `idcontrato_usuario` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `usuarios`
 --
 
-INSERT INTO `usuarios` (`id_usuario`, `nombre_usuario`, `apellidos_usuario`, `email_usuario`, `pass_usuario`, `telefono_usuario`, `foto_usuario`, `calle_usuario`, `numiedireccion_usuario`, `colonia_usuario`, `cp_usuario`, `paquetes_usuario`, `fecha_usuario`, `idproyecto_usuario`, `domiciliofiscal_usuario`, `cfdi_usuario`, `rfc_usuario`, `tipo_usuario`) VALUES
-(1, 'José Angel', 'Ruiz Chávez', 'a@gmail.com', 'hyo', '4521441689', 'upload/JoséAngel-wr901Mar2021152753abc.jpeg', 'San José de la Mina', '42', 'San José de la Mina', '60125', 'Paquete Profesional', '2021-02-25', 127, 'San José', '45a4sd51', '4a5sd451as54d1', 'admin'),
-(24, 'José Angel', 'Ruiz Chávez', 'angel._ruiz@hotmail.com', 'a', '4521114455', '', 'San José de la Mina', '42', 'San José de la Mina', '60125', 'Paquete Negocio', '2021-03-07', 2, '', '', '', 'user'),
-(25, 'José Angel', 'Ruiz Chávez', 'b@gmail.com', 'hyo', '4521441689', 'upload/JoséAngel-wr901Mar2021152753abc.jpeg', 'San José de la Mina', '42', 'San José de la Mina', '60125', 'Paquete Profesional', '2021-02-25', 127, 'San José', '45a4sd51', '4a5sd451as54d1', 'admin'),
-(26, 'Jordan', 'Ruiz Chávez', 'joseangelruizchavez@hotmail.com', 'IMtzfI17', '4521114455', '', 'San José de la Mina', '42', 'San José de la Mina', '60125', 'Paquete Profesional', '2021-03-13', 3, '', '', '', ''),
-(27, 'Jordan', 'Ruiz Chávez', 'joseangelruizchavez@gmail.com', 'U0DPCjKK', '4521114455', '', 'San José de la Mina', '42', 'San José de la Mina', '60125', 'Paquete Profesional', '2021-03-13', 4, '', '', '', '');
+INSERT INTO `usuarios` (`id_usuario`, `nombre_usuario`, `apellidos_usuario`, `email_usuario`, `pass_usuario`, `telefono_usuario`, `foto_usuario`, `calle_usuario`, `numiedireccion_usuario`, `colonia_usuario`, `cp_usuario`, `paquetes_usuario`, `fecha_usuario`, `idproyecto_usuario`, `domiciliofiscal_usuario`, `cfdi_usuario`, `rfc_usuario`, `tipo_usuario`, `idcontrato_usuario`) VALUES
+(1, 'José Angel', 'Ruiz Chávez', 'a@gmail.com', 'hyo', '4521441689', 'upload/JoséAngel-wr901Mar2021152753abc.jpeg', 'San José de la Mina', '42', 'San José de la Mina', '60125', 'Paquete Profesional', '2021-02-25', 127, 'San José', '45a4sd51', '4a5sd451as54d1', 'admin', 0),
+(24, 'José Angel', 'Ruiz Chávez', 'angel._ruiz@hotmail.com', 'a', '4521114455', '', 'San José de la Mina', '42', 'San José de la Mina', '60125', 'Paquete Negocio', '2021-03-07', 2, '', '', '', 'user', 0),
+(25, 'José Angel', 'Ruiz Chávez', 'b@gmail.com', 'hyo', '4521441689', 'upload/JoséAngel-wr901Mar2021152753abc.jpeg', 'San José de la Mina', '42', 'San José de la Mina', '60125', 'Paquete Profesional', '2021-02-25', 127, 'San José', '45a4sd51', '4a5sd451as54d1', 'admin', 0),
+(26, 'Jordan', 'Ruiz Chávez', 'joseangelruizchavez@hotmail.com', 'IMtzfI17', '4521114455', '', 'San José de la Mina', '42', 'San José de la Mina', '60125', 'Paquete Profesional', '2021-03-13', 3, '', '', '', '', 0),
+(27, 'Jordan', 'Ruiz Chávez', 'joseangelruizchavez@gmail.com', 'U0DPCjKK', '4521114455', '', 'San José de la Mina', '42', 'San José de la Mina', '60125', 'Paquete Profesional', '2021-03-13', 4, '', '', '', '', 0);
 
 --
 -- Índices para tablas volcadas
@@ -271,7 +276,7 @@ ALTER TABLE `pagos`
 -- AUTO_INCREMENT de la tabla `pasos`
 --
 ALTER TABLE `pasos`
-  MODIFY `id_paso` tinyint(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id_paso` tinyint(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT de la tabla `precios`

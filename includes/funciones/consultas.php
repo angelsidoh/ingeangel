@@ -1,25 +1,48 @@
 
 <?php
-// function obtenerContactos2()
-// {
-//     include '../../bd/bdsqli.php';
-//     try {
-//         return $connf->query("SELECT id_usuario, nombre_usuario, apellidos_usuario, email_usuario, telefono_usuario, fecha_usuario,  foto_usuario, tipo_usuario  FROM usuarios");
-//     } catch (Exception $e) {
-//         echo "Error!!" . $e->getMessage() . "<br>";
-//         return false;
-//     }
-// }
-// function consultaProyectos2()
-// {
-//     include '../../bd/bdsqli.php';
-//     try {
-//         return $connf->query("SELECT id_proyecto, nombre_proyecto, tipo_proyecto, pago_proyecto FROM proyectos");
-//     } catch (Exception $e) {
-//         echo "Error!!" . $e->getMessage() . "<br>";
-//         return false;
-//     }
-// }
+function obtenerPrecios2($dato)
+{
+
+    try {
+        require('../../bd/bdsqli.php');
+
+
+        return $connf->query("SELECT basico_precio, negocio_precio, profesional_precio, hosting_precio, dominio_precio, mantenimiento_precio, basesdatos_precio FROM precios WHERE id_precio = '$dato'");
+    } catch (Exception $e) {
+        echo "Error!!" . $e->getMessage() . "<br>";
+        return false;
+    }
+}
+function consultaContratosContrato2($dato)
+{
+    include '../../bd/bdsqli.php';
+    try {
+        return $connf->query("SELECT id_contrato, link_contrato, token_contrato, idproyecto_contrato, tipo_contrato, tipoint_contrato, fechainicio_contrato, fechafin_contrato, firmacliente_contrato FROM contratos WHERE token_contrato = '$dato'");
+    } catch (Exception $e) {
+        echo "Error!!" . $e->getMessage() . "<br>";
+        return false;
+    }
+}
+function consultaUsuarioContrato2($dato)
+{
+    include '../../bd/bdsqli.php';
+    try {
+        return $connf->query("SELECT id_usuario, nombre_usuario, foto_usuario, idproyecto_usuario, apellidos_usuario, email_usuario, telefono_usuario, calle_usuario,numiedireccion_usuario, colonia_usuario, cp_usuario, fecha_usuario, domiciliofiscal_usuario, cfdi_usuario, rfc_usuario, tipo_usuario  FROM usuarios WHERE id_usuario = '$dato'");
+    } catch (Exception $e) {
+        echo "Error!!" . $e->getMessage() . "<br>";
+        return false;
+    }
+}
+function consultaProyectos2($dato)
+{
+    include '../../bd/bdsqli.php';
+    try {
+        return $connf->query("SELECT id_proyecto, nombre_proyecto, tipo_proyecto, pago_proyecto, idusuario_proyecto FROM proyectos WHERE id_proyecto = '$dato'");
+    } catch (Exception $e) {
+        echo "Error!!" . $e->getMessage() . "<br>";
+        return false;
+    }
+}
 function consultaPagos2($dato)
 {
     include 'bd/bdsqli.php';
@@ -63,6 +86,16 @@ function consultaUsuario($dato)
         return false;
     }
 }
+function consultaUsuarioContrato($dato)
+{
+    include 'bd/bdsqli.php';
+    try {
+        return $connf->query("SELECT id_usuario, nombre_usuario, foto_usuario, idproyecto_usuario, apellidos_usuario, email_usuario, telefono_usuario, calle_usuario,numiedireccion_usuario, colonia_usuario, cp_usuario, fecha_usuario, domiciliofiscal_usuario, cfdi_usuario, rfc_usuario, tipo_usuario  FROM usuarios WHERE id_usuario = '$dato'");
+    } catch (Exception $e) {
+        echo "Error!!" . $e->getMessage() . "<br>";
+        return false;
+    }
+}
 function consultaProyecto($dato)
 {
     include 'bd/bdsqli.php';
@@ -77,7 +110,7 @@ function consultaProyectos($dato)
 {
     include 'bd/bdsqli.php';
     try {
-        return $connf->query("SELECT id_proyecto, nombre_proyecto, tipo_proyecto, pago_proyecto FROM proyectos WHERE id_proyecto = '$dato'");
+        return $connf->query("SELECT id_proyecto, nombre_proyecto, tipo_proyecto, pago_proyecto, idusuario_proyecto FROM proyectos WHERE id_proyecto = '$dato'");
     } catch (Exception $e) {
         echo "Error!!" . $e->getMessage() . "<br>";
         return false;
@@ -119,6 +152,16 @@ function consultaContratos($dato)
     include 'bd/bdsqli.php';
     try {
         return $connf->query("SELECT id_contrato, link_contrato, token_contrato, idproyecto_contrato, tipo_contrato, tipoint_contrato, fechainicio_contrato, fechafin_contrato FROM contratos WHERE idproyecto_contrato = '$dato'");
+    } catch (Exception $e) {
+        echo "Error!!" . $e->getMessage() . "<br>";
+        return false;
+    }
+}
+function consultaContratosContrato($dato)
+{
+    include 'bd/bdsqli.php';
+    try {
+        return $connf->query("SELECT id_contrato, link_contrato, token_contrato, idproyecto_contrato, tipo_contrato, tipoint_contrato, fechainicio_contrato, fechafin_contrato, firmacliente_contrato FROM contratos WHERE token_contrato = '$dato'");
     } catch (Exception $e) {
         echo "Error!!" . $e->getMessage() . "<br>";
         return false;

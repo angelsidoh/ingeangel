@@ -9,7 +9,7 @@ var canvas = wrapper.querySelector("canvas");
 var signaturePad = new SignaturePad(canvas, {
   // It's Necessary to use an opaque color when saving image as JPEG;
   // this option can be omitted if only saving as PNG or SVG
-  backgroundColor: 'rgb(255, 255, 255)'
+  backgroundColor: 'rgb(240,240,240)'
 });
 
 // Adjust canvas coordinate space taking into account pixel ratio,
@@ -19,7 +19,7 @@ function resizeCanvas() {
   // When zoomed out to less than 100%, for some very strange reason,
   // some browsers report devicePixelRatio as less than 1
   // and only part of the canvas is cleared then.
-  var ratio =  Math.max(window.devicePixelRatio || 1, 1);
+  var ratio = Math.max(window.devicePixelRatio || 1, 1);
 
   // This part causes the canvas to be cleared
   canvas.width = canvas.offsetWidth * ratio;
@@ -72,7 +72,9 @@ function dataURLToBlob(dataURL) {
     uInt8Array[i] = raw.charCodeAt(i);
   }
 
-  return new Blob([uInt8Array], { type: contentType });
+  return new Blob([uInt8Array], {
+    type: contentType
+  });
 }
 
 clearButton.addEventListener("click", function (event) {
@@ -91,29 +93,75 @@ var r = 0;
 var g = 0;
 var b = 0;
 changeColorButton.addEventListener("click", function (event) {
-  
-  b= b + 255;
-  if(b > 255){
+
+  b = b + 255;
+  if (b > 255) {
     b = 0;
-    
+
   }
-  var color = "rgb(" + r + "," + g + "," + b +")";
+  var color = "rgb(" + r + "," + g + "," + b + ")";
   console.log(color);
   signaturePad.penColor = color;
 });
 
 savePNGButton.addEventListener("click", function (event) {
   if (signaturePad.isEmpty()) {
-    alert("¡Por favor Firma primero!.");
+    swal({
+      content: "",
+      text: 'Por favor! Firma primero png',
+      icon: "error",
+      button: {
+        text: "Continuar",
+        closeModal: true,
+      },
+    });
   } else {
     var dataURL = signaturePad.toDataURL();
-    download(dataURL, "signature.png");
+    var canvas_img_data = canvas.toDataURL('image/pad');
+    var img_data = canvas_img_data.replace(/^data:image\/(png|jpg);base64,/, "");
+    console.log(img_data);
+    var tok = getParameterByName('tok');
+    console.log(tok);
+    $.ajax({
+      url: 'includes/funciones/guardar_firma.php?tok='+tok,
+      data: {
+        img_data: img_data
+      },
+      type: 'post',
+      dataType: 'json',
+      success: function (response) {
+        console.log(response);
+        if (response.status === 1) {
+          swal({
+            content: "",
+            text: 'Firma correcta',
+            icon: "success",
+            button: {
+              text: "Continuar",
+              closeModal: true,
+            },
+          });
+          setTimeout(() => {
+            window.location.href = response.url;
+          }, 3200);
+          
+        }
+      }
+    });
   }
 });
 
 saveJPGButton.addEventListener("click", function (event) {
   if (signaturePad.isEmpty()) {
-    alert("¡Por favor Firma primero!.");
+    swal({
+      content: "",
+      text: 'Por favor! Firma primero',
+      icon: "error",
+      button: {
+        text: "Continuar",
+        closeModal: true,
+      },
+    });
   } else {
     var dataURL = signaturePad.toDataURL("image/jpeg");
     download(dataURL, "signature.jpg");
@@ -122,9 +170,24 @@ saveJPGButton.addEventListener("click", function (event) {
 
 saveSVGButton.addEventListener("click", function (event) {
   if (signaturePad.isEmpty()) {
-    alert("¡Por favor Firma primero!.");
+    swal({
+      content: "",
+      text: 'Por favor! Firma primero',
+      icon: "error",
+      button: {
+        text: "Continuar",
+        closeModal: true,
+      },
+    });
   } else {
     var dataURL = signaturePad.toDataURL('image/svg+xml');
     download(dataURL, "signature.svg");
   }
 });
+
+function getParameterByName(name) {
+  name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+  var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+  results = regex.exec(location.search);
+  return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+}

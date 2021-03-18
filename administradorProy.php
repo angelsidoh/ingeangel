@@ -36,6 +36,7 @@ if ((!isset($_SESSION['usuario'])) && (!isset($_SESSION['email']))) {
             $vectorTipoProyectos = $proyecto['tipo_proyecto'];
             $vectorNombresProyectos[$contadorProyectos] = $nombreproyecto;
             $vectorIdProyectos[$contadorProyectos] = $idProyecto;
+            $vectorIdUsuarioProyectos[$contadorProyectos] = $proyecto['idusuario_proyecto'];
             $contadorProyectos++;
         }
     }
@@ -187,6 +188,8 @@ if ((!isset($_SESSION['usuario'])) && (!isset($_SESSION['email']))) {
         // echo '</pre>';
         // // echo $idProyecto ;
         // echo $_SESSION['tipo_usuario'];
+        // echo $_GET['id'];
+     
 
         for ($x = 0; $x < sizeof($supervecTipoIntContrato); $x++) {
 
@@ -552,6 +555,7 @@ if ((!isset($_SESSION['usuario'])) && (!isset($_SESSION['email']))) {
 
 </li>
 <?php include('includes/funciones/contratos.php');
+
     for ($i = 0; $i < sizeof($supervecTokenContrato); $i++) {
         $contadorContrato = 0;
         for ($u = 0; $u < sizeof($supervecTokenContrato[$i]); $u++) {

@@ -159,6 +159,7 @@ if ((!isset($_SESSION['usuario'])) && (!isset($_SESSION['email']))) {
 //         echo '<pre>';
 // var_dump($supervecFechaInicioContrato);
 // echo '</pre>';
+
 $_SESSION['tipo_usuario'] = $tipouser;
             ?>
 

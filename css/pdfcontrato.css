@@ -1,0 +1,14 @@
+body{
+    text-align: center;
+}
+.titulo-seccion{
+    text-align: center;
+}
+.contendor-efecto{
+    text-align: justify;
+}
+.firmax{
+    text-align: center;
+    height: auto;
+    margin-left: calc(50% - 260px);
+}

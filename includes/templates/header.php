@@ -27,6 +27,7 @@ session_start();
   <link rel="stylesheet" href="css/main.css?v=<?php echo time(); ?>">
   <link rel="stylesheet" href="css/styles.css?v=<?php echo time(); ?>">
   <link rel="stylesheet" href="css/estilos-pruebas1.css?v=<?php echo time(); ?>">
+
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
 
