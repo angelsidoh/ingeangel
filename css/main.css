@@ -1791,6 +1791,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 
 }
 @media only screen and (max-width:768px){
+  .hotcall{
+  display: none;
+  }
   .subcall{
   display: none;
   }
@@ -3648,7 +3651,7 @@ ul{
 }
 .buddu{
   overflow: hidden;
-  margin-left: -10px;
+  
 }
 .animacionlogo{
   animation: trasan 1.5s 1 ease-in-out;

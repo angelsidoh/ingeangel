@@ -1300,38 +1300,7 @@ var chesy4000 = new Array();
 $(".contenedor-especial")
   .mouseover(function () {
     // console.log('hola');
-    var contchecks = 0;
-    for (let checkss = 0; checkss <= 100; checkss++) {
-      var inps = '#inps' + (4000 + checkss);
-      var serie = (4000 + checkss);
-      var inputchects = $(inps).attr('id');
-      if (inps === ('#' + inputchects)) {
-
-        console.log(inps + '-' + inputchects);
-        chesy4000[contchecks] = inps;
-        chesx4000[contchecks] = serie;
-        contchecks++;
-      }
-    }
-    // console.log(chesx4000);
-    for (let x = 0; x < chesx4000.length; x++) {
-      var plus = '#plus' + chesx4000[x];
-      //  console.log('aqui'+chesx4000[x]);
-      $(plus).hover(
-        function () {
-
-          // console.log(chesx4000[x]);
-          i = chesx4000[x];
-          ches(i);
-
-
-        },
-        function () {
-          i = '';
-        }
-      );
-
-    }
+   
   })
   .mouseout(function () {
     // console.log('adios');
@@ -2890,7 +2859,7 @@ $(document).ready(function () {
 
   resolucion = screen.width;
 
-  // console.log(resolucion);
+  console.log(resolucion);
 });
 var fleep = '0';
 
@@ -3365,6 +3334,7 @@ $(document).ready(function () {
 //end slider2
 // slider3
 $(document).ready(function () {
+  
 
   var imgItems3 = $('.slider3 li').length;
   var imgPos3 = 1;
@@ -3525,6 +3495,7 @@ var auxop = 0;
 var operacion = 0;
 var margin_menu = 0;
 $(window).scroll(function () {
+
   var barraAltura = $('.menu-barra').innerHeight();
   var margin = barraAltura * -1;
   // console.log(margin);
@@ -3541,7 +3512,7 @@ $(window).scroll(function () {
       $("#check-hotcall").prop("checked", false);
       $("#flechaup").show();
       $("#flechadown").hide();
-      console.log('hey'+operacion);
+      // console.log('hey'+operacion);
     }
     margin_menu = operacion;
     $('.menu-barra').css({
@@ -3575,6 +3546,39 @@ $(window).scroll(function () {
 
   if (scroll > 966) {
     $('.menu-barra').addClass('fix-menubarra');
+    console.log('hola');
+    var contchecks = 0;
+    for (let checkss = 0; checkss <= 100; checkss++) {
+      var inps = '#inps' + (4000 + checkss);
+      var serie = (4000 + checkss);
+      var inputchects = $(inps).attr('id');
+      if (inps === ('#' + inputchects)) {
+
+        console.log(inps + '-' + inputchects);
+        chesy4000[contchecks] = inps;
+        chesx4000[contchecks] = serie;
+        contchecks++;
+      }
+    }
+    // console.log(chesx4000);
+    for (let x = 0; x < chesx4000.length; x++) {
+      var plus = '#plus' + chesx4000[x];
+      //  console.log('aqui'+chesx4000[x]);
+      $(plus).hover(
+        function () {
+
+          // console.log(chesx4000[x]);
+          i = chesx4000[x];
+          ches(i);
+
+
+        },
+        function () {
+          i = '';
+        }
+      );
+
+    }
 
 
   } else {
@@ -3591,6 +3595,7 @@ $(window).scroll(function () {
 
   }
   auxop = scroll;
+  
 });
 
 $(document).ready(function () {
