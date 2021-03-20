@@ -37,7 +37,7 @@ session_start();
   <!-- 08/09/2020 INICIO DEL PROYECTO-->
 </head>
 
-<body>
+<body id="boddu">
   <!--[if IE]>
     <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
     <![endif]-->
@@ -48,9 +48,9 @@ session_start();
 
 
   <div id="inicio" class="seccion-completa">
-    <div class="menu-barra">
+    <div id="menubarra" class="menu-barra">
       <div class="logs"> <a href="index.php#">
-          <div class="imglogo"></div>
+          <div id = "imglogo" class="imglogo"></div>
         </a></div>
 
       <div class="menu-hambur">
@@ -82,8 +82,21 @@ session_start();
           <i class="fas fa-chevron-down" id="flechaup"> Contacto</i>
           <i class="fas fa-chevron-up" id="flechadown" style="display:none"> Contacto</i>
         </label>
-
+        <div style="display: none;" id="subcall" class="subcall">
+        <br>
+        <br>
+          <a style="color: #ffffff!important;"  class="button" href="tel:+524521441689"><i class="fas fa-phone-alt"></i> +52(452)1441689</a>
+          <br>
+          <br>
+          <br>
+          <a style="color: #ffffff!important;"  class="button" href="tel:+524521441689"><i class="fab fa-whatsapp"></i> +52(452)1441689</a>
+          <br>
+          <br>
+          <br>
+          <a  style="color: #ffffff!important;" class = " button" href="mailto:infoingeangel@gmail.com"><i class="far fa-envelope"></i> Enviar Correo</a>
       </div>
+      </div>
+     
       <div class="proyectos">
         <div class="proy">
           <a href="proyectos.php#angel-ruiz">
@@ -112,18 +125,7 @@ session_start();
               <h1 id="sparklemaster" class="sparklemaster">Desarrollo Web</h1>
             </a>
           </li>
-          <li>
-            <a href="">
-              <h1 id="sparklemaster" class="sparklemaster">Programación Web</h1>
-            </a>
-            <p style="width: 60%; margin: 0 auto; background-color: rgb(66, 66, 66, 0.5);color: #ffffff; font-size: 56px;">Html, Css3, Php y JavaScript</p>
-          </li>
-          <li>
-            <a href="">
-              <h1 id="sparklemaster" class="sparklemaster">Oferta de diseño web</h1>
-            </a>
-            <p style="width: 60%; margin: 0 auto; background-color: rgb(66, 66, 66, 0.5);color: #ffffff; font-size: 56px;">oferta unica a los primeros 10 clientes</p>
-          </li>
+         
         </ul>
 
         <!-- <ol class="paginacion">
@@ -141,7 +143,9 @@ session_start();
       </div>
       <div id="angel-ruiz"></div>
       <div id="menu-screen" class="nav">
+       
         <div class="nav__content">
+          <div style="display: none;" id="imglogo2" class="imglogo"></div>
           <ul class="nav__list">
             <li class="nav__list-item">
               <a href="<?php
@@ -163,6 +167,8 @@ session_start();
 
           </ul>
         </div>
+        
       </div>
+      
     </div>
   </div>

@@ -1,5 +1,6 @@
 // Conekta
 
+$("#subcall").hide();
 
 // end conekta
 var contadornotificaciones = 0;
@@ -2845,10 +2846,20 @@ const app = (() => {
   const toggleClass = (element, stringClass) => {
     if (element.classList.contains(stringClass)) {
       // console.log('hola');
+      $("#imglogo").show();
+      $("#imglogo2").hide();
+      $("#imglogo2").removeClass('animacionlogo');
+      $("#imglogo").addClass('animacionlogo');
+      $("#boddu").removeClass('buddu');
       element.classList.remove(stringClass);
       $("#menu-screen").css("z-index", "-1");
     } else {
       $("#menu-screen").css("z-index", "2");
+      $("#imglogo").hide();
+      $("#imglogo2").show();
+      $("#boddu").addClass('buddu');
+      $("#imglogo2").addClass('animacionlogo');
+      $("#imglogo").removeClass('animacionlogo');
       // console.log('adios');
       element.classList.add(stringClass);
     }
@@ -3450,6 +3461,8 @@ $("#check").click(function () {
     $("#clc").hide();
   }
 });
+$("#subcall").hide();
+$('#subcall').removeClass('showanimcion');
 
 $('input:checkbox').removeAttr('checked');
 $('input[type=checkbox]').prop('checked', false);
@@ -3457,9 +3470,17 @@ $("#check-hotcall").click(function () {
   if ($(this).is(":checked")) {
     $("#flechaup").hide();
     $("#flechadown").show();
+    $("#subcall").show();
+   
+    $('#subcall').addClass('showanimcion');
+  
+    
   } else {
     $("#flechaup").show();
     $("#flechadown").hide();
+    $("#subcall").hide();
+    $('#subcall').removeClass('showanimcion');
+
   }
 });
 $('.proyectos').hover(function () {
@@ -3515,6 +3536,12 @@ $(window).scroll(function () {
 
     if (operacion <= -120) {
       operacion = -120;
+      $("#subcall").hide();
+      $('#subcall').removeClass('showanimcion');
+      $("#check-hotcall").prop("checked", false);
+      $("#flechaup").show();
+      $("#flechadown").hide();
+      console.log('hey'+operacion);
     }
     margin_menu = operacion;
     $('.menu-barra').css({
@@ -3528,6 +3555,7 @@ $(window).scroll(function () {
     operacion = scrollup - scrolldown;
     if (operacion >= 120) {
       operacion = 120;
+  
     }
     margin_menu = margin + operacion;
 
@@ -3535,6 +3563,8 @@ $(window).scroll(function () {
       'margin-top': margin_menu + 'px'
     })
     $('.menu-barra').addClass('menu-barraextra');
+    
+
   }
 
 
@@ -3550,6 +3580,11 @@ $(window).scroll(function () {
   } else {
     $('.barramenu').removeClass('fix-menubarra');
     $('.menu-barra').removeClass('menu-barraextra');
+    $("#subcall").hide();
+    $('#subcall').removeClass('showanimcion');
+    $("#check-hotcall").prop("checked", false);
+    $("#flechaup").show();
+    $("#flechadown").hide();
 
 
 

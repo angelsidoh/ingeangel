@@ -10,9 +10,9 @@
                     Ayudar a nuestros clientes a cumplir con un objetivo importante como tener identidad en internet, dando soluciones en tiempo y forma, a cada reto impuesto por los mismos.
                 </p>
 
-                <a href="index.php#">
+                <!-- <a href="index.php#">
                     <div class="imglogo"></div>
-                </a>
+                </a> -->
             </div>
         </div>
         <div class="elem4__fondo">
