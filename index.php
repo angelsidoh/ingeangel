@@ -157,7 +157,7 @@ if ($resultadoProyecto->num_rows) {
                             <div class="text-paquete1">
                                 <div class="title">
                                     <div class="text">
-                                        <h1>Paquete Básico</h1>
+                                        <h1>Paquete Básicod</h1>
                                     </div>
                                     <div class="hr">
                                         <span><i class="far fa-bookmark"></i></span>
