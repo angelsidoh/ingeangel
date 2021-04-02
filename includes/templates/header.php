@@ -23,7 +23,7 @@ session_start();
   <link rel="stylesheet" href="js/plugins/malihu-custom-scrollbar-plugin-master/malihu-custom-scrollbar-plugin-master/jquery.mCustomScrollbar.css">
 
   <link rel="stylesheet" href="css/normalize.css">
-
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
   <link rel="stylesheet" href="css/main.css?v=<?php echo time(); ?>">
   <link rel="stylesheet" href="css/styles.css?v=<?php echo time(); ?>">
   <link rel="stylesheet" href="css/estilos-pruebas1.css?v=<?php echo time(); ?>">
@@ -50,7 +50,7 @@ session_start();
   <div id="inicio" class="seccion-completa">
     <div id="menubarra" class="menu-barra">
       <div class="logs"> <a href="index.php#">
-          <div id = "imglogo" class="imglogo"></div>
+          <div id="imglogo" class="imglogo"></div>
         </a></div>
 
       <div class="menu-hambur">
@@ -62,18 +62,18 @@ session_start();
       </div>
       <div class="botonsesiones">
         <div class="botones_barra">
-        <a href="<?php
-                        if ((!isset($_SESSION['usuario'])) && (!isset($_SESSION['email']))) {
-                          echo 'login.php#angel-ruiz';
-                        }else{
-                          echo 'logout.php';
-                        }?>"><?php
-                                        if ((!isset($_SESSION['usuario'])) && (!isset($_SESSION['email']))) {
-                                          echo 'Iniciar Sesión';
-                                        } else {
-                                          echo 'Cerrar Sesión';
-                                        } ?>
-              </a>
+          <a href="<?php
+                    if ((!isset($_SESSION['usuario'])) && (!isset($_SESSION['email']))) {
+                      echo 'login.php#angel-ruiz';
+                    } else {
+                      echo 'logout.php';
+                    } ?>"><?php
+                          if ((!isset($_SESSION['usuario'])) && (!isset($_SESSION['email']))) {
+                            echo 'Iniciar Sesión';
+                          } else {
+                            echo 'Cerrar Sesión';
+                          } ?>
+          </a>
         </div>
       </div>
       <div class="hotcall">
@@ -83,20 +83,20 @@ session_start();
           <i class="fas fa-chevron-up" id="flechadown" style="display:none"> Contacto</i>
         </label>
         <div style="display: none;" id="subcall" class="subcall">
-        <br>
-        <br>
-          <a style="color: #ffffff!important;"  class="button" href="tel:+524521441689"><i class="fas fa-phone-alt"></i> +52(452)1441689</a>
+          <br>
+          <br>
+          <a style="color: #ffffff!important;" class="button" href="tel:+524521441689"><i class="fas fa-phone-alt"></i> +52(452)1441689</a>
           <br>
           <br>
           <br>
-          <a style="color: #ffffff!important;"  class="button" href="tel:+524521441689"><i class="fab fa-whatsapp"></i> +52(452)1441689</a>
+          <a style="color: #ffffff!important;" class="button" href="tel:+524521441689"><i class="fab fa-whatsapp"></i> +52(452)1441689</a>
           <br>
           <br>
           <br>
-          <a  style="color: #ffffff!important;" class = " button" href="mailto:infoingeangel@gmail.com"><i class="far fa-envelope"></i> Enviar Correo</a>
+          <a style="color: #ffffff!important;" class=" button" href="mailto:infoingeangel@gmail.com"><i class="far fa-envelope"></i> Enviar Correo</a>
+        </div>
       </div>
-      </div>
-     
+
       <div class="proyectos">
         <div class="proy">
           <a href="proyectos.php#angel-ruiz">
@@ -121,11 +121,278 @@ session_start();
         <!-- <h1>Desarrollo <br> web</h1> -->
         <ul class="slider">
           <li>
-            <a href="">
-              <h1 id="sparklemaster" class="sparklemaster">Desarrollo Web</h1>
-            </a>
+            <div class="imgslider">
+              <img src="img/terceros/fondoprinctransparnt.png" alt="fondo">
+
+              <div class="texta">
+                <h1 id="sparklemaster" class="sparklemaster">¿Por qué necesita una página web profesional?</h1>
+               
+
+               
+              </div>
+              <div class="cards-swiper">
+             
+                  <div class="swiper-container">
+                
+                    <div class="swiper-wrapper">
+                    
+                      <div class="swiper-slide">
+                      
+                        <div class="card">
+                            <div class="layer">
+                              <div class="content">
+                              <i class="fas fa-check"></i>
+                              <h3>Ventas</h3>
+                              <p>Como herramienta, un sitio web bien estructurado y atractivo mejorará significativamente las ventas.</p>
+                              </div>
+                              <div class="imgBx">
+                              </div>
+                              <div class="details">
+                              </div>
+                            </div>
+                        </div>
+                        
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="card">
+                            <div class="layer">
+                              <div class="content">
+                              <i class="fas fa-check"></i>
+                                <h3>Expansión de fronteras</h3>
+                                <p>Publicidad al nivel mas alto, alcanzando países y nuevos clientes de todo el mundo</p>
+                              </div>
+                              <div class="imgBx">
+                              </div>
+                              <div class="details">
+                              </div>
+                            </div>
+                        </div>
+                        
+                        
+                      </div>
+                      <div class="swiper-slide" data-hash="slide3">
+                        <div class="card">
+                            <div class="layer">
+                              <div class="content">
+                              <i class="fas fa-check"></i>
+                                <h3>Identidad en Internet</h3>
+                                <p>Los cambios en los hábitos de compra están ocurriendo, y un sitio web es la herramienta adecuada para adaptarse</p>
+                              </div>
+                              <div class="imgBx">
+                              </div>
+                              <div class="details">
+                              </div>
+                            </div>
+                        </div>
+                       
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="card">
+                            <div class="layer">
+                              <div class="content">
+                              <i class="fas fa-check"></i>
+                                <h3>Credibilidad y Prestigio</h3>
+                                <p>Clientes atraen a mas clientes, presentación a detalle de sus servicios y productos, ademas, solucionando las necesidades de sus clientes </p>
+                              </div>
+                              <div class="imgBx">
+                              </div>
+                              <div class="details">
+                              </div>
+                            </div>
+                        </div>
+                        
+                        
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="card">
+                            <div class="layer">
+                              <div class="content">
+                              <i class="fas fa-check"></i>
+                                <h3>Servicio 24/7</h3>
+                                <p>Clientes que pueden revisar, comprar o firmar un contrato en cualquier día y hora de la semana</p>
+                              </div>
+                              <div class="imgBx">
+                              </div>
+                              <div class="details">
+                              </div>
+                            </div>
+                        </div>
+                        
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="card">
+                            <div class="layer">
+                              <div class="content">
+                              <i class="fas fa-check"></i>
+                                <h3>Google</h3>
+                                <p>Sus servicios y productos saldrán en el buscador de internet más importante del mundo</p>
+                              </div>
+                              <div class="imgBx">
+                              </div>
+                              <div class="details">
+                              </div>
+                            </div>
+                        </div>
+                        
+                        
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="card">
+                            <div class="layer">
+                              <div class="content">
+                              <i class="fas fa-check"></i>
+                                <h3>Competencia</h3>
+                                <p>Sus servicios y productos serán fuertes frente a otros. Además la buena disposición de información disolverá cualquier tipo de duda en sus clientes</p>
+                              </div>
+                              <div class="imgBx">
+                              </div>
+                              <div class="details">
+                              </div>
+                            </div>
+                        </div>
+                        
+                        
+                      </div>
+                    </div>
+                  
+                  </div>
+                  <a class="button" href="registro.php#angel-ruiz">
+                  Cotizar
+                </a>
+                </div>
+
+            </div>
+
           </li>
          
+          <li>
+            <div class="imgslider">
+              <img src="img/terceros/fondoslider5.png" alt="fondo">
+              <div class="texta">
+                <h1 id="sparklemaster" class="sparklemaster">¿Qué servicio encuentra aquí?</h1>
+                
+
+
+           
+              </div>
+              <div class="cards-swiper">
+             
+             <div class="swiper-container">
+           
+               <div class="swiper-wrapper">
+               
+                 <div class="swiper-slide">
+                 
+                   <div class="card">
+                       <div class="layer">
+                         <div class="content">
+                         <i class="fas fa-check"></i>
+                                <h3>Programación</h3>
+                                <p>Soy un profesional en programación en HTML CSS3, PHP y JavaScript. Entre otros lenguajes de programación</p>
+                         </div>
+                         <div class="imgBx">
+                         </div>
+                         <div class="details">
+                         </div>
+                       </div>
+                   </div>
+                   
+                 </div>
+                 <div class="swiper-slide">
+                   <div class="card">
+                       <div class="layer">
+                         <div class="content">
+                         <i class="fas fa-check"></i>
+                                <h3>Planeación</h3>
+                                <p>Los proyectos que desarrollo están planificados para cumplir con objetivos en el tiempo marcado.</p>
+                         </div>
+                         <div class="imgBx">
+                         </div>
+                         <div class="details">
+                         </div>
+                       </div>
+                   </div>
+                   
+                   
+                 </div>
+                 <div class="swiper-slide" data-hash="slide3">
+                   <div class="card">
+                       <div class="layer">
+                         <div class="content">
+                         <i class="fas fa-check"></i>
+                                <h3>Mantenimiento Preventivo</h3>
+                                <p>Constantemente actualizo o modifico partes de código mejorando la calidad de navegación por el sitio web</p>
+                         </div>
+                         <div class="imgBx">
+                         </div>
+                         <div class="details">
+                         </div>
+                       </div>
+                   </div>
+                  
+                 </div>
+                 <div class="swiper-slide">
+                   <div class="card">
+                       <div class="layer">
+                         <div class="content">
+                         <i class="fas fa-check"></i>
+                                <h3>Mantenimiento Correctivo</h3>
+                                <p>Corrijo y empleo nuevas funciones resolviendo los problemas que afecten al sitio web</p>
+                         </div>
+                         <div class="imgBx">
+                         </div>
+                         <div class="details">
+                         </div>
+                       </div>
+                   </div>
+                   
+                   
+                 </div>
+                 <div class="swiper-slide">
+                   <div class="card">
+                       <div class="layer">
+                         <div class="content">
+                         <i class="fas fa-check"></i>
+                                <h3>Expanción del contenido</h3>
+                                <p>Actualización o modificación del contenido para su disposición en el sitio web</p>
+                         </div>
+                         <div class="imgBx">
+                         </div>
+                         <div class="details">
+                         </div>
+                       </div>
+                   </div>
+                   
+                 </div>
+                 <div class="swiper-slide">
+                   <div class="card">
+                       <div class="layer">
+                         <div class="content">
+                         <i class="fas fa-check"></i>
+                                <h3>Creatibidad</h3>
+                                <p>Siempre encuentro la manera de solucionar problemas y retos en cada proyecto</p>
+                         </div>
+                         <div class="imgBx">
+                         </div>
+                         <div class="details">
+                         </div>
+                       </div>
+                   </div>
+                   
+                   
+                 </div>
+               </div>
+             
+             </div>
+             <a class="button" href="registro.php#angel-ruiz">
+             Cotizar
+           </a>
+           </div>
+
+            </div>
+
+          </li>
+          
         </ul>
 
         <!-- <ol class="paginacion">
@@ -143,7 +410,7 @@ session_start();
       </div>
       <div id="angel-ruiz"></div>
       <div id="menu-screen" class="nav">
-       
+
         <div class="nav__content">
           <div style="display: none;" id="imglogo2" class="imglogo"></div>
           <ul class="nav__list">
@@ -151,14 +418,14 @@ session_start();
               <a href="<?php
                         if ((!isset($_SESSION['usuario'])) && (!isset($_SESSION['email']))) {
                           echo 'login.php#angel-ruiz';
-                        }else{
+                        } else {
                           echo 'logout.php';
-                        }?>"><?php
-                                        if ((!isset($_SESSION['usuario'])) && (!isset($_SESSION['email']))) {
-                                          echo 'Iniciar Sesión';
-                                        } else {
-                                          echo 'Cerrar Sesión';
-                                        } ?>
+                        } ?>"><?php
+                              if ((!isset($_SESSION['usuario'])) && (!isset($_SESSION['email']))) {
+                                echo 'Iniciar Sesión';
+                              } else {
+                                echo 'Cerrar Sesión';
+                              } ?>
               </a>
             </li>
             <li class="nav__list-item"><a href="cuenta.php#angel-ruiz"> Tu cuenta</a></li>
@@ -167,8 +434,8 @@ session_start();
 
           </ul>
         </div>
-        
+
       </div>
-      
+
     </div>
   </div>

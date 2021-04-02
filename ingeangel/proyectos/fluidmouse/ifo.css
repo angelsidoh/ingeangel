@@ -1,0 +1,694 @@
+@font-face {
+    font-family: Lockdown demo;
+    src: url(fonts/lockdown/Lockdown\ demo.ttf);
+  
+}
+h1{
+    font-family: Lockdown demo;
+    
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+   
+}
+body{
+    overflow: hidden;
+}
+.forma{
+    position: absolute;
+    width: 20px; 
+     height: 20px; 
+     border: 3px solid #555; 
+     background: #428bca;
+     -webkit-transform: rotate(45deg);
+     -moz-transform: rotate(45deg);
+     -ms-transform: rotate(45deg);
+     -o-transform: rotate(45deg);
+     transform: rotate(45deg);
+     top: calc(50% - 10px);
+     left: calc(50% - 10px);
+}
+.btn {
+    transform: scale(1.2); /* Igual que: scaleX(0.7) scaleY(0.7) */
+    width: 12vh;
+    height: 12vh;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    background: #0f0f0f;
+    box-shadow: -1px -1px 10px rgb(255, 255, 255, 0.1),
+                6px 6px 10px rgba(0,0,0,0.7);
+    opacity: 95%;
+    position: absolute;
+    font-family: 'roboto', cursive;
+    text-shadow:0 0 1px rgb(255, 255, 255),
+    0 0 0.5vh rgb(255, 0, 0),
+    0 0 0.9vh rgb(255, 0, 0);
+  }
+  .btn:hover{
+    box-shadow: -1px -1px 10px rgb(255, 255, 255, 0.1),
+    6px 6px 10px rgba(0,0,0,0.7),
+    inset 1px -1px 10px rgb(255, 255, 255, 0.1),
+    inset 6px 6px 10px rgba(0,0,0,0.7);
+    text-shadow: 
+    0 0 1vh rgb(255, 255, 255),
+    0 0 1.2vh rgb(0, 255, 76);   
+  }
+  .btn a{
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color:rgb(109, 238, 255);
+    line-height: 12vh;
+    text-transform: uppercase; 
+    font-size: 5.5vh;
+    font-family: Lockdown demo;
+  }
+  
+section{
+    width: 100%;
+    min-width: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+section .fondo{
+    text-align: center;
+    min-width: 1vh;
+    height: 100vh;
+    
+}
+section .fondo img#uno{
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+}
+section .fondo img#dos{
+    display: none;
+}
+@media only screen and (min-width:768px){
+
+    section .fondo img#uno{
+        display: none;
+    }
+    section .fondo img#dos{
+        display: flex;
+        width: 100%;
+        height: 100vh;
+        background-size: cover; 
+    }
+    .btn {
+        width: 16vh;
+        height: 16vh;
+    }
+    .btn a{
+        line-height: 15vh;
+        font-size: 4.5vh;
+    }
+}
+        
+ /* @media only screen and (min-width:360px){
+    @media only screen and (max-width:360px){
+        @media only screen and (min-height:740px){
+            @media only screen and (max-height:740px){
+                section .fondo img#uno{
+                    display: flex;
+                    width:100%;
+                    height: 100vh;
+                    background-size: cover;
+                    
+                }
+                section .fondo img#dos{
+                    display: none; 
+                }
+                section .fondo a{
+                    width: 25vw;
+                    height: 25vw;
+                    top: calc(50% - 15vh);
+                    left: calc(50% - 15vh);
+                    font-size: 2.5vh;
+                }
+            }
+        }
+    }
+}
+@media only screen and (min-width:360px){
+    @media only screen and (max-width:360px){
+        @media only screen and (min-height:740px){
+            @media only screen and (max-height:740px){
+                section .fondo img#uno{
+                    display: flex;
+                    width:100%;
+                    height: 100vh;
+                    background-size: cover;
+                    
+                }
+                section .fondo img#dos{
+                    display: none; 
+                }
+                section .fondo a{
+                    width: 18vw;
+                    height: 18vw;
+                    top: calc(50% - 9.9vh);
+                    left: calc(50% - 9.9vh);
+                    font-size: 2.5vh;
+                }
+            }
+        }
+    }
+}
+@media only screen and (min-width:740px){
+    @media only screen and (max-width:740px){
+        @media only screen and (min-height:360px){
+            @media only screen and (max-height:360px){
+                section .fondo img#uno{
+                    display: none;
+                    
+                    
+                }
+                section .fondo img#dos{
+                    display: flex;
+                    width:100%;
+                    height: 100vh;
+                    background-size: cover;
+                }
+                section .fondo a{
+                    width: 10vw;
+                    height: 10vw;
+                    top: calc(50% - 21vh);
+                    left: calc(50% - 21vh);
+                    font-size: 5vh;
+                }
+            }
+        }
+    }
+}
+@media only screen and (min-width:768px){
+    @media only screen and (max-width:768px){
+        @media only screen and (min-height:1024px){
+            @media only screen and (max-height:1024px){
+                section .fondo img#uno{
+                    display: flex;
+                    width:100%;
+                    height: 100vh;
+                    background-size: cover;
+                    
+                    
+                }
+                section .fondo img#dos{
+                    display: none;
+                }
+                section .fondo a{
+                    width: 15vw;
+                    height: 15vw;
+                    top: calc(50% - 9.5vh);
+                    left: calc(50% - 9.5vh);
+                    font-size: 2.8vh;
+                }
+            }
+        }
+    }
+}
+@media only screen and (min-width:1024px){
+    @media only screen and (max-width:1024px){
+        @media only screen and (min-height:768px){
+            @media only screen and (max-height:768px){
+                section .fondo img#uno{
+                    display: none;
+                    
+                    
+                }
+                section .fondo img#dos{
+                    display: flex;
+                    width:100%;
+                    height: 100vh;
+                    background-size: cover;
+                }
+                section .fondo a{
+                    width: 10vw;
+                    height: 10vw;
+                    top: calc(50% - 11.7vh);
+                    left: calc(50% - 11.7vh);
+                    font-size: 2.8vh;
+                }
+            }
+        }
+    }
+}
+@media only screen and (min-width:375px){
+    @media only screen and (max-width:375px){
+        @media only screen and (min-height:375px){
+            @media only screen and (max-height:667px){
+                section .fondo img#uno{
+                    display: flex;
+                    width:100%;
+                    height: 100vh;
+                    background-size: cover;
+                }
+                section .fondo img#dos{
+                    display: none;
+                }
+                section .fondo a{
+                    width: 20vw;
+                    height: 20vw;
+                    top: calc(50% - 11.4vh);
+                    left: calc(50% - 11.4vh);
+                    font-size: 2.8vh;
+                }
+            }
+        }
+    }
+}
+@media only screen and (min-width:667px){
+    @media only screen and (max-width:667px){
+        @media only screen and (min-height:375px){
+            @media only screen and (max-height:375px){
+                section .fondo img#uno{
+                    display: none;
+                }
+                section .fondo img#dos{
+                    display: flex;
+                    width:100%;
+                    height: 100vh;
+                    background-size: cover;
+                }
+                section .fondo a{
+                    width: 14vw;
+                    height: 14vw;
+                    top: calc(50% - 22.8vh);
+                    left: calc(50% - 22.8vh);
+                    font-size: 6vh;
+                }
+            }
+        }
+    }
+}
+@media only screen and (min-width:736px){
+    @media only screen and (max-width:736px){
+        @media only screen and (min-height:414px){
+            @media only screen and (max-height:414px){
+                section .fondo img#uno{
+                    display:none;
+                }
+                section .fondo img#dos{
+                    display: flex;
+                    width:100%;
+                    height: 100vh;
+                    background-size: cover;
+                }
+                section .fondo a{
+                    width: 14vw;
+                    height: 14vw;
+                    top: calc(50% - 21.8vh);
+                    left: calc(50% - 21.8vh);
+                    font-size: 6vh;
+                }
+            }
+        }
+    }
+}
+@media only screen and (min-width:812px){
+    @media only screen and (max-width:812px){
+        @media only screen and (min-height:375px){
+            @media only screen and (max-height:375px){
+                section .fondo img#uno{
+                    display: none;
+                }
+                section .fondo img#dos{
+                    display: flex;
+                    width:100%;
+                    height: 100vh;
+                    background-size: cover;
+                }
+                section .fondo a{
+                    width: 12vw;
+                    height: 12vw;
+                    top: calc(50% - 21.8vh);
+                    left: calc(50% - 21.8vh);
+                    font-size: 6vh;
+                }
+            }
+        }
+    }
+}
+*/@media only screen and (min-width:800px){
+    @media only screen and (max-width:800px){
+        @media only screen and (min-height:1280px){
+            @media only screen and (max-height:1280px){
+                section .fondo img#uno{
+                    display: flex;
+                    width: 100%;
+                    height: 100vh;
+                    background-size: cover;
+                }
+                section .fondo img#dos{
+                    display: none;
+                }
+                .btn {
+                    width: 11vh;
+                    height: 11vh;
+                }
+                .btn a{
+                    line-height: 11vh;
+                    font-size: 3vh;
+                }
+            }
+        }
+    }
+}/*
+@media only screen and (min-width:1280px){
+    @media only screen and (max-width:1280px){
+        @media only screen and (min-height:800px){
+            @media only screen and (max-height:800px){
+                section .fondo img#uno{
+                    display: none;
+                }
+                section .fondo img#dos{
+                    display: flex; 
+                    width: 100%;
+                    height: 100vh;
+                    background-size: cover;
+                }
+                section .fondo a{
+                    width: 11vw;
+                    height: 11vw;
+                    top: calc(50% - 14vh);
+                    left: calc(50% - 14vh);
+                    font-size: 4.5vh;
+                }
+            }
+        }
+    }
+}
+@media only screen and (min-width:1366px){
+    @media only screen and (max-width:1366px){
+        @media only screen and (min-height:1024px){
+            @media only screen and (max-height:1024px){
+                section .fondo img#uno{
+                    display: none;
+                }
+                section .fondo img#dos{
+                    display: flex; 
+                    width: 100%;
+                    height: 100vh;
+                    background-size: cover;
+                }
+                section .fondo a{
+                    width: 13vw;
+                    height: 13vw;
+                    top: calc(50% - 12.5vh);
+                    left: calc(50% - 12.5vh);
+                    font-size: 4.5vh;
+                }
+            }
+        }
+    }
+}
+@media only screen and (min-width:1024px){
+    @media only screen and (max-width:1024px){
+        @media only screen and (min-height:1366px){
+            @media only screen and (max-height:1366px){
+                section .fondo img#uno{
+                    display: flex; 
+                    width: 100%;
+                    height: 100vh;
+                    background-size: cover;
+                }
+                section .fondo img#dos{
+                    display: none;
+                }
+                section .fondo a{
+                    width: 19vw;
+                    height: 19vw;
+                    top: calc(50% - 10vh);
+                    left: calc(50% - 10vh);
+                    font-size: 4vh;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (min-width:320px){
+    @media only screen and (max-width:320px){
+        @media only screen and (min-height:568px){
+            @media only screen and (max-height:568px){
+                section .fondo img#uno{
+                    display: flex; 
+                    width: 100%;
+                    height: 100vh;
+                    background-size: cover;
+                }
+                section .fondo img#dos{
+                    display: none;
+                }
+                section .fondo a{
+                    width: 25vw;
+                    height: 25vw;
+                    top: calc(50% - 14vh);
+                    left: calc(50% - 14vh);
+                    font-size: 4vh;
+                }
+            }
+        }
+    }
+}
+@media only screen and (min-width:568px){
+    @media only screen and (max-width:568px){
+        @media only screen and (min-height:320px){
+            @media only screen and (max-height:320px){
+                section .fondo img#uno{
+                    display: none;
+                }
+                section .fondo img#dos{
+                    display: flex; 
+                    width: 100%;
+                    height: 100vh;
+                    background-size: cover;
+                }
+                section .fondo a{
+                    width: 14vw;
+                    height: 14vw;
+                    top: calc(50% - 23.9vh);
+                    left: calc(50% - 23.9vh);
+                    font-size: 5.5vh;
+                }
+            }
+        }
+    }
+}
+@media only screen and (min-width:823px){
+    @media only screen and (max-width:823px){
+        @media only screen and (min-height:411px){
+            @media only screen and (max-height:411px){
+                section .fondo img#uno{
+                    display: none;
+                }
+                section .fondo img#dos{
+                    display: flex; 
+                    width: 100%;
+                    height: 100vh;
+                    background-size: cover;
+                }
+                section .fondo a{
+                    width: 14vw;
+                    height: 14vw;
+                    top: calc(50% - 23.9vh);
+                    left: calc(50% - 23.9vh);
+                    font-size: 5.5vh;
+                }
+            }
+        }
+    }
+}
+@media only screen and (min-width:731px){
+    @media only screen and (max-width:731px){
+        @media only screen and (min-height:411px){
+            @media only screen and (max-height:411px){
+                section .fondo img#uno{
+                    display: none;
+                }
+                section .fondo img#dos{
+                    display: flex; 
+                    width: 100%;
+                    height: 100vh;
+                    background-size: cover;
+                }
+                section .fondo a{
+                    width: 13vw;
+                    height: 13vw;
+                    top: calc(50% - 20vh);
+                    left: calc(50% - 20vh);
+                    font-size: 5.5vh;
+                }
+            }
+        }
+    }
+}
+@media only screen and (min-width:360px){
+    @media only screen and (max-width:360px){
+        @media only screen and (min-height:640px){
+            @media only screen and (max-height:640px){
+                section .fondo img#uno{
+                    display: flex; 
+                    width: 100%;
+                    height: 100vh;
+                    background-size: cover;
+                }
+                section .fondo img#dos{
+                    display: none;
+                }
+                section .fondo a{
+                    width: 25vw;
+                    height: 25vw;
+                    top: calc(50% - 13vh);
+                    left: calc(50% - 13vh);
+                    font-size: 3.6vh;
+                }
+            }
+        }
+    }
+}
+@media only screen and (min-width:640px){
+    @media only screen and (max-width:640px){
+        @media only screen and (min-height:360px){
+            @media only screen and (max-height:360px){
+                section .fondo img#uno{
+                    display: none;
+                }
+                section .fondo img#dos{
+                    display: flex; 
+                    width: 100%;
+                    height: 100vh;
+                    background-size: cover;
+                }
+                section .fondo a{
+                    width: 14vw;
+                    height: 14vw;
+                    top: calc(50% - 22vh);
+                    left: calc(50% - 22vh);
+                    font-size: 5vh;
+                }
+            }
+        }
+    }
+}
+@media only screen and (min-width:720px){
+    @media only screen and (max-width:720px){
+        @media only screen and (min-height:1280px){
+            @media only screen and (max-height:1280px){
+                section .fondo img#uno{
+                    display: flex; 
+                    width: 100%;
+                    height: 100vh;
+                    background-size: cover;
+                }
+                section .fondo img#dos{
+                    display: none;
+                }
+                section .fondo a{
+                    width: 20vw;
+                    height: 20vw;
+                    top: calc(50% - 9vh);
+                    left: calc(50% - 9vh);
+                    font-size: 3vh;
+                }
+            }
+        }
+    }
+}
+@media only screen and (min-width:1280px){
+    @media only screen and (max-width:1280px){
+        @media only screen and (min-height:720px){
+            @media only screen and (max-height:720px){
+                section .fondo img#uno{
+                    display: none;
+                }
+                section .fondo img#dos{
+                    display: flex; 
+                    width: 100%;
+                    height: 100vh;
+                    background-size: cover;
+                }
+                section .fondo a{
+                    width: 12vw;
+                    height: 12vw;
+                    top: calc(50% - 15vh);
+                    left: calc(50% - 15vh);
+                    font-size: 5vh;
+                }
+            }
+        }
+    }
+}
+
+
+@media only screen and (min-width:1280px){
+    @media only screen and (max-width:1280px){
+        @media only screen and (min-height:800px){
+            @media only screen and (max-height:800px){
+                section .fondo img#uno{
+                    display: none;
+                }
+                section .fondo img#dos{
+                    display: flex; 
+                    width: 100%;
+                    height: 100vh;
+                    background-size: cover;
+                }
+                section .fondo a{
+                    width: 11vw;
+                    height: 11vw;
+                    top: calc(50% - 14vh);
+                    left: calc(50% - 14vh);
+                    font-size: 4.5vh;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (min-width:768px){
+    @media only screen and (max-width:5000px){
+        @media only screen and (min-height:320px){
+            @media only screen and (max-height:5000px){
+                section .fondo img#uno{
+                    display: none; 
+                }
+                section .fondo img#dos{
+                    display: flex; 
+                    width: 100%;
+                    height: 100vh;
+                    background-size: cover;
+                }
+                section .fondo a{
+                    width: 11vw;
+                    height: 11vw;
+                    top: calc(50% - 15vh);
+                    left: calc(50% - 15vh);
+                    font-size: 6vh;
+                }
+            }
+        }
+    }
+} */
+
+canvas{
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    background-color: black;
+    opacity: 90%;   
+}
+.dg.ac{
+    display: none;
+}
+
+
+
+          
+  

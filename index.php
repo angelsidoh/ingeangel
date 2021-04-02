@@ -7,17 +7,13 @@ $resultadoProyecto = obtenerPrecios(1);
 if ($resultadoProyecto->num_rows) {
     foreach ($resultadoProyecto as $proyecto) {
 
-    $precioBasico = $proyecto['basico_precio'];
-    $precioNegocio = $proyecto['negocio_precio'];
-    $precioProfesional = $proyecto['profesional_precio'];
-    $precioHosting = $proyecto['hosting_precio'];
-    $precioDominio = $proyecto['dominio_precio'];
-    $precioMantenimiento = $proyecto['mantenimiento_precio'];
-    $precioBD = $proyecto['basesdatos_precio'];
-       
-        
-        
-
+        $precioBasico = $proyecto['basico_precio'];
+        $precioNegocio = $proyecto['negocio_precio'];
+        $precioProfesional = $proyecto['profesional_precio'];
+        $precioHosting = $proyecto['hosting_precio'];
+        $precioDominio = $proyecto['dominio_precio'];
+        $precioMantenimiento = $proyecto['mantenimiento_precio'];
+        $precioBD = $proyecto['basesdatos_precio'];
     }
 }
 // echo $precioBasico;
@@ -147,9 +143,9 @@ if ($resultadoProyecto->num_rows) {
         </div>
     </div>
 </div> -->
-<div class="contenedorx">
-    <div id="paquetes" class="contenedor-paquetes">
-        <div class="fleep1">
+<!-- <div class="contenedorx">
+    <div id="paquetes" class="contenedor-paquetes"> -->
+<!-- <div class="fleep1">
             <div class="paquete1">
                 <button class="center">
                     <div class="card1">
@@ -157,7 +153,7 @@ if ($resultadoProyecto->num_rows) {
                             <div class="text-paquete1">
                                 <div class="title">
                                     <div class="text">
-                                        <h1>Paquete Básicod</h1>
+                                        <h1>Paquete Básico</h1>
                                     </div>
                                     <div class="hr">
                                         <span><i class="far fa-bookmark"></i></span>
@@ -203,12 +199,12 @@ if ($resultadoProyecto->num_rows) {
                                 </div>
                                 <div class="subtitle">
                                     <div class="text">
-                                        <h3><i class="fas fa-dollar-sign"></i> <?php 
-                                        
-                                        $total0 = $precioBasico+$precioHosting+$precioDominio+$precioMantenimiento+$precioBD;
-                                        
-                                        
-                                        echo number_format($total0).'.00 MXN Mensual.';?></h3>
+                                        <h3><i class="fas fa-dollar-sign"></i> <?php
+
+                                                                                $total0 = $precioBasico + $precioHosting + $precioDominio + $precioMantenimiento + $precioBD;
+
+
+                                                                                echo number_format($total0) . '.00 MXN Mensual.'; ?></h3>
                                         <a href="#">
                                             <p>¿Tienes dudas?</p>
                                         </a>
@@ -244,8 +240,8 @@ if ($resultadoProyecto->num_rows) {
                     </div>
                 </button>
             </div>
-        </div>
-        <div class="fleep2">
+        </div> -->
+<!-- <div class="fleep2">
             <div class="paquete2">
                 <button class="center">
                     <div class="card2">
@@ -301,12 +297,12 @@ if ($resultadoProyecto->num_rows) {
                                 <div class="subtitle">
                                     <div class="text">
                                         <h3><i class="fas fa-dollar-sign"></i> 
-                                        <?php 
-                                        
-                                        $total1 = $precioNegocio+$precioHosting+$precioDominio+$precioMantenimiento+$precioBD;
-                                        
-                                        
-                                        echo number_format($total1).'.00 MXN Mensual.';?>
+                                        <?php
+
+                                        $total1 = $precioNegocio + $precioHosting + $precioDominio + $precioMantenimiento + $precioBD;
+
+
+                                        echo number_format($total1) . '.00 MXN Mensual.'; ?>
                                         </h3>
                                         <a href="#">
                                             <p>¿Tienes dudas?</p>
@@ -341,8 +337,8 @@ if ($resultadoProyecto->num_rows) {
                     </div>
                 </button>
             </div>
-        </div>
-        <div class="fleep3">
+        </div> -->
+<!-- <div class="fleep3">
             <div class="paquete3">
                 <button class="center">
                     <div class="card3">
@@ -398,12 +394,12 @@ if ($resultadoProyecto->num_rows) {
                                 <div class="subtitle">
                                     <div class="text">
                                         <h3><i class="fas fa-dollar-sign"></i>
-                                        <?php 
-                                        
-                                        $total2 = $precioProfesional+$precioHosting+$precioDominio+$precioMantenimiento+$precioBD;
-                                        
-                                        
-                                        echo number_format($total2).'.00 MXN Mensual.';?>
+                                        <?php
+
+                                        $total2 = $precioProfesional + $precioHosting + $precioDominio + $precioMantenimiento + $precioBD;
+
+
+                                        echo number_format($total2) . '.00 MXN Mensual.'; ?>
                                         </h3>
                                         <a href="#">
                                             <p>¿Tienes dudas?</p>
@@ -436,18 +432,85 @@ if ($resultadoProyecto->num_rows) {
 
                         </div>
                 </button>
-            </div>
-        </div>
-    </div>
-</div>
+            </div> -->
+<!-- </div>
+    </div> -->
+
+
 
 
 <div class="contendor-efecto">
     <div class="titulo-seccion">
-        <h1 id="sparklemaster" class="sparklemaster" style="color:  #93A9CC;">Tecnologías</h1>
+        <h1 id="sparklemaster" class="sparklemaster" style="color:  #93A9CC;">Mejoras</h1>
     </div>
 </div>
 
+    <div class="estructurasubcards">
+        <div class="contanedorsubcards">
+            <div class="cardsub">
+                <div class="imgbox" data-text="Seguridad">
+                    <i class="fas fa-user-shield"></i>
+                </div>
+                <div class="contentsub">
+                    <h3>Seguridad</h3>
+                    <p>Monitorización, nuevos parches de seguridad, bases de datos seguras, y control de versiones de todo el proyecto</p>
+                    <a class="button" href="#">Leer</a>
+                </div>
+            </div>
+            <div class="cardsub">
+                <div class="imgbox" data-text="Hosting y Dominio">
+                    <i class="fas fa-hdd"></i>
+                </div>
+                <div class="contentsub">
+                    <h3>Hosting y Dominio</h3>
+                    <p>Contacto con los mejores provedores de estos servicios para México y otros países</p>
+                    <a class="button" href="#">Leer</a>
+                </div>
+            </div>
+            <div class="cardsub">
+                <div class="imgbox" data-text="Responcivo">
+                    <i class="fas fa-laptop"></i> <i style="font-size: 20px; transform: rotate(70deg);" class="fas fa-slash"></i><i class="fas fa-mobile-alt"></i>
+
+                </div>
+                <div class="contentsub">
+                    <h3>Responcivo</h3>
+                    <p>Proyectos web con capacidades de ajustarse automaticamente a cualquier dispocitivo con el que acceden los clientes</p>
+                    <a class="button" href="#">Leer</a>
+                </div>
+            </div>
+        </div>
+        <div class="contanedorsubcards">
+            <div class="cardsub">
+                <div class="imgbox" data-text="Optimización de recursos">
+                    <i class="fas fa-photo-video"></i>
+
+                </div>
+                <div class="contentsub">
+                    <h3>Optimización de recursos</h3>
+                    <p>Mejoramos las velocidades de carga de tu sitio web, bajando el peso de archivos al máximo sin perder calidad</p>
+                    <a class="button" href="#">Leer</a>
+                </div>
+            </div>
+            <div class="cardsub">
+                <div class="imgbox" data-text="Herramientas extra">
+                    <i class="fas fa-chart-line"></i>
+                </div>
+                <div class="contentsub">
+                    <h3>Herramientas extra</h3>
+                    <p>Herramientas de utilidad que permiten a su empresas o negocios ver estadistica de sus sitios web por ejemplo; Google Analytics</p>
+                    <a class="button" href="#">Leer</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+<div class="contendor-efecto">
+    <div class="titulo-seccion">
+        <h1 id="sparklemaster" class="sparklemaster" style="color:  #93A9CC;">Tecnología</h1>
+    </div>
+</div>
+<div class="backgroundsubcards">
 <div class="contenedor-efecto">
     <div id="efecto-ventanaleft" class="contenedorx">
         <div class="ventana-left">
@@ -456,7 +519,7 @@ if ($resultadoProyecto->num_rows) {
                     <div class="tecnologia1">
                         <i class="fab fa-html5"></i>
                         <div class="titulo-tecnologia">
-                            <h1 id="sparklemaster" class="sparklemaster" style="color:  #93A9CC;">HTML-5</h1>
+                            <h1 id="sparklemaster" class="sparklemaster">HTML-5</h1>
                         </div>
                         <div class="descripcion-tecnologia">
                             <h3>Historia</h3>
@@ -464,7 +527,7 @@ if ($resultadoProyecto->num_rows) {
                             </p>
                             <p>
                                 En ingeangel.com, este lenguaje de programación (lenguaje de etiquetas HTML) para etiquetar cada elemento que demande el proyecto, siendo capaces etiquetar todo tipo de contenido en una página/sitio web.</p>
-                            <h3>Ventajas</h3>
+                         <h3>Ventajas</h3>
                             <ul>
                                 <li>1. Maquetación de la página web estructurada de una manera personalizada.</li>
                                 <li>2. Mejora del rendimiento debido a la estructura de código.</li>
@@ -472,13 +535,20 @@ if ($resultadoProyecto->num_rows) {
                                 <li>4. Despliegue en el navegador rápido.</li>
                                 <li>5. Compatibilidad alta en todos los navegadores web actuales.</li>
                             </ul>
+                            <i class="fas fa-award"></i><br>
+                        <a class="button" href="#">Leer</a>
                         </div>
-                        <i class="fas fa-award"></i>
+                        
                     </div>
+                    
                 </div>
+                
             </div>
+            
         </div>
+        
     </div>
+    
 </div>
 
 <div class="contenedor-efecto">
@@ -489,7 +559,7 @@ if ($resultadoProyecto->num_rows) {
                     <div class="tecnologia2">
                         <i class="fab fa-css3-alt"></i>
                         <div class="titulo-tecnologia">
-                            <h1 id="sparklemaster" class="sparklemaster" style="color:  #93A9CC;">CSS3</h1>
+                            <h1 id="sparklemaster" class="sparklemaster">CSS3</h1>
                         </div>
                         <div class="descripcion-tecnologia">
                             <h3>Historia</h3>
@@ -498,7 +568,7 @@ if ($resultadoProyecto->num_rows) {
                             <p>
                                 En ingeangel.com la “hoja de estilos” es para dar seguimiento al diseño entregado por el cliente, cada detalles gráficos quedara plasmado en el proyecto.
                             </p>
-                            <h3>Ventajas</h3>
+                           <h3>Ventajas</h3>
                             <ul>
                                 <li>1. Mejora los tiempos de respuesta.</li>
                                 <li>2. Estructura fiel al código html.</li>
@@ -506,8 +576,10 @@ if ($resultadoProyecto->num_rows) {
                                 <li>4. Funciones para realizar una página/sitio web responsivo o adaptativo a cualquier dispositivo.</li>
                                 <li>5. Archivos de estilos muy pequeños.</li>
                             </ul>
+                            <i class="fas fa-award"></i><br>
+                        <a class="button" href="#">Leer</a>
                         </div>
-                        <i class="fas fa-award"></i>
+                        
                     </div>
                 </div>
             </div>
@@ -522,7 +594,7 @@ if ($resultadoProyecto->num_rows) {
                     <div class="tecnologia3">
                         <i class="fab fa-php"></i>
                         <div class="titulo-tecnologia">
-                            <h1 id="sparklemaster" class="sparklemaster" style="color:  #93A9CC;">PHP</h1>
+                            <h1 id="sparklemaster" class="sparklemaster">PHP</h1>
                         </div>
                         <div class="descripcion-tecnologia">
                             <h3>Historia</h3>
@@ -541,8 +613,10 @@ if ($resultadoProyecto->num_rows) {
                                 <li>7. Mejora estructura de la página/sitio web.</li>
                                 <li>8. Mejor Optimización de los recursos.</li>
                             </ul>
+                            <i class="fas fa-award"></i> <br>
+                        <a class="button" href="#">Leer</a>
                         </div>
-                        <i class="fas fa-award"></i>
+                        
                     </div>
                 </div>
             </div>
@@ -558,7 +632,7 @@ if ($resultadoProyecto->num_rows) {
                     <div class="tecnologia4">
                         <i class="fab fa-js-square"></i>
                         <div class="titulo-tecnologia">
-                            <h1 id="sparklemaster" class="sparklemaster" style="color:  #93A9CC;">JavaScript</h1>
+                            <h1 id="sparklemaster" class="sparklemaster">JavaScript</h1>
                         </div>
                         <div class="descripcion-tecnologia">
                             <h3>Historia</h3>
@@ -577,8 +651,10 @@ if ($resultadoProyecto->num_rows) {
                                 <li>6. Archivos de JavaScript muy pequeños.</li>
                                 <li>7. Amplio catálogo de Apis a para incorporar a tu página/sitio web.</li>
                             </ul>
+                            <i class="fas fa-award"></i> <br>
+                        <a class="button" href="#">Leer</a>
                         </div>
-                        <i class="fas fa-award"></i>
+                        
                     </div>
                 </div>
             </div>
@@ -588,15 +664,13 @@ if ($resultadoProyecto->num_rows) {
 <div class="contenedor-gradientex">
     <div class="contenedor-efecto">
         <div class="efecto-dinamico">
-            <div class="titulo-seccion">
-                <h1 id="sparklemaster" class="sparklemaster" style="color:  #93A9CC;">Bases de datos en MySQL</h1>
-            </div>
+          
             <div id="dinamico-efecto" class="contenedor-info">
                 <div class="descripcion">
                     <div class="tecnologia5">
                         <i class="fas fa-database"></i>
                         <div class="titulo-tecnologia">
-                            <h1 id="sparklemaster" class="sparklemaster" style="color:  #93A9CC;">MySQL</h1>
+                            <h1 id="sparklemaster" class="sparklemaster">MySQL</h1>
                         </div>
                         <div class="descripcion-tecnologia">
                             <h3>Historia</h3>
@@ -617,8 +691,10 @@ if ($resultadoProyecto->num_rows) {
                                 <li>8. Archivos de MySQL pequeños.</li>
                                 <li>9. Compatibilidad con PHP.</li>
                             </ul>
+                            <i class="fas fa-award"></i> <br>
+                        <a class="button" href="#">Leer</a>
                         </div>
-                        <i class="fas fa-award"></i>
+                        
                     </div>
                 </div>
 
@@ -626,93 +702,7 @@ if ($resultadoProyecto->num_rows) {
         </div>
     </div>
 </div>
-<div class="contenedor-gradiente">
-    <div class="contenedor-contragradiente">
-        <div class="contenido-grid">
-            <div class="elemento-grid">
-                <div class="contenedor-efecto">
-                    <div class="titulo-seccion">
-                        <h1 id="sparklemaster" class="sparklemaster" style="color:  #000000;">Seguridad</h1>
-                        <i style="font-size: 60px; color:#000000;" class="fas fa-user-shield"></i>
-                    </div>
-                </div>
-                <p style="color: #000000;">La seguridad en la red es uno de los temas con más importancia, cuento con varias “barreras” de protección, dando seguimiento todos los días, a un nivel de servidor (el sistema en que se encuentra almacenada tu página web y bases de datos), y a un nivel de página/sitio web.</p>
-                <p style="color: #000000;">
-                    Actualmente cargo parches de seguridad que te ayudarán a detectar si tu web esta siendo atacada, y asi realizar acciones de forma automática en caso de ser necesario.
-                </p>
-                <p style="color: #000000;">
-                    Los datos, de las bases de datos en MySQL, están programados con un nivel de encriptación, que brinda otro nivel más de seguridad. Pues estas son el blanco principal en caso de un ataque.
-                </p>
-                <p style="color: #000000;">Además, todos los días realizo copias de seguridad que irán a una carpeta de destino para su acceso remoto en caso de requerirlo.</p>
-            </div>
-            <div class="elemento-grid">
-                <div class="contenedor-efecto">
-                    <div class="titulo-seccion">
-                        <h1 id="sparklemaster" class="sparklemaster" style="color:  #ffffff;">Hosting</h1>
-                        <i style="font-size: 60px;" class="fas fa-hdd"></i>
-
-                    </div>
-                </div>
-                <p>Es un servicio de alojamiento, para tu página/sitio web, lo puedo comparar fácilmente con una memoria USB para nuestras carpetas de documentos. Teniendo este ejemplo en mente, una página/sitio web es una estructura ordenada de documentos y archivos que en su conjunto permiten visualizar el diseño que hemos programado en un navegador web.</p>
-                <p>
-                    Existen diferentes capacidades de servicio de hosting, pongo a tu discusión 10 Gigabytes de espacio en disco SD (Estado Solido) por proyecto. (Si necesita más el costo variará segun el servicio)
-                </p>
-                <p>
-                    Recordemos que los archivos con código: HTML, CSS3, PHP y JAVASCRIPT, son muy pequeños por lo que es espacio suficiente para almacenar bases de datos, tambien imagenes y videos necesarios para dar vida a tu proyecto.
-                </p>
-            </div>
-            <div class="elemento-grid">
-                <div class="contenedor-efecto">
-                    <div class="titulo-seccion">
-                        <h1 id="sparklemaster" class="sparklemaster" style="color:  #ffffff;">Página Web Adaptativo o Responsivo</h1>
-                        <!-- <i style="font-size: 60px;" class="fas fa-desktop"></i> -->
-                        <i style="font-size: 60px;" class="fas fa-laptop"></i>
-                        <!-- <i style="font-size: 60px;" class="fas fa-tablet-alt"></i> -->
-                        <i style="font-size: 60px;" class="fas fa-mobile-alt"></i>
-
-                    </div>
-                </div>
-                <p>Es de gran importancia crear una página/sitio web que se adapte a cualquier dispositivo inteligente; computadora, Tablet y Smartphone de la actualidad.</p>
-                <p>
-                    La forma para desarrollar/programar esta función tiene que ver con variables que cambian dentro de la página/sitio web cuando es ejecutada en los diferentes dispositivos, reacomodando el contenido si estas variables llegan a su límite de visualización.
-                </p>
-                <p>
-                    En ingeangel.com codifico limites para tu pagina/sitio web cuando es necesario, alcanzando una amplia gama de resoluciones de dispositivos inteligentes, con un límite mínimo de visualización perfecta del contenido de tu página/sitio web de 250px de ancho por 250px de alto.
-                </p>
-                <p>¿Qué sucede si un dispositivo tiene menos de 250pixeles de ancho y 250pixeles de alto? Cuando esto sucede los elementos comienzan a desacomodarse por su tamaño, impidiendo muchas veces hacer clic en botones debido a que hay otro elemento por encima. Esta resolución no es nada común en la actualidad, por lo que no debería preocuparte, pues el 99.99% de los dispositivos actuales tienen resoluciones mucho más grandes.</p>
-            </div>
-            <div class="elemento-grid">
-                <div class="contenedor-efecto">
-                    <div class="titulo-seccion">
-                        <h1 id="sparklemaster" class="sparklemaster" style="color:  #ffffff;">Optimización de recurso multimedia.</h1>
-                        <i style="font-size: 60px;" class="fas fa-photo-video"></i>
-
-                    </div>
-                </div>
-                <p>Para una página/sitio web tenga un excelente tiempo de respuesta de carga, debemos hacer ajustes a los archivos de imágenes y videos que los clientes de ingeangel.com proporcionan para su elaboración.</p>
-                <p>
-                    Es por ello, que existe un proceso para todos los archivos multimedia, tratando de mantener toda la calidad con la que se entregaron. Así a través de este procedimiento mejora significativamente la ejecución de cada una de las secciones de la web, independientemente si contiene una imagen o video.
-                </p>
-
-            </div>
-            <div class="elemento-grid">
-                <div class="contenedor-efecto">
-                    <div class="titulo-seccion">
-                        <h1 id="sparklemaster" class="sparklemaster" style="color:  #ffffff;">Google Analytics</h1>
-                        <i style="font-size: 60px;" class="fas fa-chart-line"></i>
-
-                    </div>
-                </div>
-                <p>Es una herramienta de Google que nos permite hacer análisis del tráfico de nuestra página/sitio web (Usuarios), contando con un apartado en tiempo real para analizar de cerca la tendencia de una de nuestras publicaciones, puedes saber si los usuarios están viendo una sección específica, o que dispositivos usan para navegar por tu página/sitio web, si te encontraron en el buscador de Google, o si vienen de una plataforma como Facebook o YouTube donde hallas contratado publicidad para tus servicios o productos. Además, presenta un informe en días, semanas, meses y años.</p>
-                <p>
-                    Esta característica estará dispnible en tu pagina/sitio web y tendrás el acceso total a su entorno además de una guía escrita en PDF sobre cómo usarla.
-                </p>
-            </div>
-        </div>
-    </div>
 </div>
-
-
 <?php
 require 'includes/templates/footer.php'
 ?>

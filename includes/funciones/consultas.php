@@ -1,5 +1,31 @@
 
 <?php
+function obtenerMensajes($dato)
+{
+
+    try {
+        require('bd/bdsqli.php');
+
+
+        return $connf->query("SELECT mensaje_mensaje, idmensaje_mensaje FROM mensajecliente WHERE idusuario_mensaje = '$dato'");
+    } catch (Exception $e) {
+        echo "Error!!" . $e->getMessage() . "<br>";
+        return false;
+    }
+}
+function obtenerIdMensajes($dato)
+{
+
+    try {
+        require('bd/bdsqli.php');
+
+
+        return $connf->query("SELECT mensaje_mensaje, idmensaje_mensaje FROM mensajecliente WHERE idusuario_mensaje = '$dato'");
+    } catch (Exception $e) {
+        echo "Error!!" . $e->getMessage() . "<br>";
+        return false;
+    }
+}
 function obtenerPrecios2($dato)
 {
 

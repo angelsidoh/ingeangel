@@ -146,6 +146,7 @@
 
 
 <!-- custom scrollbar plugin -->
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 <script src="js/plugins/malihu-custom-scrollbar-plugin-master/malihu-custom-scrollbar-plugin-master/jquery.mCustomScrollbar.concat.min.js"></script>
 <script src="js/jquery.numeric.js" type="text/javascript"></script>
 
@@ -253,6 +254,7 @@
     // inViewportPartially4(paquetes4, cambiaVisibilidad4);
     // inViewportTotally4(paquetes4, cambiaVisibilidad4);
 </script>
+
 
 </body>
 

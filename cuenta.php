@@ -387,6 +387,15 @@ $_SESSION['tipo_usuario'] = $tipouser;
                 </li>
                 <?php include('includes/funciones/contratos.php');?>
                 </li>
+                <li><div class="contenedor-especial">
+                        <div class="titulo-seccion">
+                            <h1 id="sparklemaster" class="sparklemaster" style="color:  #93A9CC;">Mensajes</h1>
+                        </div>
+                        <?php include('includes/funciones/mensajes.php');?>
+                        </div>
+                        
+                        </li>
+                
                
             </ul>
 

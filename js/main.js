@@ -1,3 +1,15 @@
+//contador de caracteres mensaje
+function countChars(obj){
+  document.getElementById("charNum").innerHTML = obj.value.length+' characters';
+  if( obj.value.length > 500){
+    
+    alert('hey');
+  }
+}
+
+// end contador de caracteres mensajes
+
+
 // Conekta
 
 $("#subcall").hide();
@@ -1449,7 +1461,79 @@ var elNumero = parseInt(localStorage.getItem("Numero"));
 var eltoken = (localStorage.getItem("token"));
 // console.log(elNombre + elNumero + '-' + eltoken);
 
+// AGREGAR IDEA USUARIO MAS REGISTRO
+const formIdeaUsuario = document.querySelector('#agregar-registrouser');
+if ($("#agregar-registrouser").length) {
+  eventListeners();
 
+  function eventListeners() {
+    formIdeaUsuario.addEventListener('submit', AgregarIdeaUser);
+  }
+}
+function AgregarIdeaUser(e) {
+  e.preventDefault();
+  const accion = document.querySelector('#btnagregarideauser').value;
+  if (accion == 'Registrarse') {
+    const nombre = document.querySelector('#nameuser').value;
+    const apellidos = document.querySelector('#apellidos').value;
+    const mail = document.querySelector('#mail').value;
+    const tel = document.querySelector('#tel').value;
+    const select = document.querySelector('#select').value;
+    const sector = document.querySelector('#sector').value;
+    const idea = document.querySelector('#idea').value;
+    
+    const infoidea = new FormData();
+
+    infoidea.append('nombre', nombre);
+    infoidea.append('apellidos', apellidos);
+    infoidea.append('mail', mail);
+    infoidea.append('tel', tel);
+    infoidea.append('select', select);
+    infoidea.append('sector', sector);
+    infoidea.append('idea', idea);
+    infoidea.append('accion', accion);
+    if (accion === 'Registrarse') {
+      console.log (accion);
+      registroIdeaUser(infoidea);
+    }
+}
+}
+function registroIdeaUser(dato) {
+  // llamado de ajax
+  // crear objeto
+  //  console.log(dato);
+  const xhr = new XMLHttpRequest();
+  // abrir conexion
+  xhr.open('POST', 'includes/modelos/agregarusuarioidea.php', true);
+  // pasar datos
+  xhr.onload = function () {
+    if (this.status === 200) {
+      const respuesta = JSON.parse(xhr.responseText);
+      console.log(respuesta);
+      // if (respuesta.estado === 'paso agregado') {
+      //   swal({
+      //       content: "",
+      //       text: 'Paso agregado correctamente',
+      //       icon: "success",
+      //       button: {
+      //         text: "Continuar",
+      //         closeModal: true,
+      //       },
+      //     })
+      //     .then((value) => {
+      //       switch (value) {
+      //         default:
+      //           window.location.href = 'cuenta.php#angel-ruiz';
+      //       }
+      //     });
+
+      // }
+    }
+  }
+  xhr.send(dato);
+}
+
+// END IDEA USUARIO MAS REGISTRO
 // agregar paso
 const formAgregarPaso = document.querySelector('#agregar-paso');
 if ($("#agregar-paso").length) {
@@ -1462,6 +1546,7 @@ if ($("#agregar-paso").length) {
 
 function agregarPaso(e) {
   e.preventDefault();
+  
 
   const accion = document.querySelector('#btnagregarpaso').value;
   if (accion == 'Agregar Paso') {
@@ -3167,8 +3252,32 @@ if ($('#paquetes').is(':hidden')) {
   // console.log('Visible');
 }
 // slider
+var cambioSliderPal = 0;
+function swp() {
+  var swiper = new Swiper('.swiper-container', {
+    effect: 'coverflow',
+    grabCursor: true,
+    centeredSlides: true,
+    slidesPerView: 'auto',
+    coverflowEffect: {
+      rotate: 50,
+      stretch: 0,
+      depth: 0,
+      modifier: 1,
+      slideShadows: true,
+    },
+    pagination: {
+      el: '.swiper-pagination',
+    },
+    
+    autoplay: {
+  delay: 2000,
+  },
+  });
+}
+swp();
 $(document).ready(function () {
-
+ 
   var imgItems = $('.slider li').length;
   var imgPos = 1;
   var menu = ['Proyectos', 'Cuenta', 'Pagos']
@@ -3187,14 +3296,32 @@ $(document).ready(function () {
   $('.right span').click(nextSlider);
   $('.left span').click(prevSlider);
 
-  // setInterval(function(){
-  //     nextSlider();
-  // }, 10000);
+$('.right span').click(function () {
+  console.log('hey');
+ 
+  cambioSliderPal = 1;
+  
+});
+$('.left span').click(function () {
+  console.log('hey');
+
+  cambioSliderPal = 2;
+  
+});
+
+console.log(cambioSliderPal);
+if(cambioSliderPal == 0){
+  setInterval(function(){
+      nextSliderx();
+      
+  }, 15000);
+}
 
   function paginacion() {
     var paginacionPos = $(this).index();
     paginacionPos = paginacionPos + 1;
-    console.log(paginacionPos);
+    console.log('--'+paginacionPos);
+    console.log(cambioSliderPal);
 
     $('.slider li').hide();
     $('.slider li:nth-child(' + paginacionPos + ')').fadeIn();
@@ -3208,15 +3335,26 @@ $(document).ready(function () {
 
     imgPos = paginacionPos;
   }
+  function nextSliderx() {
+    
+    if(cambioSliderPal == 0){
+      nextSlider();
+      
+      
+    }
+  }
 
   function nextSlider() {
+    
     if (imgPos >= imgItems) {
       imgPos = 1;
     } else {
       imgPos++;
     }
-
+    
     console.log(imgPos);
+   
+    
     $('.slider li').hide();
     $('.slider li:nth-child(' + imgPos + ')').fadeIn();
 
@@ -3254,7 +3392,7 @@ $(document).ready(function () {
 
   var imgItems2 = $('.slider2 li').length;
   var imgPos2 = 1;
-  var menu = ['', 'Proyectos', 'Cuenta', 'Pagos', 'Contratos'];
+  var menu = ['', 'Proyectos', 'Cuenta', 'Pagos', 'Contratos', 'Mensajes'];
   for (i = 1; i <= imgItems2; i++) {
     $('.paginacion2').append('<li><h3>' + menu[i] + '</h3></li>');
   }
@@ -3309,6 +3447,7 @@ $(document).ready(function () {
     $('.paginacion2 li:nth-child(' + imgPos2 + ')').css({
       'text-shadow': ' 0px 0px 10px var(--ColorFontEspecial)'
     });
+    
 
   }
 
