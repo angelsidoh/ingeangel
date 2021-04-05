@@ -316,10 +316,10 @@ $_SESSION['tipo_usuario'] = $tipouser;
                                         <p>Cliente</p>
                                     </div>
                                     <div class="dato2">
-                                        <input type="text" id="calle" name="calle" placeholder="Calle" value="<?php echo $calle; ?>">
-                                        <input type="text" id="numie" name="numie" placeholder="Ingresa tu Numero Int/Ext" value="<?php echo $numie; ?>">
-                                        <input type="text" id="colonia" name="colonia" placeholder="Ingresa tu colonia" value="<?php echo $col; ?>">
-                                        <input type="text" id="cpostal" name="cpostal" placeholder="Ingresa tu Codigo postal" value="<?php echo $cp; ?>">
+                                        <input type="text" id="calle" name="calle" placeholder="Ingrese su Calle" value="<?php echo $calle; ?>">
+                                        <input type="text" id="numie" name="numie" placeholder="Ingrese su Némero Int/Ext" value="<?php echo $numie; ?>">
+                                        <input type="text" id="colonia" name="colonia" placeholder="Ingrese su Colonia" value="<?php echo $col; ?>">
+                                        <input type="text" id="cpostal" name="cpostal" placeholder="Ingrese su Código Postal" value="<?php echo $cp; ?>">
                                     </div> <!-- rnormal__tarjeta -->
                                     <div class="text-dato2">
                                         <p>Domicilio</p>

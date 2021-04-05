@@ -1835,7 +1835,7 @@ function actualizarUserUserDB(dato) {
   xhr.onload = function () {
     if (this.status === 200) {
       const respuesta = JSON.parse(xhr.responseText);
-      console.log(respuesta);
+      // console.log(respuesta);
       if (respuesta.estado === 'hubo cambios') {
         swal({
             content: "",
@@ -1849,12 +1849,12 @@ function actualizarUserUserDB(dato) {
           .then((value) => {
             switch (value) {
               default:
-                window.location.href = 'cuenta.php#angel-ruiz';
+                window.location.href = 'cuenta.php#perfil';
             }
           });
 
       }
-      if (respuesta.estado === 'no cambios') {
+      if (respuesta.estado === 'no hubo cambios') {
         swal({
             content: "",
             text: 'No has actualizado ningun dato',
@@ -1867,7 +1867,7 @@ function actualizarUserUserDB(dato) {
           .then((value) => {
             switch (value) {
               default:
-                window.location.href = 'cuenta.php#angel-ruiz';
+                window.location.href = 'cuenta.php#cuenta';
             }
           });
 

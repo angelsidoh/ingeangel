@@ -45,11 +45,19 @@ if (isset($_SESSION['email'])) {
 
                     $stmt->execute();
 
-                    if ($stmt->affected_rows == 1) {
+                  
                         $respuesta = array(
-                            'estado' => 'hubo cambios'
+                            'estado' => 'hubo cambios',
+                            'variables' => array(
+                                'calle' => $callebd,
+                                'numero' => $numiebd,
+                                'colonia'=> $coloniabd,
+                                'cfdi'=>$cfdibd,
+                                'domicilioFiscal'=>$domiciliofbd,
+                                'rfc'=> $rfcbd
+                            )
                         );
-                    }
+                    
 
                     $stmt->close();
                     $connf->close();
@@ -57,9 +65,18 @@ if (isset($_SESSION['email'])) {
                    
                 } else {
                     $respuesta = array(
-                        'estado' => 'no cambios'
+                        'estado' => 'no hubo cambios',
+                        'variables' => array(
+                            'calle' => $callebd,
+                            'numero' => $numiebd,
+                            'colonia'=> $coloniabd,
+                            'cfdi'=>$cfdibd,
+                            'domicilioFiscal'=>$domiciliofbd,
+                            'rfc'=> $rfcbd
+                        )
                     );
                 }
+               
             } else {
                 $respuesta = array(
                     'estado' => 'no existe'
