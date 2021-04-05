@@ -11,6 +11,7 @@ $conn = new PDO('mysql:host=localhost;dbname=dbw1fxme936vst', $username, $passwo
 $conn0 = new PDO('mysql:host=localhost;dbname=dbw1fxme936vst', $username, $password);
 $conn1 = new PDO('mysql:host=localhost;dbname=dbw1fxme936vst', $username, $password);
 $conn2 = new PDO('mysql:host=localhost;dbname=dbw1fxme936vst', $username, $password);
+$conn3 = new PDO('mysql:host=localhost;dbname=dbw1fxme936vst', $username, $password);
 // echo $conn->ping();
 
 ?>
