@@ -29,8 +29,12 @@
                                             }
                                         }
                                     }
+                                    if($vectorNombresProyectos[$x] == 'Sin Proyecto'){
+                                    }else{
+                                    
                                     ?>">Proyecto <?php echo $x + 1; ?>:<span style="font-size: 16px;">
                                 <?php
+                                
                                 echo $vectorNombresProyectos[$x];
 
                                 for ($i = 0; $i < sizeof($superVecIdProyectoPago); $i++) {
@@ -51,7 +55,7 @@
                                             }
                                         }
                                     }
-                                }
+                                }}
 
 
                                 ?></span></h1>
@@ -153,6 +157,10 @@
             <div class="menu-proyectos">
                 <div class="submenu-proyectos">
                     <div class="titulo-proyecto">
+                    <?php if($vectorNombresProyectos[$x] == 'Sin Proyecto'){
+                                    
+                                }else{
+                                    ?>
                         <h1>Proyecto <?php echo $x + 1; ?>:<span style="font-size: 16px;">
                                 <?php
                                 echo $vectorNombresProyectos[$x];
@@ -217,7 +225,7 @@
                                 </div>
                             </div>
                         <?php
-                        } ?>
+                        } }?>
                     </div>
                 </div>
             </div>

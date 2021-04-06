@@ -8,9 +8,12 @@
                 <div class="submenu-proyectos">
                     <div class="titulo-proyecto">
                         <h1 class="<?php
+                        if($vectorNombresProyectos[$x] == 'Sin Proyecto'){
+                                    
+                                }else{
                                     ?>">Proyecto <?php echo $x + 1; ?>:<span style="font-size: 16px;">
                                 <?php
-                                echo $vectorNombresProyectos[$x];
+                                echo $vectorNombresProyectos[$x];}
                                 ?></span></h1>
                     </div>
                     <div class="mas-proyecto">

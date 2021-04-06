@@ -75,7 +75,7 @@ if ((!isset($_SESSION['usuario'])) && (!isset($_SESSION['email']))) {
             unset($vectorDescrip[$ix]);
         } ?><?php
         }
-       
+
         // var_dump($vectorIdProyectos);
         for ($i = 0; $i < $contadorProyectos; $i++) {
             $resultadoPagos = consultaPagos($vectorIdProyectos[$i]);
@@ -143,7 +143,7 @@ if ((!isset($_SESSION['usuario'])) && (!isset($_SESSION['email']))) {
             $supervecTipoIntContrato[$i] =  $vecTipoIntContrato;
             $supervecFechaInicioContrato[$i] =  $vecFechaInicioContrato;
             $supervecFechaFinContrato[$i] =  $vecFechaFinContrato;
-            
+
             for ($ix = 0; $ix < $contadorPasos1; $ix++) {
 
                 unset($vecIdContrato[$ix]);
@@ -153,14 +153,13 @@ if ((!isset($_SESSION['usuario'])) && (!isset($_SESSION['email']))) {
                 unset($vecTipoIntContrato[$ix]);
                 unset($vecFechaInicioContrato[$ix]);
                 unset($vecFechaFinContrato[$ix]);
-             
             }
         }
-//         echo '<pre>';
-// var_dump($supervecFechaInicioContrato);
-// echo '</pre>';
+        //         echo '<pre>';
+        // var_dump($supervecFechaInicioContrato);
+        // echo '</pre>';
 
-$_SESSION['tipo_usuario'] = $tipouser;
+        $_SESSION['tipo_usuario'] = $tipouser;
             ?>
 
 
@@ -193,224 +192,235 @@ $_SESSION['tipo_usuario'] = $tipouser;
             </div>
         </section>
 
-       <?php require('includes/funciones/perfil.php');
-       if($_SESSION['tipo_usuario'] == 'admin'){
+        <?php require('includes/funciones/perfil.php');
+        if ($_SESSION['tipo_usuario'] == 'admin') {
         ?>
-            <?php require('includes/funciones/admin.php');?>
-        
-     <?php
-       }else {
-        
-       
-       ?>
-        <div class="contenedor-cuenta">
-            <ol class="paginacion2">
+            <?php require('includes/funciones/admin.php'); ?>
 
-            </ol>
-            <ul class="slider2">
-                <li>
-                    <div class="contenedor-especial">
-                        <div class="titulo-seccion">
-                            <h1 id="sparklemaster" class="sparklemaster" style="color:  #93A9CC;">Proyectos</h1>
-                        </div>
-                        <?php
-                        for ($x = 0; $x < $contadorProyectos; $x++) {
-                        ?>
-                            <div class="menu-proyectos">
-                                <div class="submenu-proyectos">
-                                    <div class="titulo-proyecto">
-                                        <h1>Proyecto <?php echo $x + 1; ?>:<span style="font-size: 16px;">
-                                                <?php
-                                                echo $vectorNombresProyectos[$x];
-                                                ?></span></h1>
-                                    </div>
-                                    <div class="mas-proyecto">
-                                        <input type="checkbox" class="checs" id="check<?php echo $x; ?>" name="menu">
-                                        <label for="check<?php echo $x; ?>">
-                                            <i id="plus<?php echo $x; ?>" class="far fa-plus-square"></i>
-                                            <i id="neg<?php echo $x; ?>" class="far fa-minus-square" style="display: none;"></i>
-                                        </label>
-                                    </div>
-                                    <div id="lista<?php echo $x; ?>" class="lista-proyectos" style="display: none;">
-                                        <?php
-                                        for ($y = 0; $y < $contadorPasoxProyecto[$x]; $y++) { ?>
-                                            <div class="links">
-                                                <div class="contenedorconteo">
-                                                    <?php
-                                                    $textAsunto = "Hola. Me gustaría que resolvieran las siguientes dudas de mi proyecto " . $vectorNombresProyectos[$x] . " del paso " . ($y + 1) . ": >>" . $superVecDesp[$x][$y] . "<< " . "Proyecto id# " . $vectorIdProyectos[$x];
-                                                    $asunto = str_replace(' ', '%20', $textAsunto);
-                                                    $vectorNombresProyectos[$x] = str_replace('&', 'y', $vectorNombresProyectos[$x]);
-                                                    $cuerpo = "Lista de dudas: ";
-                                                    $cuerpo = str_replace(' ', '%20', $cuerpo);
-                                                    ?>
-                                                    <a href="mailto:infoingeangel@gmail.com?subject=<?php echo $asunto; ?>&body=<?php echo $cuerpo; ?>" target="_blank">
-                                                        <p>Paso <?php echo $y + 1; ?>: <i class="fas fa-caret-right"></i> <?php echo  $superVecDesp[$x][$y]; ?></p>
+        <?php
+        } else {
 
 
-                                                    </a>
-                                                    <div id="midiv" class="cuenta-regresiva<?php echo $x . '-' . $y; ?> contenedor-cuenta">
+        ?>
+            <div class="contenedor-cuenta">
+                <ol class="paginacion2">
 
-                                                        <ul class="clearfix">
-                                                            <div class="lix">
-                                                                <p>Fecha estimada: Paso <?php echo ($y + 1) . ' (' . $superVec[$x][$y] . ')'; ?></p>
-                                                            </div>
+                </ol>
+                <ul class="slider2">
+                    <li>
+                        <div class="contenedor-especial">
+                            <div class="titulo-seccion">
+                                <h1 id="sparklemaster" class="sparklemaster" style="color:  #93A9CC;">Proyectos</h1>
+                            </div>
+                            <?php
+                            for ($x = 0; $x < $contadorProyectos; $x++) {
+                            ?>
+                                <div class="menu-proyectos">
+                                    <div class="submenu-proyectos">
+                                        <div class="titulo-proyecto">
+                                            <?php if (($x + 1) == 1) {
+                                                ?>
+                                                <h1>Cotización :<span style="font-size: 16px;">
+                                                        <?php
+                                                        echo $vectorNombresProyectos[$x];
+                                                        ?></span></h1><?php
+                                            } else { ?>
+                                                <h1>Proyecto <?php echo $x + 1; ?>:<span style="font-size: 16px;">
+                                                        <?php
+                                                        echo $vectorNombresProyectos[$x];
+                                                        ?></span></h1><?php
+                                                            }
+                                                                ?>
+                                        </div>
+                                        <div class="mas-proyecto">
+                                            <input type="checkbox" class="checs" id="check<?php echo $x; ?>" name="menu">
+                                            <label for="check<?php echo $x; ?>">
+                                                <i id="plus<?php echo $x; ?>" class="far fa-plus-square"></i>
+                                                <i id="neg<?php echo $x; ?>" class="far fa-minus-square" style="display: none;"></i>
+                                            </label>
+                                        </div>
+                                        <div id="lista<?php echo $x; ?>" class="lista-proyectos" style="display: none;">
+                                            <?php
+                                            for ($y = 0; $y < $contadorPasoxProyecto[$x]; $y++) { ?>
+                                                <div class="links">
+                                                    <div class="contenedorconteo">
+                                                        <?php
+                                                        $textAsunto = "Hola. Me gustaría que resolvieran las siguientes dudas de mi proyecto " . $vectorNombresProyectos[$x] . " del paso " . ($y + 1) . ": >>" . $superVecDesp[$x][$y] . "<< " . "Proyecto id# " . $vectorIdProyectos[$x];
+                                                        $asunto = str_replace(' ', '%20', $textAsunto);
+                                                        $vectorNombresProyectos[$x] = str_replace('&', 'y', $vectorNombresProyectos[$x]);
+                                                        $cuerpo = "Lista de dudas: ";
+                                                        $cuerpo = str_replace(' ', '%20', $cuerpo);
+                                                        ?>
+                                                        <a href="mailto:infoingeangel@gmail.com?subject=<?php echo $asunto; ?>&body=<?php echo $cuerpo; ?>" target="_blank">
+                                                            <p>Paso <?php echo $y + 1; ?>: <i class="fas fa-caret-right"></i> <?php echo  $superVecDesp[$x][$y]; ?></p>
 
 
-                                                            <div class="lix">
-                                                                <p id="dias<?php echo $x . '-' . $y ?>" class="numero"></p>
+                                                        </a>
+                                                        <div id="midiv" class="cuenta-regresiva<?php echo $x . '-' . $y; ?> contenedor-cuenta">
 
-                                                            </div>
+                                                            <ul class="clearfix">
+                                                                <div class="lix">
+                                                                    <p>Fecha estimada: Paso <?php echo ($y + 1) . ' (' . $superVec[$x][$y] . ')'; ?></p>
+                                                                </div>
 
-                                                            <div class="lix">
-                                                                <p id="horas<?php echo $x . '-' . $y ?>" class="numero"></p>
 
-                                                            </div>
-                                                            <div class="lix">
+                                                                <div class="lix">
+                                                                    <p id="dias<?php echo $x . '-' . $y ?>" class="numero"></p>
 
-                                                                <p id="minutos<?php echo $x . '-' . $y ?>" class="numero"></p>
+                                                                </div>
 
-                                                            </div>
-                                                            <div class="lix">
+                                                                <div class="lix">
+                                                                    <p id="horas<?php echo $x . '-' . $y ?>" class="numero"></p>
 
-                                                                <p id="segundos<?php echo $x . '-' . $y ?>" class="numero"></p>
-                                                            </div>
-                                                            <div class="lix">
-                                                                <p>Días</p>
-                                                            </div>
-                                                            <div class="lix">
-                                                                <p>Horas</p>
-                                                            </div>
-                                                            <div class="lix">
-                                                                <p>Minutos</p>
-                                                            </div>
-                                                            <div class="lix">
-                                                                <p>Segundos</p>
-                                                            </div>
-                                                        </ul>
+                                                                </div>
+                                                                <div class="lix">
+
+                                                                    <p id="minutos<?php echo $x . '-' . $y ?>" class="numero"></p>
+
+                                                                </div>
+                                                                <div class="lix">
+
+                                                                    <p id="segundos<?php echo $x . '-' . $y ?>" class="numero"></p>
+                                                                </div>
+                                                                <div class="lix">
+                                                                    <p>Días</p>
+                                                                </div>
+                                                                <div class="lix">
+                                                                    <p>Horas</p>
+                                                                </div>
+                                                                <div class="lix">
+                                                                    <p>Minutos</p>
+                                                                </div>
+                                                                <div class="lix">
+                                                                    <p>Segundos</p>
+                                                                </div>
+                                                            </ul>
+                                                        </div>
                                                     </div>
                                                 </div>
-                                            </div>
-                                        <?php
-                                        } ?>
+                                            <?php
+                                            } ?>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        <?php
-                        }
-                        ?>
-                    </div>
-
-                </li>
-                <li>
-                    <div class="contenedor-especial">
-                        <div class="titulo-seccion">
-                            <h1 id="sparklemaster" class="sparklemaster" style="color:  #93A9CC;">Cuenta</h1>
+                            <?php
+                            }
+                            ?>
                         </div>
-                        <div class="datos-usuario">
-                            <form id="cuenta" action="#">
-                                <div class="contenido-cuenta">
-                                    <div class="dato1">
-                                        <input style="border: 1px solid #161616;" type="text" id="Nombre" name="Nombre" placeholder="Ingresa tu Nombre" value="<?php echo $usuario . ' ' . $apellidos ?>" disabled>
-                                    </div> <!-- rnormal__tarjeta -->
-                                    <div class="text-dato1">
-                                        <p>Cliente</p>
-                                    </div>
-                                    <div class="dato2">
-                                        <input type="text" id="calle" name="calle" placeholder="Ingrese su Calle" value="<?php echo $calle; ?>">
-                                        <input type="text" id="numie" name="numie" placeholder="Ingrese su Némero Int/Ext" value="<?php echo $numie; ?>">
-                                        <input type="text" id="colonia" name="colonia" placeholder="Ingrese su Colonia" value="<?php echo $col; ?>">
-                                        <input type="text" id="cpostal" name="cpostal" placeholder="Ingrese su Código Postal" value="<?php echo $cp; ?>">
-                                    </div> <!-- rnormal__tarjeta -->
-                                    <div class="text-dato2">
-                                        <p>Domicilio</p>
-                                    </div>
-                                    <div class="dato3">
-                                        <input style="border: 1px solid #161616;" type="text" id="email" name="email" placeholder="Ingresa tu email" value="<?php echo $email; ?>" disabled>
-                                    </div> <!-- rnormal__tarjeta -->
-                                    <div class="text-dato3">
-                                        <p>Correo Electrónico</p>
-                                    </div>
 
-                                    <div class="dato4">
-                                        <input style="border: 1px solid #161616;" type="text" id="telefono" name="telefono" placeholder="Ingresa tu telefono" value="<?php echo $tel; ?>" disabled>
-                                    </div> <!-- rnormal__tarjeta -->
-                                    <div class="text-dato4">
-                                        <p>Teléfono</p>
-                                    </div>
+                    </li>
+                    <li>
+                        <div class="contenedor-especial">
+                            <div class="titulo-seccion">
+                                <h1 id="sparklemaster" class="sparklemaster" style="color:  #93A9CC;">Cuenta</h1>
+                            </div>
+                            <div class="datos-usuario">
+                                <form id="cuenta" action="#">
+                                    <div class="contenido-cuenta">
+                                        <div class="dato1">
+                                            <input style="border: 1px solid #161616;" type="text" id="Nombre" name="Nombre" placeholder="Ingresa tu Nombre" value="<?php echo $usuario . ' ' . $apellidos ?>" disabled>
+                                        </div> <!-- rnormal__tarjeta -->
+                                        <div class="text-dato1">
+                                            <p>Cliente</p>
+                                        </div>
+                                        <div class="dato2">
+                                            <input type="text" id="calle" name="calle" placeholder="Ingrese su Calle" value="<?php echo $calle; ?>">
+                                            <input type="text" id="numie" name="numie" placeholder="Ingrese su Némero Int/Ext" value="<?php echo $numie; ?>">
+                                            <input type="text" id="colonia" name="colonia" placeholder="Ingrese su Colonia" value="<?php echo $col; ?>">
+                                            <input type="text" id="cpostal" name="cpostal" placeholder="Ingrese su Código Postal" value="<?php echo $cp; ?>">
+                                        </div> <!-- rnormal__tarjeta -->
+                                        <div class="text-dato2">
+                                            <p>Domicilio</p>
+                                        </div>
+                                        <div class="dato3">
+                                            <input style="border: 1px solid #161616;" type="text" id="email" name="email" placeholder="Ingresa tu email" value="<?php echo $email; ?>" disabled>
+                                        </div> <!-- rnormal__tarjeta -->
+                                        <div class="text-dato3">
+                                            <p>Correo Electrónico</p>
+                                        </div>
 
-                                    <div class="dato5">
-                                        <p><?php echo $fec; ?></p>
-                                    </div> <!-- rnormal__tarjeta -->
-                                    <div class="text-dato5">
-                                        <p>Cliente desde</p>
-                                    </div>
-                                    <div class="dato6">
-                                        <input type="text" id="domiciliof" name="domiciliof" placeholder="Domicilio fiscal" value="<?php
-                                                                                                                                    if ($domiciliof != '') {
-                                                                                                                                        echo $domiciliof;
-                                                                                                                                    } else {
-                                                                                                                                        echo '';
-                                                                                                                                    }
-                                                                                                                                    ?>">
-                                        <input type="text" id="cfdi" name="cfdi" placeholder="CDFI" value="<?php
-                                                                                                            if ($cfdi != '') {
-                                                                                                                echo $cfdi;
+                                        <div class="dato4">
+                                            <input style="border: 1px solid #161616;" type="text" id="telefono" name="telefono" placeholder="Ingresa tu telefono" value="<?php echo $tel; ?>" disabled>
+                                        </div> <!-- rnormal__tarjeta -->
+                                        <div class="text-dato4">
+                                            <p>Teléfono</p>
+                                        </div>
+
+                                        <div class="dato5">
+                                            <p><?php echo $fec; ?></p>
+                                        </div> <!-- rnormal__tarjeta -->
+                                        <div class="text-dato5">
+                                            <p>Cliente desde</p>
+                                        </div>
+                                        <div class="dato6">
+                                            <input type="text" id="domiciliof" name="domiciliof" placeholder="Domicilio fiscal" value="<?php
+                                                                                                                                        if ($domiciliof != '') {
+                                                                                                                                            echo $domiciliof;
+                                                                                                                                        } else {
+                                                                                                                                            echo '';
+                                                                                                                                        }
+                                                                                                                                        ?>">
+                                            <input type="text" id="cfdi" name="cfdi" placeholder="CDFI" value="<?php
+                                                                                                                if ($cfdi != '') {
+                                                                                                                    echo $cfdi;
+                                                                                                                } else {
+                                                                                                                    echo '';
+                                                                                                                }
+                                                                                                                ?>">
+                                            <input type="text" id="rfc" name="rfc" placeholder="RFC" value="<?php
+                                                                                                            if ($rfc != '') {
+                                                                                                                echo $rfc;
                                                                                                             } else {
                                                                                                                 echo '';
                                                                                                             }
                                                                                                             ?>">
-                                        <input type="text" id="rfc" name="rfc" placeholder="RFC" value="<?php
-                                                                                                        if ($rfc != '') {
-                                                                                                            echo $rfc;
-                                                                                                        } else {
-                                                                                                            echo '';
-                                                                                                        }
-                                                                                                        ?>">
 
-                                    </div> <!-- rnormal__tarjeta -->
-                                    <div class="text-dato6">
-                                        <p>Datos fiscales</p>
-                                    </div>
-                                    <div class="sub-boton">
-                                        <div class="text-btn">
-                                            <p style="color: #fff;">Si desea cambiar datos como la dirección de correo electrónico por favor póngase en contacto con el soporte técnico</p>
+                                        </div> <!-- rnormal__tarjeta -->
+                                        <div class="text-dato6">
+                                            <p>Datos fiscales</p>
                                         </div>
-                                        <input id="btnactualizar" type="submit" value="Actualizar" class="button">
+                                        <div class="sub-boton">
+                                            <div class="text-btn">
+                                                <p style="color: #fff;">Si desea cambiar datos como la dirección de correo electrónico por favor póngase en contacto con el soporte técnico</p>
+                                            </div>
+                                            <input id="btnactualizar" type="submit" value="Actualizar" class="button">
 
+                                        </div>
                                     </div>
-                                </div>
-                            </form>
+                                </form>
+                            </div>
                         </div>
-                    </div>
-                </li>
-                <?php include('includes/funciones/historial-pagos.php');?>
-                </li>
-                <?php include('includes/funciones/contratos.php');?>
-                </li>
-                <li><div class="contenedor-especial">
-                        <div class="titulo-seccion">
-                            <h1 id="sparklemaster" class="sparklemaster" style="color:  #93A9CC;">Mensajes</h1>
+                    </li>
+                    <?php include('includes/funciones/historial-pagos.php'); ?>
+                    </li>
+                    <?php include('includes/funciones/contratos.php');
+                    ?>
+                    </li>
+                    <li>
+                        <div class="contenedor-especial">
+                            <div class="titulo-seccion">
+                                <h1 id="sparklemaster" class="sparklemaster" style="color:  #93A9CC;">Mensajes</h1>
+                            </div>
+                            <?php include('includes/funciones/mensajes.php'); ?>
                         </div>
-                        <?php include('includes/funciones/mensajes.php');?>
-                        </div>
-                        
-                        </li>
-                
-               
-            </ul>
+
+                    </li>
 
 
-            <div class="right2">
-                <span><i class="fas fa-angle-right"></i></span>
+                </ul>
+
+
+                <div class="right2">
+                    <span><i class="fas fa-angle-right"></i></span>
+                </div>
+                <div class="left2">
+                    <span><i class="fas fa-angle-left"></i></span>
+                </div>
             </div>
-            <div class="left2">
-                <span><i class="fas fa-angle-left"></i></span>
-            </div>
-        </div>
 
         <?php
-        
-                    }
+
+        }
     }
     require 'includes/templates/footer.php';
     // var_dump($contadorPasoxProyecto);
