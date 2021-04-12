@@ -540,8 +540,6 @@ if ((!isset($_SESSION['usuario'])) && (!isset($_SESSION['email']))) {
                         </form>
                     </div>
                 </div><?php
-                                } else {
-                                    echo 'Modificar fechas de un pago?';
                                 }
                             }
                         }
