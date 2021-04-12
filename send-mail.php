@@ -112,7 +112,7 @@ function enviar_correo3($nombre, $apellido, $pass, $correo, $idea, $select, $sec
 
                                 <h2 style="
 
-                                color: grey;">Tu cuenta ha sido registrada. A la brevedad posible recibirás un correo con la cotización correspondiente</h2>
+                                color: grey;">Tu cuenta ha sido registrada. A la brevedad posible recibirá un correo con la cotización correspondiente</h2>
 
                                 <h3 style="
 
