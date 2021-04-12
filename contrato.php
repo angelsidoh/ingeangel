@@ -214,7 +214,7 @@ require 'includes/templates/footer.php';
 
 
 
-function money_format($formato, $valor) { 
+function monto($formato, $valor) { 
 
 if (setlocale(LC_MONETARY, 0) == 'C') { 
 

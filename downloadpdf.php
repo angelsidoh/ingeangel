@@ -39,8 +39,8 @@ if ($posicion_coincidencia === false) {
     // echo '<br>' . $tokencontrato;
 }
 
-$html= file_get_contents_curl("http://localhost/01ingeangel.com//includes/funciones/pdfcontrato.php?contrato=".$tokencontrato.'-id='.$idProyecto);
-http://localhost/01ingeangel.com/downloadpdf.php?contrato=ejsMPXR6qkSdUItpZ-id=1#angel-ruiz
+$html= file_get_contents_curl("https://ingeangel.com/includes/funciones/pdfcontrato.php?contrato=".$tokencontrato.'-id='.$idProyecto);
+
 // Instanciamos un objeto de la clase DOMPDF.
 $pdf = new DOMPDF();
  

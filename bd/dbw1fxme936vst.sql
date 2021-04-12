@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 17-03-2021 a las 15:35:28
+-- Tiempo de generación: 12-04-2021 a las 12:19:58
 -- Versión del servidor: 10.4.11-MariaDB
 -- Versión de PHP: 7.4.2
 
@@ -47,11 +47,45 @@ CREATE TABLE `contratos` (
 --
 
 INSERT INTO `contratos` (`id_contrato`, `idproyecto_contrato`, `link_contrato`, `token_contrato`, `tipo_contrato`, `tipoint_contrato`, `fechainicio_contrato`, `fechafin_contrato`, `idusuario_contrato`, `firmacliente_contrato`, `firmainge_contrato`) VALUES
-(1, 1, 'https://ingeangel.com/contrato.php', '9ZW2r8h74dDwPIeVa', '3 Meses', 3, '2020-12-07 08:36:14', '2021-01-12 11:55:28', 24, 'includes/funciones/doc_sings/d4d1ea0cf57351b6e89b949afd5cb858.png', ''),
-(3, 2, 'https://ingeangel.com/contrato.php', 'TNwCzNTM12knc7AI6', '3 Meses', 3, '2021-03-09 05:56:24', '2021-06-09 05:56:24', 24, 'includes/funciones/doc_sings/44f21f805816f566bf3bc806d8ba8ea9.png', ''),
-(4, 1, 'https://ingeangel.com/contrato.php', 'IA47X1gTBIYODSxJNl', '12 Meses', 12, '2021-03-10 11:58:24', '2022-03-10 11:58:24', 24, 'includes/funciones/doc_sings/0e3efc0b635aef32915bc94248a2fd72.png', ''),
-(5, 3, 'https://ingeangel.com/contrato.php', 'ZHhXBfZVHqGnM1YEu9', '3 Meses', 3, '2021-03-13 06:53:33', '2021-06-13 06:53:33', 26, 'includes/funciones/doc_sings/551a86c65d94cdbcfd01ae1363d2db2f.png', ''),
-(6, 4, 'https://ingeangel.com/contrato.php', 'ufgMOCRkW4i8LtHATQ', '3 Meses', 3, '2021-03-13 06:53:46', '2021-06-13 06:53:46', 27, 'includes/funciones/doc_sings/0cd0b7c4ef399ac79fc6f05df2da7671.png', '');
+(1, 1, 'https://ingeangel.com/contrato.php', 'oKtXsJguTF3bE8YNlq', '3 Meses', 3, '2021-04-05 09:43:08', '2021-04-05 09:43:10', 0, '', ''),
+(2, 2, 'https://ingeangel.com/contrato.php', 'zFgqVLX8C8T0FNg9Dt', '3 Meses', 3, '2021-04-05 09:44:29', '2021-04-05 09:44:31', 0, '', ''),
+(19, 1, 'https://ingeangel.com/contrato.php', 'x0tvhMM8Kl6VQEKvj3', '3 Meses', 3, '2021-04-08 07:17:21', '2021-07-08 07:17:21', 1, 'includes/funciones/doc_sings/a9f2906599b3ffd135cd77639f7b648d.png', ''),
+(20, 3, 'https://ingeangel.com/contrato.php', 'uoFA6moj3UwSGxW3g8', '3 Meses', 3, '2021-04-09 07:00:35', '2021-04-09 07:00:37', 0, '', ''),
+(21, 3, 'https://ingeangel.com/contrato.php', 'xhvxoPVpO1WAEi77eH', '12 Meses', 12, '2021-04-09 07:04:10', '2022-04-09 07:04:10', 3, 'includes/funciones/doc_sings/fff2450800bdf1bb2041064c38a43edb.png', ''),
+(22, 4, 'https://ingeangel.com/contrato.php', 'Y4zEr5erNB64Mw3Xi6', '3 Meses', 3, '2021-04-09 08:22:31', '2021-04-09 08:22:33', 0, '', ''),
+(23, 4, 'https://ingeangel.com/contrato.php', 'yJ5eyaTNYUDgxGnNA', '12 Meses', 12, '2021-04-09 08:24:16', '2022-04-09 08:24:16', 4, 'includes/funciones/doc_sings/898251581c2a399378138b4860d64256.png', '');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `mensajecliente`
+--
+
+CREATE TABLE `mensajecliente` (
+  `id_mensaje` int(11) NOT NULL,
+  `idusuario_mensaje` int(11) NOT NULL,
+  `idmensaje_mensaje` int(11) NOT NULL,
+  `mensaje_mensaje` varchar(1000) NOT NULL,
+  `admin_mensaje` varchar(1000) NOT NULL,
+  `asunto_mensaje` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `mensajecliente`
+--
+
+INSERT INTO `mensajecliente` (`id_mensaje`, `idusuario_mensaje`, `idmensaje_mensaje`, `mensaje_mensaje`, `admin_mensaje`, `asunto_mensaje`) VALUES
+(1, 1, 1, 'Lorem ipsum dolor sit amet consectetur adipiscing elit, nisi luctus platea lacus cursus duis, dui pharetra bibendum sociosqu fringilla nostra. Commodo viverra scelerisque placerat a himenaeos eu et morbi, lobortis cursus eget tempor etiam maecenas sociis, hac dictum magna non urna aliquam eros. Et varius at potenti gravida vitae ornare convallis feugiat vehicula suscipit, parturient laoreet dis platea curabitur dictumst eu cras sociis nascetur suspendisse, euismod cursus mollis imperdiet sociosq', '', ''),
+(2, 1, 1, 'u maecenas ante cum dictum.\n\nPenatibus etiam suspendisse fusce laoreet eros in aenean vitae, nec orci congue consequat himenaeos eget aptent, nullam venenatis semper ultrices torquent cras facilisis. Conubia diam nullam maecenas bibendum habitasse elementum class morbi sociosqu hac, congue ut netus senectus lobortis porttitor cubilia luctus fames erat, urna fusce hendrerit dictum non euismod nibh pretium tortor. Gravida nostra sociis vel tempus id velit odio neque ullamcorper, iaculis hac intege', '', ''),
+(3, 1, 1, 'r nunc ultricies praesent sodales sollicitudin eu, montes massa eget dictumst duis laoreet tristique cras.', '', ''),
+(4, 2, 4, 'admin', '', ''),
+(5, 3, 5, 'La vida espera por quienes realmente se arriesgan, esta es una forma de arriesgarse.', '', ''),
+(6, 4, 6, 'Why do we use it?\nIt is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using &#39;Content here, content here&#39;, making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for &#39;lorem ipsum&#39; will uncover many web site', '', ''),
+(7, 4, 6, 's still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).\n\n\nWhere does it come from?\nContrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passa', '', ''),
+(8, 4, 6, 'ge, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of &#34;de Finibus Bonorum et Malorum&#34; (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, &#34;Lorem ipsum dolor sit amet..&#34;, comes from a line in section 1.10.32.\n\nThe standard chunk of Lorem Ipsum used since', '', ''),
+(9, 4, 6, ' the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from &#34;de Finibus Bonorum et Malorum&#34; by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.\n\nWhere can I get some?\nThere are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don&#39;t look even slightly believable. If you are', '', ''),
+(10, 4, 6, ' going to use a passage of Lorem Ipsum, you need to be sure there isn&#39;t anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected', '', ''),
+(11, 4, 6, ' humour, or non-characteristic words etc.', '', '');
 
 -- --------------------------------------------------------
 
@@ -81,17 +115,21 @@ CREATE TABLE `pagos` (
 --
 
 INSERT INTO `pagos` (`id_pago`, `fechainicio_pago`, `fechafin_pago`, `fechadepago_pago`, `idproyecto_pago`, `tokenconekta_pago`, `fortarget_pago`, `tokenpago_pago`, `idcontrato_pago`, `tokencontrato_pago`, `money_pago`, `titular_pago`, `contmeses_pago`, `qr_pago`) VALUES
-(1, '2020-12-07 08:36:14', '2021-03-09 08:36:14', '2021-03-07 09:11:55', 1, 'ord_2pNKmHM4bgahas2cS', 5100, 'angel._ruiz@hotmail.com', 1, '9ZW2r8h74dDwPIeVa', '8000', 'José Angel Ruiz Chávez', 1, ''),
-(2, '2021-01-11 09:06:11', '2021-03-11 17:56:04', '2021-03-07 10:17:23', 1, 'ord_2pNLdGwu3TapJmksi', 1881, 'angel._ruiz@hotmail.com', 1, '9ZW2r8h74dDwPIeVa', '8000', 'José Angel Ruiz Chávez', 2, ''),
-(11, '2021-03-10 18:14:12', '2021-04-09 05:56:24', '2021-03-13 06:45:28', 2, 'ord_2pQFbxtb9z3CYg7hd', 4444, 'Contrato: (TNwCzNTM12knc7AI6-11) Paquete Negocio y Servicios varios (www.pruebas.com).', 3, 'TNwCzNTM12knc7AI6', '8000', 'JOSÉ ANGEL RUIZ CHÁVEZ', 1, './temp/qr/TNwCzNTM12knc7AI6-11-22021-03-13-06-45-28codeQr.png'),
-(12, '2021-04-09 05:56:24', '2021-06-09 05:56:24', '2021-03-12 15:44:06', 2, 'ord_2pQ3jbSs17tpuCFin', 5100, 'Contrato: (TNwCzNTM12knc7AI6-12) Paquete Negocio y Servicios varios (www.pruebas.com).', 3, 'TNwCzNTM12knc7AI6', '16000', 'JOSÉ ANGEL RUIZ CHÁVEZ', 2, './temp/qr/TNwCzNTM12knc7AI6-12-22021-03-12-15-44-06codeQr.png'),
-(13, '2021-03-10 18:03:40', '2021-04-10 11:58:24', '0000-00-00 00:00:00', 1, 'asdas', 0, '', 4, 'IA47X1gTBIYODSxJNl', '0', '', 1, ''),
-(14, '2021-04-10 18:01:50', '2022-03-10 11:58:24', '0000-00-00 00:00:00', 1, '', 0, '', 4, 'IA47X1gTBIYODSxJNl', '0', '', 11, ''),
-(15, '2021-03-13 06:53:33', '2021-04-13 06:53:33', '0000-00-00 00:00:00', 3, '', 0, '', 5, 'ZHhXBfZVHqGnM1YEu9', '0', '', 1, ''),
-(16, '2021-03-13 06:53:46', '2021-04-13 06:53:46', '2021-03-13 07:00:55', 4, 'ord_2pQFomG6pnq5JiFaM', 1881, 'Contrato: (ufgMOCRkW4i8LtHATQ-16) Paquete Profesional y Servicios varios (Prototipo X).', 6, 'ufgMOCRkW4i8LtHATQ', '12000', 'JOSÉ ANGEL RUIZ CHÁVEZ', 1, './temp/qr/ufgMOCRkW4i8LtHATQ-16-42021-03-13-07-00-55codeQr.png'),
-(17, '2021-04-13 06:53:46', '2021-06-13 06:53:46', '2021-03-13 07:02:57', 4, 'ord_2pQFqKL4M7V3kz7fY', 1881, 'Contrato: (ufgMOCRkW4i8LtHATQ-17) Paquete Profesional y Servicios varios (Prototipo X).', 6, 'ufgMOCRkW4i8LtHATQ', '22400', 'JOSÉ ANGEL RUIZ CHÁVEZ', 2, './temp/qr/ufgMOCRkW4i8LtHATQ-17-42021-03-13-07-02-57codeQr.png'),
-(18, '2021-04-13 06:53:33', '2021-05-13 06:53:33', '0000-00-00 00:00:00', 3, '', 0, '', 5, 'ZHhXBfZVHqGnM1YEu9', '0', '', 1, ''),
-(19, '2021-05-13 06:53:33', '2021-06-13 06:53:33', '0000-00-00 00:00:00', 3, '', 0, '', 5, 'ZHhXBfZVHqGnM1YEu9', '0', '', 1, '');
+(1, '2021-04-05 09:43:08', '2021-05-05 09:43:08', '0000-00-00 00:00:00', 1, '', 0, '', 1, 'oKtXsJguTF3bE8YNlq', '0', '', 1, ''),
+(2, '2021-04-05 09:44:29', '2021-05-05 09:44:29', '0000-00-00 00:00:00', 2, '', 0, '', 2, 'zFgqVLX8C8T0FNg9Dt', '0', '', 1, ''),
+(19, '2021-04-08 07:17:21', '2021-05-08 07:17:21', '0000-00-00 00:00:00', 1, '', 0, '', 19, 'x0tvhMM8Kl6VQEKvj3', '0', '', 1, ''),
+(20, '2021-05-08 07:17:21', '2021-07-08 07:17:21', '0000-00-00 00:00:00', 1, '', 0, '', 19, 'x0tvhMM8Kl6VQEKvj3', '0', '', 2, ''),
+(21, '2021-04-09 07:00:35', '2021-05-09 07:00:35', '0000-00-00 00:00:00', 3, '', 0, '', 20, 'uoFA6moj3UwSGxW3g8', '0', '', 1, ''),
+(22, '2021-04-09 07:04:10', '2021-05-09 07:04:10', '2021-04-09 07:22:13', 3, 'ord_2pZ5Fj9jxSdTVGCj9', 4444, 'Contrato: (xhvxoPVpO1WAEi77eH-22) Y Servicios varios del Proyecto (Preparación).', 21, 'xhvxoPVpO1WAEi77eH', '116', 'JOSÉ ANGEL RUIZ CHÁVEZ', 1, './temp/qr/xhvxoPVpO1WAEi77eH-22-32021-04-09-07-22-13codeQr.png'),
+(23, '2021-05-09 07:04:10', '2022-04-09 07:04:10', '2021-04-09 07:15:33', 3, 'ord_2pZ5Ad7CAVuJobfjd', 5100, 'Contrato: (xhvxoPVpO1WAEi77eH-23) Y Servicios varios del Proyecto (Preparación).', 21, 'xhvxoPVpO1WAEi77eH', '1276', 'JOSÉ ANGEL RUIZ CHÁVEZ', 11, './temp/qr/xhvxoPVpO1WAEi77eH-23-32021-04-09-07-15-33codeQr.png'),
+(24, '2021-04-09 08:22:31', '2021-05-09 08:22:31', '0000-00-00 00:00:00', 4, '', 0, '', 22, 'Y4zEr5erNB64Mw3Xi6', '0', '', 1, ''),
+(25, '2021-04-09 08:24:16', '2021-05-09 08:24:16', '2021-04-09 08:44:17', 4, 'ord_2pZ6LQN5n6Z11Scsh', 8431, 'Contrato: (yJ5eyaTNYUDgxGnNA-25) Y Servicios varios del Proyecto (Preparación).', 23, 'yJ5eyaTNYUDgxGnNA', '9280', 'JOSÉ ANGEL RUIZ CHÁVEZ', 1, './temp/qr/yJ5eyaTNYUDgxGnNA-25-42021-04-09-08-44-17codeQr.png'),
+(26, '2021-05-09 08:24:16', '2021-11-09 08:24:16', '0000-00-00 00:00:00', 4, '', 0, '', 23, 'yJ5eyaTNYUDgxGnNA', '0', '', 6, ''),
+(27, '2021-11-09 08:24:16', '2021-12-09 08:24:16', '0000-00-00 00:00:00', 4, '', 0, '', 23, 'yJ5eyaTNYUDgxGnNA', '0', '', 1, ''),
+(28, '2021-12-09 08:24:16', '2022-01-09 08:24:16', '0000-00-00 00:00:00', 4, '', 0, '', 23, 'yJ5eyaTNYUDgxGnNA', '0', '', 1, ''),
+(29, '2022-01-09 08:24:16', '2022-02-09 08:24:16', '0000-00-00 00:00:00', 4, '', 0, '', 23, 'yJ5eyaTNYUDgxGnNA', '0', '', 1, ''),
+(30, '2022-02-09 08:24:16', '2022-03-09 08:24:16', '0000-00-00 00:00:00', 4, '', 0, '', 23, 'yJ5eyaTNYUDgxGnNA', '0', '', 1, ''),
+(31, '2022-03-09 08:24:16', '2022-04-09 08:24:16', '0000-00-00 00:00:00', 4, '', 0, '', 23, 'yJ5eyaTNYUDgxGnNA', '0', '', 1, '');
 
 -- --------------------------------------------------------
 
@@ -114,17 +152,14 @@ CREATE TABLE `pasos` (
 --
 
 INSERT INTO `pasos` (`id_paso`, `descripcion_paso`, `timing_paso`, `fechaini_paso`, `fechafin_paso`, `idproyecto_paso`, `num_paso`) VALUES
-(3, 'Nos pondremos en contacto con usted a la brevedad posible', 1, '2021-03-09 05:56:24', '2021-03-11 00:00:00', 2, '1'),
-(6, '1.-Contacto con el cliente', 1, '2021-03-10 08:36:14', '2021-03-12 22:00:00', 1, '2'),
-(9, 'Platicar sobre el diseño de su pagina', 0, '2021-03-10 07:25:08', '2021-03-31 12:00:00', 2, '2'),
-(10, 'Maquetar el diseño en los lenguajes de programación necesarios', 0, '2021-03-10 07:34:08', '2021-03-31 07:00:00', 2, '3'),
-(11, 'diseño de la pagina', 0, '2021-03-10 16:26:54', '2021-03-11 18:00:00', 1, '3'),
-(12, 'casi esta lista', 0, '2021-03-10 18:19:58', '2021-03-13 20:00:00', 2, '4'),
-(13, 'Se me olvido la descripción', 0, '2021-03-13 06:48:59', '2021-03-14 06:48:59', 1, '4'),
-(14, '1.-Nos pondremos en contacto con usted a la brevedad posible.', 1, '2021-03-13 06:53:33', '2021-03-14 06:53:33', 3, '1'),
-(15, '1.-Nos pondremos en contacto con usted a la brevedad posible.', 1, '2021-03-13 06:53:46', '2021-03-14 06:53:46', 4, '1'),
-(16, 'Hey', 0, '2021-03-13 06:59:20', '2021-03-15 06:59:20', 3, '2'),
-(17, 'hey', 0, '2021-03-14 08:13:34', '2021-03-15 08:13:34', 1, '5');
+(1, 'Cotización: En proceso', 1, '2021-04-05 09:43:08', '2021-04-06 09:43:08', 1, '1'),
+(2, 'Cotización: En proceso', 1, '2021-04-05 09:44:29', '2021-04-06 09:44:29', 2, '1'),
+(3, 'Programación del encabezado del sitio.', 0, '2021-04-09 06:50:47', '2021-04-12 06:50:47', 1, '2'),
+(4, 'Cotización: En proceso', 1, '2021-04-09 07:00:35', '2021-04-10 07:00:35', 3, '1'),
+(5, 'Programación', 0, '2021-04-09 08:05:36', '2021-04-10 08:05:36', 1, '3'),
+(6, 'Cotización: En proceso', 1, '2021-04-09 08:22:31', '2021-04-10 08:22:31', 4, '1'),
+(7, 'Programación', 0, '2021-04-09 08:34:12', '2021-04-12 08:34:12', 4, '2'),
+(8, 'Programación y control de decisiones ', 0, '2021-04-12 04:53:36', '2021-04-17 04:53:36', 4, '3');
 
 -- --------------------------------------------------------
 
@@ -135,21 +170,25 @@ INSERT INTO `pasos` (`id_paso`, `descripcion_paso`, `timing_paso`, `fechaini_pas
 CREATE TABLE `precios` (
   `id_precio` tinyint(11) NOT NULL,
   `basico_precio` int(5) NOT NULL,
-  `negocio_precio` int(5) NOT NULL,
-  `profesional_precio` int(5) NOT NULL,
+  `tokencontrato_precio` varchar(52) NOT NULL,
+  `idcontrato_precio` int(11) NOT NULL,
   `hosting_precio` int(5) NOT NULL,
   `dominio_precio` int(5) NOT NULL,
   `mantenimiento_precio` int(5) NOT NULL,
-  `basesdatos_precio` int(5) NOT NULL
+  `basesdatos_precio` int(5) NOT NULL,
+  `programacion_precio` int(5) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `precios`
 --
 
-INSERT INTO `precios` (`id_precio`, `basico_precio`, `negocio_precio`, `profesional_precio`, `hosting_precio`, `dominio_precio`, `mantenimiento_precio`, `basesdatos_precio`) VALUES
-(1, 3800, 6800, 10011, 300, 0, 100, 800),
-(2, 3800, 6800, 10800, 300, 0, 100, 800);
+INSERT INTO `precios` (`id_precio`, `basico_precio`, `tokencontrato_precio`, `idcontrato_precio`, `hosting_precio`, `dominio_precio`, `mantenimiento_precio`, `basesdatos_precio`, `programacion_precio`) VALUES
+(1, 4000, '6000', 10000, 1, 1, 300, 1000, 0),
+(2, 4000, '6000', 10000, 1, 1, 300, 1000, 0),
+(11, 13920, 'x0tvhMM8Kl6VQEKvj3', 19, 100, 100, 150, 800, 10850),
+(12, 116, 'xhvxoPVpO1WAEi77eH', 21, 0, 0, 0, 0, 100),
+(13, 9280, 'yJ5eyaTNYUDgxGnNA', 23, 100, 100, 150, 800, 6850);
 
 -- --------------------------------------------------------
 
@@ -172,10 +211,10 @@ CREATE TABLE `proyectos` (
 --
 
 INSERT INTO `proyectos` (`id_proyecto`, `nombre_proyecto`, `idusuario_proyecto`, `tipo_proyecto`, `contrato_proyecto`, `pago_proyecto`, `timing_proyecto`) VALUES
-(1, 'pcplus.com', 24, 'Paquete Negocio', 'link', '8000', ''),
-(2, 'www.pruebas.com', 24, 'Paquete Negocio', 'link', '8000', ''),
-(3, 'losbiches.com', 26, 'Paquete Profesional', 'link', '12000', ''),
-(4, 'amor.com', 27, 'Paquete Profesional', 'link', '12000', '');
+(1, 'Preparación', 1, 'Sin paquete', '', '0', ''),
+(2, 'Sin Proyecto', 2, 'Sin paquete', '', '0', ''),
+(3, 'Preparación', 3, 'Sin paquete', '', '0', ''),
+(4, 'https://3dImprent.com', 4, 'Sin paquete', '', '0', '');
 
 -- --------------------------------------------------------
 
@@ -210,11 +249,10 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`id_usuario`, `nombre_usuario`, `apellidos_usuario`, `email_usuario`, `pass_usuario`, `telefono_usuario`, `foto_usuario`, `calle_usuario`, `numiedireccion_usuario`, `colonia_usuario`, `cp_usuario`, `paquetes_usuario`, `fecha_usuario`, `idproyecto_usuario`, `domiciliofiscal_usuario`, `cfdi_usuario`, `rfc_usuario`, `tipo_usuario`, `idcontrato_usuario`) VALUES
-(1, 'José Angel', 'Ruiz Chávez', 'a@gmail.com', 'hyo', '4521441689', 'upload/JoséAngel-wr901Mar2021152753abc.jpeg', 'San José de la Mina', '42', 'San José de la Mina', '60125', 'Paquete Profesional', '2021-02-25', 127, 'San José', '45a4sd51', '4a5sd451as54d1', 'admin', 0),
-(24, 'José Angel', 'Ruiz Chávez', 'angel._ruiz@hotmail.com', 'a', '4521114455', '', 'San José de la Mina', '42', 'San José de la Mina', '60125', 'Paquete Negocio', '2021-03-07', 2, '', '', '', 'user', 0),
-(25, 'José Angel', 'Ruiz Chávez', 'b@gmail.com', 'hyo', '4521441689', 'upload/JoséAngel-wr901Mar2021152753abc.jpeg', 'San José de la Mina', '42', 'San José de la Mina', '60125', 'Paquete Profesional', '2021-02-25', 127, 'San José', '45a4sd51', '4a5sd451as54d1', 'admin', 0),
-(26, 'Jordan', 'Ruiz Chávez', 'joseangelruizchavez@hotmail.com', 'IMtzfI17', '4521114455', '', 'San José de la Mina', '42', 'San José de la Mina', '60125', 'Paquete Profesional', '2021-03-13', 3, '', '', '', '', 0),
-(27, 'Jordan', 'Ruiz Chávez', 'joseangelruizchavez@gmail.com', 'U0DPCjKK', '4521114455', '', 'San José de la Mina', '42', 'San José de la Mina', '60125', 'Paquete Profesional', '2021-03-13', 4, '', '', '', '', 0);
+(1, 'José Angel', 'Chávez', 'angels._ruiz@hotmail.com', 'Gtuccb8o', '4521441689', '', 'San José de la Mina', '42', '', '', '', '2021-04-05', 1, '', '', '', '', 0),
+(2, 'José Angel', 'Chávez', 'jose@hotmail.com', 'h', '4521441689', 'upload/JoséAngel-qlD09Apr2021070504119403493_3413678911988392_8248441450573387682_o.jpg', '', '', '', '', '', '2021-04-05', 0, '', '', '', 'admin', 0),
+(3, 'Vianey', 'Ruiz', 'vi@hotmail.com', 'v', '4521441689', 'upload/Vianey-z4o09Apr2021071218abc.jpeg', 'San José de la Mina', '43', 'San José de la Mina', '60125', '', '2021-04-09', 3, 'San José de La Mina #42 Col. San José de la Mina', 'eqwe', '8754654854721', '', 0),
+(4, 'José Angel', 'Chávez', 'angel._ruiz@hotmail.com', 'TBMGcTDk', '4521441689', 'upload/JoséAngel-ygQ09Apr2021084239WhatsAppImage2020-09-25at7.19.42AM.jpeg', 'San José de la Mina', '42', '', '60125', '', '2021-04-09', 4, '', '', '', '', 0);
 
 --
 -- Índices para tablas volcadas
@@ -225,6 +263,12 @@ INSERT INTO `usuarios` (`id_usuario`, `nombre_usuario`, `apellidos_usuario`, `em
 --
 ALTER TABLE `contratos`
   ADD PRIMARY KEY (`id_contrato`);
+
+--
+-- Indices de la tabla `mensajecliente`
+--
+ALTER TABLE `mensajecliente`
+  ADD PRIMARY KEY (`id_mensaje`);
 
 --
 -- Indices de la tabla `pagos`
@@ -264,25 +308,31 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `contratos`
 --
 ALTER TABLE `contratos`
-  MODIFY `id_contrato` tinyint(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_contrato` tinyint(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+
+--
+-- AUTO_INCREMENT de la tabla `mensajecliente`
+--
+ALTER TABLE `mensajecliente`
+  MODIFY `id_mensaje` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT de la tabla `pagos`
 --
 ALTER TABLE `pagos`
-  MODIFY `id_pago` tinyint(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id_pago` tinyint(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 
 --
 -- AUTO_INCREMENT de la tabla `pasos`
 --
 ALTER TABLE `pasos`
-  MODIFY `id_paso` tinyint(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id_paso` tinyint(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT de la tabla `precios`
 --
 ALTER TABLE `precios`
-  MODIFY `id_precio` tinyint(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_precio` tinyint(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT de la tabla `proyectos`
@@ -294,7 +344,7 @@ ALTER TABLE `proyectos`
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id_usuario` tinyint(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+  MODIFY `id_usuario` tinyint(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
