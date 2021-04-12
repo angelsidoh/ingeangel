@@ -164,7 +164,7 @@ if ((!isset($_SESSION['usuario'])) && (!isset($_SESSION['email'])) && (!isset($_
         ?>
  <div class="contenedor-especial">
                         <div class="titulo-seccion">
-                        <p>¿Tiene una gran idea? LLene el siguiente formulario</p>
+                        <p>¿Tiene una gran idea? LLené el siguiente formulario</p>
                             <h1 id="sparklemaster" class="sparklemaster" style="color:  #93A9CC;">Registro de Usuarios</h1>
                         </div>
                         <div class="datos-contrato">

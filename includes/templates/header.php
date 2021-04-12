@@ -269,7 +269,7 @@ session_start();
             <div class="imgslider">
               <img src="img/terceros/fondoslider5.png" alt="fondo">
               <div class="texta">
-                <h1 id="sparklemaster" class="sparklemaster">¿Qué servicio encuentra aquí?</h1>
+                <h1 id="sparklemaster" class="sparklemaster">¿Que servicios ofrecemos?</h1>
                 
 
 
