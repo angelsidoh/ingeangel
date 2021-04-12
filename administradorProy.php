@@ -563,7 +563,7 @@ if ((!isset($_SESSION['usuario'])) && (!isset($_SESSION['email']))) {
                             } else {
 
                                 if ($contadorContrato == sizeof($supervecTokenContrato[$i]) - 1) {
-                                    echo 'opcion habilitada' . $u;
+                                    
                 ?>
                                 <div class="contenedor-especial">
                                     <div class="titulo-seccion">
