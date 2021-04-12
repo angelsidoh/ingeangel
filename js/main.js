@@ -1536,24 +1536,24 @@ function registroIdeaUser(dato) {
     if (this.status === 200) {
       const respuesta = JSON.parse(xhr.responseText);
       console.log(respuesta);
-      // if (respuesta.estado === 'paso agregado') {
-      //   swal({
-      //       content: "",
-      //       text: 'Paso agregado correctamente',
-      //       icon: "success",
-      //       button: {
-      //         text: "Continuar",
-      //         closeModal: true,
-      //       },
-      //     })
-      //     .then((value) => {
-      //       switch (value) {
-      //         default:
-      //           window.location.href = 'cuenta.php#angel-ruiz';
-      //       }
-      //     });
+      if (respuesta.estado === 'creandocuenta') {
+        swal({
+            content: "",
+            text: 'Tu idea a sido enviada y tu cuenta registrada.',
+            icon: "success",
+            button: {
+              text: "Continuar",
+              closeModal: true,
+            },
+          })
+          .then((value) => {
+            switch (value) {
+              default:
+                window.location.href = 'bienvenida.php#angel-ruiz';
+            }
+          });
 
-      // }
+      }
     }
   }
   xhr.send(dato);

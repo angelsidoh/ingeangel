@@ -110,7 +110,6 @@ if ($_POST['accion'] == 'Registrarse') {
             $stmt = $conn3->prepare('INSERT INTO pagos (id_pago, idproyecto_pago, fechainicio_pago, fechafin_pago, tokencontrato_pago, idcontrato_pago, contmeses_pago) VALUES (null, :idproyecto_pago, :fechainicio_pago, :fechafin_pago, :tokencontrato_pago, :idcontrato_pago, :contmeses_pago)');
             $stmt->execute(array(
                 ':idproyecto_pago' => $LAST_IDb,
-                
                 ':fechainicio_pago' => $fechaini,
                 ':fechafin_pago' => $fechafinMes,
                 ':tokencontrato_pago' => $identicontrato,
@@ -152,8 +151,7 @@ if ($_POST['accion'] == 'Registrarse') {
 
                 $stmtx->execute();
 
-                if ($stmtx->affected_rows == 1) {
-                }
+                
 
 
 
@@ -166,7 +164,7 @@ if ($_POST['accion'] == 'Registrarse') {
                 'estado' => 'creandocuenta'
             );
 
-            // enviar_correo3($nombre, $apellidos, $pass, $mail, $idea, $select, $sector);
+            enviar_correo3($nombre, $apellidos, $pass, $mail, $idea, $select, $sector);
         }
         echo json_encode($respuesta);
     } catch (PDOException $e) {

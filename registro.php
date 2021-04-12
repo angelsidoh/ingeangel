@@ -158,7 +158,7 @@ if (isset($_SESSION['email'])) {
 // var_dump($vectorPrecioProyectos);
 // echo '</pre>';
 if ((!isset($_SESSION['usuario'])) && (!isset($_SESSION['email'])) && (!isset($_SESSION['token']))) {
-    echo 'formulario sin registro';
+   
    
 
         ?>
