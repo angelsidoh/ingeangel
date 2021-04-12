@@ -1,5 +1,13 @@
 <?php
-// echo $idusuario;
+
+if ($_SESSION['tipo_usuario'] == 'admin') {
+    $idusuario =  $_GET['id'];
+
+   
+}else{
+
+echo $idusuario;
+}
 
 $resultadoMensajes = obtenerIdMensajes($idusuario);
 

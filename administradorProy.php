@@ -5,24 +5,16 @@ if ((!isset($_SESSION['usuario'])) && (!isset($_SESSION['email']))) {
     session_destroy();
     // header('Location: cuenta.php#angel-ruiz');
 ?>
-    <META HTTP-EQUIV="REFRESH" CONTENT="1;URL=https://ingeangel.com/logout.php">
+    <META HTTP-EQUIV="REFRESH" CONTENT="1;URL=logout.php">
 
     <?php
 } else {
-    $resultadoProyecto = obtenerPrecios(1);
+    if ($_SESSION['tipo_usuario'] == 'admin') {
+       
+    
+       
+    
 
-    if ($resultadoProyecto->num_rows) {
-        foreach ($resultadoProyecto as $proyecto) {
-
-            $precioBasico = $proyecto['basico_precio'];
-            $precioNegocio = $proyecto['negocio_precio'];
-            $precioProfesional = $proyecto['profesional_precio'];
-            $precioHosting = $proyecto['hosting_precio'];
-            $precioDominio = $proyecto['dominio_precio'];
-            $precioMantenimiento = $proyecto['mantenimiento_precio'];
-            $precioBD = $proyecto['basesdatos_precio'];
-        }
-    }
     $dato = $_SESSION['email'];
     // echo $_GET['id'];
     $idProyecto = $_GET['id'];
@@ -161,6 +153,8 @@ if ((!isset($_SESSION['usuario'])) && (!isset($_SESSION['email']))) {
                 unset($vecFechaFinContrato[$ix]);
             }
         }
+
+
         date_default_timezone_set('America/Mexico_City');
         $fechahoy =  date('Y-m-d H:i:s');
         $fechaactual = date('Y-m-d');
@@ -189,7 +183,7 @@ if ((!isset($_SESSION['usuario'])) && (!isset($_SESSION['email']))) {
         // // echo $idProyecto ;
         // echo $_SESSION['tipo_usuario'];
         // echo $_GET['id'];
-     
+
 
         for ($x = 0; $x < sizeof($supervecTipoIntContrato); $x++) {
 
@@ -336,17 +330,18 @@ if ((!isset($_SESSION['usuario'])) && (!isset($_SESSION['email']))) {
                                         <p>Paso Número:</p>
                                     </div>
                                     <div class="dato3">
-                                        <input type="text" id="num_paso" name="num_paso" placeholder="id de paso" value="<?php for ($i = 0; $i < sizeof($superVecIdPaso[0]); $i++) {
-                                            if($i == (sizeof($superVecIdPaso[0]))-1){
-                                             echo (($superVec_n[0][$i]) + 1);
-                                            }
-                                        }?>" disabled>
+                                        <input type="text" id="num_paso" name="num_paso" placeholder="id de paso" value="<?php
+                                                                                                                            for ($i = 0; $i < sizeof($superVecIdPaso[0]); $i++) {
+                                                                                                                                if ($i == (sizeof($superVecIdPaso[0])) - 1) {
+                                                                                                                                    echo (($superVec_n[0][$i]) + 1);
+                                                                                                                                }
+                                                                                                                            } ?>" disabled>
                                     </div> <!-- rnormal__tarjeta -->
                                     <div class="text-dato3">
                                         <p>Descripción</p>
                                     </div>
                                     <div class="dato3">
-                                        <input type="text" id="descripcion" name="descripcion" placeholder="Ingrese la descripción" value="<?php ?>">
+                                        <input type="text" id="descripcion" name="descripcion" placeholder="Ingrese la descripción" value="<?php echo 'Programación'; ?>" required>
                                     </div> <!-- rnormal__tarjeta -->
                                     <div class="text-dato3">
                                         <p>Fecha Inicio</p>
@@ -371,7 +366,7 @@ if ((!isset($_SESSION['usuario'])) && (!isset($_SESSION['email']))) {
                                         <input type="text" id="idproy" name="idproy" value="<?php echo  $idProyecto; ?>">
                                     </div> <!-- rnormal__tarjeta -->
 
-                                   
+
 
                                 </div>
                                 <div class="sub-boton">
@@ -490,20 +485,9 @@ if ((!isset($_SESSION['usuario'])) && (!isset($_SESSION['email']))) {
 
                                 <div class="dato3">
                                     <select name="select" id="paquete1">
-                                        <?php if ($vectorTipoProyectos == 'Paquete Básico') { ?>
+                                        <?php if ($vectorTipoProyectos == 'Sin paquete') { ?>
                                             <option value="Paquete Básico" selected>Paquete Básico</option>
-                                            <option value="Paquete Negocio">Paquete Negocio</option>
-                                            <option value="Paquete Profesional">Paquete Profesional</option>
-                                        <?php } ?>
-                                        <?php if ($vectorTipoProyectos == 'Paquete Negocio') { ?>
-                                            <option value="Paquete Básico">Paquete Básico</option>
-                                            <option value="Paquete Negocio" selected>Paquete Negocio</option>
-                                            <option value="Paquete Profesional">Paquete Profesional</option>
-                                        <?php } ?>
-                                        <?php if ($vectorTipoProyectos == 'Paquete Profesional') { ?>
-                                            <option value="Paquete Básico">Paquete Básico</option>
-                                            <option value="Paquete Negocio">Paquete Negocio</option>
-                                            <option value="Paquete Profesional" selected>Paquete Profesional</option>
+
                                         <?php } ?>
 
                                     </select>
@@ -512,20 +496,31 @@ if ((!isset($_SESSION['usuario'])) && (!isset($_SESSION['email']))) {
                                     <p>Precio</p>
                                 </div>
                                 <div class="dato3">
-                                    <input type="text" id="precioshow1" name="precioshow" 1 placeholder="Ingrese el Monto" value="" disabled>
+                                    <input type="text" id="precioshow1" name="precioshow" 1 placeholder="Ingrese el Monto" value="<?php
+                                                                                                                                    $dato = $supervecTokenContrato[$i][$u];
+                                                                                                                                    $resultadoProyecto = obtenerPrecios($dato);
+
+                                                                                                                                    if ($resultadoProyecto->num_rows) {
+                                                                                                                                        foreach ($resultadoProyecto as $proyecto) {
+
+                                                                                                                                            $precioBasico = $proyecto['basico_precio'];
+                                                                                                                                            // echo $precioNegocio = $proyecto['negocio_precio'];
+                                                                                                                                            // echo $precioProfesional = $proyecto['profesional_precio'];
+                                                                                                                                            $precioHosting = $proyecto['hosting_precio'];
+                                                                                                                                            $precioDominio = $proyecto['dominio_precio'];
+                                                                                                                                            $precioMantenimiento = $proyecto['mantenimiento_precio'];
+                                                                                                                                            $precioBD = $proyecto['basesdatos_precio'];
+                                                                                                                                            $precioProgramacion = $proyecto['programacion_precio'];
+                                                                                                                                        }
+                                                                                                                                    }
+                                                                                                                                    echo $precioBasico;
+                                                                                                                                    ?>" disabled>
                                 </div> <!-- rnormal__tarjeta -->
                                 <div class="dato3">
                                     <input style="display: none;" type="text" id="precio1" name="precio1" placeholder="Ingrese el Monto" value="" disabled>
                                 </div> <!-- rnormal__tarjeta -->
-                                <div class="dato3">
-                                    <input style="display: none;" type="text" id="preciobasico1" name="preciobasico1" placeholder="" value="<?php echo $precioBasico + $precioBD + $precioDominio + $precioHosting + $precioMantenimiento; ?>" disabled>
-                                </div> <!-- rnormal__tarjeta -->
-                                <div class="dato3">
-                                    <input style="display: none;" type="text" id="precionegocio1" name="precionegocio1" placeholder="" value="<?php echo $precioNegocio + $precioBD + $precioDominio + $precioHosting + $precioMantenimiento; ?>" disabled>
-                                </div> <!-- rnormal__tarjeta -->
-                                <div class="dato3">
-                                    <input style="display: none;" type="text" id="precioprofesional1" name="precioprofesional1" placeholder="" value="<?php echo $precioProfesional + $precioBD + $precioDominio + $precioHosting + $precioMantenimiento; ?>" disabled>
-                                </div> <!-- rnormal__tarjeta -->
+
+
                                 <div class="dato3">
                                     <input style="display: none;" type="text" id="contratoid" name="contratoid" placeholder="" value="<?php echo $supervecIdContrato[$i][$u]; ?>" disabled>
                                 </div> <!-- rnormal__tarjeta -->
@@ -553,120 +548,170 @@ if ((!isset($_SESSION['usuario'])) && (!isset($_SESSION['email']))) {
                     }
                         ?>
 
-</li>
-<?php include('includes/funciones/contratos.php');
+                </li>
+               
+                <?php include('includes/funciones/contratos.php');
 
-    for ($i = 0; $i < sizeof($supervecTokenContrato); $i++) {
-        $contadorContrato = 0;
-        for ($u = 0; $u < sizeof($supervecTokenContrato[$i]); $u++) {
-            $diasInicio = (strtotime($supervecFechaInicioContrato[$i][$u]) - strtotime($fechahoy)) / 86400;
-            $diasFin = (strtotime($supervecFechaFinContrato[$i][$u]) - strtotime($fechahoy)) / 86400;
-            // echo $diasInicio . ')(' . $diasFin;
-            if ($diasInicio < 0 && $diasFin > 0) {
+                    for ($i = 0; $i < sizeof($supervecTokenContrato); $i++) {
+                        $contadorContrato = 0;
+                        for ($u = 0; $u < sizeof($supervecTokenContrato[$i]); $u++) {
+                            $diasInicio = (strtotime($supervecFechaInicioContrato[$i][$u]) - strtotime($fechahoy)) / 86400;
+                            $diasFin = (strtotime($supervecFechaFinContrato[$i][$u]) - strtotime($fechahoy)) / 86400;
+                            // echo $diasInicio . ')(' . $diasFin;
+                            if ($diasInicio < 0 && $diasFin > 0) {
 
-                $u = sizeof($supervecTokenContrato[$i]) - 1;
-                $i = sizeof($supervecTokenContrato) - 1;
-            } else {
+                                $u = sizeof($supervecTokenContrato[$i]) - 1;
+                                $i = sizeof($supervecTokenContrato) - 1;
+                            } else {
 
-                if ($contadorContrato == sizeof($supervecTokenContrato[$i]) - 1) {
-                    // echo 'opcion habilitada'.$u;
-?>
-                <div class="contenedor-especial">
-                    <div class="titulo-seccion">
-                        <h1 id="sparklemaster" class="sparklemaster" style="color:  #93A9CC;">Agregar Nuevo Contrato</h1>
-                    </div>
-                    <div class="datos-contrato">
-                        <form id="agregar-contrato" action="#">
-                            <div class="contenido-cuenta">
-                                <div class="text-dato3">
-                                    <p>Fecha Inicio</p>
+                                if ($contadorContrato == sizeof($supervecTokenContrato[$i]) - 1) {
+                                    echo 'opcion habilitada' . $u;
+                ?>
+                                <div class="contenedor-especial">
+                                    <div class="titulo-seccion">
+                                        <h1 id="sparklemaster" class="sparklemaster" style="color:  #93A9CC;">Agregar Nuevo Contrato</h1>
+                                    </div>
+                                    <div class="datos-contrato">
+                                        <form id="agregar-contrato" action="#">
+                                            <div class="contenido-cuenta">
+                                                <div class="text-dato3">
+                                                    <p>Fecha Inicio</p>
+                                                </div>
+                                                <div class="dato3">
+                                                    <input type="text" id="fechainicio" name="fechainicio" placeholder="Ingrease la fecha de inicio" value="-" disabled>
+                                                </div> <!-- rnormal__tarjeta -->
+                                                <div class="text-dato3">
+                                                    <p>Tiempo</p>
+                                                </div>
+                                                <div class="dato3">
+                                                    <select name="select" id="seleccion">
+                                                        <option value="2" selected>1 Mes</option>
+                                                        <option value="4">3 Meses</option>
+                                                        <option value="7">6 Meses</option>
+                                                        <option value="13">12 Meses</option>
+                                                    </select>
+                                                </div> <!-- rnormal__tarjeta -->
+                                                <div class="text-dato3">
+                                                    <p>Fecha Fin</p>
+                                                </div>
+                                                <div class="dato3">
+                                                    <input type="text" id="fechafin" name="fechafin" placeholder="Fecha de fin de contrato" value="<?php echo $_GET['strDate']; ?>" disabled>
+                                                </div> <!-- rnormal__tarjeta -->
+                                                <!-- <div class="text-dato3">
+                                                    <p>Tipo de Paquete</p>
+                                                </div>
+
+                                                <div class="dato3">
+                                                    <select name="select" id="paquete">
+                                                        <?php if ($vectorTipoProyectos == 'Paquete Básico') { ?>
+                                                            <option value="Paquete Básico" selected>Paquete Básico</option>
+                                                            <option value="Paquete Negocio">Paquete Negocio</option>
+                                                            <option value="Paquete Profesional">Paquete Profesional</option>
+                                                        <?php } ?>
+                                                        <?php if ($vectorTipoProyectos == 'Paquete Negocio') { ?>
+                                                            <option value="Paquete Básico">Paquete Básico</option>
+                                                            <option value="Paquete Negocio" selected>Paquete Negocio</option>
+                                                            <option value="Paquete Profesional">Paquete Profesional</option>
+                                                        <?php } ?>
+                                                        <?php if ($vectorTipoProyectos == 'Paquete Profesional') { ?>
+                                                            <option value="Paquete Básico">Paquete Básico</option>
+                                                            <option value="Paquete Negocio">Paquete Negocio</option>
+                                                            <option value="Paquete Profesional" selected>Paquete Profesional</option>
+                                                        <?php } ?>
+
+                                                    </select>
+                                                </div> rnormal__tarjeta -->
+                                                <div class="text-dato3">
+                                                    <p>Precio por Mes</p>
+                                                </div>
+                                                <div class="dato3">
+                                                    <input type="text" id="precioshow" name="precioshow" placeholder="Ingrese el Monto" value="4000">
+                                                </div> <!-- rnormal__tarjeta -->
+                                                <div class="text-dato3">
+                                                    <p>Precio hosting</p>
+                                                </div>
+                                                <div class="dato3">
+                                                    <input type="text" id="hosting" name="hosting" placeholder="Ingrese el Monto" value="100">
+                                                </div> <!-- rnormal__tarjeta -->
+                                                <div class="text-dato3">
+                                                    <p>Precio hosting</p>
+                                                </div>
+                                                <div class="dato3">
+                                                    <input type="text" id="dominio" name="dominio" placeholder="Ingrese el Monto" value="100">
+                                                </div> <!-- rnormal__tarjeta -->
+                                                <div class="text-dato3">
+                                                    <p>Precio mantenimiento</p>
+                                                </div>
+                                                <div class="dato3">
+                                                    <input type="text" id="mantenimiento" name="mantenimiento" placeholder="Ingrese el Monto" value="150">
+                                                </div> <!-- rnormal__tarjeta -->
+                                                <div class="text-dato3">
+                                                    <p>Precio base de datos</p>
+                                                </div>
+                                                <div class="dato3">
+                                                    <input type="text" id="basededato" name="basededato" placeholder="Ingrese el Monto" value="800">
+                                                </div> <!-- rnormal__tarjeta -->
+                                                <div class="text-dato3">
+                                                    <p>Precio Programación</p>
+                                                </div>
+                                                <div class="dato3">
+                                                    <input type="text" id="programacion" name="programacion" placeholder="Ingrese el Monto" disabled>
+                                                </div> <!-- rnormal__tarjeta -->
+                                                <div class="text-dato3">
+                                                    <p>Total + (iva)</p>
+                                                </div>
+                                                <div class="dato3">
+                                                    <input type="price" id="precio" name="precio" placeholder="Total" disabled>
+                                                </div> <!-- rnormal__tarjeta -->
+                                                <div class="dato3">
+                                                    <input style="display: none;" type="text" id="preciobasico" name="preciobasico" placeholder="" value="<?php echo $precioBasico + $precioBD + $precioDominio + $precioHosting + $precioMantenimiento; ?>" disabled>
+                                                </div> <!-- rnormal__tarjeta -->
+                                                <div class="dato3">
+                                                    <input style="display: none;" type="text" id="precionegocio" name="precionegocio" placeholder="" value="<?php echo $precioNegocio + $precioBD + $precioDominio + $precioHosting + $precioMantenimiento; ?>" disabled>
+                                                </div> <!-- rnormal__tarjeta -->
+                                                <div class="dato3">
+                                                    <input style="display: none;" type="text" id="precioprofesional" name="precioprofesional" placeholder="" value="<?php echo $precioProfesional + $precioBD + $precioDominio + $precioHosting + $precioMantenimiento; ?>" disabled>
+                                                </div> <!-- rnormal__tarjeta -->
+                                                <div class="dato3">
+                                                    <input style="display: none;" type="text" id="idproyecto" name="idproyecto" placeholder="" value="<?php echo $idProyecto; ?>" disabled>
+                                                </div> <!-- rnormal__tarjeta -->
+
+                                            </div>
+                                            <div class="sub-boton">
+
+                                                <input id="btnagregarcontrato" type="submit" value="Agregar Contrato" class="button">
+
+                                            </div>
+                                        </form>
+                                    </div>
                                 </div>
-                                <div class="dato3">
-                                    <input type="text" id="fechainicio" name="fechainicio" placeholder="Ingrease la fecha de inicio" value="-" disabled>
-                                </div> <!-- rnormal__tarjeta -->
-                                <div class="text-dato3">
-                                    <p>Tiempo</p>
-                                </div>
-                                <div class="dato3">
-                                    <select name="select" id="seleccion">
-                                        <option value="2" selected>1 Mes</option>
-                                        <option value="4">3 Meses</option>
-                                        <option value="7">6 Meses</option>
-                                        <option value="13">12 Meses</option>
-                                    </select>
-                                </div> <!-- rnormal__tarjeta -->
-                                <div class="text-dato3">
-                                    <p>Fecha Fin</p>
-                                </div>
-                                <div class="dato3">
-                                    <input type="text" id="fechafin" name="fechafin" placeholder="Fecha de fin de contrato" value="<?php echo $_GET['strDate']; ?>" disabled>
-                                </div> <!-- rnormal__tarjeta -->
-                                <div class="text-dato3">
-                                    <p>Tipo de Paquete</p>
-                                </div>
+                               
+                              
 
-                                <div class="dato3">
-                                    <select name="select" id="paquete">
-                                        <?php if ($vectorTipoProyectos == 'Paquete Básico') { ?>
-                                            <option value="Paquete Básico" selected>Paquete Básico</option>
-                                            <option value="Paquete Negocio">Paquete Negocio</option>
-                                            <option value="Paquete Profesional">Paquete Profesional</option>
-                                        <?php } ?>
-                                        <?php if ($vectorTipoProyectos == 'Paquete Negocio') { ?>
-                                            <option value="Paquete Básico">Paquete Básico</option>
-                                            <option value="Paquete Negocio" selected>Paquete Negocio</option>
-                                            <option value="Paquete Profesional">Paquete Profesional</option>
-                                        <?php } ?>
-                                        <?php if ($vectorTipoProyectos == 'Paquete Profesional') { ?>
-                                            <option value="Paquete Básico">Paquete Básico</option>
-                                            <option value="Paquete Negocio">Paquete Negocio</option>
-                                            <option value="Paquete Profesional" selected>Paquete Profesional</option>
-                                        <?php } ?>
+                      
 
-                                    </select>
-                                </div> <!-- rnormal__tarjeta -->
-                                <div class="text-dato3">
-                                    <p>Precio</p>
-                                </div>
-                                <div class="dato3">
-                                    <input type="text" id="precioshow" name="precioshow" placeholder="Ingrese el Monto" value="" disabled>
-                                </div> <!-- rnormal__tarjeta -->
-                                <div class="dato3">
-                                    <input style="display: none;" type="text" id="precio" name="precio" placeholder="Ingrese el Monto" value="" disabled>
-                                </div> <!-- rnormal__tarjeta -->
-                                <div class="dato3">
-                                    <input style="display: none;" type="text" id="preciobasico" name="preciobasico" placeholder="" value="<?php echo $precioBasico + $precioBD + $precioDominio + $precioHosting + $precioMantenimiento; ?>" disabled>
-                                </div> <!-- rnormal__tarjeta -->
-                                <div class="dato3">
-                                    <input style="display: none;" type="text" id="precionegocio" name="precionegocio" placeholder="" value="<?php echo $precioNegocio + $precioBD + $precioDominio + $precioHosting + $precioMantenimiento; ?>" disabled>
-                                </div> <!-- rnormal__tarjeta -->
-                                <div class="dato3">
-                                    <input style="display: none;" type="text" id="precioprofesional" name="precioprofesional" placeholder="" value="<?php echo $precioProfesional + $precioBD + $precioDominio + $precioHosting + $precioMantenimiento; ?>" disabled>
-                                </div> <!-- rnormal__tarjeta -->
-                                <div class="dato3">
-                                    <input style="display: none;" type="text" id="idproyecto" name="idproyecto" placeholder="" value="<?php echo $idProyecto; ?>" disabled>
-                                </div> <!-- rnormal__tarjeta -->
 
-                            </div>
-                            <div class="sub-boton">
+<?php
 
-                                <input id="btnagregarcontrato" type="submit" value="Agregar Contrato" class="button">
-
-                            </div>
-                        </form>
-                    </div>
-                </div>
-
-                </li><?php
-
-                    }
-                    $contadorContrato++;
                 }
+                $contadorContrato++;
             }
         }
+    }
 
-                        ?>
+?>    </li>
+       <li>
+                        <div class="contenedor-especial">
+                            <div class="titulo-seccion">
+                                <h1 id="sparklemaster" class="sparklemaster" style="color:  #93A9CC;">Mensajes</h1>
+                            </div>
+                            <?php include('includes/funciones/mensajes.php'); ?>
+                        </div>
+
+                    </li>
+            </ul>
         </div>
+        
         <?php
 
 
@@ -762,4 +807,12 @@ if ((!isset($_SESSION['usuario'])) && (!isset($_SESSION['email']))) {
             </script>
     <?php
         }
+    }else{
+        session_destroy();
+        ?>
+    <META HTTP-EQUIV="REFRESH" CONTENT="1;URL=logout.php">
+
+    <?php
+    }
+    
     } ?>

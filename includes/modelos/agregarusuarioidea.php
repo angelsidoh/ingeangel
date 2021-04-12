@@ -82,13 +82,14 @@ if ($_POST['accion'] == 'Registrarse') {
             $stmtf->execute();
             
 
-            $stmt = $conn0->prepare('INSERT INTO pasos (id_paso, descripcion_paso, idproyecto_paso, fechaini_paso, fechafin_paso, timing_paso) VALUES (null, :descripcion_paso, :idproyecto_paso, :fechaini_paso, :fechafin_paso, :timing_paso)');
+            $stmt = $conn0->prepare('INSERT INTO pasos (id_paso, descripcion_paso, idproyecto_paso, fechaini_paso, fechafin_paso, timing_paso, num_paso) VALUES (null, :descripcion_paso, :idproyecto_paso, :fechaini_paso, :fechafin_paso, :timing_paso, :num_paso)');
             $stmt->execute(array(
                 ':descripcion_paso' => $paso1,
                 ':idproyecto_paso' => $LAST_IDb,
                 ':fechaini_paso' => $fechaini,
                 ':fechafin_paso' => $fechafin,
-                ':timing_paso' => $dias1
+                ':timing_paso' => $dias1,
+                ':num_paso' => 1
 
             ));
             $LAST_IDa = $conn0->lastInsertId();

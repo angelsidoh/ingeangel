@@ -33,7 +33,7 @@ function obtenerPrecios2($dato)
         require('../../bd/bdsqli.php');
 
 
-        return $connf->query("SELECT basico_precio, negocio_precio, profesional_precio, hosting_precio, dominio_precio, mantenimiento_precio, basesdatos_precio FROM precios WHERE id_precio = '$dato'");
+        return $connf->query("SELECT basico_precio, hosting_precio, dominio_precio, mantenimiento_precio, basesdatos_precio, programacion_precio FROM precios WHERE tokencontrato_precio = '$dato'");
     } catch (Exception $e) {
         echo "Error!!" . $e->getMessage() . "<br>";
         return false;
@@ -200,7 +200,7 @@ function obtenerPrecios($dato)
         require('bd/bdsqli.php');
 
 
-        return $connf->query("SELECT basico_precio, negocio_precio, profesional_precio, hosting_precio, dominio_precio, mantenimiento_precio, basesdatos_precio FROM precios WHERE id_precio = '$dato'");
+        return $connf->query("SELECT basico_precio, hosting_precio, dominio_precio, mantenimiento_precio, basesdatos_precio, programacion_precio FROM precios WHERE tokencontrato_precio = '$dato'");
     } catch (Exception $e) {
         echo "Error!!" . $e->getMessage() . "<br>";
         return false;

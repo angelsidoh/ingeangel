@@ -20,7 +20,7 @@
                                                     $contadorpagos1++;
                                                 }
                                                 if ($y == (sizeof($superVecIdProyectoPago[$i]) - 1)) {
-                                                    if ($contadorpagos1 >= 1) {
+                                                    if ($contadorpagos1 >= 2) {
                                                         echo 'blinkama';
                                                     } else {
                                                         echo '';
@@ -39,7 +39,9 @@
 
                                 for ($i = 0; $i < sizeof($superVecIdProyectoPago); $i++) {
                                     $contadorpagos1 = 0;
+                                    
                                     for ($f = 0; $f < sizeof($superVecIdProyectoPago[$i]); $f++) {
+                                        if($f != 0){
                                         if ($vectorIdProyectos[$x] == $superVecIdProyectoPago[$i][$f]) {
                                             if ($supervecforTarget[$i][$f] == 0 || $supervectokenConekta[$i][$f] == '') {
                                                 $contadorpagos1++;
@@ -53,7 +55,8 @@
                                                     echo '';
                                                 }
                                             }
-                                        }
+                                        }}
+                                        
                                     }
                                 }}
 
@@ -86,13 +89,14 @@
                                     ?>
 
                                     <?php for ($f = 0; $f < sizeof($superVecIdProyectoPago[$x]); $f++) {
+                                        if($f != 0){
                                         if ($supervectokenConekta[$x][$f] == '' || $supervecforTarget[$x][$f] == 0 || $supervecfechapagoPago == '') {
                                     ?>
                                             <a href="pago.php?pago=<?php
                                             
                                             echo $superVecTokenContratoPago[$x][$f] . '-' . $superVecIdPago[$x][$f].'$'.$vectorIdProyectos[$x]; 
                                             
-                                            ?>#angel-ruiz">
+                                            ?>#angel-ruiz" target="_blank">
                                                 <p> Contrato (#<?php
                                                                 echo $superVecTokenContratoPago[$x][$f];
                                                                 ?>) <br> Periodo de contrato: <?php
@@ -129,6 +133,7 @@
 
                                                                                                                                                             } ?></p>
                                             </a><?php
+                                                }
                                             }
 
                                                 ?>
@@ -191,7 +196,7 @@
                                     <?php for ($f = 0; $f < sizeof($superVecIdProyectoPago[$x]); $f++) {
                                         if ($superVecTokenpagoPago[$x][$f] != '' && $supervectokenConekta[$x][$f] != '' && $supervecforTarget[$x][$f] != 0 && $supervecfechapagoPago != '') {
                                     ?>
-                                            <a href="pago.php?pago=<?php echo $superVecTokenContratoPago[$x][$f] . '-' . $superVecIdPago[$x][$f].'$'.$vectorIdProyectos[$x];  ?>">
+                                            <a href="pago.php?pago=<?php echo $superVecTokenContratoPago[$x][$f] . '-' . $superVecIdPago[$x][$f].'$'.$vectorIdProyectos[$x];?>#angel-ruiz" target="_blank">
                                                 <p>
                                                     Contrato (#<?php
                                                                 echo $superVecTokenContratoPago[$x][$f];

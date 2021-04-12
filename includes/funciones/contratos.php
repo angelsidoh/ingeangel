@@ -31,9 +31,11 @@
 
                                 ?>
                                 <?php
-                                for ($f = 0; $f < sizeof($supervecIdContrato[$x]); $f++) { ?>
-
-                                    <a href="contrato.php?contrato=<?php echo  $supervecTokenContrato[$x][$f]; ?>-id=<?php echo $vectorIdProyectos[$x];?>" target="_blank">
+                                for ($f = 0; $f < sizeof($supervecIdContrato[$x]); $f++) { 
+                                    if($f =! 0){
+                                    ?>
+                                    
+                                    <a href="contrato.php?contrato=<?php echo  $supervecTokenContrato[$x][$f]; ?>-id=<?php echo $vectorIdProyectos[$x];?>#angel-ruiz" target="_blank">
                                         <p><?php echo    $supervecIdContrato[$x][$f]; ?>. Contrato (#<?php
                                                                                                     echo $supervecTokenContrato[$x][$f];
                                                                                                     ?>) <br> Periodo de contrato:
@@ -70,6 +72,6 @@
                 </div>
             </div>
         <?php
-                }
+                }}
         ?>
     </div>

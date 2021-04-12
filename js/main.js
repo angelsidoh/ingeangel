@@ -426,21 +426,47 @@ function abc(datos, maxfecha, contadorProyectos, contPasosxProyecto, contPasos) 
       precionegocio1 = precionegocio1 * 12;
       precioprofesional1 = precioprofesional1 * 12;
     }
-    var seleccion1 = $('#paquete1').attr('value');
-    // console.log(seleccion1);
-    if (seleccion1 == 'Paquete Básico') {
-      console.log(preciobasico1);
-      document.getElementById("precio1").value = preciobasico1;
-      document.getElementById("precioshow1").value = '$' + preciobasico1;
+    var esVisible = $("#precioshow").is(":visible");
+    // console.log(esVisible);
+
+    if (esVisible == true) {
+      var preciomes = $('#precioshow').attr('value');
+      var hosting = $('#hosting').attr('value');
+      var dominio = $('#dominio').attr('value');
+      var mantenimiento = $('#mantenimiento').attr('value');
+      var basededatos = $('#basededato').attr('value');
+      
+    preciomes=parseInt(preciomes, 10);
+    hosting=parseInt(hosting, 10);
+    dominio=parseInt(dominio, 10);
+    mantenimiento=parseInt(mantenimiento, 10);
+    basededatos=parseInt(basededatos, 10);
+    console.log(preciomes);
+    
+    var mesescont = meses - 1;
+    console.log(mesescont);
+    // (mesescont * preciomes);
+    var programacionprecio = preciomes-(hosting+dominio+mantenimiento+basededatos);
+    var total =  (hosting+dominio+mantenimiento+basededatos+programacionprecio); 
+    total = total+(total*0.16);
+    document.getElementById("precio").value = total;
+    document.getElementById("programacion").value = programacionprecio;
+
     }
-    if (seleccion1 == 'Paquete Negocio') {
-      document.getElementById("precio1").value = precionegocio1;
-      document.getElementById("precioshow1").value = '$' + precionegocio1;
+    var esVisible2 = $("#precioshow1").is(":visible");
+    if (esVisible2 == true) {
+      
+      var precioshow1 = $('#precioshow1').attr('value');
+      precioshow1 = parseInt(precioshow1);
+      precioshow1 = precioshow1*(mesespago-1);
+      console.log(mesespago);
+      document.getElementById("precio1").value = precioshow1;
+
     }
-    if (seleccion1 == 'Paquete Profesional') {
-      document.getElementById("precio1").value = precioprofesional1;
-      document.getElementById("precioshow1").value = '$' + precioprofesional1;
-    }
+    
+    
+    
+    
   });
 
 
@@ -2140,21 +2166,28 @@ function leerAgregarContrato(e) {
     const select = document.querySelector('#seleccion').value;
     const fechainicio = document.querySelector('#fechainicio').value;
     const fechafin = document.querySelector('#fechafin').value;
-    const paquete = document.querySelector('#paquete').value;
+    
     const precio = document.querySelector('#precio').value;
     const idproyecto = document.querySelector('#idproyecto').value;
-    // const paquetebasico = document.querySelector('#paquetebasico').value;
-    // const paquetenegocio = document.querySelector('#paquetenegocio').value;
-    // const paqueteprofesional = document.querySelector('#paqueteprofesional').value;
+    const hosting = document.querySelector('#hosting').value;
+    const dominio = document.querySelector('#dominio').value;
+    const mantenimiento = document.querySelector('#mantenimiento').value;
+    const basededato = document.querySelector('#basededato').value;
+    const programacion = document.querySelector('#programacion').value;
 
     const infoagregarcontrato = new FormData();
     infoagregarcontrato.append('accion', accion);
     infoagregarcontrato.append('select', select);
     infoagregarcontrato.append('fechainicio', fechainicio);
     infoagregarcontrato.append('fechafin', fechafin);
-    infoagregarcontrato.append('paquete', paquete);
+    // infoagregarcontrato.append('paquete', paquete);
     infoagregarcontrato.append('precio', precio);
     infoagregarcontrato.append('idproyecto', idproyecto);
+    infoagregarcontrato.append('hosting', hosting);
+    infoagregarcontrato.append('dominio', dominio);
+    infoagregarcontrato.append('mantenimiento', mantenimiento);
+    infoagregarcontrato.append('basededato', basededato);
+    infoagregarcontrato.append('programacion', programacion);
     // infoagregarcontrato.append('paquetebasico', paquetebasico);
     // infoagregarcontrato.append('paquetenegocio', paquetenegocio);
     // infoagregarcontrato.append('paqueteprofesional', paqueteprofesional);
@@ -2178,7 +2211,7 @@ function agregarContrato(dato) {
 
     if (this.status === 200) {
       const respuesta = JSON.parse(xhr.responseText);
-      // console.log(respuesta);
+      console.log(respuesta);
       if (respuesta.estado == 'contrato nuevo agregado') {
         swal({
             content: "",
@@ -3352,7 +3385,7 @@ if(cambioSliderPal == 0){
       imgPos++;
     }
     
-    console.log(imgPos);
+    // console.log(imgPos);
    
     
     $('.slider li').hide();
@@ -3477,7 +3510,7 @@ $(document).ready(function () {
 
   var imgItems3 = $('.slider3 li').length;
   var imgPos3 = 1;
-  var menu = ['', 'Proyecto', 'Pagos', 'Contrato'];
+  var menu = ['', 'Proyecto', 'Pagos', 'Contratos', 'Mensajes'];
   for (i = 1; i <= imgItems3; i++) {
     $('.paginacion3').append('<li><h3>' + menu[i] + '</h3></li>');
   }
@@ -3685,7 +3718,7 @@ $(window).scroll(function () {
 
   if (scroll > 966) {
     $('.menu-barra').addClass('fix-menubarra');
-    console.log('hola');
+    // console.log('hola');
     var contchecks = 0;
     for (let checkss = 0; checkss <= 100; checkss++) {
       var inps = '#inps' + (4000 + checkss);

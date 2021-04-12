@@ -79,22 +79,23 @@ require_once('../../includes/funciones/consultas.php');
         }
     }
 
-    $resultadoProyecto = obtenerPrecios2(1);
+    $resultadoProyecto = obtenerPrecios2($tokencontrato);
 
-    if ($resultadoProyecto->num_rows) {
-        foreach ($resultadoProyecto as $proyecto) {
-
-            $precioBasico = $proyecto['basico_precio'];
-            $precioNegocio = $proyecto['negocio_precio'];
-            $precioProfesional = $proyecto['profesional_precio'];
+            if ($resultadoProyecto->num_rows) {
+                foreach ($resultadoProyecto as $proyecto) {
+        
+                    $precioBasico = $proyecto['basico_precio'];
+            // echo $precioNegocio = $proyecto['negocio_precio'];
+            // echo $precioProfesional = $proyecto['profesional_precio'];
             $precioHosting = $proyecto['hosting_precio'];
             $precioDominio = $proyecto['dominio_precio'];
             $precioMantenimiento = $proyecto['mantenimiento_precio'];
             $precioBD = $proyecto['basesdatos_precio'];
-        }
-    }
+            $precioProgramacion = $proyecto['programacion_precio'];
+                }
+            }
     // echo '<pre>';
-    // var_dump($vectorIdUsuarioProyectos);
+    // var_dump($vecFirmaClienteContrato);
     // echo '</pre>';
     setlocale(LC_TIME, "spanish");
     setlocale(LC_MONETARY, 'es_MX');
@@ -112,9 +113,9 @@ require_once('../../includes/funciones/consultas.php');
     $newDatelim = date("d-m-Y", strtotime($fechalim));
     $mesDesclim = utf8_encode(strftime("%A %d de %B de %Y", strtotime($newDatelim)));
     // echo '<br>'. $mesDesclim;
-    $paqueteBasico = $precioBasico + $precioHosting + $precioDominio + $precioMantenimiento + $precioBD;
-    $paqueteProfesional = $precioProfesional + $precioHosting + $precioDominio + $precioMantenimiento + $precioBD;
-    $paqueteNegocio = $precioNegocio + $precioHosting + $precioDominio + $precioMantenimiento + $precioBD;
+    $paqueteBasico = $precioBasico;
+    // $paqueteProfesional = $precioProfesional + $precioHosting + $precioDominio + $precioMantenimiento + $precioBD;
+    // $paqueteNegocio = $precioNegocio + $precioHosting + $precioDominio + $precioMantenimiento + $precioBD;
 ?>
     <!DOCTYPE html>
     <html lang="en">
@@ -152,21 +153,12 @@ require_once('../../includes/funciones/consultas.php');
                 <p style="text-indent:20px;">4) Servicio de modificaciones o actualizaciones menores del contenido en cualquier parte de su proyecto web.</p>
                 <p>2ª Cláusula. Este contrato es efectivo por 3 meses comenzando en la fecha: <strong><u><?php echo $mesDescInicio; ?></u></strong> y terminando en la fecha: <strong><u><?php echo $mesDescFin ?></u></strong>.</p>
                 <p>3ª Cláusula. Para la prestación de los servicios cubiertos por este contrato, el cliente pagará a <strong><u>https://www.ingeangel.com</u></strong> el monto <strong><u><?php
-                                                                                                                                                                                         if($vectorTipoProyectos == 'Paquete Básico'){
+                                                                                                                                                                                         if($vectorTipoProyectos == 'Sin paquete'){
 																																															$moneda = money_format('%.2n', $paqueteBasico);
 																																															echo $moneda.' MXN';
 																																															echo ' ('.convertir($paqueteBasico).')';
 																																														}
-																																														if($vectorTipoProyectos == 'Paquete Negocio'){
-																																															$moneda = money_format('%.2n', $paqueteNegocio);
-																																															echo $moneda.' MXN';
-																																															echo ' ('.convertir($paqueteNegocio).')';
-																																														}
-																																														if($vectorTipoProyectos == 'Paquete Profesional'){
-																																															$moneda = money_format('%.2n', $paqueteProfesional);
-																																															echo $moneda.' MXN';
-																																															echo ' ('.convertir($paqueteProfesional).')';
-																																														}
+																																													
                                                                                                                                                                                             ?></u></strong> por mes de contrato. Haciendo su pago por cualquiera de los métodos disponibles en su cuenta de <strong><u>https://www.ingeangel.com</u></strong><br><br>
                     Una vez terminado este contrato, para dar seguimiento a los servicios de programación y mantenimiento adecuados para su proyecto web: <strong><u><?php echo $vectorNombresProyectos[0]; ?></u></strong>, tendrá 7 días naturales inmediatos (fecha límite: <strong><u><?php echo $mesDesclim ?></u></strong>) para realizar una renovación de contrato firmando y pagando el monto que corresponda.
                 </p>
@@ -183,7 +175,7 @@ require_once('../../includes/funciones/consultas.php');
                 if ($vecFirmaClienteContrato[0] == '') {
                 ?>
                     <div class="firmaf">
-                        <a class="button" href="test.php?tok=<?php echo $vecTokenContrato[0] . '-id=' . $idusuario . '-ff=' . $vectorIdProyectos[0]; ?>#angel-ruiz"> Firmar contrato</a>
+                        <a class="button" href="test.php?tok=<?php echo $vecTokenContrato[0] . '-id=' . $idusuario . '-ff=' . $vectorIdProyectos[0]; ?>#angel-ruiz"> Firmar	 contrato</a>
                     </div>
 
                 <?php
@@ -217,7 +209,7 @@ require_once('../../includes/funciones/consultas.php');
 <?php
 
 
-function monto($formato, $valor) { 
+function money_format($formato, $valor) { 
 
     if (setlocale(LC_MONETARY, 0) == 'C') { 
 

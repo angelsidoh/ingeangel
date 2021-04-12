@@ -11,9 +11,14 @@ if ($_POST['accion'] == 'Agregar Contrato') {
     }
     $fechainicio = filter_var($_POST['fechainicio'], FILTER_SANITIZE_STRING);
     $fechafin = filter_var($_POST['fechafin'], FILTER_SANITIZE_STRING);
-    $paquete = filter_var($_POST['paquete'], FILTER_SANITIZE_STRING);
+    // $paquete = filter_var($_POST['paquete'], FILTER_SANITIZE_STRING);
     $precio = filter_var($_POST['precio'], FILTER_SANITIZE_STRING);
     $idproyecto = filter_var($_POST['idproyecto'], FILTER_SANITIZE_STRING);
+    $hosting = filter_var($_POST['hosting'], FILTER_SANITIZE_STRING);
+    $dominio = filter_var($_POST['dominio'], FILTER_SANITIZE_STRING);
+    $mantenimiento = filter_var($_POST['mantenimiento'], FILTER_SANITIZE_STRING);
+    $basededatos = filter_var($_POST['basededato'], FILTER_SANITIZE_STRING);
+    $programacion = filter_var($_POST['programacion'], FILTER_SANITIZE_STRING);
     $contmeses = 1;
     $str = ("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890");
     $tokencontrato = "";
@@ -50,6 +55,30 @@ if ($_POST['accion'] == 'Agregar Contrato') {
             ':contmeses_pago'=>  $contmeses
 
         ));
+        $stmt = $conn2->prepare('INSERT INTO precios (id_precio, basico_precio, tokencontrato_precio, idcontrato_precio, hosting_precio, dominio_precio, mantenimiento_precio, basesdatos_precio, programacion_precio) VALUES (null, :basico_precio, :tokencontrato_precio, :idcontrato_precio, :hosting_precio, :dominio_precio, :mantenimiento_precio, :basesdatos_precio, :programacion_precio)');
+        $stmt->execute(array(
+            ':basico_precio' => $precio,
+            'tokencontrato_precio' => $tokencontrato,
+            ':idcontrato_precio' => $LAST_IDc,
+            ':hosting_precio' => $hosting,
+            ':dominio_precio' => $dominio,
+            ':mantenimiento_precio' => $mantenimiento,
+            ':basesdatos_precio' => $basededatos,
+            ':programacion_precio' => $programacion
+
+            
+            
+
+        ));
+
+        $proyecto = 'Preparación';
+        $stmt = $connf->prepare("UPDATE proyectos SET nombre_proyecto = ? WHERE id_proyecto = ?");
+
+        $stmt->bind_param("ss", $proyecto, $idproyecto);
+
+        $stmt->execute();
+        $stmt->close();
+        $connf->close();
         $respuesta = array(
             'estado' => 'contrato nuevo agregado'
         );
