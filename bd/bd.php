@@ -1,8 +1,8 @@
 <?php
-// $username="root";
-// $password="";
-$username="uzvwptavpcr6x";
-$password= "h/e541f2|@`l";
+$username="root";
+$password="";
+// $username="uzvwptavpcr6x";
+// $password= "h/e541f2|@`l";
 
 
 // $database="dbkwkacrwe84ac";

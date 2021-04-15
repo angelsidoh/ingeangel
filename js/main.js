@@ -1,10 +1,13 @@
 //contador de caracteres mensaje
-function countChars(obj){
-  document.getElementById("charNum").innerHTML = obj.value.length+' characters';
-  if( obj.value.length > 500){
-    
-    
-  }
+function countChars(obj,x){
+ 
+    var chars = "charNum"+x;
+    console.log(x);
+    document.getElementById(chars).innerHTML = obj.value.length+' characters';
+    obtnermensaje(x);
+  
+  
+  
 }
 
 // end contador de caracteres mensajes
@@ -1333,8 +1336,8 @@ var chesy4000 = new Array();
 
 
 
-//   var plus = "#plus"+(4000+chesx);
-//   console.log(plus)
+  // var plus = "#plus"+(4000+chesx);
+  // console.log(plus)
 $(".contenedor-especial")
   .mouseover(function () {
     // console.log('hola');
@@ -1355,7 +1358,7 @@ function ches(i) {
   var plus = '#plus' + i;
   var neg = '#neg' + i;
   var lista = '#lista' + i;
-  console.log(check);
+  // console.log(check);
   $(check).click(function () {
     if ($(this).is(":checked")) {
       $(plus).hide();
@@ -1486,7 +1489,96 @@ var elNombre = localStorage.getItem("Nombre");
 var elNumero = parseInt(localStorage.getItem("Numero"));
 var eltoken = (localStorage.getItem("token"));
 // console.log(elNombre + elNumero + '-' + eltoken);
+//NUEVO MENSAJE
 
+const formNuevoMensaje = document.querySelector('#agregar-nuevomensaje');
+var idboton ='';
+var formasunto = '';
+var formidmensaje = '';
+var formidusuario = '';
+var formidea = '';
+var formnombreusuario= '';
+function obtnermensaje(x){
+  var iddelmensaje = '#agregar-nuevomensaje'+x; 
+  idboton = '#btnagregarmensaje'+x;
+  formasunto = '#asunto'+x;
+formidmensaje= '#idmensaje'+x;
+formidusuario = '#idusuario'+x
+formidea = '#idea'+x;
+formnombreusuario = '#nombreusuario'+x;
+  console.log(iddelmensaje);
+  const formNuevoMensaje = document.querySelector(iddelmensaje);
+  if ($(iddelmensaje).length) {
+    eventListeners();
+  
+    function eventListeners() {
+      formNuevoMensaje.addEventListener('submit', AgregarNuevoMensaje);
+    }
+  }
+}
+
+
+function AgregarNuevoMensaje(e) {
+  e.preventDefault();
+  console.log(idboton);
+  const accion = document.querySelector(idboton).value;
+  if (accion == 'Enviar Mensaje') {
+    const asunto = document.querySelector(formasunto).value;
+    const idmensaje = document.querySelector(formidmensaje).value;
+    const idusuario = document.querySelector(formidusuario).value;
+    const mensaje = document.querySelector(formidea).value;
+    const nombreusuario= document.querySelector(formnombreusuario).value;
+    
+    const mensajenuevo = new FormData();
+
+    mensajenuevo.append('asunto', asunto);
+    mensajenuevo.append('idmensaje', idmensaje);
+    mensajenuevo.append('idusuario', idusuario);
+    mensajenuevo.append('mensaje', mensaje);
+    mensajenuevo.append('nombreusuario', nombreusuario);
+    mensajenuevo.append('accion', accion);
+    if (accion === 'Enviar Mensaje') {
+      console.log (accion);
+      nuevomensaje(mensajenuevo);
+    }
+  }
+}
+
+function nuevomensaje(dato) {
+  // llamado de ajax
+  // crear objeto
+  //  console.log(dato);
+  const xhr = new XMLHttpRequest();
+  // abrir conexion
+  xhr.open('POST', 'includes/modelos/nuevomensaje.php', true);
+  // pasar datos
+  xhr.onload = function () {
+    if (this.status === 200) {
+      const respuesta = JSON.parse(xhr.responseText);
+      console.log(respuesta);
+      // if (respuesta.estado === 'creandocuenta') {
+      //   swal({
+      //       content: "",
+      //       text: 'Tu idea a sido enviada y tu cuenta registrada.',
+      //       icon: "success",
+      //       button: {
+      //         text: "Continuar",
+      //         closeModal: true,
+      //       },
+      //     })
+      //     .then((value) => {
+      //       switch (value) {
+      //         default:
+      //           window.location.href = 'bienvenida.php#angel-ruiz';
+      //       }
+      //     });
+
+      // }
+    }
+  }
+  xhr.send(dato);
+}
+// END NUEVO MENSAJE
 // AGREGAR IDEA USUARIO MAS REGISTRO
 const formIdeaUsuario = document.querySelector('#agregar-registrouser');
 if ($("#agregar-registrouser").length) {
@@ -2977,7 +3069,7 @@ $(document).ready(function () {
 
   resolucion = screen.width;
 
-  console.log(resolucion);
+  // console.log(resolucion);
 });
 var fleep = '0';
 
@@ -3342,7 +3434,7 @@ $('.left span').click(function () {
   
 });
 
-console.log(cambioSliderPal);
+// console.log(cambioSliderPal);
 if(cambioSliderPal == 0){
   setInterval(function(){
       nextSliderx();
@@ -3424,9 +3516,9 @@ if(cambioSliderPal == 0){
 $(document).ready(function () {
 
   var imgItems2 = $('.slider2 li').length;
-  var imgPos2 = 1;
-  var menu = ['', 'Proyectos', 'Cuenta', 'Pagos', 'Contratos', 'Mensajes'];
-  for (i = 1; i <= imgItems2; i++) {
+  
+  var menu = [ 'Proyectos', 'Cuenta', 'Pagos', 'Contratos', 'Mensajes'];
+  for (i = 0; i < imgItems2; i++) {
     $('.paginacion2').append('<li><h3>' + menu[i] + '</h3></li>');
   }
 
@@ -3448,7 +3540,7 @@ $(document).ready(function () {
   function paginacion2() {
     var paginacionPos2 = $(this).index();
     paginacionPos2 = paginacionPos2 + 1;
-    console.log(paginacionPos2);
+    // console.log(paginacionPos2);
 
     $('.slider2 li').hide();
     $('.slider2 li:nth-child(' + paginacionPos2 + ')').fadeIn();
@@ -3726,7 +3818,7 @@ $(window).scroll(function () {
       var inputchects = $(inps).attr('id');
       if (inps === ('#' + inputchects)) {
 
-        console.log(inps + '-' + inputchects);
+        // console.log(inps + '-' + inputchects);
         chesy4000[contchecks] = inps;
         chesx4000[contchecks] = serie;
         contchecks++;

@@ -7,7 +7,7 @@ function obtenerMensajes($dato)
         require('bd/bdsqli.php');
 
 
-        return $connf->query("SELECT mensaje_mensaje, idmensaje_mensaje FROM mensajecliente WHERE idusuario_mensaje = '$dato'");
+        return $connf->query("SELECT mensaje_mensaje, idmensaje_mensaje, asunto_mensaje FROM mensajecliente WHERE idusuario_mensaje = '$dato'");
     } catch (Exception $e) {
         echo "Error!!" . $e->getMessage() . "<br>";
         return false;
@@ -20,7 +20,7 @@ function obtenerIdMensajes($dato)
         require('bd/bdsqli.php');
 
 
-        return $connf->query("SELECT mensaje_mensaje, idmensaje_mensaje FROM mensajecliente WHERE idusuario_mensaje = '$dato'");
+        return $connf->query("SELECT mensaje_mensaje, idmensaje_mensaje, asunto_mensaje, idusuario_mensaje, idconversacion_mensaje, fecha_mensaje, admin_mensaje FROM mensajecliente WHERE idusuario_mensaje = '$dato'");
     } catch (Exception $e) {
         echo "Error!!" . $e->getMessage() . "<br>";
         return false;

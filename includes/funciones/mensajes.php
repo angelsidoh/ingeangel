@@ -2,85 +2,404 @@
 
 if ($_SESSION['tipo_usuario'] == 'admin') {
     $idusuario =  $_GET['id'];
+} else {
 
-   
-}else{
-
-echo $idusuario;
+    echo $idusuario;
 }
 
 $resultadoMensajes = obtenerIdMensajes($idusuario);
 
 $contadorPasos1 = 0;
 $contadorMensajes = 0;
-
+$resultadoConsulta = consultaUsuarioContrato($idusuario);
+if ($resultadoConsulta->num_rows) {
+    foreach ($resultadoConsulta as $Consulta) {
+        $usuario = $Consulta['nombre_usuario'];
+        $apellidos =  $Consulta['apellidos_usuario'];
+        $idproyecto = $Consulta['idproyecto_usuario'];
+        $idusuario = $Consulta['id_usuario'];
+        $foto = $Consulta['foto_usuario'];
+        $calle = $Consulta['calle_usuario'];
+        $numie = $Consulta['numiedireccion_usuario'];
+        $col = $Consulta['colonia_usuario'];
+        $cp = $Consulta['cp_usuario'];
+        $email = $Consulta['email_usuario'];
+        $tel = $Consulta['telefono_usuario'];
+        $fec = $Consulta['fecha_usuario'];
+        $domiciliof = $Consulta['domiciliofiscal_usuario'];
+        $cfdi = $Consulta['cfdi_usuario'];
+        $rfc = $Consulta['rfc_usuario'];
+        $tipouser = $Consulta['tipo_usuario'];
+    }
+}
+// echo $usuario.$apellidos;
 if ($resultadoMensajes->num_rows) {
     foreach ($resultadoMensajes as $mensaje) {
         $vecmensaje[$contadorPasos1] = $mensaje['mensaje_mensaje'];
         $vecidmensaje[$contadorPasos1] = $mensaje['idmensaje_mensaje'];
+        $vecasuntomensaje[$contadorPasos1] = $mensaje['asunto_mensaje'];
+        $vecidusuario[$contadorPasos1] = $mensaje['idusuario_mensaje'];
+        $vecfechamensaje[$contadorPasos1] = $mensaje['fecha_mensaje'];
+        $vecidconversancion[$contadorPasos1] = $mensaje['idconversacion_mensaje'];
+        $vecadminmensaje[$contadorPasos1] = $mensaje['admin_mensaje'];
         $contadorPasos1++;
     }
 }
 $superVecMensajes[$i] = $vecmensaje;
 $superVecidMensajes[$i] = $vecidmensaje;
+$superVecasuntoMensaje[$i] = $vecasuntomensaje;
+$superVecIdUsuario[$i] = $vecidusuario;
+$superVecFechaMensaje[$i] = $vecfechamensaje;
+$superVecIdConversacion[$i] = $vecidconversancion;
+$superVecAdminMensaje[$i] = $vecadminmensaje;
 for ($ix = 0; $ix < $contadorPasos1; $ix++) {
     unset($vecmensaje[$ix]);
     unset($vecidmensaje[$ix]);
+    unset($vecasuntomensaje[$ix]);
+    unset($vecidusuario[$ix]);
+    unset($vecidconversancion[$ix]);
+    unset($vecfechamensaje[$ix]);
+    unset($vecadminmensaje[$ix]);
 }
-// echo '<PRE>';
-// var_dump($superVecMensajes);
-// echo '</PRE>';
-// echo '<PRE>';
-// var_dump($superVecidMensajes);
-// echo '</PRE>';
 
-$vecaxi = $superVecidMensajes;
 // echo '<PRE>';
-// var_dump($vecaxi);
+// var_dump($superVecAdminMensaje);
 // echo '</PRE>';
-for ($u=0; $u < sizeof($superVecidMensajes[1]); $u++) { 
+// echo '<PRE>';
+// var_dump($superVecasuntoMensaje);
+// echo '</PRE>';
+$vecaxiasuntox = $superVecasuntoMensaje;
+for ($u = 0; $u < sizeof($superVecasuntoMensaje[1]); $u++) {
     $contadorMensajes = 0;
-for ($i = 0; $i < sizeof($superVecidMensajes[1]); $i++) {
-    // echo '<br>'.$vecaxi[0][$u].'..'.$superVecidMensajes[0][$i];
-    if($superVecidMensajes[1][$u] == $vecaxi[1][$i]){
-        
-        
-        $contadorMensajes++;
-        if($contadorMensajes > 1){
-            $vecaxi[1][$i] = '';
+    for ($i = 0; $i < sizeof($superVecasuntoMensaje[1]); $i++) {
+        if ($superVecasuntoMensaje[1][$u] == $vecaxiasuntox[1][$i]) {
+            $contadorMensajes++;
+            if ($contadorMensajes > 1) {
+                $vecaxiasuntox[1][$i] = '';
+                // echo $u.$i.'<br>';
+            }
         }
-        // echo '<br>->'.$contadorMensajes;
-        
     }
 }
+$cont = 0;
+$vecaxiasunto = $vecaxiasuntox[1];
+foreach ($vecaxiasunto as $key => $value) {
+    if ($value === '') {
+        unset($vecaxiasunto[$key]);
+    } else {
+        // echo $vecaxiIDMensajes[$key];
 
+        $vecaxiasuntoRes[$cont] = $superVecasuntoMensaje[1][$key];
+        $cont++;
+    }
 }
-$contradorresultados=0;
-for ($i=0; $i < sizeof( $vecaxi[1]); $i++) { 
-    if($vecaxi[1][$i] != ''){
+// echo '<PRE>';
+// var_dump( $vecaxiasuntox);
+// echo '</PRE>';
+
+
+$vecaxiIdMesnajesx =  $superVecidMensajes;
+$vecaxiadminx = $superVecAdminMensaje;
+$vecaxiasuntox2 = $superVecasuntoMensaje;
+
+for ($u = 0; $u < sizeof($superVecidMensajes[1]); $u++) {
+    $contadorMensajes = 0;
+    for ($i = 0; $i < sizeof($superVecidMensajes[1]); $i++) {
+        if ($superVecidMensajes[1][$u] == $vecaxiIdMesnajesx[1][$i]) {
+            $contadorMensajes++;
+            if ($contadorMensajes > 1) {
+                $vecaxiIdMesnajesx[1][$i] = '';
+                $vecaxiadminx[1][$i] = '';
+                $vecaxiasuntox2[1][$i] = ''; 
+            }
+        }
+    }
+}
+$vecaxiIDMensajes =  $vecaxiIdMesnajesx[1];
+$vecaxiadmin =  $vecaxiadminx[1];
+$vecaxiasunto2= $vecaxiasuntox2[1];
+$cont = 0;
+// echo '<PRE>';
+// var_dump($vecaxiasuntox);
+// echo '</PRE>';
+// echo '<PRE>';
+// var_dump( $vecaxiIdMesnajesx);
+// echo '</PRE>';
+foreach ($vecaxiIDMensajes as $key => $value) {
+    if ($value === '') {
+        unset($vecaxiIDMensajes[$key]);
+    } else {
+        // echo $vecaxiIDMensajes[$key];
+        $vecaxiIdMensajesRes[$cont] = $superVecidMensajes[1][$key];
+        $vecaxiadminResp[$cont] = $superVecAdminMensaje[1][$key];
+        $vecaxiFechasRes[$cont] =  $superVecFechaMensaje[1][$key];
+        $vecaxiasuntoRes2[$cont] = $superVecasuntoMensaje[1][$key];
+
+        $cont++;
+    }
+}
+// var_dump($vecaxiadminResp);
+
+
+$vecaxi = $superVecidMensajes;
+
+for ($u = 0; $u < sizeof($superVecidMensajes[1]); $u++) {
+    $contadorMensajes = 0;
+    for ($i = 0; $i < sizeof($superVecidMensajes[1]); $i++) {
+        // echo '<br>'.$vecaxi[0][$u].'..'.$superVecidMensajes[0][$i];
+        if ($superVecidMensajes[1][$u] == $vecaxi[1][$i]) {
+
+
+            $contadorMensajes++;
+            if ($contadorMensajes > 1) {
+                $vecaxi[1][$i] = '';
+            }
+            // echo '<br>->'.$contadorMensajes;
+
+        }
+    }
+}
+$contradorresultados = 0;
+for ($i = 0; $i < sizeof($vecaxi[1]); $i++) {
+    if ($vecaxi[1][$i] != '') {
         $resultadovec[$contradorresultados] = $vecaxi[1][$i];
-     $contradorresultados++;
+        $contradorresultados++;
     }
 }
 // echo '<pre>';
 // var_dump($resultadovec);
 // echo '</pre>';
+// echo '<PRE>';
+// var_dump($vecaxiFechasRes);
+// echo '</PRE>';
+// echo '<PRE>';
+// var_dump($vecaxiasuntoRes2);
+// echo '</PRE>';
+$vectaxu2 =  $vecaxi;
+
+$vectaxu2 = $vecaxi[1];
+$conta = 0;
+foreach ($vectaxu2 as $posicion => $id) {
+    if ($id === '') {
+        unset($vectaxu2[$posicion]);
+    } else {
+
+        $vectaxu3[$conta] = $vectaxu2[$posicion];
+        $conta++;
+    }
+}
+// echo '<PRE>';
+// var_dump($resultadovec);
+// var_dump(  $superVecidMensajes);
+// echo '</PRE>';
+
+$resultadoUser = consultaUsuarioContrato($superVecIdUsuario[1][0]);
+
+if ($resultadoUser->num_rows) {
+    foreach ($resultadoUser as $resultado) {
+        $nombreuser = $resultado['nombre_usuario'];
+        $apellidouser = $resultado['apellidos_usuario'];
+    }
+}
+
+// echo sizeof($vecaxiasuntoRes);
 
 ?>
 <div class="contenedor-especial">
-    <?php for ($i=0; $i < sizeof($resultadovec); $i++) { 
-    ?> 
-    <div class="mensaje" id="mensaje">
-        <?php
-            for ($u=0; $u < sizeof($superVecidMensajes[1]); $u++) { 
-                if($resultadovec[$i] == $superVecidMensajes[1][$u]){
-                    echo $superVecMensajes[1][$u];
-                }
-            }
-        ?>
-    </div>
+    <?php for ($x = 0; $x < sizeof($vecaxiasuntoRes); $x++) { ?>
+        <div class="menu-proyectos">
+            <div class="submenu-proyectos">
+                <div class="titulo-proyecto">
+                    <h2><?php
+                        echo  'Asunto:' . $vecaxiasuntoRes[$x] . '<br>';
+                        ?>
+                    </h2>
+                </div>
+                <div class="mas-proyecto">
+                    <div class="inps" id="inps<?php echo 4000 + $x; ?>">
+                        <input name="angel" type="checkbox" class="checs" id="check<?php echo 4000 + $x; ?>" name="menu<?php echo 4000 + $x; ?>">
+                    </div>
+                    <label for="check<?php echo 4000 + $x; ?>">
+                        <i id="plus<?php echo 4000 + $x; ?>" class="far fa-plus-square"></i>
+                        <i id="neg<?php echo 4000 + $x; ?>" class="far fa-minus-square" style="display: none;"></i>
+                    </label>
+                </div>
+                <div id="lista<?php echo 4000 + $x; ?>" class="lista-proyectos" style="display: none;">
+                    <div class="links">
+                        <div class="contenedorconteo1">
+                        
+                        <?php 
+                        $contadorshow = 0;
+                        $contadorshow1 = 0;
+                        for ($i=0; $i < sizeof($resultadovec); $i++) { 
+                            # code...
+                            echo $resultadovec[$i];
+                            if($vecaxiasuntoRes2[$i] == $vecaxiasuntoRes[$x]){
+                        ?>
+                           <div class="mensaje" id="mensaje">
+                                <div class="contenido">
+                                    <?php
+                                    echo $vecaxiadminResp[$i] . "<br>" . $vecaxiFechasRes[$i] . "<br><br>";
+                                    ?>
+                                </div>
+                                <?php
+                                
+                                for ($u = 0; $u < sizeof($superVecidMensajes[1]); $u++) {
+
+                                    $contadorshow1++;
+                                    if ($resultadovec[$i] == $superVecidMensajes[1][$u]) {
+                                        echo $superVecMensajes[1][$u];
+                                        
+                                        $contadorshow ++;
+                                       
+                                      
+                                    }
+                                   
+                                }
+                             
+                                ?>
+                            </div>
+
+                            <!-- <div class="botonresp">
+                    <a class="button" href="id=<?php echo $vectaxu3[$i] ?>#angel-ruiz">Responder</a>
+                    </div> -->
+                            <?php
+                           
+                           }
+                    } 
+                            ?>
+                             
+                            <div class="contenedor-especial">
+                                <div class="titulo-seccion">
+
+                                    <h1 id="sparklemaster" class="sparklemaster" style="color:  #93A9CC;">Responder</h1>
+                                </div>
+                                <div class="datos-contrato">
+                                    <form id="agregar-nuevomensaje<?php echo $x;?>" action="#">
+                                        <div class="contenido-cuenta">
+                                            <div class="text-dato3">
+                                                <p>Asunto</p>
+                                            </div>
+                                            <div class="dato3">
+                                                <input type="text" id="asunto<?php echo $x;?>" name="asunto" placeholder="Escriba el asunto" value="<?php echo $vecaxiasuntoRes[$x];?>" required>
+                                            </div> <!-- rnormal__tarjeta -->
+                                            <div class="text-dato3">
+                                                <p>idmensaje</p>
+                                            </div>
+                                            <div class="dato3">
+                                                <input type="text" id="idmensaje<?php echo $x;?>" name="idmensaje" placeholder="" value="<?php 
+                                               for ($s=0; $s < sizeof($superVecidMensajes[1]); $s++) { 
+                                                   if($s == (sizeof($superVecidMensajes[1])-1)){
+                                                echo $superVecidMensajes[1][$s];}
+                                               }
+                                                 ?>" required>
+                                            </div> <!-- rnormal__tarjeta -->
+                                            <div class="text-dato3">
+                                                <p>idusuario</p>
+                                            </div>
+                                            <div class="dato3">
+                                                <input type="text" id="idusuario<?php echo $x;?>" name="idusuario" placeholder="" value="<?php echo $superVecIdUsuario[1][$x]; ?>" required>
+                                            </div> <!-- rnormal__tarjeta -->
+                                            <div class="text-dato3">
+                                                <p>usuario</p>
+                                            </div>
+                                            <div class="dato3">
+                                                <input type="text" id="nombreusuario<?php echo $x;?>" name="nombreusuario" placeholder="" value="<?php echo $usuario . " " . $apellidos ?>" required>
+                                            </div> <!-- rnormal__tarjeta -->
+
+                                            <div class="text-dato3">
+                                                <p>Mensaje</p>
+                                            </div>
+                                            <div class="dato3">
+                                                <div class="contobjs">
+                                                    <textarea class="idea" type="descrip" id="idea<?php echo $x;?>" name="idea" placeholder="Escriba el mensaje" onkeyup="countChars(this,<?php echo $x;?>);" required></textarea>
+                                                    <p id="charNum<?php echo $x;?>">0 Caracteres</p>
+                                                </div>
+
+                                            </div> <!-- rnormal__tarjeta -->
+
+
+
+
+                                        </div>
+                                        <div class="sub-boton">
+
+                                            <input id="btnagregarmensaje<?php echo $x;?>" type="submit" value="Enviar Mensaje" class="button">
+
+                                        </div>
+                                    </form>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     <?php
     }
     ?>
-</div>
+     <div class="contenedor-especial">
+                                <div class="titulo-seccion">
 
+                                    <h1 id="sparklemaster" class="sparklemaster" style="color:  #93A9CC;">Nuevo Mensaje</h1>
+                                </div>
+                                <div class="datos-contrato">
+                                    <form id="agregar-nuevomensaje<?php echo $x;?>" action="#">
+                                        <div class="contenido-cuenta">
+                                            <div class="text-dato3">
+                                                <p>Asunto</p>
+                                            </div>
+                                            <div class="dato3">
+                                                <input type="text" id="asunto<?php echo $x;?>" name="asunto" placeholder="Escriba el asunto" value="" required>
+                                            </div> <!-- rnormal__tarjeta -->
+                                            <div class="text-dato3">
+                                                <p>idmensaje</p>
+                                            </div>
+                                            <div class="dato3">
+                                                <input type="text" id="idmensaje<?php echo $x;?>" name="idmensaje" placeholder="" value="<?php 
+                                               for ($s=0; $s < sizeof($superVecidMensajes[1]); $s++) { 
+                                                   if($s == (sizeof($superVecidMensajes[1])-1)){
+                                                echo $superVecidMensajes[1][$s];}
+                                               }
+                                                 ?>" required>
+                                            </div> <!-- rnormal__tarjeta -->
+                                            <div class="text-dato3">
+                                                <p>idusuario</p>
+                                            </div>
+                                            <div class="dato3">
+                                                <input type="text" id="idusuario<?php echo $x;?>" name="idusuario" placeholder="" value="<?php echo $superVecIdUsuario[1][$x]; ?>" required>
+                                            </div> <!-- rnormal__tarjeta -->
+                                            <div class="text-dato3">
+                                                <p>usuario</p>
+                                            </div>
+                                            <div class="dato3">
+                                                <input type="text" id="nombreusuario<?php echo $x;?>" name="nombreusuario" placeholder="" value="<?php echo $usuario . " " . $apellidos ?>" required>
+                                            </div> <!-- rnormal__tarjeta -->
+
+                                            <div class="text-dato3">
+                                                <p>Mensaje</p>
+                                            </div>
+                                            <div class="dato3">
+                                                <div class="contobjs">
+                                                    <textarea class="idea" type="descrip" id="idea<?php echo $x;?>" name="idea" placeholder="Escriba el mensaje" onkeyup="countChars(this,<?php echo $x;?>);" required></textarea>
+                                                    <p id="charNum<?php echo $x;?>">0 Caracteres</p>
+                                                </div>
+
+                                            </div> <!-- rnormal__tarjeta -->
+
+
+
+
+                                        </div>
+                                        <div class="sub-boton">
+
+                                            <input id="btnagregarmensaje<?php echo $x;?>" type="submit" value="Enviar Mensaje" class="button">
+
+                                        </div>
+                                    </form>
+                                </div>
+
+                            </div>
+</div>
