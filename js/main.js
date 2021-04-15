@@ -3831,7 +3831,7 @@ $(window).scroll(function () {
       $(plus).hover(
         function () {
 
-          // console.log(chesx4000[x]);
+          console.log(chesx4000[x]);
           i = chesx4000[x];
           ches(i);
 

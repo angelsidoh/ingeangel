@@ -748,10 +748,14 @@ height: auto;
     grid-column: 2 / 13;
   }
 }
+
+.links1{
+  grid-column: 1 / 13;
+}
 .contenedorconteo1{
   text-decoration: none;
   color: transparent;
-  font-size: 24px;
+  
   
   margin: 0 0;
   
@@ -4622,12 +4626,21 @@ color: #ffffff;
   
 }
 .contenedor-especial{
-  width: 90%;
+  width: 100%;
   height: auto;
   margin: 50px auto;
-  padding: 50px;
+  padding: 10px;
+  font-family: var(--FontPal);
   
 }
+@media only screen and (min-width:768px){
+  .contenedor-especial{
+    width: 90%;
+    padding: 50px;
+    
+  }
+}
+
 
 .datos-usuario, .datos-contrato{
   width: 100%;
@@ -4871,7 +4884,7 @@ color: #fff;
  border-bottom: 1px solid #fff;
  border-right: 1px solid #fff;
  border-left: 1px solid #fff;
- background-color: rebeccapurple;
+ background-color: #333;
 color: #fff;
 animation: inp 3s infinite;
   

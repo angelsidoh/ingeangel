@@ -225,7 +225,7 @@ if ($resultadoUser->num_rows) {
                     </label>
                 </div>
                 <div id="lista<?php echo 4000 + $x; ?>" class="lista-proyectos" style="display: none;">
-                    <div class="links">
+                    <div class="links1">
                         <div class="contenedorconteo1">
                         
                         <?php 
@@ -233,7 +233,7 @@ if ($resultadoUser->num_rows) {
                         $contadorshow1 = 0;
                         for ($i=0; $i < sizeof($resultadovec); $i++) { 
                             # code...
-                            echo $resultadovec[$i];
+                            // echo $resultadovec[$i];
                             if($vecaxiasuntoRes2[$i] == $vecaxiasuntoRes[$x]){
                         ?>
                            <div class="mensaje" id="mensaje">
@@ -281,30 +281,24 @@ if ($resultadoUser->num_rows) {
                                                 <p>Asunto</p>
                                             </div>
                                             <div class="dato3">
-                                                <input type="text" id="asunto<?php echo $x;?>" name="asunto" placeholder="Escriba el asunto" value="<?php echo $vecaxiasuntoRes[$x];?>" required>
+                                                <input style="color: #ff7b00;" type="text" id="asunto<?php echo $x;?>" name="asunto" placeholder="Escriba el asunto" value="<?php echo $vecaxiasuntoRes[$x];?>" required disabled>
                                             </div> <!-- rnormal__tarjeta -->
-                                            <div class="text-dato3">
-                                                <p>idmensaje</p>
-                                            </div>
+                                        
                                             <div class="dato3">
-                                                <input type="text" id="idmensaje<?php echo $x;?>" name="idmensaje" placeholder="" value="<?php 
+                                                <input style="display: none;" type="text" id="idmensaje<?php echo $x;?>" name="idmensaje" placeholder="" value="<?php 
                                                for ($s=0; $s < sizeof($superVecidMensajes[1]); $s++) { 
                                                    if($s == (sizeof($superVecidMensajes[1])-1)){
                                                 echo $superVecidMensajes[1][$s];}
                                                }
-                                                 ?>" required>
+                                                 ?>" required >
                                             </div> <!-- rnormal__tarjeta -->
-                                            <div class="text-dato3">
-                                                <p>idusuario</p>
-                                            </div>
+                                          
                                             <div class="dato3">
-                                                <input type="text" id="idusuario<?php echo $x;?>" name="idusuario" placeholder="" value="<?php echo $superVecIdUsuario[1][$x]; ?>" required>
+                                                <input style="display: none;" type="text" id="idusuario<?php echo $x;?>" name="idusuario" placeholder="" value="<?php echo $superVecIdUsuario[1][$x]; ?>" required>
                                             </div> <!-- rnormal__tarjeta -->
-                                            <div class="text-dato3">
-                                                <p>usuario</p>
-                                            </div>
+                                          
                                             <div class="dato3">
-                                                <input type="text" id="nombreusuario<?php echo $x;?>" name="nombreusuario" placeholder="" value="<?php echo $usuario . " " . $apellidos ?>" required>
+                                                <input style="display: none;" type="text" id="nombreusuario<?php echo $x;?>" name="nombreusuario" placeholder="" value="<?php echo $usuario . " " . $apellidos ?>" required>
                                             </div> <!-- rnormal__tarjeta -->
 
                                             <div class="text-dato3">
@@ -354,28 +348,22 @@ if ($resultadoUser->num_rows) {
                                             <div class="dato3">
                                                 <input type="text" id="asunto<?php echo $x;?>" name="asunto" placeholder="Escriba el asunto" value="" required>
                                             </div> <!-- rnormal__tarjeta -->
-                                            <div class="text-dato3">
-                                                <p>idmensaje</p>
-                                            </div>
+                                          
                                             <div class="dato3">
-                                                <input type="text" id="idmensaje<?php echo $x;?>" name="idmensaje" placeholder="" value="<?php 
+                                                <input style="display: none;" type="text" id="idmensaje<?php echo $x;?>" name="idmensaje" placeholder="" value="<?php 
                                                for ($s=0; $s < sizeof($superVecidMensajes[1]); $s++) { 
                                                    if($s == (sizeof($superVecidMensajes[1])-1)){
                                                 echo $superVecidMensajes[1][$s];}
                                                }
                                                  ?>" required>
                                             </div> <!-- rnormal__tarjeta -->
-                                            <div class="text-dato3">
-                                                <p>idusuario</p>
-                                            </div>
+                                            
                                             <div class="dato3">
-                                                <input type="text" id="idusuario<?php echo $x;?>" name="idusuario" placeholder="" value="<?php echo $superVecIdUsuario[1][$x]; ?>" required>
+                                                <input style="display: none;" type="text" id="idusuario<?php echo $x;?>" name="idusuario" placeholder="" value="<?php echo $superVecIdUsuario[1][$x]; ?>" required>
                                             </div> <!-- rnormal__tarjeta -->
-                                            <div class="text-dato3">
-                                                <p>usuario</p>
-                                            </div>
+                                          
                                             <div class="dato3">
-                                                <input type="text" id="nombreusuario<?php echo $x;?>" name="nombreusuario" placeholder="" value="<?php echo $usuario . " " . $apellidos ?>" required>
+                                                <input style="display: none;" type="text" id="nombreusuario<?php echo $x;?>" name="nombreusuario" placeholder="" value="<?php echo $usuario . " " . $apellidos ?>" required>
                                             </div> <!-- rnormal__tarjeta -->
 
                                             <div class="text-dato3">
