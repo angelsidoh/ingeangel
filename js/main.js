@@ -1,8 +1,10 @@
+
+var axipaginacion3 = 1;
 //contador de caracteres mensaje
 function countChars(obj,x){
  
     var chars = "charNum"+x;
-    console.log(x);
+    // console.log(x);
     document.getElementById(chars).innerHTML = obj.value.length+' characters';
     obtnermensaje(x);
   
@@ -51,11 +53,11 @@ function contadorFechas() {
   while (tiempox >= 24) {
     tiempox = tiempox - 24;
     contadorDias++;
-    console.log(contadorDias);
+    // console.log(contadorDias);
     for (let i = 0; i < contadorDias; i++) {
-      console.log(horass + ' -' + i);
+      // console.log(horass + ' -' + i);
       if (horass >= 48) {
-        console.log('->' + i);
+        // console.log('->' + i);
         if (horass >= (24 * (i + 1)) && horass < (24 * (i + 2))) {
           horass = parseInt(horass, 10);
           horass = horass - (24 * i);
@@ -153,7 +155,7 @@ function contadorFechas() {
 
   }
 
-  console.log(strDatess);
+  // console.log(strDatess);
 }
 
 $('#tiempo2').change(function () {
@@ -444,10 +446,10 @@ function abc(datos, maxfecha, contadorProyectos, contPasosxProyecto, contPasos) 
     dominio=parseInt(dominio, 10);
     mantenimiento=parseInt(mantenimiento, 10);
     basededatos=parseInt(basededatos, 10);
-    console.log(preciomes);
+    // console.log(preciomes);
     
     var mesescont = meses - 1;
-    console.log(mesescont);
+    // console.log(mesescont);
     // (mesescont * preciomes);
     var programacionprecio = preciomes-(hosting+dominio+mantenimiento+basededatos);
     var total =  (hosting+dominio+mantenimiento+basededatos+programacionprecio); 
@@ -462,7 +464,7 @@ function abc(datos, maxfecha, contadorProyectos, contPasosxProyecto, contPasos) 
       var precioshow1 = $('#precioshow1').attr('value');
       precioshow1 = parseInt(precioshow1);
       precioshow1 = precioshow1*(mesespago-1);
-      console.log(mesespago);
+      //console.log(mesespago);
       document.getElementById("precio1").value = precioshow1;
 
     }
@@ -486,11 +488,11 @@ function abc(datos, maxfecha, contadorProyectos, contPasosxProyecto, contPasos) 
   // var auxcontador = contadorPxP[0];
 
   // // if (contadorPjs == (contPasos-1)) {
-  // //   console.log('hola->' + contadorProyectosJs);
+  // //   //console.log('hola->' + contadorProyectosJs);
   // //   drenado(fechas, contadorPxP, contadorProyectos, contPasosxProyecto, contPasos);
   // // }
 
-  // console.log(contadorPjs);
+  // //console.log(contadorPjs);
   contadorPjs++;
 
 
@@ -507,7 +509,7 @@ function consultaNotificaciones() {
 
   // llamado de ajax
   // crear objeto
-  //  console.log(dato);
+  //  //console.log(dato);
   const xhr = new XMLHttpRequest();
   // abrir conexion
   xhr.open('POST', 'includes/modelos/consultanotificaciones.php', true);
@@ -517,7 +519,7 @@ function consultaNotificaciones() {
 
     if (this.status === 200) {
       const respuesta = JSON.parse(xhr.responseText);
-// console.log(respuesta[0][0].estado);
+// //console.log(respuesta[0][0].estado);
       for (let x = 0; x < respuesta.length; x++) {
         for (let u = 0; u < respuesta[x].length; u++) {
 
@@ -526,16 +528,16 @@ function consultaNotificaciones() {
          
           
           
-          // console.log(respuestanotificacion[x][u], notificacion[x][u]);
+          // //console.log(respuestanotificacion[x][u], notificacion[x][u]);
           
           subnotificacion[u] =  respuesta[x][u].estado;
           notificacion[x] = subnotificacion;
           
 
           // if(notificacion[u] == respuestanotificacion[u]){
-          //   console.log('yes');
+          //   //console.log('yes');
           // }else{
-          //   console.log('********no*******');
+          //   //console.log('********no*******');
           // }
           
           
@@ -548,11 +550,11 @@ function consultaNotificaciones() {
 
       //     respuestanotificacion[u] = '' + respuesta[u];
 
-      //     console.log(respuestanotificacion[u] + ' /' + notificacion[u]);
-      //   //  console.log(respuesta[u]);
+      //     //console.log(respuestanotificacion[u] + ' /' + notificacion[u]);
+      //   //  //console.log(respuesta[u]);
           // if (contadorinnotifi >= 3) {
           //   if (notificacion[u] == respuestanotificacion[u]) {
-          //     console.log('si');
+          //     //console.log('si');
           //   } else {
           //     swal({
           //       content: "",
@@ -569,23 +571,23 @@ function consultaNotificaciones() {
           // notificacion[u] = respuestanotificacion[u];
 
           // if (respuestanotificacion[u] == notificacion[u]) {
-          //  console.log('si');
+          //  //console.log('si');
           // } else {
-          //   console.log('no');
+          //   //console.log('no');
           // }
 
 
           // if(notificacion[u] == respuestanotificacion[u]){
-          //   console.log ('==');
+          //   //console.log ('==');
           // }else{
-          //   console.log('dif');
+          //   //console.log('dif');
           // }
           // if(u >= 1){
           //   notificacion[u] = respuestanotificacion[u];
           // }else{
           //   notificacion[0][0] = x;
           // }
-          // console.log ('-notificacion: '+notificacion[u] , ' -respuestanotificacion: '+respuestanotificacion[u]);
+          // //console.log ('-notificacion: '+notificacion[u] , ' -respuestanotificacion: '+respuestanotificacion[u]);
 
 
 
@@ -596,16 +598,16 @@ function consultaNotificaciones() {
       // }
 
       // respuestanotificacion = respuesta.estado;
-      // console.log(respuestanotificacion+ '/' + notificacion);
-      // console.log(respuesta.length);
+      // //console.log(respuestanotificacion+ '/' + notificacion);
+      // //console.log(respuesta.length);
       // if(notificacion != respuestanotificacion){
-      //   console.log('siii');
+      //   //console.log('siii');
       // }else{
-      //   console.log('noo');
+      //   //console.log('noo');
       // }
       // notificacion = respuestanotificacion;
 
-      // console.log('->'+respuesta);
+      // //console.log('->'+respuesta);
       if (respuesta.estado == 'pago agregado') {
         swal({
             content: "",
@@ -631,7 +633,7 @@ function consultaNotificaciones() {
 }
 
 function drenado(fechas, contadorPxP, contadorProyectos, contPasosxProyecto, contPasos, auxDetPaso, vecPasos, contadorSegundos) {
-  //  console.log(fechas, contadorPxP, contadorProyectos, contPasosxProyecto, contPasos, vecPasos);
+  //  //console.log(fechas, contadorPxP, contadorProyectos, contPasosxProyecto, contPasos, vecPasos);
   var sumaPasos = auxDetPaso;
   var yaux = 0;
   var superVecFechas = [0]
@@ -641,30 +643,30 @@ function drenado(fechas, contadorPxP, contadorProyectos, contPasosxProyecto, con
   for (let x = 0; x < contadorProyectos; x++) {
     contadoraux = 0;
     if (yaux == 0) {
-      // console.log((contadorPxP[x]));
+      // //console.log((contadorPxP[x]));
       yaux = 0;
     }
 
     if (yaux !== 0) {
-      // console.log((yaux - contadorPxP[vecPasos[x - 1]]) + 1);
-      // console.log(contadorPxP[vecPasos[x - 1]]);
+      // //console.log((yaux - contadorPxP[vecPasos[x - 1]]) + 1);
+      // //console.log(contadorPxP[vecPasos[x - 1]]);
       yaux = (yaux - contadorPxP[vecPasos[x - 1]]) + 1;
-      // console.log(yaux);
+      // //console.log(yaux);
     }
     vectIntS = [0];
     for (let y = yaux; y < vecPasos[x]; y++) {
-      //console.log(contadoraux+'-');
+      ////console.log(contadoraux+'-');
       vectIntS[contadoraux] = fechas[y];
-      // console.log(vectIntS);
-      // console.log(fechas[y] + y);
+      // //console.log(vectIntS);
+      // //console.log(fechas[y] + y);
       superVecFechas[x] = vectIntS;
-      // console.log(superVecFechas);
-      // console.log((vecPasos[x] - 1));
-      // console.log(fechas[y]);
+      // //console.log(superVecFechas);
+      // //console.log((vecPasos[x] - 1));
+      // //console.log(fechas[y]);
 
       if (y == (vecPasos[x] - 1)) {
         auxDetPaso = contadorPxP[y + 1];
-        // console.log((vecPasos[x]-1));
+        // //console.log((vecPasos[x]-1));
 
         var intauxDetPaso = parseInt(auxDetPaso, 10);
         sumaPasos = (intauxDetPaso + vecPasos[x]);
@@ -675,7 +677,7 @@ function drenado(fechas, contadorPxP, contadorProyectos, contPasosxProyecto, con
       contadoraux++
     }
     if (x == (contadorProyectos - 1)) {
-      // console.log(superVecFechas);
+      // //console.log(superVecFechas);
       pasosTime(superVecFechas, contadorSegundos);
     }
   }
@@ -695,9 +697,9 @@ var auxs = '';
 
 function pasosTime(superVecFechas) {
   if (contadorSegundos >= 1) {
-    // console.log(superVecFechas);
-    // console.log(superVecFechas.length);
-    // console.log('hola');
+    // //console.log(superVecFechas);
+    // //console.log(superVecFechas.length);
+    // //console.log('hola');
     let superVecFechasAux = superVecFechas;
     Seg = ['00'];
     Min = ['00'];
@@ -711,19 +713,19 @@ function pasosTime(superVecFechas) {
 
       for (let y = 0; y < superVecFechasAux[x].length; y++) {
 
-        //  console.log(x + '-' + y + '->' + superVecFechas[x][y]);
+        //  //console.log(x + '-' + y + '->' + superVecFechas[x][y]);
         xfecha = '' + superVecFechas[x][y];
-        //  console.log(xfecha);
+        //  //console.log(xfecha);
         if (xfecha !== '') {
-          // console.log(y);
+          // //console.log(y);
         }
         var cuentasreg = ('.cuenta-regresiva' + x + '-' + y);
         var iddias = ('#dias' + x + '-' + y);
         var idhoras = ('#horas' + x + '-' + y);
         var idminutos = ('#minutos' + x + '-' + y);
         var idsegundos = ('#segundos' + x + '-' + y);
-        //  console.log(cuentasreg,iddias,idhoras,idminutos,idsegundos);
-        // console.log('xxxx'+x+y+'-'+xfecha);
+        //  //console.log(cuentasreg,iddias,idhoras,idminutos,idsegundos);
+        // //console.log('xxxx'+x+y+'-'+xfecha);
         $(cuentasreg).countdown(xfecha, function (event) {
 
 
@@ -739,7 +741,7 @@ function pasosTime(superVecFechas) {
           todosH[y] = h;
           d = event.strftime('%D');
           todosD[y] = d;
-          // console.log(todosS);
+          // //console.log(todosS);
 
 
           // $(cuentasreg).addClass('coloryellow');
@@ -756,7 +758,7 @@ function pasosTime(superVecFechas) {
       Min[x] = todosM;
       Hor[x] = todosH;
       Dia[x] = todosD;
-      // console.log(Seg);
+      // //console.log(Seg);
     }
 
     faxS(Seg);
@@ -769,15 +771,15 @@ function pasosTime(superVecFechas) {
 function faxS(Seg) {
   var posvecSeg = 0;
   var auxSeg = 0;
-  // console.log(Seg);
+  // //console.log(Seg);
   for (let s = 0; s < Seg.length; s++) {
     for (let s1 = 0; s1 < Seg[s].length; s1++) {
       var cuentasreg = ('.cuenta-regresiva' + s + '-' + s1);
       var prueb = ('.cuenta-regresiva' + s + '-' + s1 + ' ' + '.clearfix .lix:nth-child(-n+9)');
-      // console.log(prueb);
+      // //console.log(prueb);
       var idsegundosS = ('#segundos' + s + '-' + s1);
       $(idsegundosS).text(Seg[s][s1]);
-      // console.log(s +'-' + s1+ Seg[s][s1]);
+      // //console.log(s +'-' + s1+ Seg[s][s1]);
       if (Seg[s][s1] == undefined) {
         Seg[s][s1] = '00';
       }
@@ -785,13 +787,13 @@ function faxS(Seg) {
         auxSeg = (Seg[s][s1]);
 
 
-        // console.log('si');
+        // //console.log('si');
         $(prueb).removeClass('coloryellow');
 
         $(cuentasreg).addClass('colorgreen');
       } else {
 
-        // console.log('no');
+        // //console.log('no');
         $(prueb).addClass('coloryellow');
 
         $(cuentasreg).removeClass('colorgreen');
@@ -803,14 +805,14 @@ function faxS(Seg) {
 function faxM(Min) {
 
   var auxSeg = 0;
-  // console.log(Min);
+  // //console.log(Min);
   for (let s = 0; s < Min.length; s++) {
     for (let s1 = 0; s1 < Min[s].length; s1++) {
       var cuentasreg = ('.cuenta-regresiva' + s + '-' + s1);
       var prueb = ('.cuenta-regresiva' + s + '-' + s1 + ' ' + '.clearfix .lix:nth-child(-n+9)');
       var idsegundosS = ('#minutos' + s + '-' + s1);
       $(idsegundosS).text(Min[s][s1]);
-      // console.log(auxSeg+'-'+Min[s][s1]);
+      // //console.log(auxSeg+'-'+Min[s][s1]);
       if (Min[s][s1] == undefined) {
         Min[s][s1] = '00';
       }
@@ -829,7 +831,7 @@ function faxM(Min) {
 
 function faxH(Hor) {
   var auxSeg = 0;
-  // console.log(Hor);
+  // //console.log(Hor);
   for (let s = 0; s < Hor.length; s++) {
     for (let s1 = 0; s1 < Hor[s].length; s1++) {
       var cuentasreg = ('.cuenta-regresiva' + s + '-' + s1);
@@ -854,7 +856,7 @@ function faxH(Hor) {
 
 function faxD(Dia) {
   var auxSeg = 0;
-  //console.log(Dia);
+  ////console.log(Dia);
   for (let s = 0; s < Dia.length; s++) {
     for (let s1 = 0; s1 < Dia[s].length; s1++) {
       var cuentasreg = ('.cuenta-regresiva' + s + '-' + s1);
@@ -1337,14 +1339,14 @@ var chesy4000 = new Array();
 
 
   // var plus = "#plus"+(4000+chesx);
-  // console.log(plus)
+  // //console.log(plus)
 $(".contenedor-especial")
   .mouseover(function () {
-    // console.log('hola');
+    // //console.log('hola');
    
   })
   .mouseout(function () {
-    // console.log('adios');
+    // //console.log('adios');
   });
 
 
@@ -1358,7 +1360,7 @@ function ches(i) {
   var plus = '#plus' + i;
   var neg = '#neg' + i;
   var lista = '#lista' + i;
-  // console.log(check);
+  // //console.log(check);
   $(check).click(function () {
     if ($(this).is(":checked")) {
       $(plus).hide();
@@ -1381,11 +1383,11 @@ function ches(i) {
 
 
 // var file = up("foto1file").files[0];
-//                     console.log(file);
+//                     //console.log(file);
 $('.progrss').addClass('hidden');
 $("#foto1file").change(function () {
   var file = up("foto1file").files[0];
-  console.log(file);
+  //console.log(file);
   $('.progrss').removeClass('hidden');
   var formdata = new FormData();
   formdata.append("foto1file", file);
@@ -1397,9 +1399,9 @@ $("#foto1file").change(function () {
   ajax.open("POST", "includes/modelos/upload4.php");
   ajax.onload = function () {
     if (this.status === 200) {
-      // console.log(JSON.parse(ajax.responseText));
+      // //console.log(JSON.parse(ajax.responseText));
       const respuesta = JSON.parse(ajax.responseText);
-      // console.log('->->' + respuesta.estado);
+      // //console.log('->->' + respuesta.estado);
       if (respuesta.estado === 'uploadsuccess') {
         $('.progrss').addClass('hidden');
         swal({
@@ -1488,7 +1490,7 @@ function up(el) {
 var elNombre = localStorage.getItem("Nombre");
 var elNumero = parseInt(localStorage.getItem("Numero"));
 var eltoken = (localStorage.getItem("token"));
-// console.log(elNombre + elNumero + '-' + eltoken);
+// //console.log(elNombre + elNumero + '-' + eltoken);
 //NUEVO MENSAJE
 
 const formNuevoMensaje = document.querySelector('#agregar-nuevomensaje');
@@ -1506,7 +1508,7 @@ formidmensaje= '#idmensaje'+x;
 formidusuario = '#idusuario'+x
 formidea = '#idea'+x;
 formnombreusuario = '#nombreusuario'+x;
-  console.log(iddelmensaje);
+  //console.log(iddelmensaje);
   const formNuevoMensaje = document.querySelector(iddelmensaje);
   if ($(iddelmensaje).length) {
     eventListeners();
@@ -1520,7 +1522,7 @@ formnombreusuario = '#nombreusuario'+x;
 
 function AgregarNuevoMensaje(e) {
   e.preventDefault();
-  console.log(idboton);
+  //console.log(idboton);
   const accion = document.querySelector(idboton).value;
   if (accion == 'Enviar Mensaje') {
     const asunto = document.querySelector(formasunto).value;
@@ -1538,7 +1540,7 @@ function AgregarNuevoMensaje(e) {
     mensajenuevo.append('nombreusuario', nombreusuario);
     mensajenuevo.append('accion', accion);
     if (accion === 'Enviar Mensaje') {
-      console.log (accion);
+      //console.log (accion);
       nuevomensaje(mensajenuevo);
     }
   }
@@ -1547,7 +1549,7 @@ function AgregarNuevoMensaje(e) {
 function nuevomensaje(dato) {
   // llamado de ajax
   // crear objeto
-  //  console.log(dato);
+  //  //console.log(dato);
   const xhr = new XMLHttpRequest();
   // abrir conexion
   xhr.open('POST', 'includes/modelos/nuevomensaje.php', true);
@@ -1555,28 +1557,35 @@ function nuevomensaje(dato) {
   xhr.onload = function () {
     if (this.status === 200) {
       const respuesta = JSON.parse(xhr.responseText);
-      console.log(respuesta);
-      // if (respuesta.estado === 'creandocuenta') {
-      //   swal({
-      //       content: "",
-      //       text: 'Tu idea a sido enviada y tu cuenta registrada.',
-      //       icon: "success",
-      //       button: {
-      //         text: "Continuar",
-      //         closeModal: true,
-      //       },
-      //     })
-      //     .then((value) => {
-      //       switch (value) {
-      //         default:
-      //           window.location.href = 'bienvenida.php#angel-ruiz';
-      //       }
-      //     });
-
-      // }
+      // //console.log(respuesta);
+      // //console.log(axipaginacion3);
+      if (respuesta.estado === 'admin') {
+        swal({
+            content: "",
+            text: 'Tu idea a sido enviada y tu cuenta registrada.',
+            icon: "success",
+            button: {
+              text: "Continuar",
+              closeModal: true,
+            },
+          })
+          .then((value) => {
+            switch (value) {
+              default:
+                window.location.reload();
+                
+            }
+          });
+      }
     }
   }
   xhr.send(dato);
+}
+function abx(f){
+ 
+ axipaginacion3 = 4;
+//  //console.log(axipaginacion3);
+
 }
 // END NUEVO MENSAJE
 // AGREGAR IDEA USUARIO MAS REGISTRO
@@ -1611,7 +1620,7 @@ function AgregarIdeaUser(e) {
     infoidea.append('idea', idea);
     infoidea.append('accion', accion);
     if (accion === 'Registrarse') {
-      console.log (accion);
+      //console.log (accion);
       registroIdeaUser(infoidea);
     }
 }
@@ -1619,7 +1628,7 @@ function AgregarIdeaUser(e) {
 function registroIdeaUser(dato) {
   // llamado de ajax
   // crear objeto
-  //  console.log(dato);
+  //  //console.log(dato);
   const xhr = new XMLHttpRequest();
   // abrir conexion
   xhr.open('POST', 'includes/modelos/agregarusuarioidea.php', true);
@@ -1627,7 +1636,7 @@ function registroIdeaUser(dato) {
   xhr.onload = function () {
     if (this.status === 200) {
       const respuesta = JSON.parse(xhr.responseText);
-      console.log(respuesta);
+      //console.log(respuesta);
       if (respuesta.estado === 'creandocuenta') {
         swal({
             content: "",
@@ -1703,7 +1712,7 @@ function agregarPaso(e) {
 function agregarxPaso(dato) {
   // llamado de ajax
   // crear objeto
-  //  console.log(dato);
+  //  //console.log(dato);
   const xhr = new XMLHttpRequest();
   // abrir conexion
   xhr.open('POST', 'includes/modelos/agregarpasos.php', true);
@@ -1711,7 +1720,7 @@ function agregarxPaso(dato) {
   xhr.onload = function () {
     if (this.status === 200) {
       const respuesta = JSON.parse(xhr.responseText);
-      console.log(respuesta);
+      //console.log(respuesta);
       if (respuesta.estado === 'paso agregado') {
         swal({
             content: "",
@@ -1765,7 +1774,7 @@ function eliminarPaso(e) {
           });
           const idpaso = document.querySelector('#idpago2').value;
 
-          console.log(accion, idpaso);
+          //console.log(accion, idpaso);
 
           const infoeliminarpaso = new FormData();
 
@@ -1790,7 +1799,7 @@ function eliminarPaso(e) {
 function eliminarxPaso(dato) {
   // llamado de ajax
   // crear objeto
-  //  console.log(dato);
+  //  //console.log(dato);
   const xhr = new XMLHttpRequest();
   // abrir conexion
   xhr.open('POST', 'includes/modelos/eliminarpasos.php', true);
@@ -1798,7 +1807,7 @@ function eliminarxPaso(dato) {
   xhr.onload = function () {
     if (this.status === 200) {
       const respuesta = JSON.parse(xhr.responseText);
-      console.log(respuesta);
+      //console.log(respuesta);
       if (respuesta.estado === 'se elimino el paso') {
         swal({
             content: "",
@@ -1845,7 +1854,7 @@ function eliminarmodificarPaso(e) {
     const horainicio = document.querySelector('#horainicio').value;
     const fechafin = document.querySelector('#fechafin').value;
     const horafin = document.querySelector('#horafin').value;
-    console.log(fechainicio, accion);
+    //console.log(fechainicio, accion);
 
     const infomodificarpaso = new FormData();
 
@@ -1869,7 +1878,7 @@ function eliminarmodificarPaso(e) {
 function modificarPaso(dato) {
   // llamado de ajax
   // crear objeto
-  //  console.log(dato);
+  //  //console.log(dato);
   const xhr = new XMLHttpRequest();
   // abrir conexion
   xhr.open('POST', 'includes/modelos/modificar.php', true);
@@ -1877,7 +1886,7 @@ function modificarPaso(dato) {
   xhr.onload = function () {
     if (this.status === 200) {
       const respuesta = JSON.parse(xhr.responseText);
-      console.log(respuesta);
+      //console.log(respuesta);
       if (respuesta.estado === 'paso modificado') {
         swal({
             content: "",
@@ -1923,7 +1932,7 @@ function actualizarCuenta(e) {
   const rfc = document.querySelector('#rfc').value;
 
   const accion = document.querySelector('#btnactualizar').value;
-  // console.log(calle + numie + colonia + cpostal + accion + domiciliof + cfdi + rfc);
+  // //console.log(calle + numie + colonia + cpostal + accion + domiciliof + cfdi + rfc);
 
   const infoactualuser = new FormData();
 
@@ -1937,7 +1946,7 @@ function actualizarCuenta(e) {
   infoactualuser.append('accion', accion);
 
   if (accion === 'Actualizar') {
-    // console.log('jjey');
+    // //console.log('jjey');
     actualizarUserUserDB(infoactualuser);
   }
 }
@@ -1945,7 +1954,7 @@ function actualizarCuenta(e) {
 function actualizarUserUserDB(dato) {
   // llamado de ajax
   // crear objeto
-  //  console.log(dato);
+  //  //console.log(dato);
   const xhr = new XMLHttpRequest();
   // abrir conexion
   xhr.open('POST', 'includes/modelos/actualizaruseruser.php', true);
@@ -1953,7 +1962,7 @@ function actualizarUserUserDB(dato) {
   xhr.onload = function () {
     if (this.status === 200) {
       const respuesta = JSON.parse(xhr.responseText);
-      // console.log(respuesta);
+      // //console.log(respuesta);
       if (respuesta.estado === 'hubo cambios') {
         swal({
             content: "",
@@ -2008,7 +2017,7 @@ function leerLogin(e) {
   e.preventDefault();
   const mail = document.querySelector('#correo').value;
   const pass = document.querySelector('#pass').value;
-  console.log(mail, pass)
+  //console.log(mail, pass)
   validarString(mail);
   if (caracteresCorreoValido(mail) === false) {
     swal({
@@ -2035,14 +2044,14 @@ function leerLogin(e) {
 
 
     if (posicion !== -1) {
-      console.log(x + "->La palabra está en la posición " + posicion);
+      //console.log(x + "->La palabra está en la posición " + posicion);
       $('#correo').css({
         'background': '#ffffff'
       });
       x = 3;
 
     } else {
-      console.log('-z' + x);
+      //console.log('-z' + x);
       if (x == 2) {
 
         swal({
@@ -2119,7 +2128,7 @@ function consultaBD(dato) {
   xhr.onload = function () {
     if (this.status === 200) {
       const respuesta = JSON.parse(xhr.responseText);
-      console.log(respuesta);
+      //console.log(respuesta);
       if (respuesta.Estado === 'Incorrecto') {
         swal({
           content: "",
@@ -2197,7 +2206,7 @@ function leerAgregarPago(e) {
     infoagregarPago.append('tokencontrato', tokencontrato);
     infoagregarPago.append('idproyecto', idproyecto);
 
-    // console.log(tokencontrato);
+    // //console.log(tokencontrato);
     agregarPago(infoagregarPago);
   }
 }
@@ -2205,7 +2214,7 @@ function leerAgregarPago(e) {
 function agregarPago(dato) {
   // llamado de ajax
   // crear objeto
-  //  console.log(dato);
+  //  //console.log(dato);
   const xhr = new XMLHttpRequest();
   // abrir conexion
   xhr.open('POST', 'includes/modelos/jsonagregarpago.php', true);
@@ -2215,7 +2224,7 @@ function agregarPago(dato) {
 
     if (this.status === 200) {
       const respuesta = JSON.parse(xhr.responseText);
-      console.log(respuesta);
+      //console.log(respuesta);
       if (respuesta.estado == 'pago agregado') {
         swal({
             content: "",
@@ -2285,7 +2294,7 @@ function leerAgregarContrato(e) {
     // infoagregarcontrato.append('paqueteprofesional', paqueteprofesional);
 
 
-    // console.log(accion, select + 'Meses', fechainicio, fechafin);
+    // //console.log(accion, select + 'Meses', fechainicio, fechafin);
     agregarContrato(infoagregarcontrato);
   }
 }
@@ -2293,7 +2302,7 @@ function leerAgregarContrato(e) {
 function agregarContrato(dato) {
   // llamado de ajax
   // crear objeto
-  //  console.log(dato);
+  //  //console.log(dato);
   const xhr = new XMLHttpRequest();
   // abrir conexion
   xhr.open('POST', 'includes/modelos/jsonagregarcontrato.php', true);
@@ -2303,7 +2312,7 @@ function agregarContrato(dato) {
 
     if (this.status === 200) {
       const respuesta = JSON.parse(xhr.responseText);
-      console.log(respuesta);
+      //console.log(respuesta);
       if (respuesta.estado == 'contrato nuevo agregado') {
         swal({
             content: "",
@@ -2355,9 +2364,9 @@ function leerRegistro(e) {
     const paquete = document.querySelector('#paquete').value;
     const fecha = document.querySelector('#fecha').value;
     const precio = document.querySelector('#precio').value;
-    console.log(precio);
+    //console.log(precio);
 
-    console.log(nombre, apellido, telefono, correo, calle, numiedirec, col, postal, paquete, fecha);
+    //console.log(nombre, apellido, telefono, correo, calle, numiedirec, col, postal, paquete, fecha);
     let condicionvalid = 0;
     let condicionvalid1 = 0;
     if (nombre === '') {
@@ -2570,12 +2579,12 @@ function leerRegistro(e) {
 
 
       if (posicion !== -1) {
-        // console.log(x + "->La palabra está en la posición " + posicion);
+        // //console.log(x + "->La palabra está en la posición " + posicion);
         condicionvalid = 1;
         x = 3;
 
       } else {
-        // console.log('-z' + x);
+        // //console.log('-z' + x);
         if (x == 2) {
           $('#correo').css({
             'background-color': 'red'
@@ -2624,7 +2633,7 @@ function leerRegistro(e) {
     const paquete = document.querySelector('#paquete').value;
     const fecha = document.querySelector('#fecha').value;
 
-    console.log(paquete, fecha);
+    //console.log(paquete, fecha);
     let condicionvalid = 0;
     let condicionvalid1 = 0;
 
@@ -2736,12 +2745,12 @@ function leerRegistro(e) {
 
 
       if (posicion !== -1) {
-        // console.log(x + "->La palabra está en la posición " + posicion);
+        // //console.log(x + "->La palabra está en la posición " + posicion);
         condicionvalid = 1;
         x = 3;
 
       } else {
-        // console.log('-z' + x);
+        // //console.log('-z' + x);
         if (x == 2) {
           $('#correo').css({
             'background-color': 'red'
@@ -2789,7 +2798,7 @@ function eliminarDatos(dato) {
 
     if (this.status === 200) {
       const respuesta = JSON.parse(xhr.responseText);
-      console.log(respuesta);
+      //console.log(respuesta);
       if (respuesta.estado === 'no se puedo crear un proyecto nuevo') {
         swal({
             content: "",
@@ -2820,7 +2829,7 @@ var respuestaelim = '';
 function registroDB(dato) {
   // llamado de ajax
   // crear objeto
-  //  console.log(dato);
+  //  //console.log(dato);
   const xhr = new XMLHttpRequest();
   // abrir conexion
   xhr.open('POST', 'includes/modelos/jsonregistro.php', true);
@@ -2830,7 +2839,7 @@ function registroDB(dato) {
 
     if (this.status === 200) {
       const respuesta = JSON.parse(xhr.responseText);
-      console.log(respuesta);
+      //console.log(respuesta);
       identi0 = respuesta.id0;
 
       identi3 = respuesta.id3;
@@ -3024,7 +3033,7 @@ const app = (() => {
 
   const toggleClass = (element, stringClass) => {
     if (element.classList.contains(stringClass)) {
-      // console.log('hola');
+      // //console.log('hola');
       $("#imglogo").show();
       $("#imglogo2").hide();
       $("#imglogo2").removeClass('animacionlogo');
@@ -3039,7 +3048,7 @@ const app = (() => {
       $("#boddu").addClass('buddu');
       $("#imglogo2").addClass('animacionlogo');
       $("#imglogo").removeClass('animacionlogo');
-      // console.log('adios');
+      // //console.log('adios');
       element.classList.add(stringClass);
     }
   };
@@ -3051,11 +3060,11 @@ const app = (() => {
 
 // $( "div.card" )
 // .mouseenter(function() {
-//  console.log('buenos dias angel');
+//  //console.log('buenos dias angel');
 //  $(".card").addClass('card-flip');
 // })
 // .mouseleave(function() {
-//   console.log('adios');
+//   //console.log('adios');
 //   $(".card").removeClass('card-flip');
 // });
 var resolucion = 0;
@@ -3063,13 +3072,13 @@ $(window).resize(function () {
 
   resolucion = screen.width;
 
-  // console.log(resolucion);
+  // //console.log(resolucion);
 });
 $(document).ready(function () {
 
   resolucion = screen.width;
 
-  // console.log(resolucion);
+  // //console.log(resolucion);
 });
 var fleep = '0';
 
@@ -3082,11 +3091,11 @@ $(".fleep1")
     $("#card1-front").hide();
     $("#card2-front").show();
     $("#card3-front").show();
-    // console.log(fleep);
+    // //console.log(fleep);
     if (resolucion <= 1280) {
 
       $heightDown = $('.imgfondoprincipal').height();
-      console.log($heightDown);
+      //console.log($heightDown);
       $('html, body').animate({
         scrollTop: $heightDown
       }, 100);
@@ -3096,7 +3105,7 @@ $(".fleep1")
 $(".fleep1")
   .mouseleave(function () {
     fleep = '0';
-    // console.log(fleep);
+    // //console.log(fleep);
     if (fleep === '0') {
       $('.card1').removeClass('flipped');
       $('.card2').removeClass('flipped');
@@ -3116,10 +3125,10 @@ $(".fleep2")
     $('.card2').addClass('flipped');
     $('.card3').removeClass('flipped');
     fleep = '2';
-    // console.log(fleep);
+    // //console.log(fleep);
     if (resolucion <= 1280) {
       $heightDown = $('.imgfondoprincipal').height() + $('#card1-back').height();
-      // console.log($heightDown);
+      // //console.log($heightDown);
       $('html, body').animate({
         scrollTop: $heightDown
       }, 100);
@@ -3128,7 +3137,7 @@ $(".fleep2")
 $(".fleep2")
   .mouseleave(function () {
     fleep = '0';
-    // console.log(fleep);
+    // //console.log(fleep);
     if (fleep === '0') {
       $('.card1').removeClass('flipped');
       $('.card2').removeClass('flipped');
@@ -3148,10 +3157,10 @@ $(".fleep3")
     $('.card2').removeClass('flipped');
     $('.card3').addClass('flipped');
     fleep = '3';
-    // console.log(fleep);
+    // //console.log(fleep);
     if (resolucion <= 1280) {
       $heightDown = $('.imgfondoprincipal').height() + $('#card1-back').height() + $('#card2-back').height();
-      console.log($heightDown);
+      //console.log($heightDown);
       $('html, body').animate({
         scrollTop: $heightDown
       }, 100);
@@ -3163,7 +3172,7 @@ $(".fleep3")
   .mouseleave(function () {
 
     fleep = '0';
-    // console.log(fleep);
+    // //console.log(fleep);
 
     if (fleep === '0') {
       $('.card1').removeClass('flipped');
@@ -3177,7 +3186,7 @@ $(".fleep3")
 
 
 // setInterval(function(){
-//      console.log('fleepxx =' +fleep)
+//      //console.log('fleepxx =' +fleep)
 
 
 
@@ -3185,7 +3194,7 @@ $(".fleep3")
 // var swikk = 0;
 // $('#mybutton1'+fleep).click(function() {
 //   swikk = swikk+ 1;
-//   console.log(swikk);
+//   //console.log(swikk);
 
 //   if (swikk === 1) {
 //     $('.card').addClass('flipped');
@@ -3199,7 +3208,7 @@ $(".fleep3")
 //   });
 //   $('#mybutton2'+fleep).click(function() {
 //     swikk = swikk+ 1;
-//     console.log(swikk);
+//     //console.log(swikk);
 
 //     if (swikk === 1) {
 //       $('.card').addClass('flipped');
@@ -3219,7 +3228,7 @@ $(".fleep3")
 //   }, 500);
 //   var swikkx = 0;
 //   function cambn(){
-//     console.log(swikkx);
+//     //console.log(swikkx);
 //     swikkx = swikkx + 1;
 //     if (swikkx === 1) {
 //       $('.card').addClass('flipped');
@@ -3350,7 +3359,7 @@ $("#check-redes").click(function () {
 var pathname = window.location.pathname;
 pathname = (pathname.replace('/01ingeangel.com', ''));
 pathname = (pathname.replace('01', ''));
-//console.log(pathname);
+////console.log(pathname);
 if (pathname == '/index.php' || pathname == '/') {
   $(document).ready(function () {
     $("body").css("background-color", "#ffffff");
@@ -3372,9 +3381,9 @@ if (pathname == '/index.php' || pathname == '/') {
 }
 
 if ($('#paquetes').is(':hidden')) {
-  // console.log("Esta oculto");
+  // //console.log("Esta oculto");
 } else {
-  // console.log('Visible');
+  // //console.log('Visible');
 }
 // slider
 var cambioSliderPal = 0;
@@ -3422,19 +3431,19 @@ $(document).ready(function () {
   $('.left span').click(prevSlider);
 
 $('.right span').click(function () {
-  console.log('hey');
+  //console.log('hey');
  
   cambioSliderPal = 1;
   
 });
 $('.left span').click(function () {
-  console.log('hey');
+  //console.log('hey');
 
   cambioSliderPal = 2;
   
 });
 
-// console.log(cambioSliderPal);
+// //console.log(cambioSliderPal);
 if(cambioSliderPal == 0){
   setInterval(function(){
       nextSliderx();
@@ -3445,8 +3454,8 @@ if(cambioSliderPal == 0){
   function paginacion() {
     var paginacionPos = $(this).index();
     paginacionPos = paginacionPos + 1;
-    console.log('--'+paginacionPos);
-    console.log(cambioSliderPal);
+    //console.log('--'+paginacionPos);
+    //console.log(cambioSliderPal);
 
     $('.slider li').hide();
     $('.slider li:nth-child(' + paginacionPos + ')').fadeIn();
@@ -3477,7 +3486,7 @@ if(cambioSliderPal == 0){
       imgPos++;
     }
     
-    // console.log(imgPos);
+    // //console.log(imgPos);
    
     
     $('.slider li').hide();
@@ -3498,7 +3507,7 @@ if(cambioSliderPal == 0){
     } else {
       imgPos--;
     }
-    console.log(imgPos);
+    //console.log(imgPos);
     $('.slider li').hide();
     $('.slider li:nth-child(' + imgPos + ')').fadeIn();
 
@@ -3540,7 +3549,7 @@ $(document).ready(function () {
   function paginacion2() {
     var paginacionPos2 = $(this).index();
     paginacionPos2 = paginacionPos2 + 1;
-    // console.log(paginacionPos2);
+    // //console.log(paginacionPos2);
 
     $('.slider2 li').hide();
     $('.slider2 li:nth-child(' + paginacionPos2 + ')').fadeIn();
@@ -3562,7 +3571,7 @@ $(document).ready(function () {
       imgPos2++;
     }
 
-    console.log(imgPos2);
+    //console.log(imgPos2);
     $('.slider2 li').hide();
     $('.slider2 li:nth-child(' + imgPos2 + ')').fadeIn();
 
@@ -3582,7 +3591,7 @@ $(document).ready(function () {
     } else {
       imgPos2--;
     }
-    console.log(imgPos2);
+    //console.log(imgPos2);
     $('.slider2 li').hide();
     $('.slider2 li:nth-child(' + imgPos2 + ')').fadeIn();
 
@@ -3597,19 +3606,20 @@ $(document).ready(function () {
 });
 //end slider2
 // slider3
+//console.log(axipaginacion3);
 $(document).ready(function () {
   
 
   var imgItems3 = $('.slider3 li').length;
   var imgPos3 = 1;
-  var menu = ['', 'Proyecto', 'Pagos', 'Contratos', 'Mensajes'];
-  for (i = 1; i <= imgItems3; i++) {
+  var menu = [ 'Proyecto', 'Pagos', 'Contratos', 'Mensajes'];
+  for (i = 0; i < imgItems3; i++) {
     $('.paginacion3').append('<li><h3>' + menu[i] + '</h3></li>');
   }
 
 
   $('.slider3 li').hide();
-  $('.slider3 li:first').show();
+  $('.slider3 li:nth-child(' + axipaginacion3 + ')').show();
   $('.paginacion2 li:first').css({
     'text-shadow': ' 0px 0px 10px var(--ColorFontEspecial)'
   });
@@ -3625,8 +3635,8 @@ $(document).ready(function () {
   function paginacion3() {
     var paginacionPos3 = $(this).index();
     paginacionPos3 = paginacionPos3 + 1;
-    // console.log(paginacionPos3);
-
+    //console.log(paginacionPos3);
+    
     $('.slider3 li').hide();
     $('.slider3 li:nth-child(' + paginacionPos3 + ')').fadeIn();
 
@@ -3647,7 +3657,7 @@ $(document).ready(function () {
       imgPos3++;
     }
 
-    console.log(imgPos3);
+    //console.log(imgPos3);
     $('.slider3 li').hide();
     $('.slider3 li:nth-child(' + imgPos3 + ')').fadeIn();
 
@@ -3666,7 +3676,7 @@ $(document).ready(function () {
     } else {
       imgPos3--;
     }
-    console.log(imgPos3);
+    //console.log(imgPos3);
     $('.slider3 li').hide();
     $('.slider3 li:nth-child(' + imgPos3 + ')').fadeIn();
 
@@ -3734,7 +3744,7 @@ $("h1").click(function () {
 
 var text = $("#sparklemaster"),
   numLetters = text.find("span").length;
-// console.log(numLetters);
+// //console.log(numLetters);
 
 function randomBlurize() {
   text.find("span:nth-child(" + (Math.floor(Math.random() * numLetters) + 1) + ")")
@@ -3751,7 +3761,7 @@ $("#textBienvenida > div").length;
 var x = 'abc';
 var empty = '';
 
-// console.log('abc is ' + x.length + ' code units long');
+// //console.log('abc is ' + x.length + ' code units long');
 /* "Mozilla is 7 code units long" */
 var scrollup = 0;
 var scrolldown = 0;
@@ -3762,7 +3772,7 @@ $(window).scroll(function () {
 
   var barraAltura = $('.menu-barra').innerHeight();
   var margin = barraAltura * -1;
-  // console.log(margin);
+  // //console.log(margin);
   var scroll = $(window).scrollTop();
   var margin_menu = 0;
   if (auxop <= scroll) {
@@ -3776,7 +3786,7 @@ $(window).scroll(function () {
       $("#check-hotcall").prop("checked", false);
       $("#flechaup").show();
       $("#flechadown").hide();
-      // console.log('hey'+operacion);
+      // //console.log('hey'+operacion);
     }
     margin_menu = operacion;
     $('.menu-barra').css({
@@ -3806,11 +3816,11 @@ $(window).scroll(function () {
 
 
 
-  //console.log(auxop, margin_menu, scroll, margin);
+  ////console.log(auxop, margin_menu, scroll, margin);
 
   if (scroll > 966) {
     $('.menu-barra').addClass('fix-menubarra');
-    // console.log('hola');
+    // //console.log('hola');
     var contchecks = 0;
     for (let checkss = 0; checkss <= 100; checkss++) {
       var inps = '#inps' + (4000 + checkss);
@@ -3818,20 +3828,20 @@ $(window).scroll(function () {
       var inputchects = $(inps).attr('id');
       if (inps === ('#' + inputchects)) {
 
-        // console.log(inps + '-' + inputchects);
+        // //console.log(inps + '-' + inputchects);
         chesy4000[contchecks] = inps;
         chesx4000[contchecks] = serie;
         contchecks++;
       }
     }
-    // console.log(chesx4000);
+    // //console.log(chesx4000);
     for (let x = 0; x < chesx4000.length; x++) {
       var plus = '#plus' + chesx4000[x];
-      //  console.log('aqui'+chesx4000[x]);
+      //  //console.log('aqui'+chesx4000[x]);
       $(plus).hover(
         function () {
 
-          console.log(chesx4000[x]);
+          //console.log(chesx4000[x]);
           i = chesx4000[x];
           ches(i);
 

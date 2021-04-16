@@ -6,7 +6,7 @@ if ($_SESSION['tipo_usuario'] == 'admin') {
 
     echo $idusuario;
 }
-
+echo $_SESSION['email'];
 $resultadoMensajes = obtenerIdMensajes($idusuario);
 
 $contadorPasos1 = 0;
@@ -205,7 +205,7 @@ if ($resultadoUser->num_rows) {
 // echo sizeof($vecaxiasuntoRes);
 
 ?>
-<div class="contenedor-especial">
+<div  class="contenedor-especial">
     <?php for ($x = 0; $x < sizeof($vecaxiasuntoRes); $x++) { ?>
         <div class="menu-proyectos">
             <div class="submenu-proyectos">

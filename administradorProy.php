@@ -221,7 +221,7 @@ if ((!isset($_SESSION['usuario'])) && (!isset($_SESSION['email']))) {
             </div>
         </section>
 
-        <div class="contenedor-cuenta">
+        <div id="recargar" class="contenedor-cuenta">
             <ol class="paginacion3">
 
             </ol>
@@ -699,7 +699,7 @@ if ((!isset($_SESSION['usuario'])) && (!isset($_SESSION['email']))) {
 
 ?>    </li>
        <li>
-                        <div class="contenedor-especial">
+                        <div  class="contenedor-especial">
                             <div class="titulo-seccion">
                                 <h1 id="sparklemaster" class="sparklemaster" style="color:  #93A9CC;">Mensajes</h1>
                             </div>

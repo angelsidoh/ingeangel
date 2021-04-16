@@ -14,6 +14,159 @@ require 'vendor/autoload.php';
 // // $pass = 'ndosksd';
 // // enviar_correo($nombre,$apellido,$pass,$correo);
 // enviar_correo1($correo, $paso1);
+function enviar_correo4($mensaje,$asunto,$tipo_user, $correo,$nombre)
+{
+    
+    $nombreTo = utf8_decode($nombre);
+   
+    //Create a new PHPMailer instance
+    $mail = new PHPMailer();
+
+    //Tell PHPMailer to use SMTP
+    $mail->isSMTP();
+
+    //Enable SMTP debugging
+    // SMTP::DEBUG_OFF = off (for production use)
+    // SMTP::DEBUG_CLIENT = client messages
+    // SMTP::DEBUG_SERVER = client and server messages
+    // $mail->SMTPDebug = SMTP::DEBUG_SERVER;
+    // $mail->SMTPDebug = SMTP::DEBUG_SERVER; 
+    $mail->SMTPDebug = 0;
+    //Set the hostname of the mail server
+    $mail->Host = 'smtp.gmail.com';
+    // use
+    // $mail->Host = gethostbyname('smtp.gmail.com');
+    // if your network does not support SMTP over IPv6
+
+    //Set the SMTP port number - 587 for authenticated TLS, a.k.a. RFC4409 SMTP submission
+    $mail->Port = 587;
+
+    //Set the encryption mechanism to use - STARTTLS or SMTPS
+    $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+
+    //Whether to use SMTP authentication
+    $mail->SMTPAuth = true;
+
+    //Username to use for SMTP authentication - use full email address for gmail
+    $mail->Username = 'infoingeangel@gmail.com
+';
+
+    //Password to use for SMTP authentication
+    $mail->Password = 'hyo2021k5a';
+
+    //Set who the message is to be sent from
+    $mail->setFrom('infoingeangel@gmail.com
+', 'Nuevo mensaje en ingeangel.com');
+
+    //Set an alternative reply-to address
+    // $mail->addReplyTo('replyto@example.com', 'First Last');
+    // $mail->addCC('angelsidohpubg@gmail.com');
+    $mail->addBCC('angelsidohpubg@gmail.com');
+
+    //Set who the message is to be sent to
+    $mail->addAddress($correo, $nombreTo);
+
+    //Set the subject line
+    $mail->Subject = utf8_decode('Mensajes de tu cuenta. https://ingeangel.com/');
+
+    //Read an HTML message body from an external file, convert referenced images to embedded,
+    //convert HTML into a basic plain-text alternative body
+
+    $mail->Body = utf8_decode(' <div style="background-color: #161616;
+    width:800px;
+    height:auto;
+    margin:0 auto;
+    box-shadow: -1px -1px 5px rgb(255, 255, 255, 0.1),
+    1px 1px 20px rgba(0,0,0,0.7),
+    inset 1px -1px 5px rgb(255, 255, 255, 0.1),
+    inset 1px 1px 5px rgba(0,0,0,0.7);" class="header">
+        <div style="
+    width:220px;
+    height:80px;
+    margin: 0 auto;
+   " class="imagen">
+   
+            <img style="
+    width:220px;
+    height:80px;
+    margin: 20px auto;
+    filter: drop-shadow(1px 2px 5px #ff4800);
+   " src="https://ingeangel.com/img/terceros/logooooo02.png" alt="imagen">
+    
+        </div>
+        <div style="
+    text-align: center;
+    color:#ffffff;
+    margin-top: 0px;
+    " class="textbienvenida">
+            <h1 style="color:#f5d108; font-size:45px;">Nuevo Mensaje</h1>
+            <h2></h2>
+            <h2 style="color:#fe4918; font-size: 46px;
+">Asunto: '.$asunto.'</h2>
+            <h2>
+            '.$mensaje.'
+            </h2>
+           
+            
+            <a style="
+    background-color: #fe4918;
+    padding: 1px 40px;
+    color: #ffffff;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 20px;
+    border-radius:12px;
+    display: inline-block;
+    transition: all .1s ease;
+    border: 2px solid #fe4918;
+    " href="https://ingeangel.com/login.php#angel-ruiz">
+                <p>Iniciar Sesión</p>
+            </a>
+
+        </div>
+
+
+       
+    </div>');
+
+    //Replace the plain text body with one created manually
+    $mail->AltBody = 'This is a plain-text message body';
+
+    //Attach an image file
+    // $mail->addAttachment('images/phpmailer_mini.png');
+
+    //send the message, check for errors
+    if (!$mail->send()) {
+        // echo 'Mailer Error: ' . $mail->ErrorInfo;
+    } else {
+        // echo 'Message sent!';
+        //Section 2: IMAP
+        //Uncomment these to save your message in the 'Sent Mail' folder.
+        #if (save_mail($mail)) {
+        #    echo "Message saved!";
+        #}
+    }
+
+    //Section 2: IMAP
+    //IMAP commands requires the PHP IMAP Extension, found at: https://php.net/manual/en/imap.setup.php
+    //Function to call which uses the PHP imap_*() functions to save messages: https://php.net/manual/en/book.imap.php
+    //You can use imap_getmailboxes($imapStream, '/imap/ssl', '*' ) to get a list of available folders or labels, this can
+    //be useful if you are trying to get this working on a non-Gmail IMAP server.
+    function save_mail4($mail)
+    {
+        //You can change 'Sent Mail' to any other folder or tag
+        $path = '{imap.gmail.com:993/imap/ssl}[Gmail]/Sent Mail';
+
+        //Tell your server to open an IMAP connection using the same username and password as you used for SMTP
+        $imapStream = imap_open($path, $mail->Username, $mail->Password);
+
+        $result = imap_append($imapStream, $path, $mail->getSentMIMEMessage());
+        imap_close($imapStream);
+
+        return $result;
+    }
+}
 function enviar_correo3($nombre, $apellido, $pass, $correo, $idea, $select, $sector)
 {
     

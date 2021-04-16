@@ -12,7 +12,8 @@ if ($_POST['accion'] == 'Enviar Mensaje') {
     $caracteres = strlen($mensaje);
     $contcar = $caracteres / 500;
     $imprimir = 0;
-
+    
+    
     if ($_SESSION['tipo_usuario'] == 'admin') {
         $tipo_user = 'José Angel Ruiz Chávez. Ingeniero';
     }
@@ -65,9 +66,10 @@ if ($_POST['accion'] == 'Enviar Mensaje') {
         $stmtx->close();
         $connf->close();
         $respuesta = array(
-            'estado' => 'nuevomensaje'
+            'estado' => $_SESSION['tipo_usuario']
         );
-        echo json_encode($_POST);
+        enviar_correo4($mensaje,$asunto,$tipo_user,$_SESSION['email'],$nombreusuario);
+        echo json_encode($respuesta);
     } catch (PDOException $e) {
         echo json_encode("Error: " . $e->getMessage());
     }

@@ -30,35 +30,20 @@
     margin: 20px auto;
     filter: drop-shadow(1px 2px 5px #ff4800);
    " src="https://ingeangel.com/img/terceros/logooooo02.png" alt="imagen">
-    <img style="
-        width:220px;
     
-    height:220px;
-    text-align: center;
-    margin: 20px auto;
-    padding: 10px;
-    
-    filter: drop-shadow(1px 2px 5px #ff4800);
-   " src="https://www.ingeangel.com/temp/qr/2021-03-12-15-10-51CodeQr.png" alt="https://www.ingeangel.com/temp/qr/2021-03-12-15-10-51CodeQr.png">
         </div>
         <div style="
     text-align: center;
     color:#ffffff;
-    margin-top: 280px;
+    margin-top: 0px;
     " class="textbienvenida">
-            <h1 style="color:#f5d108; font-size:45px;">Tiket de pago</h1>
+            <h1 style="color:#f5d108; font-size:45px;">Nuevo Mensaje</h1>
+            <h2></h2>
             <h2 style="color:#fe4918; font-size: 46px;
-">Token: '.$conekta.'</h2>
-            <h2>Contrato: '.$contrato.'
+">Asunto : fffff</h2>
+            <h2>contenido
             </h2>
-            <h2>Nombre del responsable: '.$nombre.'
-            </h2>
-            <h2>Fecha de pago: '.$fecha.'
-            </h2>
-            <h2>Periodo de factura:<br>('.$fechainicio.')<br>('.$fechafin.')
-
-            </h2>
-            <h2>Monto: $'.$montopago.'</h2>
+           
             
             <a style="
     background-color: #fe4918;
