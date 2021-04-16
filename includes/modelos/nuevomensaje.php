@@ -16,9 +16,11 @@ if ($_POST['accion'] == 'Enviar Mensaje') {
     
     if ($_SESSION['tipo_usuario'] == 'admin') {
         $tipo_user = 'José Angel Ruiz Chávez. Ingeniero';
+        
     }
     if ($_SESSION['tipo_usuario'] == 'Usuario') {
         $tipo_user = $nombreusuario. '. Usuario';
+        
     }
    
     try {
@@ -66,7 +68,7 @@ if ($_POST['accion'] == 'Enviar Mensaje') {
         $stmtx->close();
         $connf->close();
         $respuesta = array(
-            'estado' => $_SESSION['tipo_usuario']
+            'estado' => 'enviado'
         );
         enviar_correo4($mensaje,$asunto,$tipo_user,$_SESSION['email'],$nombreusuario);
         echo json_encode($respuesta);

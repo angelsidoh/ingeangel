@@ -1559,10 +1559,10 @@ function nuevomensaje(dato) {
       const respuesta = JSON.parse(xhr.responseText);
       // //console.log(respuesta);
       // //console.log(axipaginacion3);
-      if (respuesta.estado === 'admin') {
+      if (respuesta.estado === 'enviado') {
         swal({
             content: "",
-            text: 'Tu idea a sido enviada y tu cuenta registrada.',
+            text: 'Mensaje Enviado.',
             icon: "success",
             button: {
               text: "Continuar",
