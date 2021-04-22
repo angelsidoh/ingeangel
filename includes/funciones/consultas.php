@@ -1,5 +1,20 @@
 
 <?php
+
+function obtenerarchivos($dato)
+{
+
+    try {
+        require('bd/bdsqli.php');
+
+
+        return $connf->query("SELECT direccion_archivo, idusuario_archivo, idproyecto_archivo, fecha_archivo, identificacion_archivo FROM pr WHERE idproyecto_archivo = '$dato'");
+    } catch (Exception $e) {
+        echo "Error!!" . $e->getMessage() . "<br>";
+        return false;
+    }
+}
+
 function obtenerMensajes($dato)
 {
 

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 15-04-2021 a las 12:33:46
+-- Tiempo de generación: 19-04-2021 a las 15:18:48
 -- Versión del servidor: 10.4.11-MariaDB
 -- Versión de PHP: 7.4.2
 
@@ -55,7 +55,8 @@ INSERT INTO `contratos` (`id_contrato`, `idproyecto_contrato`, `link_contrato`, 
 (22, 4, 'https://ingeangel.com/contrato.php', 'Y4zEr5erNB64Mw3Xi6', '3 Meses', 3, '2021-04-09 08:22:31', '2021-04-09 08:22:33', 0, '', ''),
 (23, 4, 'https://ingeangel.com/contrato.php', 'yJ5eyaTNYUDgxGnNA', '12 Meses', 12, '2021-04-09 08:24:16', '2022-04-09 08:24:16', 4, 'includes/funciones/doc_sings/898251581c2a399378138b4860d64256.png', ''),
 (24, 5, 'https://ingeangel.com/contrato.php', 'SkWITi34Q54C1e5DfB', '3 Meses', 3, '2021-04-12 06:37:49', '2021-04-12 06:37:51', 0, '', ''),
-(25, 6, 'https://ingeangel.com/contrato.php', 'FbqZ1PE2rEb1JqLGN', '3 Meses', 3, '2021-04-12 06:39:17', '2021-04-12 06:39:19', 0, '', '');
+(25, 6, 'https://ingeangel.com/contrato.php', 'FbqZ1PE2rEb1JqLGN', '3 Meses', 3, '2021-04-12 06:39:17', '2021-04-12 06:39:19', 0, '', ''),
+(26, 6, 'https://ingeangel.com/contrato.php', '9TMp37nmFVXjTMiqkA', '12 Meses', 12, '2021-04-15 07:40:22', '2022-04-15 07:40:22', 0, '', '');
 
 -- --------------------------------------------------------
 
@@ -176,7 +177,68 @@ INSERT INTO `mensajecliente` (`id_mensaje`, `idusuario_mensaje`, `idmensaje_mens
 (95, 6, 95, 'hola como te va', 'José Ruiz. Usuario', 'Soy la verga', '2021-04-14 11:35:11', 0),
 (96, 6, 96, 'esta vez te respondo por este medio', 'José Ruiz. Usuario', '1', '2021-04-14 11:35:55', 0),
 (97, 6, 97, 'Hola como te va quiero saber sobre el proyecto.', 'José Ruiz. Usuario', 'Este asunto es nuevo', '2021-04-14 11:36:45', 0),
-(98, 6, 98, 'Desde luego que si, contamos con varias oportunidades de proyectos ;D', 'José Angel Ruiz Chávez. Ingeniero', 'Este asunto es nuevo', '2021-04-15 05:07:07', 0);
+(98, 6, 98, 'Desde luego que si, contamos con varias oportunidades de proyectos ;D', 'José Angel Ruiz Chávez. Ingeniero', 'Este asunto es nuevo', '2021-04-15 05:07:07', 0),
+(99, 6, 99, 'El proyecto actualmente se encuentra destinado a los proceso de fabricación textil.', 'José Angel Ruiz Chávez. Ingeniero', 'Este asunto es nuevo', '2021-04-15 06:11:25', 0),
+(100, 6, 100, 'Y las otras a la venta de sus productos', 'José Angel Ruiz Chávez. Ingeniero', 'Este asunto es nuevo', '2021-04-15 06:11:59', 0),
+(101, 6, 101, 'Además queremos implementar otra vez que sea para publicidad.', 'José Angel Ruiz Chávez. Ingeniero', 'Este asunto es nuevo', '2021-04-15 06:13:39', 0),
+(102, 6, 102, 'La versatilidad de las paginas en conjunto lograran atraer al máximo número de clientes a su negocio.', 'José Angel Ruiz Chávez. Ingeniero', 'Este asunto es nuevo', '2021-04-15 06:23:13', 0),
+(103, 6, 103, 'Y usted estará sumamente contento del resultado.', 'José Angel Ruiz Chávez. Ingeniero', 'Este asunto es nuevo', '2021-04-15 06:25:32', 0),
+(104, 6, 104, 'Tanto que estoy buscando las mejores variables para incluirlas en sus proyectos.', 'José Angel Ruiz Chávez. Ingeniero', 'Este asunto es nuevo', '2021-04-15 06:27:00', 0),
+(105, 6, 105, 'Garantizándole los resultados por los próximos 5 años.', 'José Angel Ruiz Chávez. Ingeniero', 'Este asunto es nuevo', '2021-04-15 06:31:49', 0),
+(106, 6, 106, '¿Que le parece lo anterior?', 'José Angel Ruiz Chávez. Ingeniero', 'Este asunto es nuevo', '2021-04-15 06:33:56', 0),
+(107, 6, 107, 'Cualquier tipo de duda, estaré contento de responderla.', 'José Angel Ruiz Chávez. Ingeniero', 'Este asunto es nuevo', '2021-04-15 06:35:55', 0),
+(108, 6, 108, 'a', 'José Angel Ruiz Chávez. Ingeniero', 'Este asunto es nuevo', '2021-04-15 06:40:28', 0),
+(109, 6, 109, 'b', 'José Angel Ruiz Chávez. Ingeniero', 'Este asunto es nuevo', '2021-04-15 06:41:05', 0),
+(110, 6, 110, 'c', 'José Angel Ruiz Chávez. Ingeniero', 'Este asunto es nuevo', '2021-04-15 06:41:40', 0),
+(111, 6, 111, 'd', 'José Angel Ruiz Chávez. Ingeniero', 'Este asunto es nuevo', '2021-04-15 06:43:05', 0),
+(112, 6, 112, 'f', 'José Angel Ruiz Chávez. Ingeniero', 'Este asunto es nuevo', '2021-04-15 06:44:56', 0),
+(113, 6, 113, 'se me olvido la e', 'José Angel Ruiz Chávez. Ingeniero', 'Este asunto es nuevo', '2021-04-15 06:51:01', 0),
+(114, 6, 114, 'esa tontería puede ser genial.', 'José Angel Ruiz Chávez. Ingeniero', 'Este asunto es nuevo', '2021-04-15 06:51:47', 0),
+(115, 6, 115, 'g', 'José Angel Ruiz Chávez. Ingeniero', 'Este asunto es nuevo', '2021-04-15 06:52:37', 0),
+(116, 6, 116, 'h', 'José Angel Ruiz Chávez. Ingeniero', 'Este asunto es nuevo', '2021-04-15 06:54:55', 0),
+(117, 6, 117, 'i', 'José Angel Ruiz Chávez. Ingeniero', 'Este asunto es nuevo', '2021-04-15 06:55:26', 0),
+(118, 6, 118, 'j', 'José Angel Ruiz Chávez. Ingeniero', 'Este asunto es nuevo', '2021-04-15 06:56:03', 0),
+(119, 6, 119, 'k', 'José Angel Ruiz Chávez. Ingeniero', 'Este asunto es nuevo', '2021-04-15 06:57:05', 0),
+(120, 6, 120, 'l', 'José Angel Ruiz Chávez. Ingeniero', 'Este asunto es nuevo', '2021-04-15 06:59:13', 0),
+(121, 6, 121, 'm', 'José Angel Ruiz Chávez. Ingeniero', 'Este asunto es nuevo', '2021-04-15 07:00:41', 0),
+(122, 6, 122, 'n', 'José Angel Ruiz Chávez. Ingeniero', 'Este asunto es nuevo', '2021-04-15 07:02:40', 0),
+(123, 6, 123, 'o', 'José Angel Ruiz Chávez. Ingeniero', 'Este asunto es nuevo', '2021-04-15 07:03:31', 0),
+(124, 6, 124, 'p', 'José Angel Ruiz Chávez. Ingeniero', 'Este asunto es nuevo', '2021-04-15 07:04:21', 0),
+(125, 6, 125, 'q', 'José Angel Ruiz Chávez. Ingeniero', 'Este asunto es nuevo', '2021-04-15 07:07:07', 0),
+(126, 6, 126, 'r', 'José Angel Ruiz Chávez. Ingeniero', 'Este asunto es nuevo', '2021-04-15 07:09:48', 0),
+(127, 6, 127, 's', 'José Angel Ruiz Chávez. Ingeniero', 'Este asunto es nuevo', '2021-04-15 07:10:41', 0),
+(128, 6, 128, 't', 'José Angel Ruiz Chávez. Ingeniero', 'Este asunto es nuevo', '2021-04-15 07:16:52', 0),
+(129, 6, 129, 'u', 'José Angel Ruiz Chávez. Ingeniero', 'Este asunto es nuevo', '2021-04-15 07:17:25', 0),
+(130, 6, 130, 'v', 'José Angel Ruiz Chávez. Ingeniero', 'Este asunto es nuevo', '2021-04-15 07:18:44', 0),
+(131, 6, 131, 'asd', 'José Angel Ruiz Chávez. Ingeniero', 'Este asunto es nuevo', '2021-04-15 07:29:53', 0),
+(132, 6, 132, 'adds', 'José Angel Ruiz Chávez. Ingeniero', 'Este asunto es nuevo', '2021-04-15 07:30:58', 0),
+(133, 6, 133, 'asd', 'José Angel Ruiz Chávez. Ingeniero', 'Este asunto es nuevo', '2021-04-15 07:34:15', 0),
+(134, 6, 134, 'la realidad', 'José Angel Ruiz Chávez. Ingeniero', 'Este asunto es nuevo', '2021-04-15 07:36:12', 0),
+(135, 6, 135, 'puede ser triste xD', 'José Angel Ruiz Chávez. Ingeniero', 'Este asunto es nuevo', '2021-04-15 07:39:21', 0),
+(136, 6, 136, 'hola el proyecto sigue en pie.\r\nPuedo brindarte un descuento de 0 ;D', 'José Angel Ruiz Chávez. Ingeniero', 'Este asunto es nuevo', '2021-04-15 07:45:04', 0),
+(137, 6, 137, 'hOLA mi correo esta muy bien', 'José Angel Ruiz Chávez. Ingeniero', 'Este asunto es nuevo', '2021-04-15 08:10:33', 0),
+(138, 6, 138, 'no puede ser que funcione también ya casi esta lista mi página :D', 'José Angel Ruiz Chávez. Ingeniero', 'Soy la verga', '2021-04-15 08:12:52', 0),
+(139, 6, 139, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nec lacinia arcu. Nam vitae consequat nisl. Quisque finibus odio at viverra cursus. Quisque iaculis orci non turpis gravida congue. Nunc ac turpis placerat, suscipit sapien vel, tristique leo. Vestibulum maximus lacus vitae scelerisque feugiat. Aenean hendrerit nibh sit amet elit egestas, sed dapibus magna scelerisque. Quisque vitae vehicula leo. Duis nec iaculis arcu.\r\n\r\nSed id dignissim massa. Pellentesque quam diam, blandit ne', 'José Angel Ruiz Chávez. Ingeniero', 'Soy la verga', '2021-04-15 08:13:44', 0),
+(140, 6, 139, 'c pharetra posuere, vestibulum consectetur tellus. Nunc blandit eu lectus eu bibendum. Etiam sed tellus commodo, faucibus arcu id, bibendum enim. Sed mollis ullamcorper lectus, non tempus lacus lacinia nec. In congue eros ut ex rutrum, id fermentum quam porttitor. Aenean quis tincidunt urna. Morbi tempor, arcu eget commodo feugiat, quam lectus vestibulum tellus, vitae ultricies nisi sem sed enim. Aliquam blandit auctor laoreet. Sed at erat ut purus feugiat rutrum rhoncus id massa. Aenean sed con', 'José Angel Ruiz Chávez. Ingeniero', 'Soy la verga', '2021-04-15 08:13:44', 0),
+(141, 6, 139, 'sequat nulla, eu dignissim massa. Sed sit amet elit dolor. Phasellus pulvinar, dui et tempus tempus, arcu massa mattis dolor, viverra vestibulum dui mi in metus. Vivamus sit amet pharetra lectus. Proin in ex mollis, tristique felis quis, convallis ligula.\r\n\r\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Cras augue dui, rhoncus eget urna at, elementum venenatis urna. Phasellus eget varius lacus. Vivamus ac rutrum leo. Curabitur eu ligula laoreet, aliquam sapien eget, condimentum lectus', 'José Angel Ruiz Chávez. Ingeniero', 'Soy la verga', '2021-04-15 08:13:44', 0),
+(142, 6, 139, '. Curabitur congue mollis lorem, quis eleifend augue scelerisque et. Integer commodo rutrum risus, eu mollis velit vestibulum eget. Nam eu ex tellus. Integer tristique ex mauris, in blandit dolor sodales semper. Pellentesque ut volutpat risus. Nam imperdiet non enim et ornare. Mauris sollicitudin augue eu finibus feugiat. Sed a urna pretium, cursus velit ac, placerat eros. Praesent viverra leo sit amet tellus ullamcorper scelerisque. Integer mattis imperdiet suscipit.\r\n\r\nIn egestas libero a enim', 'José Angel Ruiz Chávez. Ingeniero', 'Soy la verga', '2021-04-15 08:13:44', 0),
+(143, 6, 139, ' vulputate, id condimentum libero viverra. Donec suscipit lobortis ex et lacinia. Vivamus dignissim erat quis elit vehicula dapibus. Integer vel malesuada magna. Vestibulum a orci eget risus vestibulum commodo non vitae quam. Nam a feugiat nisl. Morbi id odio aliquam, varius libero in, rutrum quam. Quisque volutpat, nulla vitae euismod suscipit, mi libero ultricies velit, ut facilisis diam nisl iaculis turpis. Maecenas non nunc lacinia, consequat tortor sed, dignissim nisi. Nullam dignissim ex a', 'José Angel Ruiz Chávez. Ingeniero', 'Soy la verga', '2021-04-15 08:13:44', 0),
+(144, 6, 139, ' sem convallis, sed tempor nisi cursus. Nam egestas interdum diam, non ornare sapien posuere id. Donec ut arcu feugiat, aliquam ipsum malesuada, aliquam tellus.\r\n\r\nQuisque rhoncus ultricies dui, ut accumsan nunc dapibus quis. Suspendisse mauris diam, cursus non quam luctus, laoreet blandit felis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vivamus eleifend metus hendrerit fringilla feugiat. Etiam id euismod dolor. Etiam ut sapien vulputate purus bl', 'José Angel Ruiz Chávez. Ingeniero', 'Soy la verga', '2021-04-15 08:13:44', 0),
+(145, 6, 139, 'andit efficitur. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur vel eros congue, ullamcorper leo eget, malesuada dui. Nulla lorem velit, hendrerit a malesuada sit amet, dignissim vitae metus. Duis laoreet dui non quam sodales aliquet. Nunc quam nulla, imperdiet sit amet neque et, rutrum euismod erat. Ut gravida feugiat magna eu ultricies. Duis mollis sit amet ex quis vulputate. Donec nisl velit, luctus sed elit a, commodo maximus tellus.', 'José Angel Ruiz Chávez. Ingeniero', 'Soy la verga', '2021-04-15 08:13:44', 0),
+(146, 6, 146, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nec lacinia arcu. Nam vitae consequat nisl. Quisque finibus odio at viverra cursus. Quisque iaculis orci non turpis gravida congue. Nunc ac turpis placerat, suscipit sapien vel, tristique leo. Vestibulum maximus lacus vitae scelerisque feugiat. Aenean hendrerit nibh sit amet elit egestas, sed dapibus magna scelerisque. Quisque vitae vehicula leo. Duis nec iaculis arcu.\r\n\r\nSed id dignissim massa. Pellentesque quam diam, blandit ne', 'José Angel Ruiz Chávez. Ingeniero', 'Soy la verga', '2021-04-15 08:14:36', 0),
+(147, 6, 146, 'c pharetra posuere, vestibulum consectetur tellus. Nunc blandit eu lectus eu bibendum. Etiam sed tellus commodo, faucibus arcu id, bibendum enim. Sed mollis ullamcorper lectus, non tempus lacus lacinia nec. In congue eros ut ex rutrum, id fermentum quam porttitor. Aenean quis tincidunt urna. Morbi tempor, arcu eget commodo feugiat, quam lectus vestibulum tellus, vitae ultricies nisi sem sed enim. Aliquam blandit auctor laoreet. Sed at erat ut purus feugiat rutrum rhoncus id massa. Aenean sed con', 'José Angel Ruiz Chávez. Ingeniero', 'Soy la verga', '2021-04-15 08:14:36', 0),
+(148, 6, 146, 'sequat nulla, eu dignissim massa. Sed sit amet elit dolor. Phasellus pulvinar, dui et tempus tempus, arcu massa mattis dolor, viverra vestibulum dui mi in metus. Vivamus sit amet pharetra lectus. Proin in ex mollis, tristique felis quis, convallis ligula.\r\n\r\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Cras augue dui, rhoncus eget urna at, elementum venenatis urna. Phasellus eget varius lacus. Vivamus ac rutrum leo. Curabitur eu ligula laoreet, aliquam sapien eget, condimentum lectus', 'José Angel Ruiz Chávez. Ingeniero', 'Soy la verga', '2021-04-15 08:14:36', 0);
+INSERT INTO `mensajecliente` (`id_mensaje`, `idusuario_mensaje`, `idmensaje_mensaje`, `mensaje_mensaje`, `admin_mensaje`, `asunto_mensaje`, `fecha_mensaje`, `idconversacion_mensaje`) VALUES
+(149, 6, 146, '. Curabitur congue mollis lorem, quis eleifend augue scelerisque et. Integer commodo rutrum risus, eu mollis velit vestibulum eget. Nam eu ex tellus. Integer tristique ex mauris, in blandit dolor sodales semper. Pellentesque ut volutpat risus. Nam imperdiet non enim et ornare. Mauris sollicitudin augue eu finibus feugiat. Sed a urna pretium, cursus velit ac, placerat eros. Praesent viverra leo sit amet tellus ullamcorper scelerisque. Integer mattis imperdiet suscipit.\r\n\r\nIn egestas libero a enim', 'José Angel Ruiz Chávez. Ingeniero', 'Soy la verga', '2021-04-15 08:14:36', 0),
+(150, 6, 146, ' vulputate, id condimentum libero viverra. Donec suscipit lobortis ex et lacinia. Vivamus dignissim erat quis elit vehicula dapibus. Integer vel malesuada magna. Vestibulum a orci eget risus vestibulum commodo non vitae quam. Nam a feugiat nisl. Morbi id odio aliquam, varius libero in, rutrum quam. Quisque volutpat, nulla vitae euismod suscipit, mi libero ultricies velit, ut facilisis diam nisl iaculis turpis. Maecenas non nunc lacinia, consequat tortor sed, dignissim nisi. Nullam dignissim ex a', 'José Angel Ruiz Chávez. Ingeniero', 'Soy la verga', '2021-04-15 08:14:36', 0),
+(151, 6, 146, ' sem convallis, sed tempor nisi cursus. Nam egestas interdum diam, non ornare sapien posuere id. Donec ut arcu feugiat, aliquam ipsum malesuada, aliquam tellus.\r\n\r\nQuisque rhoncus ultricies dui, ut accumsan nunc dapibus quis. Suspendisse mauris diam, cursus non quam luctus, laoreet blandit felis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vivamus eleifend metus hendrerit fringilla feugiat. Etiam id euismod dolor. Etiam ut sapien vulputate purus bl', 'José Angel Ruiz Chávez. Ingeniero', 'Soy la verga', '2021-04-15 08:14:36', 0),
+(152, 6, 146, 'andit efficitur. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur vel eros congue, ullamcorper leo eget, malesuada dui. Nulla lorem velit, hendrerit a malesuada sit amet, dignissim vitae metus. Duis laoreet dui non quam sodales aliquet. Nunc quam nulla, imperdiet sit amet neque et, rutrum euismod erat. Ut gravida feugiat magna eu ultricies. Duis mollis sit amet ex quis vulputate. Donec nisl velit, luctus sed elit a, commodo maximus tellus.', 'José Angel Ruiz Chávez. Ingeniero', 'Soy la verga', '2021-04-15 08:14:36', 0),
+(153, 6, 153, 'tortas de jamón', 'José Ruiz. Usuario', 'Este asunto es nuevo', '2021-04-16 05:22:01', 0),
+(154, 6, 154, 'se comen con un buen refresco de cola', 'José Ruiz. Usuario', 'Este asunto es nuevo', '2021-04-16 05:22:57', 0),
+(155, 6, 155, 'No sea tan desesperado y sea mas tranquilo', 'José Ruiz. Usuario', 'Este asunto es nuevo', '2021-04-16 05:26:46', 0),
+(156, 6, 156, 'Si tienes vida, compra mantequilla, y no te golpes la rodilla.;D', 'José Ruiz. Usuario', 'Este asunto es nuevo', '2021-04-16 05:27:34', 0),
+(157, 6, 157, 'Listo', 'José Ruiz. Usuario', 'Este asunto es nuevo', '2021-04-16 05:29:13', 0),
+(158, 6, 158, 'listo también por el programador', 'José Ruiz. Usuario', 'Este asunto es nuevo', '2021-04-16 05:29:47', 0);
 
 -- --------------------------------------------------------
 
@@ -222,7 +284,8 @@ INSERT INTO `pagos` (`id_pago`, `fechainicio_pago`, `fechafin_pago`, `fechadepag
 (30, '2022-02-09 08:24:16', '2022-03-09 08:24:16', '0000-00-00 00:00:00', 4, '', 0, '', 23, 'yJ5eyaTNYUDgxGnNA', '0', '', 1, ''),
 (31, '2022-03-09 08:24:16', '2022-04-09 08:24:16', '0000-00-00 00:00:00', 4, '', 0, '', 23, 'yJ5eyaTNYUDgxGnNA', '0', '', 1, ''),
 (32, '2021-04-12 06:37:49', '2021-05-12 06:37:49', '0000-00-00 00:00:00', 5, '', 0, '', 24, 'SkWITi34Q54C1e5DfB', '0', '', 1, ''),
-(33, '2021-04-12 06:39:17', '2021-05-12 06:39:17', '0000-00-00 00:00:00', 6, '', 0, '', 25, 'FbqZ1PE2rEb1JqLGN', '0', '', 1, '');
+(33, '2021-04-12 06:39:17', '2021-05-12 06:39:17', '0000-00-00 00:00:00', 6, '', 0, '', 25, 'FbqZ1PE2rEb1JqLGN', '0', '', 1, ''),
+(34, '2021-04-15 07:40:22', '2021-05-15 07:40:22', '0000-00-00 00:00:00', 6, '', 0, '', 26, '9TMp37nmFVXjTMiqkA', '0', '', 1, '');
 
 -- --------------------------------------------------------
 
@@ -254,7 +317,51 @@ INSERT INTO `pasos` (`id_paso`, `descripcion_paso`, `timing_paso`, `fechaini_pas
 (7, 'Programación', 0, '2021-04-09 08:34:12', '2021-04-12 08:34:12', 4, '2'),
 (8, 'Programación y control de decisiones ', 0, '2021-04-12 04:53:36', '2021-04-17 04:53:36', 4, '3'),
 (9, 'Cotización: En proceso', 1, '2021-04-12 06:37:49', '2021-04-13 06:37:49', 5, '1'),
-(10, 'Cotización: En proceso', 1, '2021-04-12 06:39:17', '2021-04-13 06:39:17', 6, '1');
+(10, 'Cotización: En proceso', 1, '2021-04-12 06:39:17', '2021-04-13 06:39:17', 6, '1'),
+(11, 'Programación', 0, '2021-04-15 05:52:44', '2021-04-30 05:52:44', 6, '2');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `pr`
+--
+
+CREATE TABLE `pr` (
+  `id_archivo` int(11) NOT NULL,
+  `idusuario_archivo` int(11) NOT NULL,
+  `idproyecto_archivo` int(11) NOT NULL,
+  `direccion_archivo` varchar(150) NOT NULL,
+  `fecha_archivo` datetime NOT NULL,
+  `identificacion_archivo` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `pr`
+--
+
+INSERT INTO `pr` (`id_archivo`, `idusuario_archivo`, `idproyecto_archivo`, `direccion_archivo`, `fecha_archivo`, `identificacion_archivo`) VALUES
+(1, 6, 6, 'archivos/119403493_3413678911988392_8248441450573387682_o.jpg', '2021-04-15 07:12:38', 'Usuario'),
+(2, 6, 6, 'archivos/abc.jpeg', '2021-04-15 07:12:36', 'Usuario'),
+(3, 6, 6, 'archivos/119403493_3413678911988392_8248441450573387682_o.jpg', '2021-04-15 07:12:34', 'Usuario'),
+(4, 6, 6, 'archivos/abc.jpeg', '2021-04-15 07:12:31', 'Usuario'),
+(5, 6, 6, 'archivos/Operaciones+Publico+en+general.pdf', '2021-04-15 07:12:28', 'Usuario'),
+(6, 6, 6, 'archivos/rose-realistic-transparent-set-with-red-flowers-isolated.zip', '2021-04-15 07:12:24', 'Usuario'),
+(7, 6, 6, 'archivos/435617.jpg', '2021-04-16 07:12:17', 'Usuario'),
+(8, 6, 6, 'archivos/mapa predio.psd', '2021-04-16 07:43:36', 'Usuario'),
+(9, 6, 6, 'archivos/adminpagos.docx', '2021-04-16 07:49:22', 'Usuario'),
+(10, 6, 6, 'archivos/Currículo.docx', '2021-04-16 07:49:22', 'Usuario'),
+(11, 6, 6, 'archivos/adminpagos.docx', '2021-04-16 07:53:31', 'Usuario'),
+(12, 6, 6, 'archivos/Currículo.docx', '2021-04-16 07:53:31', 'Usuario'),
+(13, 6, 6, 'archivos/adminpagos.docx', '2021-04-16 07:53:52', 'Usuario'),
+(14, 6, 6, 'archivos/Currículo.docx', '2021-04-16 07:53:52', 'Usuario'),
+(15, 6, 6, 'archivos/Pieza1.SLDPRT', '2021-04-16 08:08:31', 'admin'),
+(16, 6, 6, 'archivos/20200908_182723.jpg', '2021-04-16 08:14:52', 'admin'),
+(17, 6, 6, 'archivos/20201030_080052.jpg', '2021-04-16 08:14:52', 'admin'),
+(18, 6, 6, 'archivos/20201030_081757 (2).jpg', '2021-04-16 08:14:52', 'admin'),
+(19, 6, 6, 'archivos/20201030_081757 (3).jpg', '2021-04-16 08:14:52', 'admin'),
+(20, 6, 6, 'archivos/20201030_081757 (4).jpg', '2021-04-16 08:14:52', 'admin'),
+(21, 6, 6, 'archivos/20201030_081757.jpg', '2021-04-16 08:14:52', 'admin'),
+(22, 6, 6, 'archivos/20201030_081814.jpg', '2021-04-16 08:14:52', 'admin');
 
 -- --------------------------------------------------------
 
@@ -283,7 +390,8 @@ INSERT INTO `precios` (`id_precio`, `basico_precio`, `tokencontrato_precio`, `id
 (2, 4000, '6000', 10000, 1, 1, 300, 1000, 0),
 (11, 13920, 'x0tvhMM8Kl6VQEKvj3', 19, 100, 100, 150, 800, 10850),
 (12, 116, 'xhvxoPVpO1WAEi77eH', 21, 0, 0, 0, 0, 100),
-(13, 9280, 'yJ5eyaTNYUDgxGnNA', 23, 100, 100, 150, 800, 6850);
+(13, 9280, 'yJ5eyaTNYUDgxGnNA', 23, 100, 100, 150, 800, 6850),
+(14, 9280, '9TMp37nmFVXjTMiqkA', 26, 100, 100, 150, 800, 6850);
 
 -- --------------------------------------------------------
 
@@ -311,7 +419,7 @@ INSERT INTO `proyectos` (`id_proyecto`, `nombre_proyecto`, `idusuario_proyecto`,
 (3, 'Preparación', 3, 'Sin paquete', '', '0', ''),
 (4, 'https://3dImprent.com', 4, 'Sin paquete', '', '0', ''),
 (5, 'Sin Proyecto', 5, 'Sin paquete', '', '0', ''),
-(6, 'Sin Proyecto', 6, 'Sin paquete', '', '0', '');
+(6, 'Preparación', 6, 'Sin paquete', '', '0', '');
 
 -- --------------------------------------------------------
 
@@ -350,7 +458,7 @@ INSERT INTO `usuarios` (`id_usuario`, `nombre_usuario`, `apellidos_usuario`, `em
 (2, 'José Angel', 'Chávez', 'jose@hotmail.com', 'h', '4521441689', 'upload/JoséAngel-p2G15Apr2021050615abc.jpeg', '', '', '', '', '', '2021-04-05', 0, '', '', '', 'admin', 0),
 (3, 'Vianey', 'Ruiz', 'vi@hotmail.com', 'v', '4521441689', 'upload/Vianey-z4o09Apr2021071218abc.jpeg', 'San José de la Mina', '43', 'San José de la Mina', '60125', '', '2021-04-09', 3, 'San José de La Mina #42 Col. San José de la Mina', 'eqwe', '8754654854721', '', 0),
 (4, 'José Angel', 'Chávez', 'angel._ruiz@hodtmail.com', 'TBMGcTDk', '4521441689', 'upload/JoséAngel-ygQ09Apr2021084239WhatsAppImage2020-09-25at7.19.42AM.jpeg', 'San José de la Mina', '42', '', '60125', '', '2021-04-09', 4, '', '', '', '', 0),
-(5, 'José', 'Angel', 'angel._ruiz@hotmial.com', 'etw0xXJ', '4521441689', '', '', '', '', '', '', '2021-04-12', 5, '', '', '', '', 0),
+(5, 'José', 'Angel', 'angel._ruiz@hotmial.com', 'etw0xXJ', '4521441689', '', '', '', '', '', '', '2021-04-12', 5, '', '', '', 'Usuario', 0),
 (6, 'José', 'Ruiz', 'angel._ruiz@hotmail.com', 'x', '4521441689', '', '', '', '', '', '', '2021-04-12', 6, '', '', '', 'Usuario', 0);
 
 --
@@ -382,6 +490,12 @@ ALTER TABLE `pasos`
   ADD PRIMARY KEY (`id_paso`);
 
 --
+-- Indices de la tabla `pr`
+--
+ALTER TABLE `pr`
+  ADD PRIMARY KEY (`id_archivo`);
+
+--
 -- Indices de la tabla `precios`
 --
 ALTER TABLE `precios`
@@ -407,31 +521,37 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `contratos`
 --
 ALTER TABLE `contratos`
-  MODIFY `id_contrato` tinyint(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `id_contrato` tinyint(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
 -- AUTO_INCREMENT de la tabla `mensajecliente`
 --
 ALTER TABLE `mensajecliente`
-  MODIFY `id_mensaje` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=99;
+  MODIFY `id_mensaje` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=159;
 
 --
 -- AUTO_INCREMENT de la tabla `pagos`
 --
 ALTER TABLE `pagos`
-  MODIFY `id_pago` tinyint(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
+  MODIFY `id_pago` tinyint(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 
 --
 -- AUTO_INCREMENT de la tabla `pasos`
 --
 ALTER TABLE `pasos`
-  MODIFY `id_paso` tinyint(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id_paso` tinyint(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+
+--
+-- AUTO_INCREMENT de la tabla `pr`
+--
+ALTER TABLE `pr`
+  MODIFY `id_archivo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT de la tabla `precios`
 --
 ALTER TABLE `precios`
-  MODIFY `id_precio` tinyint(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id_precio` tinyint(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT de la tabla `proyectos`

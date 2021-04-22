@@ -153,6 +153,7 @@
 
 <script src="js/jquery.animateNumber.min.js"></script>
 <script src="js/jquery.countdown.min.js"></script>
+<script src="js/upperfil.js?v=<?php echo time(); ?>""></script>
 <script src="js/main.js?v=<?php echo time(); ?>"></script>
 <script>
     /* ésto comprueba la localStorage si ya tiene la variable guardada */

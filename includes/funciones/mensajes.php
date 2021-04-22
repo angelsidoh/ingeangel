@@ -4,9 +4,9 @@ if ($_SESSION['tipo_usuario'] == 'admin') {
     $idusuario =  $_GET['id'];
 } else {
 
-    echo $idusuario;
+    // echo $idusuario;
 }
-echo $_SESSION['email'];
+// echo $_SESSION['email'];
 $resultadoMensajes = obtenerIdMensajes($idusuario);
 
 $contadorPasos1 = 0;

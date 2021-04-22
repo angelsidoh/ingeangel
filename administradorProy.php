@@ -178,7 +178,7 @@ if ((!isset($_SESSION['usuario'])) && (!isset($_SESSION['email']))) {
         // var_dump($superVec_n);
         // echo '</pre>';
         // echo '<pre>';
-        // var_dump($superVecIdPaso);
+        // var_dump( $vectorIdUsuarioProyectos);
         // echo '</pre>';
         // // echo $idProyecto ;
         // echo $_SESSION['tipo_usuario'];
@@ -704,6 +704,15 @@ if ((!isset($_SESSION['usuario'])) && (!isset($_SESSION['email']))) {
                                 <h1 id="sparklemaster" class="sparklemaster" style="color:  #93A9CC;">Mensajes</h1>
                             </div>
                             <?php include('includes/funciones/mensajes.php'); ?>
+                        </div>
+
+                    </li>
+                    <li>
+                        <div class="contenedor-especial">
+                            <div class="titulo-seccion">
+                                <h1 id="sparklemaster" class="sparklemaster" style="color:  #93A9CC;">Archivos</h1>
+                            </div>
+                            <?php include('includes/funciones/subirarchivo.php'); ?>
                         </div>
 
                     </li>

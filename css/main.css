@@ -348,6 +348,65 @@ html {
   }
 }
 /* end proyectos */
+/* subirarchivos */
+.contenedor-especialx h2{
+  color: #ffffff;
+  text-align: center;
+  font-size: 28px;
+}
+.menu-proyectoss{
+  width: 60%;
+  height: auto;
+  margin: 0 auto;
+
+}
+.titulo-proyectos a{
+  color: #ffffff;
+  text-align: center;
+}
+.titulo-proyectos .Usuario, .Usuario{
+  color: green
+}
+.titulo-proyectos .admin, .admin{
+  color: yellow;
+}
+.titulo-proyectos a:hover{
+  color: var(--ColorOpacEspecialHover)!important;
+}
+
+.contenedoruploadmulti{
+  width: 90%;
+  height: auto;
+  margin: 0 auto;
+  color: #fff;
+  text-align: center;
+}
+.form-group{
+  max-width: 320px;
+  width: 100%;
+  margin: 0 auto;
+  font-family: var(--FontPal);
+  font-size: 14px;
+  
+}
+.form-group input{
+  
+  height: 50px;
+  padding: 10px 20px;
+  margin: 0px auto;
+  background-color: var(--ColorFontEspecial);
+  border-radius: 10px;
+  color: var(--ColorBackgroundPal);
+  transition: 0.15s;
+}
+.form-group .form-control{
+  width: 100%;
+ 
+  margin: 10px auto;
+}
+
+/* endsubirarchivos */
+
 .menu-proyectos{
   width: 100%;
   height: auto;
@@ -4625,7 +4684,7 @@ color: #ffffff;
   margin: 0 auto;
   
 }
-.contenedor-especial{
+.contenedor-especial, .contenedor-especialx{
   width: 100%;
   height: auto;
   margin: 50px auto;
@@ -4634,7 +4693,7 @@ color: #ffffff;
   
 }
 @media only screen and (min-width:768px){
-  .contenedor-especial{
+  .contenedor-especial, .contenedor-especialx{
     width: 90%;
     padding: 50px;
     
@@ -5217,6 +5276,21 @@ margin-bottom: 50px;
 .contanedorsubcards .cardsub .contentsub a{
   text-decoration: none;
  
+}
+#upload_form, #upload_form1{
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  color: #fff;
+}
+#upload_form input, #upload_form1 input{
+  width: 320px;
+ 
+}
+
+#upload_form input#file2, #upload_form1 input#file2{
+  width: 320px;
+  
 }
 
 

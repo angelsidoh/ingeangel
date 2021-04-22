@@ -5,7 +5,7 @@ if ((!isset($_SESSION['usuario'])) && (!isset($_SESSION['email']))) {
     session_destroy();
     // header('Location: cuenta.php#angel-ruiz');
 ?>
-    <META HTTP-EQUIV="REFRESH" CONTENT="1;URL=https://ingeangel.com/logout.php">
+    <META HTTP-EQUIV="REFRESH" CONTENT="1;URL=logout.php">
 
     <?php
 } else {
@@ -192,7 +192,9 @@ if ((!isset($_SESSION['usuario'])) && (!isset($_SESSION['email']))) {
             </div>
         </section>
 
-        <?php require('includes/funciones/perfil.php');
+        <?php 
+
+require('includes/funciones/perfil.php');
         if ($_SESSION['tipo_usuario'] == 'admin') {
         ?>
             <?php require('includes/funciones/admin.php'); ?>
@@ -405,6 +407,15 @@ if ((!isset($_SESSION['usuario'])) && (!isset($_SESSION['email']))) {
                         </div>
 
                     </li>
+                    <li>
+                        <div class="contenedor-especial">
+                            <div class="titulo-seccion">
+                                <h1 id="sparklemaster" class="sparklemaster" style="color:  #93A9CC;">Archivos</h1>
+                            </div>
+                            <?php include('includes/funciones/subirarchivo.php'); ?>
+                        </div>
+
+                    </li>
 
 
                 </ul>
@@ -501,3 +512,4 @@ if ((!isset($_SESSION['usuario'])) && (!isset($_SESSION['email']))) {
         }
     }
     ?>
+    

@@ -1443,7 +1443,7 @@ $(".contenedor-perfil .imagen").hover(
   function () {
     $('.edit-fotox').addClass('edit-foto');
     $(".foto .edit-foto i").click(function () {
-      $("input[type='file']").trigger('click');
+      window.location.href = "cambiarfoto.php";
 
 
     });
@@ -1453,36 +1453,125 @@ $(".contenedor-perfil .imagen").hover(
   }
 );
 
-function progressHandler(event) {
-  up("loaded_n_total").innerHTML = "Subiendo Foto " + event.loaded + " bytes de " + event.total;
-  var percent = (event.loaded / event.total) * 100;
-  if (percent == 100) {
-    up("progressBar").value = Math.round(percent);
-    up("status").innerHTML = "Espere unos segundos más!";
-  } else {
-    up("progressBar").value = Math.round(percent);
-    up("status").innerHTML = Math.round(percent) + "% Subiendo foto";
-  }
 
+function _(el){
+	return document.getElementById(el);
+}
+function uploadFile(){
+	var file = _("file2").files[0];
+	//alert(file.name+" | "+file.size+" | "+file.type);
+	var formdata = new FormData();
+	formdata.append("file2", file);
+	var ajax = new XMLHttpRequest();
+	ajax.upload.addEventListener("progress", progressHandler1, false);
+	ajax.addEventListener("load", completeHandler1, false);
+	ajax.addEventListener("error", errorHandler1, false);
+	ajax.addEventListener("abort", abortHandler1, false);
+	ajax.open("POST", "upload8.php");
+	ajax.onload = function(){
+		if(this.status === 200){
+			console.log(JSON.parse(ajax.responseText));
+			const respuesta = JSON.parse(ajax.responseText);
+			if (respuesta.estado === 'uploadsuccess'){
+				swal({
+          content: "",
+          text: 'Foto actualizada',
+          icon: "success",
+          button: {
+            text: "Continuar",
+            closeModal: true,
+          },
+        })
+        .then((value) => {
+          switch (value) {
+            default:
+              window.location.href = "cuenta.php#angel-ruiz";
+              
+          }
+        });
+					
+		}
+	}
+}
+	ajax.send(formdata);
 }
 
-function completeHandler(event) {
-  up("status").innerHTML = event.target.responseText;
-  up("progressBar").value = 0;
+function progressHandler1(event){
+	_("loaded_n_total1").innerHTML = "Subiendo Foto "+event.loaded+" bytes de "+event.total;
+	var percent = (event.loaded / event.total) * 100;
+	_("progressBar1").value = Math.round(percent);
+	_("status1").innerHTML = Math.round(percent)+"% Subiendo Foto... ¡Espera hasta que el proceso termine!";
+}
+function completeHandler1(event){
+	_("status").innerHTML = event.target.responseText;
+	_("progressBar1").value = 0;
+}
+function errorHandler1(event){
+	_("status").innerHTML = "Upload Failed";
+}
+function abortHandler1(event){
+	_("status").innerHTML = "Upload Aborted";
 }
 
-function errorHandler(event) {
-  up("status").innerHTML = "Upload Failed";
+function uploadFile1(){
+	var file1 = _("file1").files[0];
+  const idp = document.querySelector('#idp').value;
+  const idu = document.querySelector('#idu').value;
+	//alert(file.name+" | "+file.size+" | "+file.type);
+	var formdata = new FormData();
+	formdata.append("file1", file1);
+  formdata.append("idp", idp);
+  formdata.append("idu", idu);
+	var ajax = new XMLHttpRequest();
+	ajax.upload.addEventListener("progress", progressHandler2, false);
+	ajax.addEventListener("load", completeHandler2, false);
+	ajax.addEventListener("error", errorHandler2, false);
+	ajax.addEventListener("abort", abortHandler2, false);
+	ajax.open("POST", "upload4.php");
+	ajax.onload = function(){
+		if(this.status === 200){
+			console.log(JSON.parse(ajax.responseText));
+			const respuesta = JSON.parse(ajax.responseText);
+			if (respuesta.estado === 'uploadsuccess'){
+				swal({
+          content: "",
+          text: 'Foto actualizada',
+          icon: "success",
+          button: {
+            text: "Continuar",
+            closeModal: true,
+          },
+        })
+        .then((value) => {
+          switch (value) {
+            default:
+              window.location.reload();
+              
+          }
+        });
+					
+		}
+	}
+}
+	ajax.send(formdata);
 }
 
-function abortHandler(event) {
-  up("status").innerHTML = "Upload Aborted";
+function progressHandler2(event){
+	_("loaded_n_total2").innerHTML = "Subiendo Archivo "+event.loaded+" bytes de "+event.total;
+	var percent = (event.loaded / event.total) * 100;
+	_("progressBar2").value = Math.round(percent);
+	_("status2").innerHTML = Math.round(percent)+"% Subiendo Archivo... ¡Espera hasta que el proceso termine!";
 }
-
-function up(el) {
-  return document.getElementById(el);
+function completeHandler2(event){
+	_("status2").innerHTML = event.target.responseText;
+	_("progressBar1").value = 0;
 }
-
+function errorHandler2(event){
+	_("status2").innerHTML = "Upload Failed";
+}
+function abortHandler2(event){
+	_("status2").innerHTML = "Upload Aborted";
+}
 // localStorage.setItem("Numero", 12);
 // // localStorage.setItem("token", "");
 // // localStorage.setItem("Nombre", "Checo Pérez");
@@ -3526,7 +3615,7 @@ $(document).ready(function () {
 
   var imgItems2 = $('.slider2 li').length;
   
-  var menu = [ 'Proyectos', 'Cuenta', 'Pagos', 'Contratos', 'Mensajes'];
+  var menu = [ 'Proyectos', 'Cuenta', 'Pagos', 'Contratos', 'Mensajes', 'Archivos'];
   for (i = 0; i < imgItems2; i++) {
     $('.paginacion2').append('<li><h3>' + menu[i] + '</h3></li>');
   }
@@ -3612,7 +3701,7 @@ $(document).ready(function () {
 
   var imgItems3 = $('.slider3 li').length;
   var imgPos3 = 1;
-  var menu = [ 'Proyecto', 'Pagos', 'Contratos', 'Mensajes'];
+  var menu = [ 'Proyecto', 'Pagos', 'Contratos', 'Mensajes', 'Archivos'];
   for (i = 0; i < imgItems3; i++) {
     $('.paginacion3').append('<li><h3>' + menu[i] + '</h3></li>');
   }
