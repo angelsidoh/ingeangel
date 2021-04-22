@@ -11,6 +11,16 @@ function countChars(obj,x){
   
   
 }
+function countChars(obj){
+ 
+  var chars = "charNum0";
+  // console.log(x);
+  document.getElementById(chars).innerHTML = obj.value.length+' characters';
+  obtnermensaje(x);
+
+
+
+}
 
 // end contador de caracteres mensajes
 
