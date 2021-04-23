@@ -414,13 +414,8 @@ require('includes/funciones/perfil.php');
                             </div>
                             <?php include('includes/funciones/subirarchivo.php'); ?>
                         </div>
-
                     </li>
-
-
                 </ul>
-
-
                 <div class="right2">
                     <span><i class="fas fa-angle-right"></i></span>
                 </div>
