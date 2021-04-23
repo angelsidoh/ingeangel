@@ -11,7 +11,7 @@ function countChars(obj,x){
   
   
 }
-function countChars(obj){
+function countCharsx2(obj){
  
   var chars = "charNum0";
   // console.log(x);
@@ -1687,6 +1687,83 @@ function abx(f){
 
 }
 // END NUEVO MENSAJE
+
+// AGREGAR NUEVO PROYECTO
+const formNewProyect = document.querySelector('#agregar-nuevoproyecto');
+
+if ($("#agregar-nuevoproyecto").length) {
+  eventListeners();
+
+  function eventListeners() {
+    formNewProyect.addEventListener('submit', AgregarNuevoProyecto);
+  }
+}
+
+function AgregarNuevoProyecto(e) {
+  e.preventDefault();
+  const accion = document.querySelector('#btnagregarideauser').value;
+  if (accion == 'Crear Proyecto') {
+    const nombre = document.querySelector('#nameuser').value;
+    const apellidos = document.querySelector('#apellidos').value;
+    const mail = document.querySelector('#mail').value;
+    const tel = document.querySelector('#tel').value;
+    const select = document.querySelector('#select').value;
+    const sector = document.querySelector('#sector').value;
+    const idea = document.querySelector('#idea').value;
+    const idusuario = document.querySelector('#idusuario').value;
+    const newproyect = new FormData();
+
+    newproyect.append('nombre', nombre);
+    newproyect.append('apellidos', apellidos);
+    newproyect.append('mail', mail);
+    newproyect.append('tel', tel);
+    newproyect.append('select', select);
+    newproyect.append('sector', sector);
+    newproyect.append('idea', idea);
+    newproyect.append('idusuario', idusuario);
+    newproyect.append('accion', accion);
+    if (accion === 'Crear Proyecto') {
+      //console.log (accion);
+      newproyecto(newproyect);
+    }
+  }
+}
+function newproyecto(dato) {
+  // llamado de ajax
+  // crear objeto
+  //  //console.log(dato);
+  const xhr = new XMLHttpRequest();
+  // abrir conexion
+  xhr.open('POST', 'includes/modelos/newproyect.php', true);
+  // pasar datos
+  xhr.onload = function () {
+    if (this.status === 200) {
+      const respuesta = JSON.parse(xhr.responseText);
+      console.log(respuesta);
+      if (respuesta.estado === 'creandonuevoproyecto') {
+        swal({
+            content: "",
+            text: 'Gracias por tu preferencia, estamos trabajando para atenderte lo mas pronto posible.',
+            icon: "success",
+            button: {
+              text: "Continuar",
+              closeModal: true,
+            },
+          })
+          .then((value) => {
+            switch (value) {
+              default:
+                window.location.href = 'cuenta.php#angel-ruiz';
+            }
+          });
+
+      }
+    }
+  }
+  xhr.send(dato);
+}
+
+//END AGREGAR NEUVO PROYECTO 
 // AGREGAR IDEA USUARIO MAS REGISTRO
 const formIdeaUsuario = document.querySelector('#agregar-registrouser');
 if ($("#agregar-registrouser").length) {

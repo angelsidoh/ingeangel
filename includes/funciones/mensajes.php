@@ -16,8 +16,8 @@ if ($resultadoConsulta->num_rows) {
     foreach ($resultadoConsulta as $Consulta) {
         $usuario = $Consulta['nombre_usuario'];
         $apellidos =  $Consulta['apellidos_usuario'];
-        $idproyecto = $Consulta['idproyecto_usuario'];
-        $idusuario = $Consulta['id_usuario'];
+        echo $idproyecto = $Consulta['idproyecto_usuario'];
+        echo $idusuario = $Consulta['id_usuario'];
         $foto = $Consulta['foto_usuario'];
         $calle = $Consulta['calle_usuario'];
         $numie = $Consulta['numiedireccion_usuario'];
@@ -45,13 +45,13 @@ if ($resultadoMensajes->num_rows) {
         $contadorPasos1++;
     }
 }
-$superVecMensajes[$i] = $vecmensaje;
-$superVecidMensajes[$i] = $vecidmensaje;
-$superVecasuntoMensaje[$i] = $vecasuntomensaje;
-$superVecIdUsuario[$i] = $vecidusuario;
-$superVecFechaMensaje[$i] = $vecfechamensaje;
-$superVecIdConversacion[$i] = $vecidconversancion;
-$superVecAdminMensaje[$i] = $vecadminmensaje;
+$superVecMensajes[0] = $vecmensaje;
+$superVecidMensajes[0] = $vecidmensaje;
+$superVecasuntoMensaje[0] = $vecasuntomensaje;
+$superVecIdUsuario[0] = $vecidusuario;
+$superVecFechaMensaje[0] = $vecfechamensaje;
+$superVecIdConversacion[0] = $vecidconversancion;
+$superVecAdminMensaje[0] = $vecadminmensaje;
 for ($ix = 0; $ix < $contadorPasos1; $ix++) {
     unset($vecmensaje[$ix]);
     unset($vecidmensaje[$ix]);
@@ -69,55 +69,57 @@ for ($ix = 0; $ix < $contadorPasos1; $ix++) {
 // var_dump($superVecasuntoMensaje);
 // echo '</PRE>';
 $vecaxiasuntox = $superVecasuntoMensaje;
-for ($u = 0; $u < sizeof($superVecasuntoMensaje[1]); $u++) {
+// echo  sizeof($superVecasuntoMensaje[0]);
+for ($u = 0; $u < sizeof($superVecasuntoMensaje[0]); $u++) {
     $contadorMensajes = 0;
-    for ($i = 0; $i < sizeof($superVecasuntoMensaje[1]); $i++) {
-        if ($superVecasuntoMensaje[1][$u] == $vecaxiasuntox[1][$i]) {
+    for ($i = 0; $i < sizeof($superVecasuntoMensaje[0]); $i++) {
+        if ($superVecasuntoMensaje[0][$u] == $vecaxiasuntox[0][$i]) {
             $contadorMensajes++;
             if ($contadorMensajes > 1) {
-                $vecaxiasuntox[1][$i] = '';
+                $vecaxiasuntox[0][$i] = '';
                 // echo $u.$i.'<br>';
             }
         }
     }
 }
+// echo '<PRE>';
+// var_dump( $vecaxiasuntox);
+// echo '</PRE>';
 $cont = 0;
-$vecaxiasunto = $vecaxiasuntox[1];
+$vecaxiasunto = $vecaxiasuntox[0];
 foreach ($vecaxiasunto as $key => $value) {
     if ($value === '') {
         unset($vecaxiasunto[$key]);
     } else {
         // echo $vecaxiIDMensajes[$key];
 
-        $vecaxiasuntoRes[$cont] = $superVecasuntoMensaje[1][$key];
+        $vecaxiasuntoRes[$cont] = $superVecasuntoMensaje[0][$key];
         $cont++;
     }
 }
-// echo '<PRE>';
-// var_dump( $vecaxiasuntox);
-// echo '</PRE>';
+
 
 
 $vecaxiIdMesnajesx =  $superVecidMensajes;
 $vecaxiadminx = $superVecAdminMensaje;
 $vecaxiasuntox2 = $superVecasuntoMensaje;
 
-for ($u = 0; $u < sizeof($superVecidMensajes[1]); $u++) {
+for ($u = 0; $u < sizeof($superVecidMensajes[0]); $u++) {
     $contadorMensajes = 0;
-    for ($i = 0; $i < sizeof($superVecidMensajes[1]); $i++) {
-        if ($superVecidMensajes[1][$u] == $vecaxiIdMesnajesx[1][$i]) {
+    for ($i = 0; $i < sizeof($superVecidMensajes[0]); $i++) {
+        if ($superVecidMensajes[0][$u] == $vecaxiIdMesnajesx[0][$i]) {
             $contadorMensajes++;
             if ($contadorMensajes > 1) {
-                $vecaxiIdMesnajesx[1][$i] = '';
-                $vecaxiadminx[1][$i] = '';
-                $vecaxiasuntox2[1][$i] = ''; 
+                $vecaxiIdMesnajesx[0][$i] = '';
+                $vecaxiadminx[0][$i] = '';
+                $vecaxiasuntox2[0][$i] = ''; 
             }
         }
     }
 }
-$vecaxiIDMensajes =  $vecaxiIdMesnajesx[1];
-$vecaxiadmin =  $vecaxiadminx[1];
-$vecaxiasunto2= $vecaxiasuntox2[1];
+$vecaxiIDMensajes =  $vecaxiIdMesnajesx[0];
+$vecaxiadmin =  $vecaxiadminx[0];
+$vecaxiasunto2= $vecaxiasuntox2[0];
 $cont = 0;
 // echo '<PRE>';
 // var_dump($vecaxiasuntox);
@@ -130,10 +132,10 @@ foreach ($vecaxiIDMensajes as $key => $value) {
         unset($vecaxiIDMensajes[$key]);
     } else {
         // echo $vecaxiIDMensajes[$key];
-        $vecaxiIdMensajesRes[$cont] = $superVecidMensajes[1][$key];
-        $vecaxiadminResp[$cont] = $superVecAdminMensaje[1][$key];
-        $vecaxiFechasRes[$cont] =  $superVecFechaMensaje[1][$key];
-        $vecaxiasuntoRes2[$cont] = $superVecasuntoMensaje[1][$key];
+        $vecaxiIdMensajesRes[$cont] = $superVecidMensajes[0][$key];
+        $vecaxiadminResp[$cont] = $superVecAdminMensaje[0][$key];
+        $vecaxiFechasRes[$cont] =  $superVecFechaMensaje[0][$key];
+        $vecaxiasuntoRes2[$cont] = $superVecasuntoMensaje[0][$key];
 
         $cont++;
     }
@@ -143,16 +145,16 @@ foreach ($vecaxiIDMensajes as $key => $value) {
 
 $vecaxi = $superVecidMensajes;
 
-for ($u = 0; $u < sizeof($superVecidMensajes[1]); $u++) {
+for ($u = 0; $u < sizeof($superVecidMensajes[0]); $u++) {
     $contadorMensajes = 0;
-    for ($i = 0; $i < sizeof($superVecidMensajes[1]); $i++) {
+    for ($i = 0; $i < sizeof($superVecidMensajes[0]); $i++) {
         // echo '<br>'.$vecaxi[0][$u].'..'.$superVecidMensajes[0][$i];
-        if ($superVecidMensajes[1][$u] == $vecaxi[1][$i]) {
+        if ($superVecidMensajes[0][$u] == $vecaxi[0][$i]) {
 
 
             $contadorMensajes++;
             if ($contadorMensajes > 1) {
-                $vecaxi[1][$i] = '';
+                $vecaxi[0][$i] = '';
             }
             // echo '<br>->'.$contadorMensajes;
 
@@ -160,9 +162,9 @@ for ($u = 0; $u < sizeof($superVecidMensajes[1]); $u++) {
     }
 }
 $contradorresultados = 0;
-for ($i = 0; $i < sizeof($vecaxi[1]); $i++) {
-    if ($vecaxi[1][$i] != '') {
-        $resultadovec[$contradorresultados] = $vecaxi[1][$i];
+for ($i = 0; $i < sizeof($vecaxi[0]); $i++) {
+    if ($vecaxi[0][$i] != '') {
+        $resultadovec[$contradorresultados] = $vecaxi[0][$i];
         $contradorresultados++;
     }
 }
@@ -177,7 +179,7 @@ for ($i = 0; $i < sizeof($vecaxi[1]); $i++) {
 // echo '</PRE>';
 $vectaxu2 =  $vecaxi;
 
-$vectaxu2 = $vecaxi[1];
+$vectaxu2 = $vecaxi[0];
 $conta = 0;
 foreach ($vectaxu2 as $posicion => $id) {
     if ($id === '') {
@@ -193,7 +195,7 @@ foreach ($vectaxu2 as $posicion => $id) {
 // var_dump(  $superVecidMensajes);
 // echo '</PRE>';
 
-$resultadoUser = consultaUsuarioContrato($superVecIdUsuario[1][0]);
+$resultadoUser = consultaUsuarioContrato($superVecIdUsuario[0][0]);
 
 if ($resultadoUser->num_rows) {
     foreach ($resultadoUser as $resultado) {
@@ -244,11 +246,11 @@ if ($resultadoUser->num_rows) {
                                 </div>
                                 <?php
                                 
-                                for ($u = 0; $u < sizeof($superVecidMensajes[1]); $u++) {
+                                for ($u = 0; $u < sizeof($superVecidMensajes[0]); $u++) {
 
                                     $contadorshow1++;
-                                    if ($resultadovec[$i] == $superVecidMensajes[1][$u]) {
-                                        echo $superVecMensajes[1][$u];
+                                    if ($resultadovec[$i] == $superVecidMensajes[0][$u]) {
+                                        echo $superVecMensajes[0][$u];
                                         
                                         $contadorshow ++;
                                        
@@ -286,15 +288,15 @@ if ($resultadoUser->num_rows) {
                                         
                                             <div class="dato3">
                                                 <input style="display: none;" type="text" id="idmensaje<?php echo $x;?>" name="idmensaje" placeholder="" value="<?php 
-                                               for ($s=0; $s < sizeof($superVecidMensajes[1]); $s++) { 
-                                                   if($s == (sizeof($superVecidMensajes[1])-1)){
-                                                echo $superVecidMensajes[1][$s];}
+                                               for ($s=0; $s < sizeof($superVecidMensajes[0]); $s++) { 
+                                                   if($s == (sizeof($superVecidMensajes[0])-1)){
+                                                echo $superVecidMensajes[0][$s];}
                                                }
                                                  ?>" required >
                                             </div> <!-- rnormal__tarjeta -->
                                           
                                             <div class="dato3">
-                                                <input style="display: none;" type="text" id="idusuario<?php echo $x;?>" name="idusuario" placeholder="" value="<?php echo $superVecIdUsuario[1][$x]; ?>" required>
+                                                <input style="display: none;" type="text" id="idusuario<?php echo $x;?>" name="idusuario" placeholder="" value="<?php echo $superVecIdUsuario[0][$x]; ?>" required>
                                             </div> <!-- rnormal__tarjeta -->
                                           
                                             <div class="dato3">
@@ -351,15 +353,15 @@ if ($resultadoUser->num_rows) {
                                           
                                             <div class="dato3">
                                                 <input style="display: none;" type="text" id="idmensaje<?php echo $x;?>" name="idmensaje" placeholder="" value="<?php 
-                                               for ($s=0; $s < sizeof($superVecidMensajes[1]); $s++) { 
-                                                   if($s == (sizeof($superVecidMensajes[1])-1)){
-                                                echo $superVecidMensajes[1][$s];}
+                                               for ($s=0; $s < sizeof($superVecidMensajes[0]); $s++) { 
+                                                   if($s == (sizeof($superVecidMensajes[0])-1)){
+                                                echo $superVecidMensajes[0][$s];}
                                                }
                                                  ?>" required>
                                             </div> <!-- rnormal__tarjeta -->
                                             
                                             <div class="dato3">
-                                                <input style="display: none;" type="text" id="idusuario<?php echo $x;?>" name="idusuario" placeholder="" value="<?php echo $superVecIdUsuario[1][$x]; ?>" required>
+                                                <input style="display: none;" type="text" id="idusuario<?php echo $x;?>" name="idusuario" placeholder="" value="<?php echo $superVecIdUsuario[0][$x]; ?>" required>
                                             </div> <!-- rnormal__tarjeta -->
                                           
                                             <div class="dato3">
