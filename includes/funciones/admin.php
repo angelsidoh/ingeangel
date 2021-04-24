@@ -185,7 +185,7 @@ if ((isset($_SESSION['usuario'])) && (isset($_SESSION['email']))) {
                                                             $dias2 = (strtotime($supervecfechaFinpago[$x][$i]) - strtotime($fechahoy)) / 86400;
                                                             if ((($dias2 > 0 && $dias1 < 0) && ($supervecfechaFinpago[$x][$i] == $supervecfechaFinpago[$x][$y]))) { ?> 
                                                                 <p class="separador"><?php echo 'Proyecto: '.$vectorNombresProyectos[$x].'<br>ID de contrato: '.$superVecIdContratoPago[$x][$y];?></p><?php?>
-                                                                <a href="administradorProy.php?id=<?php echo $vectorIdProyectos[$x]; ?>#angel-ruiz" target="_blank">
+                                                                <a href="administradorProy.php?id=<?php echo $vectorIdProyectos[$x].'idu'.$idusuario;?>#angel-ruiz" target="_blank">
                                                                 <p class="<?php  if ($supervectokenConekta[$x][$y] != '' && $supervecforTarget[$x][$y] != 0) {
                                                                                      echo 'blinkverde ';
                                                                                     } else {

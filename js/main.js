@@ -1343,7 +1343,8 @@ $("#plus3009").hover(
 );
 var chesx4000 = new Array();
 var chesy4000 = new Array();
-
+var chesx100000 = new Array();
+var chesy100000= new Array();
 
 
 
@@ -4001,6 +4002,7 @@ $(window).scroll(function () {
     for (let checkss = 0; checkss <= 100; checkss++) {
       var inps = '#inps' + (4000 + checkss);
       var serie = (4000 + checkss);
+      
       var inputchects = $(inps).attr('id');
       if (inps === ('#' + inputchects)) {
 
@@ -4019,6 +4021,40 @@ $(window).scroll(function () {
 
           //console.log(chesx4000[x]);
           i = chesx4000[x];
+          ches(i);
+
+
+        },
+        function () {
+          i = '';
+        }
+      );
+
+    }
+
+    var contchecks2 = 0;
+    for (let checkss2 = 0; checkss2 <= 100; checkss2++) {
+      var inps2 = '#inps' + (100000 + checkss2);
+      var serie2 = (100000 + checkss2);
+      
+      var inputchects2 = $(inps2).attr('id');
+      if (inps2 === ('#' + inputchects2)) {
+
+        // //console.log(inps2 + '-' + inputchects2);
+        chesy100000[contchecks2] = inps2;
+        chesx100000[contchecks2] = serie2;
+        contchecks2++;
+      }
+    }
+    // //console.log(chesx4000);
+    for (let x = 0; x < chesx100000.length; x++) {
+      var plus2 = '#plus' + chesx100000[x];
+      //  //console.log('aqui'+chesx4000[x]);
+      $(plus2).hover(
+        function () {
+
+          // console.log(chesx100000[x]);
+          i = chesx100000[x];
           ches(i);
 
 

@@ -1,14 +1,40 @@
 <?php
-
+$idU='';
+$idP='';
 if ($_SESSION['tipo_usuario'] == 'admin') {
     $idusuario =  $_GET['id'];
+    $cadena_de_texto = $_GET['id'];
+$cadena_buscada   = 'idu';
+$posicion_coincidencia = strpos($cadena_de_texto, $cadena_buscada);
+$auxpos0 = 0;
+
+//se puede hacer la comparacion con 'false' o 'true' y los comparadores '===' o '!=='
+if ($posicion_coincidencia === false) {
+    // echo "NO se ha encontrado la palabra deseada!!!!";
+} else {
+    $auxpos0 = $posicion_coincidencia;
+    // echo "Éxito!!! Se ha encontrado la palabra buscada en la posición: idu " . $posicion_coincidencia;
+    for ($x = $posicion_coincidencia + 3; $x < strlen($cadena_de_texto); $x++) {
+        //  $cadena_de_texto[$x];
+       $idU .= $cadena_de_texto[$x];
+        
+        // echo '<br>'.$x.$hora;
+    }
+    for ($y=0; $y < $posicion_coincidencia; $y++) { 
+      $idP .= $cadena_de_texto[$y];
+    }
+    
+   
+}
+$idusuario = $idU;
 } else {
 
     // echo $idusuario;
 }
 // echo $_SESSION['email'];
-$resultadoMensajes = obtenerIdMensajes($idusuario);
 
+$resultadoMensajes = obtenerIdMensajes($idusuario);
+// echo 'hola->'.$idusuario;
 $contadorPasos1 = 0;
 $contadorMensajes = 0;
 $resultadoConsulta = consultaUsuarioContrato($idusuario);
@@ -16,8 +42,8 @@ if ($resultadoConsulta->num_rows) {
     foreach ($resultadoConsulta as $Consulta) {
         $usuario = $Consulta['nombre_usuario'];
         $apellidos =  $Consulta['apellidos_usuario'];
-        echo $idproyecto = $Consulta['idproyecto_usuario'];
-        echo $idusuario = $Consulta['id_usuario'];
+         $idproyecto = $Consulta['idproyecto_usuario'];
+        $idusuario = $Consulta['id_usuario'];
         $foto = $Consulta['foto_usuario'];
         $calle = $Consulta['calle_usuario'];
         $numie = $Consulta['numiedireccion_usuario'];
@@ -352,7 +378,7 @@ if ($resultadoUser->num_rows) {
                                             </div> <!-- rnormal__tarjeta -->
                                           
                                             <div class="dato3">
-                                                <input style="display: none;" type="text" id="idmensaje<?php echo $x;?>" name="idmensaje" placeholder="" value="<?php 
+                                                <input style="" type="text" id="idmensaje<?php echo $x;?>" name="idmensaje" placeholder="" value="<?php 
                                                for ($s=0; $s < sizeof($superVecidMensajes[0]); $s++) { 
                                                    if($s == (sizeof($superVecidMensajes[0])-1)){
                                                 echo $superVecidMensajes[0][$s];}
@@ -361,11 +387,11 @@ if ($resultadoUser->num_rows) {
                                             </div> <!-- rnormal__tarjeta -->
                                             
                                             <div class="dato3">
-                                                <input style="display: none;" type="text" id="idusuario<?php echo $x;?>" name="idusuario" placeholder="" value="<?php echo $superVecIdUsuario[0][$x]; ?>" required>
+                                                <input style="" type="text" id="idusuario<?php echo $x;?>" name="idusuario" placeholder="" value="<?php echo $superVecIdUsuario[0][$x]; ?>" required>
                                             </div> <!-- rnormal__tarjeta -->
                                           
                                             <div class="dato3">
-                                                <input style="display: none;" type="text" id="nombreusuario<?php echo $x;?>" name="nombreusuario" placeholder="" value="<?php echo $usuario . " " . $apellidos ?>" required>
+                                                <input style="" type="text" id="nombreusuario<?php echo $x;?>" name="nombreusuario" placeholder="" value="<?php echo $usuario . " " . $apellidos ?>" required>
                                             </div> <!-- rnormal__tarjeta -->
 
                                             <div class="text-dato3">

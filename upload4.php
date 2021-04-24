@@ -63,11 +63,11 @@
             if(move_uploaded_file($fileTmpLoc, $a)){
                 try {
                  
-                    $stmt = $conn->prepare('INSERT INTO pr (id_archivo, idusuario_archivo, idproyecto_archivo, direccion_archivo, fecha_archivo, identificacion_archivo) VALUES (null, :idusuario_proyecto, :idproyecto_proyecto, :direccion_proyecto, :fecha_archivo, :identificacion_archivo)');
+                    $stmt = $conn->prepare('INSERT INTO pr (id_archivo, idusuario_archivo, idproyecto_archivo, direccion_archivo, fecha_archivo, identificacion_archivo) VALUES (null, :idusuario_archivo, :idproyecto_archivo, :direccion_archivo, :fecha_archivo, :identificacion_archivo)');
                     $stmt->execute(array(
-                        ':idusuario_proyecto' => $idproyecto,
-                        ':idproyecto_proyecto' =>  $idusuario,
-                        ':direccion_proyecto' => $a,
+                        ':idusuario_archivo' => $idusuario,
+                        ':idproyecto_archivo' =>  $idproyecto,
+                        ':direccion_archivo' => $a,
                         ':fecha_archivo' => $fecha ,
                         'identificacion_archivo' => $tipUser
                     ));

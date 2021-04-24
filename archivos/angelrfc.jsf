@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+            <meta http-equiv="x-ua-compatible" content="IE=edge" />
+            <meta content="text/html; charset=UTF-8" http-equiv="content-type" /><link type="text/css" rel="stylesheet" href="/PTSC/IdcSiat/javax.faces.resource/theme.css.jsf?ln=primefaces-satgobmx" /><link type="text/css" rel="stylesheet" href="/PTSC/IdcSiat/javax.faces.resource/primefaces.css.jsf?ln=primefaces" /><script type="text/javascript">BMCRum = { startTime : new Date().getTime(),app:'E6884543',fid:'0',sr:100,met:undefined,name:'/PTSC/IdcSiat/Error.jsf',per:false,ref:undefined,sip:'10.56.194.94',ssd:3,sse:false,st:-1,uid:'471_581854',tid:'ebafd58f-6b0d-4f3b-8a23-6e9b9eda02bd',ts:1607985364557,pxyInf:{"beaconsRes":"/apm-proxy/rest/beacons","httpPort":"8304","host":"acost1.sat.gob.mx","httpsPort":"443"}};</script><script type="text/javascript" src="https://acost1.sat.gob.mx:443/static-resources/aeuem.min.js"></script><script type="text/javascript" src="/PTSC/IdcSiat/javax.faces.resource/jquery/jquery.js.jsf?ln=primefaces"></script><script type="text/javascript" src="/PTSC/IdcSiat/javax.faces.resource/primefaces.js.jsf?ln=primefaces"></script>
+        <link href="./resources/css/default.css" rel="stylesheet" type="text/css" />
+        <script type="text/javascript" src="/PTSC/IdcSiat/resources/js/general.js"></script>
+        <script type="text/javascript" src="/PTSC/IdcSiat/resources/js/back.js"></script>
+        <title></title></head>
+<form id="error_panel_form" name="error_panel_form" method="post" action="/PTSC/IdcSiat/Error.jsf" enctype="application/x-www-form-urlencoded">
+<input type="hidden" name="error_panel_form" value="error_panel_form" />
+<table id="error_panel_form:registroPanelGrid" class="panel-register ancho100">
+<thead>
+<tr><th colspan="1" scope="colgroup">
+                <div class="header-register"><img id="error_panel_form:j_idt8" src="./resources/images/sat.jpg" alt="" />
+                    <br /><label id="error_panel_form:j_idt10" class="ui-outputlabel txtLabel"></label>
+                </div></th></tr>
+</thead>
+<tbody>
+<tr>
+<td><div id="error_panel_form:j_idt12" class="ui-messages ui-widget" aria-live="polite"></div></td>
+</tr>
+</tbody>
+</table>
+<div id="error_panel_form:errorPanel" class="ui-panel ui-widget ui-widget-content ui-corner-all txtLabel" style="margin:0 auto; width:320px; height:auto;"><div id="error_panel_form:errorPanel_header" class="ui-panel-titlebar ui-widget-header ui-helper-clearfix ui-corner-all"><span class="ui-panel-title">Autenticación RFC</span></div><div id="error_panel_form:errorPanel_content" class="ui-panel-content ui-widget-content">
+            <!--p:outputLabel value="ERROR DE SEGURIDAD"/--><label id="error_panel_form:j_idt14" class="ui-outputlabel">ERROR DE SEGURIDAD</label></div></div><script id="error_panel_form:errorPanel_s" type="text/javascript">PrimeFaces.cw('Panel','widget_error_panel_form_errorPanel',{id:'error_panel_form:errorPanel'});</script><input type="hidden" name="javax.faces.ViewState" id="javax.faces.ViewState" value="S3CmR5BsSs7INB3POF5ZjESQUk1uaQ6Lxb4TyecTHuLOF8ZWjYjvHOOyF3xvs7sPdtAYgggftzIVIMamCs7I1rJXHPuC1oqbqQdBFVH5bRkLRoR8vEjxSjbbcMDoGtJexcWrEwO6dbRdQYiYCkIMBwsVyrpCRgtriQ09YDaYGaDNXxBdZ/6VGkTMuNvLrmaP/GzTiaoIbXSv9BrwR8tJiZjXbz3Yj5aiN8rflURDGrp89/s/1jtt7ZRH6YOAInBdaYWEtoFqXyMQN931zaAFxJtk/1Cina9vp89JRAY9tLchdBlpl5Y4no0ooUFtgeTCs4UbvKXdsSmu/zpd4HRGzORjPxc3x4h6duwpaKsrX5tLt/3hQ+a7PGZks+mtNh2BvGmB4FsDPr8sbJdakUV3HrNqjGkWLJAsmU6bqPXWyJ+tW9hnFHDGyYuzjhtMyi3rvaj7LjJ0rnZMfN2eu7AOVhgvamX8VTDUrT3pwneER20lG8yxufdif2t9mCR057TEGqRSy5jO21nTDb//2lCISBtPWMmeBS0MBtjFRg/iW3XL3srZ+pBcms1Wx6Iqdq7v36BrW7qinon2XB796HTMlyIO37E6eCiMidynjsK7iDdd3Sye4Ik3V5ZR1RO86pqbEbT+gdn8uAXUwuNeJlYvwXLeffnEHxD2V/79wkKPsY+W5n9gdEFmDOekmcqGCUKKkRqo8iNgh6nOi2P3gqOcRkpG0eceQqIJr6Fblgg28gBEbRPcsQYY5FCCBgGIBKqxKnwVIr8k5xvntmlQx87xV2cnh4sf9HRxUgN2meoVZyZ9ihedjXkg6JT2ltc6MORpQvQeEtvsO3wvy7S0rwsi4W6qpthvTc7XB3cjZHO4HUFzXjqNKRENlxBkwi7vOkKm3W0LXCk6yYl/ZmtouJo5GnaRdJI3KXw47hE+Ic248aOyNJx/ML6FZELZ+PhevmbEn+iocCVO+CUcriGCU0ZcPrgPqouaa+/dEfxOFewHVRbUsAsZAaUvNTn7cfolP/zP" autocomplete="off" />
+</form>
+</html>
