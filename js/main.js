@@ -1524,15 +1524,20 @@ function abortHandler1(event){
 	_("status").innerHTML = "Upload Aborted";
 }
 
-function uploadFile1(){
-	var file1 = _("file1").files[0];
-  const idp = document.querySelector('#idp').value;
-  const idu = document.querySelector('#idu').value;
+function uploadFile1(x){
+  console.log(x);
+  var file = "file1"+x;
+	var file1 = _(file).files[0];
+  var axiidp = "#idp1"+x;
+  var axiidu = "#idu1"+x;
+  const idp = document.querySelector(axiidp).value;
+  const idu = document.querySelector(axiidu).value;
 	//alert(file.name+" | "+file.size+" | "+file.type);
 	var formdata = new FormData();
 	formdata.append("file1", file1);
   formdata.append("idp", idp);
   formdata.append("idu", idu);
+  // console.log(idp+idu);
 	var ajax = new XMLHttpRequest();
 	ajax.upload.addEventListener("progress", progressHandler2, false);
 	ajax.addEventListener("load", completeHandler2, false);
@@ -1541,7 +1546,7 @@ function uploadFile1(){
 	ajax.open("POST", "upload4.php");
 	ajax.onload = function(){
 		if(this.status === 200){
-			console.log(JSON.parse(ajax.responseText));
+			// console.log(JSON.parse(ajax.responseText));
 			const respuesta = JSON.parse(ajax.responseText);
 			if (respuesta.estado === 'uploadsuccess'){
 				swal({
@@ -1630,9 +1635,7 @@ function AgregarNuevoMensaje(e) {
     const idusuario = document.querySelector(formidusuario).value;
     const mensaje = document.querySelector(formidea).value;
     const nombreusuario= document.querySelector(formnombreusuario).value;
-    
     const mensajenuevo = new FormData();
-
     mensajenuevo.append('asunto', asunto);
     mensajenuevo.append('idmensaje', idmensaje);
     mensajenuevo.append('idusuario', idusuario);

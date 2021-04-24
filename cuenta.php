@@ -75,8 +75,7 @@ if ((!isset($_SESSION['usuario'])) && (!isset($_SESSION['email']))) {
             unset($vectorDescrip[$ix]);
         } ?><?php
         }
-
-        // var_dump($vectorIdProyectos);
+     
         for ($i = 0; $i < $contadorProyectos; $i++) {
             $resultadoPagos = consultaPagos($vectorIdProyectos[$i]);
 

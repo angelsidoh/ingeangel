@@ -8,8 +8,8 @@
         foreach ($resultadoConsulta as $Consulta) {
             $usuario = $Consulta['nombre_usuario'];
             $apellidos =  $Consulta['apellidos_usuario'];
-            $idproyecto = $Consulta['idproyecto_usuario'];
-            $idusuario = $Consulta['id_usuario'];
+            // $idproyecto = $Consulta['idproyecto_usuario'];
+            // $idusuario = $Consulta['id_usuario'];
             $foto = $Consulta['foto_usuario'];
             $calle = $Consulta['calle_usuario'];
             $numie = $Consulta['numiedireccion_usuario'];
@@ -35,10 +35,12 @@
         $tipoArchivo = strtolower(pathinfo($archivo, PATHINFO_EXTENSION));
         $mail = $_SESSION['email'];
         $tipUser = $_SESSION['tipo_usuario'];
-        if($tipUser == 'admin'){
+     
+            $idproyecto = '';
+            $idusuario = '';
         $idproyecto = filter_var($_POST['idp'], FILTER_SANITIZE_STRING);
         $idusuario = filter_var($_POST['idu'], FILTER_SANITIZE_STRING);
-        }
+  
 
         if (!$fileTmpLoc) { // if file not chosen
             echo "ERROR: Please browse for a file before clicking the upload button.";
@@ -69,7 +71,7 @@
                         ':idproyecto_archivo' =>  $idproyecto,
                         ':direccion_archivo' => $a,
                         ':fecha_archivo' => $fecha ,
-                        'identificacion_archivo' => $tipUser
+                        ':identificacion_archivo' => $tipUser
                     ));
     
                     } catch (PDOException $e) {
@@ -86,3 +88,4 @@
 
         
     }
+  

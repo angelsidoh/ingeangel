@@ -1,8 +1,6 @@
 <?php
 
-// echo $_SESSION['tipo_usuario'];
-// echo '<br>'.$idproyecto;
-// echo '<br>'.$idusuario;
+
 $resultadoArchivos = obtenerarchivos($idusuario);
 $contadorPasos4 = 0;
 if ($resultadoArchivos->num_rows) {
@@ -43,10 +41,7 @@ for ($u = 0; $u < sizeof($superVecIdP[0]); $u++) {
         }
     }
 }
-echo '<PRE>';
-var_dump($superVecIdP);
-var_dump($superVecIdU);
-echo '</PRE>';
+
 
 
 
@@ -56,16 +51,13 @@ foreach ($vecaxiredIdP as $key => $value) {
     if ($value === '') {
         unset($vecaxiredIdP[$key]);
     } else {
-        // echo $vecaxiIDMensajes[$key];
+
 
         $vecaxiredIdPRes[$cont] = $superVecIdP[0][$key];
         $cont++;
     }
 }
-echo '<PRE>';
-// var_dump($superVecIdP);
-var_dump($vecaxiredIdPRes);
-echo '</PRE>';
+
 
 ?>
 <div class="contenedor-especial">
@@ -78,7 +70,13 @@ echo '</PRE>';
                 <div class="submenu-proyectos">
                     <div class="titulo-proyecto">
                         <h2><?php
-                            echo  'Proyecto:' . $vecaxiredIdPRes[$x] . '<br>';
+                            for ($u = 0; $u < sizeof($vectorNombresProyectos); $u++) {
+
+                                if ($vectorIdProyectos[$u] == $vecaxiredIdPRes[$x]) {
+                                    echo  'Archivos del Proyecto: ' . $vectorNombresProyectos[$u] . '<br>';
+                                }
+                            }
+
                             ?>
                         </h2>
                     </div>
@@ -100,6 +98,7 @@ echo '</PRE>';
                                     <h2>Haga clic sobre un archivo para descargarlo</h2>
                                     <?php
                                     $contadorarchivos = 0;
+
                                     for ($y = 0; $y < sizeof($superVecDireccionArchivo[0]); $y++) {
 
                                         if ($superVecIdP[0][$y] == $vecaxiredIdPRes[$x]) {
@@ -154,19 +153,19 @@ echo '</PRE>';
 
 
                                     <br>
-                                    <input class="button" type="file" name="file1" id="file1"><br>
+                                    <input class="button" type="file" name="file1" id="file1<?php echo $x; ?>"><br>
                                     <progress id="progressBar2" value="0" max="100" style="width:53%;"></progress>
                                     <h3 id="status2"></h3>
                                     <p id="loaded_n_total2"></p>
                                     <br>
-                                    <input class="button" type="button" value="Subir Archivos" onclick="uploadFile1()">
+                                    <input class="button" type="button" value="Subir Archivos" onclick="uploadFile1(<?php echo $x; ?>)">
 
 
                                     <div class="dato3">
-                                        <input style="" type="text" id="idp" name="idp" placeholder="Ingrese código de contrato" value="<?php echo $vecaxiredIdPRes[$x]; ?>">
+                                        <input style="" type="text" id="idp1<?php echo $x; ?>" name="idp" placeholder="Ingrese código de contrato" value="<?php echo $vecaxiredIdPRes[$x]; ?>">
                                     </div> <!-- rnormal__tarjeta -->
                                     <div class="dato3">
-                                        <input style="" type="text" id="idu" name="idu" placeholder="Ingrese código de contrato" value="<?php echo  $superVecIdU[0][$x] ?>">
+                                        <input style="" type="text" id="idu1<?php echo $x; ?>" name="idu" placeholder="Ingrese código de contrato" value="<?php echo  $superVecIdU[0][$x] ?>">
                                     </div> <!-- rnormal__tarjeta -->
 
 
@@ -182,7 +181,7 @@ echo '</PRE>';
         }
     } else { ?>
         <div class="contenedor-especialx">
-
+    
             <h2>Haga clic sobre un archivo para descargarlo</h2>
             <?php
             $contadorarchivos = 0;
@@ -190,7 +189,7 @@ echo '</PRE>';
 
 
 
-                echo $superVecIdP[0][$y];
+                // echo $superVecIdP[0][$y];
                 if ($superVecIdP[0][$y] == $idProyecto) {
                     $contadorarchivos++;
             ?>
@@ -228,6 +227,35 @@ echo '</PRE>';
             }
             ?>
         </div>
+        <form id="upload_form1" enctype="multipart/form-data" method="post">
+
+            <div class="titulo-seccion">
+                <h1 id="sparklemaster" class="sparklemaster" style="color:  #93A9CC;">Subir un archivo</h1>
+            </div>
+
+
+
+
+
+
+            <br>
+            <input class="button" type="file" name="file1" id="file10"><br>
+            <progress id="progressBar2" value="0" max="100" style="width:53%;"></progress>
+            <h3 id="status2"></h3>
+            <p id="loaded_n_total2"></p>
+            <br>
+            <input class="button" type="button" value="Subir Archivos" onclick="uploadFile1(0)">
+
+
+            <div class="dato3">
+                <input style="" type="text" id="idp10" name="idp" placeholder="Ingrese código de contrato" value="<?php echo $idP; ?>">
+            </div> <!-- rnormal__tarjeta -->
+            <div class="dato3">
+                <input style="" type="text" id="idu10" name="idu" placeholder="Ingrese código de contrato" value="<?php echo  $idU; ?>">
+            </div> <!-- rnormal__tarjeta -->
+
+
+        </form>
 
 
 
