@@ -1281,7 +1281,7 @@ inset 0px 0px 0px 0px rgba(0,0,0,0.75);;
   height: auto;
   margin: 0 auto;
   padding: 20px;
-  background: linear-gradient(var(--ColorFontEspecial), #333);
+  /* background: linear-gradient(var(--ColorFontEspecial), #333); */
   box-shadow: 0 0 1rem 0 rgba(0, 0, 0, .2); 
   border-radius: 5px;
   position: relative;
@@ -1340,12 +1340,12 @@ inset 0px 0px 0px 0px rgba(0,0,0,0.75);;
   font-size:60px;
   
   
-  color: var(--ColorFontDescrip);
+  color: #000000;
   padding: 0 0;
 }
 .titulo-tecnologia h1{
   font-size: 22px;
-  color: #ffffff;
+  color: #000000;
   
 }
 .descripcion-tecnologia{
@@ -1358,7 +1358,7 @@ inset 0px 0px 0px 0px rgba(0,0,0,0.75);;
   font-size: 20px;
 }
 .descripcion-tecnologia p, .descripcion-tecnologia ul li{
-  color: #ffffff;
+  color: #000000;
   font-weight: 900;
 }
 .descripcion-tecnologia ul{
@@ -1368,7 +1368,7 @@ inset 0px 0px 0px 0px rgba(0,0,0,0.75);;
 .descripcion-tecnologia ul li{
   padding: 8px 0;
   font-weight: 900;
-  color: #ffffff;
+  color: #000000;
   z-index: 11;
 }
 
@@ -1400,19 +1400,19 @@ inset 0px 0px 0px 0px rgba(0,0,0,0.75);;
 
 .tecnologia1 .fa-html5{
   color: #e29300;
-  text-shadow: 0 0 30px rgb(0, 0, 0);
+  
 }
 .tecnologia2 .fa-css3-alt{
   color: #00aee2;
-  text-shadow: 0 0 30px rgb(0, 0, 0);
+  
 }
 .tecnologia3 .fa-php{
   color: #b3d4fc;
-  text-shadow: 0 0 30px rgb(0, 0, 0);
+  
 }
 .tecnologia4 .fa-js-square{
   color: gold;
-  text-shadow: 0 0 30px rgb(0, 0, 0);
+  
 }
 .tecnologia5 .fa-database{
 
@@ -5189,7 +5189,7 @@ margin-bottom: 50px;
   text-shadow: 0px 0px 10px #000000;
 }
 .backgroundsubcards{
-  background: linear-gradient(#ffffff, #161616);
+  /* background: linear-gradient(#ffffff, #161616); */
   margin-bottom: -50px;
   
 }

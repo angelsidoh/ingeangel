@@ -162,10 +162,10 @@ foreach ($vecaxiredIdP as $key => $value) {
 
 
                                     <div class="dato3">
-                                        <input style="" type="text" id="idp1<?php echo $x; ?>" name="idp" placeholder="Ingrese código de contrato" value="<?php echo $vecaxiredIdPRes[$x]; ?>">
+                                        <input style="display: none;" type="text" id="idp1<?php echo $x; ?>" name="idp" placeholder="Ingrese código de contrato" value="<?php echo $vecaxiredIdPRes[$x]; ?>">
                                     </div> <!-- rnormal__tarjeta -->
                                     <div class="dato3">
-                                        <input style="" type="text" id="idu1<?php echo $x; ?>" name="idu" placeholder="Ingrese código de contrato" value="<?php echo  $superVecIdU[0][$x] ?>">
+                                        <input style="display: none;" type="text" id="idu1<?php echo $x; ?>" name="idu" placeholder="Ingrese código de contrato" value="<?php echo  $superVecIdU[0][$x] ?>">
                                     </div> <!-- rnormal__tarjeta -->
 
 
@@ -248,10 +248,10 @@ foreach ($vecaxiredIdP as $key => $value) {
 
 
             <div class="dato3">
-                <input style="" type="text" id="idp10" name="idp" placeholder="Ingrese código de contrato" value="<?php echo $idP; ?>">
+                <input style="display: none;" type="text" id="idp10" name="idp" placeholder="Ingrese código de contrato" value="<?php echo $idP; ?>">
             </div> <!-- rnormal__tarjeta -->
             <div class="dato3">
-                <input style="" type="text" id="idu10" name="idu" placeholder="Ingrese código de contrato" value="<?php echo  $idU; ?>">
+                <input style="display: none;" type="text" id="idu10" name="idu" placeholder="Ingrese código de contrato" value="<?php echo  $idU; ?>">
             </div> <!-- rnormal__tarjeta -->
 
 
