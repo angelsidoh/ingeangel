@@ -14,10 +14,11 @@ if ($_POST['accion'] == 'Registrarse') {
     $sector = filter_var($_POST['sector'], FILTER_SANITIZE_STRING);
     $select = filter_var($_POST['select'], FILTER_SANITIZE_STRING);
     $idea = filter_var($_POST['idea'], FILTER_SANITIZE_STRING);
-
+    $nombrequienloenvio = 'Usuario: '.$nombre.' '.$apellidos;
     $caracteres = strlen($idea);
     $contcar = $caracteres / 500;
     $imprimir = 0;
+    $asunto = 'Mi proyecto web';
 
     $url = 'https://ingeangel.com/contrato.php';
 
@@ -57,7 +58,7 @@ if ($_POST['accion'] == 'Registrarse') {
                 'estado' => 'correoexiste'
             );
         } else {
-            $stmt = $conn->prepare('INSERT INTO usuarios (id_usuario, nombre_usuario, apellidos_usuario, telefono_usuario, email_usuario, fecha_usuario, pass_usuario) VALUES (null, :nombre_usuario,:apellidos_usuario, :telefono_usuario, :email_usuario, :fecha_usuario, :pass_usuario)');
+            $stmt = $conn->prepare('INSERT INTO usuarios (id_usuario, nombre_usuario, apellidos_usuario, telefono_usuario, email_usuario, fecha_usuario, pass_usuario, tipo_usuario) VALUES (null, :nombre_usuario,:apellidos_usuario, :telefono_usuario, :email_usuario, :fecha_usuario, :pass_usuario, :tipo_usuario)');
 
             $stmt->execute(array(
                 ':nombre_usuario' => $nombre,
@@ -65,7 +66,8 @@ if ($_POST['accion'] == 'Registrarse') {
                 ':telefono_usuario' => $tel,
                 ':email_usuario' => $mail,
                 ':fecha_usuario' => $fecha,
-                ':pass_usuario' => $pass
+                ':pass_usuario' => $pass,
+                ':tipo_usuario' => 'Usuario'
 
             ));
             $LAST_ID = $conn->lastInsertId();
@@ -132,11 +134,14 @@ if ($_POST['accion'] == 'Registrarse') {
                         $nuevomsj.= $idea[$u];
                     }
                 }
-                $stmt = $conn2->prepare('INSERT INTO mensajecliente (id_mensaje, idusuario_mensaje, mensaje_mensaje) VALUES (null, :idusuario_mensaje, :mensaje_mensaje)');
+                $stmt = $conn2->prepare('INSERT INTO mensajecliente (id_mensaje, idusuario_mensaje, mensaje_mensaje, asunto_mensaje, admin_mensaje, fecha_mensaje) VALUES (null, :idusuario_mensaje, :mensaje_mensaje, :asunto_mensaje, :admin_mensaje, :fecha_mensaje)');
 
                 $stmt->execute(array(
                     ':idusuario_mensaje' => $LAST_ID,
-                    ':mensaje_mensaje' => $nuevomsj
+                    ':mensaje_mensaje' => $nuevomsj,
+                    ':asunto_mensaje' => $sector,
+                    ':admin_mensaje' => $nombrequienloenvio,
+                    ':fecha_mensaje' => $fecha
 
                 ));
                 $LAST_IDx = $conn2->lastInsertId();
@@ -165,6 +170,8 @@ if ($_POST['accion'] == 'Registrarse') {
             );
 
             enviar_correo3($nombre, $apellidos, $pass, $mail, $idea, $select, $sector);
+            enviar_correo4($idea,$asunto,$tipo_user,$mail,$nombrequienloenvio);
+            // enviar_correo3($nombre, $apellidos, $pass, '', $idea, $select, $sector);
         }
         echo json_encode($respuesta);
     } catch (PDOException $e) {

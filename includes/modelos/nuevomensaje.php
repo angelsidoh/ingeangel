@@ -1,7 +1,7 @@
 <?php
 session_start();
 require_once '../../send-mail.php';
-if ($_POST['accion'] == 'Enviar Mensaje') {
+if ($_POST['accion'] == 'Responder') {
     $asunto = filter_var($_POST['asunto'], FILTER_SANITIZE_STRING);
     $idmensaje = filter_var($_POST['idmensaje'], FILTER_SANITIZE_STRING);
     $idusuario = filter_var($_POST['idusuario'], FILTER_SANITIZE_STRING);

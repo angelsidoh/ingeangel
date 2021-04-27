@@ -1631,7 +1631,7 @@ function AgregarNuevoMensaje(e) {
   e.preventDefault();
   //console.log(idboton);
   const accion = document.querySelector(idboton).value;
-  if (accion == 'Enviar Mensaje') {
+  if (accion == 'Responder') {
     const asunto = document.querySelector(formasunto).value;
     const idmensaje = document.querySelector(formidmensaje).value;
     const idusuario = document.querySelector(formidusuario).value;
@@ -1644,7 +1644,7 @@ function AgregarNuevoMensaje(e) {
     mensajenuevo.append('mensaje', mensaje);
     mensajenuevo.append('nombreusuario', nombreusuario);
     mensajenuevo.append('accion', accion);
-    if (accion === 'Enviar Mensaje') {
+    if (accion === 'Responder') {
       //console.log (accion);
       nuevomensaje(mensajenuevo);
     }

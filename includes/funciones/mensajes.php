@@ -346,7 +346,7 @@ if ($resultadoUser->num_rows) {
                                         </div>
                                         <div class="sub-boton">
 
-                                            <input id="btnagregarmensaje<?php echo $x;?>" type="submit" value="Enviar Mensaje" class="button">
+                                            <input id="btnagregarmensaje<?php echo $x;?>" type="submit" value="Responder" class="button">
 
                                         </div>
                                     </form>
