@@ -154,9 +154,9 @@ if (isset($_SESSION['email'])) {
             }
         }
     }
-    echo '<pre>';
-    var_dump($usuario);
-    echo '</pre>';
+    // echo '<pre>';
+    // var_dump($usuario);
+    // echo '</pre>';
     if ((!isset($_SESSION['usuario'])) && (!isset($_SESSION['email'])) && (!isset($_SESSION['token']))) {
 
 

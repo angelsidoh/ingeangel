@@ -11,11 +11,13 @@ function countChars(obj,x){
   
   
 }
-function countCharsx2(obj){
+function countChars2(obj){
  
   var chars = "charNum0";
-  // console.log(x);
+  
   document.getElementById(chars).innerHTML = obj.value.length+' characters';
+  var x = '0';
+  console.log(x);
   obtnermensaje(x);
 
 
@@ -1551,7 +1553,7 @@ function uploadFile1(x){
 			if (respuesta.estado === 'uploadsuccess'){
 				swal({
           content: "",
-          text: 'Foto actualizada',
+          text: 'Ha enviado el archivo correctamente',
           icon: "success",
           button: {
             text: "Continuar",
@@ -1583,7 +1585,7 @@ function completeHandler2(event){
 	_("progressBar1").value = 0;
 }
 function errorHandler2(event){
-	_("status2").innerHTML = "Upload Failed";
+	_("status2").innerHTML = "El archivo que intenta subir, es demasiado pesado para esta plataforma. Intenta reducir su tamaño o enviarlo por otro método. Peso maximo permitido (700,000 bytes)";
 }
 function abortHandler2(event){
 	_("status2").innerHTML = "Upload Aborted";
