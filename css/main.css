@@ -361,7 +361,7 @@ html {
 
 }
 .titulo-proyectos a{
-  color: #ffffff;
+  color: #ff0000;
   text-align: center;
 }
 .titulo-proyectos .Usuario, .Usuario{
@@ -724,12 +724,12 @@ height: auto;
   }
 }
 .titulo-proyecto h1{
-  color: white;
+  color: rgb(255, 255, 255);
   padding: 5px 0;
   margin: 0 0;
 }
 .titulo-proyecto h2{
-  color: #ffffff;
+  
 }
 .mas-proyecto{
   text-align: right;
@@ -4693,7 +4693,9 @@ color: #ffffff;
   padding: 10px;
   font-family: var(--FontPal);
   
+  
 }
+
 @media only screen and (min-width:768px){
   .contenedor-especial, .contenedor-especialx{
     width: 90%;

@@ -58,7 +58,7 @@ if ($resultadoConsulta->num_rows) {
         $tipouser = $Consulta['tipo_usuario'];
     }
 }
-echo $email.'/'.$_SESSION['email'];
+
 if ($resultadoMensajes->num_rows) {
     foreach ($resultadoMensajes as $mensaje) {
         $vecmensaje[$contadorPasos1] = $mensaje['mensaje_mensaje'];
