@@ -64,7 +64,7 @@ if ((!isset($_SESSION['usuario'])) && (!isset($_SESSION['email']))) {
         }
     }
     $contadorProyectos = 0;
-    if ($email == 'jose@hotmail.com' && $_SESSION['email'] == 'jose@hotmail.com' && $_SESSION['tipo_usuario'] == 'admin') {
+    if ($_SESSION['tipo_usuario'] == 'admin') {
      //   echo 'hola angel' . $_GET['pago'];
 
         $cadena_de_texto = $_GET['pago'];

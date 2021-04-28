@@ -37,11 +37,14 @@
     color:#ffffff;
     margin-top: 0px;
     " class="textbienvenida">
-            <h1 style="color:#f5d108; font-size:45px;">Nuevo Mensaje</h1>
+            <h1 style="color:#f5d108; font-size:45px;">Factura pagada</h1>
             <h2></h2>
             <h2 style="color:#fe4918; font-size: 46px;
-">Asunto : fffff</h2>
-            <h2>contenido
+">Asunto : *id del contrato</h2>
+            <h2>Por los Servicios <br> Programacion (html css3 php y javascript) <br> Bases de datos en MySql <br> Mantenimiento general <br> Hosting y Dominio <br><br>
+            Cantidad total: *monto total;
+<br><br>
+
             </h2>
            
             
