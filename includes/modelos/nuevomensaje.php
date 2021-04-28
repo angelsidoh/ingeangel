@@ -1,12 +1,14 @@
 <?php
 session_start();
 require_once '../../send-mail.php';
-if ($_POST['accion'] == 'Responder') {
+if ($_POST['accion'] == 'Responder' || $_POST['accion'] == 'Enviar Mensaje') {
     $asunto = filter_var($_POST['asunto'], FILTER_SANITIZE_STRING);
     $idmensaje = filter_var($_POST['idmensaje'], FILTER_SANITIZE_STRING);
     $idusuario = filter_var($_POST['idusuario'], FILTER_SANITIZE_STRING);
     $mensaje = filter_var($_POST['mensaje'], FILTER_SANITIZE_STRING);
     $nombreusuario = filter_var($_POST['nombreusuario'], FILTER_SANITIZE_STRING);
+
+    $email = filter_var($_POST['email'], FILTER_SANITIZE_STRING);
     date_default_timezone_set('America/Mexico_City');
     $fecha =  date('Y-m-d H:i:s');
     $caracteres = strlen($mensaje);
@@ -70,7 +72,7 @@ if ($_POST['accion'] == 'Responder') {
         $respuesta = array(
             'estado' => 'enviado'
         );
-        enviar_correo4($mensaje,$asunto,$tipo_user,$_SESSION['email'],$nombreusuario);
+        enviar_correo4($mensaje,$asunto,$tipo_user,$email,$nombreusuario);
         echo json_encode($respuesta);
     } catch (PDOException $e) {
         echo json_encode("Error: " . $e->getMessage());

@@ -572,6 +572,12 @@ if ((!isset($_SESSION['usuario'])) && (!isset($_SESSION['email']))) {
                                     <div class="datos-contrato">
                                         <form id="agregar-contrato" action="#">
                                             <div class="contenido-cuenta">
+                                            <div class="text-dato3">
+                                                    <p>Nombre del proyecto</p>
+                                                </div>
+                                                <div class="dato3">
+                                                    <input type="text" id="nombreproyecto" name="nombreproyecto" placeholder="Ingrese Nombre del Proyecto" value="<?php echo $vectorNombresProyectos[$i]?>">
+                                                </div> <!-- rnormal__tarjeta -->
                                                 <div class="text-dato3">
                                                     <p>Fecha Inicio</p>
                                                 </div>

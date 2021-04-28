@@ -58,7 +58,7 @@ if ($resultadoConsulta->num_rows) {
         $tipouser = $Consulta['tipo_usuario'];
     }
 }
-// echo $usuario.$apellidos;
+echo $email.'/'.$_SESSION['email'];
 if ($resultadoMensajes->num_rows) {
     foreach ($resultadoMensajes as $mensaje) {
         $vecmensaje[$contadorPasos1] = $mensaje['mensaje_mensaje'];
@@ -320,7 +320,9 @@ if ($resultadoUser->num_rows) {
                                                }
                                                  ?>" required >
                                             </div> <!-- rnormal__tarjeta -->
-                                          
+                                            <div class="dato3">
+                                                <input style="" type="text" id="email<?php echo $x;?>" name="email" placeholder="" value="<?php echo $email;?>" required>
+                                            </div> <!-- rnormal__tarjeta -->
                                             <div class="dato3">
                                                 <input style="display: none;" type="text" id="idusuario<?php echo $x;?>" name="idusuario" placeholder="" value="<?php echo $superVecIdUsuario[0][$x]; ?>" required>
                                             </div> <!-- rnormal__tarjeta -->
@@ -378,7 +380,7 @@ if ($resultadoUser->num_rows) {
                                             </div> <!-- rnormal__tarjeta -->
                                           
                                             <div class="dato3">
-                                                <input style="" type="text" id="idmensaje<?php echo $x;?>" name="idmensaje" placeholder="" value="<?php 
+                                                <input style="display:none;" type="text" id="idmensaje<?php echo $x;?>" name="idmensaje" placeholder="" value="<?php 
                                                for ($s=0; $s < sizeof($superVecidMensajes[0]); $s++) { 
                                                    if($s == (sizeof($superVecidMensajes[0])-1)){
                                                 echo $superVecidMensajes[0][$s];}
@@ -387,11 +389,14 @@ if ($resultadoUser->num_rows) {
                                             </div> <!-- rnormal__tarjeta -->
                                             
                                             <div class="dato3">
-                                                <input style="" type="text" id="idusuario<?php echo $x;?>" name="idusuario" placeholder="" value="<?php echo $superVecIdUsuario[0][$x]; ?>" required>
+                                                <input style="display:none;" type="text" id="idusuario<?php echo $x;?>" name="idusuario" placeholder="" value="<?php echo $superVecIdUsuario[0][$x]; ?>" required>
+                                            </div> <!-- rnormal__tarjeta -->
+                                            <div class="dato3">
+                                                <input style="" type="text" id="email<?php echo $x;?>" name="email" placeholder="" value="<?php echo $email;?>" required>
                                             </div> <!-- rnormal__tarjeta -->
                                           
                                             <div class="dato3">
-                                                <input style="" type="text" id="nombreusuario<?php echo $x;?>" name="nombreusuario" placeholder="" value="<?php echo $usuario . " " . $apellidos ?>" required>
+                                                <input style="display:none;" type="text" id="nombreusuario<?php echo $x;?>" name="nombreusuario" placeholder="" value="<?php echo $usuario . " " . $apellidos ?>" required>
                                             </div> <!-- rnormal__tarjeta -->
 
                                             <div class="text-dato3">

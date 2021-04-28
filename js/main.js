@@ -1607,6 +1607,7 @@ var formidmensaje = '';
 var formidusuario = '';
 var formidea = '';
 var formnombreusuario= '';
+var formemail = '';
 function obtnermensaje(x){
   var iddelmensaje = '#agregar-nuevomensaje'+x; 
   idboton = '#btnagregarmensaje'+x;
@@ -1614,8 +1615,9 @@ function obtnermensaje(x){
 formidmensaje= '#idmensaje'+x;
 formidusuario = '#idusuario'+x
 formidea = '#idea'+x;
+formemail = '#email'+x;
 formnombreusuario = '#nombreusuario'+x;
-  //console.log(iddelmensaje);
+  // console.log(iddelmensaje);
   const formNuevoMensaje = document.querySelector(iddelmensaje);
   if ($(iddelmensaje).length) {
     eventListeners();
@@ -1631,11 +1633,12 @@ function AgregarNuevoMensaje(e) {
   e.preventDefault();
   //console.log(idboton);
   const accion = document.querySelector(idboton).value;
-  if (accion == 'Responder') {
+  if (accion == 'Responder'|| accion == 'Enviar Mensaje') {
     const asunto = document.querySelector(formasunto).value;
     const idmensaje = document.querySelector(formidmensaje).value;
     const idusuario = document.querySelector(formidusuario).value;
     const mensaje = document.querySelector(formidea).value;
+    const email = document.querySelector(formemail).value;
     const nombreusuario= document.querySelector(formnombreusuario).value;
     const mensajenuevo = new FormData();
     mensajenuevo.append('asunto', asunto);
@@ -1643,9 +1646,11 @@ function AgregarNuevoMensaje(e) {
     mensajenuevo.append('idusuario', idusuario);
     mensajenuevo.append('mensaje', mensaje);
     mensajenuevo.append('nombreusuario', nombreusuario);
+    mensajenuevo.append('email', email);
     mensajenuevo.append('accion', accion);
-    if (accion === 'Responder') {
-      //console.log (accion);
+    console.log (accion);
+    if (accion === 'Responder' || accion === 'Enviar Mensaje') {
+ 
       nuevomensaje(mensajenuevo);
     }
   }
@@ -2458,6 +2463,9 @@ function leerAgregarContrato(e) {
     const basededato = document.querySelector('#basededato').value;
     const programacion = document.querySelector('#programacion').value;
 
+
+    const nombreproyecto = document.querySelector('#nombreproyecto').value;
+
     const infoagregarcontrato = new FormData();
     infoagregarcontrato.append('accion', accion);
     infoagregarcontrato.append('select', select);
@@ -2471,6 +2479,8 @@ function leerAgregarContrato(e) {
     infoagregarcontrato.append('mantenimiento', mantenimiento);
     infoagregarcontrato.append('basededato', basededato);
     infoagregarcontrato.append('programacion', programacion);
+
+    infoagregarcontrato.append('nombreproyecto', nombreproyecto);
     // infoagregarcontrato.append('paquetebasico', paquetebasico);
     // infoagregarcontrato.append('paquetenegocio', paquetenegocio);
     // infoagregarcontrato.append('paqueteprofesional', paqueteprofesional);
@@ -4002,7 +4012,7 @@ $(window).scroll(function () {
 
   if (scroll > 966) {
     $('.menu-barra').addClass('fix-menubarra');
-    // //console.log('hola');
+    // console.log('-');
     var contchecks = 0;
     for (let checkss = 0; checkss <= 100; checkss++) {
       var inps = '#inps' + (4000 + checkss);
@@ -4011,7 +4021,7 @@ $(window).scroll(function () {
       var inputchects = $(inps).attr('id');
       if (inps === ('#' + inputchects)) {
 
-        // //console.log(inps + '-' + inputchects);
+        // console.log(inps + '-' + inputchects);
         chesy4000[contchecks] = inps;
         chesx4000[contchecks] = serie;
         contchecks++;

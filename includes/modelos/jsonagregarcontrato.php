@@ -19,6 +19,7 @@ if ($_POST['accion'] == 'Agregar Contrato') {
     $mantenimiento = filter_var($_POST['mantenimiento'], FILTER_SANITIZE_STRING);
     $basededatos = filter_var($_POST['basededato'], FILTER_SANITIZE_STRING);
     $programacion = filter_var($_POST['programacion'], FILTER_SANITIZE_STRING);
+    $nombreproyecto = filter_var($_POST['nombreproyecto'], FILTER_SANITIZE_STRING);
     $contmeses = 1;
     $str = ("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890");
     $tokencontrato = "";
@@ -71,7 +72,7 @@ if ($_POST['accion'] == 'Agregar Contrato') {
 
         ));
 
-        $proyecto = 'Preparación';
+        $proyecto = $nombreproyecto;
         $stmt = $connf->prepare("UPDATE proyectos SET nombre_proyecto = ? WHERE id_proyecto = ?");
 
         $stmt->bind_param("ss", $proyecto, $idproyecto);
