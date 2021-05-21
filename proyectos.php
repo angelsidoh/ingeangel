@@ -8,14 +8,7 @@ require 'includes/templates/header.php';
 <meta name="keywords" content="Proyectos web, Proyectos páginas web, Portafolio ingeangel, Portafolio web de ingeangel" />
 <meta name="author" content="José Angel Ruiz Chávez" />
 <meta name="copyright" content="José Angel Ruiz Chávez" />
-<div class="imgangel-ruiz">
-    <div class="text-imgangel">
-        <h4>José Angel Ruiz Chávez <br> Ingeniero en Mecatrónica</h4>
-        
-        
-    </div>
-    <img src="img/creadasporlaempresa/fotospc-min.png" alt="">
-</div>
+
 <div id="proyectos" class="proyectos-gridconteiner">
     <div class="titulo-seccion">
         <h1 id="sparklemaster" class="sparklemaster" style="color:  #93A9CC;">Proyectos WEB</h1>
@@ -46,7 +39,7 @@ require 'includes/templates/header.php';
        </div>
        <div class="submenu-proyectos">
             <div class="titulo-proyecto">
-               <h1>Prácticas proyectos</h1>
+               <h1>Muestras de proyectos</h1>
             </div>
             <div class="mas-proyecto">
                 <input type = "checkbox" id = "check-practicas" name = "menu">
@@ -57,22 +50,21 @@ require 'includes/templates/header.php';
             </div>
             <div id="lista-practicas" class="lista-practicas" style="display: none;">
                 <div class="links">
-                    <a href="proyectos/MEXmubles/mexmbles.html" target="_blank"><p><i class="fas fa-caret-right"></i> MexMuebles</p></a>
+                    <a href="proyectos/explorethemoon/moon.html" target="_blank"><p><i class="fas fa-caret-right"></i> Explore the moon <i class="fas fa-tools"></i></p></a>
                 </div>
                 <div class="links">
-                    <a href="proyectos/Sushis/sushis.html" target="_blank"><p><i class="fas fa-caret-right"></i> Sushi´s</p></a>
+                    <a href="proyectos/MEXmubles/mexmbles.html" target="_blank"><p><i class="fas fa-caret-right"></i> MexMuebles <i class="fas fa-tools"></i></p></a>
                 </div>
                 <div class="links">
-                    <a href="proyectos/Animaciondeplaneta/planet.php" target="_blank"><p><i class="fas fa-caret-right"></i> Animación de Planeta</p></a>
+                    <a href="proyectos/Sushis/sushis.html" target="_blank"><p><i class="fas fa-caret-right"></i> Sushi´s <i class="fas fa-tools"></i></p></a>
                 </div>
-                <div class="links">
-                    <a href="proyectos/fluidmouse/fluidmouse.php" target="_blank"><p><i class="fas fa-caret-right"></i> Animación de API FluidSimu</p></a>
-                </div>
+               
+             
             </div>
        </div>
        <div class="submenu-proyectos">
             <div class="titulo-proyecto">
-               <h1>API´s</h1>
+               <h1>Currículos</h1>
             </div>
             <div class="mas-proyecto">
                 <input type = "checkbox" id = "check-apis" name = "menu">
@@ -83,23 +75,15 @@ require 'includes/templates/header.php';
             </div>
             <div id="lista-apis" class="lista-apis" style="display: none;">
                 <div class="links">
-                    <a href="#" target="_blank"><p><i class="fas fa-caret-right"></i> Conekta - API de pagos con tarjeta de Crédito/Debito</p> </a>
+                    <a href="cvangelruiz.php#angelruiz" target="_blank"><p><i class="fas fa-caret-right"></i> José Angel Ruiz Chávez <span>Ingeniero en Mecatrónica.</span></p> </a>
                 </div>
-                <div class="links">
-                    <a href="#" target="_blank"><p><i class="fas fa-caret-right"></i> Paypal - API de pagos por cuentas PayPal</p></a>
-                </div>
-                <div class="links">
-                    <a href="#" target="_blank"><p><i class="fas fa-caret-right"></i> Hybridauth - API Registro y inicios de sesión con redes soliales</p></a>
-                </div>
-                <div class="links">
-                    <a href="#" target="_blank"><p><i class="fas fa-caret-right"></i> Animación de API FluidSimu</p></a>
-                </div>
+                
             </div>
        </div>
     </div>
 </div>
 
-<div id="proyectos" class="proyectos-gridconteiner">
+<div style="display: none;" id="proyectos" class="proyectos-gridconteiner">
     <div class="titulo-seccion">
         <h1 id="sparklemaster" class="sparklemaster" style="color:  #93A9CC;">Habilidades</h1>
     </div>

@@ -2587,11 +2587,12 @@ ul,ol{
   width: 100%;
   height: calc(966px / 1);
   margin: 0 auto;
-  background-color: var(--ColorBackgroundPal);
+  background-color: rgb(22, 22, 22);
   display: grid;
   grid-template-rows: repeat(1, 50% 50%);
   grid-template-columns: repeat(12, 1fr);
   /* border-bottom: 1px solid black; */
+  color: #ffffff;
   
 }
 
@@ -2602,7 +2603,7 @@ ul,ol{
     height: calc(966px / 1);
     margin: 0 auto;
     
-    background-color: var(--ColorBackgroundPal);
+   
     display: grid;
     grid-template-rows: repeat(1, 20% 65% 15%);
     grid-template-columns: repeat(12, 1fr);
@@ -2612,6 +2613,11 @@ ul,ol{
   #sobremi{
     margin-top: 363px;
   }
+  @media only screen and (min-width:768px){
+  #sobremi{
+    margin-top: 0px;
+  }
+}
   
 }
 div.secciones-index:nth-child(2){
@@ -2723,12 +2729,16 @@ div.secciones-index:nth-child(2){
   grid-template-rows: repeat(12, 29.3mm);
   grid-template-columns: repeat(12, 20mm);
   margin-bottom: 50px;
+  box-shadow: 0px 0px 12px 6px rgba(255,255,255,1);
+
   }
 }
 @media only screen and (min-width:1190px){
   .curriculum{
   grid-row: 1 / 4;
   grid-column: 3 / 11;
+  box-shadow: 0px 0px 12px 6px rgba(255,255,255,1);
+
   }
 }
 .txt1{

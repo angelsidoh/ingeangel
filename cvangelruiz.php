@@ -40,10 +40,10 @@ Habilidades de profesionales de ingeangel.com
             <i class="fas fa-chevron-right"> Aptitudes</i>
 
         </div>
-        <div class="txt5">
+        <!-- <div class="txt5">
             <i class="fas fa-chevron-right"> Idiomas</i>
 
-        </div>
+        </div> -->
         <div class="txt6">
             <h3>Desarrollo y programación Web</h3>
             <p>&nbsp;<i class="fas fa-circle"></i>&nbsp;Manejo alto de contenido en WordPress</p>
@@ -88,9 +88,9 @@ Habilidades de profesionales de ingeangel.com
             <p><i class="fas fa-circle"></i>&nbsp;Desarrollo de software a través de la lógica de programación desarrollada en mi formación académica y profesional.</p>
             <p><i class="fas fa-circle"></i>&nbsp;Ambición por dar solución a problemas complejos.</p>
         </div>
-        <div class="txt8">
+        <!-- <div class="txt8">
             <p><i class="fas fa-university">&nbsp;</i>Ingles: A1</p>
-        </div>
+        </div> -->
         <div class="txt9">
             <h4><i class="fas fa-chevron-right"></i>&nbsp;Contacto</h4>
             <p><i class="fas fa-phone-alt"></i>&nbsp;Cel: 452 144 1689</p>
@@ -100,7 +100,7 @@ Habilidades de profesionales de ingeangel.com
         </div>
         <div class="txt10">
             <h4><i class="fas fa-chevron-right"></i>&nbsp;Habilidades</h4>
-            <p><i id="icono" class="fas fa-circle"></i>&nbsp; Nivel Alto uso de la computadora.</p>
+            <!-- <p><i id="icono" class="fas fa-circle"></i>&nbsp; Nivel Alto uso de la computadora.</p> -->
             <p><i id="icono" class="fas fa-circle"></i>&nbsp; Capacidad para aprender a usar &nbsp;&nbsp;&nbsp;&nbsp;cualquier tipo
                 de software de &nbsp;&nbsp;&nbsp;&nbsp;Ingeniería u otro tipo.</p>
             <p><i id="icono" class="fas fa-circle"></i>&nbsp;<span> Lenguajes de programación en uso:</span>
@@ -205,8 +205,8 @@ Habilidades de profesionales de ingeangel.com
             <p><i class="fas fa-circle"></i>&nbsp;Desarrollo de software a través de la lógica de programación desarrollada en mi formación académica y profesional.</p>
             <p><i class="fas fa-circle"></i>&nbsp;Ambición por dar solución a problemas complejos.</p>
 
-            <h4><i class="fas fa-chevron-right"></i>&nbsp;Idiomas</h4>
-            <p><i id="ingles" class="fas fa-university">&nbsp;</i>Ingles: A1</p>
+            <!-- <h4><i class="fas fa-chevron-right"></i>&nbsp;Idiomas</h4>
+            <p><i id="ingles" class="fas fa-university">&nbsp;</i>Ingles: A1</p> -->
 
             <h4><i id="ingles" class="fas fa-chevron-right"></i>&nbsp;Contacto</h4>
             <p><i id="ingles" class="fas fa-phone-alt"></i>&nbsp;Cel: 452 144 1689</p>
@@ -215,7 +215,7 @@ Habilidades de profesionales de ingeangel.com
             <p><i id="ingles" class="fas fa-map-marker-alt"></i>&nbsp;San José de la Mina #42 Col. San José de la Mina. CP:60125</p>
 
             <h4><i class="fas fa-chevron-right"></i>&nbsp;Habilidades</h4>
-            <p><i id="icono" class="fas fa-circle"></i>&nbsp; Nivel Alto uso de la computadora.</p>
+            <!-- <p><i id="icono" class="fas fa-circle"></i>&nbsp; Nivel Alto uso de la computadora.</p> -->
             <p><i id="icono" class="fas fa-circle"></i>&nbsp; Capacidad para aprender a usar cualquier tipo
                 de software de Ingeniería u otro tipo.</p>
             <p><i id="icono" class="fas fa-circle"></i>&nbsp;<span> Lenguajes de programación en uso:</span>
