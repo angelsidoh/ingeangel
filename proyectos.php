@@ -32,9 +32,7 @@ require 'includes/templates/header.php';
                 <div class="links">
                     <a href="https://sociedadintelectualdelaguacatemexicano.com/" target="_blank"><p><i class="fas fa-caret-right"></i> https://sociedadintelectualdelaguacatemexicano.com/</p></a>
                 </div>
-                <div class="links">
-                    <a href="https://ingeangel.com/" target="_blank"><p><i class="fas fa-caret-right"></i> https://ingeangel.com/</p></a>
-                </div>
+              
             </div>
        </div>
        <div class="submenu-proyectos">
