@@ -1,6 +1,6 @@
 <?php
 require 'includes/templates/header.php';
-// var_dump(getrusage()) ;
+
 require_once('includes/funciones/consultas.php');
 $resultadoProyecto = obtenerPrecios(1);
 
@@ -16,13 +16,6 @@ if ($resultadoProyecto->num_rows) {
         $precioBD = $proyecto['basesdatos_precio'];
     }
 }
-// echo $precioBasico;
-
-// echo '<br> ------>'.$contadorPrecios1;
-// echo '<pre>';
-// var_dump($auxPosiciones);
-// echo '</pre>';
-
 ?>
 
 <title>Desarrollo Web</title>
@@ -454,7 +447,7 @@ if ($resultadoProyecto->num_rows) {
                 <div class="contentsub">
                     <h3>Seguridad</h3>
                     <p>Monitorización, nuevos parches de seguridad, bases de datos seguras, y control de versiones de todo el proyecto</p>
-                    <a class="button" href="#">Leer</a>
+                    <!-- <a class="button" href="#">Leer</a> -->
                 </div>
             </div>
             <div class="cardsub">
@@ -464,7 +457,7 @@ if ($resultadoProyecto->num_rows) {
                 <div class="contentsub">
                     <h3>Hosting y Dominio</h3>
                     <p>Contacto con los mejores provedores de estos servicios para México y otros países</p>
-                    <a class="button" href="#">Leer</a>
+                    <!-- <a class="button" href="#">Leer</a> -->
                 </div>
             </div>
             <div class="cardsub">
@@ -475,7 +468,7 @@ if ($resultadoProyecto->num_rows) {
                 <div class="contentsub">
                     <h3>Responcivo</h3>
                     <p>Proyectos web con capacidades de ajustarse automaticamente a cualquier dispocitivo con el que acceden los clientes</p>
-                    <a class="button" href="#">Leer</a>
+                    <!-- <a class="button" href="#">Leer</a> -->
                 </div>
             </div>
         </div>
@@ -488,7 +481,7 @@ if ($resultadoProyecto->num_rows) {
                 <div class="contentsub">
                     <h3>Optimización de recursos</h3>
                     <p>Mejoramos las velocidades de carga de tu sitio web, bajando el peso de archivos al máximo sin perder calidad</p>
-                    <a class="button" href="#">Leer</a>
+                    <!-- <a class="button" href="#">Leer</a> -->
                 </div>
             </div>
             <div class="cardsub">
@@ -498,7 +491,7 @@ if ($resultadoProyecto->num_rows) {
                 <div class="contentsub">
                     <h3>Herramientas extra</h3>
                     <p>Herramientas de utilidad que permiten a su empresas o negocios ver estadistica de sus sitios web por ejemplo; Google Analytics</p>
-                    <a class="button" href="#">Leer</a>
+                    <!-- <a class="button" href="#">Leer</a> -->
                 </div>
             </div>
         </div>
@@ -536,7 +529,7 @@ if ($resultadoProyecto->num_rows) {
                                 <li>5. Compatibilidad alta en todos los navegadores web actuales.</li>
                             </ul>
                             <i class="fas fa-award"></i><br>
-                        <a class="button" href="#">Leer</a>
+                        <!-- <a class="button" href="#">Leer</a> -->
                         </div>
                         
                     </div>
@@ -577,7 +570,7 @@ if ($resultadoProyecto->num_rows) {
                                 <li>5. Archivos de estilos muy pequeños.</li>
                             </ul>
                             <i class="fas fa-award"></i><br>
-                        <a class="button" href="#">Leer</a>
+                        <!-- <a class="button" href="#">Leer</a> -->
                         </div>
                         
                     </div>
@@ -614,7 +607,7 @@ if ($resultadoProyecto->num_rows) {
                                 <li>8. Mejor Optimización de los recursos.</li>
                             </ul>
                             <i class="fas fa-award"></i> <br>
-                        <a class="button" href="#">Leer</a>
+                        <!-- <a class="button" href="#">Leer</a> -->
                         </div>
                         
                     </div>
@@ -652,7 +645,7 @@ if ($resultadoProyecto->num_rows) {
                                 <li>7. Amplio catálogo de Apis a para incorporar a tu página/sitio web.</li>
                             </ul>
                             <i class="fas fa-award"></i> <br>
-                        <a class="button" href="#">Leer</a>
+                        <!-- <a class="button" href="#">Leer</a> -->
                         </div>
                         
                     </div>
@@ -692,7 +685,7 @@ if ($resultadoProyecto->num_rows) {
                                 <li>9. Compatibilidad con PHP.</li>
                             </ul>
                             <i class="fas fa-award"></i> <br>
-                        <a class="button" href="#">Leer</a>
+                        <!-- <a class="button" href="#">Leer</a> -->
                         </div>
                         
                     </div>

@@ -430,7 +430,7 @@ session_start();
             </li>
             <li class="nav__list-item"><a href="cuenta.php#angel-ruiz"> Tu cuenta</a></li>
             <li class="nav__list-item"><a href="proyectos.php#angel-ruiz">Proyectos</a></li>
-            <li class="nav__list-item"><a href="#">Contacto</a></li>
+            <li class="nav__list-item"><a href="mailto:infoingeangel@gmail.com">Contacto</a></li>
 
           </ul>
         </div>

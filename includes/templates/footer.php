@@ -10,9 +10,7 @@
                     Ayudar a nuestros clientes a cumplir con un objetivo importante como tener identidad en internet, dando soluciones en tiempo y forma, a cada reto impuesto por los mismos.
                 </p>
 
-                <!-- <a href="index.php#">
-                    <div class="imglogo"></div>
-                </a> -->
+                
             </div>
         </div>
         <div class="elem4__fondo">
@@ -48,7 +46,7 @@
                         <i class="fas fa-map-marker-alt"></i>
                     </div>
                     <div class="text1__a">
-                        <p>San José de la Mina #42 Col. San José de la Mina, Uruapan Michoacán, México. </p>
+                        <p>Uruapan Michoacán, México. </p>
                     </div>
                     <div class="icono2__a">
                         <i class="fas fa-phone-square-alt"></i>
@@ -85,28 +83,31 @@
                 <!-- <a href="curriculo.php" class="efecto"><i class="fas fa-angle-right">
                         <p></p>
                     </i>Nuestro equipo</a> -->
-                <a href="#" class="efecto"><i class="fas fa-angle-right">
+                <!-- <a href="#" class="efecto"><i class="fas fa-angle-right">
                         <p></p>
-                    </i>Preguntas frecuentes</a>
+                    </i>Preguntas frecuentes</a> -->
                 <a href="condiciones.php" class="efecto"><i class="fas fa-angle-right">
                         <p></p>
                     </i>Términos y Condiciones</a>
                 <a href="politicas.php" class="efecto"><i class="fas fa-angle-right">
                         <p></p>
                     </i>Políticas de privacidad</a>
-                <a href="#" class="efecto"><i class="fas fa-angle-right">
+                <!-- <a href="#" class="efecto"><i class="fas fa-angle-right">
                         <p></p>
                     </i>Reembolsos</a>
                 <a href="#" class="efecto"><i class="fas fa-angle-right">
                         <p></p>
-                    </i>Artículos</a>
+                    </i>Artículos</a> -->
+                    <a href="index.php#">
+                    <div class="imglogo"></div>
+                </a>
             </div>
-            <div class="item1__fondo">
+            <!-- <div class="item1__fondo">
                 <p>¿Necesitas ayuda para
                     <br> crear una pagina web de tu negocio?
                 </p>
                 <a href="#historial" class="button">Servicio Personalizado</a>
-            </div>
+            </div> -->
 
         </div>
         <!--elem3__fondo-->

@@ -74,11 +74,13 @@ Habilidades de profesionales de ingeangel.com
                     ">https://www.congresomexicanodelaguacate2020.com
                 </a> con el uso de HTML/CSS3, PHP/JAVASCRIPT (esté dominio expiro 20-09-2020 debido a la contingencia Covid 19 y por la naturaleza del proyecto)
             </p>
-            <p>&nbsp;<i class="fas fa-circle"></i>&nbsp;Construyo y realizó mantenimiento completo a
-                la página
+            <p>&nbsp;<i class="fas fa-circle"></i>&nbsp;Desarrollo y realizó mantenimiento completo a la página 
+sociedadintelectualdelaguactemexicano.com
                 <a href="https://www.sociedadintelectualdelaguacatemexicano.com
                     ">https://www.sociedadintelectualdelaguacatemexicano.com
-                </a>
+                </a>con el uso de HTML/CSS3,
+ PHP/JAVASCRIP además diseño y programo bases de datos en mySql
+ para el control del contenido y gestión de usuarios del sitio.
             </p>
         </div>
         <div class="txt7">
