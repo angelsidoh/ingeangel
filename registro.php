@@ -194,25 +194,25 @@ if (isset($_SESSION['email'])) {
                         <div class="dato3">
                             <input type="text" id="tel" name="tel" placeholder="Escriba su Número de Teléfono" required>
                         </div> <!-- rnormal__tarjeta -->
-                        <div class="text-dato3">
+                        <div style="display: none;" class="text-dato3">
                             <p>Sitio web</p>
                         </div>
 
-                        <div class="dato3">
+                        <div style="display: none;" class="dato3">
                             <select name="select" id="select" name="select">
                                 <option value="Empresa" selected>Para Empresa </option>
                                 <option value="Negocio">Para Negocio</option>
                                 <option value="Mi profesión">Para mi profesión</option>
                             </select>
                         </div> <!-- rnormal__tarjeta -->
-                        <div class="text-dato3">
+                        <div style="display: none;" class="text-dato3">
                             <p>En que sector del mercado se encuentran tus servicios y/o productos</p>
                         </div>
-                        <div class="dato3">
-                            <input type="text" id="sector" name="sector" placeholder="Escriba el sector de mercado">
+                        <div style="display: none;" class="dato3">
+                            <input type="text" id="sector" name="sector" placeholder="Escriba el sector de mercado" value="Internet">
                         </div> <!-- rnormal__tarjeta -->
                         <div class="text-dato3">
-                            <p>Idea de Proyecto</p>
+                            <p>Idea de Proyecto para el sitio web</p>
                         </div>
                         <div class="dato3">
                             <div class="contobjs">
@@ -240,7 +240,7 @@ if (isset($_SESSION['email'])) {
     }else{?>
         <div class="contenedor-especial">
             <div class="titulo-seccion">
-                <p>¿Tiene una gran idea? LLené el siguiente formulario</p>
+                <p>¿Nuevo proyecto? LLené el siguiente formulario</p>
                 <h1 id="sparklemaster" class="sparklemaster" style="color:  #93A9CC;">Registro de Usuarios</h1>
             </div>
             <div class="datos-contrato">
@@ -270,28 +270,28 @@ if (isset($_SESSION['email'])) {
                         <div class="dato3">
                             <input type="text" id="tel" name="tel" placeholder="Escriba su Número de Teléfono" value="<?php echo $tel;?>" required>
                         </div> <!-- rnormal__tarjeta -->
-                        <div class="dato3">
+                        <div style="display: none;" class="dato3">
                             <input type="text" id="idusuario" name="idusuario" placeholder="Escriba su Número de Teléfono" value="<?php echo $idusuario;?>" required>
                         </div> <!-- rnormal__tarjeta -->
-                        <div class="text-dato3">
+                        <div style="display: none;" class="text-dato3">
                             <p>Sitio web</p>
                         </div>
 
-                        <div class="dato3">
+                        <div style="display: none;" class="dato3">
                             <select name="select" id="select" name="select">
                                 <option value="Empresa" selected>Para Empresa </option>
                                 <option value="Negocio">Para Negocio</option>
                                 <option value="Mi profesión">Para mi profesión</option>
                             </select>
                         </div> <!-- rnormal__tarjeta -->
-                        <div class="text-dato3">
-                            <p>En que sector del mercado se encuentran tus servicios y/o productos</p>
+                        <div style="display: none;" class="text-dato3">
+                            <p>En que sector del mercado se encuentran sus servicios y/o productos</p>
                         </div>
-                        <div class="dato3">
-                            <input type="text" id="sector" name="sector" placeholder="Escriba el sector de mercado">
+                        <div style="display: none;" class="dato3">
+                            <input type="text" id="sector" name="sector" placeholder="Escriba el sector de mercado" value="Internet">
                         </div> <!-- rnormal__tarjeta -->
                         <div class="text-dato3">
-                            <p>Idea de Proyecto</p>
+                            <p>Idea de Proyecto para el sitio web</p>
                         </div>
                         <div class="dato3">
                             <div class="contobjs">
