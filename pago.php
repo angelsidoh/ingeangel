@@ -378,7 +378,7 @@ if ((!isset($_SESSION['usuario'])) && (!isset($_SESSION['email']))) {
                                         <img src="img/terceros/oxxopay.png" alt="oxxo pay">
                                     </div>
                                     <div class="btnpago">
-                                        <a class="button" href="#efectivo">Pagar</a>
+                                        <a class="button" href="business/pagoxo.php=<?php echo $_GET['pago']; ?>#angel-ruiz">Pagar</a>
                                     </div>
                                 </div>
                                 <div class="pago">
@@ -761,7 +761,7 @@ if ((!isset($_SESSION['usuario'])) && (!isset($_SESSION['email']))) {
                             <img src="img/terceros/oxxopay.png" alt="oxxo pay">
                         </div>
                         <div class="btnpago">
-                            <a class="button" href="#efectivo">Pagar</a>
+                            <a class="button" href="pagooxxo.php?pago=<?php echo $_GET['pago']; ?>#angel-ruiz">Pagar</a>
                         </div>
                     </div>
                     <div class="pago">

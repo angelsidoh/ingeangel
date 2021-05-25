@@ -221,4 +221,17 @@ function obtenerPrecios($dato)
         return false;
     }
 }
+function obtenerPreciosxx($dato)
+{
+
+    try {
+        require('../bd/bdsqli.php');
+
+
+        return $connf->query("SELECT basico_precio, hosting_precio, dominio_precio, mantenimiento_precio, basesdatos_precio, programacion_precio FROM precios WHERE tokencontrato_precio = '$dato'");
+    } catch (Exception $e) {
+        echo "Error!!" . $e->getMessage() . "<br>";
+        return false;
+    }
+}
 ?>

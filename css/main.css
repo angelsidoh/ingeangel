@@ -1279,7 +1279,7 @@ inset 0px 0px 0px 0px rgba(0,0,0,0.75);;
 .descripcion{
   width: 90%;
   height: auto;
-  margin: 0 auto;
+  margin: 20px auto;
   padding: 20px;
   /* background: linear-gradient(var(--ColorFontEspecial), #333); */
   box-shadow: 0 0 1rem 0 rgba(0, 0, 0, .2); 
@@ -4016,7 +4016,7 @@ ul{
     font-size: 10x;
     font-weight: negrita;
     color:var(--ColorFontSec);
-    content: "infoingeangel@gmail.com";
+    content: "wingsdevs@gmail.com";
   }
   
   .recordatorio a::before{
