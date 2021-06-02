@@ -234,4 +234,18 @@ function obtenerPreciosxx($dato)
         return false;
     }
 }
+function obtenerTikeds()
+{
+    require('bd/bdsqli.php');
+    try{
+      
+           
+           
+            return $connf->query("SELECT id_pagoparts, idpago_pagoparts, tokencontrato_pagoparts, fecha_pagoparts, pagado_pagoparts, order_pagoparts, order_pagoparts, orderstatus_pagoparts, idconekta_pagoparts, monto_pagoparts FROM pagoparts");
+            
+    }catch(Exception $e){
+        echo "Error!!" . $e->getMessage() . "<br>";
+        return false;
+    }
+}
 ?>

@@ -122,7 +122,7 @@
             </div>
         </div> -->
         <div class="legenda">
-        <p> Copyrigth © 2021 Todos los derechos resevados https://ingeangel.com</p>
+        <p> Copyrigth © 2021 Todos los derechos resevados https://wingsdevs.com</p>
         <a href="#contactodesarrollador"> <i style="font-size: 20px;" class="fab fa-ello"></i></a>
     </div>
     </div>

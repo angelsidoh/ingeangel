@@ -332,7 +332,7 @@ $direccion_usuario = $calle.' #'.$numie.' Colonia: '.$col;
                             if ($vectorTipoProyectos[$direccionProyecto] == 'Sin paquete') {
                                 $cuenta = (($precioDominio + $precioHosting + $precioBD + $precioProgramacion + $precioMantenimiento)* $superVecContMesesPago[$direccionx][$direcciony]);
                                 $cuenta = $cuenta + ($cuenta*.16);
-                                echo  '$' . $cuenta . '.00 MXN';
+                                echo  '$' . $cuenta . ' MXN';
                             }
                             if ($vectorTipoProyectos[$direccionProyecto] == 'Paquete Negocio') {
                                 echo  '$' . number_format(($precioDominio + $precioHosting + $precioBD + $precioNegocio + $precioMantenimiento)* $superVecContMesesPago[$direccionx][$direcciony]) . '.00 MXN';

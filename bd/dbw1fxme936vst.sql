@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.1
+-- version 5.1.0
 -- https://www.phpmyadmin.net/
 --
--- Servidor: 127.0.0.1
--- Tiempo de generación: 19-04-2021 a las 15:18:48
--- Versión del servidor: 10.4.11-MariaDB
--- Versión de PHP: 7.4.2
+-- Servidor: localhost
+-- Tiempo de generación: 02-06-2021 a las 22:04:34
+-- Versión del servidor: 5.7.32-35-log
+-- Versión de PHP: 7.3.28
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -56,7 +55,16 @@ INSERT INTO `contratos` (`id_contrato`, `idproyecto_contrato`, `link_contrato`, 
 (23, 4, 'https://ingeangel.com/contrato.php', 'yJ5eyaTNYUDgxGnNA', '12 Meses', 12, '2021-04-09 08:24:16', '2022-04-09 08:24:16', 4, 'includes/funciones/doc_sings/898251581c2a399378138b4860d64256.png', ''),
 (24, 5, 'https://ingeangel.com/contrato.php', 'SkWITi34Q54C1e5DfB', '3 Meses', 3, '2021-04-12 06:37:49', '2021-04-12 06:37:51', 0, '', ''),
 (25, 6, 'https://ingeangel.com/contrato.php', 'FbqZ1PE2rEb1JqLGN', '3 Meses', 3, '2021-04-12 06:39:17', '2021-04-12 06:39:19', 0, '', ''),
-(26, 6, 'https://ingeangel.com/contrato.php', '9TMp37nmFVXjTMiqkA', '12 Meses', 12, '2021-04-15 07:40:22', '2022-04-15 07:40:22', 0, '', '');
+(26, 6, 'https://ingeangel.com/contrato.php', '9TMp37nmFVXjTMiqkA', '12 Meses', 12, '2021-04-15 07:40:22', '2022-04-15 07:40:22', 0, '', ''),
+(27, 7, 'https://ingeangel.com/contrato.php', '0xoha9MMOVtKscYS9N', '3 Meses', 3, '2021-04-22 17:24:40', '2021-04-22 17:24:42', 0, '', ''),
+(28, 8, 'https://ingeangel.com/contrato.php', 'eZXDkW084gcIW9G32', '3 Meses', 3, '2021-04-22 17:26:10', '2021-04-22 17:26:12', 0, '', ''),
+(29, 9, 'https://ingeangel.com/contrato.php', 'rGp2wt595UAbmFXClt', '3 Meses', 3, '2021-04-22 17:30:49', '2021-04-22 17:30:51', 0, '', ''),
+(30, 10, 'https://ingeangel.com/contrato.php', 'YEZdlvkcYY7DbcgPB2', '3 Meses', 3, '2021-04-22 17:33:28', '2021-04-22 17:33:30', 0, '', ''),
+(31, 11, 'https://ingeangel.com/contrato.php', 'pZTeuKpvQc5quBIn', '3 Meses', 3, '2021-04-22 17:45:24', '2021-04-22 17:45:26', 0, '', ''),
+(32, 11, 'https://ingeangel.com/contrato.php', '8nbbUuNpk2PwbD3y', '12 Meses', 12, '2021-04-22 18:48:05', '2022-04-22 18:48:05', 0, '', ''),
+(33, 7, 'https://ingeangel.com/contrato.php', 'feDLQWto06W1Jhljl3', '1 Mes', 1, '2021-04-24 18:48:56', '2021-05-24 18:48:56', 0, '', ''),
+(34, 12, 'https://ingeangel.com/contrato.php', '9N0VoGJUdzwa0Qcl46', '3 Meses', 3, '2021-05-25 11:47:56', '2021-05-25 11:47:58', 0, '', ''),
+(35, 12, 'https://ingeangel.com/contrato.php', 'mPT3LFkCaAPKDJP0iO', '12 Meses', 12, '2021-05-25 11:50:32', '2022-05-25 11:50:32', 0, '', '');
 
 -- --------------------------------------------------------
 
@@ -107,7 +115,7 @@ INSERT INTO `mensajecliente` (`id_mensaje`, `idusuario_mensaje`, `idmensaje_mens
 (25, 6, 20, 's in faucibus. Maecenas quis ex eu odio ullamcorper ornare.', 'José Angel Ruiz Chávez. Cliente', '1', '2021-04-22 07:26:17', 0),
 (26, 6, 21, 'sto. Vivamus eu lacus id nisi tempus dignissim. Phasellus auctor finibus sapien, non elementum lectus bibendum nec. Aenean faucibus turpis quis condimentum aliquet. Integer aliquam dui luctus velit gravida rutrum. Suspendisse quis mattis turpis. Nullam feugiat tortor sapien, id ullamcorper nisi egestas et. Nam in neque ullamcorper, suscipit felis porttitor, venenatis turpis. Vivamus massa odio, sodales ut risus - tempor tempor tellus. Sed fringilla orci a pell', 'Jordan Caballero Piedra. Ingeniero en Mecatrónica', '1', '2021-04-13 07:17:24', 0),
 (27, 6, 27, 'Lorem ipsum dolor sit amet consectetur adipiscing elit viverra cubilia imperdiet iaculis sapien, nostra sem molestie rutrum sed mattis augue feugiat vestibulum dignissim est. Himenaeos blandit dictumst habitant nam consequat aptent convallis quis, class magnis taciti vulputate orci mi sociosqu lacinia, litora bibendum cum primis torquent netus aenean. Turpis nunc accumsan habitasse feugiat placerat himenaeos ac scelerisque metus, praesent ad mollis non suspendisse libero posuere velit fusce iacu', '', '27', '0000-00-00 00:00:00', 0),
-(28, 6, 27, 'lis, nostra aliquam pellentesque nascetur lacinia sodales etiam commodo. Magna torquent facilisis nulla tincidunt aliquet consequat orci eu mollis velit, integer fusce sem ridiculus sociis mus enim nostra.\r\n\r\nPotenti malesuada himenaeos sociis natoque, etiam metus venenatis mauris aptent, eleifend quam eu. Ridiculus montes euismod nam libero sagittis dapibus pretium sociis in nascetur mollis, rhoncus metus scelerisque dui duis praesent sapien suspendisse pellentesque. Euismod penatibus felis bla', '', '27', '0000-00-00 00:00:00', 0),
+(28, 6, 28, 'lis, nostra aliquam pellentesque nascetur lacinia sodales etiam commodo. Magna torquent facilisis nulla tincidunt aliquet consequat orci eu mollis velit, integer fusce sem ridiculus sociis mus enim nostra.\r\n\r\nPotenti malesuada himenaeos sociis natoque, etiam metus venenatis mauris aptent, eleifend quam eu. Ridiculus montes euismod nam libero sagittis dapibus pretium sociis in nascetur mollis, rhoncus metus scelerisque dui duis praesent sapien suspendisse pellentesque. Euismod penatibus felis bla', '', '27', '0000-00-00 00:00:00', 0),
 (29, 6, 27, 'ndit eget convallis vulputate non ut hac mus, vivamus integer curabitur congue sem eros ullamcorper vel feugiat fames sociosqu, dictum eleifend rhoncus iaculis himenaeos fermentum massa bibendum tristique. Sollicitudin donec nulla porta porttitor quam tortor at potenti hendrerit in aliquet curae posuere, bibendum elementum luctus suscipit egestas semper convallis proin ligula aptent dictum.\r\n\r\nDonec cras inceptos montes cubilia pellentesque dui egestas at curabitur nisi congue, tellus dignissim ', '', '27', '0000-00-00 00:00:00', 0),
 (30, 6, 27, 'nam faucibus tristique elementum habitant ultricies massa turpis, sagittis ante lobortis porta himenaeos orci vestibulum diam etiam pharetra. Varius massa at in sagittis lacus vehicula quisque, odio nibh ante aliquam luctus netus primis fringilla, senectus duis feugiat vivamus etiam orci. Pharetra felis eros vel blandit ullamcorper vitae, in imperdiet cursus venenatis accumsan augue diam, sociis hendrerit mus suspendisse tortor. Fringilla fames sem dictum blandit ullamcorper ut nunc aliquet id, ', '', '27', '0000-00-00 00:00:00', 0),
 (31, 6, 27, 'nostra mollis porta eleifend vitae ornare diam potenti congue, nisl nullam tortor laoreet neque velit curae gravida.\r\n\r\nLigula purus feugiat magnis ad at et, lacinia habitasse turpis aptent mi fusce, augue iaculis neque ac platea. Accumsan est hendrerit molestie dui vivamus varius praesent, augue porta cum senectus suscipit risus magnis nostra, lobortis tempor mattis parturient tempus lectus. Dignissim bibendum platea non turpis pharetra consequat enim velit, sagittis class suspendisse metus mau', '', '27', '0000-00-00 00:00:00', 0),
@@ -238,7 +246,68 @@ INSERT INTO `mensajecliente` (`id_mensaje`, `idusuario_mensaje`, `idmensaje_mens
 (155, 6, 155, 'No sea tan desesperado y sea mas tranquilo', 'José Ruiz. Usuario', 'Este asunto es nuevo', '2021-04-16 05:26:46', 0),
 (156, 6, 156, 'Si tienes vida, compra mantequilla, y no te golpes la rodilla.;D', 'José Ruiz. Usuario', 'Este asunto es nuevo', '2021-04-16 05:27:34', 0),
 (157, 6, 157, 'Listo', 'José Ruiz. Usuario', 'Este asunto es nuevo', '2021-04-16 05:29:13', 0),
-(158, 6, 158, 'listo también por el programador', 'José Ruiz. Usuario', 'Este asunto es nuevo', '2021-04-16 05:29:47', 0);
+(158, 6, 158, 'listo también por el programador', 'José Ruiz. Usuario', 'Este asunto es nuevo', '2021-04-16 05:29:47', 0),
+(159, 6, 159, 'ASD', '', 'Nuevo', '0000-00-00 00:00:00', 0),
+(160, 6, 160, 'LEL', '', 'Nuevo1', '0000-00-00 00:00:00', 0),
+(161, 6, 161, 'asd', 'Usuario', 'Nuevo2', '2021-04-22 17:45:24', 0),
+(162, 0, 162, 'sd', 'José Ruiz. Usuario', 'Soy la verga2', '2021-04-23 07:28:14', 0),
+(163, 6, 163, 'asdasd', 'José Ruiz. Usuario', 'Soy la verga 3', '2021-04-23 07:35:48', 0),
+(164, 6, 164, 'd', 'José Angel Ruiz Chávez. Ingeniero', 'azc', '2021-04-23 17:49:29', 0),
+(165, 6, 165, 'quiero una nuevo pagina', 'Usuario', '', '2021-05-25 11:47:56', 0);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `pagoparts`
+--
+
+CREATE TABLE `pagoparts` (
+  `id_pagoparts` int(11) NOT NULL,
+  `idpago_pagoparts` int(11) NOT NULL,
+  `tokencontrato_pagoparts` varchar(55) NOT NULL,
+  `fecha_pagoparts` datetime NOT NULL,
+  `pagado_pagoparts` datetime NOT NULL,
+  `order_pagoparts` varchar(50) NOT NULL,
+  `orderstatus_pagoparts` varchar(30) NOT NULL,
+  `idconekta_pagoparts` varchar(50) NOT NULL,
+  `monto_pagoparts` varchar(12) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `pagoparts`
+--
+
+INSERT INTO `pagoparts` (`id_pagoparts`, `idpago_pagoparts`, `tokencontrato_pagoparts`, `fecha_pagoparts`, `pagado_pagoparts`, `order_pagoparts`, `orderstatus_pagoparts`, `idconekta_pagoparts`, `monto_pagoparts`) VALUES
+(1, 44, 'mPT3LFkCaAPKDJP0iO-044', '2021-05-27 16:31:32', '0000-00-00 00:00:00', '98000010933011', 'pending_payment', 'ord_2pptdfnB8aSXVLnxc', '1000000'),
+(2, 44, 'mPT3LFkCaAPKDJP0iO-144', '2021-05-27 16:31:33', '0000-00-00 00:00:00', '98000010933029', 'pending_payment', 'ord_2pptdgUhdhy45W9sV', '1000000'),
+(3, 44, 'mPT3LFkCaAPKDJP0iO-244', '2021-05-27 16:31:33', '0000-00-00 00:00:00', '98000010933037', 'pending_payment', 'ord_2pptdhQC5md8V3Ktv', '1000000'),
+(4, 44, 'mPT3LFkCaAPKDJP0iO-344', '2021-05-27 16:31:34', '0000-00-00 00:00:00', '98000010933045', 'pending_payment', 'ord_2pptdhQC5mmjyS6H4', '1000000'),
+(5, 44, 'mPT3LFkCaAPKDJP0iO-444', '2021-05-27 16:31:34', '0000-00-00 00:00:00', '98000010933052', 'pending_payment', 'ord_2pptdiBa8PLW8EGd6', '1000000'),
+(6, 44, 'mPT3LFkCaAPKDJP0iO-544', '2021-05-27 16:31:35', '0000-00-00 00:00:00', '98000010933060', 'pending_payment', 'ord_2pptdhxLg71Bheub7', '1000000'),
+(7, 44, 'mPT3LFkCaAPKDJP0iO-644', '2021-05-27 16:31:36', '0000-00-00 00:00:00', '98000010933078', 'pending_payment', 'ord_2pptdihACJZqKva68', '1000000'),
+(8, 44, 'mPT3LFkCaAPKDJP0iO-744', '2021-05-27 16:31:36', '0000-00-00 00:00:00', '98000010933086', 'pending_payment', 'ord_2pptdijTDNe7ZVqzN', '1000000'),
+(9, 44, 'mPT3LFkCaAPKDJP0iO-844', '2021-05-27 16:31:37', '0000-00-00 00:00:00', '98000010933094', 'pending_payment', 'ord_2pptdjceeNQhGGiFZ', '1000000'),
+(10, 44, 'mPT3LFkCaAPKDJP0iO-944', '2021-05-27 16:31:37', '0000-00-00 00:00:00', '98000010933102', 'pending_payment', 'ord_2pptdkD6FmntLdkWD', '1000000'),
+(11, 44, 'mPT3LFkCaAPKDJP0iO-1044', '2021-05-27 16:31:38', '0000-00-00 00:00:00', '98000010933110', 'pending_payment', 'ord_2pptdkD6Fmsd6X8zu', '1000000'),
+(12, 44, 'mPT3LFkCaAPKDJP0iO-1144', '2021-05-27 16:31:39', '0000-00-00 00:00:00', '98000010933128', 'pending_payment', 'ord_2pptdkwumyP5v1ffK', '1000000'),
+(13, 44, 'mPT3LFkCaAPKDJP0iO-1244', '2021-05-27 16:31:39', '0000-00-00 00:00:00', '98000010933136', 'pending_payment', 'ord_2pptdkwumySGinoVu', '1000000'),
+(14, 44, 'mPT3LFkCaAPKDJP0iO-1344', '2021-05-27 16:31:40', '0000-00-00 00:00:00', '98000010933144', 'pending_payment', 'ord_2pptdmgjJB5yTPsc2', '1000000'),
+(15, 44, 'mPT3LFkCaAPKDJP0iO-1444', '2021-05-27 16:31:40', '0000-00-00 00:00:00', '98000010933151', 'pending_payment', 'ord_2pptdnPFoJYMcnRoU', '567395'),
+(16, 45, 'mPT3LFkCaAPKDJP0iO-045', '2021-05-27 16:32:33', '0000-00-00 00:00:00', '98000010933169', 'pending_payment', 'ord_2ppteSxXoXsgafoUp', '1000000'),
+(17, 45, 'mPT3LFkCaAPKDJP0iO-145', '2021-05-27 16:32:34', '0000-00-00 00:00:00', '98000010933177', 'pending_payment', 'ord_2ppteTWgPsNUCDdUE', '1000000'),
+(18, 45, 'mPT3LFkCaAPKDJP0iO-245', '2021-05-27 16:32:34', '0000-00-00 00:00:00', '98000010933185', 'pending_payment', 'ord_2ppteUHnw8xbjuxxg', '1000000'),
+(19, 45, 'mPT3LFkCaAPKDJP0iO-345', '2021-05-27 16:32:35', '0000-00-00 00:00:00', '98000010933193', 'pending_payment', 'ord_2ppteUHnw8z8x1GhB', '1000000'),
+(20, 45, 'mPT3LFkCaAPKDJP0iO-445', '2021-05-27 16:32:36', '0000-00-00 00:00:00', '98000010933219', 'pending_payment', 'ord_2ppteVAzN8ZCCjKTq', '1000000'),
+(21, 45, 'mPT3LFkCaAPKDJP0iO-545', '2021-05-27 16:32:36', '0000-00-00 00:00:00', '98000010933227', 'pending_payment', 'ord_2ppteVAzN8Woy81va', '1000000'),
+(22, 45, 'mPT3LFkCaAPKDJP0iO-645', '2021-05-27 16:32:37', '0000-00-00 00:00:00', '98000010933235', 'pending_payment', 'ord_2ppteVuotL9yvobD2', '1000000'),
+(23, 45, 'mPT3LFkCaAPKDJP0iO-745', '2021-05-27 16:32:37', '0000-00-00 00:00:00', '98000010933243', 'pending_payment', 'ord_2ppteWedQXkR5L1ED', '1000000'),
+(24, 45, 'mPT3LFkCaAPKDJP0iO-845', '2021-05-27 16:32:38', '0000-00-00 00:00:00', '98000010933250', 'pending_payment', 'ord_2ppteWTxUfZuVurSN', '1000000'),
+(25, 45, 'mPT3LFkCaAPKDJP0iO-945', '2021-05-27 16:32:39', '0000-00-00 00:00:00', '98000010933268', 'pending_payment', 'ord_2ppteXF51wGUX3x6o', '1000000'),
+(26, 45, 'mPT3LFkCaAPKDJP0iO-1045', '2021-05-27 16:32:39', '0000-00-00 00:00:00', '98000010933276', 'pending_payment', 'ord_2ppteXF51wJ4zuCmg', '1000000'),
+(27, 45, 'mPT3LFkCaAPKDJP0iO-1145', '2021-05-27 16:32:40', '0000-00-00 00:00:00', '98000010933284', 'pending_payment', 'ord_2ppteXytY8oP5Mb9t', '1000000'),
+(28, 45, 'mPT3LFkCaAPKDJP0iO-1245', '2021-05-27 16:32:40', '0000-00-00 00:00:00', '98000010933292', 'pending_payment', 'ord_2ppteYii4LPmmbH6D', '1000000'),
+(29, 45, 'mPT3LFkCaAPKDJP0iO-1345', '2021-05-27 16:32:41', '0000-00-00 00:00:00', '98000010933300', 'pending_payment', 'ord_2ppteYgR3GHk2rv2C', '1000000'),
+(30, 45, 'mPT3LFkCaAPKDJP0iO-1445', '2021-05-27 16:32:41', '0000-00-00 00:00:00', '98000010933318', 'pending_payment', 'ord_2ppteZeU1k4DbNjnq', '567395');
 
 -- --------------------------------------------------------
 
@@ -285,7 +354,18 @@ INSERT INTO `pagos` (`id_pago`, `fechainicio_pago`, `fechafin_pago`, `fechadepag
 (31, '2022-03-09 08:24:16', '2022-04-09 08:24:16', '0000-00-00 00:00:00', 4, '', 0, '', 23, 'yJ5eyaTNYUDgxGnNA', '0', '', 1, ''),
 (32, '2021-04-12 06:37:49', '2021-05-12 06:37:49', '0000-00-00 00:00:00', 5, '', 0, '', 24, 'SkWITi34Q54C1e5DfB', '0', '', 1, ''),
 (33, '2021-04-12 06:39:17', '2021-05-12 06:39:17', '0000-00-00 00:00:00', 6, '', 0, '', 25, 'FbqZ1PE2rEb1JqLGN', '0', '', 1, ''),
-(34, '2021-04-15 07:40:22', '2021-05-15 07:40:22', '0000-00-00 00:00:00', 6, '', 0, '', 26, '9TMp37nmFVXjTMiqkA', '0', '', 1, '');
+(34, '2021-04-15 07:40:22', '2021-05-15 07:40:22', '0000-00-00 00:00:00', 6, '', 0, '', 26, '9TMp37nmFVXjTMiqkA', '0', '', 1, ''),
+(35, '2021-04-22 17:24:40', '2021-05-22 17:24:40', '0000-00-00 00:00:00', 7, '', 0, '', 27, '0xoha9MMOVtKscYS9N', '0', '', 1, ''),
+(36, '2021-04-22 17:26:10', '2021-05-22 17:26:10', '0000-00-00 00:00:00', 8, '', 0, '', 28, 'eZXDkW084gcIW9G32', '0', '', 1, ''),
+(37, '2021-04-22 17:30:49', '2021-05-22 17:30:49', '0000-00-00 00:00:00', 9, '', 0, '', 29, 'rGp2wt595UAbmFXClt', '0', '', 1, ''),
+(38, '2021-04-22 17:33:28', '2021-05-22 17:33:28', '0000-00-00 00:00:00', 10, '', 0, '', 30, 'YEZdlvkcYY7DbcgPB2', '0', '', 1, ''),
+(39, '2021-04-22 17:45:24', '2021-05-22 17:45:24', '0000-00-00 00:00:00', 11, '', 0, '', 31, 'pZTeuKpvQc5quBIn', '0', '', 1, ''),
+(40, '2021-04-22 18:48:05', '2021-05-22 18:48:05', '0000-00-00 00:00:00', 11, '', 0, '', 32, '8nbbUuNpk2PwbD3y', '0', '', 1, ''),
+(41, '2021-05-15 07:40:22', '2021-06-15 07:40:22', '0000-00-00 00:00:00', 6, '', 0, '', 26, '9TMp37nmFVXjTMiqkA', '0', '', 1, ''),
+(42, '2021-04-24 18:48:56', '2021-05-24 18:48:56', '0000-00-00 00:00:00', 7, '', 0, '', 33, 'feDLQWto06W1Jhljl3', '0', '', 1, ''),
+(43, '2021-05-25 11:47:56', '2021-06-25 11:47:56', '0000-00-00 00:00:00', 12, '', 0, '', 34, '9N0VoGJUdzwa0Qcl46', '0', '', 1, ''),
+(44, '2021-05-25 11:50:32', '2021-06-25 11:50:32', '0000-00-00 00:00:00', 12, '', 0, '', 35, 'mPT3LFkCaAPKDJP0iO', '0', '', 1, ''),
+(45, '2021-06-25 11:50:32', '2021-07-25 11:50:32', '0000-00-00 00:00:00', 12, '', 0, '', 35, 'mPT3LFkCaAPKDJP0iO', '0', '', 1, '');
 
 -- --------------------------------------------------------
 
@@ -318,7 +398,13 @@ INSERT INTO `pasos` (`id_paso`, `descripcion_paso`, `timing_paso`, `fechaini_pas
 (8, 'Programación y control de decisiones ', 0, '2021-04-12 04:53:36', '2021-04-17 04:53:36', 4, '3'),
 (9, 'Cotización: En proceso', 1, '2021-04-12 06:37:49', '2021-04-13 06:37:49', 5, '1'),
 (10, 'Cotización: En proceso', 1, '2021-04-12 06:39:17', '2021-04-13 06:39:17', 6, '1'),
-(11, 'Programación', 0, '2021-04-15 05:52:44', '2021-04-30 05:52:44', 6, '2');
+(11, 'Programación', 0, '2021-04-15 05:52:44', '2021-04-30 05:52:44', 6, '2'),
+(12, 'Cotización: En proceso', 1, '2021-04-22 17:24:40', '2021-04-23 17:24:40', 7, '1'),
+(13, 'Cotización: En proceso', 1, '2021-04-22 17:26:10', '2021-04-23 17:26:10', 8, '1'),
+(14, 'Cotización: En proceso', 1, '2021-04-22 17:30:49', '2021-04-23 17:30:49', 9, '1'),
+(15, 'Cotización: En proceso', 1, '2021-04-22 17:33:28', '2021-04-23 17:33:28', 10, '1'),
+(16, 'Cotización: En proceso', 1, '2021-04-22 17:45:24', '2021-04-23 17:45:24', 11, '1'),
+(17, 'Cotización: En proceso', 1, '2021-05-25 11:47:56', '2021-05-26 11:47:56', 12, '1');
 
 -- --------------------------------------------------------
 
@@ -340,7 +426,7 @@ CREATE TABLE `pr` (
 --
 
 INSERT INTO `pr` (`id_archivo`, `idusuario_archivo`, `idproyecto_archivo`, `direccion_archivo`, `fecha_archivo`, `identificacion_archivo`) VALUES
-(1, 6, 6, 'archivos/119403493_3413678911988392_8248441450573387682_o.jpg', '2021-04-15 07:12:38', 'Usuario'),
+(1, 6, 5, 'archivos/119403493_3413678911988392_8248441450573387682_o.jpg', '2021-04-15 07:12:38', 'Usuario'),
 (2, 6, 6, 'archivos/abc.jpeg', '2021-04-15 07:12:36', 'Usuario'),
 (3, 6, 6, 'archivos/119403493_3413678911988392_8248441450573387682_o.jpg', '2021-04-15 07:12:34', 'Usuario'),
 (4, 6, 6, 'archivos/abc.jpeg', '2021-04-15 07:12:31', 'Usuario'),
@@ -361,7 +447,48 @@ INSERT INTO `pr` (`id_archivo`, `idusuario_archivo`, `idproyecto_archivo`, `dire
 (19, 6, 6, 'archivos/20201030_081757 (3).jpg', '2021-04-16 08:14:52', 'admin'),
 (20, 6, 6, 'archivos/20201030_081757 (4).jpg', '2021-04-16 08:14:52', 'admin'),
 (21, 6, 6, 'archivos/20201030_081757.jpg', '2021-04-16 08:14:52', 'admin'),
-(22, 6, 6, 'archivos/20201030_081814.jpg', '2021-04-16 08:14:52', 'admin');
+(22, 6, 6, 'archivos/20201030_081814.jpg', '2021-04-16 08:14:52', 'admin'),
+(23, 6, 6, 'archivos/José-FTI22Apr20210546331.gif', '2021-04-22 05:46:33', 'Usuario'),
+(24, 6, 6, 'archivos/José-aNu22Apr2021054650pagocurso.zip', '2021-04-22 05:46:50', 'Usuario'),
+(25, 6, 5, 'archivos/José-6B22Apr2021054708pagocurso.zip', '2021-04-22 05:47:08', 'Usuario'),
+(26, 6, 6, 'archivos/1.gif', '2021-04-22 05:48:54', 'Usuario'),
+(27, 6, 6, 'archivos/1.gif', '2021-04-22 05:49:16', 'Usuario'),
+(28, 6, 6, 'archivos/modern-resume.zip', '2021-04-22 05:51:05', 'Usuario'),
+(29, 6, 6, 'archivos/130.psd', '2021-04-22 05:52:22', 'Usuario'),
+(30, 6, 6, 'archivos/130.psd', '2021-04-22 05:53:05', 'Usuario'),
+(31, 6, 6, 'archivos/Pieza1.SLDPRT', '2021-04-22 05:53:20', 'Usuario'),
+(32, 0, 2, 'archivos/professional-curriculum-vitae-template.zip', '2021-04-22 06:01:02', 'admin'),
+(33, 0, 2, 'archivos/LibroAutomatizacinIndustrialI_versin_final.pdf', '2021-04-22 06:01:25', 'admin'),
+(34, 0, 2, 'archivos/modern-professional-resume-cv-template.zip', '2021-04-22 06:02:16', 'admin'),
+(35, 0, 2, 'archivos/2.psd', '2021-04-22 06:10:18', 'admin'),
+(36, 6, 6, 'archivos/Currículo.docx', '2021-04-22 06:20:55', 'admin'),
+(37, 6, 5, 'archivos/pagocurso.zip', '2021-04-22 06:21:42', 'Usuario'),
+(38, 6, 9, 'archivos/NOVIEMBRE2020.pdf', '2021-04-23 17:16:48', 'admin'),
+(39, 9, 6, 'archivos/41906609.pdf', '2021-04-23 17:27:14', 'admin'),
+(40, 9, 6, 'archivos/117.jpg', '2021-04-23 17:28:24', 'admin'),
+(41, 9, 6, 'archivos/LibroAutomatizacinIndustrialI_versin_final.pdf', '2021-04-23 17:30:24', 'admin'),
+(42, 9, 6, 'archivos/2.psd', '2021-04-23 17:31:13', 'admin'),
+(43, 9, 6, 'archivos/angelrfc.jsf', '2021-04-23 17:32:36', 'admin'),
+(44, 9, 6, 'archivos/1.gif', '2021-04-23 17:33:23', 'admin'),
+(45, 9, 6, 'archivos/ProyectoINGEANGEL.COM.docx', '2021-04-23 17:35:25', 'admin'),
+(46, 6, 9, 'archivos/adminpagos.docx', '2021-04-23 17:36:20', 'admin'),
+(47, 6, 11, 'archivos/joseangel.png', '2021-04-23 17:48:12', 'admin'),
+(48, 6, 6, 'archivos/WhatsAppImage2020-10-17at8.46.00AM.jpeg', '2021-04-23 18:17:12', 'Usuario'),
+(49, 6, 6, 'archivos/117.docx', '2021-04-23 19:40:59', 'Usuario'),
+(50, 6, 6, 'archivos/xx.png', '2021-04-23 20:02:26', 'Usuario'),
+(51, 6, 6, 'archivos/sdax.png', '2021-04-24 17:34:20', 'Usuario'),
+(52, 6, 6, 'archivos/117.docx', '2021-04-24 17:38:42', 'Usuario'),
+(53, 6, 9, 'archivos/41906609.pdf', '2021-04-24 17:42:26', 'Usuario'),
+(54, 6, 5, 'archivos/fotocurriculo.png', '2021-04-24 17:44:32', 'Usuario'),
+(55, 6, 6, 'archivos/fotocurriculo.png', '2021-04-24 17:45:00', 'Usuario'),
+(56, 6, 9, 'archivos/fotocurriculo.png', '2021-04-24 17:45:33', 'Usuario'),
+(57, 6, 11, 'archivos/fotocurriculo.png', '2021-04-24 17:45:56', 'Usuario'),
+(58, 6, 11, 'archivos/Currículo.docx', '2021-04-24 18:45:42', 'admin'),
+(59, 6, 7, 'archivos/Currículo.docx', '2021-04-24 18:46:05', 'admin'),
+(60, 5, 5, 'archivos/117.docx', '2021-04-25 08:34:05', 'admin'),
+(61, 3, 3, 'archivos/117.docx', '2021-04-25 08:34:32', 'admin'),
+(62, 4, 4, 'archivos/117.docx', '2021-04-25 08:34:51', 'admin'),
+(63, 6, 12, 'archivos/20190422_200017.jpg', '2021-05-25 11:49:50', 'admin');
 
 -- --------------------------------------------------------
 
@@ -391,7 +518,10 @@ INSERT INTO `precios` (`id_precio`, `basico_precio`, `tokencontrato_precio`, `id
 (11, 13920, 'x0tvhMM8Kl6VQEKvj3', 19, 100, 100, 150, 800, 10850),
 (12, 116, 'xhvxoPVpO1WAEi77eH', 21, 0, 0, 0, 0, 100),
 (13, 9280, 'yJ5eyaTNYUDgxGnNA', 23, 100, 100, 150, 800, 6850),
-(14, 9280, '9TMp37nmFVXjTMiqkA', 26, 100, 100, 150, 800, 6850);
+(14, 9280, '9TMp37nmFVXjTMiqkA', 26, 100, 100, 150, 800, 6850),
+(15, 4640, '8nbbUuNpk2PwbD3y', 32, 100, 100, 150, 800, 2850),
+(16, 11600, 'feDLQWto06W1Jhljl3', 33, 100, 100, 150, 800, 8850),
+(17, 145674, 'mPT3LFkCaAPKDJP0iO', 35, 100, 100, 150, 800, 124431);
 
 -- --------------------------------------------------------
 
@@ -419,7 +549,13 @@ INSERT INTO `proyectos` (`id_proyecto`, `nombre_proyecto`, `idusuario_proyecto`,
 (3, 'Preparación', 3, 'Sin paquete', '', '0', ''),
 (4, 'https://3dImprent.com', 4, 'Sin paquete', '', '0', ''),
 (5, 'Sin Proyecto', 5, 'Sin paquete', '', '0', ''),
-(6, 'Preparación', 6, 'Sin paquete', '', '0', '');
+(6, 'Preparación', 6, 'Sin paquete', '', '0', ''),
+(7, 'Preparación', 6, 'Sin paquete', '', '0', ''),
+(8, 'Preparaciónxx', 6, 'Sin paquete', '', '0', ''),
+(9, 'Preparaciónxxx', 6, 'Sin paquete', '', '0', ''),
+(10, 'Preparaciónxxxx', 6, 'Sin paquete', '', '0', ''),
+(11, 'Preparaciónxxxxx', 6, 'Sin paquete', '', '0', ''),
+(12, 'buhos.com', 6, 'Sin paquete', '', '0', '');
 
 -- --------------------------------------------------------
 
@@ -455,11 +591,11 @@ CREATE TABLE `usuarios` (
 
 INSERT INTO `usuarios` (`id_usuario`, `nombre_usuario`, `apellidos_usuario`, `email_usuario`, `pass_usuario`, `telefono_usuario`, `foto_usuario`, `calle_usuario`, `numiedireccion_usuario`, `colonia_usuario`, `cp_usuario`, `paquetes_usuario`, `fecha_usuario`, `idproyecto_usuario`, `domiciliofiscal_usuario`, `cfdi_usuario`, `rfc_usuario`, `tipo_usuario`, `idcontrato_usuario`) VALUES
 (1, 'José Angel', 'Chávez', 'angels._ruiz@hotmail.com', 'Gtuccb8o', '4521441689', '', 'San José de la Mina', '42', '', '', '', '2021-04-05', 1, '', '', '', '', 0),
-(2, 'José Angel', 'Chávez', 'jose@hotmail.com', 'h', '4521441689', 'upload/JoséAngel-p2G15Apr2021050615abc.jpeg', '', '', '', '', '', '2021-04-05', 0, '', '', '', 'admin', 0),
+(2, 'José Angel', 'Chávez', 'jose@hotmail.com', 'h', '4521441689', 'upload/JoséAngel-TaU24April20211850-11xx.png', '', '', '', '', '', '2021-04-05', 0, '', '', '', 'admin', 0),
 (3, 'Vianey', 'Ruiz', 'vi@hotmail.com', 'v', '4521441689', 'upload/Vianey-z4o09Apr2021071218abc.jpeg', 'San José de la Mina', '43', 'San José de la Mina', '60125', '', '2021-04-09', 3, 'San José de La Mina #42 Col. San José de la Mina', 'eqwe', '8754654854721', '', 0),
 (4, 'José Angel', 'Chávez', 'angel._ruiz@hodtmail.com', 'TBMGcTDk', '4521441689', 'upload/JoséAngel-ygQ09Apr2021084239WhatsAppImage2020-09-25at7.19.42AM.jpeg', 'San José de la Mina', '42', '', '60125', '', '2021-04-09', 4, '', '', '', '', 0),
 (5, 'José', 'Angel', 'angel._ruiz@hotmial.com', 'etw0xXJ', '4521441689', '', '', '', '', '', '', '2021-04-12', 5, '', '', '', 'Usuario', 0),
-(6, 'José', 'Ruiz', 'angel._ruiz@hotmail.com', 'x', '4521441689', '', '', '', '', '', '', '2021-04-12', 6, '', '', '', 'Usuario', 0);
+(6, 'José', 'Ruiz', 'angel._ruiz@hotmail.com', 'x', '4521441689', 'upload/José-hdt23April20211009-05WhatsApp Image 2020-02-19 at 7.55.33 AM.jpeg', '', '', '', '60125', '', '2021-04-12', 6, '', '', '', 'Usuario', 0);
 
 --
 -- Índices para tablas volcadas
@@ -476,6 +612,12 @@ ALTER TABLE `contratos`
 --
 ALTER TABLE `mensajecliente`
   ADD PRIMARY KEY (`id_mensaje`);
+
+--
+-- Indices de la tabla `pagoparts`
+--
+ALTER TABLE `pagoparts`
+  ADD PRIMARY KEY (`id_pagoparts`);
 
 --
 -- Indices de la tabla `pagos`
@@ -521,43 +663,49 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `contratos`
 --
 ALTER TABLE `contratos`
-  MODIFY `id_contrato` tinyint(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+  MODIFY `id_contrato` tinyint(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
 
 --
 -- AUTO_INCREMENT de la tabla `mensajecliente`
 --
 ALTER TABLE `mensajecliente`
-  MODIFY `id_mensaje` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=159;
+  MODIFY `id_mensaje` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=166;
+
+--
+-- AUTO_INCREMENT de la tabla `pagoparts`
+--
+ALTER TABLE `pagoparts`
+  MODIFY `id_pagoparts` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
 --
 -- AUTO_INCREMENT de la tabla `pagos`
 --
 ALTER TABLE `pagos`
-  MODIFY `id_pago` tinyint(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
+  MODIFY `id_pago` tinyint(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
 
 --
 -- AUTO_INCREMENT de la tabla `pasos`
 --
 ALTER TABLE `pasos`
-  MODIFY `id_paso` tinyint(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id_paso` tinyint(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT de la tabla `pr`
 --
 ALTER TABLE `pr`
-  MODIFY `id_archivo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `id_archivo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=64;
 
 --
 -- AUTO_INCREMENT de la tabla `precios`
 --
 ALTER TABLE `precios`
-  MODIFY `id_precio` tinyint(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id_precio` tinyint(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT de la tabla `proyectos`
 --
 ALTER TABLE `proyectos`
-  MODIFY `id_proyecto` tinyint(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_proyecto` tinyint(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT de la tabla `usuarios`
