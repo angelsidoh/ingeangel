@@ -58,7 +58,7 @@
                     <div class="icono3__a">
                         <i class="fas fa-envelope"></i>
                     </div>
-                    <a href="mailto:infoingeangel@gmail.com" class="text3__a">
+                    <a href="mailto:wingsdevs@gmail.com" class="text3__a">
 
                     </a>
                 </div>

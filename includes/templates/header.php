@@ -93,7 +93,7 @@ session_start();
           <br>
           <br>
           <br>
-          <a style="color: #ffffff!important;" class=" button" href="mailto:infoingeangel@gmail.com"><i class="far fa-envelope"></i> Enviar Correo</a>
+          <a style="color: #ffffff!important;" class=" button" href="mailto:wingsdevs@gmail.com"><i class="far fa-envelope"></i> Enviar Correo</a>
         </div>
       </div>
 
@@ -430,7 +430,7 @@ session_start();
             </li>
             <li class="nav__list-item"><a href="cuenta.php#angel-ruiz"> Tu cuenta</a></li>
             <li class="nav__list-item"><a href="proyectos.php#angel-ruiz">Proyectos</a></li>
-            <li class="nav__list-item"><a href="mailto:infoingeangel@gmail.com">Contacto</a></li>
+            <li class="nav__list-item"><a href="mailto:wingsdevs@gmail.com">Contacto</a></li>
 
           </ul>
         </div>
