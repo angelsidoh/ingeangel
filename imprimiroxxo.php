@@ -1,6 +1,6 @@
 
 <?php 
-// echo ' hey';
+
 $monto = '0';
 $cadena_de_texto = $_GET['ref'];
 $cadena_buscada   = 'm';

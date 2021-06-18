@@ -4797,7 +4797,7 @@ color: #ffffff;
   }
   
 }
-.contenido-pago .dato1 input, .contenido-pago .dato2 input,.contenido-pago .dato3 input, .contenido-pago .dato4 input, .contenido-pago .dato6 input, .contenido-pago .dato22 input, .contenido-pago .dato55 input, .contenido-pago .dato66 input, .contenido-pago .dato77 input{
+.contenido-pago .dato1 input, .contenido-pago .dato2 input,.contenido-pago .dato3 input, .contenido-pago .dato4 input, .contenido-pago .dato6 input, .contenido-pago .dato22 input, .contenido-pago .dato55 input,.contenido-pago .dato551 input, .contenido-pago .dato66 input, .dato661 input, .contenido-pago .dato77 input,.contenido-pago .dato771 input{
   text-align: center;
   background-color: #fff;
   border: none;
@@ -4807,7 +4807,7 @@ color: #ffffff;
   background-color: #fff;
   border: none;
 }
-.contenido-pago .dato1 input, .contenido-pago .dato2 input,.contenido-pago .dato3 input, .contenido-pago .dato4 input, .contenido-pago .dato6 input, .contenido-pago .dato22 input, .contenido-pago .dato55 input, .contenido-pago .dato66 input, .contenido-pago .dato77 input{
+.contenido-pago .dato1 input, .contenido-pago .dato2 input,.contenido-pago .dato3 input, .contenido-pago .dato4 input, .contenido-pago .dato6 input, .contenido-pago .dato22 input, .contenido-pago .dato55 input, .contenido-pago .dato551 input, .contenido-pago .dato66 input, .contenido-pago .dato661 input, .contenido-pago .dato77 input, .contenido-pago .dato771 input{
   max-width: 580px;
    width: 100%;
    height: 30px;
@@ -4848,7 +4848,8 @@ color: #fff;
     border-left: 1px solid #161616;
     }
 }
-.contenido-pago .text-dato1 p, .contenido-pago .text-dato2 p, .contenido-pago .text-dato3 p, .contenido-pago .text-dato4 p, .contenido-pago .text-dato5 p, .contenido-pago .text-dato6 p, .contenido-pago .text-dato55 p, .contenido-pago .text-dato66 p, .contenido-pago .text-dato77 p{
+.contenido-pago .text-dato1 p, .contenido-pago .text-dato2 p, .contenido-pago .text-dato3 p, .contenido-pago .text-dato4 p, .contenido-pago .text-dato5 p,
+ .contenido-pago .text-dato6 p, .contenido-pago .text-dato55 p,.contenido-pago .text-dato551 p, .contenido-pago .text-dato66 p,.text-dato661 p, .contenido-pago .text-dato77 p, .contenido-pago .text-dato771 p{
   padding: 0 0;
   margin:  0 0;
   font-size: 22px;
@@ -5031,6 +5032,13 @@ animation: inp 3s infinite;
   height: 100%; 
   
 }
+.contenido-pago .dato551{
+  grid-row: 6 / 7;
+  grid-column: 1 / 1;
+  width: 100%;
+  height: 100%; 
+  
+}
 .contenido-cuenta .text-dato5, .contenido-pago .text-dato55{
   grid-row: 9 / 9;
   grid-column: 1 / 1;
@@ -5040,7 +5048,14 @@ animation: inp 3s infinite;
   border-top: 1px solid #fff;
   
 }
-
+.contenido-pago .text-dato551{
+  grid-row: 5 / 6;
+  grid-column: 1 / 1;
+  width: 100%;
+  height: 100%;
+  font-size: 22px;
+  border-top: 1px solid #fff;
+}
 .contenido-cuenta .dato6,.contenido-pago .dato66{
   grid-row: 12 / 12;
   grid-column: 1 / 1;
@@ -5049,8 +5064,24 @@ animation: inp 3s infinite;
   
   
 }
+.contenido-pago .dato661{
+  grid-row: 8 / 9;
+  grid-column: 1 / 1;
+  width: 100%;
+  height: 100%;
+
+}
 .contenido-cuenta .text-dato6,.contenido-pago .text-dato66{
   grid-row: 11 / 11;
+  grid-column: 1 / 1;
+  width: 100%;
+  height: 100%;
+  font-size: 22px;
+  border-top: 1px solid #fff;
+  
+}
+.contenido-pago .text-dato661{
+  grid-row: 7 / 8;
   grid-column: 1 / 1;
   width: 100%;
   height: 100%;
@@ -5066,8 +5097,25 @@ animation: inp 3s infinite;
   
   
 }
+.contenido-pago .dato771{
+  grid-row: 10 / 11;
+  grid-column: 1 / 1;
+  width: 100%;
+  height: 100%;
+  
+  
+}
 .contenido-pago .text-dato77{
   grid-row: 13 / 13;
+  grid-column: 1 / 1;
+  width: 100%;
+  height: 100%;
+  font-size: 22px;
+  border-top: 1px solid #fff;
+  
+}
+.contenido-pago .text-dato771{
+  grid-row: 9 / 10;
   grid-column: 1 / 1;
   width: 100%;
   height: 100%;
@@ -5084,6 +5132,14 @@ animation: inp 3s infinite;
 }
  .contenido-pago .sub-boton{
   grid-row: 15 / 16;
+  grid-column: 1 / 1;
+  width: 100%;
+  height: 100%;
+  border-top: 1px solid #fff;
+  
+}
+.contenido-pago .sub-botonx{
+  grid-row: 11 / 12;
   grid-column: 1 / 1;
   width: 100%;
   height: 100%;
@@ -5345,7 +5401,7 @@ margin-bottom: 50px;
   padding: 0 0;
   margin: 0 0;
   border: 1px solid #ffffff;
-  background-color: rgb(90, 90, 90);
+  background-color: transparent;
   display: grid;
   grid-template-columns: repeat(1, 3% 3% 16% 15% 15% 16% 16% 16%);
 }
@@ -5363,7 +5419,7 @@ margin-bottom: 50px;
   }
 }
 .tikedoxxo .part:nth-child(2n+1){
-  background-color: cadetblue;
+  background-color: var(--ColorFontEspecial);
 }
 
 

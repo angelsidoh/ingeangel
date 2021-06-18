@@ -32,7 +32,7 @@ if ($posicion_coincidencia === false) {
 
 ?>
 <div class="titulo-seccion">
-    <h1 id="sparklemaster" class="sparklemaster" style="color:  #93A9CC;">Pagos por Oxxo Generados</h1>
+    <h1 id="sparklemaster" class="sparklemaster" style="color:  #93A9CC;">Pagos por SPEI Generados</h1>
 </div>
 <div class="content_tikedsoxxo">
     <?php
@@ -41,18 +41,18 @@ if ($posicion_coincidencia === false) {
         foreach ($tikeds as $tiked) {
            
             // echo '<br>' .$idrelacion . '-' . $tiked['idpago_pagoparts'];
-            $condicion0 = $idrelacion."oxxo";
+            $condicion0 = $idrelacion."spei";
             // echo '<br>' .$condicion0. '-' . $tiked['idpago_pagoparts'];
             if ($condicion0 == $tiked['idpago_pagoparts']) {
                 $contadortiked++;
     ?>
-                <a href="javascript:void(0);" onclick="window.open('imprimiroxxo.php?ref=x<?php echo $tiked['order_pagoparts'].'m'. $tiked['monto_pagoparts']; ?>', 'popup', 'top=100, left=100, width=599, height=680, toolbar=NO, resizable=NO, Location=NO, Menubar=NO, Titlebar=No, Status=NO')" rel="nofollow">
+                <a href="javascript:window.open('imprimirspei.php?ref=x<?php echo $tiked['order_pagoparts'].'m'. $tiked['monto_pagoparts']; ?>','popup','top=100, left=100, width=599, height=820');">
                     <div class="tikedoxxo">
                         <div class="part">
                             <p><?php echo $contadortiked; ?></p>
                         </div>
                         <div class="part">
-                            <p><?php echo 'Oxxo'; ?></p>
+                            <p><?php echo 'SPEI'; ?></p>
                         </div>
                         <div class="part">
                             <p><?php echo $tiked['tokencontrato_pagoparts']; ?></p>

@@ -13,6 +13,7 @@ if ((!isset($_SESSION['usuario'])) && (!isset($_SESSION['email']))) {
 
     <?php
 } else {
+
     $contratox = '';
     $cadena_de_texto = $_GET['pago'];
     $cadena_buscada   = '-';
@@ -29,19 +30,20 @@ if ((!isset($_SESSION['usuario'])) && (!isset($_SESSION['email']))) {
            $contratox .= $cadena_de_texto[$x];
         }
     }
+    echo $contratox;
     $resultadoProyecto = obtenerPrecios($contratox);
- 
+
     if ($resultadoProyecto->num_rows) {
         foreach ($resultadoProyecto as $proyecto) {
-
-            $precioBasico = $proyecto['basico_precio'];
+        
+           echo $precioBasico = $proyecto['basico_precio'];
             // echo $precioNegocio = $proyecto['negocio_precio'];
             // echo $precioProfesional = $proyecto['profesional_precio'];
-            $precioHosting = $proyecto['hosting_precio'];
-            $precioDominio = $proyecto['dominio_precio'];
-            $precioMantenimiento = $proyecto['mantenimiento_precio'];
-            $precioBD = $proyecto['basesdatos_precio'];
-            $precioProgramacion = $proyecto['programacion_precio'];
+           echo $precioHosting = $proyecto['hosting_precio'];
+           echo $precioDominio = $proyecto['dominio_precio'];
+            echo $precioMantenimiento = $proyecto['mantenimiento_precio'];
+            echo $precioBD = $proyecto['basesdatos_precio'];
+            echo $precioProgramacion = $proyecto['programacion_precio'];
         }
     }
 
@@ -228,7 +230,7 @@ if ((!isset($_SESSION['usuario'])) && (!isset($_SESSION['email']))) {
         // if ($vectorTipoProyectos[$direccionProyecto] == 'Paquete Profesional') {
         //     echo  '$' . number_format(($precioDominio + $precioHosting + $precioBD + $precioProfesional + $precioMantenimiento)* $superVecContMesesPago[$direccionx][$direcciony]) . '.00 MXN';
         // }
-echo $cuenta;
+
 if($cuenta >= 10000){
     $cuenta = $cuenta-10000;
 }
@@ -282,13 +284,13 @@ $direccion_usuario = $calle.' #'.$numie.' Colonia: '.$col;
         //     echo $error->getMessage();
         //   }
             ?>
-        <title>Pagos con Oxxo</title>
+        <title>Pagos por trasfesrencia bancaria SPEI</title>
         <?php require('includes/funciones/perfil.php'); ?>
 
         <script type="text/javascript" src="https://cdn.conekta.io/js/latest/conekta.js"></script>
         <div class="contenedor-especial">
             <div class="titulo-seccion">
-                <h1 id="sparklemaster" class="sparklemaster" style="color:  #93A9CC;">Pagos con Oxxo</h1>
+                <h1 id="sparklemaster" class="sparklemaster" style="color:  #93A9CC;">Pagos por trasfesrencia bancaria SPEI</h1>
             </div>
             <div class="datos-usuario">
                 <form id="card-form">
@@ -370,7 +372,7 @@ $direccion_usuario = $calle.' #'.$numie.' Colonia: '.$col;
                         </div>
                         <div class="sub-botonx">
                             <br>
-                            <a class="button" href="ox.php?pago=<?php echo $_GET['pago']; ?>#angel-ruiz">Pagar</a>
+                            <a class="button" href="spie.php?pago=<?php echo $_GET['pago']; ?>#angel-ruiz">Pagar</a>
                         </div>
                     </div>
                     <br>

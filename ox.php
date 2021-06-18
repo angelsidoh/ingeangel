@@ -338,7 +338,7 @@ if ((!isset($_SESSION['usuario'])) && (!isset($_SESSION['email']))) {
                     }
                     $stmt = $conn->prepare('INSERT INTO pagoparts (id_pagoparts, idpago_pagoparts, tokencontrato_pagoparts, fecha_pagoparts, order_pagoparts, orderstatus_pagoparts, idconekta_pagoparts, monto_pagoparts) VALUES (null, :idpago_pagoparts, :tokencontrato_pagoparts, :fecha_pagoparts, :order_pagoparts, :orderstatus_pagoparts, :idconekta_pagoparts, :monto_pagoparts)');
                     $stmt->execute(array(
-                        ':idpago_pagoparts' =>  $superVecIdPago[$direccionx][$direcciony],
+                        ':idpago_pagoparts' =>  $superVecIdPago[$direccionx][$direcciony]."oxxo",
                         ':tokencontrato_pagoparts' => $superVecTokenContratoPago[$direccionx][$direcciony] . '-' . $s . $superVecIdPago[$direccionx][$direcciony],
                         ':fecha_pagoparts' => $fechaini,
                         ':order_pagoparts' =>  $order->charges[0]->payment_method->reference,
