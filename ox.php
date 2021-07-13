@@ -281,7 +281,9 @@ if ((!isset($_SESSION['usuario'])) && (!isset($_SESSION['email']))) {
                 $stmt = $conn->prepare('SELECT * FROM pagoparts WHERE tokencontrato_pagoparts = :tokencontrato_pagoparts LIMIT 1');
                 $stmt->execute(array(':tokencontrato_pagoparts' => $superVecTokenContratoPago[$direccionx][$direcciony] . '-' . $s . $superVecIdPago[$direccionx][$direcciony]));
                 $resultado = $stmt->fetch();
-                if ($resultado != false) { ?>
+                if ($resultado != false) {
+                    exit(0);
+                    ?>
       
      
 

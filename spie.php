@@ -279,6 +279,7 @@ if ((!isset($_SESSION['usuario'])) && (!isset($_SESSION['email']))) {
                 $stmt->execute(array(':tokencontrato_pagoparts' => $superVecTokenContratoPago[$direccionx][$direcciony] . '-spei' . $s . $superVecIdPago[$direccionx][$direcciony]));
                 $resultado = $stmt->fetch();
                 if ($resultado != false) {
+                    exit(0);
                 } else {
                     echo $superVecTokenContratoPago[$direccionx][$direcciony] . '-spei' . $s . $superVecIdPago[$direccionx][$direcciony];
                     try {

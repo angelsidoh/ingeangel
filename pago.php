@@ -788,6 +788,17 @@ if ((!isset($_SESSION['usuario'])) && (!isset($_SESSION['email']))) {
                             <a class="button" href="prespie.php?pago=<?php echo $_GET['pago']; ?>#angel-ruiz">Pagar</a>
                         </div>
                     </div>
+                    <div class="pago">
+                        <div class="text-pago">
+                            <p>Pagos con PayPal</p>
+                        </div>
+                        <div class="trans-paypal">
+                            <i class="fab fa-cc-paypal"></i>
+                        </div>
+                        <div class="btnpago">
+                            <a class="button" href="paypalpagos.php?pago=<?php echo $_GET['pago']; ?>#angel-ruiz">Pagar</a>
+                        </div>
+                    </div>
                 </div>
 
 

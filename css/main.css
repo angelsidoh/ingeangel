@@ -550,7 +550,7 @@ html {
   
   
 }
-.efectivo-oxxopay,.trans-spei{
+.efectivo-oxxopay,.trans-spei,.trans-paypal{
   grid-row: 2 / 4;
   grid-column: 1 / 4;
   margin: 0 auto;
@@ -570,6 +570,19 @@ html {
   height: auto;
   margin: 0 auto;
   
+}
+.trans-paypal{
+  width: 100%;
+  height: auto;
+  margin: 0px auto;
+  padding: 0 0;
+  text-align: center;
+
+}
+.trans-paypal i{
+ font-size: 48px;
+ text-align: center;
+ color: #3b7bbf;
 }
 .efectivo-oxxopay img{
   width: 200px;
