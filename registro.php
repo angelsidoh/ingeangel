@@ -162,6 +162,7 @@ if (isset($_SESSION['email'])) {
 
 
             ?>
+            <title>Registro</title>
         <div class="contenedor-especial">
             <div class="titulo-seccion">
                 <p>¿Tiene una gran idea? LLené el siguiente formulario</p>

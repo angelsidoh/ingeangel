@@ -89,8 +89,8 @@ try {
             ->setInvoiceNumber($ID_registro);
         
         $redireccionar = new RedirectUrls();
-        $redireccionar->setReturnUrl(URL_SITIO . "pago_finalizado.php?exito=true&id_pago={$ID_registro}")
-            ->setCancelUrl(URL_SITIO . "pago_finalizado.php?exito=false&id_pago={$ID_registro}");
+        $redireccionar->setReturnUrl(URL_SITIO . "pago_finalizado.php?exito=true&id_pago={$ID_registro}&monto={$cuenta}&seccion={$idpago}")
+            ->setCancelUrl(URL_SITIO . "pago_finalizado.php?exito=false&id_pago={$ID_registro}&monto={$cuenta}&seccion={$idpago}");
         
         
         $pago = new Payment();

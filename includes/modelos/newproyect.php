@@ -4,7 +4,7 @@ session_start();
 require_once '../../send-mail.php';
 
 if ($_POST['accion'] == 'Crear Proyecto') {
-    $name_proyecto = 'Sin Proyecto';
+    $name_proyecto = '  Mi primer proyecto Web';
     $paso1 = 'Cotización: En proceso';
     $precio = '0';
     $paquete = 'Sin paquete';
@@ -21,7 +21,7 @@ if ($_POST['accion'] == 'Crear Proyecto') {
     $imprimir = 0;
     $tipuser = $_SESSION['tipo_usuario'];
 
-    $url = 'https://ingeangel.com/contrato.php';
+    $url = 'https://wingsdevs.com/contrato.php';
 
 
     date_default_timezone_set('America/Mexico_City');
@@ -148,7 +148,7 @@ if ($_POST['accion'] == 'Crear Proyecto') {
                 'estado' => 'creandonuevoproyecto'
             );
 
-            // enviar_correo3($nombre, $apellidos, $pass, $mail, $idea, $select, $sector);
+            enviar_correo3($nombre, $apellidos, $pass, $mail, $idea, $select, $sector);
         
         echo json_encode($respuesta);
     } catch (PDOException $e) {

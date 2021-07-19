@@ -135,11 +135,11 @@ $paqueteBasico = $precioBasico;
 				<h1 id="sparklemaster" class="sparklemaster" style="color:  #93A9CC;">Contrato de prestación de servicios</h1>
 				<h2>Sitio web: https://wingsdevs.com/</h2>
 			</div>
-			<p>Mediante el sitio web <strong><u>https://wingsdevs.com/</u></strong>, el <strong><u>C. <?php echo $usuario . ' ' . $apellidos; ?></u></strong>, residente de la Calle: <strong><u><?php echo $calle; ?></u></strong> Número exterior:<strong><u> <?php echo $numie; ?></u></strong> Colonia: <strong><u><?php echo $col; ?></u></strong>, para dar inicio el proyecto web <strong><u><?php echo $vectorNombresProyectos[0]; ?></u></strong>
+			<p>Mediante el sitio web <strong><u>https://wingsdevs.com/</u></strong>, el <strong><u>C. <?php echo $usuario . ' ' . $apellidos; ?></u></strong>, residente de la Calle: <strong><u><?php echo $calle; ?></u></strong> Número exterior:<strong><u> <?php echo $numie; ?></u></strong> Colonia: <strong><u><?php echo $col; ?></u></strong>, para dar inicio el proyecto web <strong><u><?php echo 'https://'.strtolower($vectorNombresProyectos[0]);?></u></strong>
 				El ingeniero en Mecatrónica <strong><u>José Angel Ruiz Chávez</u></strong>, residente de la calle: <strong><u>San José de la Mina</u></strong> Número Exterior: <strong><u>42</u></strong> colonia: <strong><u>San José de la Mina</u></strong>, responsable de <strong><u>https://wingsdevs.com/</u></strong> y sus servicios.
 				Tienen entre sí, justo y acordado este contrato, para la prestación de servicios profesionales independientes, que se regirá por las siguientes clausulas y condiciones;
 			</p>
-			<p>1ª Cláusula. El propósito de este contrato para el <strong><u><?php echo $vectorTipoProyectos; ?></u></strong> del sitio web https://wingsdevs.com/; es proporcionar al proyecto web: <strong><u><?php echo $vectorNombresProyectos[0]; ?></u></strong> los siguientes servicios; <br></p>
+			<p>1ª Cláusula. El propósito de este contrato para el <strong><u><?php echo $vectorTipoProyectos; ?></u></strong> del sitio web https://wingsdevs.com/; es proporcionar al proyecto web: <strong><u><?php echo 'https://'.strtolower($vectorNombresProyectos[0]);?></u></strong> los siguientes servicios; <br></p>
 			<p style="text-indent:20px;"> 1) Servicio de programación web descrito a continuación:</p>
 
 			<dd>a) Programación en HTML5, para el etiquetado del contenido para el proyecto web.</dd><br>
@@ -155,18 +155,18 @@ $paqueteBasico = $precioBasico;
 			<p>3ª Cláusula. Para la prestación de los servicios cubiertos por este contrato, el cliente pagará a <strong><u>https://wingsdevs.com/</u></strong> el monto <strong><u>
 						<?php
 						if ($vectorTipoProyectos == 'Sin paquete') {
-							$moneda = money_format('%.2n', $paqueteBasico);
+							$moneda = monto('%.2n', $paqueteBasico);
 							echo $moneda . ' MXN';
 							echo ' (' . convertir($paqueteBasico) . ')';
 						}
 
 						?></u></strong> por mes de contrato. Haciendo su pago por cualquiera de los métodos disponibles en su cuenta de <strong><u>https://wingsdevs.com/</u></strong><br><br>
-				Una vez terminado este contrato, para dar seguimiento a los servicios de programación y mantenimiento adecuados para su proyecto web: <strong><u><?php echo $vectorNombresProyectos[0]; ?></u></strong>, tendrá 7 días naturales inmediatos (fecha límite: <strong><u><?php echo $mesDesclim ?></u></strong>) para realizar una renovación de contrato firmando y pagando el monto que corresponda.
+				Una vez terminado este contrato, para dar seguimiento a los servicios de programación y mantenimiento adecuados para su proyecto web: <strong><u><?php echo 'https://'.strtolower($vectorNombresProyectos[0]);?></u></strong>, tendrá 7 días naturales inmediatos (fecha límite: <strong><u><?php echo $mesDesclim ?></u></strong>) para realizar una renovación de contrato firmando y pagando el monto que corresponda.
 			</p>
-			<p>4ª Cláusula. En caso de incumplimiento por parte del C. <strong><u> <?php echo $usuario . ' ' . $apellidos; ?></u></strong> del proyecto web: <strong><u><?php echo $vectorNombresProyectos[0]; ?></u></strong>, con respecto al pago de renovación de contrato mencionado en la cláusula anterior, en los días descritos, habrá una multa de 10% del monto para la renovación de contrato y corrección monetaria en el monto adeudado. Y <strong><u>https://wingsdevs.com/</u></strong> puede, a su discreción, considerar reincidido el proyecto web: <strong><u><?php echo $vectorNombresProyectos[0]; ?></u></strong></p>
-			<p>5ª Cláusula. En caso de que <strong><u>https://wingsdevs.com/</u></strong> demuestre una prestación de servicios deficiente el cliente propietario del proyecto web: <strong><u><?php echo $vectorNombresProyectos[0]; ?></u></strong> puede considerar reincidido este contrato.</p>
+			<p>4ª Cláusula. En caso de incumplimiento por parte del C. <strong><u> <?php echo $usuario . ' ' . $apellidos; ?></u></strong> del proyecto web: <strong><u><?php echo 'https://'.strtolower($vectorNombresProyectos[0]);?></u></strong>, con respecto al pago de renovación de contrato mencionado en la cláusula anterior, en los días descritos, habrá una multa de 10% del monto para la renovación de contrato y corrección monetaria en el monto adeudado. Y <strong><u>https://wingsdevs.com/</u></strong> puede, a su discreción, considerar reincidido el proyecto web: <strong><u><?php echo 'https://'.strtolower($vectorNombresProyectos[0]);?></u></strong></p>
+			<p>5ª Cláusula. En caso de que <strong><u>https://wingsdevs.com/</u></strong> demuestre una prestación de servicios deficiente el cliente propietario del proyecto web: <strong><u><?php echo 'https://'.strtolower($vectorNombresProyectos[0]);?></u></strong> puede considerar reincidido este contrato.</p>
 			<p>6ª Cláusula. En caso de terminación anticipada de este contrato por cualquiera de las partes excepto las cláusulas 4 y 5 o por mutuo acuerdo, la parte que lo haga incurrirá, en una multa equivalente a la cantidad del monto a pagar por este contrato.</p>
-			<p>7ª Cláusula. Se afirma que no tienen relación laboral entre C. <strong><u> <?php echo $usuario . ' ' . $apellidos; ?></u></strong> del proyecto web: <strong><u><?php echo $vectorNombresProyectos[0]; ?></u></strong> y <strong><u>https://wingsdevs.com/</u></strong> y su equipo de desarrolladores.</p>
+			<p>7ª Cláusula. Se afirma que no tienen relación laboral entre C. <strong><u> <?php echo $usuario . ' ' . $apellidos; ?></u></strong> del proyecto web: <strong><u><?php echo 'https://'.strtolower($vectorNombresProyectos[0]);?></u></strong> y <strong><u>https://wingsdevs.com/</u></strong> y su equipo de desarrolladores.</p>
 			<p>8ª Cláusula. Las partes eligen las jurisdicciones de Uruapan Michoacán México para resolver cualquier disputa que surja de este contrato, excluyendo cualquier otra que sea privilegiada.
 
 			</p>
@@ -185,13 +185,13 @@ $paqueteBasico = $precioBasico;
 				<div style="text-align: center;" class="firmax"><img style="width: 520px; height: auto; margin-top: 50px;margin-left: calc(50% - 260px);" src="<?php echo $vecFirmaClienteContrato[0]; ?>" alt="error: <?php echo $vecFirmaClienteContrato[0]; ?>">
 
 					<p>Firma Digital: <strong><u> <?php echo $usuario . ' ' . $apellidos; ?></u></strong>
-						Responsable del contrato para el proyecto: <strong><u><?php echo $vectorNombresProyectos[0]; ?></u></strong>
+						Responsable del contrato para el proyecto: <strong><u><?php echo 'https://'.strtolower($vectorNombresProyectos[0]);?></u></strong>
 					</p>
 				</div>
 				<div style="text-align: center;" class="firmax"><img style="width: 520px; height: auto; margin-top: 50px;margin-left: calc(50% - 260px);" src="includes/funciones/doc_sings/07a894013a931e77b9c067d509ccf428.png" alt="error: 07a894013a931e77b9c067d509ccf428.png">
 
 					<p>Firma Digital: <strong><u> José Angel Ruiz Chávez</u></strong>
-						Responsable de desarrollo del proyecto: <strong><u><?php echo $vectorNombresProyectos[0]; ?></u></strong>
+						Responsable de desarrollo del proyecto: <strong><u><?php echo 'https://'.strtolower($vectorNombresProyectos[0]);?></u></strong>
 					</p>
 				</div>
 

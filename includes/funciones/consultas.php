@@ -298,4 +298,14 @@ function obtenerTikeds()
         return false;
     }
 }
+function obtenerPartPago()
+{
+    require('bd/bdsqli.php');
+    try{   
+        return $connf->query("SELECT orderstatus_pagoparts, idpago_pagoparts FROM pagoparts");      
+    }catch(Exception $e){
+        echo "Error!!" . $e->getMessage() . "<br>";
+        return false;
+    }
+}
 ?>

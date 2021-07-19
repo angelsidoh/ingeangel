@@ -75,7 +75,7 @@ if ((!isset($_SESSION['usuario'])) && (!isset($_SESSION['email']))) {
             unset($vectorDescrip[$ix]);
         } ?><?php
         }
-     
+$contadordepagos = 0;
         for ($i = 0; $i < $contadorProyectos; $i++) {
             $resultadoPagos = consultaPagos($vectorIdProyectos[$i]);
 
@@ -93,6 +93,7 @@ if ((!isset($_SESSION['usuario'])) && (!isset($_SESSION['email']))) {
                     $vecIdContratoPago[$contadorPasos1] = $pago['idcontrato_pago'];
                     $vecTokenContratoPago[$contadorPasos1] = $pago['tokencontrato_pago'];
                     $contadorPasos1++;
+                    $contadordepagos = $contadorPasos1;
                 }
             }
             $superVecIdPago[$i] = $vecIdPago;
@@ -133,6 +134,7 @@ if ((!isset($_SESSION['usuario'])) && (!isset($_SESSION['email']))) {
                     $vecFechaInicioContrato[$contadorPasos1] = $contrato['fechainicio_contrato'];
                     $vecFechaFinContrato[$contadorPasos1] = $contrato['fechafin_contrato'];
                     $contadorPasos1++;
+                    
                 }
             }
             $supervecIdContrato[$i] = $vecIdContrato;
@@ -158,6 +160,30 @@ if ((!isset($_SESSION['usuario'])) && (!isset($_SESSION['email']))) {
         // var_dump($supervecFechaInicioContrato);
         // echo '</pre>';
 
+        echo $contadorProyectos.'->'.$contadordepagos;
+        for ($i = 0; $i < $contadordepagos; $i++) {
+            $pagosparts = obtenerPartPago();
+            $contadorPasos1 = 0;
+            $contadorPagos = 0;
+            if ($pagosparts->num_rows) {
+                foreach ($pagosparts as $pagosp) {
+                    $payedEstado[$contadorPasos1] = $pagosp['orderstatus_pagoparts'];
+                    $idpagoProcesado[$contadorPasos1] = $pagosp['idpago_pagoparts'];
+                    $contadorPasos1++;
+                }
+            }
+            // $superVecPayedEstado[$i] = $payedEstado; 
+            // $superVecidPagoProcesado[$i]= $idpagoProcesado;
+            // for ($ix = 0; $ix < $contadorPasos1; $ix++) {
+            //     unset($payedEstado[$ix]);
+            //     unset($idpagoProcesado[$ix]);
+            // }
+        }
+        echo   $usuario . '------>';
+        echo ('<pre>');
+        var_dump($superVecPayedEstado);
+        echo ('</pre>');
+      
         $_SESSION['tipo_usuario'] = $tipouser;
             ?>
 
@@ -191,9 +217,9 @@ if ((!isset($_SESSION['usuario'])) && (!isset($_SESSION['email']))) {
             </div>
         </section>
 
-        <?php 
+        <?php
 
-require('includes/funciones/perfil.php');
+        require('includes/funciones/perfil.php');
         if ($_SESSION['tipo_usuario'] == 'admin') {
         ?>
             <?php require('includes/funciones/admin.php'); ?>
@@ -220,18 +246,18 @@ require('includes/funciones/perfil.php');
                                     <div class="submenu-proyectos">
                                         <div class="titulo-proyecto">
                                             <?php if (($x + 1) == 1) {
-                                                ?>
+                                            ?>
                                                 <h1>Cotización :<span style="font-size: 16px;">
                                                         <?php
                                                         echo $vectorNombresProyectos[$x];
                                                         ?></span></h1><?php
-                                            } else { ?>
+                                                                    } else { ?>
                                                 <h1>Proyecto <?php echo $x + 1; ?>:<span style="font-size: 16px;">
                                                         <?php
-                                                        echo $vectorNombresProyectos[$x];
+                                                                        echo $vectorNombresProyectos[$x];
                                                         ?></span></h1><?php
-                                                            }
-                                                                ?>
+                                                                    }
+                                                                        ?>
                                         </div>
                                         <div class="mas-proyecto">
                                             <input type="checkbox" class="checs" id="check<?php echo $x; ?>" name="menu">
@@ -392,7 +418,12 @@ require('includes/funciones/perfil.php');
                             </div>
                         </div>
                     </li>
-                    <?php include('includes/funciones/historial-pagos.php'); ?>
+                    <?php
+
+
+                    include('includes/funciones/historial-pagos.php');
+
+                    ?>
                     </li>
                     <?php include('includes/funciones/contratos.php');
                     ?>
@@ -506,4 +537,3 @@ require('includes/funciones/perfil.php');
         }
     }
     ?>
-    

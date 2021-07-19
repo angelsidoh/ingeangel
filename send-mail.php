@@ -56,7 +56,7 @@ function enviar_correo4($mensaje,$asunto,$tipo_user, $correo,$nombre)
 
     //Set who the message is to be sent from
     $mail->setFrom('infoingeangel@gmail.com
-', 'Nuevo mensaje en ingeangel.com');
+', 'Nuevo mensaje en wingsdevs.com');
 
     //Set an alternative reply-to address
     // $mail->addReplyTo('replyto@example.com', 'First Last');
@@ -67,7 +67,7 @@ function enviar_correo4($mensaje,$asunto,$tipo_user, $correo,$nombre)
     $mail->addAddress($correo, $nombreTo);
 
     //Set the subject line
-    $mail->Subject = utf8_decode('Mensajes de tu cuenta. https://ingeangel.com/');
+    $mail->Subject = utf8_decode('Mensajes de tu cuenta. https://wingsdevs.com/');
 
     //Read an HTML message body from an external file, convert referenced images to embedded,
     //convert HTML into a basic plain-text alternative body
@@ -91,7 +91,7 @@ function enviar_correo4($mensaje,$asunto,$tipo_user, $correo,$nombre)
     height:80px;
     margin: 20px auto;
     filter: drop-shadow(1px 2px 5px #ff4800);
-   " src="https://ingeangel.com/img/terceros/logooooo02.png" alt="imagen">
+   " src="https://wingsdevs.com/img/terceros/logooooo02.png" alt="imagen">
     
         </div>
         <div style="
@@ -120,7 +120,7 @@ function enviar_correo4($mensaje,$asunto,$tipo_user, $correo,$nombre)
     display: inline-block;
     transition: all .1s ease;
     border: 2px solid #fe4918;
-    " href="https://ingeangel.com/login.php#angel-ruiz">
+    " href="https://wingsdevs.com/login.php#angel-ruiz">
                 <p>Iniciar Sesión</p>
             </a>
 
@@ -209,7 +209,7 @@ function enviar_correo3($nombre, $apellido, $pass, $correo, $idea, $select, $sec
 
     //Set who the message is to be sent from
     $mail->setFrom('infoingeangel@gmail.com
-', 'Nueva cuenta en ingeangel.com');
+', 'Nueva cuenta en wingsdevs.com');
 
     //Set an alternative reply-to address
     // $mail->addReplyTo('replyto@example.com', 'First Last');
@@ -220,7 +220,7 @@ function enviar_correo3($nombre, $apellido, $pass, $correo, $idea, $select, $sec
     $mail->addAddress($correo, $nombreTo . ' ' . $apellidoTo);
 
     //Set the subject line
-    $mail->Subject = utf8_decode('Datos importantes cuenta https://ingeangel.com/');
+    $mail->Subject = utf8_decode('Datos importantes cuenta https://wingsdevs.com/');
 
     //Read an HTML message body from an external file, convert referenced images to embedded,
     //convert HTML into a basic plain-text alternative body
@@ -242,7 +242,7 @@ function enviar_correo3($nombre, $apellido, $pass, $correo, $idea, $select, $sec
                                 width:220px;
                                 height:80px;
                                 margin: 20px auto;
-                                " src="https://ingeangel.com/img/terceros/logooooo02.png" alt="Logo Mensaje automático">
+                                " src="https://wingsdevs.com/img/terceros/logooooo02.png" alt="Logo Mensaje automático">
                                 </div>
                                 <div style="
                                 text-align: center;
@@ -258,8 +258,8 @@ function enviar_correo3($nombre, $apellido, $pass, $correo, $idea, $select, $sec
                                 text-decoration: none;
                                 font-size: 28px;
                                 text-shadow: 0px 0px 10px #ff7b00;
-                                " href="https://ingeangel.com/">
-                                <h1>https://ingeangel.com/</h1>
+                                " href="https://wingsdevs.com/">
+                                <h1>https://wingsdevs.com/</h1>
                                 </a>
                                 <h1 style="color:#f5d108; font-size:45px;">Bienvenido(a)</h1>
 
@@ -287,7 +287,7 @@ function enviar_correo3($nombre, $apellido, $pass, $correo, $idea, $select, $sec
                                 display: inline-block;
                                 transition: all .1s ease;
                                 border: 2px solid #fe4918;
-                                " href="https://ingeangel.com/login.php#angel-ruiz">
+                                " href="https://wingsdevs.com/login.php#angel-ruiz">
                                 <p>Iniciar Sesión</p>
                                 </a>
                                 </div></div>');
@@ -405,7 +405,7 @@ function enviar_correo2($correo, $idpago, $fechainicio, $fechafin, $montopago, $
     height:80px;
     margin: 20px auto;
     filter: drop-shadow(1px 2px 5px #ff4800);
-   " src="https://ingeangel.com/img/terceros/logooooo02.png" alt="imagen">
+   " src="https://wingsdevs.com/img/terceros/logooooo02.png" alt="imagen">
    <img style="
    width:220px;
 
@@ -415,7 +415,7 @@ margin: 20px auto;
 padding: 10px;
 
 filter: drop-shadow(1px 2px 5px #ff4800);
-" src="https://www.ingeangel.com'.$qr.'" alt="https://www.ingeangel.com'.$qr.'">
+" src="https://www.wingsdevs.com'.$qr.'" alt="https://www.wingsdevs.com'.$qr.'">
 </div>
 <div style="
     text-align: center;
@@ -448,7 +448,7 @@ filter: drop-shadow(1px 2px 5px #ff4800);
     display: inline-block;
     transition: all .1s ease;
     border: 2px solid #fe4918;
-    " href="https://ingeangel.com/login.php#angel-ruiz">
+    " href="https://wingsdevs.com/login.php#angel-ruiz">
     <p>Iniciar Sesión</p>
 </a>
 
@@ -572,7 +572,7 @@ function enviar_correo1($correo, $paso1, $paquete)
     height:80px;
     margin: 0px auto;
     filter: drop-shadow(1px 2px 5px #ff4800);
-   " src="https://ingeangel.com/img/terceros/logooooo02.png" alt="imagen">
+   " src="https://wingsdevs.com/img/terceros/logooooo02.png" alt="imagen">
 </div>
 <div style="
     text-align: center;
@@ -584,7 +584,7 @@ function enviar_correo1($correo, $paso1, $paquete)
 ">Nuevo Proyecto</h2>
 <h2>¡Gracias por tu preferencia!<br>'.$paso1.'</h2>
 <h2>De esta manera platicaremos un poco sobre sus necesidades para el proyecto, y se definirán objetivos iniciales para comenzar a trabajar.</h2>
-<h2>Al iniciar sesión en http://ingeangel.com/ verá en la sección -tu cuenta- varias opciones donde le presentamos todos los proyectos (y sus pasos detallados) asociados a su cuenta, datos importantes de su cuenta, pagos y contratos.</h2>
+<h2>Al iniciar sesión en http://wingsdevs.com/ verá en la sección -tu cuenta- varias opciones donde le presentamos todos los proyectos (y sus pasos detallados) asociados a su cuenta, datos importantes de su cuenta, pagos y contratos.</h2>
 <h2>El proyecto comenzará en cuanto se firme y se haga el pago del primer mes de contrato.</h2>
 <h2>Seguiremos enviando instrucciones para el seguimiento de su nuevo proyecto</h2>
 <a style="
@@ -599,7 +599,7 @@ function enviar_correo1($correo, $paso1, $paquete)
     display: inline-block;
     transition: all .1s ease;
     border: 2px solid #fe4918;
-    " href="https://ingeangel.com/login.php#angel-ruiz">
+    " href="https://wingsdevs.com/login.php#angel-ruiz">
     <p>Iniciar Sesión</p>
 </a>
 
@@ -689,7 +689,7 @@ function enviar_correo($nombre, $apellido, $pass, $correo)
 
     //Set who the message is to be sent from
     $mail->setFrom('infoingeangel@gmail.com
-', 'Nueva cuenta en ingeangel.com');
+', 'Nueva cuenta en wingsdevs.com');
 
     //Set an alternative reply-to address
     // $mail->addReplyTo('replyto@example.com', 'First Last');
@@ -700,7 +700,7 @@ function enviar_correo($nombre, $apellido, $pass, $correo)
     $mail->addAddress($correo, $nombreTo . ' ' . $apellidoTo);
 
     //Set the subject line
-    $mail->Subject = utf8_decode('Datos importantes cuenta https://ingeangel.com/');
+    $mail->Subject = utf8_decode('Datos importantes cuenta https://wingsdevs.com/');
 
     //Read an HTML message body from an external file, convert referenced images to embedded,
     //convert HTML into a basic plain-text alternative body
@@ -722,7 +722,7 @@ function enviar_correo($nombre, $apellido, $pass, $correo)
                                 width:220px;
                                 height:80px;
                                 margin: 20px auto;
-                                " src="https://ingeangel.com/img/terceros/logooooo02.png" alt="Logo Mensaje automático">
+                                " src="https://wingsdevs.com/img/terceros/logooooo02.png" alt="Logo Mensaje automático">
                                 </div>
                                 <div style="
                                 text-align: center;
@@ -738,8 +738,8 @@ function enviar_correo($nombre, $apellido, $pass, $correo)
                                 text-decoration: none;
                                 font-size: 28px;
                                 text-shadow: 0px 0px 10px #ff7b00;
-                                " href="https://ingeangel.com/">
-                                <h1>https://ingeangel.com/</h1>
+                                " href="https://wingsdevs.com/">
+                                <h1>https://wingsdevs.com/</h1>
                                 </a>
                                 <h1 style="color:#f5d108; font-size:45px;">Bienvenido(a)</h1>
 
@@ -767,7 +767,7 @@ function enviar_correo($nombre, $apellido, $pass, $correo)
                                 display: inline-block;
                                 transition: all .1s ease;
                                 border: 2px solid #fe4918;
-                                " href="https://ingeangel.com/login.php#angel-ruiz">
+                                " href="https://wingsdevs.com/login.php#angel-ruiz">
                                 <p>Iniciar Sesión</p>
                                 </a>
                                 </div></div>');

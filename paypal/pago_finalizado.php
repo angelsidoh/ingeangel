@@ -13,11 +13,15 @@ require 'config.php';
 
     <?php
     echo 'redireccionando...';
-  $resultado = $_GET['exito'];
+    $resultado = $_GET['exito'];
     "<hr>";
     $paymentId = $_GET['paymentId'];
      "<hr>";
      $id_pago = $_GET['id_pago'];
+
+    $monto = $_GET['monto'];
+    $idpago = $_GET['seccion'];
+
     if($resultado == 'false'){
      ?>
         <script> 
@@ -78,16 +82,23 @@ require 'config.php';
        
 
         try {
-            echo 'f';
+         
             require('../bd/bd.php');
             require('../bd/bdsqli.php');
 
 
+          $tarjeta = 9999;
           
+         
+          preg_match_all('!\d+!', $string, $matches);
                
-                    $stmt = $connf->prepare("UPDATE pagoparts SET orderstatus_pagoparts = ?, idconekta_pagoparts = ? WHERE id_pagoparts = ?");
-                    $stmt->bind_param("ssi", $variable, $paymentId, $id_pago);
+                    $stmt = $connf->prepare("UPDATE pagoparts SET pagado_pagoparts = ?, orderstatus_pagoparts = ?, idconekta_pagoparts = ? WHERE id_pagoparts = ?");
+                    $stmt->bind_param("sssi", $fechaini ,$variable, $paymentId, $id_pago);
                     $stmt->execute();
+
+                    $stmtx = $connf->prepare("UPDATE pagos SET fechadepago_pago = ?, tokenconekta_pago = ?, tokenpago_pago = ?, fortarget_pago = ?, money_pago = ? WHERE id_pago = ?");
+                    $stmtx->bind_param("sssisi", $fechaini, $paymentId, $paymentId, $tarjeta, $monto, $idpago);
+                    $stmtx->execute();
                     $stmt->close();
                     $connf->close();
               

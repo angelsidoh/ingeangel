@@ -20,7 +20,7 @@ if ($_POST['accion'] == 'Registrarse') {
     $imprimir = 0;
     $asunto = 'Mi proyecto web';
 
-    $url = 'https://ingeangel.com/contrato.php';
+    $url = 'https://wingsdevs.com/contrato.php';
 
 
     date_default_timezone_set('America/Mexico_City');

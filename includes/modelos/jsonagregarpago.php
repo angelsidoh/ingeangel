@@ -16,7 +16,7 @@ if ($_POST['accion'] == 'Agregar Pago') {
     $contmeses = $meses;
     $str = ("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890");
     $tokencontrato = filter_var($_POST['tokencontrato'], FILTER_SANITIZE_STRING);
-    $url = 'https://ingeangel.com/contrato.php';
+    $url = 'https://wingsdevs.com/contrato.php';
     $fechafinMes = date("Y-m-d H:i:s", strtotime($fechainicio . "+ 1 month"));
     $idcontrato_pago= filter_var($_POST['contratoid'], FILTER_SANITIZE_STRING);;
    

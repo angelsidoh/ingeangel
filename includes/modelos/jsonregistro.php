@@ -21,7 +21,7 @@ if ($_POST['accion'] == 'Nuevo Proyecto') {
     $contmeses = 1;
     $str = ("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890");
     $identicontrato = "";
-    $url = 'https://ingeangel.com/contrato.php';
+    $url = 'https://wingsdevs.com/contrato.php';
     $respuestas =0;
     $veccondicion = [0];
     for ($i = 0; $i < 18; $i++) {
@@ -136,7 +136,7 @@ if ($_POST['accion'] == 'Registrar') {
     $pass = "";
    
     $precio = '';
-    $url = 'https://ingeangel.com/contrato.php';
+    $url = 'https://wingsdevs.com/contrato.php';
     $str = ("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890");
     $identicontrato = "";
     for ($i = 0; $i < 18; $i++) {

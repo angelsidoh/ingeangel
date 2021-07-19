@@ -23,7 +23,7 @@ if ($_POST['accion'] == 'Agregar Contrato') {
     $contmeses = 1;
     $str = ("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890");
     $tokencontrato = "";
-    $url = 'https://ingeangel.com/contrato.php';
+    $url = 'https://wingsdevs.com/contrato.php';
     $fechafinMes = date("Y-m-d H:i:s", strtotime($fechainicio . "+ 1 month"));
     for ($i = 0; $i < 18; $i++) {
         $tokencontrato .= substr($str, rand(0, 62), 1);

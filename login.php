@@ -6,7 +6,7 @@ session_destroy();
 ?><META HTTP-EQUIV="REFRESH" CONTENT="1;URL=https://ingeangel.com/logout.php"><?php
 }{
 ?>
-
+    <title>Inicio de Sesión</title>
 <div class="contenedor-formulario">
   <div class="titulo-seccion">
     <h1 id="sparklemaster" class="sparklemaster" style="color:  #93A9CC;">Inicio de Sesión</h1>
