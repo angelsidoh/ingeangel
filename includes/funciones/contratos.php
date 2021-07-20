@@ -35,6 +35,7 @@
                                 ?>
                                 <?php
                              
+                             $numeroContratoDescp = 0;
                                 for ($f = 0; $f < sizeof($supervecIdContrato[$x]); $f++) {
                                     if ($f = !0) {
                                         if (isset($supervecIdContrato[$x])) {
@@ -43,7 +44,9 @@
                                 ?>
 
                                             <a href="contrato.php?contrato=<?php echo  $supervecTokenContrato[$x][$f]; ?>-id=<?php echo $vectorIdProyectos[$x]; ?>#angel-ruiz" target="_blank">
-                                                <p><?php echo    $supervecIdContrato[$x][$f]; ?>. Contrato (#<?php
+                                                <p><?php
+                                                $numeroContratoDescp ++;
+                                                echo    $numeroContratoDescp; ?>. Contrato (#<?php
                                                                                                                 echo $supervecTokenContrato[$x][$f];
                                                                                                                 ?>) <br> Periodo de contrato:
                                                     <?php

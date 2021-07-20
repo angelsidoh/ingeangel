@@ -74,7 +74,7 @@ if ($resultadoContratos->num_rows) {
 		$vecFechaInicioContrato[$contadorPasos1] = $contrato['fechainicio_contrato'];
 		$vecFechaFinContrato[$contadorPasos1] = $contrato['fechafin_contrato'];
 		$vecFirmaClienteContrato[$contadorPasos1] = $contrato['firmacliente_contrato'];
-
+		$vecTipocxContrato[$contadorPasos1] = $contrato['tipocx_contrato'];
 		$contadorPasos1++;
 	}
 }
@@ -136,34 +136,65 @@ $paqueteBasico = $precioBasico;
 				<h2>Sitio web: https://wingsdevs.com/</h2>
 			</div>
 			<p>Mediante el sitio web <strong><u>https://wingsdevs.com/</u></strong>, el <strong><u>C. <?php echo $usuario . ' ' . $apellidos; ?></u></strong>, residente de la Calle: <strong><u><?php echo $calle; ?></u></strong> Número exterior:<strong><u> <?php echo $numie; ?></u></strong> Colonia: <strong><u><?php echo $col; ?></u></strong>, para dar inicio el proyecto web <strong><u><?php echo 'https://'.strtolower($vectorNombresProyectos[0]);?></u></strong>
-				El ingeniero en Mecatrónica <strong><u>José Angel Ruiz Chávez</u></strong>, residente de la calle: <strong><u>San José de la Mina</u></strong> Número Exterior: <strong><u>42</u></strong> colonia: <strong><u>San José de la Mina</u></strong>, responsable de <strong><u>https://wingsdevs.com/</u></strong> y sus servicios.
+				El ingeniero en Mecatrónica <strong><u>José Angel Ruiz Chávez</u></strong>, residente de la calle: <strong><u>San José de la Mina</u></strong> Número Exterior: <strong><u>42</u></strong> Colonia: <strong><u>San José de la Mina</u></strong>, responsable de <strong><u>https://wingsdevs.com/</u></strong> y sus servicios.
 				Tienen entre sí, justo y acordado este contrato, para la prestación de servicios profesionales independientes, que se regirá por las siguientes clausulas y condiciones;
 			</p>
-			<p>1ª Cláusula. El propósito de este contrato para el <strong><u><?php echo $vectorTipoProyectos; ?></u></strong> del sitio web https://wingsdevs.com/; es proporcionar al proyecto web: <strong><u><?php echo 'https://'.strtolower($vectorNombresProyectos[0]);?></u></strong> los siguientes servicios; <br></p>
-			<p style="text-indent:20px;"> 1) Servicio de programación web descrito a continuación:</p>
+			<p >1ª Cláusula. El propósito de este contrato para el <strong><u><?php echo $vectorTipoProyectos;?></u></strong> del sitio web <strong><u>https://wingsdevs.com/</u></strong>; es proporcionar al proyecto web: <strong><u><?php 
+        echo 'https://'.strtolower($vectorNombresProyectos[0]);
+       
+        if($vecTipocxContrato[0] == 1){
+?>
+</u></strong> los siguientes servicios; <br></p>
+        <p style="text-indent:20px;">  1)	Servicio de programación web descrito a continuación:</p>
 
-			<dd>a) Programación en HTML5, para el etiquetado del contenido para el proyecto web.</dd><br>
-			<dd>b) Programación en CSS3, para dar estilos gráficos a las etiquetas del contenido para el proyecto web. </dd><br>
-			<dd>c) Programación en PHP, para agregar funciones de automatización del contenido, configuración de bases de datos en MySQL y estructurar de manera óptima el proyecto web. </dd><br>
-			<dd> d) Programación en JAVASCRIPT (Y JQuery), mejora la interacción del proyecto web con sus posibles usuarios. </dd><br>
-			<dd> e) Bases de datos en MYSQL, para almacenar registros y gestionar contenido del proyecto web. </dd><br>
+        <dd>a)	Programación en HTML5, para el etiquetado del contenido para el proyecto web.</dd><br>
+        <dd>b)	Programación en CSS3, para dar estilos gráficos a las etiquetas del contenido para el proyecto web. </dd><br>
+        <dd>c)	Programación en PHP, para agregar funciones de automatización del contenido, configuración de bases de datos en MySQL y estructurar de manera óptima el proyecto web. </dd><br>
+        <dd> d)	Programación en JAVASCRIPT (Y JQuery), mejora la interacción del proyecto web con sus posibles usuarios. </dd><br>
+        <dd> e)	Bases de datos en MYSQL, para almacenar registros y gestionar contenido del proyecto web.  </dd><br>
 
-			<p style="text-indent:20px;">2) Servicio de instalación de certificado SSL de seguridad para la navegación segura de los usuarios por su proyecto web.</p>
-			<p style="text-indent:20px;">3) Servicio de mantenimiento periódico de sistemas de seguridad, con actualizaciones en nivel de servidor para su proyecto web.</p>
-			<p style="text-indent:20px;">4) Servicio de modificaciones o actualizaciones menores del contenido en cualquier parte de su proyecto web.</p>
-			<p>2ª Cláusula. Este contrato es efectivo por 3 meses comenzando en la fecha: <strong><u><?php echo $mesDescInicio; ?></u></strong> y terminando en la fecha: <strong><u><?php echo $mesDescFin ?></u></strong>.</p>
-			<p>3ª Cláusula. Para la prestación de los servicios cubiertos por este contrato, el cliente pagará a <strong><u>https://wingsdevs.com/</u></strong> el monto <strong><u>
-						<?php
-						if ($vectorTipoProyectos == 'Sin paquete') {
-							$moneda = monto('%.2n', $paqueteBasico);
-							echo $moneda . ' MXN';
-							echo ' (' . convertir($paqueteBasico) . ')';
-						}
+        <p style="text-indent:20px;">2)	Servicio de instalación de certificado SSL de seguridad para la navegación segura de los usuarios por su proyecto web.</p>
+        <p style="text-indent:20px;">3)	Servicio de mantenimiento periódico de sistemas de seguridad, con actualizaciones en nivel de servidor para su proyecto web.</p>
+        <p style="text-indent:20px;">4)	Servicio de modificaciones o actualizaciones menores del contenido en cualquier parte de su proyecto web.</p>
+<?php
+        }else{
+            ?>
+</u></strong> los siguientes servicios; <br></p>
+        <p style="text-indent:20px;">  1)	Servicio construcción de sitios web:</p>
 
-						?></u></strong> por mes de contrato. Haciendo su pago por cualquiera de los métodos disponibles en su cuenta de <strong><u>https://wingsdevs.com/</u></strong><br><br>
-				Una vez terminado este contrato, para dar seguimiento a los servicios de programación y mantenimiento adecuados para su proyecto web: <strong><u><?php echo 'https://'.strtolower($vectorNombresProyectos[0]);?></u></strong>, tendrá 7 días naturales inmediatos (fecha límite: <strong><u><?php echo $mesDesclim ?></u></strong>) para realizar una renovación de contrato firmando y pagando el monto que corresponda.
-			</p>
-			<p>4ª Cláusula. En caso de incumplimiento por parte del C. <strong><u> <?php echo $usuario . ' ' . $apellidos; ?></u></strong> del proyecto web: <strong><u><?php echo 'https://'.strtolower($vectorNombresProyectos[0]);?></u></strong>, con respecto al pago de renovación de contrato mencionado en la cláusula anterior, en los días descritos, habrá una multa de 10% del monto para la renovación de contrato y corrección monetaria en el monto adeudado. Y <strong><u>https://wingsdevs.com/</u></strong> puede, a su discreción, considerar reincidido el proyecto web: <strong><u><?php echo 'https://'.strtolower($vectorNombresProyectos[0]);?></u></strong></p>
+        <dd>a) Instalación de WordPress.</dd><br>
+        <dd>b) Instalación de plugins para la construcción por bloques del sitio. </dd><br>
+        <dd>c) Instalación de plugins y apis adicionales para el funcionamiento óptimo del sitio web. </dd><br>
+        <dd> d) Implementación de la información proporcionada por el cliente a su sitio web </dd><br>
+       
+
+
+        <p style="text-indent:20px;">2)	Servicio de instalación de certificado SSL de seguridad para la navegación segura de los usuarios por su proyecto web.</p>
+        <p style="text-indent:20px;">3)	Servicio de mantenimiento periódico de sistemas de seguridad, con actualizaciones en nivel de servidor para su proyecto web.</p>
+        <p style="text-indent:20px;">4)	Servicio de modificaciones o actualizaciones menores del contenido en cualquier parte de su proyecto web.</p>
+<?php
+        }
+        ?>
+        <p>2ª Cláusula. Este contrato es efectivo por 
+        <?php 
+        if($vecTipoIntContrato > 1){
+            echo $vecTipoIntContrato[0].' Meses,';
+        }else{
+            echo $vecTipoIntContrato[0]. ' Mes,';  
+        }
+        ?>    
+        comenzando en la fecha: <strong><u><?php echo $mesDescInicio;?></u></strong> y terminando en la fecha: <strong><u><?php echo $mesDescFin?></u></strong>.</p>
+        <p>3ª Cláusula.		Para la prestación de los servicios cubiertos por este contrato, el cliente pagará a <strong><u>https://wingsdevs.com/</u></strong> el monto <strong><u><?php 
+        if($vectorTipoProyectos == 'Sin paquete'){
+            $moneda = monto('%.2n', $paqueteBasico);
+            echo $moneda.' MXN';
+            echo ' ('.convertir($paqueteBasico).')';
+        }
+     
+        ?></u></strong> por mes de contrato. Haciendo su pago por cualquiera de los métodos disponibles en su cuenta de <strong><u>https://wingsdevs.com/</u></strong><br><br>
+        Al expirar este contrato, le notificaremos por correo electrónico y vía telefónica para seguir sus indicaciones. (El nuevo contrato requerirá de su firma digital para su autorización).
+		</p>
+		<p>4ª Cláusula. En caso de incumplimiento por parte del C. <strong><u> <?php echo $usuario. ' '. $apellidos;?></u></strong> del proyecto web: <strong><u><?php echo 'https://'.strtolower($vectorNombresProyectos[0]);?></u></strong>, con respecto al pago mensual del contrato mencionado en la cláusula anterior, habrá suspención de servicios hasta que la factura halla sido pagada.  Y <strong><u>https://wingsdevs.com/</u></strong> puede, a su discreción, considerar reincidido el proyecto web: <strong><u><?php echo 'https://'.strtolower($vectorNombresProyectos[0]);?></u></strong></p>
 			<p>5ª Cláusula. En caso de que <strong><u>https://wingsdevs.com/</u></strong> demuestre una prestación de servicios deficiente el cliente propietario del proyecto web: <strong><u><?php echo 'https://'.strtolower($vectorNombresProyectos[0]);?></u></strong> puede considerar reincidido este contrato.</p>
 			<p>6ª Cláusula. En caso de terminación anticipada de este contrato por cualquiera de las partes excepto las cláusulas 4 y 5 o por mutuo acuerdo, la parte que lo haga incurrirá, en una multa equivalente a la cantidad del monto a pagar por este contrato.</p>
 			<p>7ª Cláusula. Se afirma que no tienen relación laboral entre C. <strong><u> <?php echo $usuario . ' ' . $apellidos; ?></u></strong> del proyecto web: <strong><u><?php echo 'https://'.strtolower($vectorNombresProyectos[0]);?></u></strong> y <strong><u>https://wingsdevs.com/</u></strong> y su equipo de desarrolladores.</p>

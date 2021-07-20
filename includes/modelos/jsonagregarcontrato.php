@@ -1,8 +1,10 @@
 <?php
-
+require_once '../../send-mail.php';
+session_start();
 if ($_POST['accion'] == 'Agregar Contrato') {
     $select = filter_var($_POST['select'], FILTER_SANITIZE_STRING);
     $select = $select-1;
+    $tipodesarrollo = $_POST['tipodesarrollo'];
     $meses = $select;
     if($select > 1){
         $mesestring = $select.' Meses';
@@ -20,6 +22,7 @@ if ($_POST['accion'] == 'Agregar Contrato') {
     $basededatos = filter_var($_POST['basededato'], FILTER_SANITIZE_STRING);
     $programacion = filter_var($_POST['programacion'], FILTER_SANITIZE_STRING);
     $nombreproyecto = filter_var($_POST['nombreproyecto'], FILTER_SANITIZE_STRING);
+    $email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
     $contmeses = 1;
     $str = ("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890");
     $tokencontrato = "";
@@ -32,10 +35,10 @@ if ($_POST['accion'] == 'Agregar Contrato') {
     try {
         require('../../bd/bd.php');
         require('../../bd/bdsqli.php');
-        $stmt = $conn1->prepare('INSERT INTO contratos (id_contrato, idproyecto_contrato, link_contrato, token_contrato, tipo_contrato, tipoint_contrato, fechainicio_contrato, fechafin_contrato) VALUES (null, :idproyecto_contrato, :link_contrato, :token_contrato, :tipo_contrato, :tipoint_contrato, :fechainicio_contrato, :fechafin_contrato)');
+        $stmt = $conn1->prepare('INSERT INTO contratos (id_contrato, idproyecto_contrato, tipocx_contrato, link_contrato, token_contrato, tipo_contrato, tipoint_contrato, fechainicio_contrato, fechafin_contrato) VALUES (null, :idproyecto_contrato, :tipocx_contrato, :link_contrato, :token_contrato, :tipo_contrato, :tipoint_contrato, :fechainicio_contrato, :fechafin_contrato)');
         $stmt->execute(array(
             ':idproyecto_contrato' => $idproyecto,
-            
+            ':tipocx_contrato'=> $tipodesarrollo,
             ':link_contrato' => $url,
             ':token_contrato' => $tokencontrato,
             ':tipo_contrato' => $mesestring,
@@ -73,16 +76,26 @@ if ($_POST['accion'] == 'Agregar Contrato') {
         ));
 
         $proyecto = $nombreproyecto;
-        $stmt = $connf->prepare("UPDATE proyectos SET nombre_proyecto = ? WHERE id_proyecto = ?");
+        if($tipodesarrollo ==1){
+            $tipoproyecto= 'desarrollo en lenguajes de alto nivel';
+        }else{
+            $tipoproyecto= 'desarrollo en WordPress y plugins de construcción de interfaces';
+        }
+        
 
-        $stmt->bind_param("ss", $proyecto, $idproyecto);
+        $stmt = $connf->prepare("UPDATE proyectos SET nombre_proyecto = ?, tipo_proyecto = ? WHERE id_proyecto = ?");
+
+        $stmt->bind_param("sss", $proyecto, $tipoproyecto, $idproyecto);
 
         $stmt->execute();
         $stmt->close();
         $connf->close();
         $respuesta = array(
-            'estado' => 'contrato nuevo agregado'
+            'estado' => 'contrato nuevo agregado',
+            'tipocx' => $tipodesarrollo
         );
+    
+        enviar_correo111($email, $nombreproyecto, $tokencontrato, $fechainicio, $fechafin, $precio);
     } catch (PDOException $e) {
         echo json_encode("Error: " . $e->getMessage());
     }

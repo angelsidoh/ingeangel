@@ -160,7 +160,7 @@ $contadordepagos = 0;
         // var_dump($supervecFechaInicioContrato);
         // echo '</pre>';
 
-        echo $contadorProyectos.'->'.$contadordepagos;
+        // echo $contadorProyectos.'->'.$contadordepagos;
         for ($i = 0; $i < $contadordepagos; $i++) {
             $pagosparts = obtenerPartPago();
             $contadorPasos1 = 0;
@@ -179,10 +179,10 @@ $contadordepagos = 0;
             //     unset($idpagoProcesado[$ix]);
             // }
         }
-        echo   $usuario . '------>';
-        echo ('<pre>');
-        var_dump($superVecPayedEstado);
-        echo ('</pre>');
+        // echo   $usuario . '------>';
+        // echo ('<pre>');
+        // var_dump($superVecPayedEstado);
+        // echo ('</pre>');
       
         $_SESSION['tipo_usuario'] = $tipouser;
             ?>

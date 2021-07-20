@@ -37,7 +37,7 @@ if ((!isset($_SESSION['usuario'])) && (!isset($_SESSION['email']))) {
             $precioDominio = $proyecto['dominio_precio'];
             $precioMantenimiento = $proyecto['mantenimiento_precio'];
             $precioBD = $proyecto['basesdatos_precio'];
-            $precioProgramacion = $proyecto['programacion_precio'];
+            echo '->'.$precioProgramacion = $proyecto['programacion_precio'];
         }
     }
 
@@ -263,15 +263,9 @@ if ((!isset($_SESSION['usuario'])) && (!isset($_SESSION['email']))) {
                                                 } elseif ($i == 1) {
                                                     echo 'Servicio de Programación';
                                                 } else {
-                                                    if ($vectorTipoProyectos[$x] == 'Sin paquete') {
+                                                   
                                                         echo '$' . number_format(($precioProgramacion) * $superVecContMesesPago[$x][$y]) . '.00 MXN';
-                                                    }
-                                                    if ($vectorTipoProyectos[$x] == 'Paquete Negocio') {
-                                                        echo '$' . number_format(($precioNegocio) * $superVecContMesesPago[$x][$y]) . '.00 MXN';
-                                                    }
-                                                    if ($vectorTipoProyectos[$x] == 'Paquete Profesional') {
-                                                        echo '$' . number_format(($precioProfesional) * $superVecContMesesPago[$x][$y]) . '.00 MXN';
-                                                    }
+                                                   
                                                 }
                                                 ?></h2>
                                         </div>
@@ -339,19 +333,13 @@ if ((!isset($_SESSION['usuario'])) && (!isset($_SESSION['email']))) {
                                     <div class="total-total">
                                         <h2>
                                             <?php
-                                            if ($vectorTipoProyectos[$x] == 'Sin paquete') {
+                                          
                                                 $cuenta = (($precioDominio + $precioHosting + $precioBD + $precioProgramacion + $precioMantenimiento) * $superVecContMesesPago[$x][$y]);
                                                 
                                                 $cuenta =  number_format($cuenta+$cuenta*.16);
                                                 echo  '$' . $cuenta . '.00 MXN';
-                                            }
-                                            if ($vectorTipoProyectos[$x] == 'Paquete Negocio') {
-                                                echo  '$' . number_format(($precioDominio + $precioHosting + $precioBD + $precioNegocio + $precioMantenimiento) * $superVecContMesesPago[$x][$y]) . '.00 MXN';
-                                            }
-                                            if ($vectorTipoProyectos[$x] == 'Paquete Profesional') {
-                                                echo  '$' . number_format(($precioDominio + $precioHosting + $precioBD + $precioProfesional + $precioMantenimiento) * $superVecContMesesPago[$x][$y]) . '.00 MXN';
-                                            }
-
+                                           
+                                          
                                             ?></h2>
 
 
@@ -648,15 +636,9 @@ if ((!isset($_SESSION['usuario'])) && (!isset($_SESSION['email']))) {
                                     } elseif ($i == 1) {
                                         echo 'Servicio de Programación';
                                     } else {
-                                        if ($vectorTipoProyectos[$x] == 'Sin paquete') {
+                                     
                                             echo '$' . number_format(($precioProgramacion) * $superVecContMesesPago[$x][$y]) . '.00 MXN';
-                                        }
-                                        if ($vectorTipoProyectos[$x] == 'Paquete Negocio') {
-                                            echo '$' . number_format(($precioNegocio)  * $superVecContMesesPago[$x][$y]). '.00 MXN';
-                                        }
-                                        if ($vectorTipoProyectos[$x] == 'Paquete Profesional') {
-                                            echo '$' . number_format(($precioProfesional) * $superVecContMesesPago[$x][$y]) . '.00 MXN';
-                                        }
+                                    
                                     }
                                     ?></h2>
                             </div>
@@ -724,18 +706,12 @@ if ((!isset($_SESSION['usuario'])) && (!isset($_SESSION['email']))) {
                         <div class="total-total">
                             <h2>
                                 <?php
-                                if ($vectorTipoProyectos[$x] == 'Sin paquete') {
+                             
                                     $cuenta = (($precioDominio + $precioHosting + $precioBD + $precioProgramacion + $precioMantenimiento) * $superVecContMesesPago[$x][$y]);
                                                 
                                                 $cuenta =  number_format($cuenta+$cuenta*.16);
                                                 echo  '$' . $cuenta . '.00 MXN';
-                                }
-                                if ($vectorTipoProyectos[$x] == 'Paquete Negocio') {
-                                    echo  '$' . number_format(($precioDominio + $precioHosting + $precioBD + $precioNegocio + $precioMantenimiento) * $superVecContMesesPago[$x][$y]) . '.00 MXN';
-                                }
-                                if ($vectorTipoProyectos[$x] == 'Paquete Profesional') {
-                                    echo  '$' . number_format(($precioDominio + $precioHosting + $precioBD + $precioProfesional + $precioMantenimiento) * $superVecContMesesPago[$x][$y]) . '.00 MXN';
-                                }
+                              
 
                                 ?></h2>
 

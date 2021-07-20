@@ -148,7 +148,7 @@ if ($_POST['accion'] == 'Crear Proyecto') {
                 'estado' => 'creandonuevoproyecto'
             );
 
-            enviar_correo3($nombre, $apellidos, $pass, $mail, $idea, $select, $sector);
+            enviar_correo112($mail);
         
         echo json_encode($respuesta);
     } catch (PDOException $e) {

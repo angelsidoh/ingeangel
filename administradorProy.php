@@ -10,12 +10,13 @@ if ((!isset($_SESSION['usuario'])) && (!isset($_SESSION['email']))) {
     <?php
 } else {
     if ($_SESSION['tipo_usuario'] == 'admin') {
-       
+      
     
        
     
 
-    $dato = $_SESSION['email'];
+    // echo $dato = $_SESSION['email'];
+    
     // echo $_GET['id'];
     $idProyecto = $_GET['id'];
     // $contadorProyectos = 0;
@@ -32,6 +33,30 @@ if ((!isset($_SESSION['usuario'])) && (!isset($_SESSION['email']))) {
             $contadorProyectos++;
         }
     }
+    // echo $vectorIdUsuarioProyectos[0];
+
+    $resultadoConsulta = consultaUsuarioNew($vectorIdUsuarioProyectos[0]);
+    if ($resultadoConsulta->num_rows) {
+        foreach ($resultadoConsulta as $Consulta) {
+            $usuario = $Consulta['nombre_usuario'];
+            $apellidos =  $Consulta['apellidos_usuario'];
+            $idproyecto = $Consulta['idproyecto_usuario'];
+            $idusuario = $Consulta['id_usuario'];
+            $foto = $Consulta['foto_usuario'];
+            $calle = $Consulta['calle_usuario'];
+            $numie = $Consulta['numiedireccion_usuario'];
+            $col = $Consulta['colonia_usuario'];
+            $cp = $Consulta['cp_usuario'];
+            $email = $Consulta['email_usuario'];
+            $tel = $Consulta['telefono_usuario'];
+            $fec = $Consulta['fecha_usuario'];
+            $domiciliof = $Consulta['domiciliofiscal_usuario'];
+            $cfdi = $Consulta['cfdi_usuario'];
+            $rfc = $Consulta['rfc_usuario'];
+            $tipouser = $Consulta['tipo_usuario'];
+        }
+    }
+// echo $email;
     for ($i = 0; $i < 1; $i++) {
 
         $contadorPasos = 0;
@@ -488,7 +513,12 @@ if ((!isset($_SESSION['usuario'])) && (!isset($_SESSION['email']))) {
                                         <?php if ($vectorTipoProyectos == 'Sin paquete') { ?>
                                             <option value="Paquete Básico" selected>Paquete Básico</option>
 
-                                        <?php } ?>
+                                        <?php }else{
+                                            ?>
+                                            <option value="Paquete Básico" selected>Paquete Básico</option>
+
+                                        <?php
+                                        } ?>
 
                                     </select>
                                 </div> <!-- rnormal__tarjeta -->
@@ -585,10 +615,20 @@ if ((!isset($_SESSION['usuario'])) && (!isset($_SESSION['email']))) {
                                                     <input type="text" id="fechainicio" name="fechainicio" placeholder="Ingrease la fecha de inicio" value="-" disabled>
                                                 </div> <!-- rnormal__tarjeta -->
                                                 <div class="text-dato3">
-                                                    <p>Tiempo</p>
+                                                    <p>Tipo de desarrollo</p>
                                                 </div>
                                                 <div class="dato3">
                                                     <select name="select" id="seleccion">
+                                                        <option value="0" selected>Constructor</option>
+                                                        <option value="1">Programación</option>
+                                                       
+                                                    </select>
+                                                </div> <!-- rnormal__tarjeta -->
+                                                <div class="text-dato3">
+                                                    <p>Tiempo</p>
+                                                </div>
+                                                <div class="dato3">
+                                                    <select name="select1" id="seleccion2">
                                                         <option value="2" selected>1 Mes</option>
                                                         <option value="4">3 Meses</option>
                                                         <option value="7">6 Meses</option>
@@ -625,6 +665,7 @@ if ((!isset($_SESSION['usuario'])) && (!isset($_SESSION['email']))) {
 
                                                     </select>
                                                 </div> rnormal__tarjeta -->
+                                              
                                                 <div class="text-dato3">
                                                     <p>Precio por Mes</p>
                                                 </div>
@@ -678,6 +719,12 @@ if ((!isset($_SESSION['usuario'])) && (!isset($_SESSION['email']))) {
                                                 </div> <!-- rnormal__tarjeta -->
                                                 <div class="dato3">
                                                     <input style="display: none;" type="text" id="idproyecto" name="idproyecto" placeholder="" value="<?php echo $idProyecto; ?>" disabled>
+                                                </div> <!-- rnormal__tarjeta -->
+                                                <div class="text-dato3">
+                                                    <p>Correo electrónico</p>
+                                                </div>
+                                                <div class="dato3">
+                                                    <input type="text" id="email" name="email" value="<?php echo $email;?>" disabled>
                                                 </div> <!-- rnormal__tarjeta -->
 
                                             </div>

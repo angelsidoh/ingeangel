@@ -238,7 +238,7 @@ var_dump( $idpagoProcesado);
                                             <a href="pago.php?pago=<?php echo $superVecTokenContratoPago[$x][$f] . '-' . $superVecIdPago[$x][$f] . '$' . $vectorIdProyectos[$x]; ?>#angel-ruiz" target="_blank">
                                                 <p>
                                                     Contrato (#<?php
-                                                                echo $superVecTokenContratoPago[$x][$f];
+                                                                echo $superVecTokenContratoPago[$x][$f].'-'.$superVecIdPago[$x][$f];;
                                                                 ?>) <br>
                                                     Periodo de contrato: <?php
 

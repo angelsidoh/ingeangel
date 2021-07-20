@@ -58,7 +58,7 @@ function consultaContratosContrato2($dato)
 {
     include '../../bd/bdsqli.php';
     try {
-        return $connf->query("SELECT id_contrato, link_contrato, token_contrato, idproyecto_contrato, tipo_contrato, tipoint_contrato, fechainicio_contrato, fechafin_contrato, firmacliente_contrato FROM contratos WHERE token_contrato = '$dato'");
+        return $connf->query("SELECT id_contrato, link_contrato, token_contrato, idproyecto_contrato, tipo_contrato, tipoint_contrato, fechainicio_contrato, fechafin_contrato, firmacliente_contrato, tipocx_contrato FROM contratos WHERE token_contrato = '$dato'");
     } catch (Exception $e) {
         echo "Error!!" . $e->getMessage() . "<br>";
         return false;
@@ -122,6 +122,16 @@ function consultaUsuario($dato)
     include 'bd/bdsqli.php';
     try {
         return $connf->query("SELECT id_usuario, nombre_usuario, foto_usuario, idproyecto_usuario, apellidos_usuario, email_usuario, telefono_usuario, calle_usuario,numiedireccion_usuario, colonia_usuario, cp_usuario, fecha_usuario, domiciliofiscal_usuario, cfdi_usuario, rfc_usuario, tipo_usuario  FROM usuarios WHERE email_usuario = '$dato'");
+    } catch (Exception $e) {
+        echo "Error!!" . $e->getMessage() . "<br>";
+        return false;
+    }
+}
+function consultaUsuarioNew($dato)
+{
+    include 'bd/bdsqli.php';
+    try {
+        return $connf->query("SELECT nombre_usuario, foto_usuario, idproyecto_usuario, apellidos_usuario, email_usuario, telefono_usuario, calle_usuario,numiedireccion_usuario, colonia_usuario, cp_usuario, fecha_usuario, domiciliofiscal_usuario, cfdi_usuario, rfc_usuario, tipo_usuario  FROM usuarios WHERE id_usuario = '$dato'");
     } catch (Exception $e) {
         echo "Error!!" . $e->getMessage() . "<br>";
         return false;
@@ -252,7 +262,7 @@ function consultaContratosContrato($dato)
 {
     include 'bd/bdsqli.php';
     try {
-        return $connf->query("SELECT id_contrato, link_contrato, token_contrato, idproyecto_contrato, tipo_contrato, tipoint_contrato, fechainicio_contrato, fechafin_contrato, firmacliente_contrato FROM contratos WHERE token_contrato = '$dato'");
+        return $connf->query("SELECT id_contrato, link_contrato, token_contrato, idproyecto_contrato, tipo_contrato, tipoint_contrato, fechainicio_contrato, fechafin_contrato, firmacliente_contrato, tipocx_contrato FROM contratos WHERE token_contrato = '$dato'");
     } catch (Exception $e) {
         echo "Error!!" . $e->getMessage() . "<br>";
         return false;

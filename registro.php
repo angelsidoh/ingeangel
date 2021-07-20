@@ -162,7 +162,7 @@ if (isset($_SESSION['email'])) {
 
 
             ?>
-            <title>Registro</title>
+            <title>Registro Nuevo</title>
         <div class="contenedor-especial">
             <div class="titulo-seccion">
                 <p>¿Tiene una gran idea? LLené el siguiente formulario</p>
@@ -210,7 +210,7 @@ if (isset($_SESSION['email'])) {
                             <p>En que sector del mercado se encuentran tus servicios y/o productos</p>
                         </div>
                         <div style="display: none;" class="dato3">
-                            <input type="text" id="sector" name="sector" placeholder="Escriba el sector de mercado" value="Internet">
+                            <input type="text" id="sector" name="sector" placeholder="Escriba el sector de mercado" value="Nuevo Proyecto WEB">
                         </div> <!-- rnormal__tarjeta -->
                         <div class="text-dato3">
                             <p>Idea de Proyecto para el sitio web</p>
@@ -239,6 +239,7 @@ if (isset($_SESSION['email'])) {
 
     <?php
     }else{?>
+     <title>Registro</title>
         <div class="contenedor-especial">
             <div class="titulo-seccion">
                 <p>¿Nuevo proyecto? LLené el siguiente formulario</p>

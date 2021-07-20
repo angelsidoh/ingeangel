@@ -11,7 +11,7 @@
 <body>
 
     <div style="background-color: #161616;
-    width:800px;
+        width:800px;
     height:1000px;
     margin:0 auto;
     box-shadow: -1px -1px 5px rgb(255, 255, 255, 0.1),
@@ -23,31 +23,34 @@
     height:80px;
     margin: 0 auto;
    " class="imagen">
-   
+
             <img style="
     width:220px;
     height:80px;
     margin: 20px auto;
     filter: drop-shadow(1px 2px 5px #ff4800);
-   " src="https://ingeangel.com/img/terceros/logooooo02.png" alt="imagen">
-    
+   " src="https://wingsdevs.com/img/terceros/wingsdevslog.svg" alt="imagen">
+
         </div>
         <div style="
     text-align: center;
     color:#ffffff;
     margin-top: 0px;
     " class="textbienvenida">
-            <h1 style="color:#f5d108; font-size:45px;">Factura pagada</h1>
-            <h2></h2>
-            <h2 style="color:#fe4918; font-size: 46px;
-">Asunto : *id del contrato</h2>
-            <h2>Por los Servicios <br> Programacion (html css3 php y javascript) <br> Bases de datos en MySql <br> Mantenimiento general <br> Hosting y Dominio <br><br>
-            Cantidad total: *monto total;
-<br><br>
-
-            </h2>
+            <h1 style="color:#f5d108; font-size:45px;">Nuevo Proyecto Web WingsDevs</h1>
+           <p> ¡Gracias por su confienza, siempre estamos tratando de mejorar 
+               <br>
+               
+                para brindar el mejor servicio de desarrollo web a nuestros clientes!<br> 
+                </p>
+                <h3> Hemos sido notificados de un nuevo proyecto, en la brevedad posible nos comunicaremos con usted para revisar los detalles.</h3>
+             
            
-            
+            <br><br>
+
+
+
+
             <a style="
     background-color: #fe4918;
     padding: 1px 40px;
@@ -67,7 +70,7 @@
         </div>
 
 
-       
+
     </div>
 
 

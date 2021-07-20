@@ -23,7 +23,7 @@ include_once('includes/templates/header.php');
 
         </div>
         <div>
-          <a type="button" class="button save" data-action="save-png">Guardar PNG</a>
+          <a type="button" class="button save" data-action="save-png">Guardar Firma</a>
           <a style= "display: none;"type="button" class="button save" data-action="save-jpg">Guardar JPG</a>
           <a style= "display: none;"type="button" class="button save" data-action="save-svg">Guardar como SVG</a>
         </div>

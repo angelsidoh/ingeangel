@@ -244,7 +244,7 @@ function abc(datos, maxfecha, contadorProyectos, contPasosxProyecto, contPasos) 
     var d = new Date();
 
 
-    var meses = $('#seleccion').attr('value');
+    var meses = $('#seleccion2').attr('value');
 
 
     meses = parseInt(meses);
@@ -1823,7 +1823,7 @@ function registroIdeaUser(dato) {
   xhr.onload = function () {
     if (this.status === 200) {
       const respuesta = JSON.parse(xhr.responseText);
-      //console.log(respuesta);
+      console.log(respuesta);
       if (respuesta.estado === 'creandocuenta') {
         swal({
             content: "",
@@ -2451,7 +2451,8 @@ function leerAgregarContrato(e) {
   e.preventDefault();
   const accion = document.querySelector('#btnagregarcontrato').value;
   if (accion == 'Agregar Contrato') {
-    const select = document.querySelector('#seleccion').value;
+    const select = document.querySelector('#seleccion2').value;
+    const tipodesarrollo = document.querySelector('#seleccion').value;
     const fechainicio = document.querySelector('#fechainicio').value;
     const fechafin = document.querySelector('#fechafin').value;
     
@@ -2462,6 +2463,7 @@ function leerAgregarContrato(e) {
     const mantenimiento = document.querySelector('#mantenimiento').value;
     const basededato = document.querySelector('#basededato').value;
     const programacion = document.querySelector('#programacion').value;
+    const email = document.querySelector('#email').value;
 
 
     const nombreproyecto = document.querySelector('#nombreproyecto').value;
@@ -2469,6 +2471,7 @@ function leerAgregarContrato(e) {
     const infoagregarcontrato = new FormData();
     infoagregarcontrato.append('accion', accion);
     infoagregarcontrato.append('select', select);
+    infoagregarcontrato.append('tipodesarrollo', tipodesarrollo);
     infoagregarcontrato.append('fechainicio', fechainicio);
     infoagregarcontrato.append('fechafin', fechafin);
     // infoagregarcontrato.append('paquete', paquete);
@@ -2479,6 +2482,7 @@ function leerAgregarContrato(e) {
     infoagregarcontrato.append('mantenimiento', mantenimiento);
     infoagregarcontrato.append('basededato', basededato);
     infoagregarcontrato.append('programacion', programacion);
+    infoagregarcontrato.append('email', email);
 
     infoagregarcontrato.append('nombreproyecto', nombreproyecto);
     // infoagregarcontrato.append('paquetebasico', paquetebasico);
@@ -2504,7 +2508,7 @@ function agregarContrato(dato) {
 
     if (this.status === 200) {
       const respuesta = JSON.parse(xhr.responseText);
-      //console.log(respuesta);
+      console.log(respuesta);
       if (respuesta.estado == 'contrato nuevo agregado') {
         swal({
             content: "",
