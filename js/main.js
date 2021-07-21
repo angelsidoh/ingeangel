@@ -2381,6 +2381,12 @@ function leerAgregarPago(e) {
     const tokencontrato = document.querySelector('#tokencontrato').value;
 
     const idproyecto = document.querySelector('#idproyecto1').value;
+    const hosting = document.querySelector('#hosting1').value;
+    const dominio = document.querySelector('#dominio1').value;
+    const mantenimiento = document.querySelector('#mantenimiento1').value;
+    const bdatos = document.querySelector('#bdatos1').value;
+    const programacion = document.querySelector('#programacion1').value;
+    const correo = document.querySelector('#correo1').value;
 
     const infoagregarPago = new FormData();
     infoagregarPago.append('accion', accion);
@@ -2392,7 +2398,12 @@ function leerAgregarPago(e) {
     infoagregarPago.append('contratoid', contratoid);
     infoagregarPago.append('tokencontrato', tokencontrato);
     infoagregarPago.append('idproyecto', idproyecto);
-
+    infoagregarPago.append('hosting', hosting);
+    infoagregarPago.append('dominio', dominio);
+    infoagregarPago.append('mantenimiento', mantenimiento);
+    infoagregarPago.append('bdatos', bdatos);
+    infoagregarPago.append('programacion', programacion);
+    infoagregarPago.append('correo', correo);
     // //console.log(tokencontrato);
     agregarPago(infoagregarPago);
   }
@@ -2411,7 +2422,7 @@ function agregarPago(dato) {
 
     if (this.status === 200) {
       const respuesta = JSON.parse(xhr.responseText);
-      //console.log(respuesta);
+      // console.log(respuesta);
       if (respuesta.estado == 'pago agregado') {
         swal({
             content: "",

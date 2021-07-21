@@ -1,3 +1,4 @@
+<?php require_once 'send-mail.php';?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -38,12 +39,36 @@
     margin-top: 0px;
     " class="textbienvenida">
             <h1 style="color:#f5d108; font-size:45px;">Nuevo Proyecto Web WingsDevs</h1>
-           <p> ¡Gracias por su confienza, siempre estamos tratando de mejorar 
-               <br>
-               
-                para brindar el mejor servicio de desarrollo web a nuestros clientes!<br> 
-                </p>
-                <h3> Hemos sido notificados de un nuevo proyecto, en la brevedad posible nos comunicaremos con usted para revisar los detalles.</h3>
+            <table  style = "margin: 0  auto;" id="data_table" class="table table-striped">
+        <thead>
+            <tr>
+                <th style= "border-left: 1px solid white; border-right: 1px solid white;">Meses de Servicio</th>
+                <th style= "border-left: 1px solid white; border-right: 1px solid white;">Descripción de servicios</th>
+                <th style= "border-left: 1px solid white; border-right: 1px solid white;">Precio</th>
+                
+            </tr>
+        </thead>
+        <tbody>
+            <?php 
+          
+            ?>
+               <tr id="<?php echo 'x'; ?>">
+               <td style= "border: 1px solid white;"><?php echo 1 ?></td>
+               <td style= "border: 1px solid white;"><?php echo 2 ?></td>
+               <td style= "border: 1px solid white;"><?php echo 3 ?></td>
+             
+             
+               </tr>
+               <tr id="<?php echo 'x1'; ?>">
+               <td style= "border: 1px solid white;"><?php echo  '';?></td>
+               <td style= "border: 1px solid white;"><?php echo 'Total'; ?></td>
+               <td style= "border: 1px solid white;"><?php echo '$'.'Monto'; ?></td>
+              
+             
+               </tr>
+            <?php  ?>
+        </tbody>
+    </table>    
              
            
             <br><br>
@@ -63,7 +88,7 @@
     display: inline-block;
     transition: all .1s ease;
     border: 2px solid #fe4918;
-    " href="https://ingeangel.com/login.php#angel-ruiz">
+    " href="https://wingsdevs.com/login.php#angel-ruiz">
                 <p>Iniciar Sesión</p>
             </a>
 
@@ -77,3 +102,21 @@
 </body>
 
 </html>
+<?php
+$email = 'angel._ruiz@hotmail.com';
+date_default_timezone_set('America/Mexico_City');
+
+$fechafinmasseven= date('Y-m-d H:i:s');
+$idpago = 1;
+$tokencontrato = 'abc';
+$idproyecto  = 3;
+$link = 'pago.php?pago='.$tokencontrato. '-' . $idpago . '$' . $idproyecto;
+$meses = rand(1, 12);
+$hosting = 100;
+$dominio = 150;
+$programacion = 2800;
+$mantemiento = 200;
+$bdatos = 800;
+
+// enviar_correo113($email, $fechafinmasseven, $link, $tokencontrato, $meses, $hosting, $dominio,$programacion , $mantemiento, $bdatos);
+?>

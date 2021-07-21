@@ -560,6 +560,24 @@ if ((!isset($_SESSION['usuario'])) && (!isset($_SESSION['email']))) {
                                 <div class="dato3">
                                     <input style="display: none;" type="text" id="idproyecto1" name="idproyecto1" placeholder="" value="<?php echo $idProyecto; ?>" disabled>
                                 </div> <!-- rnormal__tarjeta -->
+                                <div class="dato3">
+                                    <input style="" type="text" id="hosting1" name="hosting1" placeholder="" value="<?php echo  $precioHosting = $proyecto['hosting_precio']; ?>" disabled>
+                                </div> <!-- rnormal__tarjeta -->
+                                <div class="dato3">
+                                    <input style="" type="text" id="dominio1" name="dominio1" placeholder="" value="<?php echo  $precioDominio = $proyecto['dominio_precio']; ?>" disabled>
+                                </div> <!-- rnormal__tarjeta -->
+                                <div class="dato3">
+                                    <input style="" type="text" id="mantenimiento1" name="mantenimiento1" placeholder="" value="<?php echo   $precioMantenimiento = $proyecto['mantenimiento_precio'];?>" disabled>
+                                </div> <!-- rnormal__tarjeta -->
+                                <div class="dato3">
+                                    <input style="" type="text" id="bdatos1" name="bdatos1" placeholder="" value="<?php echo   $precioBD = $proyecto['basesdatos_precio'];?>" disabled>
+                                </div> <!-- rnormal__tarjeta -->
+                                <div class="dato3">
+                                    <input style="" type="text" id="programacion1" name="programacion1" placeholder="" value="<?php echo   $precioProgramacion = $proyecto['programacion_precio'];?>" disabled>
+                                </div> <!-- rnormal__tarjeta -->
+                                <div class="dato3">
+                                    <input style="" type="text" id="correo1" name="correo1" placeholder="" value="<?php echo   $email;?>" disabled>
+                                </div> <!-- rnormal__tarjeta -->
 
                             </div>
                             <div class="sub-boton">

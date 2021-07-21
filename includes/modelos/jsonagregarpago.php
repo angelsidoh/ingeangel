@@ -1,4 +1,5 @@
 <?php
+require_once '../../send-mail.php';
 if ($_POST['accion'] == 'Agregar Pago') {
     $select = filter_var($_POST['select'], FILTER_SANITIZE_STRING);
     $select = $select-1;
@@ -19,7 +20,13 @@ if ($_POST['accion'] == 'Agregar Pago') {
     $url = 'https://wingsdevs.com/contrato.php';
     $fechafinMes = date("Y-m-d H:i:s", strtotime($fechainicio . "+ 1 month"));
     $idcontrato_pago= filter_var($_POST['contratoid'], FILTER_SANITIZE_STRING);;
-   
+    $fechafinmasseven = date("Y-m-d H:i:s", strtotime($fechainicio . "+ 7 days"));
+    $hosting = $_POST['hosting'];
+    $dominio = $_POST['dominio'];
+    $mantenimiento = $_POST['mantenimiento'];
+    $bdatos = $_POST['bdatos'];
+    $programacion = $_POST['programacion'];
+    $email = $_POST['correo'];
 
     try {
         require('../../bd/bd.php');
@@ -37,9 +44,13 @@ if ($_POST['accion'] == 'Agregar Pago') {
             ':contmeses_pago'=>  $contmeses
 
         ));
+        $LAST_ID = $conn2->lastInsertId();
         $respuesta = array(
             'estado' => 'pago agregado'
         );
+        $link = 'pago.php?pago='.$tokencontrato. '-' . $LAST_ID . '$' . $idproyecto;
+
+        enviar_correo113($email, $fechafinmasseven, $link, $tokencontrato, $meses, $hosting, $dominio, $programacion, $mantenimiento, $bdatos, $precio);
         echo json_encode($respuesta);
     } catch (PDOException $e) {
         echo json_encode("Error: " . $e->getMessage());
