@@ -187,7 +187,7 @@ if ((!isset($_SESSION['usuario'])) && (!isset($_SESSION['email']))) {
                         <?php require('includes/funciones/perfil.php'); ?>
                         <div class="contenedor-cuenta">
                             <div class="titulo-seccion">
-                                <h1 id="sparklemaster" class="sparklemaster" style="color:  #93A9CC;">Pago por (<?php 
+                                <h1 id="sparklemaster" class="sparklemaster" style="color:  #93A9CC;">Pago por x(<?php 
                     if( $superVecContMesesPago[$x][$y]!=1){
                         echo $superVecContMesesPago[$x][$y].'Meses';
                     }else{
@@ -231,7 +231,9 @@ if ((!isset($_SESSION['usuario'])) && (!isset($_SESSION['email']))) {
                                                 } elseif ($i == 1) {
                                                     echo 'Servicio de Hosting';
                                                 } else {
-                                                    echo '$' . number_format(($precioHosting) * $superVecContMesesPago[$x][$y]) . '.00 MXN';
+                                                    $precioHosting = ($precioHosting  * $superVecContMesesPago[$x][$y])*1.16;
+                                                    $precioHosting = number_format($precioHosting, 2, '.', ',');
+                                                    echo '$' . $precioHosting.' MXN';
                                                 }
                                                 ?></h2>
                                         </div>
@@ -247,7 +249,9 @@ if ((!isset($_SESSION['usuario'])) && (!isset($_SESSION['email']))) {
                                                 } elseif ($i == 1) {
                                                     echo 'Servicio de Dominio';
                                                 } else {
-                                                    echo '$' . number_format(($precioDominio) * $superVecContMesesPago[$x][$y]) . '.00 MXN';
+                                                    $precioDominio = ($precioDominio  * $superVecContMesesPago[$x][$y])*1.16;
+                                                    $precioDominio = number_format($precioDominio, 2, '.', ',');
+                                                    echo '$' . $precioDominio.' MXN';
                                                 }
                                                 ?></h2>
                                         </div>
@@ -261,10 +265,12 @@ if ((!isset($_SESSION['usuario'])) && (!isset($_SESSION['email']))) {
                                                 if ($i == 0) {
                                                     echo $superVecContMesesPago[$x][$y];
                                                 } elseif ($i == 1) {
-                                                    echo 'Servicio de Programación';
+                                                    echo 'Servicio de Programación/Construcción del sitio web';
                                                 } else {
                                                    
-                                                        echo '$' . number_format(($precioProgramacion) * $superVecContMesesPago[$x][$y]) . '.00 MXN';
+                                                    $precioProgramacion = ($precioProgramacion  * $superVecContMesesPago[$x][$y])*1.16;
+                                                    $precioProgramacion = number_format($precioProgramacion, 2, '.', ',');
+                                                    echo '$' . $precioProgramacion.' MXN';
                                                    
                                                 }
                                                 ?></h2>
@@ -282,7 +288,9 @@ if ((!isset($_SESSION['usuario'])) && (!isset($_SESSION['email']))) {
                                                     echo 'Servicio de Mantenimiento General para el proyecto.<br>Actualización y verificación de Programación (Código de programación)';
                                                 } else {
 
-                                                    echo '$' . number_format(($precioMantenimiento) * $superVecContMesesPago[$x][$y]) . '.00 MXN';
+                                                    $precioMantenimiento = ($precioMantenimiento  * $superVecContMesesPago[$x][$y])*1.16;
+                                                    $precioMantenimiento = number_format($precioMantenimiento, 2, '.', ',');
+                                                    echo '$' . $precioMantenimiento.' MXN';
                                                 }
                                                 ?></h2>
                                         </div>
@@ -299,7 +307,9 @@ if ((!isset($_SESSION['usuario'])) && (!isset($_SESSION['email']))) {
                                                     echo 'Servicio de programación y mantenimiento de bases de datos en PHP y MySql';
                                                 } else {
 
-                                                    echo '$' . number_format(($precioBD) * $superVecContMesesPago[$x][$y]) . '.00 MXN';
+                                                    $precioBD = ($precioBD  * $superVecContMesesPago[$x][$y])*1.16;
+                                                    $precioBD = number_format($precioBD, 2, '.', ',');
+                                                    echo '$' . $precioBD.' MXN';
                                                 }
                                                 ?></h2>
                                         </div>
@@ -559,7 +569,7 @@ if ((!isset($_SESSION['usuario'])) && (!isset($_SESSION['email']))) {
             <?php require('includes/funciones/perfil.php'); ?>
             <div class="contenedor-cuenta">
                 <div class="titulo-seccion">
-                    <h1 id="sparklemaster" class="sparklemaster" style="color:  #93A9CC;">Pago por (<?php 
+                    <h1 id="sparklemaster" class="sparklemaster" style="color:  #93A9CC;">Pago por -(<?php 
                     if( $superVecContMesesPago[$x][$y]!=1){
                         echo $superVecContMesesPago[$x][$y].'Meses';
                     }else{
@@ -604,7 +614,9 @@ if ((!isset($_SESSION['usuario'])) && (!isset($_SESSION['email']))) {
                                     } elseif ($i == 1) {
                                         echo 'Servicio de Hosting';
                                     } else {
-                                        echo '$' . number_format(($precioHosting)  * $superVecContMesesPago[$x][$y]). '.00 MXN';
+                                        $precioHosting = ($precioHosting  * $superVecContMesesPago[$x][$y])*1.16;
+                                        $precioHosting = number_format($precioHosting, 2, '.', ',');
+                                        echo '$' . $precioHosting.' MXN';
                                     }
                                     ?></h2>
                             </div>
@@ -620,7 +632,10 @@ if ((!isset($_SESSION['usuario'])) && (!isset($_SESSION['email']))) {
                                     } elseif ($i == 1) {
                                         echo 'Servicio de Dominio';
                                     } else {
-                                        echo '$' . number_format(($precioDominio) * $superVecContMesesPago[$x][$y]) . '.00 MXN';
+                                        $precioDominio = ($precioDominio  * $superVecContMesesPago[$x][$y])*1.16;
+                                        $precioDominio = number_format($precioDominio, 2, '.', ',');
+                                        echo '$' . $precioDominio.' MXN';
+                                       
                                     }
                                     ?></h2>
                             </div>
@@ -634,10 +649,12 @@ if ((!isset($_SESSION['usuario'])) && (!isset($_SESSION['email']))) {
                                     if ($i == 0) {
                                         echo $superVecContMesesPago[$x][$y];
                                     } elseif ($i == 1) {
-                                        echo 'Servicio de Programación';
+                                        echo 'Servicio de Programación/Construcción de sitio web';
                                     } else {
                                      
-                                            echo '$' . number_format(($precioProgramacion) * $superVecContMesesPago[$x][$y]) . '.00 MXN';
+                                        $precioProgramacion = ($precioProgramacion  * $superVecContMesesPago[$x][$y])*1.16;
+                                        $precioProgramacion = number_format($precioProgramacion, 2, '.', ',');
+                                        echo '$' . $precioProgramacion.' MXN';
                                     
                                     }
                                     ?></h2>
@@ -655,7 +672,9 @@ if ((!isset($_SESSION['usuario'])) && (!isset($_SESSION['email']))) {
                                         echo 'Servicio de Mantenimiento General para el proyecto.<br>Actualización y verificación de Programación (Código de programación)';
                                     } else {
 
-                                        echo '$' . number_format(($precioMantenimiento) * $superVecContMesesPago[$x][$y]) . '.00 MXN';
+                                        $precioMantenimiento = ($precioMantenimiento  * $superVecContMesesPago[$x][$y])*1.16;
+                                        $precioMantenimiento = number_format($precioMantenimiento, 2, '.', ',');
+                                        echo '$' . $precioMantenimiento.' MXN';
                                     }
                                     ?></h2>
                             </div>
@@ -672,7 +691,9 @@ if ((!isset($_SESSION['usuario'])) && (!isset($_SESSION['email']))) {
                                         echo 'Servicio de programación y mantenimiento de bases de datos en PHP y MySql';
                                     } else {
 
-                                        echo '$' . number_format(($precioBD) * $superVecContMesesPago[$x][$y]) . '.00 MXN';
+                                        $precioBD = ($precioBD  * $superVecContMesesPago[$x][$y])*1.16;
+                                        $precioBD = number_format($precioBD, 2, '.', ',');
+                                        echo '$' . $precioBD.' MXN';
                                     }
                                     ?></h2>
                             </div>
