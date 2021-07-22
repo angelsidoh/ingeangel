@@ -18,6 +18,8 @@ $compra->setPaymentMethod('paypal');
 $cuenta = $_GET['pago'];
 $contrato = $_GET['contrato'];
 $idpago = $_GET['idpago'];
+$mail = $_GET['marx'];
+$idproyecto = $_GET['sub'];
 date_default_timezone_set('America/Mexico_City');
             $fechaini =  date('Y-m-d H:i:s');
 try {
@@ -89,8 +91,8 @@ try {
             ->setInvoiceNumber($ID_registro);
         
         $redireccionar = new RedirectUrls();
-        $redireccionar->setReturnUrl(URL_SITIO . "pago_finalizado.php?exito=true&id_pago={$ID_registro}&monto={$cuenta}&seccion={$idpago}")
-            ->setCancelUrl(URL_SITIO . "pago_finalizado.php?exito=false&id_pago={$ID_registro}&monto={$cuenta}&seccion={$idpago}");
+        $redireccionar->setReturnUrl(URL_SITIO . "pago_finalizado.php?exito=true&id_pago={$ID_registro}&monto={$cuenta}&seccion={$idpago}&marx={$mail}&numx={$contrato}&sub={$idproyecto}")
+            ->setCancelUrl(URL_SITIO . "pago_finalizado.php?exito=false&id_pago={$ID_registro}&monto={$cuenta}&seccion={$idpago}&marx={$mail}&numx={$contrato}&sub={$idproyecto}");
         
         
         $pago = new Payment();

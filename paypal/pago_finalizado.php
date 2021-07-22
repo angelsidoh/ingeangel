@@ -7,6 +7,8 @@ use PayPal\Api\Payment;
 use phpDocumentor\Reflection\Location;
 
 require 'config.php';
+require_once '../send-mail.php';
+require('../includes/funciones/qr.php');
 ?>
 <section class="seccion contenedor">
     <h2>Proceso autorizado por la plataforma</h2>
@@ -21,6 +23,9 @@ require 'config.php';
 
     $monto = $_GET['monto'];
     $idpago = $_GET['seccion'];
+    $mail = $_GET['marx'];
+    $contrato = $_GET['numx'];
+    $idproyecto = $_GET['sub'];
 
     if($resultado == 'false'){
      ?>
@@ -87,23 +92,28 @@ require 'config.php';
             require('../bd/bdsqli.php');
 
 
-          $tarjeta = 9999;
+            $tarjeta = 9999;
+            $metodo = 'PayPal';
+            $link = 'pago.php?pago='.$contrato. '-' . $idpago . '$' . $idproyecto;
+            $indenti= $contrato. '-' . $idpago . '$' . $idproyecto;
+            $indenti1 = $contrato. '-' . $idpago . '-' . $idproyecto;
+            $datos = generarQr1($mail,$metodo, $indenti1, $monto, $link);
+            $qr = $datos['qr'];
+            preg_match_all('!\d+!', $string, $matches);
+                
+            $stmt = $connf->prepare("UPDATE pagoparts SET pagado_pagoparts = ?, orderstatus_pagoparts = ?, idconekta_pagoparts = ? WHERE id_pagoparts = ?");
+            $stmt->bind_param("sssi", $fechaini ,$variable, $paymentId, $id_pago);
+            $stmt->execute();
+
+            $stmtx = $connf->prepare("UPDATE pagos SET fechadepago_pago = ?, tokenconekta_pago = ?, tokenpago_pago = ?, fortarget_pago = ?, money_pago = ?, qr_pago = ? WHERE id_pago = ?");
+            $stmtx->bind_param("sssissi", $fechaini, $paymentId, $paymentId, $tarjeta, $monto, $qr, $idpago);
+            $stmtx->execute();
+            $stmt->close();
+            $connf->close();
           
-         
-          preg_match_all('!\d+!', $string, $matches);
-               
-                    $stmt = $connf->prepare("UPDATE pagoparts SET pagado_pagoparts = ?, orderstatus_pagoparts = ?, idconekta_pagoparts = ? WHERE id_pagoparts = ?");
-                    $stmt->bind_param("sssi", $fechaini ,$variable, $paymentId, $id_pago);
-                    $stmt->execute();
 
-                    $stmtx = $connf->prepare("UPDATE pagos SET fechadepago_pago = ?, tokenconekta_pago = ?, tokenpago_pago = ?, fortarget_pago = ?, money_pago = ? WHERE id_pago = ?");
-                    $stmtx->bind_param("sssisi", $fechaini, $paymentId, $paymentId, $tarjeta, $monto, $idpago);
-                    $stmtx->execute();
-                    $stmt->close();
-                    $connf->close();
-              
 
-              
+            enviar_correo114($mail, $metodo, $indenti, $monto, $link);
           
         } catch (PDOException $e) {
             echo json_encode("Error: " . $e->getMessage());

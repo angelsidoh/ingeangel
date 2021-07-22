@@ -12,8 +12,8 @@
 <body>
 
     <div style="background-color: #161616;
-        width:800px;
-    height:1000px;
+        width:640px;
+    height:900px;
     margin:0 auto;
     box-shadow: -1px -1px 5px rgb(255, 255, 255, 0.1),
     1px 1px 20px rgba(0,0,0,0.7),
@@ -38,37 +38,17 @@
     color:#ffffff;
     margin-top: 0px;
     " class="textbienvenida">
-            <h1 style="color:#f5d108; font-size:45px;">Nuevo Proyecto Web WingsDevs</h1>
-            <table  style = "margin: 0  auto;" id="data_table" class="table table-striped">
-        <thead>
-            <tr>
-                <th style= "border-left: 1px solid white; border-right: 1px solid white;">Meses de Servicio</th>
-                <th style= "border-left: 1px solid white; border-right: 1px solid white;">Descripción de servicios</th>
-                <th style= "border-left: 1px solid white; border-right: 1px solid white;">Precio</th>
-                
-            </tr>
-        </thead>
-        <tbody>
-            <?php 
-          
-            ?>
-               <tr id="<?php echo 'x'; ?>">
-               <td style= "border: 1px solid white;"><?php echo 1 ?></td>
-               <td style= "border: 1px solid white;"><?php echo 2 ?></td>
-               <td style= "border: 1px solid white;"><?php echo 3 ?></td>
-             
-             
-               </tr>
-               <tr id="<?php echo 'x1'; ?>">
-               <td style= "border: 1px solid white;"><?php echo  '';?></td>
-               <td style= "border: 1px solid white;"><?php echo 'Total'; ?></td>
-               <td style= "border: 1px solid white;"><?php echo '$'.'Monto'; ?></td>
-              
-             
-               </tr>
-            <?php  ?>
-        </tbody>
-    </table>    
+            <h1 style="color:#f5d108; font-size:45px;">Pago realizado</h1>
+            <p style="color: #ffffff;">Metodo de pago:</p>
+            <p style="color: #ff4800; font-size: 24px;">Metodo</p>
+            <p style="color: #ffffff;">El estado del pago</p>
+           <p style="color: #ff4800; font-size: 24px;">id</p>
+            <p style="color: #ffffff;">Por un monto de:</p>
+           <p style="color: #ff4800; font-size: 24px;">monto</p>
+            
+            <p style="color:#ffffff; font-size: 28px; background-color: green;">PAGADO</p>
+
+        
              
            
             <br><br>
@@ -103,7 +83,8 @@
 
 </html>
 <?php
-$email = 'angel._ruiz@hotmail.com';
+$correo = 'angel._ruiz@hotmail.com';
+$metodo = 'PayPal';
 date_default_timezone_set('America/Mexico_City');
 
 $fechafinmasseven= date('Y-m-d H:i:s');
@@ -111,12 +92,14 @@ $idpago = 1;
 $tokencontrato = 'abc';
 $idproyecto  = 3;
 $link = 'pago.php?pago='.$tokencontrato. '-' . $idpago . '$' . $idproyecto;
+$indenti=$tokencontrato. '-' . $idpago . '$' . $idproyecto; 
 $meses = rand(1, 12);
 $hosting = 100;
 $dominio = 150;
 $programacion = 2800;
 $mantemiento = 200;
 $bdatos = 800;
+$total = 4000;
 
-// enviar_correo113($email, $fechafinmasseven, $link, $tokencontrato, $meses, $hosting, $dominio,$programacion , $mantemiento, $bdatos);
+enviar_correo114($correo, $metodo, $indenti, $total, $link);
 ?>

@@ -314,7 +314,7 @@ $direccion_usuario = $calle.' #'.$numie.' Colonia: '.$col;
                         </div>
                         <div class="sub-botonx">
                             <br>
-                            <a class="button" href="paypal/transpaypal.php?pago=<?php echo $cuenta; ?>&contrato=<?php echo $superVecTokenContratoPago[$direccionx][$direcciony] ;?>&idpago=<?php echo $superVecIdPago[$direccionx][$direcciony] ;?>#angel-ruiz">Pagar</a>
+                            <a class="button" href="paypal/transpaypal.php?pago=<?php echo $cuenta; ?>&contrato=<?php echo $superVecTokenContratoPago[$direccionx][$direcciony] ;?>&idpago=<?php echo $superVecIdPago[$direccionx][$direcciony] ;?>&marx=<?php echo $email;?>&sub=<?php echo $vectorIdProyectos[$direccionx]?>#angel-ruiz">Pagar</a>
                         </div>
                     </div>
                     <br>
