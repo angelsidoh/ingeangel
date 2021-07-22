@@ -30,20 +30,20 @@ if ((!isset($_SESSION['usuario'])) && (!isset($_SESSION['email']))) {
            $contratox .= $cadena_de_texto[$x];
         }
     }
-    echo $contratox;
+    // echo $contratox;
     $resultadoProyecto = obtenerPrecios($contratox);
 
     if ($resultadoProyecto->num_rows) {
         foreach ($resultadoProyecto as $proyecto) {
         
-           echo $precioBasico = $proyecto['basico_precio'];
-            // echo $precioNegocio = $proyecto['negocio_precio'];
-            // echo $precioProfesional = $proyecto['profesional_precio'];
-           echo $precioHosting = $proyecto['hosting_precio'];
-           echo $precioDominio = $proyecto['dominio_precio'];
-            echo $precioMantenimiento = $proyecto['mantenimiento_precio'];
-            echo $precioBD = $proyecto['basesdatos_precio'];
-            echo $precioProgramacion = $proyecto['programacion_precio'];
+           $precioBasico = $proyecto['basico_precio'];
+            // $precioNegocio = $proyecto['negocio_precio'];
+            // $precioProfesional = $proyecto['profesional_precio'];
+           $precioHosting = $proyecto['hosting_precio'];
+           $precioDominio = $proyecto['dominio_precio'];
+            $precioMantenimiento = $proyecto['mantenimiento_precio'];
+            $precioBD = $proyecto['basesdatos_precio'];
+            $precioProgramacion = $proyecto['programacion_precio'];
         }
     }
 
@@ -219,17 +219,10 @@ if ((!isset($_SESSION['usuario'])) && (!isset($_SESSION['email']))) {
         // echo '<pre>';
         // var_dump( $superVecContMesesPago);
         // echo '</pre>';
-        if ($vectorTipoProyectos[$direccionProyecto] == 'Sin paquete') {
+       
             $cuenta = (($precioDominio + $precioHosting + $precioBD + $precioProgramacion + $precioMantenimiento)* $superVecContMesesPago[$direccionx][$direcciony]);
             $cuenta = $cuenta + ($cuenta*.16);
-            // echo  '$' . $cuenta . '.00 MXN';
-        }
-        // if ($vectorTipoProyectos[$direccionProyecto] == 'Paquete Negocio') {
-        //     echo  '$' . number_format(($precioDominio + $precioHosting + $precioBD + $precioNegocio + $precioMantenimiento)* $superVecContMesesPago[$direccionx][$direcciony]) . '.00 MXN';
-        // }
-        // if ($vectorTipoProyectos[$direccionProyecto] == 'Paquete Profesional') {
-        //     echo  '$' . number_format(($precioDominio + $precioHosting + $precioBD + $precioProfesional + $precioMantenimiento)* $superVecContMesesPago[$direccionx][$direcciony]) . '.00 MXN';
-        // }
+    
 
 if($cuenta >= 10000){
     $cuenta = $cuenta-10000;
@@ -331,34 +324,22 @@ $direccion_usuario = $calle.' #'.$numie.' Colonia: '.$col;
                         <div class="dato771">
 
                             <input class="form-control" type="text" value="<?php
-                            if ($vectorTipoProyectos[$direccionProyecto] == 'Sin paquete') {
+                         
                                 $cuenta = (($precioDominio + $precioHosting + $precioBD + $precioProgramacion + $precioMantenimiento)* $superVecContMesesPago[$direccionx][$direcciony]);
                                 $cuenta = $cuenta + ($cuenta*.16);
                                 echo  '$' . $cuenta . ' MXN';
-                            }
-                            if ($vectorTipoProyectos[$direccionProyecto] == 'Paquete Negocio') {
-                                echo  '$' . number_format(($precioDominio + $precioHosting + $precioBD + $precioNegocio + $precioMantenimiento)* $superVecContMesesPago[$direccionx][$direcciony]) . '.00 MXN';
-                            }
-                            if ($vectorTipoProyectos[$direccionProyecto] == 'Paquete Profesional') {
-                                echo  '$' . number_format(($precioDominio + $precioHosting + $precioBD + $precioProfesional + $precioMantenimiento)* $superVecContMesesPago[$direccionx][$direcciony]) . '.00 MXN';
-                            }
+                         
                             ?>">
                         </div>
                         <div class="dato777">
 
                             <input style="display:none;"  class="form-control" type="text" name="total" id="total" value="
                             <?php
-                            if ($vectorTipoProyectos[$direccionProyecto] == 'Sin paquete') {
+                         
                                 $cuenta = (($precioDominio + $precioHosting + $precioBD + $precioProgramacion + $precioMantenimiento)* $superVecContMesesPago[$direccionx][$direcciony]);
                                 $cuenta = $cuenta + ($cuenta*.16);
                                 echo $cuenta;
-                            }
-                            if ($vectorTipoProyectos[$direccionProyecto] == 'Paquete Negocio') {
-                                echo (($precioDominio + $precioHosting + $precioBD + $precioNegocio + $precioMantenimiento)* $superVecContMesesPago[$direccionx][$direcciony]);
-                            }
-                            if ($vectorTipoProyectos[$direccionProyecto] == 'Paquete Profesional') {
-                            echo (($precioDominio + $precioHosting + $precioBD + $precioProfesional + $precioMantenimiento)* $superVecContMesesPago[$direccionx][$direcciony]) ;
-                            }
+                            
                             ?>">
                         </div>
                         <div class="dato7777">

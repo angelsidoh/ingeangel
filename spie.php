@@ -217,11 +217,11 @@ if ((!isset($_SESSION['usuario'])) && (!isset($_SESSION['email']))) {
         // echo '<pre>';
         // var_dump( $superVecContMesesPago);
         // echo '</pre>';
-        if ($vectorTipoProyectos[$direccionProyecto] == 'Sin paquete') {
+        // if ($vectorTipoProyectos[$direccionProyecto] == 'Sin paquete') {
             $cuenta = (($precioDominio + $precioHosting + $precioBD + $precioProgramacion + $precioMantenimiento) * $superVecContMesesPago[$direccionx][$direcciony]);
             $cuenta = $cuenta + ($cuenta * .16);
             // echo  '$' . $cuenta . '.00 MXN';
-        }
+        // }
         // if ($vectorTipoProyectos[$direccionProyecto] == 'Paquete Negocio') {
         //     echo  '$' . number_format(($precioDominio + $precioHosting + $precioBD + $precioNegocio + $precioMantenimiento)* $superVecContMesesPago[$direccionx][$direcciony]) . '.00 MXN';
         // }
@@ -279,7 +279,14 @@ if ((!isset($_SESSION['usuario'])) && (!isset($_SESSION['email']))) {
                 $stmt->execute(array(':tokencontrato_pagoparts' => $superVecTokenContratoPago[$direccionx][$direcciony] . '-spei' . $s . $superVecIdPago[$direccionx][$direcciony]));
                 $resultado = $stmt->fetch();
                 if ($resultado != false) {
-                    exit(0);
+                    ?>
+                        ?>
+
+<script type="text/javascript">
+   window.location="partstikedspei.php?pago=<?php echo $_GET['pago'] ?>#angel-ruiz";
+   
+</script>
+                    <?php
                 } else {
                     echo $superVecTokenContratoPago[$direccionx][$direcciony] . '-spei' . $s . $superVecIdPago[$direccionx][$direcciony];
                     try {

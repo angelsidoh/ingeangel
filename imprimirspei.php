@@ -52,7 +52,10 @@ if ($posicion_coincidencia === false) {
 					<div class="ps-brand"><img src="business/spei_brand.png" alt="SPEI"></div>
 					<div class="ps-amount">
 						<h3>Monto a pagar</h3>
-						<h2><?php echo "$" . $monto / 100; ?><sup>MXN</sup></h2>
+						<h2><?php
+						 $monto = $monto/100;
+						 $monto = number_format($monto,2, '.', ',');
+						echo "$" . $monto;?><sup>MXN</sup></h2>
 						<p>Utiliza exactamente esta cantidad al realizar el pago.</p>
 					</div>
 				</div>

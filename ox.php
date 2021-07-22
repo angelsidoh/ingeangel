@@ -59,7 +59,7 @@ if ((!isset($_SESSION['usuario'])) && (!isset($_SESSION['email']))) {
             $calle = $Consulta['calle_usuario'];
             $numie = $Consulta['numiedireccion_usuario'];
             $col = $Consulta['colonia_usuario'];
-            $cp = $Consulta['cp_usuario'];
+           $cp = $Consulta['cp_usuario'];
             $email = $Consulta['email_usuario'];
             $tel = $Consulta['telefono_usuario'];
             $fec = $Consulta['fecha_usuario'];
@@ -217,11 +217,11 @@ if ((!isset($_SESSION['usuario'])) && (!isset($_SESSION['email']))) {
         // echo '<pre>';
         // var_dump( $superVecContMesesPago);
         // echo '</pre>';
-        if ($vectorTipoProyectos[$direccionProyecto] == 'Sin paquete') {
+      
             $cuenta = (($precioDominio + $precioHosting + $precioBD + $precioProgramacion + $precioMantenimiento) * $superVecContMesesPago[$direccionx][$direcciony]);
             $cuenta = $cuenta + ($cuenta * .16);
             // echo  '$' . $cuenta . '.00 MXN';
-        }
+        
         // if ($vectorTipoProyectos[$direccionProyecto] == 'Paquete Negocio') {
         //     echo  '$' . number_format(($precioDominio + $precioHosting + $precioBD + $precioNegocio + $precioMantenimiento)* $superVecContMesesPago[$direccionx][$direcciony]) . '.00 MXN';
         // }
@@ -282,8 +282,13 @@ if ((!isset($_SESSION['usuario'])) && (!isset($_SESSION['email']))) {
                 $stmt->execute(array(':tokencontrato_pagoparts' => $superVecTokenContratoPago[$direccionx][$direcciony] . '-' . $s . $superVecIdPago[$direccionx][$direcciony]));
                 $resultado = $stmt->fetch();
                 if ($resultado != false) {
-                    exit(0);
+                    
                     ?>
+                     ?>
+        
+        <script type="text/javascript">
+window.location="partstikeds.php?pago=<?php echo $_GET['pago']?>#angel-ruiz";
+</script>
       
      
 
