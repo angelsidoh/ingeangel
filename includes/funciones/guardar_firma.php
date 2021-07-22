@@ -1,5 +1,6 @@
 <?php
-
+require_once '../../send-mail.php';
+session_start();
 
 if(isset($_GET['tok'])){
     $idU = '';
@@ -115,7 +116,11 @@ try {
 
             imagepng($im, '../../'.$url);
             imagedestroy($im);
-
+            
+            
+         
+            $correo = $_SESSION['email'];
+            enviar_correo117($correo,  $tokencontrato);
 
             $stmt->close();
             $connf->close();

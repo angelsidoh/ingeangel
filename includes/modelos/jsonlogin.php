@@ -28,6 +28,7 @@ if ($_POST['accion'] == 'Iniciar Sesion') {
             $_SESSION['token'] = bin2hex(openssl_random_pseudo_bytes(16));
             // $_SESSION['ip'] = $ip;
             $_SESSION['email'] = $resultado['email_usuario'];
+            $_SESSION['tipo']= $resultado['tipo_usuario'];
         } else {
             $respuesta = array(
                 'Estado' => 'Incorrecto'

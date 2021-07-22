@@ -1871,6 +1871,8 @@ function agregarPaso(e) {
     const fechaxfin = document.querySelector('#fechaxfin').value;
     const horainicioxfin = document.querySelector('#horainicioxfin').value;
     const idproyecto = document.querySelector('#idproy').value;
+    const mail = document.querySelector('#email').value;
+    const proyecto = document.querySelector('#proyecto').value;
 
 
 
@@ -1887,6 +1889,8 @@ function agregarPaso(e) {
     infoeliminarpaso.append('horainicioxfin', horainicioxfin);
     infoeliminarpaso.append('idproyecto', idproyecto);
     infoeliminarpaso.append('accion', accion);
+    infoeliminarpaso.append('mail', mail);
+    infoeliminarpaso.append('proyecto', proyecto);
     if (accion === 'Agregar Paso') {
 
       agregarxPaso(infoeliminarpaso);

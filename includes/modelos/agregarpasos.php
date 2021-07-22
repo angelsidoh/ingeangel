@@ -1,6 +1,7 @@
 
 <?php
 session_start();
+require_once '../../send-mail.php';
 
 if ($_POST['accion'] == 'Agregar Paso') {
     $numpaso = filter_var($_POST['numpaso'], FILTER_SANITIZE_STRING);
@@ -10,6 +11,8 @@ if ($_POST['accion'] == 'Agregar Paso') {
     $fechaxfin = filter_var($_POST['fechaxfin'], FILTER_SANITIZE_STRING);
     $horainicioxfin = filter_var($_POST['horainicioxfin'], FILTER_SANITIZE_STRING);
     $idproyecto = filter_var($_POST['idproyecto'], FILTER_SANITIZE_STRING);
+    $mail = $_POST['mail'];
+    $proyecto = $_POST['proyecto'];
     $fechacompleta = $fecha . ' ' . $horainicio;
     $fechaxfincompleta =  $fechaxfin. ' ' . $horainicioxfin;
    
@@ -34,6 +37,11 @@ if ($_POST['accion'] == 'Agregar Paso') {
         $respuesta = array(
             'estado' => 'paso agregado'
         );
+        
+        $dias = (strtotime($fechacompleta)-strtotime($fechaxfincompleta))/86400;
+$dias = abs($dias); $dias = floor($dias);
+        $duracion = $dias;
+        enviar_correo115($mail, $fechacompleta, $numpaso ,$descripcion, $duracion, $fechaxfincompleta,$proyecto);
       
     } catch (PDOException $e) {
         echo json_encode("Error: " . $e->getMessage());

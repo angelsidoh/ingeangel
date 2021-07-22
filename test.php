@@ -1,5 +1,7 @@
 <?php
 include_once('includes/templates/header.php');
+session_start();
+
 ?>
 <link rel="stylesheet" href="css/signature-pad.css?v=<?php echo time(); ?>">
 <div class="firma">
@@ -23,15 +25,19 @@ include_once('includes/templates/header.php');
 
         </div>
         <div>
+         <?php 
+         if($_SESSION['tipo'] == 'Usuario'){
+         ?>
           <a type="button" class="button save" data-action="save-png">Guardar Firma</a>
           <a style= "display: none;"type="button" class="button save" data-action="save-jpg">Guardar JPG</a>
           <a style= "display: none;"type="button" class="button save" data-action="save-svg">Guardar como SVG</a>
+          <?php }?>
         </div>
       </div>
     </div>
   </div>
   <div class="img">
-  <p>Su firma se guardará con el siguiente formato</p>
+  <p style="color: white;">Su firma se guardará con el siguiente formato</p>
   <img src="includes/funciones/doc_sings/c8a2606df8963d4eae34f69bee90d166.png" alt="">
    <!-- <p><a id="github"  href="https://github.com/szimek/signature_pad">
     Esta API pertenece a terceros y es implementado en ingeangel.com como herramienta para firmar.

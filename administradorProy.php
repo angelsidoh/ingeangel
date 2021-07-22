@@ -379,9 +379,9 @@ if ((!isset($_SESSION['usuario'])) && (!isset($_SESSION['email']))) {
                                     <div class="text-dato3">
                                         <p>Fecha Fin</p>
                                     </div>
-                                    <div class="dato3">
+                                    <div style="color: white;" class="dato3">
                                         <input type="date" id="fechaxfin" name="fechax" value="<?php echo $mañana; ?>">
-                                        <input type="time" id="horainicioxfin" name="limitetiempox" list="listalimitestiempo" step="1" value="<?php echo  $horaactual ?>">
+                                        <input style="color: white;" type="time" id="horainicioxfin" name="limitetiempox" list="listalimitestiempo" step="1" value="<?php echo  $horaactual ?>">
 
                                     </div> <!-- rnormal__tarjeta -->
                                     <div style="display: none;" class="text-dato3">
@@ -390,6 +390,13 @@ if ((!isset($_SESSION['usuario'])) && (!isset($_SESSION['email']))) {
                                     <div style="display: none;" class="dato3">
                                         <input type="text" id="idproy" name="idproy" value="<?php echo  $idProyecto; ?>">
                                     </div> <!-- rnormal__tarjeta -->
+                                    <div  class="dato3">
+                                        <input type="text" id="email" name="email" value="<?php echo  $email; ?>">
+                                    </div> <!-- rnormal__tarjeta -->
+                                    <div  class="dato3">
+                                        <input type="text" id="proyecto" name="proyecto" value="<?php echo  $vectorNombresProyectos[0]; ?>">
+                                    </div> <!-- rnormal__tarjeta -->
+                                    
 
 
 

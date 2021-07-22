@@ -3,6 +3,9 @@ session_start();
 require_once '../../send-mail.php';
 if ($_POST['accion'] == 'Responder' || $_POST['accion'] == 'Enviar Mensaje') {
     $asunto = filter_var($_POST['asunto'], FILTER_SANITIZE_STRING);
+    if($asunto == ''){
+        $asunto = 'sin asunto';
+    }
     $idmensaje = filter_var($_POST['idmensaje'], FILTER_SANITIZE_STRING);
     $idusuario = filter_var($_POST['idusuario'], FILTER_SANITIZE_STRING);
     $mensaje = filter_var($_POST['mensaje'], FILTER_SANITIZE_STRING);

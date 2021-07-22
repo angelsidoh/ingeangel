@@ -8,12 +8,21 @@
     <title>Document</title>
     <link rel="stylesheet" href="css/main.css?v=<?php echo time(); ?>">
 </head>
+<?php
 
+setlocale(LC_ALL, 'es_MX');
+
+$miFecha1= gmmktime(12,0,0,7,24,2021);
+$miFecha2 =gmmktime(12,0,0,8,24,2021);
+echo $miFecha11= utf8_encode(strftime("%A, %d de %B de %Y", $miFecha1));
+echo $miFecha12= utf8_encode(strftime("%A, %d de %B de %Y", $miFecha2));
+
+?>
 <body>
 
     <div style="background-color: #161616;
         width:640px;
-    height:900px;
+    height:800px;
     margin:0 auto;
     box-shadow: -1px -1px 5px rgb(255, 255, 255, 0.1),
     1px 1px 20px rgba(0,0,0,0.7),
@@ -38,15 +47,14 @@
     color:#ffffff;
     margin-top: 0px;
     " class="textbienvenida">
-            <h1 style="color:#f5d108; font-size:45px;">Pago realizado</h1>
-            <p style="color: #ffffff;">Metodo de pago:</p>
-            <p style="color: #ff4800; font-size: 24px;">Metodo</p>
-            <p style="color: #ffffff;">El estado del pago</p>
-           <p style="color: #ff4800; font-size: 24px;">id</p>
-            <p style="color: #ffffff;">Por un monto de:</p>
-           <p style="color: #ff4800; font-size: 24px;">monto</p>
-            
-            <p style="color:#ffffff; font-size: 28px; background-color: green;">PAGADO</p>
+            <h1 style="color:#f5d108; font-size:45px;">Información Sobre su Proyecto</h1>
+            <p style="color:green; font-size:22px;">Hoy: <?php echo $miFecha11;?></p>
+            <p style="color:white; font-size:20px;">Hemos conmenzado con el paso:</p>
+            <p style="color:green; font-size:22px;">eSTOY TOCANDO TETA</p>
+            <p style="color:white; font-size:20px;">Que tendrá una duración de</p>
+            <p style="color:green; font-size:22px;">X Días</p>
+            <p style="color:white; font-size:20px;">Es decir, la fecha estimada para completar esté paso es el día:</p>
+            <p style="color:green; font-size:22px;"><?php echo $miFecha12?></p>
 
         
              
@@ -69,7 +77,7 @@
     transition: all .1s ease;
     border: 2px solid #fe4918;
     " href="https://wingsdevs.com/login.php#angel-ruiz">
-                <p>Iniciar Sesión</p>
+                <p>ver detalles</p>
             </a>
 
         </div>
@@ -100,6 +108,9 @@ $programacion = 2800;
 $mantemiento = 200;
 $bdatos = 800;
 $total = 4000;
+$paso = 2;
+$duracion = 2;
+$proyecto = 'wingsdevs.com';
+$descripcion = 'Esto aqui';
 
-enviar_correo114($correo, $metodo, $indenti, $total, $link);
-?>
+// enviar_correo115($correo, $miFecha11, $paso,$descripcion, $duracion, $miFecha12,$proyecto);
