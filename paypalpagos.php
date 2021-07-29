@@ -1,7 +1,5 @@
 <?php
-// require_once("bin/conekta-php-master/lib/Conekta.php");
-// \Conekta\Conekta::setApiKey("key_eYvWV7gSDkNYXsmr");
-// \Conekta\Conekta::setApiVersion("2.0.0");
+
 
 require 'includes/templates/header.php';
 require_once('includes/funciones/consultas.php');

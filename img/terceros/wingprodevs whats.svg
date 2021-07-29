@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="137.3" height="108" viewBox="0 0 1373 1080">
+  <defs>
+    <style>
+      .cls-1 {
+        font-size: 72px;
+        filter: url(#filter);
+        fill: #fffdff;
+        font-family: "Apocalypse Grunge";
+      }
+    </style>
+    <filter id="filter" x="-25" y="68" width="1362" height="937" filterUnits="userSpaceOnUse">
+      <feGaussianBlur result="blur" stdDeviation="18" in="SourceAlpha"/>
+      <feComposite result="composite"/>
+      <feComposite result="composite-2"/>
+      <feComposite result="composite-3"/>
+      <feFlood result="flood" flood-color="#161616"/>
+      <feComposite result="composite-4" operator="in" in2="composite-3"/>
+      <feBlend result="blend" in2="SourceGraphic"/>
+      <feBlend result="blend-2" in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <text id="Wings_devs" data-name="Wings devs" class="cls-1" transform="translate(107.961 100.08) scale(6.843)">Wings<tspan x="0" dy="86.4">devs</tspan></text>
+</svg>

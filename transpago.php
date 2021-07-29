@@ -182,9 +182,9 @@ if ((!isset($_SESSION['usuario'])) && (!isset($_SESSION['email']))) {
         // echo '<pre>';
         // var_dump($superVecIdProyectoPago);
         // echo '</pre>';
-        echo '<pre>';
-        var_dump(   $superVecIdPago);
-        echo '</pre>';
+        // echo '<pre>';
+        // var_dump(   $superVecIdPago);
+        // echo '</pre>';
         // $lastnum = str_pad($supervecforTarget[1][4], 4, "0", STR_PAD_LEFT);
         // echo  $lastnum;
         $direccionx = 0;
@@ -284,7 +284,7 @@ if ((!isset($_SESSION['usuario'])) && (!isset($_SESSION['email']))) {
                             <input class="form-control" type="text" value="<?php
                           
                                 $cuenta = (($precioDominio + $precioHosting + $precioBD + $precioProgramacion + $precioMantenimiento)* $superVecContMesesPago[$direccionx][$direcciony]);
-                                $cuenta = $cuenta + ($cuenta*.16);
+                                $cuenta = $cuenta+($cuenta*0.16);
                                 echo  '$' . $cuenta . '.00 MXN';
                         
                             ?>">
@@ -324,7 +324,7 @@ if ((!isset($_SESSION['usuario'])) && (!isset($_SESSION['email']))) {
 require 'includes/templates/footer.php';
     ?>
     <script>
-        Conekta.setPublicKey("key_eYvWV7gSDkNYXsmr");
+        Conekta.setPublicKey("key_Jpar2eanNLzgX7yiFYcW6Qw");
 
         var successResponseHandler = function(token) {
             var $form = ("#card-form");

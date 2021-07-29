@@ -85,11 +85,11 @@ session_start();
         <div style="display: none;" id="subcall" class="subcall">
           <br>
           <br>
-          <a style="color: #ffffff!important;" class="button" href="tel:+524521441689"><i class="fas fa-phone-alt"></i> +52(452)1441689</a>
+          <a style="color: #ffffff!important;" class="button" href="tel:+524521798410"><i class="fas fa-phone-alt"></i> +52(452)1798410</a>
           <br>
           <br>
           <br>
-          <a style="color: #ffffff!important;" class="button" href="tel:+524521441689"><i class="fab fa-whatsapp"></i> +52(452)1441689</a>
+          <a style="color: #ffffff!important;" class="button" href="https://wa.me/524521798410"><i class="fab fa-whatsapp"></i> +52(452)1798410</a>
           <br>
           <br>
           <br>
@@ -143,7 +143,7 @@ session_start();
                               <div class="content">
                               <i class="fas fa-check"></i>
                               <h3>Ventas</h3>
-                              <p>Como herramienta, un sitio web bien estructurado y atractivo mejorará significativamente las ventas.</p>
+                              <p>Como herramienta, un sitio web bien estructurado y atractivo mejorará significativamente las ventas de tu negocio.</p>
                               </div>
                               <div class="imgBx">
                               </div>
@@ -159,7 +159,7 @@ session_start();
                               <div class="content">
                               <i class="fas fa-check"></i>
                                 <h3>Expansión de fronteras</h3>
-                                <p>Publicidad al nivel mas alto, alcanzando países y nuevos clientes de todo el mundo</p>
+                                <p>Publicidad al nivel más alto, alcanzando países y nuevos clientes de todo el mundo</p>
                               </div>
                               <div class="imgBx">
                               </div>
@@ -192,7 +192,7 @@ session_start();
                               <div class="content">
                               <i class="fas fa-check"></i>
                                 <h3>Credibilidad y Prestigio</h3>
-                                <p>Clientes atraen a mas clientes, presentación a detalle de sus servicios y productos, ademas, solucionando las necesidades de sus clientes </p>
+                                <p>Clientes atraen a mas clientes, la calidad y buena disposición de tu sitio web son nuestra obligación </p>
                               </div>
                               <div class="imgBx">
                               </div>
@@ -209,7 +209,7 @@ session_start();
                               <div class="content">
                               <i class="fas fa-check"></i>
                                 <h3>Servicio 24/7</h3>
-                                <p>Clientes que pueden revisar, comprar o firmar un contrato en cualquier día y hora de la semana</p>
+                                <p>Clientes que pueden revisar, comprar tus productos, cualquier día y hora de la semana</p>
                               </div>
                               <div class="imgBx">
                               </div>
@@ -225,7 +225,7 @@ session_start();
                               <div class="content">
                               <i class="fas fa-check"></i>
                                 <h3>Google</h3>
-                                <p>Sus servicios y productos saldrán en el buscador de internet más importante del mundo</p>
+                                <p>Tus servicios y productos saldrán en el buscador de internet más importante del mundo</p>
                               </div>
                               <div class="imgBx">
                               </div>
@@ -242,7 +242,7 @@ session_start();
                               <div class="content">
                               <i class="fas fa-check"></i>
                                 <h3>Competencia</h3>
-                                <p>Sus servicios y productos serán fuertes frente a otros. Además la buena disposición de información disolverá cualquier tipo de duda en sus clientes</p>
+                                <p>Tus servicios y productos serán fuertes frente a otros. Además de un buen rendimiento de tu sitio web</p>
                               </div>
                               <div class="imgBx">
                               </div>
@@ -256,8 +256,8 @@ session_start();
                     </div>
                   
                   </div>
-                  <a class="button" href="registro.php#angel-ruiz">
-                  Cotizar
+                  <a style="font-size: 24px;" class="button" href="registro.php#angel-ruiz">
+                  Cotizar/Registro
                 </a>
                 </div>
 
@@ -288,7 +288,7 @@ session_start();
                          <div class="content">
                          <i class="fas fa-check"></i>
                                 <h3>Programación</h3>
-                                <p>Soy un profesional en programación en HTML CSS3, PHP y JavaScript. Entre otros lenguajes de programación</p>
+                                <p>Profesionales en programación en HTML CSS3, PHP y JavaScript. Entre otros</p>
                          </div>
                          <div class="imgBx">
                          </div>
@@ -304,7 +304,7 @@ session_start();
                          <div class="content">
                          <i class="fas fa-check"></i>
                                 <h3>Planeación</h3>
-                                <p>Los proyectos que desarrollo están planificados para cumplir con objetivos en el tiempo marcado.</p>
+                                <p>El desarrollo está planificado para cumplir con objetivos en el tiempo marcado</p>
                          </div>
                          <div class="imgBx">
                          </div>
@@ -321,7 +321,7 @@ session_start();
                          <div class="content">
                          <i class="fas fa-check"></i>
                                 <h3>Mantenimiento Preventivo</h3>
-                                <p>Constantemente actualizo o modifico partes de código mejorando la calidad de navegación por el sitio web</p>
+                                <p>Actualización o modificación de partes de código mejorando la calidad de navegación en el sitio web</p>
                          </div>
                          <div class="imgBx">
                          </div>
@@ -337,7 +337,7 @@ session_start();
                          <div class="content">
                          <i class="fas fa-check"></i>
                                 <h3>Mantenimiento Correctivo</h3>
-                                <p>Corrijo y empleo nuevas funciones resolviendo los problemas que afecten al sitio web</p>
+                                <p>Corrección y empleo nuevas funciones resolviendo los problemas que afecten al sitio web</p>
                          </div>
                          <div class="imgBx">
                          </div>
@@ -370,7 +370,7 @@ session_start();
                          <div class="content">
                          <i class="fas fa-check"></i>
                                 <h3>Creatibidad</h3>
-                                <p>Siempre encuentro la manera de solucionar problemas y retos en cada proyecto</p>
+                                <p>La programación requiere de una logica amplia, nunca dejamos que un problema quede sin resolver, este es nuestro trabajo</p>
                          </div>
                          <div class="imgBx">
                          </div>

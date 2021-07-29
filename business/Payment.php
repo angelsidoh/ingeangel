@@ -6,7 +6,7 @@ require('includes/funciones/qr.php');
 
 
 class Payment{
-    private $ApiKey = "key_eYvWV7gSDkNYXsmr";
+    private $ApiKey = "key_VSprUz9xQEDyd3bnUGbiZQ";
     private $ApiVersion = "2.0.0";
 
     private $UserDB = "root";
@@ -169,7 +169,7 @@ class Payment{
             return false;
         }
         if($this->total<=20){
-            $this->error = "El monto debe sere mayor a 20 MXN";
+            $this->error = "El monto debe ser mayor a 20 MXN";
             return false;
         }
         return true;
