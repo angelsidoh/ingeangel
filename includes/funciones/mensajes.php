@@ -239,7 +239,7 @@ if ($resultadoUser->num_rows) {
             <div class="submenu-proyectos">
                 <div class="titulo-proyecto">
                     <h2><?php
-                        echo  'Asunto:' . $vecaxiasuntoRes[$x] . '<br>';
+                        echo  'Asunto: ' . $vecaxiasuntoRes[$x] . '<br>';
                         ?>
                     </h2>
                 </div>

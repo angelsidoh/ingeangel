@@ -75,7 +75,7 @@ if ((!isset($_SESSION['usuario'])) && (!isset($_SESSION['email']))) {
             unset($vectorDescrip[$ix]);
         } ?><?php
         }
-$contadordepagos = 0;
+        $contadordepagos = 0;
         for ($i = 0; $i < $contadorProyectos; $i++) {
             $resultadoPagos = consultaPagos($vectorIdProyectos[$i]);
 
@@ -134,7 +134,6 @@ $contadordepagos = 0;
                     $vecFechaInicioContrato[$contadorPasos1] = $contrato['fechainicio_contrato'];
                     $vecFechaFinContrato[$contadorPasos1] = $contrato['fechafin_contrato'];
                     $contadorPasos1++;
-                    
                 }
             }
             $supervecIdContrato[$i] = $vecIdContrato;
@@ -183,7 +182,7 @@ $contadordepagos = 0;
         // echo ('<pre>');
         // var_dump($superVecPayedEstado);
         // echo ('</pre>');
-      
+
         $_SESSION['tipo_usuario'] = $tipouser;
             ?>
 
@@ -230,8 +229,21 @@ $contadordepagos = 0;
 
         ?>
             <div class="contenedor-cuenta">
+               
                 <ol class="paginacion2">
-
+                <div class="mensajealerta<?php if($calle == '' || $numie == '' || $col == '' || $cp == '') {
+                                                echo ' mensajeon';
+                                            } else {
+                                                echo ' mensajeoff';
+                                            } ?>">
+                    
+                        
+                        <p class="globo iii abajo-izquierda">
+                            Para acceder a panel de firma de contrato, primero debes tener los datos de "dirección de cliente". 
+                        </p>
+                </div>
+                     
+                   
                 </ol>
                 <ul class="slider2">
                     <li>
@@ -247,14 +259,19 @@ $contadordepagos = 0;
                                         <div class="titulo-proyecto">
                                             <?php if (($x + 1) == 1) {
                                             ?>
-                                                <h1>Cotización :<span style="font-size: 16px;">
+                                                <h1>Proyecto :<span style="font-size: 16px;">
                                                         <?php
-                                                        echo $vectorNombresProyectos[$x];
+                                                        if ($vectorNombresProyectos[$x] == 'Sin Proyecto') {
+                                                            echo 'Proyecto en cotización y verificación';
+                                                        } else {
+                                                            echo 'https://' . $vectorNombresProyectos[$x];
+                                                        }
                                                         ?></span></h1><?php
                                                                     } else { ?>
-                                                <h1>Proyecto <?php echo $x + 1; ?>:<span style="font-size: 16px;">
+                                                <h1>Proyecto <?php echo $x + 1;?>:<span style="font-size: 16px;">
                                                         <?php
-                                                                        echo $vectorNombresProyectos[$x];
+
+                                                                        echo 'https://'.$vectorNombresProyectos[$x];
                                                         ?></span></h1><?php
                                                                     }
                                                                         ?>
@@ -341,6 +358,7 @@ $contadordepagos = 0;
                             <div class="titulo-seccion">
                                 <h1 id="sparklemaster" class="sparklemaster" style="color:  #93A9CC;">Cuenta</h1>
                             </div>
+
                             <div class="datos-usuario">
                                 <form id="cuenta" action="#">
                                     <div class="contenido-cuenta">
@@ -351,10 +369,10 @@ $contadordepagos = 0;
                                             <p>Cliente</p>
                                         </div>
                                         <div class="dato2">
-                                            <input type="text" id="calle" name="calle" placeholder="Ingrese su Calle" value="<?php echo $calle; ?>">
-                                            <input type="text" id="numie" name="numie" placeholder="Ingrese su Némero Int/Ext" value="<?php echo $numie; ?>">
-                                            <input type="text" id="colonia" name="colonia" placeholder="Ingrese su Colonia" value="<?php echo $col; ?>">
-                                            <input type="text" id="cpostal" name="cpostal" placeholder="Ingrese su Código Postal" value="<?php echo $cp; ?>">
+                                            <input type="text" id="calle" name="calle" placeholder="Calle" value="<?php echo $calle; ?>">
+                                            <input type="text" id="numie" name="numie" placeholder="Número Int/Ext del domicilio" value="<?php echo $numie; ?>">
+                                            <input type="text" id="colonia" name="colonia" placeholder="Colonia" value="<?php echo $col; ?>">
+                                            <input type="text" id="cpostal" name="cpostal" placeholder="Código Postal" value="<?php echo $cp; ?>">
                                         </div> <!-- rnormal__tarjeta -->
                                         <div class="text-dato2">
                                             <p>Domicilio</p>

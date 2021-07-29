@@ -133,9 +133,21 @@ $paqueteBasico = $precioBasico;
 		<div style="text-align: justify;" class="contendor-efecto">
 			<div style="text-align: center;" class="titulo-seccion">
 				<h1 id="sparklemaster" class="sparklemaster" style="color:  #93A9CC;">Contrato de prestación de servicios</h1>
-				<h2>Sitio web: https://wingsdevs.com/</h2>
+			
+				<div style="width: 100%;
+							height: auto;
+							margin: 0 auto;
+							margin-top: -20px; " class="imagencontratodes">
+				<img style=" 
+							
+							width:220px; 
+							height:80px;
+							
+							" src="https://wingsdevs.com/img/terceros/wingprodevsLOGO.png" alt="">
+				</div>
+				
 			</div>
-			<p>Mediante el sitio web <strong><u>https://wingsdevs.com/</u></strong>, el <strong><u>C. <?php echo $usuario . ' ' . $apellidos; ?></u></strong>, residente de la Calle: <strong><u><?php echo $calle; ?></u></strong> Número exterior:<strong><u> <?php echo $numie; ?></u></strong> Colonia: <strong><u><?php echo $col; ?></u></strong>, para dar inicio el proyecto web <strong><u><?php echo 'https://'.strtolower($vectorNombresProyectos[0]);?></u></strong>
+			<p style="margin-top: 80px;">Mediante el sitio web <strong><u>https://wingsdevs.com/</u></strong>, el <strong><u>C. <?php echo $usuario . ' ' . $apellidos; ?></u></strong>, residente de la Calle: <strong><u><?php echo $calle; ?></u></strong> Número exterior:<strong><u> <?php echo $numie; ?></u></strong> Colonia: <strong><u><?php echo $col; ?></u></strong> acepta este contrato de servicios; para dar inicio el proyecto web <strong><u><?php echo 'https://'.strtolower($vectorNombresProyectos[0]);?></u></strong>
 				El ingeniero en Mecatrónica <strong><u>José Angel Ruiz Chávez</u></strong>, residente de la calle: <strong><u>San José de la Mina</u></strong> Número Exterior: <strong><u>42</u></strong> Colonia: <strong><u>San José de la Mina</u></strong>, responsable de <strong><u>https://wingsdevs.com/</u></strong> y sus servicios.
 				Tienen entre sí, justo y acordado este contrato, para la prestación de servicios profesionales independientes, que se regirá por las siguientes clausulas y condiciones;
 			</p>
@@ -175,22 +187,23 @@ $paqueteBasico = $precioBasico;
 <?php
         }
         ?>
-        <p>2ª Cláusula. Este contrato es efectivo por 
+        <p>2ª Cláusula. Este contrato es efectivo por
+		<strong><u>
         <?php 
         if($vecTipoIntContrato > 1){
             echo $vecTipoIntContrato[0].' Meses,';
         }else{
             echo $vecTipoIntContrato[0]. ' Mes,';  
         }
-        ?>    
+        ?>
+		</strong></u>    
         comenzando en la fecha: <strong><u><?php echo $mesDescInicio;?></u></strong> y terminando en la fecha: <strong><u><?php echo $mesDescFin?></u></strong>.</p>
         <p>3ª Cláusula.		Para la prestación de los servicios cubiertos por este contrato, el cliente pagará a <strong><u>https://wingsdevs.com/</u></strong> el monto <strong><u><?php 
-        if($vectorTipoProyectos == 'Sin paquete'){
+      
             $moneda = monto('%.2n', $paqueteBasico);
             echo $moneda.' MXN';
             echo ' ('.convertir($paqueteBasico).')';
-        }
-     
+        
         ?></u></strong> por mes de contrato. Haciendo su pago por cualquiera de los métodos disponibles en su cuenta de <strong><u>https://wingsdevs.com/</u></strong><br><br>
         Al expirar este contrato, le notificaremos por correo electrónico y vía telefónica para seguir sus indicaciones. (El nuevo contrato requerirá de su firma digital para su autorización).
 		</p>
@@ -219,7 +232,7 @@ $paqueteBasico = $precioBasico;
 						Responsable del contrato para el proyecto: <strong><u><?php echo 'https://'.strtolower($vectorNombresProyectos[0]);?></u></strong>
 					</p>
 				</div>
-				<div style="text-align: center;" class="firmax"><img style="width: 520px; height: auto; margin-top: 50px;margin-left: calc(50% - 260px);" src="includes/funciones/doc_sings/07a894013a931e77b9c067d509ccf428.png" alt="error: 07a894013a931e77b9c067d509ccf428.png">
+				<div style="text-align: center;" class="firmax"><img style="width: 520px; height: auto; margin-top: 50px;margin-left: calc(50% - 260px);" src="includes/funciones/doc_sings/545a1fffd1e7d4557167bad3e6694962.png" alt="error: 545a1fffd1e7d4557167bad3e6694962.png">
 
 					<p>Firma Digital: <strong><u> José Angel Ruiz Chávez</u></strong>
 						Responsable de desarrollo del proyecto: <strong><u><?php echo 'https://'.strtolower($vectorNombresProyectos[0]);?></u></strong>

@@ -129,6 +129,7 @@ if ((!isset($_SESSION['usuario'])) && (!isset($_SESSION['email']))) {
     $mesDesclim = utf8_encode(strftime("%A %d de %B de %Y", strtotime($newDatelim)));
     // echo '<br>'. $mesDesclim;
     $paqueteBasico = $precioBasico;
+    $vectorNombresProyectos[0] =str_replace(' ', '', $vectorNombresProyectos[0]);
   
     
      
@@ -139,12 +140,18 @@ if ((!isset($_SESSION['usuario'])) && (!isset($_SESSION['email']))) {
         <div class="titulo-seccion">
             <h1 id="sparklemaster" class="sparklemaster" style="color:  #93A9CC;">Contrato de prestación de servicios</h1>
         </div>
-        <p>Mediante el sitio web <strong><u>https://wingsdevs.com/</u></strong>, el <strong><u>C. <?php echo $usuario. ' '. $apellidos;?></u></strong>, residente de la Calle: <strong><u><?php echo $calle;?></u></strong> Número exterior:<strong><u> <?php echo $numie;?></u></strong> Colonia: <strong><u><?php echo $col;?></u></strong>, para dar inicio el proyecto web <strong><u><?php echo 'https://'.strtolower($vectorNombresProyectos[0]);?></u></strong>
-        El ingeniero en Mecatrónica <strong><u>José Angel Ruiz Chávez</u></strong>, residente de la calle: <strong><u>San José de la Mina</u></strong> Número Exterior: <strong><u>42</u></strong> Colonia: <strong><u>San José de la Mina</u></strong>, responsable de <strong><u>https://wingsdevs.com/</u></strong> y sus servicios.
+        <?php if ($calle == '' || $numie == '' || $col == '' || $cp == '') {
+                                                echo 'No asignado hasta completar "dirección de cliente"';
+                                            } else {?>
+                                               
+                                              
+        <p>Mediante el sitio web <a style="color: #ffffff;" href="https://wingsdevs.com"><strong><u>https://wingsdevs.com</u></strong></a>, el <strong><u>C. <?php echo $usuario. ' '. $apellidos;?></u></strong>, residente de la Calle: <strong><u><?php echo $calle;?></u></strong> Número exterior:<strong><u> <?php echo $numie;?></u></strong> Colonia: <strong><u><?php echo $col;?></u></strong> acepta este contrato de servicios; para dar inicio el proyecto web <a style="color: #ffffff;" href="<?php echo 'https://'.($vectorNombresProyectos[0]);?>"><strong><u><?php echo 'https://'.strtolower($vectorNombresProyectos[0]);?></u></strong></a>
+        El ingeniero en Mecatrónica <strong><u>
+       José Angel Ruiz Chávez
+       </u></strong>, residente de la calle: <strong><u>San José de la Mina</u></strong> Número Exterior: <strong><u>42</u></strong> Colonia: <strong><u>San José de la Mina</u></strong>, responsable de <a style="color: #ffffff;" href="https://wingsdevs.com"><strong><u>https://wingsdevs.com</u></strong></a> y sus servicios.
         Tienen entre sí, justo y acordado este contrato, para la prestación de servicios profesionales independientes, que se regirá por las siguientes clausulas y condiciones;
         </p>
-        <p >1ª Cláusula. El propósito de este contrato para el <strong><u><?php echo $vectorTipoProyectos;?></u></strong> del sitio web <strong><u>https://wingsdevs.com/</u></strong>; es proporcionar al proyecto web: <strong><u><?php 
-        echo 'https://'.strtolower($vectorNombresProyectos[0]);
+        <p >1ª Cláusula. El propósito de este contrato para el <strong><u><?php echo $vectorTipoProyectos;?></u></strong> del sitio web <a style="color: #ffffff;" href="https://wingsdevs.com"><strong><u>https://wingsdevs.com</u></strong></a>; es proporcionar al proyecto web:  <a style="color: #ffffff;" href="<?php echo 'https://'.strtolower($vectorNombresProyectos[0]);?>"><strong><u><?php echo 'https://'.strtolower($vectorNombresProyectos[0]);?></a><?php
         // echo $vecTipocxContrato[0];
         if($vecTipocxContrato[0] == 1){
 ?>
@@ -179,38 +186,56 @@ if ((!isset($_SESSION['usuario'])) && (!isset($_SESSION['email']))) {
 <?php
         }
         ?>
-        <p>2ª Cláusula. Este contrato es efectivo por 
+        <p>2ª Cláusula. Este contrato es efectivo por  <strong><u>
         <?php 
         if($vecTipoIntContrato > 1){
             echo $vecTipoIntContrato[0].' Meses,';
         }else{
             echo $vecTipoIntContrato[0]. ' Mes,';  
         }
-        ?>    
+        ?> </u></strong>   
         comenzando en la fecha: <strong><u><?php echo $mesDescInicio;?></u></strong> y terminando en la fecha: <strong><u><?php echo $mesDescFin?></u></strong>.</p>
-        <p>3ª Cláusula.		Para la prestación de los servicios cubiertos por este contrato, el cliente pagará a <strong><u>https://wingsdevs.com/</u></strong> el monto <strong><u><?php 
-        if($vectorTipoProyectos == 'Sin paquete'){
+        <p>3ª Cláusula.		Para la prestación de los servicios cubiertos por este contrato, el cliente pagará a <a style="color: #ffffff;" href="https://wingsdevs.com"><strong><u>https://wingsdevs.com</u></strong></a> el monto <strong><u><?php 
+        
             $moneda = monto('%.2n', $paqueteBasico);
             echo $moneda.' MXN';
             echo ' ('.convertir($paqueteBasico).')';
-        }
-     
-        ?></u></strong> por mes de contrato. Haciendo su pago por cualquiera de los métodos disponibles en su cuenta de <strong><u>https://wingsdevs.com/</u></strong><br><br>
+       
+        ?></u></strong> por mes de contrato. Haciendo su pago por cualquiera de los métodos disponibles en su cuenta de <a style="color: #ffffff;" href="https://wingsdevs.com"><strong><u>https://wingsdevs.com</u></strong></a><br><br>
         Al expirar este contrato, le notificaremos por correo electrónico y vía telefónica para seguir sus indicaciones. (El nuevo contrato requerirá de su firma digital para su autorización).
 		</p>
-		<p>4ª Cláusula. En caso de incumplimiento por parte del C. <strong><u> <?php echo $usuario. ' '. $apellidos;?></u></strong> del proyecto web: <strong><u><?php echo 'https://'.strtolower($vectorNombresProyectos[0]);?></u></strong>, con respecto al pago mensual del contrato mencionado en la cláusula anterior, habrá suspención de servicios hasta que la factura halla sido pagada.  Y <strong><u>https://wingsdevs.com/</u></strong> puede, a su discreción, considerar reincidido el proyecto web: <strong><u><?php echo 'https://'.strtolower($vectorNombresProyectos[0]);?></u></strong></p>
-		<p>5ª Cláusula.	En caso de que <strong><u>https://wingsdevs.com/</u></strong> demuestre una prestación de servicios deficiente, el cliente propietario del proyecto web: <strong><u><?php echo 'https://'.strtolower($vectorNombresProyectos[0]);?></u></strong> puede considerar reincidido este contrato.</p>
+		<p>4ª Cláusula. En caso de incumplimiento por parte del C. <strong><u> <?php echo $usuario. ' '. $apellidos;?></u></strong> del proyecto web: <a style="color: #ffffff;" href="<?php echo 'https://'.($vectorNombresProyectos[0]);?>"><strong><u><?php echo 'https://'.strtolower($vectorNombresProyectos[0]);?></u></strong></a>, con respecto al pago mensual del contrato mencionado en la cláusula anterior, habrá suspención de servicios hasta que la factura halla sido pagada.  Y <a style="color: #ffffff;" href="https://wingsdevs.com"><strong><u>https://wingsdevs.com</u></strong></a> puede, a su discreción, considerar reincidido el proyecto web: <a style="color: #ffffff;" href="<?php echo 'https://'.($vectorNombresProyectos[0]);?>"><strong><u><?php echo 'https://'.strtolower($vectorNombresProyectos[0]);?></u></strong></a></p>
+		<p>5ª Cláusula.	En caso de que <a style="color: #ffffff;" href="https://wingsdevs.com"><strong><u>https://wingsdevs.com</u></strong></a> demuestre una prestación de servicios deficiente, el cliente propietario del proyecto web: <a style="color: #ffffff;" href="<?php echo 'https://'.($vectorNombresProyectos[0]);?>"><strong><u><?php echo 'https://'.strtolower($vectorNombresProyectos[0]);?></u></strong></a> puede considerar reincidido este contrato.</p>
 		<p>6ª Cláusula.	En caso de terminación anticipada de este contrato por cualquiera de las partes excepto las cláusulas 4 y 5 o por mutuo acuerdo, la parte que lo haga incurrirá, en una multa equivalente a la cantidad del monto a pagar por este contrato.</p>
-		<p>7ª Cláusula. Se afirma que no tienen relación laboral entre C. <strong><u> <?php echo $usuario. ' '. $apellidos;?></u></strong> del proyecto web: <strong><u><?php echo 'https://'.strtolower($vectorNombresProyectos[0]);?></u></strong> y <strong><u>https://wingsdevs.com/</u></strong> y su equipo de desarrolladores.</p>
+		<p>7ª Cláusula. Se afirma que no tienen relación laboral entre C. <strong><u> <?php echo $usuario. ' '. $apellidos;?></u></strong> del proyecto web: <a style="color: #ffffff;" href="<?php echo 'https://'.($vectorNombresProyectos[0]);?>"><strong><u><?php echo 'https://'.strtolower($vectorNombresProyectos[0]);?></u></strong></a> y <a style="color: #ffffff;" href="https://wingsdevs.com"><strong><u>https://wingsdevs.com</u></strong></a> y su equipo de desarrolladores.</p>
 		<p>8ª Cláusula.	Las partes eligen las jurisdicciones de Uruapan Michoacán México para resolver cualquier disputa que surja de este contrato, excluyendo cualquier otra que sea privilegiada.
 		</p>
 		
 		<p>Y como justos y contratados, firman este contrato Digital disponible en todo momento y con opción de descargar una copia en PDF.</p>
+        <?php } ?> 
 		<?php  
 		if($vecFirmaClienteContrato[0] == ''){
 			?>
 			<div class="firmaf">
-				<a class="button" href="test.php?tok=<?php echo $vecTokenContrato[0]. '-id=' . $idusuario.'-ff='.$vectorIdProyectos[0];?>#angel-ruiz"> Firmar contrato</a>
+            <?php if ($calle == '' || $numie == '' || $col == '' || $cp == '') {
+                ?>
+                <div class="mensajealerta<?php if ($calle == '' || $numie == '' || $col == '' || $cp == '') {
+                                                echo ' mensajeon';
+                                            } else {
+                                                echo ' mensajeoff';
+                                            } ?>">
+                    
+                        
+                    <p class="globo ii derecha-arriba">
+                            Para acceder a panel de firma de contrato, primero debes tener los datos de "dirección de cliente". 
+                        </p>
+                </div>
+                <a class="button" href="cuenta.php#angel-ruiz"> Ir a cuenta</a><?php
+                                               
+                                            } else {
+                                                ?><a class="button" href="test.php?tok=<?php echo $vecTokenContrato[0]. '-id=' . $idusuario.'-ff='.$vectorIdProyectos[0];?>#angel-ruiz"> Firmar contrato</a><?php
+                                            } ?>
+				
 			</div>
 		
 			<?php
@@ -219,12 +244,12 @@ if ((!isset($_SESSION['usuario'])) && (!isset($_SESSION['email']))) {
 				<div class="firmax"><img src="<?php echo $vecFirmaClienteContrato[0];?>" alt="">
 			
 				<p>Firma Digital:  <strong><u> <?php echo $usuario. ' '. $apellidos;?></u></strong>
-Responsable del contrato para el proyecto: <strong><u><?php echo 'https://'.strtolower($vectorNombresProyectos[0]);?></u></strong>
+Responsable del contrato para el proyecto: <a style="color: #ffffff;" href="<?php echo 'https://'.($vectorNombresProyectos[0]);?>"><strong><u><?php echo 'https://'.strtolower($vectorNombresProyectos[0]);?></u></strong></a>
 </p></div>
-<div class="firmax"><img src="includes/funciones/doc_sings/07a894013a931e77b9c067d509ccf428.png" alt="">
+<div class="firmax"><img src="includes/funciones/doc_sings/545a1fffd1e7d4557167bad3e6694962.png" alt="545a1fffd1e7d4557167bad3e6694962.png">
 			
 				<p>Firma Digital:  <strong><u> José Angel Ruiz Chávez</u></strong>
-Ingeniero responsable de desarrollo del proyecto: <strong><u><?php echo 'https://'.strtolower($vectorNombresProyectos[0]);?></u></strong>
+Ingeniero responsable de desarrollo del proyecto: <a style="color: #ffffff;" href="<?php echo 'https://'.($vectorNombresProyectos[0]);?>"><strong><u><?php echo 'https://'.strtolower($vectorNombresProyectos[0]);?></u></strong></a>
 </p>
 <a class = "button" href="downloadpdf.php?contrato=<?php echo $vecTokenContrato[0]. '-id=' .$vectorIdProyectos[0];?>#angel-ruiz">Descargar PDF</a></div>
 

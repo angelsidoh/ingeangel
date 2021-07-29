@@ -47,7 +47,7 @@ function enviar_correo4($mensaje,$asunto,$tipo_user, $correo,$nombre)
     $mail->Password = 'hyo2021k5a';
 
     //Set who the message is to be sent from
-    $mail->setFrom('infoingeangel@gmail.com', 'Nuevo mensaje en wingsdevs.com');
+    $mail->setFrom('infoingeangel@gmail.com', 'WingsDevs Nuevo mensaje en wingsdevs.com');
 
     //Set an alternative reply-to address
     // $mail->addReplyTo('replyto@example.com', 'First Last');
@@ -58,7 +58,7 @@ function enviar_correo4($mensaje,$asunto,$tipo_user, $correo,$nombre)
     $mail->addAddress($correo, $nombreTo);
 
     //Set the subject line
-    $mail->Subject = utf8_decode('Mensajes de tu cuenta. https://wingsdevs.com/');
+    $mail->Subject = utf8_decode('WingsDevs Mensajes de tu cuenta. https://wingsdevs.com/');
 
     //Read an HTML message body from an external file, convert referenced images to embedded,
     //convert HTML into a basic plain-text alternative body
@@ -82,7 +82,7 @@ function enviar_correo4($mensaje,$asunto,$tipo_user, $correo,$nombre)
     height:80px;
     margin: 20px auto;
     filter: drop-shadow(1px 2px 5px #ff4800);
-   " src="https://wingsdevs.com/img/terceros/wingprodevsLOGO.png alt="imagen">
+   " src="https://wingsdevs.com/img/terceros/wingprodevsLOGO.png" alt="imagen">
     
         </div>
         <div style="
@@ -197,7 +197,7 @@ function enviar_correo3($nombre, $apellido, $pass, $correo, $idea, $select, $sec
     $mail->Password = 'hyo2021k5a';
 
     //Set who the message is to be sent from
-    $mail->setFrom('infoingeangel@gmail.com', 'Nueva cuenta en wingsdevs.com');
+    $mail->setFrom('infoingeangel@gmail.com', 'WingsDevs Nueva cuenta en wingsdevs.com');
 
     //Set an alternative reply-to address
     // $mail->addReplyTo('replyto@example.com', 'First Last');
@@ -208,7 +208,7 @@ function enviar_correo3($nombre, $apellido, $pass, $correo, $idea, $select, $sec
     $mail->addAddress($correo, $nombreTo . ' ' . $apellidoTo);
 
     //Set the subject line
-    $mail->Subject = utf8_decode('Datos importantes cuenta https://wingsdevs.com/');
+    $mail->Subject = utf8_decode('WingsDevs Datos importantes cuenta https://wingsdevs.com/');
 
     //Read an HTML message body from an external file, convert referenced images to embedded,
     //convert HTML into a basic plain-text alternative body
@@ -357,7 +357,7 @@ function enviar_correo2($correo, $idpago, $fechainicio, $fechafin, $montopago, $
     $mail->Password = 'hyo2021k5a';
 
     //Set who the message is to be sent from
-    $mail->setFrom('infoingeangel@gmail.com', 'Factura de servicios');
+    $mail->setFrom('infoingeangel@gmail.com', 'WingsDevs Factura de servicios');
 
     //Set an alternative reply-to address
     // $mail->addReplyTo('replyto@example.com', 'First Last');
@@ -368,7 +368,7 @@ function enviar_correo2($correo, $idpago, $fechainicio, $fechafin, $montopago, $
     $mail->addAddress($correo);
 
     //Set the subject line
-    $mail->Subject = utf8_decode('Factura pagada');
+    $mail->Subject = utf8_decode('WingsDevs Factura pagada');
 
     //Read an HTML message body from an external file, convert referenced images to embedded,
     //convert HTML into a basic plain-text alternative body
@@ -521,8 +521,7 @@ function enviar_correo111($correo, $nombrepagina, $tokencontrato, $fechainicio, 
     $mail->Password = 'hyo2021k5a';
 
     //Set who the message is to be sent from
-    $mail->setFrom('infoingeangel@gmail.com
-', 'Nuevo contrato generado');
+    $mail->setFrom('infoingeangel@gmail.com', 'WingsDevs Nuevo contrato generado');
 
     //Set an alternative reply-to address
     // $mail->addReplyTo('replyto@example.com', 'First Last');
@@ -533,7 +532,7 @@ function enviar_correo111($correo, $nombrepagina, $tokencontrato, $fechainicio, 
     $mail->addAddress($correo);
 
     //Set the subject line
-    $mail->Subject = utf8_decode('Nuevo Proyecto Web');
+    $mail->Subject = utf8_decode('WingsDevs Nuevo Proyecto Web');
 
     //Read an HTML message body from an external file, convert referenced images to embedded,
     //convert HTML into a basic plain-text alternative body
@@ -653,8 +652,7 @@ function enviar_correo112($correo)
     $mail->Password = 'hyo2021k5a';
 
     //Set who the message is to be sent from
-    $mail->setFrom('infoingeangel@gmail.com
-', 'Nuevo Proyecto Web');
+    $mail->setFrom('infoingeangel@gmail.com', 'WingsDevs Nuevo Proyecto Web');
 
     //Set an alternative reply-to address
     // $mail->addReplyTo('replyto@example.com', 'First Last');
@@ -665,7 +663,7 @@ function enviar_correo112($correo)
     $mail->addAddress($correo);
 
     //Set the subject line
-    $mail->Subject = utf8_decode('Nuevo Proyecto Web');
+    $mail->Subject = utf8_decode('WingsDevs Nuevo Proyecto Web');
 
     //Read an HTML message body from an external file, convert referenced images to embedded,
     //convert HTML into a basic plain-text alternative body
@@ -820,8 +818,7 @@ function enviar_correo113($correo, $fecha, $link, $tokencontrato, $meses, $hosti
     $mail->Password = 'hyo2021k5a';
 
     //Set who the message is to be sent from
-    $mail->setFrom('infoingeangel@gmail.com
-', 'Nuevo Pago Pendiente');
+    $mail->setFrom('infoingeangel@gmail.com', 'WingsDevs Nuevo Pago Pendiente');
 
     //Set an alternative reply-to address
     // $mail->addReplyTo('replyto@example.com', 'First Last');
@@ -832,7 +829,7 @@ function enviar_correo113($correo, $fecha, $link, $tokencontrato, $meses, $hosti
     $mail->addAddress($correo);
 
     //Set the subject line
-    $mail->Subject = utf8_decode('Nuevo Pago Pendiente');
+    $mail->Subject = utf8_decode('WingsDevs Nuevo Pago Pendiente');
 
     //Read an HTML message body from an external file, convert referenced images to embedded,
     //convert HTML into a basic plain-text alternative body
@@ -1024,8 +1021,7 @@ function enviar_correo114($correo, $metodo, $identi, $total, $link)
     $mail->Password = 'hyo2021k5a';
 
     //Set who the message is to be sent from
-    $mail->setFrom('infoingeangel@gmail.com
-', 'Nuevo Pago Pendiente');
+    $mail->setFrom('infoingeangel@gmail.com', 'WingsDevs Nuevo Pago Pendiente');
 
     //Set an alternative reply-to address
     // $mail->addReplyTo('replyto@example.com', 'First Last');
@@ -1036,7 +1032,7 @@ function enviar_correo114($correo, $metodo, $identi, $total, $link)
     $mail->addAddress($correo);
 
     //Set the subject line
-    $mail->Subject = utf8_decode('Nuevo Pago Pendiente');
+    $mail->Subject = utf8_decode('WingsDevs Nuevo Pago Pendiente');
 
     //Read an HTML message body from an external file, convert referenced images to embedded,
     //convert HTML into a basic plain-text alternative body
@@ -1189,8 +1185,7 @@ function enviar_correo115($correo, $fecha1, $paso,$descripcion, $duracion, $fech
     $mail->Password = 'hyo2021k5a';
 
     //Set who the message is to be sent from
-    $mail->setFrom('infoingeangel@gmail.com
-', 'Nueva Actividad Agendada a tu Proyecto '.$proyecto);
+    $mail->setFrom('infoingeangel@gmail.com', 'WingsDevs Nueva Actividad Agendada a tu Proyecto '.$proyecto);
 
     //Set an alternative reply-to address
     // $mail->addReplyTo('replyto@example.com', 'First Last');
@@ -1201,7 +1196,7 @@ function enviar_correo115($correo, $fecha1, $paso,$descripcion, $duracion, $fech
     $mail->addAddress($correo);
 
     //Set the subject line
-    $mail->Subject = utf8_decode('Nueva Actividad Agendada a tu Proyecto '.$proyecto);
+    $mail->Subject = utf8_decode('WingsDevs Nueva Actividad Agendada a tu Proyecto '.$proyecto);
 
     //Read an HTML message body from an external file, convert referenced images to embedded,
     //convert HTML into a basic plain-text alternative body
@@ -1351,8 +1346,7 @@ function enviar_correo117($correo, $tokencontrato)
     $mail->Password = 'hyo2021k5a';
 
     //Set who the message is to be sent from
-    $mail->setFrom('infoingeangel@gmail.com
-', 'Contratos https://Wingsdevs.com');
+    $mail->setFrom('infoingeangel@gmail.com', 'WingsDevs Contratos https://Wingsdevs.com');
 
     //Set an alternative reply-to address
     // $mail->addReplyTo('replyto@example.com', 'First Last');
@@ -1363,7 +1357,7 @@ function enviar_correo117($correo, $tokencontrato)
     $mail->addAddress($correo);
 
     //Set the subject line
-    $mail->Subject = utf8_decode('Contratos https://Wingsdevs.com');
+    $mail->Subject = utf8_decode('WingsDevs Contratos https://Wingsdevs.com');
 
     //Read an HTML message body from an external file, convert referenced images to embedded,
     //convert HTML into a basic plain-text alternative body
@@ -1509,8 +1503,7 @@ function enviar_correo1($correo, $paso1, $paquete)
     $mail->Password = 'hyo2021k5a';
 
     //Set who the message is to be sent from
-    $mail->setFrom('infoingeangel@gmail.com
-', 'Solicitud de servicios');
+    $mail->setFrom('infoingeangel@gmail.com', 'WingsDevs Solicitud de servicios');
 
     //Set an alternative reply-to address
     // $mail->addReplyTo('replyto@example.com', 'First Last');
@@ -1521,7 +1514,7 @@ function enviar_correo1($correo, $paso1, $paquete)
     $mail->addAddress($correo);
 
     //Set the subject line
-    $mail->Subject = utf8_decode('Nuevo Proyecto Web');
+    $mail->Subject = utf8_decode('WingsDevs Nuevo Proyecto Web');
 
     //Read an HTML message body from an external file, convert referenced images to embedded,
     //convert HTML into a basic plain-text alternative body
@@ -1660,8 +1653,7 @@ function enviar_correo($nombre, $apellido, $pass, $correo)
     $mail->Password = 'hyo2021k5a';
 
     //Set who the message is to be sent from
-    $mail->setFrom('infoingeangel@gmail.com
-', 'Nueva cuenta en wingsdevs.com');
+    $mail->setFrom('infoingeangel@gmail.com', 'WingsDevs Nueva cuenta en wingsdevs.com');
 
     //Set an alternative reply-to address
     // $mail->addReplyTo('replyto@example.com', 'First Last');
@@ -1672,7 +1664,7 @@ function enviar_correo($nombre, $apellido, $pass, $correo)
     $mail->addAddress($correo, $nombreTo . ' ' . $apellidoTo);
 
     //Set the subject line
-    $mail->Subject = utf8_decode('Datos importantes cuenta https://wingsdevs.com/');
+    $mail->Subject = utf8_decode('WingsDevs Datos importantes cuenta https://wingsdevs.com/');
 
     //Read an HTML message body from an external file, convert referenced images to embedded,
     //convert HTML into a basic plain-text alternative body

@@ -125,7 +125,7 @@ session_start();
               <img src="img/terceros/fondoprinctransparnt.png" alt="fondo">
 
               <div class="texta">
-                <h1 id="sparklemaster" class="sparklemaster">¿Por qué necesita una página web profesional?</h1>
+                <h1 id="sparklemaster" class="sparklemaster">¿Necesitas un sitio web profesional?</h1>
                
 
                

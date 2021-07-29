@@ -3736,7 +3736,7 @@ if(cambioSliderPal == 0){
 $(document).ready(function () {
 
   var imgItems2 = $('.slider2 li').length;
-  
+  console.log(imgItems2);
   var menu = [ 'Proyectos', 'Cuenta', 'Pagos', 'Contratos', 'Mensajes', 'Archivos'];
   for (i = 0; i < imgItems2; i++) {
     $('.paginacion2').append('<li><h3>' + menu[i] + '</h3></li>');
@@ -3759,7 +3759,7 @@ $(document).ready(function () {
 
   function paginacion2() {
     var paginacionPos2 = $(this).index();
-    paginacionPos2 = paginacionPos2 + 1;
+    
     // //console.log(paginacionPos2);
 
     $('.slider2 li').hide();

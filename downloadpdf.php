@@ -2,6 +2,7 @@
 session_start();
 require_once 'dompdf/autoload.inc.php';
 use Dompdf\Dompdf;
+use Dompdf\Options;
 if ((!isset($_SESSION['usuario'])) && (!isset($_SESSION['email']))) {
     session_destroy();
     // header('Location: cuenta.php#angel-ruiz');
@@ -42,7 +43,9 @@ if ($posicion_coincidencia === false) {
 $html= file_get_contents_curl("https://wingsdevs.com/includes/funciones/pdfcontrato.php?contrato=".$tokencontrato.'-id='.$idProyecto);
 
 // Instanciamos un objeto de la clase DOMPDF.
-$pdf = new DOMPDF();
+$opcions = new Options();
+$opcions->set('isRemoteEnabled', TRUE);
+$pdf = new DOMPDF($opcions);
  
 // Definimos el tamaño y orientación del papel que queremos.
 $pdf->set_paper("letter", "portrait");

@@ -2580,6 +2580,17 @@ ul,ol{
   align-items: center;
   justify-content: space-around;
 }
+@media only screen and (min-width:768px){
+  .contenedor-cuenta .paginacion2, .contenedor-cuenta .paginacion3{
+    width: 70%;
+    height: 100px;
+    margin: 100px auto;
+    
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+  }
+  }
 
 /* end slider */
 /* curriculo */
@@ -5189,6 +5200,7 @@ height: auto;
 margin: 0 auto;
 margin-left: calc(50% - 70px); 
 margin-bottom: 50px;
+position: relative;
 }
 
 .firmax img{
@@ -5434,8 +5446,107 @@ margin-bottom: 50px;
 }
 
 
+.mensajeoff{
+  display: none;
+}
+.mensajeon{
+  position: absolute;
+  display: block;
+  color: #000000;
+grid-column: 2 / 2;
+width: 100%;
+height: 1px;
+  margin: 0 auto;
+  top: -110px ;
+  left: 110px;
+ 
+}
+.globo{
+  position: absolute;
+  
+  font-size: 16px;
+  border-radius: var(--borde);
+  padding: var(--borde);
+  --borde: 1em;
+  font-family: var(--FontPal);
+  z-index: 1; 
+  background-color: var(--ColorFontEspecial);
+  filter: drop-shadow(0px 0px 1px black) ;
+  animation: cambio-color 3s infinite;
+}
 
 
+.globo.iii{
+  width: 250px;
+  top: 0px;
+  left: 0px;
+}
+.globo.ii{
+  width: 250px;
+  top: 100px;
+  left: 20px;
+}
+.firmaf .mensajeon{
+  position: absolute;
+  display: block;
+  color: #000000;
+
+width: 100%;
+height: 10px;
+  margin: 0 auto;
+  top: -100px ;
+  left: -275px;
+
+  
+}
+
+
+.globo::before{
+  content: '';
+  position: absolute; 
+  z-index: -1;
+  width: var(--colita);
+  height: var(--colita);
+}
+.globo.abajo-izquierda::before{
+  --colita: 50px;
+  left: 10px;
+  bottom: calc( var(--colita) / -1.5);
+  border-radius: 0 0 10em 0;
+  box-shadow: 
+    inset calc(var(--colita)/-3) calc(var(--colita)/4) 0 0 var(--ColorFontEspecial);
+    animation: cambio-veg 3s infinite;
+}
+.globo.derecha-arriba::before{
+  --colita: 20px;
+  top: 10px;
+  right: calc( var(--colita) / -1.5);
+  transform: skewY(30deg) rotateZ(-120deg);
+  border-radius: 0 0 0 10em;
+  box-shadow: 
+    inset calc(var(--colita)/2) calc(var(--colita)/3) 0 0 var(--ColorFontEspecial);
+    animation: cambio-veg1 3s infinite;
+}
+@keyframes cambio-color{
+  45%,55% { 
+    background-color: #ffffff; 
+    
+  }
+}
+@keyframes cambio-veg{
+  45%,55% { 
+    box-shadow: 
+    inset calc(var(--colita)/-3) calc(var(--colita)/4) 0 0 #ffffff;
+    
+  }
+}
+@keyframes cambio-veg1{
+  45%,55% { 
+    box-shadow: 
+    inset calc(var(--colita)/2) calc(var(--colita)/3) 0 0 #ffffff;
+    
+  }
+}
 
 
 

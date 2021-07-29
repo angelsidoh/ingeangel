@@ -11,7 +11,7 @@ if ($_POST['accion'] == 'Registrarse') {
     $apellidos = filter_var($_POST['apellidos'], FILTER_SANITIZE_STRING);
     $mail = filter_var($_POST['mail'],  FILTER_SANITIZE_STRING);
     $tel = filter_var($_POST['tel'], FILTER_SANITIZE_STRING);
-    $sector = filter_var($_POST['sector'], FILTER_SANITIZE_STRING);
+    $sector = 'Nuevo Proyecto';
     $select = filter_var($_POST['select'], FILTER_SANITIZE_STRING);
     $idea = filter_var($_POST['idea'], FILTER_SANITIZE_STRING);
     $nombrequienloenvio = 'Usuario: '.$nombre.' '.$apellidos;
