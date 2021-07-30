@@ -324,7 +324,7 @@ if ((!isset($_SESSION['usuario'])) && (!isset($_SESSION['email']))) {
 require 'includes/templates/footer.php';
     ?>
     <script>
-        Conekta.setPublicKey("key_Jpar2eanNLzgX7yiFYcW6Qw");
+        Conekta.setPublicKey("key_d6PzshN9oHkc41dEomzNtWQ");
 
         var successResponseHandler = function(token) {
             var $form = ("#card-form");

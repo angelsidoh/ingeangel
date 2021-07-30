@@ -6,7 +6,7 @@ require('includes/funciones/qr.php');
 
 
 class Payment{
-    private $ApiKey = "key_VSprUz9xQEDyd3bnUGbiZQ";
+    private $ApiKey = "key_tpgg18wFmg3D7r5Ea4rrAQ";
     private $ApiVersion = "2.0.0";
 
     private $UserDB = "root";
