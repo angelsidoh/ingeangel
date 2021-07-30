@@ -28,20 +28,20 @@ if ((!isset($_SESSION['usuario'])) && (!isset($_SESSION['email']))) {
            $contratox .= $cadena_de_texto[$x];
         }
     }
-    echo $contratox;
+   
     $resultadoProyecto = obtenerPrecios($contratox);
 
     if ($resultadoProyecto->num_rows) {
         foreach ($resultadoProyecto as $proyecto) {
         
-           echo $precioBasico = $proyecto['basico_precio'];
+         $precioBasico = $proyecto['basico_precio'];
             // echo $precioNegocio = $proyecto['negocio_precio'];
             // echo $precioProfesional = $proyecto['profesional_precio'];
-           echo $precioHosting = $proyecto['hosting_precio'];
-           echo $precioDominio = $proyecto['dominio_precio'];
-            echo $precioMantenimiento = $proyecto['mantenimiento_precio'];
-            echo $precioBD = $proyecto['basesdatos_precio'];
-            echo $precioProgramacion = $proyecto['programacion_precio'];
+            $precioHosting = $proyecto['hosting_precio'];
+            $precioDominio = $proyecto['dominio_precio'];
+             $precioMantenimiento = $proyecto['mantenimiento_precio'];
+             $precioBD = $proyecto['basesdatos_precio'];
+             $precioProgramacion = $proyecto['programacion_precio'];
         }
     }
 
@@ -251,7 +251,7 @@ $direccion_usuario = $calle.' #'.$numie.' Colonia: '.$col;
 
                         <div class="dato1">
 
-                            <input  data-conekta="card[name]" class="form-control" name="name" id="name" type="text" value="JOSÉ ANGEL RUIZ CHÁVEZ">
+                            <input style="text-transform: uppercase;"  data-conekta="card[name]" class="form-control" name="name" id="name" type="text" value="<?php echo $usuario.' '.$apellidos;?>">
                         </div>
                         <div class="text-dato1">
                             <p>Nombre</p>
@@ -273,7 +273,7 @@ $direccion_usuario = $calle.' #'.$numie.' Colonia: '.$col;
                         </div>
                         <div class="dato661">
 
-                            <input class="form-control" type="text" name="description" id="description" maxlength="100" value="<?php echo 'Contrato: (' . ($superVecTokenContratoPago[$direccionx][$direcciony] . '-' . $superVecIdPago[$direccionx][$direcciony]) . ') ' . 'Y Servicios varios del Proyecto (' . $vectorNombresProyectos[$direccionProyecto] . ').'; ?>">
+                            <input class="form-control" type="text" name="description" id="description" maxlength="100" value="<?php echo 'Contrato: (' . ($superVecTokenContratoPago[$direccionx][$direcciony] . '-' . $superVecIdPago[$direccionx][$direcciony]) . ') ' . 'Y Servicios varios del Proyecto (' . $vectorNombresProyectos[$direccionProyecto] . ').'; ?>" disabled>
                         </div>
 
                         <div class="text-dato661">
@@ -286,9 +286,10 @@ $direccion_usuario = $calle.' #'.$numie.' Colonia: '.$col;
                           
                                 $cuenta = (($precioDominio + $precioHosting + $precioBD + $precioProgramacion + $precioMantenimiento)* $superVecContMesesPago[$direccionx][$direcciony]);
                                 $cuenta = $cuenta + ($cuenta*.16);
-                                echo  '$' . $cuenta . ' MXN';
+                                $monto = number_format($cuenta,2, '.', ',');
+                                echo  '$' . $monto . ' MXN';
                            
-                            ?>">
+                            ?>" disabled>
                         </div>
                         <div class="dato777">
 
@@ -299,7 +300,7 @@ $direccion_usuario = $calle.' #'.$numie.' Colonia: '.$col;
                                 $cuenta = $cuenta + ($cuenta*.16);
                                 echo $cuenta;
                            
-                            ?>">
+                            ?>" disabled>
                         </div>
                         <div class="dato7777">
 

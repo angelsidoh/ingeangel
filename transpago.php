@@ -230,7 +230,7 @@ if ((!isset($_SESSION['usuario'])) && (!isset($_SESSION['email']))) {
 
                         <div class="dato1">
 
-                            <input  data-conekta="card[name]" class="form-control" name="name" id="name" type="text" value="JOSÉ ANGEL RUIZ CHÁVEZ">
+                            <input style="text-transform: uppercase;"  data-conekta="card[name]" class="form-control" name="name" id="name" type="text" value="<?php echo $usuario .' '. $apellidos;?>">
                         </div>
                         <div class="text-dato1">
                             <p>Nombre de titular de la cuenta.</p>
@@ -272,7 +272,7 @@ if ((!isset($_SESSION['usuario'])) && (!isset($_SESSION['email']))) {
                         </div>
                         <div class="dato66">
 
-                            <input class="form-control" type="text" name="description" id="description" maxlength="100" value="<?php echo 'Contrato: (' . ($superVecTokenContratoPago[$direccionx][$direcciony] . '-' . $superVecIdPago[$direccionx][$direcciony]) . ') ' . 'Y Servicios varios del Proyecto (' . $vectorNombresProyectos[$direccionProyecto] . ').'; ?>">
+                            <input style="width: 100%;" class="" type="text" name="description" id="description" maxlength="100" value="<?php echo 'Contrato: (' . ($superVecTokenContratoPago[$direccionx][$direcciony] . '-' . $superVecIdPago[$direccionx][$direcciony]) . ') ' . 'Y Servicios varios del Proyecto (' . $vectorNombresProyectos[$direccionProyecto] . ').'; ?>" disabled>
                         </div>
 
                         <div class="text-dato66">
@@ -287,7 +287,7 @@ if ((!isset($_SESSION['usuario'])) && (!isset($_SESSION['email']))) {
                                 $cuenta = $cuenta+($cuenta*0.16);
                                 echo  '$' . $cuenta . '.00 MXN';
                         
-                            ?>">
+                            ?>" disabled>
                         </div>
                         <div class="dato777">
 

@@ -295,7 +295,7 @@ if ((!isset($_SESSION['usuario'])) && (!isset($_SESSION['email']))) {
                                                         $cuerpo = "Lista de dudas: ";
                                                         $cuerpo = str_replace(' ', '%20', $cuerpo);
                                                         ?>
-                                                        <a href="mailto:infoingeangel@gmail.com?subject=<?php echo $asunto; ?>&body=<?php echo $cuerpo; ?>" target="_blank">
+                                                        <a href="mailto:wingsdevs@gmail.com?subject=<?php echo $asunto; ?>&body=<?php echo $cuerpo; ?>" target="_blank">
                                                             <p>Paso <?php echo $y + 1; ?>: <i class="fas fa-caret-right"></i> <?php echo  $superVecDesp[$x][$y]; ?></p>
 
 
@@ -375,7 +375,7 @@ if ((!isset($_SESSION['usuario'])) && (!isset($_SESSION['email']))) {
                                             <input type="text" id="cpostal" name="cpostal" placeholder="Código Postal" value="<?php echo $cp; ?>">
                                         </div> <!-- rnormal__tarjeta -->
                                         <div class="text-dato2">
-                                            <p>Domicilio</p>
+                                            <p>Dirección del cliente</p>
                                         </div>
                                         <div class="dato3">
                                             <input style="border: 1px solid #161616;" type="text" id="email" name="email" placeholder="Ingresa tu email" value="<?php echo $email; ?>" disabled>

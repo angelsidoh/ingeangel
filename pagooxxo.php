@@ -297,7 +297,7 @@ $direccion_usuario = $calle.' #'.$numie.' Colonia: '.$col;
 
                         <div class="dato1">
 
-                            <input  data-conekta="card[name]" class="form-control" name="name" id="name" type="text" value="JOSÉ ANGEL RUIZ CHÁVEZ">
+                            <input style="text-transform: uppercase;"  data-conekta="card[name]" class="form-control" name="name" id="name" type="text" value="<?php echo $usuario.' '.$apellidos?>">
                         </div>
                         <div class="text-dato1">
                             <p>Nombre</p>
@@ -319,7 +319,7 @@ $direccion_usuario = $calle.' #'.$numie.' Colonia: '.$col;
                         </div>
                         <div class="dato661">
 
-                            <input class="form-control" type="text" name="description" id="description" maxlength="100" value="<?php echo 'Contrato: (' . ($superVecTokenContratoPago[$direccionx][$direcciony] . '-' . $superVecIdPago[$direccionx][$direcciony]) . ') ' . 'Y Servicios varios del Proyecto (' . $vectorNombresProyectos[$direccionProyecto] . ').'; ?>">
+                            <input class="form-control" type="text" name="description" id="description" maxlength="100" value="<?php echo 'Contrato: (' . ($superVecTokenContratoPago[$direccionx][$direcciony] . '-' . $superVecIdPago[$direccionx][$direcciony]) . ') ' . 'Y Servicios varios del Proyecto (' . $vectorNombresProyectos[$direccionProyecto] . ').'; ?>" disabled>
                         </div>
 
                         <div class="text-dato661">
@@ -331,10 +331,12 @@ $direccion_usuario = $calle.' #'.$numie.' Colonia: '.$col;
                             <input class="form-control" type="text" value="<?php
                           
                                 $cuenta = (($precioDominio + $precioHosting + $precioBD + $precioProgramacion + $precioMantenimiento)* $superVecContMesesPago[$direccionx][$direcciony]);
+                               
                                 $cuenta = $cuenta + ($cuenta*.16);
-                                echo  '$' . $cuenta . ' MXN';
+                                $monto = number_format($cuenta,2, '.', ',');
+                                echo  '$' . $monto . ' MXN';
                            
-                            ?>">
+                            ?>" disabled>
                         </div>
                         <div class="dato777">
 
@@ -345,7 +347,7 @@ $direccion_usuario = $calle.' #'.$numie.' Colonia: '.$col;
                                 $cuenta = $cuenta + ($cuenta*.16);
                                 echo $cuenta;
                            
-                            ?>">
+                            ?>" disabled>
                         </div>
                         <div class="dato7777">
 
