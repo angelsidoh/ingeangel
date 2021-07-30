@@ -64,9 +64,9 @@
                 </div>
                 <div class="iconos__elem2">
 
-                    <a href="https://www.facebook.com/Angel.Sidoh"><i class="fab fa-facebook-square"></i></a>
+                    <a href="https://www.facebook.com/WingsDevs-108991444712996" target="_blank"><i class="fab fa-facebook-square"></i></a>
 
-                    <a href="https://www.youtube.com/channel/UCvuZS4_bAXe0aVed8KxkAYg?view_as=subscriber"><i class="fab fa-youtube"></i></a>
+                    <a href="https://www.youtube.com/channel/UCbwcpTGTbSkiZP1Td0HOOJw" target="_blank"><i class="fab fa-youtube"></i></a>
 
                 </div>
             </div>

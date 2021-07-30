@@ -2323,7 +2323,7 @@ function consultaBD(dato) {
       if (respuesta.Estado === 'Incorrecto') {
         swal({
           content: "",
-          text: 'Los datos son incorrectos.¡Por favor Verificalos!',
+          text: 'Los datos son incorrectos.¡Por favor Verifícalos!',
           icon: "error",
           button: {
             text: "Continuar",

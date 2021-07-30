@@ -3927,9 +3927,10 @@ ul{
   font-size: 22px; 
 }
 .iconos__elem2{
-  text-align: center;
-  margin-top: 0px;
-  font-size: 32px;
+  text-align: start;
+  margin-top: 10px;
+  
+  font-size: 24px;
   
 }
 .iconos__elem2 a{

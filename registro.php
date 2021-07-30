@@ -187,7 +187,7 @@ if (isset($_SESSION['email'])) {
                             <p>Correo Electrónico</p>
                         </div>
                         <div class="dato3">
-                            <input type="text" id="mail" name="mail" placeholder="Escriba su Correo Electrónico" required>
+                            <input style="text-transform: lowercase;" type="text" id="mail" name="mail" placeholder="Escriba su Correo Electrónico" required>
                         </div> <!-- rnormal__tarjeta -->
                         <div class="text-dato3">
                             <p>Teléfono</p>
