@@ -261,7 +261,10 @@ if ((!isset($_SESSION['usuario'])) && (!isset($_SESSION['email']))) {
                     $operacion = 10000 * 100;
                 }
             }
-            if ($s == $reps - 1) {
+            $resultadosreps = $reps - 1;
+            intval($resultadosreps);
+             if ($s == (intval($resultadosreps))) {
+           
                 $operacion = intval($cuenta * 100);
             }
             // echo '<br>-->'.$operacion.'<br>';

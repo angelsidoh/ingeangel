@@ -2167,7 +2167,7 @@ function actualizarUserUserDB(dato) {
           .then((value) => {
             switch (value) {
               default:
-                window.location.href = 'cuenta.php#perfil';
+                location.reload();
             }
           });
 

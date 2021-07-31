@@ -165,7 +165,7 @@ if (isset($_SESSION['email'])) {
             <title>Registro Nuevo</title>
         <div class="contenedor-especial">
             <div class="titulo-seccion">
-                <p>¿Tiene una gran idea? LLené el siguiente formulario</p>
+                <p>¿Tienes una gran idea? ¡LLena el siguiente formulario sin ningún compromiso!</p>
                 <h1 id="sparklemaster" class="sparklemaster" style="color:  #93A9CC;">Registro de Usuarios</h1>
             </div>
             <div class="datos-contrato">
@@ -175,25 +175,25 @@ if (isset($_SESSION['email'])) {
                             <p>Nombre</p>
                         </div>
                         <div class="dato3">
-                            <input type="text" id="nameuser" name="nameuser" placeholder="Escriba su Nombre" required>
+                            <input type="text" id="nameuser" name="nameuser" placeholder="Nombre" required>
                         </div> <!-- rnormal__tarjeta -->
                         <div class="text-dato3">
                             <p>Apellidos</p>
                         </div>
                         <div class="dato3">
-                            <input type="text" id="apellidos" name="apellidos" placeholder="Escriba sus Apellidos" required>
+                            <input type="text" id="apellidos" name="apellidos" placeholder="Apellidos" required>
                         </div> <!-- rnormal__tarjeta -->
                         <div class="text-dato3">
                             <p>Correo Electrónico</p>
                         </div>
                         <div class="dato3">
-                            <input style="text-transform: lowercase;" type="text" id="mail" name="mail" placeholder="Escriba su Correo Electrónico" required>
+                            <input style="text-transform: lowercase;" type="text" id="mail" name="mail" placeholder="Correo Electrónico" required>
                         </div> <!-- rnormal__tarjeta -->
                         <div class="text-dato3">
                             <p>Teléfono</p>
                         </div>
                         <div class="dato3">
-                            <input type="text" id="tel" name="tel" placeholder="Escriba su Número de Teléfono" required>
+                            <input type="text" id="tel" name="tel" placeholder="Teléfono" required>
                         </div> <!-- rnormal__tarjeta -->
                         <div style="display: none;" class="text-dato3">
                             <p>Sitio web</p>
@@ -217,18 +217,12 @@ if (isset($_SESSION['email'])) {
                         </div>
                         <div class="dato3">
                             <div class="contobjs">
-                                <textarea type="descrip" id="idea" name="idea" placeholder="Escriba la idea de su proyecto" onkeyup="countChars2(this);" required></textarea>
+                                <textarea type="descrip" id="idea" name="idea" placeholder="¡Escribe la idea que tienes para tu sitio web!" onkeyup="countChars2(this);" required></textarea>
                                 <p id="charNum0">0 Caracteres</p>
                             </div>
-
                         </div> <!-- rnormal__tarjeta -->
-
-
-
-
                     </div>
                     <div class="sub-boton">
-
                         <input id="btnagregarideauser" type="submit" value="Registrarse" class="button">
 
                     </div>

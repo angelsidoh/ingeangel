@@ -239,13 +239,15 @@ if ((!isset($_SESSION['usuario'])) && (!isset($_SESSION['email']))) {
         // echo '<br>'.
         $reps = bcdiv($reps, '1', 4);
         // echo '<br>'.
-        $reps = (($reps - $modu) + 1);
+       $reps = (($reps - $modu) + 1);
         for ($s = 0; $s < $reps; $s++) {
+           
             if ($cuenta >= 10000) {
                 $rep++;
                 //    echo '<br>'.
-                $cuenta = $cuenta - 10000;
+               $cuenta = $cuenta - 10000;
             }
+           
 
 
 
@@ -255,15 +257,19 @@ if ((!isset($_SESSION['usuario'])) && (!isset($_SESSION['email']))) {
             // echo '<br>-->'.$operacion;
             // echo $superVecIdPago[$direccionx][$direcciony];
             if ($s != $reps - 1) {
-                // echo '<br>hola<br>';
+               
                 for ($x = 1; $x < $rep ; $x++) {
-                    $operacion = 10000 * 100;
+                   $operacion = 10000 * 100;
                 }
             }
-            if ($s == $reps - 1) {
+           
+          
+           $resultadosreps = $reps - 1;
+           intval($resultadosreps);
+            if ($s == (intval($resultadosreps))) {
                 $operacion = intval($cuenta * 100);
             }
-            // echo '<br>-->'.$operacion.'<br>';
+         
 
             $name = $usuario . ' ' . $apellidos;
             $direccion_usuario = $calle . ' #' . $numie . ' Colonia: ' . $col;
@@ -284,7 +290,7 @@ if ((!isset($_SESSION['usuario'])) && (!isset($_SESSION['email']))) {
                 if ($resultado != false) {
                     
                     ?>
-                     ?>
+                     
         
         <script type="text/javascript">
 window.location="partstikeds.php?pago=<?php echo $_GET['pago']?>#angel-ruiz";
@@ -296,6 +302,7 @@ window.location="partstikeds.php?pago=<?php echo $_GET['pago']?>#angel-ruiz";
     <?php
 
                 } else {
+                   
                     try {
                         $thirty_days_from_now = (new DateTime())->add(new DateInterval('P30D'))->getTimestamp();
 
@@ -354,6 +361,12 @@ window.location="partstikeds.php?pago=<?php echo $_GET['pago']?>#angel-ruiz";
                         ':monto_pagoparts' => $operacion
 
                     ));
+                    $orderx = $order->id;
+                    $stmt = $connf->prepare("UPDATE pagos SET idconekta_pago = ? WHERE id_pago = ?");
+                    $stmt->bind_param("si", $orderx ,$superVecIdPago[$direccionx][$direcciony]);
+                    $stmt->execute();
+                    $stmt->close();
+                    $connf->close();
     ?>
         <!-- <html>
 
