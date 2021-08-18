@@ -360,7 +360,7 @@ $direccion_usuario = $calle.' #'.$numie.' Colonia: '.$col;
                         </div>
                         <div class="sub-botonx">
                             <br>
-                            <a class="button" href="ox.php?pago=<?php echo $_GET['pago']; ?>#angel-ruiz">Pagar</a>
+                            <a class="button" href="ox?pago=<?php echo $_GET['pago']; ?>#abcdef">Pagar</a>
                         </div>
                     </div>
                     <br>

@@ -87,7 +87,7 @@ src="https://www.facebook.com/tr?id=4525586337466244&ev=PageView&noscript=1"
         <div class="botones_barra">
           <a href="<?php
                     if ((!isset($_SESSION['usuario'])) && (!isset($_SESSION['email']))) {
-                      echo 'login#angel-ruiz';
+                      echo 'login#abcdef';
                     } else {
                       echo 'logout.php';
                     } ?>"><?php
@@ -431,7 +431,7 @@ src="https://www.facebook.com/tr?id=4525586337466244&ev=PageView&noscript=1"
 
         <!--  -->
       </div>
-      <div id="angel-ruiz"></div>
+      <div id="abcdef"></div>
       <div id="menu-screen" class="nav">
 
         <div class="nav__content">

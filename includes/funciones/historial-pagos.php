@@ -1,6 +1,6 @@
 <?php
 
-var_dump( $idpagoProcesado);
+
 
 
 
@@ -122,11 +122,11 @@ var_dump( $idpagoProcesado);
                                         if ($f != 0) {
                                             if ($supervectokenConekta[$x][$f] == '' || $supervecforTarget[$x][$f] == 0 || $supervecfechapagoPago == '') {
                                     ?>
-                                                <a href="pago.php?pago=<?php
+                                                <a href="pago?pago=<?php
 
                                                                         echo $superVecTokenContratoPago[$x][$f] . '-' . $superVecIdPago[$x][$f] . '$' . $vectorIdProyectos[$x];
 
-                                                                        ?>#angel-ruiz" target="_blank">
+                                                                        ?>#abcdef" >
                                                     <p> Contrato (#<?php
                                                                     echo $superVecTokenContratoPago[$x][$f].'-'.$superVecIdPago[$x][$f];
                                                                     echo $superVecidPagoProcesado[$x][$f];
@@ -235,7 +235,7 @@ var_dump( $idpagoProcesado);
                                     <?php for ($f = 0; $f < sizeof($superVecIdProyectoPago[$x]); $f++) {
                                         if ($superVecTokenpagoPago[$x][$f] != '' && $supervectokenConekta[$x][$f] != '' && $supervecforTarget[$x][$f] != 0 && $supervecfechapagoPago != '') {
                                     ?>
-                                            <a href="pago.php?pago=<?php echo $superVecTokenContratoPago[$x][$f] . '-' . $superVecIdPago[$x][$f] . '$' . $vectorIdProyectos[$x]; ?>#angel-ruiz" target="_blank">
+                                            <a href="pago?pago=<?php echo $superVecTokenContratoPago[$x][$f] . '-' . $superVecIdPago[$x][$f] . '$' . $vectorIdProyectos[$x]; ?>#abcdef">
                                                 <p>
                                                     Contrato (#<?php
                                                                 echo $superVecTokenContratoPago[$x][$f].'-'.$superVecIdPago[$x][$f];;

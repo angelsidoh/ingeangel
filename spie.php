@@ -286,7 +286,7 @@ if ((!isset($_SESSION['usuario'])) && (!isset($_SESSION['email']))) {
                         ?>
 
 <script type="text/javascript">
-   window.location="partstikedspei.php?pago=<?php echo $_GET['pago'] ?>#angel-ruiz";
+   window.location="partstikedspei?pago=<?php echo $_GET['pago'] ?>#abcdef";
    
 </script>
                     <?php
@@ -388,6 +388,6 @@ if ((!isset($_SESSION['usuario'])) && (!isset($_SESSION['email']))) {
             ?>
 
          <script type="text/javascript">
-            window.location="partstikedspei.php?pago=<?php echo $_GET['pago'] ?>#angel-ruiz";
+            window.location="partstikedspei?pago=<?php echo $_GET['pago'] ?>#abcdef";
             
         </script>

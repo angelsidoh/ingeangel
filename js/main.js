@@ -2343,11 +2343,11 @@ function consultaBD(dato) {
           .then((value) => {
             switch (value) {
               default:
-                window.location.href = 'cuenta.php#angel-ruiz';
+                window.location.href = 'cuenta#abcdef';
             }
           });
         setTimeout(() => {
-          window.location.href = 'cuenta.php#angel-ruiz';
+          window.location.href = 'cuenta#abcdef';
         }, 3200);
       }
     }
@@ -3575,7 +3575,7 @@ if (pathname == '/index.php' || pathname == '/') {
   $(document).ready(function () {
     $("body").css("background-color", "#ffffff");
   });
-} else if (pathname == '/login.php') {
+} else if (pathname == '/login' || pathname == '/login.php') {
   $(document).ready(function () {
     $("body").css("background-color", "#ffffff");
   });

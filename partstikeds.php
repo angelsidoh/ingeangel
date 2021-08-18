@@ -46,7 +46,7 @@ if ($posicion_coincidencia === false) {
             if ($condicion0 == $tiked['idpago_pagoparts']) {
                 $contadortiked++;
     ?>
-                <a href="javascript:void(0);" onclick="window.open('imprimiroxxo.php?ref=x<?php echo $tiked['order_pagoparts'].'m'. $tiked['monto_pagoparts']; ?>', 'popup', 'top=100, left=100, width=599, height=680, toolbar=NO, resizable=NO, Location=NO, Menubar=NO, Titlebar=No, Status=NO')" rel="nofollow">
+                <a href="javascript:void(0);" onclick="window.open('imprimiroxxo?ref=x<?php echo $tiked['order_pagoparts'].'m'. $tiked['monto_pagoparts']; ?>', 'popup', 'top=100, left=100, width=599, height=680, toolbar=NO, resizable=NO, Location=NO, Menubar=NO, Titlebar=No, Status=NO')" rel="nofollow">
                     <div class="tikedoxxo">
                         <div class="part">
                             <p><?php echo $contadortiked; ?></p>

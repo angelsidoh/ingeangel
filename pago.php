@@ -374,7 +374,7 @@ if ((!isset($_SESSION['usuario'])) && (!isset($_SESSION['email']))) {
                                     <div class="master"><i class="fab fa-cc-mastercard"></i></div>
                                     <div class="american"><i class="fab fa-cc-amex"></i></div>
                                     <div class="btnpago">
-                                        <a class="button" href="transpago.php?pago=<?php echo $_GET['pago']; ?>#angel-ruiz">Pagar</a>
+                                        <a class="button" href="transpago?pago=<?php echo $_GET['pago']; ?>#abcdef">Pagar</a>
 
 
                                     </div>
@@ -389,7 +389,7 @@ if ((!isset($_SESSION['usuario'])) && (!isset($_SESSION['email']))) {
                                         <img src="img/terceros/oxxopay.png" alt="oxxo pay">
                                     </div>
                                     <div class="btnpago">
-                                        <a class="button" href="pagooxxo.php?pago=<?php echo $_GET['pago']; ?>#angel-ruiz">Pagar</a>
+                                        <a class="button" href="pagooxxo?pago=<?php echo $_GET['pago']; ?>#abcdef">Pagar</a>
                                     </div>
                                 </div>
                               
@@ -401,7 +401,7 @@ if ((!isset($_SESSION['usuario'])) && (!isset($_SESSION['email']))) {
                                         <img src="img/terceros/speipay.png" alt="transferencia SPEI">
                                     </div>
                                     <div class="btnpago">
-                                        <a class="button" href="spie.php?pago=<?php echo $_GET['pago']; ?>#angel-ruiz">Pagar</a>
+                                        <a class="button" href="spie?pago=<?php echo $_GET['pago']; ?>#abcdef">Pagar</a>
                                     </div>
                                 </div>
                             </div>
@@ -761,7 +761,7 @@ if ((!isset($_SESSION['usuario'])) && (!isset($_SESSION['email']))) {
                         <div class="master"><i class="fab fa-cc-mastercard"></i></div>
                         <div class="american"><i class="fab fa-cc-amex"></i></div>
                         <div class="btnpago">
-                            <a class="button" href="transpago.php?pago=<?php echo $_GET['pago']; ?>#angel-ruiz">Pagar</a>
+                            <a class="button" href="transpago?pago=<?php echo $_GET['pago']; ?>#abcdef">Pagar</a>
 
 
                         </div>
@@ -774,7 +774,7 @@ if ((!isset($_SESSION['usuario'])) && (!isset($_SESSION['email']))) {
                             <i class="fab fa-cc-paypal"></i>
                         </div>
                         <div class="btnpago">
-                            <a class="button" href="paypalpagos.php?pago=<?php echo $_GET['pago']; ?>#angel-ruiz">Pagar</a>
+                            <a class="button" href="paypalpagos?pago=<?php echo $_GET['pago']; ?>#abcdef">Pagar</a>
                         </div>
                     </div>
                     <div class="pago">
@@ -787,7 +787,7 @@ if ((!isset($_SESSION['usuario'])) && (!isset($_SESSION['email']))) {
                             <img src="img/terceros/oxxopay.png" alt="oxxo pay">
                         </div>
                         <div class="btnpago">
-                            <a class="button" href="pagooxxo.php?pago=<?php echo $_GET['pago']; ?>#angel-ruiz">Pagar</a>
+                            <a class="button" href="pagooxxo?pago=<?php echo $_GET['pago']; ?>#abcdef">Pagar</a>
                         </div>
                     </div>
                     
@@ -799,7 +799,7 @@ if ((!isset($_SESSION['usuario'])) && (!isset($_SESSION['email']))) {
                             <img src="img/terceros/speipay.png" alt="transferencia SPEI">
                         </div>
                         <div class="btnpago">
-                            <a class="button" href="prespie.php?pago=<?php echo $_GET['pago']; ?>#angel-ruiz">Pagar</a>
+                            <a class="button" href="prespie?pago=<?php echo $_GET['pago']; ?>#abcdef">Pagar</a>
                         </div>
                     </div>
                     

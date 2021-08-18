@@ -293,7 +293,7 @@ if ((!isset($_SESSION['usuario'])) && (!isset($_SESSION['email']))) {
                      
         
         <script type="text/javascript">
-window.location="partstikeds.php?pago=<?php echo $_GET['pago']?>#angel-ruiz";
+window.location="partstikeds?pago=<?php echo $_GET['pago']?>#abcdef";
 </script>
       
      
@@ -441,7 +441,7 @@ window.location="partstikeds.php?pago=<?php echo $_GET['pago']?>#angel-ruiz";
         ?>
         
                                     <script type="text/javascript">
-window.location="partstikeds.php?pago=<?php echo $_GET['pago']?>#angel-ruiz";
+window.location="partstikeds?pago=<?php echo $_GET['pago']?>#abcdef";
 </script>
        
     
