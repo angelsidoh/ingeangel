@@ -19,6 +19,7 @@ session_start();
   <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap" rel="stylesheet">
 
   <script src="https://kit.fontawesome.com/f429da79c0.js" crossorigin="anonymous"></script>
+  
 
   <link rel="stylesheet" href="js/plugins/malihu-custom-scrollbar-plugin-master/malihu-custom-scrollbar-plugin-master/jquery.mCustomScrollbar.css">
 
@@ -31,13 +32,35 @@ session_start();
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
 
+
+
   <meta name="theme-color" content="#fafafa">
   <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' />
   <script src="js/DetectarVisibilidad.js?v=<?php echo time(); ?>"></script>
+ <!-- Facebook Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '4525586337466244');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=4525586337466244&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Facebook Pixel Code -->
+<meta name="facebook-domain-verification" content="uqe5cumlot8912hqk4z8p5fcmkpugt" />
   <!-- 08/09/2020 INICIO DEL PROYECTO-->
 </head>
 
 <body id="boddu">
+
+
   <!--[if IE]>
     <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
     <![endif]-->
@@ -64,7 +87,7 @@ session_start();
         <div class="botones_barra">
           <a href="<?php
                     if ((!isset($_SESSION['usuario'])) && (!isset($_SESSION['email']))) {
-                      echo 'login.php#angel-ruiz';
+                      echo 'login#angel-ruiz';
                     } else {
                       echo 'logout.php';
                     } ?>"><?php
@@ -257,7 +280,7 @@ session_start();
                   
                   </div>
                   <a style="font-size: 24px;" class="button" href="registro.php#angel-ruiz">
-                  Cotizar/Registro
+                  Registro
                 </a>
                 </div>
 
@@ -384,9 +407,9 @@ session_start();
                </div>
              
              </div>
-             <a class="button" href="registro.php#angel-ruiz">
-             Cotizar
-           </a>
+             <a style="font-size: 24px;" class="button" href="registro.php#angel-ruiz">
+             Registro
+                </a>
            </div>
 
             </div>

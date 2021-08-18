@@ -97,7 +97,7 @@ sociedadintelectualdelaguactemexicano.com
             <h4><i class="fas fa-chevron-right"></i>&nbsp;Contacto</h4>
             <p><i class="fas fa-phone-alt"></i>&nbsp;Cel: 452 144 1689</p>
             <p><i class="fas fa-envelope"></i>&nbsp;angel._ruiz@hotmail.com</p>
-            <p><i class="fas fa-globe"></i><a href=" http://www.ingeangel.com">&nbsp;http://www.ingeangel.com</a> </p>
+            <p><i class="fas fa-globe"></i><a href=" https://wingsdevs.com">&nbsp;https://wingsdevs.com</a> </p>
             <p><i class="fas fa-map-marker-alt"></i>&nbsp;San José de la Mina #42 Col. San &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;José de la Mina. CP:60125</p>
         </div>
         <div class="txt10">

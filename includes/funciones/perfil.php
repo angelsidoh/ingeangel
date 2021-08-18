@@ -1,5 +1,8 @@
+
 <div class="contenedor-cuenta">
+
     <div class="contenedor-perfil" id="perfil">
+   
         <div class="imagen">
             <div class="foto">
 

@@ -53,7 +53,7 @@
                         <i class="fab fa-whatsapp-square"></i>
                     </div>
                     <div class="text2__a">
-                        <p>452 144 16 89</p>
+                        <p>4521798410</p>
                     </div>
                     <div class="icono3__a">
                         <i class="fas fa-envelope"></i>
@@ -176,7 +176,8 @@
     $(document).ready(function() {
         compruebaAceptaCookies();
     });
-</script><!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+</script>
+<!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-NMVHLC0SJF"></script>
 <script>
@@ -187,7 +188,7 @@
   gtag('config', 'G-NMVHLC0SJF');
 </script>
 <script src="https://www.google-analytics.com/analytics.js" async></script>
-<div id="cajacookies">
+<div style="z-index: 99;" id="cajacookies">
     <p>
     <div onclick="aceptarCookies()" class="pull-right btncookie third"><i class="fa fa-times"></i> Aceptar y cerrar éste mensaje</div>
     Éste sitio web usa cookies, si permanece aquí acepta su uso.
@@ -195,6 +196,23 @@
     </p>
 </div>
 <script>
+     <!-- Facebook Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '4525586337466244');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=4525586337466244&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Facebook Pixel Code -->
     function cambiaVisibilidad(visible, elemento) {
 
         if (visible == true) {
@@ -255,6 +273,33 @@
 
     // inViewportPartially4(paquetes4, cambiaVisibilidad4);
     // inViewportTotally4(paquetes4, cambiaVisibilidad4);
+</script>
+<!-- Messenger plugin del chat Code -->
+<div id="fb-root"></div>
+
+<!-- Your plugin del chat code -->
+<div id="fb-customer-chat" class="fb-customerchat">
+</div>
+
+<script>
+  var chatbox = document.getElementById('fb-customer-chat');
+  chatbox.setAttribute("page_id", "108991444712996");
+  chatbox.setAttribute("attribution", "biz_inbox");
+
+  window.fbAsyncInit = function() {
+    FB.init({
+      xfbml            : true,
+      version          : 'v11.0'
+    });
+  };
+
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = 'https://connect.facebook.net/es_LA/sdk/xfbml.customerchat.js';
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
 </script>
 
 

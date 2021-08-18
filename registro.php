@@ -217,7 +217,7 @@ if (isset($_SESSION['email'])) {
                         </div>
                         <div class="dato3">
                             <div class="contobjs">
-                                <textarea type="descrip" id="idea" name="idea" placeholder="¡Escribe la idea que tienes para tu sitio web!" onkeyup="countChars2(this);" required></textarea>
+                                <textarea type="descrip" id="idea" name="idea" placeholder="¡Escribe la idea que tienes para tu proyecto! Con gusto te enviaremos sugerencias." onkeyup="countChars2(this);" required></textarea>
                                 <p id="charNum0">0 Caracteres</p>
                             </div>
                         </div> <!-- rnormal__tarjeta -->
@@ -291,7 +291,7 @@ if (isset($_SESSION['email'])) {
                         </div>
                         <div class="dato3">
                             <div class="contobjs">
-                                <textarea type="descrip" id="idea" name="idea" placeholder="Escriba la idea de su proyecto" onkeyup="countChars2(this);" required></textarea>
+                                <textarea type="descrip" id="idea" name="idea" placeholder="¡Escribe la idea que tienes para tu proyecto! Con gusto te enviaremos sugerencias." onkeyup="countChars2(this);" required></textarea>
                                 <p id="charNum0">0 Caracteres</p>
                             </div>
 

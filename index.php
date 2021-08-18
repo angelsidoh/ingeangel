@@ -25,6 +25,8 @@ if ($resultadoProyecto->num_rows) {
 <meta name="author" content="José Angel Ruiz Chávez" />
 <meta name="copyright" content="José Angel Ruiz Chávez" />
 
+
+
 <!-- <div class="contenedorx">
     <div id="paquetes" class="contenedor-paquetes">
         <div class="paquete1">
