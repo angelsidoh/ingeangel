@@ -324,7 +324,7 @@ if ($resultadoUser->num_rows) {
                                                 <input style="" type="text" id="email<?php echo $x;?>" name="email" placeholder="" value="<?php echo $email;?>" required>
                                             </div> <!-- rnormal__tarjeta -->
                                             <div class="dato3">
-                                                <input style="display: none;" type="text" id="idusuario<?php echo $x;?>" name="idusuario" placeholder="" value="<?php echo $superVecIdUsuario[0][$x]; ?>" required>
+                                                <input  style="display: none;" type="text" id="idusuario<?php echo $x;?>" name="idusuario" placeholder="" value="<?php echo $superVecIdUsuario[0][$x]; ?>" required>
                                             </div> <!-- rnormal__tarjeta -->
                                           
                                             <div class="dato3">
@@ -362,6 +362,7 @@ if ($resultadoUser->num_rows) {
             </div>
         </div>
     <?php
+
     }
     ?>
      <div class="contenedor-especial">
@@ -373,7 +374,7 @@ if ($resultadoUser->num_rows) {
                                     <form id="agregar-nuevomensaje<?php echo $x;?>" action="#">
                                         <div class="contenido-cuenta">
                                             <div class="text-dato3">
-                                                <p>Asunto</p>
+                                                <p>Asuntox</p>
                                             </div>
                                             <div class="dato3">
                                                 <input type="text" id="asunto<?php echo $x;?>" name="asunto" placeholder="Escriba el asunto" value="" required>
@@ -389,7 +390,7 @@ if ($resultadoUser->num_rows) {
                                             </div> <!-- rnormal__tarjeta -->
                                             
                                             <div class="dato3">
-                                                <input style="display:none;" type="text" id="idusuario<?php echo $x;?>" name="idusuario" placeholder="" value="<?php echo $superVecIdUsuario[0][$x]; ?>" required>
+                                                <input style="display: none;" type="text" id="idusuario<?php echo $x;?>" name="idusuario" placeholder="" value="<?php  echo $superVecIdUsuario[0][0]; ?>" required>
                                             </div> <!-- rnormal__tarjeta -->
                                             <div class="dato3">
                                                 <input style="" type="text" id="email<?php echo $x;?>" name="email" placeholder="" value="<?php echo $email;?>" required>

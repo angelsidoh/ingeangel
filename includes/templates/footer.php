@@ -86,10 +86,10 @@
                 <!-- <a href="#" class="efecto"><i class="fas fa-angle-right">
                         <p></p>
                     </i>Preguntas frecuentes</a> -->
-                <a href="condiciones.php" class="efecto"><i class="fas fa-angle-right">
+                <a href="condiciones" class="efecto"><i class="fas fa-angle-right">
                         <p></p>
                     </i>Términos y Condiciones</a>
-                <a href="politicas.php" class="efecto"><i class="fas fa-angle-right">
+                <a href="politicas" class="efecto"><i class="fas fa-angle-right">
                         <p></p>
                     </i>Políticas de privacidad</a>
                 <!-- <a href="#" class="efecto"><i class="fas fa-angle-right">
@@ -98,7 +98,7 @@
                 <a href="#" class="efecto"><i class="fas fa-angle-right">
                         <p></p>
                     </i>Artículos</a> -->
-                    <a href="index.php#">
+                    <a href="index#">
                     <div class="imglogo"></div>
                 </a>
             </div>
@@ -192,27 +192,11 @@
     <p>
     <div onclick="aceptarCookies()" class="pull-right btncookie third"><i class="fa fa-times"></i> Aceptar y cerrar éste mensaje</div>
     Éste sitio web usa cookies, si permanece aquí acepta su uso.
-    Puede leer más sobre el uso de cookies en nuestra <a href="politicas.php">política de privacidad</a>.
+    Puede leer más sobre el uso de cookies en nuestra <a href="politicas">política de privacidad</a>.
     </p>
 </div>
 <script>
-     <!-- Facebook Pixel Code -->
-<script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '4525586337466244');
-fbq('track', 'PageView');
-</script>
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=4525586337466244&ev=PageView&noscript=1"
-/></noscript>
-<!-- End Facebook Pixel Code -->
+  
     function cambiaVisibilidad(visible, elemento) {
 
         if (visible == true) {

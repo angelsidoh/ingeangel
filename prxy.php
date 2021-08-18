@@ -73,7 +73,7 @@ require 'includes/templates/header.php';
             </div>
             <div id="lista-apis" class="lista-apis" style="display: none;">
                 <div class="links">
-                    <a href="cvangelruiz.php#angelruiz" target="_blank"><p><i class="fas fa-caret-right"></i> José Angel Ruiz Chávez <span>Ingeniero en Mecatrónica.</span></p> </a>
+                    <a href="cvangelruiz#abcdef"><p><i class="fas fa-caret-right"></i> José Angel Ruiz Chávez <span>Ingeniero en Mecatrónica.</span></p> </a>
                 </div>
                 
             </div>

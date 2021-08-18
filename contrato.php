@@ -230,10 +230,10 @@ if ((!isset($_SESSION['usuario'])) && (!isset($_SESSION['email']))) {
                             Para acceder a panel de firma de contrato, primero debes tener los datos de "dirección de cliente". 
                         </p>
                 </div>
-                <a class="button" href="cuenta.php#angel-ruiz"> Ir a cuenta</a><?php
+                <a class="button" href="cuenta#abcdef"> Ir a cuenta</a><?php
                                                
                                             } else {
-                                                ?><a class="button" href="test.php?tok=<?php echo $vecTokenContrato[0]. '-id=' . $idusuario.'-ff='.$vectorIdProyectos[0];?>#angel-ruiz"> Firmar contrato</a><?php
+                                                ?><a class="button" href="firmas?tok=<?php echo $vecTokenContrato[0]. '-id=' . $idusuario.'-ff='.$vectorIdProyectos[0];?>#abcdef"> Firmar contrato</a><?php
                                             } ?>
 				
 			</div>

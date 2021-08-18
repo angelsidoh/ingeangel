@@ -85,7 +85,7 @@ file_put_contents($file_name,$imagendata);
 $result['status'] = 1;
 $result['file_name'] = $file_name;
 $url = 'includes/funciones/doc_sings/'.$filename. '.png';
-$result['url'] = 'contrato.php?contrato='.$tokencontrato.'-id='.$ff.'#angel-ruiz';
+$result['url'] = 'contrato?contrato='.$tokencontrato.'-id='.$ff.'#abcdef';
 try {
 
             require_once('../../bd/bdsqli.php');

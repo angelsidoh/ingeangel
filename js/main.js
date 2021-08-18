@@ -353,7 +353,7 @@ function abc(datos, maxfecha, contadorProyectos, contPasosxProyecto, contPasos) 
       anioBD = anioBD;
     }
     var strDate3 = anioBD + "-" + (mesBD + "-" + diaBD + " " + horaBD + ":" + minutoBD + ":" + segundoBD);
-    if (pathname == '/administradorProy.php') {
+    if (pathname == '/administradorProy.php' || pathname == '/administradorProy') {
       if ($("fechainicio")) {
         var esVisiblea = $("#fechainicio").is(":visible");
         if (esVisiblea == true) {
@@ -633,7 +633,7 @@ function consultaNotificaciones() {
           .then((value) => {
             switch (value) {
               default:
-                window.location.href = 'cuenta.php#angel-ruiz';
+                window.location.href = 'cuenta#abcdef';
             }
           });
       }
@@ -1456,7 +1456,7 @@ $(".contenedor-perfil .imagen").hover(
   function () {
     $('.edit-fotox').addClass('edit-foto');
     $(".foto .edit-foto i").click(function () {
-      window.location.href = "cambiarfoto.php";
+      window.location.href = "cambiarfoto#abcdef";
 
 
     });
@@ -1498,7 +1498,7 @@ function uploadFile(){
         .then((value) => {
           switch (value) {
             default:
-              window.location.href = "cuenta.php#angel-ruiz";
+              window.location.href = "cuenta#abcdef";
               
           }
         });
@@ -1764,7 +1764,7 @@ function newproyecto(dato) {
           .then((value) => {
             switch (value) {
               default:
-                window.location.href = 'cuenta.php#angel-ruiz';
+                window.location.href = 'cuenta#abcdef';
             }
           });
 
@@ -1837,7 +1837,7 @@ function registroIdeaUser(dato) {
           .then((value) => {
             switch (value) {
               default:
-                window.location.href = 'bienvenida.php#angel-ruiz';
+                window.location.href = 'bienvenida#abcdef';
             }
           });
 
@@ -1925,7 +1925,7 @@ function agregarxPaso(dato) {
           .then((value) => {
             switch (value) {
               default:
-                window.location.href = 'cuenta.php#angel-ruiz';
+                window.location.href = 'cuenta#abcdef';
             }
           });
 
@@ -2012,7 +2012,7 @@ function eliminarxPaso(dato) {
           .then((value) => {
             switch (value) {
               default:
-                window.location.href = 'cuenta.php#angel-ruiz';
+                window.location.href = 'cuenta#abcdef';
             }
           });
 
@@ -2091,7 +2091,7 @@ function modificarPaso(dato) {
           .then((value) => {
             switch (value) {
               default:
-                window.location.href = 'cuenta.php#angel-ruiz';
+                window.location.href = 'cuenta#abcdef';
             }
           });
 
@@ -2185,7 +2185,7 @@ function actualizarUserUserDB(dato) {
           .then((value) => {
             switch (value) {
               default:
-                window.location.href = 'cuenta.php#cuenta';
+                window.location.href = 'cuenta#cuenta';
             }
           });
 
@@ -2440,7 +2440,7 @@ function agregarPago(dato) {
           .then((value) => {
             switch (value) {
               default:
-                window.location.href = 'cuenta.php#angel-ruiz';
+                window.location.href = 'cuenta#abcdef';
             }
           });
       }
@@ -2537,7 +2537,7 @@ function agregarContrato(dato) {
           .then((value) => {
             switch (value) {
               default:
-                window.location.href = 'cuenta.php#angel-ruiz';
+                window.location.href = 'cuenta#abcdef';
             }
           });
       }
@@ -3023,7 +3023,7 @@ function eliminarDatos(dato) {
           .then((value) => {
             switch (value) {
               default:
-                window.location.href = 'cuenta.php#angel-ruiz';
+                window.location.href = 'cuenta#abcdef';
             }
           });
       }
@@ -3079,11 +3079,11 @@ function registroDB(dato) {
           .then((value) => {
             switch (value) {
               default:
-                window.location.href = 'cuenta.php#angel-ruiz';
+                window.location.href = 'cuenta#abcdef';
             }
           });
         setTimeout(() => {
-          window.location.href = 'cuenta.php#angel-ruiz';
+          window.location.href = 'cuenta#abcdef';
         }, 3200);
       }
 
@@ -3101,11 +3101,11 @@ function registroDB(dato) {
           .then((value) => {
             switch (value) {
               default:
-                window.location.href = 'bienvenida.php#angel-ruiz';
+                window.location.href = 'bienvenida#abcdef';
             }
           });
         setTimeout(() => {
-          window.location.href = 'bienvenida.php#angel-ruiz';
+          window.location.href = 'bienvenida#abcdef';
         }, 3200);
       }
 
@@ -3571,7 +3571,7 @@ var pathname = window.location.pathname;
 pathname = (pathname.replace('/01ingeangel.com', ''));
 pathname = (pathname.replace('01', ''));
 ////console.log(pathname);
-if (pathname == '/index.php' || pathname == '/') {
+if (pathname == '/index.php' || pathname == '/' || pathname == '/index') {
   $(document).ready(function () {
     $("body").css("background-color", "#ffffff");
   });
@@ -3579,7 +3579,7 @@ if (pathname == '/index.php' || pathname == '/') {
   $(document).ready(function () {
     $("body").css("background-color", "#ffffff");
   });
-} else if (pathname == '/contratar.php') {
+} else if (pathname == '/contratar.php' || pathname == '/contratar') {
   $(document).ready(function () {
     $("body").css("background-color", "#ffffff");
   });

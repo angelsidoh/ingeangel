@@ -43,7 +43,7 @@
                                             if(sizeof($supervecIdContrato[$x])>1){
                                 ?>
 
-                                            <a href="contrato.php?contrato=<?php echo  $supervecTokenContrato[$x][$f]; ?>-id=<?php echo $vectorIdProyectos[$x]; ?>#angel-ruiz" target="_blank">
+                                            <a href="contrato?contrato=<?php echo  $supervecTokenContrato[$x][$f]; ?>-id=<?php echo $vectorIdProyectos[$x]; ?>abcdef" target="_blank">
                                                 <p><?php
                                                 $numeroContratoDescp ++;
                                                 echo    $numeroContratoDescp; ?>. Contrato (#<?php

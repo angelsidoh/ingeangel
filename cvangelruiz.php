@@ -246,7 +246,7 @@ sociedadintelectualdelaguactemexicano.com
         </div>
         
     </div>
-    <div class="btnsobres"><a class="button" href="sobreangel.php#sobremi">Sobre José Angel</a></div>
+    <div class="btnsobres"><a class="button" href="sobreangel#sobremi">Sobre José Angel</a></div>
     
     
     <?php

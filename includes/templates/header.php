@@ -72,7 +72,7 @@ src="https://www.facebook.com/tr?id=4525586337466244&ev=PageView&noscript=1"
 
   <div id="inicio" class="seccion-completa">
     <div id="menubarra" class="menu-barra">
-      <div class="logs"> <a href="index.php#">
+      <div class="logs"> <a href="index">
           <div id="imglogo" class="imglogo"></div>
         </a></div>
 
@@ -122,8 +122,9 @@ src="https://www.facebook.com/tr?id=4525586337466244&ev=PageView&noscript=1"
 
       <div class="proyectos">
         <div class="proy">
-          <a href="proyectos.php#angel-ruiz">
-            <p>Proyectos</p>
+        <a href="<?php
+                   echo 'prxy#abcdef';
+                    ?>"><p>Proyectos</p>
           </a>
         </div>
 
@@ -279,7 +280,7 @@ src="https://www.facebook.com/tr?id=4525586337466244&ev=PageView&noscript=1"
                     </div>
                   
                   </div>
-                  <a style="font-size: 24px;" class="button" href="registro.php#angel-ruiz">
+                  <a style="font-size: 24px;" class="button" href="registro#abcdef">
                   Registro
                 </a>
                 </div>
@@ -407,7 +408,7 @@ src="https://www.facebook.com/tr?id=4525586337466244&ev=PageView&noscript=1"
                </div>
              
              </div>
-             <a style="font-size: 24px;" class="button" href="registro.php#angel-ruiz">
+             <a style="font-size: 24px;" class="button" href="registro#abcdef">
              Registro
                 </a>
            </div>
@@ -440,7 +441,7 @@ src="https://www.facebook.com/tr?id=4525586337466244&ev=PageView&noscript=1"
             <li class="nav__list-item">
               <a href="<?php
                         if ((!isset($_SESSION['usuario'])) && (!isset($_SESSION['email']))) {
-                          echo 'login.php#angel-ruiz';
+                          echo 'login#abcdef';
                         } else {
                           echo 'logout.php';
                         } ?>"><?php
@@ -451,8 +452,8 @@ src="https://www.facebook.com/tr?id=4525586337466244&ev=PageView&noscript=1"
                               } ?>
               </a>
             </li>
-            <li class="nav__list-item"><a href="cuenta.php#angel-ruiz"> Tu cuenta</a></li>
-            <li class="nav__list-item"><a href="proyectos.php#angel-ruiz">Proyectos</a></li>
+            <li class="nav__list-item"><a href="cuenta#abcdef"> Tu cuenta</a></li>
+            <li class="nav__list-item"><a href="prxy#abcdef">Proyectos</a></li>
             <li class="nav__list-item"><a href="mailto:wingsdevs@gmail.com">Contacto</a></li>
 
           </ul>
