@@ -272,7 +272,7 @@ if ((!isset($_SESSION['usuario'])) && (!isset($_SESSION['email']))) {
                         </div>
                         <div class="dato66">
 
-                            <input style="width: 100%;" class="" type="text" name="description" id="description" maxlength="100" value="<?php echo 'Contrato: (' . ($superVecTokenContratoPago[$direccionx][$direcciony] . '-' . $superVecIdPago[$direccionx][$direcciony]) . ') ' . 'Y Servicios varios del Proyecto (' . $vectorNombresProyectos[$direccionProyecto] . ').'; ?>" disabled>
+                            <input class="form-control" style="width: 100%;" type="text" name="desx" id="desx" maxlength="100" value="<?php echo 'Contrato: (' . ($superVecTokenContratoPago[$direccionx][$direcciony] . '-' . $superVecIdPago[$direccionx][$direcciony]) . ')'; ?>" >
                         </div>
 
                         <div class="text-dato66">
@@ -291,7 +291,7 @@ if ((!isset($_SESSION['usuario'])) && (!isset($_SESSION['email']))) {
                         </div>
                         <div class="dato777">
 
-                            <input style="display:none;"  class="form-control" type="text" name="total" id="total" value="
+                            <input style=""  type="text" name="total" id="total" value="
                             <?php
                           
                                 $cuenta = (($precioDominio + $precioHosting + $precioBD + $precioProgramacion + $precioMantenimiento)* $superVecContMesesPago[$direccionx][$direcciony]);
@@ -302,7 +302,7 @@ if ((!isset($_SESSION['usuario'])) && (!isset($_SESSION['email']))) {
                         </div>
                         <div class="dato7777">
 
-                            <input style="display:none;" class="form-control" type="text" name="idex" id="idex" value="<?php echo $superVecIdPago[$direccionx][$direcciony]; ?>">
+                            <input style="" class="form-control" type="text" name="idex" id="idex" value="<?php echo $superVecIdPago[$direccionx][$direcciony]; ?>">
                         </div>
                         
                         <div class="text-dato77">
@@ -337,7 +337,7 @@ require 'includes/templates/footer.php';
             var $form = $("#card-form");
 
             swal({
-                content: "",
+                content: "?",
                 text: response.message_to_purchaser,
                 icon: "error",
                 button: {
@@ -380,7 +380,7 @@ require 'includes/templates/footer.php';
                     }).then((value) => {
                         switch (value) {
                             default:
-                                window.location.href = 'cuenta.php#angel-ruiz';
+                                window.location.href = 'cuenta#abcdef';
                         }
                     });
                     jsClean();

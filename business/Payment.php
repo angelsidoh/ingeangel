@@ -14,11 +14,11 @@ class Payment{
     private $ServerDB = "localhost";
     private $DataBaseDB = "dbw1fxme936vst";
     
-    public function __construct($token,$card,$name,$descrption,$total,$email,$idex){
+    public function __construct($token,$card,$name,$desx,$total,$email,$idex){
         $this->token = $token;
         $this->card = $card;
         $this->name = $name;
-        $this->description = $descrption;
+        $this->desx = $desx;
         $this->total = $total;
         $this->email = $email;
         $this->idex = $idex;
@@ -50,7 +50,7 @@ class Payment{
         $pago = $this->total;
         $titular = $this->name;
         $email = $this->email;
-        $tokenconcepto =$this->description;
+        $tokenconcepto =$this->desx;
         date_default_timezone_set('America/Mexico_City');
         $fecha =  date('Y-m-d H:i:s');
         
@@ -93,7 +93,7 @@ class Payment{
                     "amount" => $this->total,
                     "line_items" => array(
                         array(
-                            "name" => $this->description,
+                            "name" => $this->desx,
                             "unit_price" => $this->total*100,
                             "quantity" => 1
                         )
@@ -156,8 +156,8 @@ class Payment{
     }
 
     public function Validate(){
-        if($this->card == "" || $this->name == "" || $this->description == "" || $this->total == "" || $this->email == ""){
-            $this->error="El número de tarjeta, El nombre, Concepto, Monto y Correo Electrónico son obligatorios";
+        if($this->card == "" || $this->name == "" || $this->desx == "" || $this->total == "" || $this->email == ""){
+            $this->error="Se requiere de todos los datos en este formulario. Pongase en contacto con el desarrollador asignado si el problema persiste.";
             return false;
         }
         if(strlen($this->card)<=14){

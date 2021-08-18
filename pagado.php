@@ -31,7 +31,7 @@ try {
 
 
 if ($data == 'charge.paid'){
-  $msg = "Tu pago ha sido comprobado.";
+  $msg = "El pago ha sido comprobado.";
   echo 'hola';
   mail("angel._ruiz@hotmail.com","Pago confirmado",$msg);
 }
