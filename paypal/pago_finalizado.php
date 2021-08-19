@@ -31,7 +31,7 @@ require('../includes/funciones/qr.php');
      ?>
         <script> 
      
-        window.location.replace('https://wingsdevs.com/cuenta.php#angel-ruiz'); 
+        window.location.replace('https://wingsdevs.com/cuenta#abcdef'); 
 
         </script>
         <?php
@@ -60,7 +60,7 @@ require('../includes/funciones/qr.php');
         ?>
         <script> 
      
-        window.location.replace('https://wingsdevs.com/errorpago.php'); 
+        window.location.replace('https://wingsdevs.com/errorpago'); 
 
         </script>
         <?php
@@ -121,7 +121,7 @@ require('../includes/funciones/qr.php');
         ?>
         <script> 
      
-        window.location.replace('https://wingsdevs.com/cuenta.php#angel-ruiz'); 
+        window.location.replace('https://wingsdevs.com/cuenta#abcdef'); 
 
         </script>
         <?php

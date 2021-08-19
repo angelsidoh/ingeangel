@@ -110,7 +110,7 @@ function enviar_correo4($mensaje,$asunto,$tipo_user, $correo,$nombre)
     display: inline-block;
     transition: all .1s ease;
     border: 2px solid #fe4918;
-    " href="https://wingsdevs.com/login.php#angel-ruiz">
+    " href="https://wingsdevs.com/login#abcdef">
                 <p>Iniciar Sesión</p>
             </a>
 
@@ -275,7 +275,7 @@ function enviar_correo3($nombre, $apellido, $pass, $correo, $idea, $select, $sec
                                 display: inline-block;
                                 transition: all .1s ease;
                                 border: 2px solid #fe4918;
-                                " href="https://wingsdevs.com/login.php#angel-ruiz">
+                                " href="https://wingsdevs.com/login#abcdef">
                                 <p>Iniciar Sesión</p>
                                 </a>
                                 </div></div>');
@@ -434,7 +434,7 @@ filter: drop-shadow(1px 2px 5px #ff4800);
     display: inline-block;
     transition: all .1s ease;
     border: 2px solid #fe4918;
-    " href="https://wingsdevs.com/login.php#angel-ruiz">
+    " href="https://wingsdevs.com/login#abcdef">
     <p>Iniciar Sesión</p>
 </a>
 
@@ -568,7 +568,7 @@ function enviar_correo111($correo, $nombrepagina, $tokencontrato, $fechainicio, 
             <p style="color :#ffffff;"> por mes de contrato. </p><br><br>
             <p style="color :#ffffff;"> Inicie sesión para leer y firmar el contrato.</p>
             <br><br>
-            <a style="background-color: #fe4918; padding: 1px 40px; color: #ffffff; text-transform: uppercase; font-weight: bold; text-decoration: none; font-size: 20px; border-radius:12px; display: inline-block; transition: all .1s ease; border: 2px solid #fe4918; "href="https://ingeangel.com/login.php#angel-ruiz">
+            <a style="background-color: #fe4918; padding: 1px 40px; color: #ffffff; text-transform: uppercase; font-weight: bold; text-decoration: none; font-size: 20px; border-radius:12px; display: inline-block; transition: all .1s ease; border: 2px solid #fe4918; "href="https://ingeangel.com/login#abcdef">
             <p>Iniciar Sesión</p>
             </a>
 
@@ -722,7 +722,7 @@ function enviar_correo112($correo)
     display: inline-block;
     transition: all .1s ease;
     border: 2px solid #fe4918;
-    " href="https://wingsdevs.com/login.php#angel-ruiz">
+    " href="https://wingsdevs.com/login#abcdef">
                 <p>Iniciar Sesión</p>
             </a>
 
@@ -1258,7 +1258,7 @@ border-radius:12px;
 display: inline-block;
 transition: all .1s ease;
 border: 2px solid #fe4918;
-" href="https://wingsdevs.com/cuenta.php#angel-ruiz">
+" href="https://wingsdevs.com/cuenta#abcdef">
             <p>ver detalles</p>
         </a>
 
@@ -1391,8 +1391,8 @@ color:#ffffff;
 margin-top: 0px;
 " class="textbienvenida">
         <h1 style="color:#f5d108; font-size:45px;">Estado de pago</h1>
-        <p style="color:white; font-size:22px;">Tu pago ahora está:</p>
-        <p style="color:green; font-size:22px;">'.$descripcion.'</p>
+        <p style="color:white; font-size:22px;">El pago fue aprovado.</p>
+        <p style="color:green; font-size:22px;"></p>
         <p style="color:white; font-size:22px;">En este momento puedes entrar a tu cuenta y revisar el historial de tus pagos.</p>
 
     
@@ -1414,7 +1414,7 @@ border-radius:12px;
 display: inline-block;
 transition: all .1s ease;
 border: 2px solid #fe4918;
-" href="https://wingsdevs.com/cuenta.php#angel-ruiz">
+" href="https://wingsdevs.com/cuenta#abcdef">
             <p>ver detalles</p>
         </a>
 
@@ -1570,7 +1570,7 @@ border-radius:12px;
 display: inline-block;
 transition: all .1s ease;
 border: 2px solid #fe4918;
-" href="https://wingsdevs.com/cuenta.php#angel-ruiz">
+" href="https://wingsdevs.com/cuenta#abcdef">
             <p>ver detalles</p>
         </a>
 
@@ -1720,7 +1720,7 @@ function enviar_correo1($correo, $paso1, $paquete)
     display: inline-block;
     transition: all .1s ease;
     border: 2px solid #fe4918;
-    " href="https://wingsdevs.com/login.php#angel-ruiz">
+    " href="https://wingsdevs.com/login#abcdef">
     <p>Iniciar Sesión</p>
 </a>
 
@@ -1887,7 +1887,7 @@ function enviar_correo($nombre, $apellido, $pass, $correo)
                                 display: inline-block;
                                 transition: all .1s ease;
                                 border: 2px solid #fe4918;
-                                " href="https://wingsdevs.com/login.php#angel-ruiz">
+                                " href="https://wingsdevs.com/login#abcdef">
                                 <p>Iniciar Sesión</p>
                                 </a>
                                 </div></div>');

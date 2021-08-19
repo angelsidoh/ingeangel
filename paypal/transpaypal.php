@@ -91,8 +91,8 @@ try {
             ->setInvoiceNumber($ID_registro);
         
         $redireccionar = new RedirectUrls();
-        $redireccionar->setReturnUrl(URL_SITIO . "pago_finalizado.php?exito=true&id_pago={$ID_registro}&monto={$cuenta}&seccion={$idpago}&marx={$mail}&numx={$contrato}&sub={$idproyecto}")
-            ->setCancelUrl(URL_SITIO . "pago_finalizado.php?exito=false&id_pago={$ID_registro}&monto={$cuenta}&seccion={$idpago}&marx={$mail}&numx={$contrato}&sub={$idproyecto}");
+        $redireccionar->setReturnUrl(URL_SITIO . "pago_finalizado?exito=true&id_pago={$ID_registro}&monto={$cuenta}&seccion={$idpago}&marx={$mail}&numx={$contrato}&sub={$idproyecto}")
+            ->setCancelUrl(URL_SITIO . "pago_finalizado?exito=false&id_pago={$ID_registro}&monto={$cuenta}&seccion={$idpago}&marx={$mail}&numx={$contrato}&sub={$idproyecto}");
         
         
         $pago = new Payment();
