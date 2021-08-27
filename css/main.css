@@ -2174,7 +2174,16 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 
 /* pruebas de texto */
 
+.titulo-seccion h1.sparklemaster{
+  font-size: 32px;
 
+}
+@media only screen and (min-width:768px){
+  .titulo-seccion h1.sparklemaster{
+    font-size: 56px;
+  
+  }
+}
 .sparklemaster span {
   transition: all 0.9s ease;
 }
@@ -5551,9 +5560,211 @@ height: 10px;
   }
 }
 
+.promocion-container{
+  width: 295px;
+  height: 295px;
+  margin: 0 auto;
+  
+  background-image: url(../img/terceros/1mes.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: grid;
+  grid-template-columns: repeat(24, 1fr);
+  grid-template-rows: repeat(24, 1fr);
+}
+.cont{
+  grid-column: 1 / 25;
+  grid-row: 18 / 25;
+  width: 100%;
+  height: 100px;
+
+  margin:  0 auto;
+ 
+}
+.botonpromo{
+  width: 100%;
+  height: auto;
+  grid-column: 4 / 25;
+  grid-row: 23 / 25;
+  margin: 0 auto;
+  
+}
+.botonpromo a{
+
+    text-decoration: none;
+  font-size: 14px;
+}
+.countdown{
+  
+  width: 100%;
+  height: auto;
+
+  font-family: "Apocalypse Grunge";
+  font-size: 38px;
+  color: rgb(238, 255, 0);
+  text-shadow: 0px 0px 20px #0026ff;
+  text-align: center;
+  margin: 0 auto;
+  
+
+}
+
+@media only screen and (min-width:768px){
+  .botonpromo{
+    width: 100%;
+    height: auto;
+    grid-column: 7 / 24;
+    grid-row: 23 / 25;
+    margin: 0 auto;
+    
+  }
+  #boddu > div.promocion-container > div.botonpromo > a{
+    
+    font-size: 32px;
+    text-decoration: none;
+  }
+  .countdown{
+  
+    width: 100%;
+    height: auto;
+  
+    font-family: "Apocalypse Grunge";
+    font-size: 72px;
+    color: rgb(238, 255, 0);
+    text-shadow: 0px 0px 45px #0026ff;
+    text-align: center;
+    margin: 0 auto;
+    
+  
+  }
+  .cont{
+    grid-column: 1 / 25;
+    grid-row: 18 / 25;
+    width: 90%;
+    height: 100px;
+    
+    margin:  0 auto;
+  }
+  .promocion-container{
+    width: 800px;
+    height: 800px;
+    margin: 0 auto;
+    background-image: url(../img/terceros/1mes.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: grid;
+    grid-template-columns: repeat(24, 1fr);
+    grid-template-rows: repeat(24, 1fr);
+  }
+}
+
+.title-promocion{
+  width: 100%;
+  height: 100%;
+  grid-column: 17 / 21;
+  grid-row: 4 / 10;
+}
+
+.title-promocion h3{
+  
+  color: var(--ColorFontEspecial);
+  font-size: 16px;
+  transform: rotate(-15deg);
+  text-align: center;
+
+}
+
+.description-promocion{
+  width: 100%;
+  height: 100%;
+  grid-column: 1 / 13;
+  grid-row: 1 / 13;
+}
+.container-videoface{
+  position: relative;
+  
+  max-width: 1280px;
+  width: 100%;
+  
+  height: 720px;
+  margin: 0 auto;
+  -webkit-box-shadow: 0px 0px 28px 1px rgba(0,0,0,0.77), inset 0px 0px 28px 1px rgba(0,0,0,0.77);
+-moz-box-shadow: 0px 0px 28px 1px rgba(0,0,0,0.77), inset 0px 0px 28px 1px rgba(0,0,0,0.77);
+box-shadow: 0px 0px 28px 1px rgba(0,0,0,0.77), inset 0px 0px 28px 1px rgba(0,0,0,0.77);
+
+}
+.container-videoface iframe{
+  width: 100%!important;
+  height: 100%!important;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
 
 
 
+  .containerpdf{
+    display: block;
+    width: 100%;
+    height:auto;
+    background-color: rgb(131, 131, 131);
+    margin: 0 auto;
+  }
+  #photobook{
+      
+      width: 80%;
+      margin: 0;
+      overflow: hidden;
+      margin: 0 auto;
+   
+  }
+  div.contenedor-video{
+    margin-top: 50px;
+    width: 100%;
+    height: auto;
+   position: relative;
+    overflow: hidden;
+    
+  }
+  div.contenedor-video video{
+  width: 100%;
+  height: auto;
+  margin-left: 0px;
+ }
+ div.contenedor-video .contendor-efecto{
+   position: absolute;
+   width: 90%;
+   height: auto;
+
+   top: 10%;
+   left: 5%;
+   margin: 0 auto;
+ }
+ #boddu > div.contenedor-video > div > a{
+  
+  position: relative;
+  top: 30%;
+  left: calc(50% - 31px);
+  text-decoration: none;
+}
+ @media only screen and (min-width:768px){
+  div.contenedor-video .contendor-efecto{
+    position: absolute;
+    width: 90%;
+    height: auto;
+ 
+    top: 15%;
+    left: 5%;
+    margin: 0 auto;
+  } 
+  #boddu > div.contenedor-video > div > a{
+  
+    position: relative;
+    top: 30%;
+    left: calc(50% - 31px);
+  }
+ }
 
 
+ 
 

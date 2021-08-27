@@ -129,10 +129,19 @@
     
 </div>
 <!--footer-->
+<script type="text/javascript" src="js/jquery-1.11.0.min.js">
+var jquery_1_11_0 = $.noConflict(true);
+</script>
+<script type="text/javascript" src="js/jquery.mousewheel.min.js"></script>
+<script type="text/javascript" src="js/three.min.js"></script>
+<script type="text/javascript" src="js/jquery.onebook3d-2.33.js"></script>
 <script src="js/vendor/modernizr-3.8.0.min.js"></script>
-<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous">
+var jquery_3_4_1 = $.noConflict(true);
+</script>
 <script>
     window.jQuery || document.write('<script src="js/vendor/jquery-3.4.1.min.js"><\/script>')
+    var jquery_3_4_1 = $.noConflict(true);
 </script>
 
 <script src="https://kit.fontawesome.com/f429da79c0.js" crossorigin="anonymous"></script>
@@ -141,6 +150,7 @@
 
 <script>
     window.jQuery || document.write('<script src="../js/minified/jquery-1.11.0.min.js"><\/script>')
+    var jquery_1_11_0 = $.noConflict(true);
 </script>
 <script src="js/plugins/jquery.lettering-0.6.1.min.js"></script>
 <!-- MaxCDN Bootstrap plugins -->
@@ -290,3 +300,4 @@
 </body>
 
 </html>
+

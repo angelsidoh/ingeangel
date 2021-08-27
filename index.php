@@ -498,13 +498,53 @@ if ($resultadoProyecto->num_rows) {
             </div>
         </div>
     </div>
-    
+<div class="contendor-efecto">
+<div class="titulo-seccion" id="promos">
+    <h1 id="sparklemaster" class="sparklemaster" style="color:  #93A9CC;">Promociones</h1>
+</div>
+</div>
 
+<?php require 'promo.php';?>
+<div class="contendor-efecto">
+    <div class="titulo-seccion">
+        <h1 id="sparklemaster" class="sparklemaster" style="color:  #93A9CC;"> Diseño en software</h1>
+    </div>
+</div>
+<div class="container-videoface">
+<iframe src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2F108991444712996%2Fvideos%2F591249598538609%2F&show_text=false&width=560&t=0" width="560" height="314" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay;" allowFullScreen="true"></iframe>
+</div>
+<div class="contendor-efecto">
+    <div class="titulo-seccion">
+        <h1 id="sparklemaster" class="sparklemaster" style="color:  #93A9CC;">Catálogos digitales</h1>
+    </div>
+</div>
+<?php require 'flep.php';?>
+
+<div class="contenedor-video">
+    <video autoplay muted loop poster="img/books-min.jpg">
+      <source id="center" src="video/atxb.mp4" type="video/mp4">
+
+
+    </video>
+    <div class="contendor-efecto">
+    <div class="titulo-seccion">
+        <h1 id="sparklemaster" class="sparklemaster" style="color:  #ffffff;">Animación</h1>
+    </div>
+     <a class="button" href="https://fb.watch/7Eu9KNuGaz/" target= "_blank">Ver</a>
+</div>
+  </div>
 <div class="contendor-efecto">
     <div class="titulo-seccion">
         <h1 id="sparklemaster" class="sparklemaster" style="color:  #93A9CC;">Tecnología</h1>
     </div>
 </div>
+
+
+
+
+
+
+
 <div class="backgroundsubcards">
 <div class="contenedor-efecto">
     <div id="efecto-ventanaleft" class="contenedorx">
@@ -700,4 +740,6 @@ if ($resultadoProyecto->num_rows) {
 </div>
 <?php
 require 'includes/templates/footer.php'
+
 ?>
+

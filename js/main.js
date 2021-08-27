@@ -3279,17 +3279,29 @@ const app = (() => {
 //   $(".card").removeClass('card-flip');
 // });
 var resolucion = 0;
+alto=$("#boddu > div.container-videoface").width();
+altomod = alto/2; 
+altovideo = alto*.9
+
+  $('#boddu > div.container-videoface').css('height', altomod);
+   $('#boddu > div.contenedor-video').css('height', altovideo);
 $(window).resize(function () {
 
   resolucion = screen.width;
-
-  // //console.log(resolucion);
+  alto=$("#boddu > div.container-videoface").width();
+  altomod = alto/2; 
+  altovideo = alto*.9
+ 
+    $('#boddu > div.container-videoface').css('height', altomod);
+     $('#boddu > div.contenedor-video').css('height', altovideo);
+  
+  // console.log(altomod);
 });
 $(document).ready(function () {
 
   resolucion = screen.width;
 
-  // //console.log(resolucion);
+  // console.log(resolucion);
 });
 var fleep = '0';
 
@@ -3383,7 +3395,7 @@ $(".fleep3")
   .mouseleave(function () {
 
     fleep = '0';
-    // //console.log(fleep);
+    //console.log(fleep);
 
     if (fleep === '0') {
       $('.card1').removeClass('flipped');
@@ -4152,3 +4164,4 @@ $(document).mousemove(function (event) {
 })
 
 // contador pasos
+
