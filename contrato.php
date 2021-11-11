@@ -246,7 +246,7 @@ if ((!isset($_SESSION['usuario'])) && (!isset($_SESSION['email']))) {
 				<p>Firma Digital:  <strong><u> <?php echo $usuario. ' '. $apellidos;?></u></strong>
 Responsable del contrato para el proyecto: <a style="color: #ffffff;" href="<?php echo 'https://'.($vectorNombresProyectos[0]);?>"><strong><u><?php echo 'https://'.strtolower($vectorNombresProyectos[0]);?></u></strong></a>
 </p></div>
-<div class="firmax"><img src="includes/funciones/doc_sings/545a1fffd1e7d4557167bad3e6694962.png" alt="545a1fffd1e7d4557167bad3e6694962.png">
+<div class="firmax"><img src="includes/funciones/doc_sings/83448f3d1163ef9d53631bfd32672a6a.png" alt="83448f3d1163ef9d53631bfd32672a6a.png">
 			
 				<p>Firma Digital:  <strong><u> José Angel Ruiz Chávez</u></strong>
 Ingeniero responsable de desarrollo del proyecto: <a style="color: #ffffff;" href="<?php echo 'https://'.($vectorNombresProyectos[0]);?>"><strong><u><?php echo 'https://'.strtolower($vectorNombresProyectos[0]);?></u></strong></a>

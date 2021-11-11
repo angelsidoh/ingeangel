@@ -142,13 +142,13 @@ if ((isset($_SESSION['usuario'])) && (isset($_SESSION['email']))) {
                                     }
                                 }
                               
-                                // echo '<pre>';
+                                // echo '<pre style="color:#fff;">';
                                 // var_dump($supervecfechaIniciopago);
-                                // echo '</pre>';
-                                // echo '<pre>';
+                                // echo '</pre >';
+                                // echo '<pre style="color:#fff;>';
                                 // var_dump($supervecFechaFinContrato);
                                 // echo '</pre>';
-                                // echo '<pre>';
+                                // echo '<pre style="color:#fff;>';
                                 // var_dump( $supervecIdContrato);
                                 // echo '</pre>';
                                 
@@ -176,15 +176,19 @@ if ((isset($_SESSION['usuario'])) && (isset($_SESSION['email']))) {
                                                 $auxiliar = ''; 
                                                 for ($x = 0; $x <  sizeof($vectorNombresProyectos); $x++) {
                                                     ?>
-                                                    <div class="barradiv"><?php  
+                                                    <div class="barradiv">
+                                                        
+                                                        <?php  
                                                     for ($y=0; $y < sizeof($supervecfechaIniciopago[$x]); $y++) {
                                                         date_default_timezone_set('America/Mexico_City');
                                                         $fechahoy =  date('Y-m-d H:i:s');
                                                         for ($i=0; $i < sizeof($supervecfechaIniciopago[$x]); $i++) { 
                                                             $dias1 = (strtotime($supervecfechaIniciopago[$x][$i]) - strtotime($fechahoy)) / 86400;
                                                             $dias2 = (strtotime($supervecfechaFinpago[$x][$i]) - strtotime($fechahoy)) / 86400;
-                                                            if ((($dias2 > 0 && $dias1 < 0) && ($supervecfechaFinpago[$x][$i] == $supervecfechaFinpago[$x][$y]))) { ?> 
-                                                                <p class="separador"><?php echo 'Proyecto: '.$vectorNombresProyectos[$x].'<br>ID de contrato: '.$superVecIdContratoPago[$x][$y];?></p><?php?>
+                                                         
+                                                            if ((($dias1 < 0) && ($supervecfechaFinpago[$x][$i] == $supervecfechaFinpago[$x][$y]))) { ?> 
+                                                                <p class="separador"><?php echo 'Proyecto: '.$vectorNombresProyectos[$x].'<br>ID de contrato: '.$superVecIdContratoPago[$x][$y];?></p><?php ?>
+                                                                
                                                                 <a href="administradorProy.php?id=<?php echo $vectorIdProyectos[$x].'idu'.$idusuario;?>#angel-ruiz" target="_blank">
                                                                 <p class="<?php  if ($supervectokenConekta[$x][$y] != '' && $supervecforTarget[$x][$y] != 0) {
                                                                                      echo 'blinkverde ';

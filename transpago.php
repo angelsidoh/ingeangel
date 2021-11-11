@@ -291,7 +291,7 @@ if ((!isset($_SESSION['usuario'])) && (!isset($_SESSION['email']))) {
                         </div>
                         <div class="dato777">
 
-                            <input style=""  type="text" name="total" id="total" value="
+                            <input style="display:none;"  type="text" name="total" id="total" value="
                             <?php
                           
                                 $cuenta = (($precioDominio + $precioHosting + $precioBD + $precioProgramacion + $precioMantenimiento)* $superVecContMesesPago[$direccionx][$direcciony]);
@@ -302,7 +302,7 @@ if ((!isset($_SESSION['usuario'])) && (!isset($_SESSION['email']))) {
                         </div>
                         <div class="dato7777">
 
-                            <input style="" class="form-control" type="text" name="idex" id="idex" value="<?php echo $superVecIdPago[$direccionx][$direcciony]; ?>">
+                            <input style="display:none;" class="form-control" type="text" name="idex" id="idex" value="<?php echo $superVecIdPago[$direccionx][$direcciony]; ?>">
                         </div>
                         
                         <div class="text-dato77">

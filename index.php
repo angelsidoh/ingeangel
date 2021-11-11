@@ -505,20 +505,24 @@ if ($resultadoProyecto->num_rows) {
 </div>
 
 <?php require 'promo.php';?>
-<div class="contendor-efecto">
+<!-- <div class="contendor-efecto">
     <div class="titulo-seccion">
         <h1 id="sparklemaster" class="sparklemaster" style="color:  #93A9CC;"> Diseño en software</h1>
     </div>
 </div>
 <div class="container-videoface">
 <iframe src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2F108991444712996%2Fvideos%2F591249598538609%2F&show_text=false&width=560&t=0" width="560" height="314" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay;" allowFullScreen="true"></iframe>
-</div>
+</div> -->
+
 <div class="contendor-efecto">
     <div class="titulo-seccion">
         <h1 id="sparklemaster" class="sparklemaster" style="color:  #93A9CC;">Catálogos digitales</h1>
     </div>
 </div>
+<div class="contenedor-cat">
+<a class="button" href="flep" target= "_blank">Ver</a>
 <?php require 'flep.php';?>
+</div>
 
 <div class="contenedor-video">
     <video autoplay muted loop poster="img/books-min.jpg">
@@ -561,7 +565,7 @@ if ($resultadoProyecto->num_rows) {
                             <p>Desarrollada por el físico Tim Berners-Lee, con la idea de poder compartir documentos por internet, y uniendo fuerzas con Robert Cailliau Ingeniero en Sistemas, Presentaron el proyecto ganador ante la World Wide Web.
                             </p>
                             <p>
-                                En ingeangel.com, este lenguaje de programación (lenguaje de etiquetas HTML) para etiquetar cada elemento que demande el proyecto, siendo capaces etiquetar todo tipo de contenido en una página/sitio web.</p>
+                                En wingsDevs, este lenguaje de programación (lenguaje de etiquetas HTML) para etiquetar cada elemento que demande el proyecto, siendo capaces etiquetar todo tipo de contenido en una página/sitio web.</p>
                          <h3>Ventajas</h3>
                             <ul>
                                 <li>1. Maquetación de la página web estructurada de una manera personalizada.</li>
@@ -601,7 +605,7 @@ if ($resultadoProyecto->num_rows) {
                             <p>Propuesto en la World Wide Web por Haron Wium Le y Bert Bos, llamada también “hoja de estilos” en un lenguaje de programación que permite dar forma gráfica a etiquetas de html.
                             </p>
                             <p>
-                                En ingeangel.com la “hoja de estilos” es para dar seguimiento al diseño entregado por el cliente, cada detalles gráficos quedara plasmado en el proyecto.
+                                En WingsDevs la “hoja de estilos” es para dar seguimiento al diseño entregado por el cliente, cada detalles gráficos quedara plasmado en el proyecto.
                             </p>
                            <h3>Ventajas</h3>
                             <ul>
@@ -636,7 +640,7 @@ if ($resultadoProyecto->num_rows) {
                             <p>PHP es un lenguaje de programación de uso general que se adapta especialmente al desarrollo web. Fue creado inicialmente por el programador danés-canadiense Rasmus Lerdorf en 1994.
                             </p>
                             <p>
-                                En ingeangel.com este lenguaje de programación es por mucho el más importante de todos. Pues de este depende que tan segura e inteligente puede ser tu página/sitio web.</p>
+                                En WingsDevs este lenguaje de programación es por mucho el más importante de todos. Pues de este depende que tan segura e inteligente puede ser tu página/sitio web.</p>
                             <h3>Ventajas</h3>
                             <ul>
                                 <li>1. Brinda capacidades para la página/sitio web de conexión con bases de datos en MySQL.</li>
@@ -674,7 +678,7 @@ if ($resultadoProyecto->num_rows) {
                             <p>JavaScript fue desarrollado originalmente por Brendan Eich de Netscape con el nombre de Mocha, el desarrollador se enfrento al problema de las capacidades de velocidad del internet, que hacían torpes a los formularios que interactuaban con los usuarios de una página, pues si por algún motivo se equivocaba tendría que esperar a recargar la pagina del error y volver al formulario para corregirlo. La función de JavaScript arreglo muy bien este problema, permitiendo interactuar con los usuarios previo al envió de los formularios advirtiéndoles de los errores y facilitando su uso.
                             </p>
                             <p>
-                                En ingeangel.com este lenguaje brinda inteligencia extra, que puede ser ejecutada desde la computadora del usuario. Esto sirve, por ejemplo, para el efecto de animación que estás viendo en este momento.
+                                En WingsDevs este lenguaje brinda inteligencia extra, que puede ser ejecutada desde la computadora del usuario. Esto sirve, por ejemplo, para el efecto de animación que estás viendo en este momento.
                             </p>
                             <h3>Ventajas</h3>
                             <ul>
@@ -712,7 +716,7 @@ if ($resultadoProyecto->num_rows) {
                             <p>Fue desarrollado inicialmente por MySQL AB (empresa fundada por David Axmark, Allan Larsson y Michael Widenius). es un tipo de base de datos muy popular para el desarrollo de proyectos web, en gran parte de su desarrollo esta escrita en ANSI y C++.
                             </p>
                             <p>
-                                En ingeangel.com, en estos últimos (código ANSI y C++), cuenta con amplia experiencia, con casi 10 años en el campo, brindado a nuestro cliente, mucha mas capacidad para las conexiones con las bases de datos de su página/sitio web.
+                                En WingsDevs, en estos últimos (código ANSI y C++), cuenta con amplia experiencia, con casi 10 años en el campo, brindado a nuestro cliente, mucha mas capacidad para las conexiones con las bases de datos de su página/sitio web.
                             </p>
                             <h3>Ventajas</h3>
                             <ul>

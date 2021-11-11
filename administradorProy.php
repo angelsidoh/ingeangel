@@ -187,9 +187,9 @@ if ((!isset($_SESSION['usuario'])) && (!isset($_SESSION['email']))) {
         $mañana  = date("Y-m-d", strtotime($fechaactual . "+ 1 days"));
         // echo '->' . $mañana;
         // echo $precioBasico+$precioBD+$precioDominio+$precioHosting+$precioMantenimiento;
-        // echo '<pre>';
-        // var_dump($vectorTipoProyectos);
-        // echo '</pre>';
+        echo '<pre>';
+        var_dump($vectorTipoProyectos);
+        echo '</pre>';
         // echo '<pre>';
         // var_dump($superVecContMesesPago);
         // echo '</pre>';

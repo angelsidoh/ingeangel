@@ -125,7 +125,7 @@ src="https://www.facebook.com/tr?id=4525586337466244&ev=PageView&noscript=1"
         <div class="proy">
         <a href="<?php
                    echo 'prxy#abcdef';
-                    ?>"><p>Proyectos</p>
+                    ?>"><p>Portafolio</p>
           </a>
         </div>
 
@@ -147,8 +147,8 @@ src="https://www.facebook.com/tr?id=4525586337466244&ev=PageView&noscript=1"
         <ul class="slider">
           <li>
             <div class="imgslider">
-              <img src="img/terceros/fondoprinctransparnt.png" alt="fondo">
-
+              <img class="fondofull" src="img/terceros/fondocompu.png" alt="fondo">
+              <img class="fondodips" src="img/terceros/fondocalprin.png" alt="fondo">
               <div class="texta">
                 <h1 id="sparklemaster" class="sparklemaster">¿Necesitas un sitio web profesional?</h1>
                
@@ -292,9 +292,10 @@ src="https://www.facebook.com/tr?id=4525586337466244&ev=PageView&noscript=1"
          
           <li>
             <div class="imgslider">
-              <img src="img/terceros/fondoslider5.png" alt="fondo">
+            <img class="fondofull" src="img/terceros/fondowe.png" alt="fondo">
+              <img class="fondodips" src="img/terceros/foncelwe.png" alt="fondo">
               <div class="texta">
-                <h1 id="sparklemaster" class="sparklemaster">¿Que servicios ofrecemos?</h1>
+                <h1 id="sparklemaster" class="sparklemaster">¿ofrecemos?</h1>
                 
 
 
@@ -394,7 +395,7 @@ src="https://www.facebook.com/tr?id=4525586337466244&ev=PageView&noscript=1"
                        <div class="layer">
                          <div class="content">
                          <i class="fas fa-check"></i>
-                                <h3>Creatibidad</h3>
+                                <h3>Creatividad</h3>
                                 <p>La programación requiere de una logica amplia, nunca dejamos que un problema quede sin resolver, este es nuestro trabajo</p>
                          </div>
                          <div class="imgBx">
@@ -454,7 +455,7 @@ src="https://www.facebook.com/tr?id=4525586337466244&ev=PageView&noscript=1"
               </a>
             </li>
             <li class="nav__list-item"><a href="cuenta#abcdef"> Tu cuenta</a></li>
-            <li class="nav__list-item"><a href="prxy#abcdef">Proyectos</a></li>
+            <li class="nav__list-item"><a href="prxy#abcdef">Portafolio</a></li>
             <li class="nav__list-item"><a href="mailto:wingsdevs@gmail.com">Contacto</a></li>
 
           </ul>

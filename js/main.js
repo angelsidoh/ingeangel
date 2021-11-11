@@ -240,15 +240,16 @@ function abc(datos, maxfecha, contadorProyectos, contPasosxProyecto, contPasos) 
 
 
 
-
+    if (pathname == '/administradorProy.php' || pathname == '/administradorProy') {
     var d = new Date();
 
 
     var meses = $('#seleccion2').attr('value');
+    let inputValue2 = document.querySelector("#seleccion2").value;
 
 
-    meses = parseInt(meses);
-    // console.log(meses);
+    meses = parseInt(inputValue2);
+    console.log(meses);
 
     var año = d.getFullYear();
     var mes = d.getMonth() + 1;
@@ -292,7 +293,7 @@ function abc(datos, maxfecha, contadorProyectos, contPasosxProyecto, contPasos) 
     }
     var strDate2 = año1 + "-" + (mes2 + "-" + dia + " " + hora + ":" + minuto + ":" + segundo);
 
-    // console.log(strDate2);
+    // console.log(mes2);
 
     var preciobasico = $('#preciobasico').attr('value');
     var precionegocio = $('#precionegocio').attr('value');
@@ -353,6 +354,7 @@ function abc(datos, maxfecha, contadorProyectos, contPasosxProyecto, contPasos) 
       anioBD = anioBD;
     }
     var strDate3 = anioBD + "-" + (mesBD + "-" + diaBD + " " + horaBD + ":" + minutoBD + ":" + segundoBD);
+  }
     if (pathname == '/administradorProy.php' || pathname == '/administradorProy') {
       if ($("fechainicio")) {
         var esVisiblea = $("#fechainicio").is(":visible");
@@ -364,6 +366,7 @@ function abc(datos, maxfecha, contadorProyectos, contPasosxProyecto, contPasos) 
       if ($("fechafin")) {
         var esVisiblea = $("#fechafin").is(":visible");
         if (esVisiblea == true) {
+          // console.log(strDate2)
           document.getElementById("fechafin").value = strDate2;
         }
 
@@ -3279,23 +3282,36 @@ const app = (() => {
 //   $(".card").removeClass('card-flip');
 // });
 var resolucion = 0;
-alto=$("#boddu > div.container-videoface").width();
+alto=$("#boddu > div.contenedor-cat").width();
 altomod = alto/2; 
-altovideo = alto*.9
+altovideo = alto*.9;
+altocat = alto *.7;
+altocat = Math.round(altocat);
+if(altocat >= 1150){
+  altocat = 1150;
+}
 
   $('#boddu > div.container-videoface').css('height', altomod);
    $('#boddu > div.contenedor-video').css('height', altovideo);
+   $('#boddu > div.contenedor-cat').css('height', altocat);
 $(window).resize(function () {
 
   resolucion = screen.width;
-  alto=$("#boddu > div.container-videoface").width();
+  alto=$("#boddu > div.contenedor-cat").width();
   altomod = alto/2; 
-  altovideo = alto*.9
+  altovideo = alto*.9;
+  altocat = alto*.7;
+  altocat = Math.round(altocat);
+  if(altocat >= 1150){
+    altocat = 1150;
+    
+  }
  
     $('#boddu > div.container-videoface').css('height', altomod);
      $('#boddu > div.contenedor-video').css('height', altovideo);
-  
-  // console.log(altomod);
+     $('#boddu > div.contenedor-cat').css('height', altocat);
+  console.log(altocat);
+ 
 });
 $(document).ready(function () {
 

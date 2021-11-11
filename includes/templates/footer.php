@@ -198,13 +198,13 @@ var jquery_3_4_1 = $.noConflict(true);
   gtag('config', 'G-NMVHLC0SJF');
 </script>
 <script src="https://www.google-analytics.com/analytics.js" async></script>
-<div style="z-index: 99;" id="cajacookies">
+<!-- <div style="z-index: 99;" id="cajacookies">
     <p>
     <div onclick="aceptarCookies()" class="pull-right btncookie third"><i class="fa fa-times"></i> Aceptar y cerrar éste mensaje</div>
     Éste sitio web usa cookies, si permanece aquí acepta su uso.
     Puede leer más sobre el uso de cookies en nuestra <a href="politicas">política de privacidad</a>.
     </p>
-</div>
+</div> -->
 <script>
   
     function cambiaVisibilidad(visible, elemento) {

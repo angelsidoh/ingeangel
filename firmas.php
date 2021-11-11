@@ -38,7 +38,7 @@ session_start();
   </div>
   <div class="img">
   <p style="color: white;">Su firma se guardará con el siguiente formato</p>
-  <img src="includes/funciones/doc_sings/c8a2606df8963d4eae34f69bee90d166.png" alt="">
+  <img src="includes/funciones/doc_sings/83448f3d1163ef9d53631bfd32672a6a.png" alt="83448f3d1163ef9d53631bfd32672a6a.png">
    <!-- <p><a id="github"  href="https://github.com/szimek/signature_pad">
     Esta API pertenece a terceros y es implementado en ingeangel.com como herramienta para firmar.
   </a></p> -->

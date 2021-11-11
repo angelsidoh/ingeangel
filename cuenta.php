@@ -229,21 +229,21 @@ if ((!isset($_SESSION['usuario'])) && (!isset($_SESSION['email']))) {
 
         ?>
             <div class="contenedor-cuenta">
-               
+
                 <ol class="paginacion2">
-                <div class="mensajealerta<?php if($calle == '' || $numie == '' || $col == '' || $cp == '') {
-                                                echo ' mensajeon';
-                                            } else {
-                                                echo ' mensajeoff';
-                                            } ?>">
-                    
-                        
+                    <div class="mensajealerta<?php if ($calle == '' || $numie == '' || $col == '' || $cp == '') {
+                                                    echo ' mensajeon';
+                                                } else {
+                                                    echo ' mensajeoff';
+                                                } ?>">
+
+
                         <p class="globo iii abajo-izquierda">
-                            Para acceder a panel de firma de contrato, primero debes tener los datos de "dirección de cliente". 
+                            Para acceder a panel de firma de contrato, primero debes tener los datos de "dirección de cliente".
                         </p>
-                </div>
-                     
-                   
+                    </div>
+
+
                 </ol>
                 <ul class="slider2">
                     <li>
@@ -268,10 +268,10 @@ if ((!isset($_SESSION['usuario'])) && (!isset($_SESSION['email']))) {
                                                         }
                                                         ?></span></h1><?php
                                                                     } else { ?>
-                                                <h1>Proyecto <?php echo $x + 1;?>:<span style="font-size: 16px;">
+                                                <h1>Proyecto <?php echo $x + 1; ?>:<span style="font-size: 16px;">
                                                         <?php
 
-                                                                        echo 'https://'.$vectorNombresProyectos[$x];
+                                                                        echo 'https://' . $vectorNombresProyectos[$x];
                                                         ?></span></h1><?php
                                                                     }
                                                                         ?>
@@ -289,57 +289,65 @@ if ((!isset($_SESSION['usuario'])) && (!isset($_SESSION['email']))) {
                                                 <div class="links">
                                                     <div class="contenedorconteo">
                                                         <?php
-                                                        $textAsunto = "Hola. Me gustaría que resolvieran las siguientes dudas de mi proyecto " . $vectorNombresProyectos[$x] . " del paso " . ($y + 1) . ": >>" . $superVecDesp[$x][$y] . "<< " . "Proyecto id# " . $vectorIdProyectos[$x];
+                                                        $textAsunto = "Hola. Me gustaría que resolvierán las siguientes dudas de mi proyecto " . $vectorNombresProyectos[$x] . " del paso " . ($y + 1) . ": >>" . $superVecDesp[$x][$y] . "<< " . "Proyecto id# " . $vectorIdProyectos[$x];
                                                         $asunto = str_replace(' ', '%20', $textAsunto);
                                                         $vectorNombresProyectos[$x] = str_replace('&', 'y', $vectorNombresProyectos[$x]);
                                                         $cuerpo = "Lista de dudas: ";
                                                         $cuerpo = str_replace(' ', '%20', $cuerpo);
                                                         ?>
                                                         <a href="mailto:wingsdevs@gmail.com?subject=<?php echo $asunto; ?>&body=<?php echo $cuerpo; ?>" target="_blank">
-                                                            <p>Paso <?php echo $y + 1; ?>: <i class="fas fa-caret-right"></i> <?php echo  $superVecDesp[$x][$y]; ?></p>
+                                                            <p>Actividad <?php echo $y + 1; ?>: <i class="fas fa-caret-right"></i> <?php echo  $superVecDesp[$x][$y]; ?></p>
 
 
                                                         </a>
-                                                        <div id="midiv" class="cuenta-regresiva<?php echo $x . '-' . $y; ?> contenedor-cuenta">
+                                                        <?php
+                                                        date_default_timezone_set('America/Mexico_City');
+                                                        $fechainix =  date('Y-m-d H:i:s');
+                                                        if ($superVec[$x][$y] > $fechainix) {
+                                                        ?>
+                                                            <div id="midiv" class="cuenta-regresiva<?php echo $x . '-' . $y; ?> contenedor-cuenta">
 
-                                                            <ul class="clearfix">
-                                                                <div class="lix">
-                                                                    <p>Fecha estimada: Paso <?php echo ($y + 1) . ' (' . $superVec[$x][$y] . ')'; ?></p>
-                                                                </div>
+                                                                <ul class="clearfix">
+                                                                    <div class="lix">
+                                                                        <p>Fecha estimada: Actividad <?php echo ($y + 1) . ' (' . $superVec[$x][$y] . ')'; ?></p>
+                                                                    </div>
 
 
-                                                                <div class="lix">
-                                                                    <p id="dias<?php echo $x . '-' . $y ?>" class="numero"></p>
+                                                                    <div class="lix">
+                                                                        <p id="dias<?php echo $x . '-' . $y ?>" class="numero"></p>
 
-                                                                </div>
+                                                                    </div>
 
-                                                                <div class="lix">
-                                                                    <p id="horas<?php echo $x . '-' . $y ?>" class="numero"></p>
+                                                                    <div class="lix">
+                                                                        <p id="horas<?php echo $x . '-' . $y ?>" class="numero"></p>
 
-                                                                </div>
-                                                                <div class="lix">
+                                                                    </div>
+                                                                    <div class="lix">
 
-                                                                    <p id="minutos<?php echo $x . '-' . $y ?>" class="numero"></p>
+                                                                        <p id="minutos<?php echo $x . '-' . $y ?>" class="numero"></p>
 
-                                                                </div>
-                                                                <div class="lix">
+                                                                    </div>
+                                                                    <div class="lix">
 
-                                                                    <p id="segundos<?php echo $x . '-' . $y ?>" class="numero"></p>
-                                                                </div>
-                                                                <div class="lix">
-                                                                    <p>Días</p>
-                                                                </div>
-                                                                <div class="lix">
-                                                                    <p>Horas</p>
-                                                                </div>
-                                                                <div class="lix">
-                                                                    <p>Minutos</p>
-                                                                </div>
-                                                                <div class="lix">
-                                                                    <p>Segundos</p>
-                                                                </div>
-                                                            </ul>
-                                                        </div>
+                                                                        <p id="segundos<?php echo $x . '-' . $y ?>" class="numero"></p>
+                                                                    </div>
+                                                                    <div class="lix">
+                                                                        <p>Días</p>
+                                                                    </div>
+                                                                    <div class="lix">
+                                                                        <p>Horas</p>
+                                                                    </div>
+                                                                    <div class="lix">
+                                                                        <p>Minutos</p>
+                                                                    </div>
+                                                                    <div class="lix">
+                                                                        <p>Segundos</p>
+                                                                    </div>
+                                                                </ul>
+                                                            </div>
+                                                        <?php
+                                                        }
+                                                        ?>
                                                     </div>
                                                 </div>
                                             <?php

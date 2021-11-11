@@ -232,7 +232,7 @@ $paqueteBasico = $precioBasico;
 						Responsable del contrato para el proyecto: <strong><u><?php echo 'https://'.strtolower($vectorNombresProyectos[0]);?></u></strong>
 					</p>
 				</div>
-				<div style="text-align: center;" class="firmax"><img style="width: 520px; height: auto; margin-top: 50px;margin-left: calc(50% - 260px);" src="includes/funciones/doc_sings/545a1fffd1e7d4557167bad3e6694962.png" alt="error: 545a1fffd1e7d4557167bad3e6694962.png">
+				<div style="text-align: center;" class="firmax"><img style="width: 520px; height: auto; margin-top: 50px;margin-left: calc(50% - 260px);" src="includes/funciones/doc_sings/83448f3d1163ef9d53631bfd32672a6a.png" alt="error: 83448f3d1163ef9d53631bfd32672a6a.png">
 
 					<p>Firma Digital: <strong><u> José Angel Ruiz Chávez</u></strong>
 						Responsable de desarrollo del proyecto: <strong><u><?php echo 'https://'.strtolower($vectorNombresProyectos[0]);?></u></strong>
