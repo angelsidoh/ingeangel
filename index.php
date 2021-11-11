@@ -440,71 +440,71 @@ if ($resultadoProyecto->num_rows) {
     </div>
 </div>
 
-    <div class="estructurasubcards">
-        <div class="contanedorsubcards">
-            <div class="cardsub">
-                <div class="imgbox" data-text="Seguridad">
-                    <i class="fas fa-user-shield"></i>
-                </div>
-                <div class="contentsub">
-                    <h3>Seguridad</h3>
-                    <p>Monitorización, nuevos parches de seguridad, bases de datos seguras, y control de versiones de todo el proyecto</p>
-                    <!-- <a class="button" href="#">Leer</a> -->
-                </div>
+<div class="estructurasubcards">
+    <div class="contanedorsubcards">
+        <div class="cardsub">
+            <div class="imgbox" data-text="Seguridad">
+                <i class="fas fa-user-shield"></i>
             </div>
-            <div class="cardsub">
-                <div class="imgbox" data-text="Hosting y Dominio">
-                    <i class="fas fa-hdd"></i>
-                </div>
-                <div class="contentsub">
-                    <h3>Hosting y Dominio</h3>
-                    <p>Contacto con los mejores provedores de estos servicios para México y otros países</p>
-                    <!-- <a class="button" href="#">Leer</a> -->
-                </div>
-            </div>
-            <div class="cardsub">
-                <div class="imgbox" data-text="Responcivo">
-                    <i class="fas fa-laptop"></i> <i style="font-size: 20px; transform: rotate(70deg);" class="fas fa-slash"></i><i class="fas fa-mobile-alt"></i>
-
-                </div>
-                <div class="contentsub">
-                    <h3>Responcivo</h3>
-                    <p>Proyectos web con capacidades de ajustarse automaticamente a cualquier dispocitivo con el que acceden los clientes</p>
-                    <!-- <a class="button" href="#">Leer</a> -->
-                </div>
+            <div class="contentsub">
+                <h3>Seguridad</h3>
+                <p>Monitorización, nuevos parches de seguridad, bases de datos seguras, y control de versiones de todo el proyecto</p>
+                <!-- <a class="button" href="#">Leer</a> -->
             </div>
         </div>
-        <div class="contanedorsubcards">
-            <div class="cardsub">
-                <div class="imgbox" data-text="Optimización de recursos">
-                    <i class="fas fa-photo-video"></i>
-
-                </div>
-                <div class="contentsub">
-                    <h3>Optimización de recursos</h3>
-                    <p>Mejoramos las velocidades de carga de tu sitio web, bajando el peso de archivos al máximo sin perder calidad</p>
-                    <!-- <a class="button" href="#">Leer</a> -->
-                </div>
+        <div class="cardsub">
+            <div class="imgbox" data-text="Hosting y Dominio">
+                <i class="fas fa-hdd"></i>
             </div>
-            <div class="cardsub">
-                <div class="imgbox" data-text="Herramientas extra">
-                    <i class="fas fa-chart-line"></i>
-                </div>
-                <div class="contentsub">
-                    <h3>Herramientas extra</h3>
-                    <p>Herramientas de utilidad que permiten a su empresas o negocios ver estadistica de sus sitios web por ejemplo; Google Analytics</p>
-                    <!-- <a class="button" href="#">Leer</a> -->
-                </div>
+            <div class="contentsub">
+                <h3>Hosting y Dominio</h3>
+                <p>Contacto con los mejores provedores de estos servicios para México y otros países</p>
+                <!-- <a class="button" href="#">Leer</a> -->
+            </div>
+        </div>
+        <div class="cardsub">
+            <div class="imgbox" data-text="Responcivo">
+                <i class="fas fa-laptop"></i> <i style="font-size: 20px; transform: rotate(70deg);" class="fas fa-slash"></i><i class="fas fa-mobile-alt"></i>
+
+            </div>
+            <div class="contentsub">
+                <h3>Responcivo</h3>
+                <p>Proyectos web con capacidades de ajustarse automaticamente a cualquier dispocitivo con el que acceden los clientes</p>
+                <!-- <a class="button" href="#">Leer</a> -->
             </div>
         </div>
     </div>
-<div class="contendor-efecto">
-<div class="titulo-seccion" id="promos">
-    <h1 id="sparklemaster" class="sparklemaster" style="color:  #93A9CC;">Promociones</h1>
+    <div class="contanedorsubcards">
+        <div class="cardsub">
+            <div class="imgbox" data-text="Optimización de recursos">
+                <i class="fas fa-photo-video"></i>
+
+            </div>
+            <div class="contentsub">
+                <h3>Optimización de recursos</h3>
+                <p>Mejoramos las velocidades de carga de tu sitio web, bajando el peso de archivos al máximo sin perder calidad</p>
+                <!-- <a class="button" href="#">Leer</a> -->
+            </div>
+        </div>
+        <div class="cardsub">
+            <div class="imgbox" data-text="Herramientas extra">
+                <i class="fas fa-chart-line"></i>
+            </div>
+            <div class="contentsub">
+                <h3>Herramientas extra</h3>
+                <p>Herramientas de utilidad que permiten a su empresas o negocios ver estadistica de sus sitios web por ejemplo; Google Analytics</p>
+                <!-- <a class="button" href="#">Leer</a> -->
+            </div>
+        </div>
+    </div>
 </div>
+<div class="contendor-efecto">
+    <div class="titulo-seccion" id="promos">
+        <h1 id="sparklemaster" class="sparklemaster" style="color:  #93A9CC;">Promociones</h1>
+    </div>
 </div>
 
-<?php require 'promo.php';?>
+<?php require 'promo.php'; ?>
 <!-- <div class="contendor-efecto">
     <div class="titulo-seccion">
         <h1 id="sparklemaster" class="sparklemaster" style="color:  #93A9CC;"> Diseño en software</h1>
@@ -514,29 +514,21 @@ if ($resultadoProyecto->num_rows) {
 <iframe src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2F108991444712996%2Fvideos%2F591249598538609%2F&show_text=false&width=560&t=0" width="560" height="314" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay;" allowFullScreen="true"></iframe>
 </div> -->
 
-<div class="contendor-efecto">
-    <div class="titulo-seccion">
-        <h1 id="sparklemaster" class="sparklemaster" style="color:  #93A9CC;">Catálogos digitales</h1>
-    </div>
-</div>
-<div class="contenedor-cat">
-<a class="button" href="flep" target= "_blank">Ver</a>
-<?php require 'flep.php';?>
-</div>
+
 
 <div class="contenedor-video">
     <video autoplay muted loop poster="img/books-min.jpg">
-      <source id="center" src="video/atxb.mp4" type="video/mp4">
+        <source id="center" src="video/atxb.mp4" type="video/mp4">
 
 
     </video>
     <div class="contendor-efecto">
-    <div class="titulo-seccion">
-        <h1 id="sparklemaster" class="sparklemaster" style="color:  #ffffff;">Animación</h1>
+        <div class="titulo-seccion">
+            <h1 id="sparklemaster" class="sparklemaster" style="color:  #ffffff;">Animación</h1>
+        </div>
+        <a class="button" href="https://fb.watch/7Eu9KNuGaz/" targZet="_blank">Ver</a>
     </div>
-     <a class="button" href="https://fb.watch/7Eu9KNuGaz/" target= "_blank">Ver</a>
 </div>
-  </div>
 <div class="contendor-efecto">
     <div class="titulo-seccion">
         <h1 id="sparklemaster" class="sparklemaster" style="color:  #93A9CC;">Tecnología</h1>
@@ -550,200 +542,199 @@ if ($resultadoProyecto->num_rows) {
 
 
 <div class="backgroundsubcards">
-<div class="contenedor-efecto">
-    <div id="efecto-ventanaleft" class="contenedorx">
-        <div class="ventana-left">
-            <div class="marcotext-left">
-                <div class="descripcion">
-                    <div class="tecnologia1">
-                        <i class="fab fa-html5"></i>
-                        <div class="titulo-tecnologia">
-                            <h1 id="sparklemaster" class="sparklemaster">HTML-5</h1>
-                        </div>
-                        <div class="descripcion-tecnologia">
-                            <h3>Historia</h3>
-                            <p>Desarrollada por el físico Tim Berners-Lee, con la idea de poder compartir documentos por internet, y uniendo fuerzas con Robert Cailliau Ingeniero en Sistemas, Presentaron el proyecto ganador ante la World Wide Web.
-                            </p>
-                            <p>
-                                En wingsDevs, este lenguaje de programación (lenguaje de etiquetas HTML) para etiquetar cada elemento que demande el proyecto, siendo capaces etiquetar todo tipo de contenido en una página/sitio web.</p>
-                         <h3>Ventajas</h3>
-                            <ul>
-                                <li>1. Maquetación de la página web estructurada de una manera personalizada.</li>
-                                <li>2. Mejora del rendimiento debido a la estructura de código.</li>
-                                <li>3. Peso del archivo programado muy pequeño, facilitando su ejecución.</li>
-                                <li>4. Despliegue en el navegador rápido.</li>
-                                <li>5. Compatibilidad alta en todos los navegadores web actuales.</li>
-                            </ul>
-                            <i class="fas fa-award"></i><br>
-                        <!-- <a class="button" href="#">Leer</a> -->
-                        </div>
-                        
-                    </div>
-                    
-                </div>
-                
-            </div>
-            
-        </div>
-        
-    </div>
-    
-</div>
-
-<div class="contenedor-efecto">
-    <div id="efecto-ventanaright" class="contenedorx">
-        <div class="ventana-right">
-            <div class="marcotext-right">
-                <div class="descripcion">
-                    <div class="tecnologia2">
-                        <i class="fab fa-css3-alt"></i>
-                        <div class="titulo-tecnologia">
-                            <h1 id="sparklemaster" class="sparklemaster">CSS3</h1>
-                        </div>
-                        <div class="descripcion-tecnologia">
-                            <h3>Historia</h3>
-                            <p>Propuesto en la World Wide Web por Haron Wium Le y Bert Bos, llamada también “hoja de estilos” en un lenguaje de programación que permite dar forma gráfica a etiquetas de html.
-                            </p>
-                            <p>
-                                En WingsDevs la “hoja de estilos” es para dar seguimiento al diseño entregado por el cliente, cada detalles gráficos quedara plasmado en el proyecto.
-                            </p>
-                           <h3>Ventajas</h3>
-                            <ul>
-                                <li>1. Mejora los tiempos de respuesta.</li>
-                                <li>2. Estructura fiel al código html.</li>
-                                <li>3. Se mantiene en el cache del navegador de los usuarios.</li>
-                                <li>4. Funciones para realizar una página/sitio web responsivo o adaptativo a cualquier dispositivo.</li>
-                                <li>5. Archivos de estilos muy pequeños.</li>
-                            </ul>
-                            <i class="fas fa-award"></i><br>
-                        <!-- <a class="button" href="#">Leer</a> -->
-                        </div>
-                        
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="contenedor-efecto">
-    <div id="efecto-ventanaleft1" class="contenedorx">
-        <div class="ventana-left">
-            <div class="marcotext-left">
-                <div class="descripcion">
-                    <div class="tecnologia3">
-                        <i class="fab fa-php"></i>
-                        <div class="titulo-tecnologia">
-                            <h1 id="sparklemaster" class="sparklemaster">PHP</h1>
-                        </div>
-                        <div class="descripcion-tecnologia">
-                            <h3>Historia</h3>
-                            <p>PHP es un lenguaje de programación de uso general que se adapta especialmente al desarrollo web. Fue creado inicialmente por el programador danés-canadiense Rasmus Lerdorf en 1994.
-                            </p>
-                            <p>
-                                En WingsDevs este lenguaje de programación es por mucho el más importante de todos. Pues de este depende que tan segura e inteligente puede ser tu página/sitio web.</p>
-                            <h3>Ventajas</h3>
-                            <ul>
-                                <li>1. Brinda capacidades para la página/sitio web de conexión con bases de datos en MySQL.</li>
-                                <li>2. Capacidad para la página/sitio web de gestionar contenido.</li>
-                                <li>3. Capacidad para el registro de usuarios e inicios de sesión en tu página/sitio web.</li>
-                                <li>4. Gran cantidad de Apis de uso gratuito disponibles.</li>
-                                <li>5. Crea paso de pagos a través de tu página/sitio web con tarjeta de crédito/debito y pasarelas de pago como PayPal.</li>
-                                <li>6. Archivos de Php muy pequeños.</li>
-                                <li>7. Mejora estructura de la página/sitio web.</li>
-                                <li>8. Mejor Optimización de los recursos.</li>
-                            </ul>
-                            <i class="fas fa-award"></i> <br>
-                        <!-- <a class="button" href="#">Leer</a> -->
-                        </div>
-                        
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="contenedor-efecto">
-    <div id="efecto-ventanaright1" class="contenedorx">
-        <div class="ventana-right">
-            <div class="marcotext-right">
-                <div class="descripcion">
-                    <div class="tecnologia4">
-                        <i class="fab fa-js-square"></i>
-                        <div class="titulo-tecnologia">
-                            <h1 id="sparklemaster" class="sparklemaster">JavaScript</h1>
-                        </div>
-                        <div class="descripcion-tecnologia">
-                            <h3>Historia</h3>
-                            <p>JavaScript fue desarrollado originalmente por Brendan Eich de Netscape con el nombre de Mocha, el desarrollador se enfrento al problema de las capacidades de velocidad del internet, que hacían torpes a los formularios que interactuaban con los usuarios de una página, pues si por algún motivo se equivocaba tendría que esperar a recargar la pagina del error y volver al formulario para corregirlo. La función de JavaScript arreglo muy bien este problema, permitiendo interactuar con los usuarios previo al envió de los formularios advirtiéndoles de los errores y facilitando su uso.
-                            </p>
-                            <p>
-                                En WingsDevs este lenguaje brinda inteligencia extra, que puede ser ejecutada desde la computadora del usuario. Esto sirve, por ejemplo, para el efecto de animación que estás viendo en este momento.
-                            </p>
-                            <h3>Ventajas</h3>
-                            <ul>
-                                <li>1. Compatibilidad alta con los navegadores más populares y actualizados.</li>
-                                <li>2. Capacidades extra para una página/sitio web dinámico.</li>
-                                <li>3. Notifica en caso de cometer un error a los usuarios en los formularios.</li>
-                                <li>4. Ejecución en el cliente (computadora del usuario de la página/sitio web), por lo que tu servidor no se verá afectado la carga.</li>
-                                <li>5. Gestión de datos en bases de datos MySQL y PHP</li>
-                                <li>6. Archivos de JavaScript muy pequeños.</li>
-                                <li>7. Amplio catálogo de Apis a para incorporar a tu página/sitio web.</li>
-                            </ul>
-                            <i class="fas fa-award"></i> <br>
-                        <!-- <a class="button" href="#">Leer</a> -->
-                        </div>
-                        
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="contenedor-gradientex">
     <div class="contenedor-efecto">
-        <div class="efecto-dinamico">
-          
-            <div id="dinamico-efecto" class="contenedor-info">
-                <div class="descripcion">
-                    <div class="tecnologia5">
-                        <i class="fas fa-database"></i>
-                        <div class="titulo-tecnologia">
-                            <h1 id="sparklemaster" class="sparklemaster">MySQL</h1>
+        <div id="efecto-ventanaleft" class="contenedorx">
+            <div class="ventana-left">
+                <div class="marcotext-left">
+                    <div class="descripcion">
+                        <div class="tecnologia1">
+                            <i class="fab fa-html5"></i>
+                            <div class="titulo-tecnologia">
+                                <h1 id="sparklemaster" class="sparklemaster">HTML-5</h1>
+                            </div>
+                            <div class="descripcion-tecnologia">
+                                <h3>Historia</h3>
+                                <p>Desarrollada por el físico Tim Berners-Lee, con la idea de poder compartir documentos por internet, y uniendo fuerzas con Robert Cailliau Ingeniero en Sistemas, Presentaron el proyecto ganador ante la World Wide Web.
+                                </p>
+                                <p>
+                                    En wingsDevs, este lenguaje de programación (lenguaje de etiquetas HTML) para etiquetar cada elemento que demande el proyecto, siendo capaces etiquetar todo tipo de contenido en una página/sitio web.</p>
+                                <h3>Ventajas</h3>
+                                <ul>
+                                    <li>1. Maquetación de la página web estructurada de una manera personalizada.</li>
+                                    <li>2. Mejora del rendimiento debido a la estructura de código.</li>
+                                    <li>3. Peso del archivo programado muy pequeño, facilitando su ejecución.</li>
+                                    <li>4. Despliegue en el navegador rápido.</li>
+                                    <li>5. Compatibilidad alta en todos los navegadores web actuales.</li>
+                                </ul>
+                                <i class="fas fa-award"></i><br>
+                                <!-- <a class="button" href="#">Leer</a> -->
+                            </div>
+
                         </div>
-                        <div class="descripcion-tecnologia">
-                            <h3>Historia</h3>
-                            <p>Fue desarrollado inicialmente por MySQL AB (empresa fundada por David Axmark, Allan Larsson y Michael Widenius). es un tipo de base de datos muy popular para el desarrollo de proyectos web, en gran parte de su desarrollo esta escrita en ANSI y C++.
-                            </p>
-                            <p>
-                                En WingsDevs, en estos últimos (código ANSI y C++), cuenta con amplia experiencia, con casi 10 años en el campo, brindado a nuestro cliente, mucha mas capacidad para las conexiones con las bases de datos de su página/sitio web.
-                            </p>
-                            <h3>Ventajas</h3>
-                            <ul>
-                                <li>1. Disponibilidad en todas las plataformas o sistemas de servidores.</li>
-                                <li>2. Búsquedas e indexación de campos de texto.</li>
-                                <li>3. Soporte de 500 millones de registros.</li>
-                                <li>4. Soporta 64 índices por tabla (Quiere decir que podremos estructurar tablas muy complejas si es necesario).</li>
-                                <li>5. Ejecución de instrucciones muy rápida.</li>
-                                <li>6. Seguridad de la integridad para los datos de una tabla</li>
-                                <li>7. Posibilidad de descargar archivos para respaldo.</li>
-                                <li>8. Archivos de MySQL pequeños.</li>
-                                <li>9. Compatibilidad con PHP.</li>
-                            </ul>
-                            <i class="fas fa-award"></i> <br>
-                        <!-- <a class="button" href="#">Leer</a> -->
-                        </div>
-                        
+
                     </div>
+
                 </div>
 
             </div>
+
+        </div>
+
+    </div>
+
+    <div class="contenedor-efecto">
+        <div id="efecto-ventanaright" class="contenedorx">
+            <div class="ventana-right">
+                <div class="marcotext-right">
+                    <div class="descripcion">
+                        <div class="tecnologia2">
+                            <i class="fab fa-css3-alt"></i>
+                            <div class="titulo-tecnologia">
+                                <h1 id="sparklemaster" class="sparklemaster">CSS3</h1>
+                            </div>
+                            <div class="descripcion-tecnologia">
+                                <h3>Historia</h3>
+                                <p>Propuesto en la World Wide Web por Haron Wium Le y Bert Bos, llamada también “hoja de estilos” en un lenguaje de programación que permite dar forma gráfica a etiquetas de html.
+                                </p>
+                                <p>
+                                    En WingsDevs la “hoja de estilos” es para dar seguimiento al diseño entregado por el cliente, cada detalles gráficos quedara plasmado en el proyecto.
+                                </p>
+                                <h3>Ventajas</h3>
+                                <ul>
+                                    <li>1. Mejora los tiempos de respuesta.</li>
+                                    <li>2. Estructura fiel al código html.</li>
+                                    <li>3. Se mantiene en el cache del navegador de los usuarios.</li>
+                                    <li>4. Funciones para realizar una página/sitio web responsivo o adaptativo a cualquier dispositivo.</li>
+                                    <li>5. Archivos de estilos muy pequeños.</li>
+                                </ul>
+                                <i class="fas fa-award"></i><br>
+                                <!-- <a class="button" href="#">Leer</a> -->
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-</div>
+    <div class="contenedor-efecto">
+        <div id="efecto-ventanaleft1" class="contenedorx">
+            <div class="ventana-left">
+                <div class="marcotext-left">
+                    <div class="descripcion">
+                        <div class="tecnologia3">
+                            <i class="fab fa-php"></i>
+                            <div class="titulo-tecnologia">
+                                <h1 id="sparklemaster" class="sparklemaster">PHP</h1>
+                            </div>
+                            <div class="descripcion-tecnologia">
+                                <h3>Historia</h3>
+                                <p>PHP es un lenguaje de programación de uso general que se adapta especialmente al desarrollo web. Fue creado inicialmente por el programador danés-canadiense Rasmus Lerdorf en 1994.
+                                </p>
+                                <p>
+                                    En WingsDevs este lenguaje de programación es por mucho el más importante de todos. Pues de este depende que tan segura e inteligente puede ser tu página/sitio web.</p>
+                                <h3>Ventajas</h3>
+                                <ul>
+                                    <li>1. Brinda capacidades para la página/sitio web de conexión con bases de datos en MySQL.</li>
+                                    <li>2. Capacidad para la página/sitio web de gestionar contenido.</li>
+                                    <li>3. Capacidad para el registro de usuarios e inicios de sesión en tu página/sitio web.</li>
+                                    <li>4. Gran cantidad de Apis de uso gratuito disponibles.</li>
+                                    <li>5. Crea paso de pagos a través de tu página/sitio web con tarjeta de crédito/debito y pasarelas de pago como PayPal.</li>
+                                    <li>6. Archivos de Php muy pequeños.</li>
+                                    <li>7. Mejora estructura de la página/sitio web.</li>
+                                    <li>8. Mejor Optimización de los recursos.</li>
+                                </ul>
+                                <i class="fas fa-award"></i> <br>
+                                <!-- <a class="button" href="#">Leer</a> -->
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="contenedor-efecto">
+        <div id="efecto-ventanaright1" class="contenedorx">
+            <div class="ventana-right">
+                <div class="marcotext-right">
+                    <div class="descripcion">
+                        <div class="tecnologia4">
+                            <i class="fab fa-js-square"></i>
+                            <div class="titulo-tecnologia">
+                                <h1 id="sparklemaster" class="sparklemaster">JavaScript</h1>
+                            </div>
+                            <div class="descripcion-tecnologia">
+                                <h3>Historia</h3>
+                                <p>JavaScript fue desarrollado originalmente por Brendan Eich de Netscape con el nombre de Mocha, el desarrollador se enfrento al problema de las capacidades de velocidad del internet, que hacían torpes a los formularios que interactuaban con los usuarios de una página, pues si por algún motivo se equivocaba tendría que esperar a recargar la pagina del error y volver al formulario para corregirlo. La función de JavaScript arreglo muy bien este problema, permitiendo interactuar con los usuarios previo al envió de los formularios advirtiéndoles de los errores y facilitando su uso.
+                                </p>
+                                <p>
+                                    En WingsDevs este lenguaje brinda inteligencia extra, que puede ser ejecutada desde la computadora del usuario. Esto sirve, por ejemplo, para el efecto de animación que estás viendo en este momento.
+                                </p>
+                                <h3>Ventajas</h3>
+                                <ul>
+                                    <li>1. Compatibilidad alta con los navegadores más populares y actualizados.</li>
+                                    <li>2. Capacidades extra para una página/sitio web dinámico.</li>
+                                    <li>3. Notifica en caso de cometer un error a los usuarios en los formularios.</li>
+                                    <li>4. Ejecución en el cliente (computadora del usuario de la página/sitio web), por lo que tu servidor no se verá afectado la carga.</li>
+                                    <li>5. Gestión de datos en bases de datos MySQL y PHP</li>
+                                    <li>6. Archivos de JavaScript muy pequeños.</li>
+                                    <li>7. Amplio catálogo de Apis a para incorporar a tu página/sitio web.</li>
+                                </ul>
+                                <i class="fas fa-award"></i> <br>
+                                <!-- <a class="button" href="#">Leer</a> -->
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="contenedor-gradientex">
+        <div class="contenedor-efecto">
+            <div class="efecto-dinamico">
+
+                <div id="dinamico-efecto" class="contenedor-info">
+                    <div class="descripcion">
+                        <div class="tecnologia5">
+                            <i class="fas fa-database"></i>
+                            <div class="titulo-tecnologia">
+                                <h1 id="sparklemaster" class="sparklemaster">MySQL</h1>
+                            </div>
+                            <div class="descripcion-tecnologia">
+                                <h3>Historia</h3>
+                                <p>Fue desarrollado inicialmente por MySQL AB (empresa fundada por David Axmark, Allan Larsson y Michael Widenius). es un tipo de base de datos muy popular para el desarrollo de proyectos web, en gran parte de su desarrollo esta escrita en ANSI y C++.
+                                </p>
+                                <p>
+                                    En WingsDevs, en estos últimos (código ANSI y C++), cuenta con amplia experiencia, con casi 10 años en el campo, brindado a nuestro cliente, mucha mas capacidad para las conexiones con las bases de datos de su página/sitio web.
+                                </p>
+                                <h3>Ventajas</h3>
+                                <ul>
+                                    <li>1. Disponibilidad en todas las plataformas o sistemas de servidores.</li>
+                                    <li>2. Búsquedas e indexación de campos de texto.</li>
+                                    <li>3. Soporte de 500 millones de registros.</li>
+                                    <li>4. Soporta 64 índices por tabla (Quiere decir que podremos estructurar tablas muy complejas si es necesario).</li>
+                                    <li>5. Ejecución de instrucciones muy rápida.</li>
+                                    <li>6. Seguridad de la integridad para los datos de una tabla</li>
+                                    <li>7. Posibilidad de descargar archivos para respaldo.</li>
+                                    <li>8. Archivos de MySQL pequeños.</li>
+                                    <li>9. Compatibilidad con PHP.</li>
+                                </ul>
+                                <i class="fas fa-award"></i> <br>
+                                <!-- <a class="button" href="#">Leer</a> -->
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 <?php
 require 'includes/templates/footer.php'
 
 ?>
-

@@ -20,7 +20,8 @@
                 </h3>
                 <p>
                     <br> <br>
-                    Convertirnos en los desarrolladores web preferidos de nuestros clientes incorporando conocimiento cada vez más avanzado y ponerlo al servicio de los mismos.
+                    Convertimos en una empresa con herramientas de calidad y el mejor rendimiento para ayudar a otras empresas o negocios a digitalizar sus productos y/o servicios en todo México y otras partes del Mundo.
+                    <!-- Convertirnos en los desarrolladores web preferidos de nuestros clientes incorporando conocimiento cada vez más avanzado y ponerlo al servicio de los mismos. -->
                 </p>
             </div>
             <!-- <div class="feeds__elem4">

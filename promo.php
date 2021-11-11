@@ -27,7 +27,7 @@
 
     
 <script>
-var end = new Date('08/31/2021 11:59 PM');
+var end = new Date('11/16/2021 11:59 PM');
 
     var _second = 1000;
     var _minute = _second * 60;

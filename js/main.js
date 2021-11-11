@@ -3285,7 +3285,7 @@ var resolucion = 0;
 alto=$("div.contenedor-video video").width();
 console.log(alto);
 altomod = alto*.4; 
-altovideo = alto*.6;
+altovideo = (9*alto)/16;
 altocat = alto *.7;
 altocat = Math.round(altocat);
 if(altocat >= 1150){
@@ -3300,7 +3300,7 @@ $(window).resize(function () {
   resolucion = screen.width;
   alto=$("#boddu > div.contenedor-cat").width();
   altomod = alto*.4; 
-  altovideo = alto*.6;
+  altovideo = (9*alto)/16;
   altocat = alto*.7;
   altocat = Math.round(altocat);
   if(altocat >= 1150){
