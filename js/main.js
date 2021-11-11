@@ -3282,9 +3282,10 @@ const app = (() => {
 //   $(".card").removeClass('card-flip');
 // });
 var resolucion = 0;
-alto=$("#boddu > div.contenedor-cat").width();
-altomod = alto/2; 
-altovideo = alto*.9;
+alto=$("div.contenedor-video video").width();
+console.log(alto);
+altomod = alto*.4; 
+altovideo = alto*.6;
 altocat = alto *.7;
 altocat = Math.round(altocat);
 if(altocat >= 1150){
@@ -3298,8 +3299,8 @@ $(window).resize(function () {
 
   resolucion = screen.width;
   alto=$("#boddu > div.contenedor-cat").width();
-  altomod = alto/2; 
-  altovideo = alto*.9;
+  altomod = alto*.4; 
+  altovideo = alto*.6;
   altocat = alto*.7;
   altocat = Math.round(altocat);
   if(altocat >= 1150){
