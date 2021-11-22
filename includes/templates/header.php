@@ -20,12 +20,16 @@ session_start();
 
   <script src="https://kit.fontawesome.com/f429da79c0.js" crossorigin="anonymous"></script>
   
+  
  
 
   <link rel="stylesheet" href="js/plugins/malihu-custom-scrollbar-plugin-master/malihu-custom-scrollbar-plugin-master/jquery.mCustomScrollbar.css">
 
+  
+
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="css/style-banner.css?v=<?php echo time(); ?>">
   <link rel="stylesheet" href="css/main.css?v=<?php echo time(); ?>">
   <link rel="stylesheet" href="css/styles.css?v=<?php echo time(); ?>">
   <link rel="stylesheet" href="css/estilos-pruebas1.css?v=<?php echo time(); ?>">
